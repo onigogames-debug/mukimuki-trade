@@ -38,6 +38,8 @@ python3 -m http.server 4173
 
 Cloudflare Pages側でCustom domainに `mukimuki-trade.com` を追加し、必要に応じて `www.mukimuki-trade.com` も追加します。DNSはCloudflare側に移管するか、Cloudflareが指定するCNAMEをお名前.com側に設定します。
 
+Current deployment status is tracked in [DEPLOYMENT.md](DEPLOYMENT.md).
+
 ## 公開前チェック
 
 - アフィリエイトリンクを本番URLへ差し替える
