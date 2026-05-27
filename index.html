@@ -20,6 +20,22 @@
   <link rel="alternate" type="application/rss+xml" title="MUKIMUKI trade RSS" href="/feed.xml">
   <link rel="manifest" href="site.webmanifest">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .hero-promo-stack{display:grid;gap:12px;margin-top:22px}
+    .hero-promo{display:grid;grid-template-columns:52px minmax(0,1fr) auto;align-items:center;gap:14px;min-height:92px;padding:14px 16px;border:2px solid #17140f;border-radius:8px;box-shadow:6px 6px 0 #17140f;text-decoration:none}
+    .hero-promo-mark{display:grid;place-items:center;width:52px;height:52px;border:2px solid currentColor;border-radius:8px;font-weight:900}
+    .hero-promo-copy{display:grid;gap:4px;min-width:0}
+    .hero-promo-label{font-size:.72rem;font-weight:900;line-height:1}
+    .hero-promo-title{font-size:1.05rem;font-weight:900;line-height:1.25}
+    .hero-promo-text{margin:0;font-size:.86rem;font-weight:800;line-height:1.45}
+    .hero-promo-cta{display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:9px 12px;border:2px solid currentColor;border-radius:8px;font-size:.84rem;font-weight:900;white-space:nowrap}
+    .hero-promo-x{background:#17140f;color:#fff}
+    .hero-promo-x .hero-promo-label,.hero-promo-x .hero-promo-mark,.hero-promo-x .hero-promo-cta{color:#ffd928}
+    .hero-promo-x .hero-promo-text{color:rgba(255,255,255,.82)}
+    .hero-promo-moomoo{background:linear-gradient(135deg,#fff4a6,#fff);color:#17140f}
+    .hero-promo-moomoo .hero-promo-label,.hero-promo-moomoo .hero-promo-mark,.hero-promo-moomoo .hero-promo-cta{color:#2458d3}
+    @media(max-width:720px){.hero-promo{grid-template-columns:44px minmax(0,1fr);align-items:start}.hero-promo-mark{width:44px;height:44px}.hero-promo-cta{grid-column:2;justify-self:start;white-space:normal}.hero-promo-title{font-size:.98rem}}
+  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -160,6 +176,26 @@
             <a class="button primary" href="/performance/">最新実績</a>
             <a class="button secondary" href="#performance">実績を見る</a>
           </div>
+          <div class="hero-promo-stack" aria-label="公式Xとmoomoo証券">
+            <a class="hero-promo hero-promo-x" href="https://x.com/OnigoGames" target="_blank" rel="me noopener">
+              <span class="hero-promo-mark">X</span>
+              <span class="hero-promo-copy">
+                <span class="hero-promo-label">OFFICIAL X</span>
+                <strong class="hero-promo-title">速報と更新通知は公式Xへ</strong>
+                <span class="hero-promo-text">実績速報、相場メモ、記事更新を短くチェック。</span>
+              </span>
+              <span class="hero-promo-cta">@OnigoGames</span>
+            </a>
+            <a class="hero-promo hero-promo-moomoo" href="https://j.jp.moomoo.com/0BdcjG" target="_blank" rel="sponsored noopener">
+              <span class="hero-promo-mark">PR</span>
+              <span class="hero-promo-copy">
+                <span class="hero-promo-label">moomoo証券</span>
+                <strong class="hero-promo-title">米国株ニュース・チャート・決算確認に</strong>
+                <span class="hero-promo-text">候補銘柄を深掘りするための情報確認ツール。</span>
+              </span>
+              <span class="hero-promo-cta">moomoo証券を確認</span>
+            </a>
+          </div>
         </div>
 
         <aside class="hero-panel" aria-label="最新実績サマリー">
@@ -194,20 +230,6 @@
         </aside>
       </div>
 
-      <div class="hero-banners" aria-label="公式Xとmoomoo証券">
-        <a class="promo-banner promo-x" href="https://x.com/OnigoGames" target="_blank" rel="me noopener">
-          <span class="promo-kicker">OFFICIAL X</span>
-          <strong>速報と更新通知は公式Xへ</strong>
-          <p>MUKIMUKI tradeの実績速報、相場メモ、記事更新を短くチェック。</p>
-          <span class="promo-action">@OnigoGames を見る</span>
-        </a>
-        <a class="promo-banner promo-moomoo" href="https://j.jp.moomoo.com/0BdcjG" target="_blank" rel="sponsored noopener">
-          <span class="promo-kicker">PR / moomoo証券</span>
-          <strong>米国株ニュース・チャート・決算確認に</strong>
-          <p>候補銘柄を深掘りするための情報確認ツールとして紹介しています。</p>
-          <span class="promo-action">moomoo証券を確認</span>
-        </a>
-      </div>
     </section>
 
     <section class="reading-path" aria-label="注目コンテンツ">
