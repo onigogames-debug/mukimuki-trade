@@ -2,7 +2,7 @@
   "site": {
     "url": "https://mukimuki-trade.com",
     "title": "MUKIMUKI trade",
-    "description": "100万円からの株式投資実績、銘柄検討、相場メモを公開する投資ブログ。",
+    "description": "100万円からの株式投資実績、資産曲線、銘柄検討、相場メモを読者が追いやすい順番で整理する投資ブログ。",
     "language": "ja",
     "lastBuildDate": "2026-05-27T18:00:00+09:00"
   },
@@ -23,13 +23,14 @@
     { "path": "/category/moomoo/", "lastmod": "2026-05-27", "changefreq": "weekly", "priority": "0.6" },
     { "path": "/archive/", "lastmod": "2026-05-27", "changefreq": "weekly", "priority": "0.6" },
     { "path": "/archive/2026-05/", "lastmod": "2026-05-27", "changefreq": "monthly", "priority": "0.6" },
+    { "path": "/profile/", "lastmod": "2026-05-27", "changefreq": "monthly", "priority": "0.6" },
     { "path": "/about/", "lastmod": "2026-05-27", "changefreq": "monthly", "priority": "0.5" }
   ],
   "posts": [
     {
-      "title": "5/26実績レポート: 100万円比 +3.1%",
+      "title": "5/26実績レポート: 100万円比 +3.1%の読み方",
       "path": "/performance/",
-      "description": "2026年5月26日ESTの公開実績。評価額、通算損益、前日比、取引数、保有銘柄を整理。",
+      "description": "2026年5月26日ESTの公開実績。評価額、通算損益、前日比、取引数、保有銘柄、今日の読み方を整理。",
       "pubDate": "2026-05-27T15:00:00+09:00",
       "category": "実績公開"
     },
@@ -83,9 +84,9 @@
       "category": "銘柄検討"
     },
     {
-      "title": "moomoo証券の活用メモ",
+      "title": "moomoo証券の使い方: 米国株ニュース・チャート確認ガイド",
       "path": "/moomoo/",
-      "description": "米国株ニュース、チャート、決算確認、銘柄検討へのmoomoo活用メモ。",
+      "description": "moomoo証券の使い方を、米国株ニュース、チャート、決算確認、銘柄検討の流れで整理。",
       "pubDate": "2026-05-27T15:00:00+09:00",
       "category": "moomoo"
     }

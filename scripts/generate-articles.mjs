@@ -25,22 +25,22 @@ const nav = `    <nav class="nav-links" aria-label="主要メニュー">
       <a href="/logic/">ロジック</a>
       <a href="/moomoo/">moomoo</a>
       <a href="/archive/">アーカイブ</a>
-      <a href="/about/">方針</a>
+      <a href="/profile/">運営者</a>
       <a href="${officialXUrl}" target="_blank" rel="me noopener">公式X</a>
     </nav>`;
 
 const header = `  <header class="site-header">
     <a class="brand" href="/" aria-label="MUKIMUKI trade home">
       <img src="/assets/mukimuki-main.png" alt="">
-      <span><strong>MUKIMUKI trade</strong><small>100万円公開トレード記録</small></span>
+      <span><strong>MUKIMUKI trade</strong><small>数字で追う公開記録</small></span>
     </a>
 ${nav}
   </header>`;
 
 const footer = `  <footer class="site-footer">
     <strong>MUKIMUKI trade</strong>
-    <p>初めての方は最新実績からどうぞ。100万円チャレンジの数字、銘柄候補、売買ロジックを短く追えるように整理しています。広告リンクを含む場合があります。</p>
-    <nav class="footer-links" aria-label="補助リンク"><a href="/archive/">アーカイブ</a><a href="/feed.xml">RSS</a><a href="/about/">運営方針</a><a href="${officialXUrl}" target="_blank" rel="me noopener">公式X</a></nav>
+    <p>初めての方は最新実績からどうぞ。資産曲線、銘柄候補、売買ロジックを短く追えるように整理しています。広告リンクを含む場合があります。</p>
+    <nav class="footer-links" aria-label="補助リンク"><a href="/profile/">運営者</a><a href="/archive/">アーカイブ</a><a href="/feed.xml">RSS</a><a href="/about/">運営方針</a><a href="${officialXUrl}" target="_blank" rel="me noopener">公式X</a></nav>
   </footer>`;
 
 const renderSection = (section) => `      <section class="article-panel">
@@ -83,7 +83,7 @@ const renderArticle = (article) => {
         articleSection: article.category,
         keywords: article.tags,
         isPartOf: { '@id': `${siteUrl}/#blog` },
-        author: { '@type': 'Organization', name: 'MUKIMUKI trade' },
+        author: { '@id': 'https://mukimuki-trade.com/profile/#author' },
         publisher: {
           '@type': 'Organization',
           name: 'MUKIMUKI trade',
