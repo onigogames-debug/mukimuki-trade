@@ -39,7 +39,7 @@ ${nav}
 
 const footer = `  <footer class="site-footer">
     <strong>MUKIMUKI trade</strong>
-    <p>掲載内容は情報提供を目的としたもので、特定銘柄の売買を推奨するものではありません。アフィリエイト広告を含む場合があります。</p>
+    <p>初めての方は最新実績からどうぞ。100万円チャレンジの数字、銘柄候補、売買ロジックを短く追えるように整理しています。広告リンクを含む場合があります。</p>
     <nav class="footer-links" aria-label="補助リンク"><a href="/archive/">アーカイブ</a><a href="/feed.xml">RSS</a><a href="/about/">運営方針</a><a href="${officialXUrl}" target="_blank" rel="me noopener">公式X</a></nav>
   </footer>`;
 

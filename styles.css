@@ -123,6 +123,7 @@ strong {
 .dashboard,
 .articles-section,
 .research-template,
+.top-banners,
 .archive-band,
 .broker-band,
 .policy-band,
@@ -449,6 +450,76 @@ strong {
 .feature-story p,
 .feature-story small {
   color: rgba(255, 255, 255, 0.78);
+}
+
+.top-banners {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-top: 0;
+}
+
+.top-banner {
+  display: grid;
+  gap: 8px;
+  min-height: 154px;
+  padding: 22px;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  box-shadow: 8px 8px 0 var(--ink);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.top-banner:hover {
+  transform: translateY(-2px);
+  box-shadow: 10px 10px 0 var(--ink);
+}
+
+.top-banner span {
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.top-banner strong {
+  font-size: 1.35rem;
+  line-height: 1.25;
+}
+
+.top-banner p {
+  margin-bottom: 0;
+  color: #352d25;
+  font-weight: 800;
+  line-height: 1.6;
+}
+
+.top-banner small {
+  align-self: end;
+  font-weight: 900;
+}
+
+.x-banner {
+  background: #17140f;
+  color: white;
+}
+
+.x-banner p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.x-banner span,
+.x-banner small {
+  color: var(--sun);
+}
+
+.moomoo-banner {
+  background: linear-gradient(135deg, #fff4a6, #ffffff);
+}
+
+.moomoo-banner span,
+.moomoo-banner small {
+  color: var(--blue);
 }
 
 .section-heading {
@@ -1104,6 +1175,7 @@ strong {
   .hero-shell,
   .performance-grid,
   .broker-band,
+  .top-banners,
   .not-found {
     grid-template-columns: 1fr;
   }
@@ -1126,6 +1198,7 @@ strong {
   .dashboard,
   .articles-section,
   .research-template,
+  .top-banners,
   .archive-band,
   .broker-band,
   .policy-band,
@@ -1182,6 +1255,7 @@ strong {
   }
 
   .reading-path,
+  .top-banners,
   .category-strip,
   .stats-grid,
   .template-grid {
