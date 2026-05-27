@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MUKIMUKI trade | 100万円からの公開トレード記録</title>
   <meta name="description" content="MUKIMUKI tradeは、100万円から始める株式投資の実績公開、銘柄検討、相場メモを読みやすく整理した投資ブログです。">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="author" content="MUKIMUKI trade">
   <link rel="canonical" href="https://mukimuki-trade.com/">
   <meta name="theme-color" content="#ffd928">
   <meta property="og:type" content="website">
@@ -16,10 +18,44 @@
   <link rel="icon" href="assets/mukimuki-main.png">
   <link rel="manifest" href="site.webmanifest">
   <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://mukimuki-trade.com/#website",
+        "url": "https://mukimuki-trade.com/",
+        "name": "MUKIMUKI trade",
+        "description": "100万円からの株式投資実績、銘柄検討、相場メモを公開する投資ブログ。",
+        "inLanguage": "ja-JP"
+      },
+      {
+        "@type": "Blog",
+        "@id": "https://mukimuki-trade.com/#blog",
+        "url": "https://mukimuki-trade.com/",
+        "name": "MUKIMUKI trade",
+        "publisher": { "@id": "https://mukimuki-trade.com/#organization" },
+        "blogPost": [
+          { "@id": "https://mukimuki-trade.com/performance/#article" },
+          { "@id": "https://mukimuki-trade.com/research/#article" },
+          { "@id": "https://mukimuki-trade.com/moomoo/#article" }
+        ]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://mukimuki-trade.com/#organization",
+        "name": "MUKIMUKI trade",
+        "url": "https://mukimuki-trade.com/",
+        "logo": "https://mukimuki-trade.com/assets/mukimuki-main.png"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="#" aria-label="MUKIMUKI trade home">
+    <a class="brand" href="/" aria-label="MUKIMUKI trade home">
       <img src="assets/mukimuki-main.png" alt="">
       <span>
         <strong>MUKIMUKI trade</strong>
@@ -27,10 +63,10 @@
       </span>
     </a>
     <nav class="nav-links" aria-label="主要メニュー">
-      <a href="#performance">実績</a>
-      <a href="#articles">記事</a>
-      <a href="#broker">moomoo</a>
-      <a href="#policy">方針</a>
+      <a href="/performance/">実績</a>
+      <a href="/research/">銘柄検討</a>
+      <a href="/moomoo/">moomoo</a>
+      <a href="/about/">方針</a>
     </nav>
   </header>
 
@@ -42,7 +78,7 @@
           <h1 id="hero-title">100万円の動きを、読める記録にする。</h1>
           <p class="hero-lead">Autotradeの実績、銘柄検討、moomoo活用メモを、読者が上から順に追えるように整理した公開トレードブログです。</p>
           <div class="hero-actions">
-            <a class="button primary" href="#performance">最新実績</a>
+            <a class="button primary" href="/performance/">最新実績</a>
             <a class="button secondary" href="#performance">実績を見る</a>
           </div>
         </div>
@@ -81,7 +117,7 @@
     </section>
 
     <section class="reading-path" aria-label="注目コンテンツ">
-      <a class="story-card feature-story" href="#performance">
+      <a class="story-card feature-story" href="/performance/">
         <span>FEATURED</span>
         <strong>5/26実績レポート</strong>
         <p>100万円比 +3.1%。日次の資産推移、取引数、保有銘柄をまとめて確認。</p>
@@ -93,7 +129,7 @@
         <p>日次変化と月次の公開実績を、あとから確認しやすい形で積み上げます。</p>
         <small>履歴へ</small>
       </a>
-      <a class="story-card" href="#articles">
+      <a class="story-card" href="/research/">
         <span>GUIDE</span>
         <strong>銘柄検討テンプレ</strong>
         <p>注目理由、数字、売買条件、振り返りを同じ型で追える記事棚。</p>
@@ -178,7 +214,7 @@
             <span class="post-kicker">実績公開</span>
             <h3>5/26実績: 100万円比 +3.1%</h3>
             <p>評価額、前日比、取引件数、保有銘柄をひと目で確認。次回更新時も同じ型で比較できます。</p>
-            <a href="#performance">実績データへ</a>
+            <a href="/performance/">実績記事へ</a>
           </div>
         </article>
         <article class="post-card" data-category="research" id="research">
@@ -187,7 +223,7 @@
             <span class="post-kicker">銘柄検討</span>
             <h3>銘柄を見る順番: ニュース、チャート、決算</h3>
             <p>注目理由、買う条件、撤退条件を毎回同じ順番で整理。読者が判断軸を追いやすくします。</p>
-            <a href="#research-template">検討テンプレへ</a>
+            <a href="/research/">検討テンプレへ</a>
           </div>
         </article>
         <article class="post-card" data-category="diary">
@@ -196,7 +232,7 @@
             <span class="post-kicker">雑談</span>
             <h3>速報メモとサイトに残すこと</h3>
             <p>一時的なメモと、あとで役立つ反省、数字、考え方を分けてサイトへ残します。</p>
-            <a href="#policy">運営方針へ</a>
+            <a href="/about/">運営方針へ</a>
           </div>
         </article>
         <article class="post-card" data-category="broker">
@@ -205,7 +241,7 @@
             <span class="post-kicker">PR / moomoo</span>
             <h3>moomooで何を見るか</h3>
             <p>保有銘柄のニュース、米国株チャート、決算前後の確認に使う導線として配置します。</p>
-            <a href="https://j.jp.moomoo.com/0BdcjG" target="_blank" rel="sponsored noopener">moomooを確認</a>
+            <a href="/moomoo/">moomoo活用記事へ</a>
           </div>
         </article>
       </div>

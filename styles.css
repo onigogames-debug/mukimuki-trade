@@ -727,6 +727,108 @@ strong {
   padding: 24px;
 }
 
+.article-hero {
+  padding: 56px 32px 34px;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.article-hero-inner,
+.article-body {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.article-hero h1 {
+  margin-bottom: 14px;
+  font-size: 2.65rem;
+  line-height: 1.12;
+}
+
+.article-hero p:not(.eyebrow) {
+  max-width: 760px;
+  margin-bottom: 0;
+  color: #3b332b;
+  font-weight: 700;
+  line-height: 1.85;
+}
+
+.article-body {
+  display: grid;
+  gap: 20px;
+  padding: 34px 32px 62px;
+}
+
+.article-panel {
+  padding: 22px;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  background: var(--cream);
+  box-shadow: var(--shadow);
+}
+
+.article-panel h2 {
+  margin-bottom: 12px;
+  font-size: 1.55rem;
+}
+
+.article-panel p,
+.article-panel li {
+  color: #3c342c;
+  font-weight: 700;
+  line-height: 1.8;
+}
+
+.article-panel p:last-child {
+  margin-bottom: 0;
+}
+
+.article-panel ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.article-kpis {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.article-kpis div {
+  padding: 16px;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  background: #fff4a6;
+}
+
+.article-kpis span,
+.article-kpis small {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.article-kpis strong {
+  display: block;
+  margin: 8px 0;
+  font-size: 1.4rem;
+}
+
+.breadcrumb {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 900;
+}
+
+.breadcrumb a {
+  color: var(--blue);
+}
+
 .site-footer {
   display: grid;
   gap: 8px;
@@ -894,7 +996,8 @@ strong {
 
   .section-heading h2,
   .broker-band h2,
-  .policy-band h2 {
+  .policy-band h2,
+  .article-hero h1 {
     font-size: 1.75rem;
   }
 
@@ -953,6 +1056,16 @@ strong {
   }
 
   .archive-table div {
+    grid-template-columns: 1fr;
+  }
+
+  .article-hero,
+  .article-body {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .article-kpis {
     grid-template-columns: 1fr;
   }
 }
