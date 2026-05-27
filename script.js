@@ -17,19 +17,37 @@ tabs.forEach((tab) => {
 
 const canvas = document.getElementById("performanceChart");
 const ctx = canvas.getContext("2d");
-const points = [1000000, 1000000, 1000000, 1000000, 1000000, 1000000];
-const lastUpdated = "2026.05.27";
+const points = [
+  1073384.39,
+  1027479.25,
+  1026949.5,
+  1026483.73,
+  1041901.98,
+  1059394.13,
+  1059670.2,
+  1059670.2,
+  1059166.12,
+  1030833.63,
+];
+const lastUpdated = "2026.05.26 EST";
+const startCapital = 1000000;
 
 function formatYen(value) {
-  return `¥${Math.round(value).toLocaleString("ja-JP")}`;
+  return `¥${value.toLocaleString("ja-JP", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })}`;
 }
 
 function drawChart() {
   const width = canvas.width;
   const height = canvas.height;
   const padding = 34;
-  const min = Math.min(...points) - 50000;
-  const max = Math.max(...points) + 50000;
+  const min = Math.min(...points, startCapital) - 25000;
+  const max = Math.max(...points, startCapital) + 25000;
+  const latest = points[points.length - 1];
+  const totalPnl = latest - startCapital;
+  const totalPnlPercent = (totalPnl / startCapital) * 100;
 
   ctx.clearRect(0, 0, width, height);
   ctx.fillStyle = "#fffdf4";
@@ -90,9 +108,9 @@ function drawChart() {
   ctx.font = "700 20px system-ui, sans-serif";
   ctx.fillText(`100万円チャレンジ / ${lastUpdated}`, padding, 34);
   ctx.font = "900 34px system-ui, sans-serif";
-  ctx.fillText(formatYen(points[points.length - 1]), padding, 76);
+  ctx.fillText(formatYen(latest), padding, 76);
   ctx.font = "700 18px system-ui, sans-serif";
-  ctx.fillText("通算損益 ±¥0 / 0.0%", padding, 108);
+  ctx.fillText(`通算損益 +${formatYen(totalPnl)} / +${totalPnlPercent.toFixed(1)}%`, padding, 108);
 }
 
 drawChart();
