@@ -20,7 +20,10 @@
 /robots.txt
   Cache-Control: public, max-age=0, must-revalidate
 
-/data/*
+/data/content.json
+  X-Robots-Tag: noindex
+
+/data/performance.json
   X-Robots-Tag: noindex
 
 /scripts/*
