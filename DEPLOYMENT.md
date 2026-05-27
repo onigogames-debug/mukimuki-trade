@@ -13,7 +13,7 @@ Last updated: 2026-05-27
 - Account: `onigo.games@gmail.com`
 - Project: `mukimuki-trade`
 - Production URL: https://mukimuki-trade.pages.dev
-- Latest deployment URL: https://59ec7d4d.mukimuki-trade.pages.dev
+- Latest deployment URL: https://17fa7173.mukimuki-trade.pages.dev
 - Deployment method: Wrangler direct upload
 
 ## Custom Domains
