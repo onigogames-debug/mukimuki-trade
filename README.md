@@ -12,15 +12,12 @@ python3 -m http.server 4173
 
 ## GitHub
 
-想定リポジトリ:
-
 - GitHub account: `onigogames-debug`
 - Repository name: `mukimuki-trade`
 - Default branch: `main`
+- Repository URL: https://github.com/onigogames-debug/mukimuki-trade
 
 ## Cloudflare Pages
-
-想定設定:
 
 - Cloudflare account: `onigo.games@gmail.com`
 - Project name: `mukimuki-trade`
@@ -28,15 +25,12 @@ python3 -m http.server 4173
 - Framework preset: `None`
 - Build command: 空欄
 - Build output directory: `/`
+- Production URL: https://mukimuki-trade.com
 
 ## Custom Domain
 
-想定ドメイン:
-
 - Primary: `mukimuki-trade.com`
-- Redirect: `www.mukimuki-trade.com` -> `mukimuki-trade.com`
-
-Cloudflare Pages側でCustom domainに `mukimuki-trade.com` を追加し、必要に応じて `www.mukimuki-trade.com` も追加します。DNSはCloudflare側に移管するか、Cloudflareが指定するCNAMEをお名前.com側に設定します。
+- Redirect: `www.mukimuki-trade.com` -> `mukimuki-trade.com` after Cloudflare SSL activation
 
 Current deployment status is tracked in [DEPLOYMENT.md](DEPLOYMENT.md).
 

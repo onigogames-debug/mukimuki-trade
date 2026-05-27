@@ -13,28 +13,31 @@ Last updated: 2026-05-27
 - Account: `onigo.games@gmail.com`
 - Project: `mukimuki-trade`
 - Production URL: https://mukimuki-trade.pages.dev
-- Latest deployment URL: https://f23ef0d5.mukimuki-trade.pages.dev
+- Latest deployment URL: https://f4ca5375.mukimuki-trade.pages.dev
 - Deployment method: Wrangler direct upload
 
 ## Custom Domains
 
 Added to Cloudflare Pages:
 
-- `mukimuki-trade.com` - pending DNS validation
-- `www.mukimuki-trade.com` - pending DNS validation
+- `mukimuki-trade.com` - active / SSL enabled
+- `www.mukimuki-trade.com` - verifying / SSL certificate pending
 
-Current public DNS check:
+Current DNS setup:
 
-- `mukimuki-trade.com` nameservers: `dns1.onamae.com`, `dns2.onamae.com`
-- `mukimuki-trade.com` A record: `150.95.255.38`
-- `www.mukimuki-trade.com` CNAME: not set
+- Registrar: お名前.com
+- Nameservers: `ursula.ns.cloudflare.com`, `wesley.ns.cloudflare.com`
+- `mukimuki-trade.com` CNAME: `mukimuki-trade.pages.dev` (proxied)
+- `www.mukimuki-trade.com` CNAME: `mukimuki-trade.pages.dev` (DNS only while Cloudflare Pages validates)
 
-Cloudflare Pages apex domain activation requires the domain to be added as a Cloudflare DNS zone and the registrar nameservers to be changed from お名前.com defaults to the Cloudflare-assigned nameservers.
+Public verification:
+
+- `https://mukimuki-trade.com` returns `HTTP/2 200`
+- `www.mukimuki-trade.com` resolves to `mukimuki-trade.pages.dev`
+- Cloudflare Pages DNS recheck has been initiated for `www.mukimuki-trade.com`
 
 ## Remaining Action
 
-1. Add `mukimuki-trade.com` as a website/DNS zone in Cloudflare.
-2. Copy the two Cloudflare-assigned nameservers.
-3. In お名前.com, change the domain nameservers to the Cloudflare nameservers.
-4. Wait for DNS propagation.
-5. Confirm both custom domains change from `pending` to `active` in Cloudflare Pages.
+1. Wait for Cloudflare Pages to finish HTTP validation and issue SSL for `www.mukimuki-trade.com`.
+2. Confirm `https://www.mukimuki-trade.com` succeeds.
+3. After `www` is active, optionally switch the Cloudflare DNS record from DNS only to proxied.
