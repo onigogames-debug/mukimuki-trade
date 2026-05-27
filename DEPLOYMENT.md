@@ -13,7 +13,7 @@ Last updated: 2026-05-27
 - Account: `onigo.games@gmail.com`
 - Project: `mukimuki-trade`
 - Production URL: https://mukimuki-trade.pages.dev
-- Latest deployment URL: https://f1cb0f4e.mukimuki-trade.pages.dev
+- Latest deployment URL: https://fdb1dbe9.mukimuki-trade.pages.dev
 - Deployment method: Wrangler direct upload
 
 ## Custom Domains
@@ -45,7 +45,7 @@ No domain action remains. Both apex and `www` custom domains return `HTTP/2 200`
 - Verification: HTML file (`googlefd5cf11d7eb2c415.html`)
 - Sitemap submitted: `https://mukimuki-trade.com/sitemap.xml`
 - RSS feed submitted as sitemap: `https://mukimuki-trade.com/feed.xml` (success)
-- Current sitemap URLs: 17
+- Current sitemap URLs: 18
 - Manual indexing requested: top page and `/performance/`
 
 ## SEO Enhancements
@@ -53,6 +53,7 @@ No domain action remains. Both apex and `www` custom domains return `HTTP/2 200`
 - Search favicon: `/assets/favicon.svg`
 - RSS feed: `/feed.xml`
 - Structured data: `WebSite`, `Blog`, `ItemList`, `BlogPosting`, `BreadcrumbList`, `AboutPage`, `Dataset`
+- Trust structured data: `ProfilePage`, `Person`, `FAQPage`
 - Article Open Graph metadata: locale, published time, modified time, section
 - Category pages: `/category/performance/`, `/category/research/`, `/category/moomoo/`
 - Archive pages: `/archive/`, `/archive/2026-05/`
@@ -61,6 +62,10 @@ No domain action remains. Both apex and `www` custom domains return `HTTP/2 200`
 - Initial content expansion: 3 stock research articles and 3 trade logic articles
 - Official X link: `https://x.com/OnigoGames`
 - Top page banners: Official X and moomoo affiliate introduction as first-view promo banners
+- E-E-A-T page: `/profile/` discloses operator policy, data sources, advertising policy, and investment disclaimer
+- Thin content mitigation: `/performance/` expanded with interpretation, next checks, data verification links, and FAQ
+- Affiliate CVR page: `/moomoo/` rewritten as a reader-first guide with use cases, pros/cons, comparison points, disclosure, and FAQ
+- Internal link design: top, profile, performance, moomoo, archive, category, dataset, and policy pages cross-link key reader journeys
 
 ## AI Crawler Access
 
