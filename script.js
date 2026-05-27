@@ -16,20 +16,45 @@ tabs.forEach((tab) => {
 });
 
 const canvas = document.getElementById("performanceChart");
-const points = [
-  { date: "5/15", value: 1073384.39 },
-  { date: "5/18", value: 1027479.25 },
-  { date: "5/19", value: 1026949.5 },
-  { date: "5/20", value: 1026483.73 },
-  { date: "5/21", value: 1041901.98 },
-  { date: "5/22", value: 1059394.13 },
-  { date: "5/23", value: 1059670.2 },
-  { date: "5/24", value: 1059670.2 },
-  { date: "5/25", value: 1059166.12 },
-  { date: "5/26", value: 1030833.63 },
-];
-const lastUpdated = "2026.05.26 EST";
-const startCapital = 1000000;
+const fallbackPerformance = {
+  startCapitalJpy: 1000000,
+  generatedAtDisplay: "2026.05.27 05:00:25 JST",
+  latest: {
+    reportDateDisplay: "2026.05.26 EST",
+    label: "5/26",
+    jpy: { start: 1060557.02, end: 1030833.63, delta: -29723.39 },
+    usd: { start: 6668.64, end: 6470.22, delta: -198.4219 },
+    summary: {
+      totalTrades: 18,
+      totalBuyUsd: 16287.98,
+      totalSellUsd: 12918.91,
+      totalPnlJpy: 30833.63,
+      totalReturnPct: 3.08,
+      dailyReturnPct: -2.8,
+    },
+    positions: [
+      { symbol: "US.XNDU", shares: 10 },
+      { symbol: "US.TSLA", shares: 7 },
+    ],
+  },
+  history: [
+    { label: "5/15", jpyEnd: 1073384.39 },
+    { label: "5/18", jpyEnd: 1027479.25 },
+    { label: "5/19", jpyEnd: 1026949.5 },
+    { label: "5/20", jpyEnd: 1026483.73 },
+    { label: "5/21", jpyEnd: 1041901.98 },
+    { label: "5/22", jpyEnd: 1059394.13 },
+    { label: "5/23", jpyEnd: 1059670.2 },
+    { label: "5/24", jpyEnd: 1059670.2 },
+    { label: "5/25", jpyEnd: 1059166.12 },
+    { label: "5/26", jpyEnd: 1030833.63 },
+  ],
+};
+let performanceState = fallbackPerformance;
+
+function asNumber(value) {
+  return typeof value === "number" && Number.isFinite(value) ? value : null;
+}
 
 function formatYen(value) {
   return `¥${value.toLocaleString("ja-JP", {
@@ -47,16 +72,95 @@ function formatSignedYen(value) {
   return `${sign}${formatYen(Math.abs(value))}`;
 }
 
-function drawChart() {
+function formatUsd(value) {
+  if (asNumber(value) === null) return "$0.00";
+  return `$${value.toLocaleString("en-US", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })}`;
+}
+
+function formatSignedPercent(value, digits = 1) {
+  if (asNumber(value) === null) return "0.0%";
+  const sign = value >= 0 ? "+" : "";
+  return `${sign}${value.toFixed(digits)}%`;
+}
+
+function setPerformanceText(key, value, polarity = null) {
+  document.querySelectorAll(`[data-performance="${key}"]`).forEach((element) => {
+    element.textContent = value;
+    if (polarity) {
+      element.classList.toggle("positive", polarity === "positive");
+      element.classList.toggle("negative", polarity === "negative");
+    }
+  });
+}
+
+function positionsText(positions = []) {
+  if (!positions.length) return "引け後保有なし";
+  return positions.map((position) => `${position.symbol} ${position.shares}株`).join(" / ");
+}
+
+function getChartPoints(data) {
+  const points = Array.isArray(data.history) ? data.history : [];
+  const validPoints = points.map((point) => ({
+    date: point.label || point.date,
+    value: asNumber(point.jpyEnd ?? point.value),
+  })).filter((point) => point.date && point.value !== null);
+
+  if (validPoints.length >= 2) return validPoints.slice(-12);
+  return fallbackPerformance.history.map((point) => ({
+    date: point.label,
+    value: point.jpyEnd,
+  }));
+}
+
+function updatePerformanceText(data) {
+  const latest = data.latest || {};
+  const summary = latest.summary || {};
+  const jpy = latest.jpy || {};
+  const usd = latest.usd || {};
+  const reportDate = latest.reportDateDisplay || fallbackPerformance.latest.reportDateDisplay;
+  const generatedAt = data.generatedAtDisplay || fallbackPerformance.generatedAtDisplay;
+  const startCapital = asNumber(data.startCapitalJpy) ?? fallbackPerformance.startCapitalJpy;
+  const latestJpy = asNumber(jpy.end) ?? fallbackPerformance.latest.jpy.end;
+  const totalPnl = asNumber(summary.totalPnlJpy) ?? latestJpy - startCapital;
+  const totalReturn = asNumber(summary.totalReturnPct) ?? (totalPnl / startCapital) * 100;
+  const dailyPnl = asNumber(jpy.delta) ?? fallbackPerformance.latest.jpy.delta;
+  const dailyReturn = asNumber(summary.dailyReturnPct) ?? fallbackPerformance.latest.summary.dailyReturnPct;
+  const polarity = (value) => (value >= 0 ? "positive" : "negative");
+
+  setPerformanceText("report-date", reportDate);
+  setPerformanceText("generated-at", generatedAt);
+  setPerformanceText("dashboard-updated", `対象日: ${reportDate} / レポート生成: ${generatedAt}`);
+  setPerformanceText("latest-jpy", formatYen(latestJpy));
+  setPerformanceText("total-pnl", formatSignedYen(totalPnl), polarity(totalPnl));
+  setPerformanceText("daily-pnl", formatSignedYen(dailyPnl), polarity(dailyPnl));
+  setPerformanceText("total-return", formatSignedPercent(totalReturn));
+  setPerformanceText("total-return-label", `100万円比 ${formatSignedPercent(totalReturn)}`);
+  setPerformanceText("daily-return", `日次 ${formatSignedPercent(dailyReturn)}`);
+  setPerformanceText("trade-count", `約定${summary.totalTrades ?? fallbackPerformance.latest.summary.totalTrades}件`);
+  setPerformanceText("jpy-range", `${formatYen(jpy.start ?? fallbackPerformance.latest.jpy.start)} → ${formatYen(latestJpy)}`);
+  setPerformanceText("usd-range", `${formatUsd(usd.start ?? fallbackPerformance.latest.usd.start)} → ${formatUsd(usd.end ?? fallbackPerformance.latest.usd.end)}`);
+  setPerformanceText("trade-flow", `買付 ${formatUsd(summary.totalBuyUsd ?? fallbackPerformance.latest.summary.totalBuyUsd)} / 売却 ${formatUsd(summary.totalSellUsd ?? fallbackPerformance.latest.summary.totalSellUsd)}`);
+  setPerformanceText("positions", positionsText(latest.positions || fallbackPerformance.latest.positions));
+  setPerformanceText("hero-summary", `100万円比 ${formatSignedPercent(totalReturn)}。約定${summary.totalTrades ?? 0}件、引け後保有は${positionsText(latest.positions || fallbackPerformance.latest.positions)}。`);
+  setPerformanceText("latest-title", `${latest.label || fallbackPerformance.latest.label}実績: 100万円比 ${formatSignedPercent(totalReturn)}`);
+}
+
+function drawChart(data = performanceState) {
   if (!canvas) return;
 
   const ctx = canvas.getContext("2d");
   const width = canvas.width;
   const height = canvas.height;
+  const points = getChartPoints(data);
   const values = points.map((point) => point.value);
-  const latest = values[values.length - 1];
+  const startCapital = asNumber(data.startCapitalJpy) ?? fallbackPerformance.startCapitalJpy;
+  const latest = asNumber(data.latest?.jpy?.end) ?? values[values.length - 1];
   const totalPnl = latest - startCapital;
   const totalPnlPercent = (totalPnl / startCapital) * 100;
+  const lastUpdated = data.latest?.reportDateDisplay || fallbackPerformance.latest.reportDateDisplay;
   const padding = { top: 96, right: 34, bottom: 68, left: 98 };
   const chartWidth = width - padding.left - padding.right;
   const chartHeight = height - padding.top - padding.bottom;
@@ -189,7 +293,21 @@ function drawChart() {
   ctx.font = "900 14px system-ui, sans-serif";
   ctx.textAlign = "right";
   ctx.textBaseline = "bottom";
-  ctx.fillText("5/26", latestPoint.x - 12, latestPoint.y - 12);
+  ctx.fillText(points[points.length - 1].date, latestPoint.x - 12, latestPoint.y - 12);
 }
 
-drawChart();
+async function loadPerformanceData() {
+  try {
+    const response = await fetch("/data/performance.json", { cache: "no-store" });
+    if (!response.ok) throw new Error(`Performance data returned ${response.status}`);
+    performanceState = await response.json();
+  } catch (error) {
+    performanceState = fallbackPerformance;
+  }
+
+  updatePerformanceText(performanceState);
+  drawChart(performanceState);
+}
+
+drawChart(fallbackPerformance);
+loadPerformanceData();

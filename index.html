@@ -128,24 +128,24 @@
           <div class="hero-panel-head">
             <div>
               <span>最新公開データ</span>
-              <strong>2026.05.26 EST</strong>
+              <strong data-performance="report-date">2026.05.26 EST</strong>
             </div>
           </div>
           <dl class="metric-list">
             <div>
               <dt>現在評価額</dt>
-              <dd>¥1,030,833.63</dd>
+              <dd data-performance="latest-jpy">¥1,030,833.63</dd>
             </div>
             <div>
               <dt>通算損益</dt>
-              <dd class="positive">+¥30,833.63</dd>
+              <dd class="positive" data-performance="total-pnl">+¥30,833.63</dd>
             </div>
             <div>
               <dt>前日比</dt>
-              <dd class="negative">-¥29,723.39</dd>
+              <dd class="negative" data-performance="daily-pnl">-¥29,723.39</dd>
             </div>
           </dl>
-          <p>100万円比 +3.1%。約定18件、引け後保有はUS.XNDU 10株 / US.TSLA 7株。</p>
+          <p data-performance="hero-summary">100万円比 +3.1%。約定18件、引け後保有はUS.XNDU 10株 / US.TSLA 7株。</p>
         </aside>
       </div>
     </section>
@@ -153,7 +153,7 @@
     <section class="reading-path" aria-label="注目コンテンツ">
       <a class="story-card feature-story" href="/performance/">
         <span>FEATURED</span>
-        <strong>5/26実績レポート</strong>
+        <strong data-performance="latest-title">5/26実績レポート</strong>
         <p>100万円比 +3.1%。日次の資産推移、取引数、保有銘柄をまとめて確認。</p>
         <small>公開実績を読む</small>
       </a>
@@ -176,7 +176,7 @@
         <div>
           <p class="eyebrow">PERFORMANCE</p>
           <h2>Autotrade実績データ</h2>
-          <p>対象日: 2026.05.26 EST / レポート生成: 2026.05.27 05:00:25 JST</p>
+          <p data-performance="dashboard-updated">対象日: 2026.05.26 EST / レポート生成: 2026.05.27 05:00:25 JST</p>
         </div>
         <a class="text-link" href="#archive">履歴を見る</a>
       </div>
@@ -189,18 +189,18 @@
         </article>
         <article class="stat-card highlight">
           <span>現在評価額</span>
-          <strong>¥1,030,833.63</strong>
+          <strong data-performance="latest-jpy">¥1,030,833.63</strong>
           <small>JPY総資産・終値</small>
         </article>
         <article class="stat-card">
           <span>通算損益</span>
-          <strong class="positive">+¥30,833.63</strong>
-          <small>100万円比 +3.1%</small>
+          <strong class="positive" data-performance="total-pnl">+¥30,833.63</strong>
+          <small data-performance="total-return-label">100万円比 +3.1%</small>
         </article>
         <article class="stat-card">
           <span>前日比</span>
-          <strong class="negative">-¥29,723.39</strong>
-          <small>日次 -2.8%</small>
+          <strong class="negative" data-performance="daily-pnl">-¥29,723.39</strong>
+          <small data-performance="daily-return">日次 -2.8%</small>
         </article>
       </div>
 
@@ -215,10 +215,10 @@
         <aside class="report-card">
           <h3>この日の要点</h3>
           <dl>
-            <div><dt>JPY総資産</dt><dd>¥1,060,557.02 → ¥1,030,833.63</dd></div>
-            <div><dt>USD総資産</dt><dd>$6,668.64 → $6,470.22</dd></div>
-            <div><dt>取引</dt><dd>買付 $16,287.98 / 売却 $12,918.91</dd></div>
-            <div><dt>保有</dt><dd>US.XNDU 10株、US.TSLA 7株</dd></div>
+            <div><dt>JPY総資産</dt><dd data-performance="jpy-range">¥1,060,557.02 → ¥1,030,833.63</dd></div>
+            <div><dt>USD総資産</dt><dd data-performance="usd-range">$6,668.64 → $6,470.22</dd></div>
+            <div><dt>取引</dt><dd data-performance="trade-flow">買付 $16,287.98 / 売却 $12,918.91</dd></div>
+            <div><dt>保有</dt><dd data-performance="positions">US.XNDU 10株、US.TSLA 7株</dd></div>
           </dl>
         </aside>
       </div>
@@ -246,7 +246,7 @@
           <img src="assets/mukimuki-performance.png" alt="">
           <div>
             <span class="post-kicker">実績公開</span>
-            <h3>5/26実績: 100万円比 +3.1%</h3>
+            <h3 data-performance="latest-title">5/26実績: 100万円比 +3.1%</h3>
             <p>評価額、前日比、取引件数、保有銘柄をひと目で確認。次回更新時も同じ型で比較できます。</p>
             <a href="/performance/">実績記事へ</a>
           </div>
@@ -307,8 +307,8 @@
         <h2>実績履歴</h2>
       </div>
       <div class="archive-table" role="table" aria-label="公開実績アーカイブ">
-        <div role="row"><strong>2026年5月26日</strong><span>+¥30,833.63</span><em>100万円比 +3.1%</em><a href="#performance">見る</a></div>
-        <div role="row"><strong>日次変化</strong><span>-¥29,723.39</span><em>JPY総資産の前日比</em><a href="#performance">見る</a></div>
+        <div role="row"><strong data-performance="report-date">2026.05.26 EST</strong><span data-performance="total-pnl">+¥30,833.63</span><em data-performance="total-return-label">100万円比 +3.1%</em><a href="#performance">見る</a></div>
+        <div role="row"><strong>日次変化</strong><span data-performance="daily-pnl">-¥29,723.39</span><em>JPY総資産の前日比</em><a href="#performance">見る</a></div>
         <div role="row"><strong>更新方針</strong><span>Autotrade</span><em>実績データを基準に更新</em><a href="#policy">見る</a></div>
       </div>
     </section>

@@ -18,6 +18,14 @@ npm run seo:generate
 
 `data/content.json` をもとに `sitemap.xml` と `feed.xml` を生成します。記事やカテゴリを増やすときは、ページ作成後にこのコマンドを実行します。
 
+## 実績データ更新
+
+```sh
+npm run performance:import
+```
+
+`../../moomoo/reports` の最新Autotradeレポートを読み取り、`data/performance.json` と `datasets/performance-latest.json` を生成します。実績更新後はこのコマンドを実行してから `npm run seo:generate` と公開作業を行います。
+
 ## GitHub
 
 - GitHub account: `onigogames-debug`

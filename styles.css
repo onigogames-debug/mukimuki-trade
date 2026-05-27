@@ -842,6 +842,27 @@ strong {
   margin-bottom: 0;
 }
 
+.data-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.data-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 10px 14px;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  background: white;
+  box-shadow: 4px 4px 0 var(--ink);
+  color: var(--ink);
+  font-weight: 900;
+  text-decoration: none;
+}
+
 .collection-metrics {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
