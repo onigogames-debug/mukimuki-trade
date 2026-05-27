@@ -13,7 +13,7 @@ Last updated: 2026-05-27
 - Account: `onigo.games@gmail.com`
 - Project: `mukimuki-trade`
 - Production URL: https://mukimuki-trade.pages.dev
-- Latest deployment URL: https://41b85b35.mukimuki-trade.pages.dev
+- Latest deployment URL: https://9f255fdf.mukimuki-trade.pages.dev
 - Deployment method: Wrangler direct upload
 
 ## Custom Domains
@@ -45,7 +45,7 @@ No domain action remains. Both apex and `www` custom domains return `HTTP/2 200`
 - Verification: HTML file (`googlefd5cf11d7eb2c415.html`)
 - Sitemap submitted: `https://mukimuki-trade.com/sitemap.xml`
 - RSS feed submitted as sitemap: `https://mukimuki-trade.com/feed.xml` (success)
-- Current sitemap URLs: 10
+- Current sitemap URLs: 17
 - Manual indexing requested: top page and `/performance/`
 
 ## SEO Enhancements
@@ -58,3 +58,4 @@ No domain action remains. Both apex and `www` custom domains return `HTTP/2 200`
 - Archive pages: `/archive/`, `/archive/2026-05/`
 - SEO generator: `npm run seo:generate` creates `sitemap.xml` and `feed.xml` from `data/content.json`
 - Public performance dataset: `/datasets/performance-latest.json` and date-stamped JSON files
+- Initial content expansion: 3 stock research articles and 3 trade logic articles
