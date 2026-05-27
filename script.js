@@ -16,7 +16,6 @@ tabs.forEach((tab) => {
 });
 
 const canvas = document.getElementById("performanceChart");
-const ctx = canvas.getContext("2d");
 const points = [
   1073384.39,
   1027479.25,
@@ -39,7 +38,15 @@ function formatYen(value) {
   })}`;
 }
 
+function formatSignedYen(value) {
+  const sign = value >= 0 ? "+" : "-";
+  return `${sign}${formatYen(Math.abs(value))}`;
+}
+
 function drawChart() {
+  if (!canvas) return;
+
+  const ctx = canvas.getContext("2d");
   const width = canvas.width;
   const height = canvas.height;
   const padding = 34;
@@ -110,7 +117,7 @@ function drawChart() {
   ctx.font = "900 34px system-ui, sans-serif";
   ctx.fillText(formatYen(latest), padding, 76);
   ctx.font = "700 18px system-ui, sans-serif";
-  ctx.fillText(`通算損益 +${formatYen(totalPnl)} / +${totalPnlPercent.toFixed(1)}%`, padding, 108);
+  ctx.fillText(`通算損益 ${formatSignedYen(totalPnl)} / ${totalPnlPercent >= 0 ? "+" : ""}${totalPnlPercent.toFixed(1)}%`, padding, 108);
 }
 
 drawChart();
