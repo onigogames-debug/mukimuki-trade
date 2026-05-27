@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">MUKIMUKI trade</title>
+  <rect width="128" height="128" rx="24" fill="#ffd928"/>
+  <path d="M21 77c0-25 18-44 43-44s43 19 43 44v13c0 12-10 22-22 22H43c-12 0-22-10-22-22V77Z" fill="#ffe65a"/>
+  <path d="M21 79c-10-2-16-10-15-21 1-10 10-17 20-15l12 2-6 34H21Zm86 0c10-2 16-10 15-21-1-10-10-17-20-15l-12 2 6 34h11Z" fill="#f43f3f"/>
+  <circle cx="48" cy="62" r="14" fill="#fff"/>
+  <circle cx="80" cy="62" r="14" fill="#fff"/>
+  <circle cx="50" cy="64" r="6" fill="#111"/>
+  <circle cx="78" cy="64" r="6" fill="#111"/>
+  <ellipse cx="64" cy="86" rx="22" ry="19" fill="#f97353" stroke="#111" stroke-width="5"/>
+  <path d="M54 86c5 7 15 7 20 0" fill="none" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+  <path d="M55 25c4-8 14-8 18 0M64 22V10" fill="none" stroke="#111" stroke-width="5" stroke-linecap="round"/>
+</svg>
