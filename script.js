@@ -132,7 +132,7 @@ function updatePerformanceText(data) {
 
   setPerformanceText("report-date", reportDate);
   setPerformanceText("generated-at", generatedAt);
-  setPerformanceText("dashboard-updated", `対象日: ${reportDate} / レポート生成: ${generatedAt}`);
+  setPerformanceText("dashboard-updated", `最新データ: ${reportDate} / 更新: ${generatedAt}`);
   setPerformanceText("latest-jpy", formatYen(latestJpy));
   setPerformanceText("total-pnl", formatSignedYen(totalPnl), polarity(totalPnl));
   setPerformanceText("daily-pnl", formatSignedYen(dailyPnl), polarity(dailyPnl));
@@ -144,8 +144,8 @@ function updatePerformanceText(data) {
   setPerformanceText("usd-range", `${formatUsd(usd.start ?? fallbackPerformance.latest.usd.start)} → ${formatUsd(usd.end ?? fallbackPerformance.latest.usd.end)}`);
   setPerformanceText("trade-flow", `買付 ${formatUsd(summary.totalBuyUsd ?? fallbackPerformance.latest.summary.totalBuyUsd)} / 売却 ${formatUsd(summary.totalSellUsd ?? fallbackPerformance.latest.summary.totalSellUsd)}`);
   setPerformanceText("positions", positionsText(latest.positions || fallbackPerformance.latest.positions));
-  setPerformanceText("hero-summary", `100万円比 ${formatSignedPercent(totalReturn)}。約定${summary.totalTrades ?? 0}件、引け後保有は${positionsText(latest.positions || fallbackPerformance.latest.positions)}。`);
-  setPerformanceText("latest-title", `${latest.label || fallbackPerformance.latest.label}実績: 100万円比 ${formatSignedPercent(totalReturn)}`);
+  setPerformanceText("hero-summary", `今の状態: 100万円比 ${formatSignedPercent(totalReturn)}。約定${summary.totalTrades ?? 0}件、引け後保有は${positionsText(latest.positions || fallbackPerformance.latest.positions)}。`);
+  setPerformanceText("latest-title", `${latest.label || fallbackPerformance.latest.label}の実績: 100万円比 ${formatSignedPercent(totalReturn)}`);
 }
 
 function drawChart(data = performanceState) {
@@ -174,10 +174,12 @@ function drawChart(data = performanceState) {
   ctx.clearRect(0, 0, width, height);
   ctx.fillStyle = "#fffdf4";
   ctx.fillRect(0, 0, width, height);
+  ctx.textAlign = "left";
+  ctx.textBaseline = "alphabetic";
 
   ctx.fillStyle = "#17140f";
   ctx.font = "700 18px system-ui, sans-serif";
-  ctx.fillText(`100万円チャレンジ / ${lastUpdated}`, padding.left, 30);
+  ctx.fillText(`資産推移 / ${lastUpdated}`, padding.left, 30);
   ctx.font = "900 30px system-ui, sans-serif";
   ctx.fillText(formatYen(latest), padding.left, 64);
   ctx.font = "700 16px system-ui, sans-serif";
@@ -218,7 +220,7 @@ function drawChart(data = performanceState) {
   ctx.restore();
   ctx.fillStyle = "#2458d3";
   ctx.textAlign = "left";
-  ctx.fillText("開始 ¥1,000,000", padding.left + 8, baselineY - 12);
+  ctx.fillText("スタート ¥1,000,000", padding.left + 8, baselineY - 12);
 
   ctx.fillStyle = "rgba(23, 20, 15, 0.72)";
   ctx.font = "700 12px system-ui, sans-serif";
