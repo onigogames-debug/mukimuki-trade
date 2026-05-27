@@ -36,7 +36,6 @@ Current deployment status is tracked in [DEPLOYMENT.md](DEPLOYMENT.md).
 
 ## 公開前チェック
 
-- アフィリエイトリンクを本番URLへ差し替える
-- 実績数値がサンプルである箇所を実データへ差し替える
-- プライバシーポリシー、免責事項、運営者情報ページを追加する
-- Google Search Console / Analytics / Cloudflare Web Analyticsを設定する
+- Search Console: `https://mukimuki-trade.com/` を登録済み、`sitemap.xml` 送信済み
+- Analytics: Google Analytics / Cloudflare Web Analytics を必要に応じて追加する
+- 運営情報: 実名・連絡先を公開する場合は `/about/` に追記する
