@@ -18,6 +18,14 @@ npm run seo:generate
 
 `data/content.json` をもとに `sitemap.xml` と `feed.xml` を生成します。記事やカテゴリを増やすときは、ページ作成後にこのコマンドを実行します。
 
+## 記事生成
+
+```sh
+npm run articles:generate
+```
+
+`data/articles.json` をもとに、銘柄検討と投資ロジックの個別記事ページを生成します。記事本文を更新したら、このコマンドを実行してからSEOファイルを再生成します。
+
 ## 実績データ更新
 
 ```sh

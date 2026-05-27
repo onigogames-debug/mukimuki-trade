@@ -23,6 +23,9 @@
 /data/content.json
   X-Robots-Tag: noindex
 
+/data/articles.json
+  X-Robots-Tag: noindex
+
 /data/performance.json
   X-Robots-Tag: noindex
 

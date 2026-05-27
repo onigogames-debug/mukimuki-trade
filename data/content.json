@@ -4,12 +4,19 @@
     "title": "MUKIMUKI trade",
     "description": "100万円からの株式投資実績、銘柄検討、相場メモを公開する投資ブログ。",
     "language": "ja",
-    "lastBuildDate": "2026-05-27T16:45:00+09:00"
+    "lastBuildDate": "2026-05-27T18:00:00+09:00"
   },
   "pages": [
     { "path": "/", "lastmod": "2026-05-27", "changefreq": "daily", "priority": "1.0" },
     { "path": "/performance/", "lastmod": "2026-05-27", "changefreq": "daily", "priority": "0.9" },
     { "path": "/research/", "lastmod": "2026-05-27", "changefreq": "weekly", "priority": "0.8" },
+    { "path": "/research/ai-infrastructure/", "lastmod": "2026-05-27", "changefreq": "monthly", "priority": "0.8" },
+    { "path": "/research/app-software-fintech/", "lastmod": "2026-05-27", "changefreq": "monthly", "priority": "0.8" },
+    { "path": "/research/frontier-growth/", "lastmod": "2026-05-27", "changefreq": "monthly", "priority": "0.8" },
+    { "path": "/logic/", "lastmod": "2026-05-27", "changefreq": "weekly", "priority": "0.8" },
+    { "path": "/logic/signal-score/", "lastmod": "2026-05-27", "changefreq": "monthly", "priority": "0.75" },
+    { "path": "/logic/entry-risk/", "lastmod": "2026-05-27", "changefreq": "monthly", "priority": "0.75" },
+    { "path": "/logic/exit-review/", "lastmod": "2026-05-27", "changefreq": "monthly", "priority": "0.75" },
     { "path": "/moomoo/", "lastmod": "2026-05-27", "changefreq": "weekly", "priority": "0.7" },
     { "path": "/category/performance/", "lastmod": "2026-05-27", "changefreq": "weekly", "priority": "0.7" },
     { "path": "/category/research/", "lastmod": "2026-05-27", "changefreq": "weekly", "priority": "0.7" },
@@ -25,6 +32,48 @@
       "description": "2026年5月26日ESTの公開実績。評価額、通算損益、前日比、取引数、保有銘柄を整理。",
       "pubDate": "2026-05-27T15:00:00+09:00",
       "category": "実績公開"
+    },
+    {
+      "title": "AIインフラ銘柄の候補整理",
+      "path": "/research/ai-infrastructure/",
+      "description": "AIインフラ関連の投資候補を、半導体、メモリ、通信部品、周辺インフラに分けて整理する市場メモ。",
+      "pubDate": "2026-05-27T17:20:00+09:00",
+      "category": "銘柄検討"
+    },
+    {
+      "title": "アプリ・広告・金融テック銘柄",
+      "path": "/research/app-software-fintech/",
+      "description": "アプリ収益化、広告テック、金融テック銘柄を、売上成長だけでなく利益化と金利感応度で整理。",
+      "pubDate": "2026-05-27T17:25:00+09:00",
+      "category": "銘柄検討"
+    },
+    {
+      "title": "フロンティア成長株の候補整理",
+      "path": "/research/frontier-growth/",
+      "description": "EV、宇宙、衛星、小型テーマ株を高ボラティリティ枠として分け、候補化と撤退条件を整理。",
+      "pubDate": "2026-05-27T17:30:00+09:00",
+      "category": "銘柄検討"
+    },
+    {
+      "title": "投資ロジック紹介1: シグナルの見方",
+      "path": "/logic/signal-score/",
+      "description": "トレンド、出来高、材料を使ったシグナル確認の考え方を紹介。",
+      "pubDate": "2026-05-27T17:35:00+09:00",
+      "category": "投資ロジック"
+    },
+    {
+      "title": "投資ロジック紹介2: エントリーとリスク",
+      "path": "/logic/entry-risk/",
+      "description": "分割エントリー、損切り幅、株数調整の考え方を紹介。",
+      "pubDate": "2026-05-27T17:40:00+09:00",
+      "category": "投資ロジック"
+    },
+    {
+      "title": "投資ロジック紹介3: 利確と撤退",
+      "path": "/logic/exit-review/",
+      "description": "利確、撤退、時間切れ、振り返りログの考え方を紹介。",
+      "pubDate": "2026-05-27T17:45:00+09:00",
+      "category": "投資ロジック"
     },
     {
       "title": "銘柄検討テンプレ",

@@ -5,7 +5,7 @@
     <link>https://mukimuki-trade.com/</link>
     <description>100万円からの株式投資実績、銘柄検討、相場メモを公開する投資ブログ。</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 27 May 2026 07:45:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 27 May 2026 09:00:00 GMT</lastBuildDate>
     <atom:link href="https://mukimuki-trade.com/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>5/26実績レポート: 100万円比 +3.1%</title>
@@ -14,6 +14,54 @@
       <pubDate>Wed, 27 May 2026 06:00:00 GMT</pubDate>
       <category>実績公開</category>
       <description>2026年5月26日ESTの公開実績。評価額、通算損益、前日比、取引数、保有銘柄を整理。</description>
+    </item>
+    <item>
+      <title>AIインフラ銘柄の候補整理</title>
+      <link>https://mukimuki-trade.com/research/ai-infrastructure/</link>
+      <guid isPermaLink="true">https://mukimuki-trade.com/research/ai-infrastructure/</guid>
+      <pubDate>Wed, 27 May 2026 08:20:00 GMT</pubDate>
+      <category>銘柄検討</category>
+      <description>AIインフラ関連の投資候補を、半導体、メモリ、通信部品、周辺インフラに分けて整理する市場メモ。</description>
+    </item>
+    <item>
+      <title>アプリ・広告・金融テック銘柄</title>
+      <link>https://mukimuki-trade.com/research/app-software-fintech/</link>
+      <guid isPermaLink="true">https://mukimuki-trade.com/research/app-software-fintech/</guid>
+      <pubDate>Wed, 27 May 2026 08:25:00 GMT</pubDate>
+      <category>銘柄検討</category>
+      <description>アプリ収益化、広告テック、金融テック銘柄を、売上成長だけでなく利益化と金利感応度で整理。</description>
+    </item>
+    <item>
+      <title>フロンティア成長株の候補整理</title>
+      <link>https://mukimuki-trade.com/research/frontier-growth/</link>
+      <guid isPermaLink="true">https://mukimuki-trade.com/research/frontier-growth/</guid>
+      <pubDate>Wed, 27 May 2026 08:30:00 GMT</pubDate>
+      <category>銘柄検討</category>
+      <description>EV、宇宙、衛星、小型テーマ株を高ボラティリティ枠として分け、候補化と撤退条件を整理。</description>
+    </item>
+    <item>
+      <title>投資ロジック紹介1: シグナルの見方</title>
+      <link>https://mukimuki-trade.com/logic/signal-score/</link>
+      <guid isPermaLink="true">https://mukimuki-trade.com/logic/signal-score/</guid>
+      <pubDate>Wed, 27 May 2026 08:35:00 GMT</pubDate>
+      <category>投資ロジック</category>
+      <description>トレンド、出来高、材料を使ったシグナル確認の考え方を紹介。</description>
+    </item>
+    <item>
+      <title>投資ロジック紹介2: エントリーとリスク</title>
+      <link>https://mukimuki-trade.com/logic/entry-risk/</link>
+      <guid isPermaLink="true">https://mukimuki-trade.com/logic/entry-risk/</guid>
+      <pubDate>Wed, 27 May 2026 08:40:00 GMT</pubDate>
+      <category>投資ロジック</category>
+      <description>分割エントリー、損切り幅、株数調整の考え方を紹介。</description>
+    </item>
+    <item>
+      <title>投資ロジック紹介3: 利確と撤退</title>
+      <link>https://mukimuki-trade.com/logic/exit-review/</link>
+      <guid isPermaLink="true">https://mukimuki-trade.com/logic/exit-review/</guid>
+      <pubDate>Wed, 27 May 2026 08:45:00 GMT</pubDate>
+      <category>投資ロジック</category>
+      <description>利確、撤退、時間切れ、振り返りログの考え方を紹介。</description>
     </item>
     <item>
       <title>銘柄検討テンプレ</title>

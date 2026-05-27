@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "preview": "python3 -m http.server 4173",
+    "articles:generate": "node scripts/generate-articles.mjs",
     "performance:import": "node scripts/import-performance-report.mjs",
     "seo:generate": "node scripts/generate-seo.mjs",
     "deploy": "npx wrangler pages deploy . --project-name mukimuki-trade"
