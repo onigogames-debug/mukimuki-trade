@@ -333,36 +333,61 @@ strong {
 
 .reading-path {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
+  grid-template-columns: 1.35fr repeat(2, minmax(0, 1fr));
+  gap: 16px;
   max-width: 1120px;
-  margin: 18px auto 0;
-  padding: 0 32px 34px;
+  margin: 0 auto;
+  padding: 28px 32px 44px;
 }
 
 .reading-path a {
   display: grid;
-  gap: 6px;
-  padding: 16px;
+  align-content: start;
+  gap: 10px;
+  min-height: 178px;
+  padding: 20px;
 }
 
 .reading-path span {
-  display: grid;
-  width: 30px;
-  height: 30px;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--sun);
+  width: max-content;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: rgba(36, 88, 211, 0.12);
+  color: var(--blue);
+  font-size: 0.72rem;
   font-weight: 900;
 }
 
 .reading-path strong {
-  font-size: 1rem;
+  font-size: 1.35rem;
+  line-height: 1.25;
+}
+
+.reading-path p {
+  margin-bottom: 0;
+  color: #3c342c;
+  font-weight: 700;
+  line-height: 1.65;
 }
 
 .reading-path small {
   color: var(--muted);
-  font-weight: 700;
+  font-weight: 900;
+}
+
+.feature-story {
+  background: var(--ink) !important;
+  color: white;
+}
+
+.feature-story span {
+  background: var(--sun);
+  color: var(--ink);
+}
+
+.feature-story p,
+.feature-story small {
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .section-heading {

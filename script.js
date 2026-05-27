@@ -17,16 +17,16 @@ tabs.forEach((tab) => {
 
 const canvas = document.getElementById("performanceChart");
 const points = [
-  1073384.39,
-  1027479.25,
-  1026949.5,
-  1026483.73,
-  1041901.98,
-  1059394.13,
-  1059670.2,
-  1059670.2,
-  1059166.12,
-  1030833.63,
+  { date: "5/15", value: 1073384.39 },
+  { date: "5/18", value: 1027479.25 },
+  { date: "5/19", value: 1026949.5 },
+  { date: "5/20", value: 1026483.73 },
+  { date: "5/21", value: 1041901.98 },
+  { date: "5/22", value: 1059394.13 },
+  { date: "5/23", value: 1059670.2 },
+  { date: "5/24", value: 1059670.2 },
+  { date: "5/25", value: 1059166.12 },
+  { date: "5/26", value: 1030833.63 },
 ];
 const lastUpdated = "2026.05.26 EST";
 const startCapital = 1000000;
@@ -36,6 +36,10 @@ function formatYen(value) {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   })}`;
+}
+
+function formatAxisYen(value) {
+  return `¥${Math.round(value).toLocaleString("ja-JP")}`;
 }
 
 function formatSignedYen(value) {
@@ -49,42 +53,111 @@ function drawChart() {
   const ctx = canvas.getContext("2d");
   const width = canvas.width;
   const height = canvas.height;
-  const padding = 34;
-  const min = Math.min(...points, startCapital) - 25000;
-  const max = Math.max(...points, startCapital) + 25000;
-  const latest = points[points.length - 1];
+  const values = points.map((point) => point.value);
+  const latest = values[values.length - 1];
   const totalPnl = latest - startCapital;
   const totalPnlPercent = (totalPnl / startCapital) * 100;
+  const padding = { top: 96, right: 34, bottom: 68, left: 98 };
+  const chartWidth = width - padding.left - padding.right;
+  const chartHeight = height - padding.top - padding.bottom;
+  const rawMin = Math.min(...values, startCapital);
+  const rawMax = Math.max(...values, startCapital);
+  const min = Math.floor((rawMin - 15000) / 10000) * 10000;
+  const max = Math.ceil((rawMax + 15000) / 10000) * 10000;
+  const xFor = (index) => padding.left + (chartWidth / (points.length - 1)) * index;
+  const yFor = (value) => padding.top + chartHeight - ((value - min) / (max - min)) * chartHeight;
 
   ctx.clearRect(0, 0, width, height);
   ctx.fillStyle = "#fffdf4";
   ctx.fillRect(0, 0, width, height);
 
-  ctx.strokeStyle = "rgba(23, 20, 15, 0.12)";
+  ctx.fillStyle = "#17140f";
+  ctx.font = "700 18px system-ui, sans-serif";
+  ctx.fillText(`100万円チャレンジ / ${lastUpdated}`, padding.left, 30);
+  ctx.font = "900 30px system-ui, sans-serif";
+  ctx.fillText(formatYen(latest), padding.left, 64);
+  ctx.font = "700 16px system-ui, sans-serif";
+  ctx.fillText(`通算損益 ${formatSignedYen(totalPnl)} / ${totalPnlPercent >= 0 ? "+" : ""}${totalPnlPercent.toFixed(1)}%`, padding.left, 88);
+
+  ctx.strokeStyle = "rgba(23, 20, 15, 0.2)";
   ctx.lineWidth = 2;
-  for (let i = 0; i < 5; i += 1) {
-    const y = padding + ((height - padding * 2) / 4) * i;
+  ctx.beginPath();
+  ctx.moveTo(padding.left, padding.top);
+  ctx.lineTo(padding.left, padding.top + chartHeight);
+  ctx.lineTo(width - padding.right, padding.top + chartHeight);
+  ctx.stroke();
+
+  ctx.strokeStyle = "rgba(23, 20, 15, 0.12)";
+  ctx.fillStyle = "rgba(23, 20, 15, 0.72)";
+  ctx.font = "700 12px system-ui, sans-serif";
+  ctx.textAlign = "right";
+  ctx.textBaseline = "middle";
+  const yTickCount = 5;
+  for (let i = 0; i < yTickCount; i += 1) {
+    const value = min + ((max - min) / (yTickCount - 1)) * i;
+    const y = yFor(value);
     ctx.beginPath();
-    ctx.moveTo(padding, y);
-    ctx.lineTo(width - padding, y);
+    ctx.moveTo(padding.left, y);
+    ctx.lineTo(width - padding.right, y);
     ctx.stroke();
+    ctx.fillText(formatAxisYen(value), padding.left - 12, y);
   }
 
-  const coords = points.map((value, index) => {
-    const x = padding + ((width - padding * 2) / (points.length - 1)) * index;
-    const y = height - padding - ((value - min) / (max - min)) * (height - padding * 2);
-    return { x, y };
+  const baselineY = yFor(startCapital);
+  ctx.save();
+  ctx.setLineDash([8, 7]);
+  ctx.strokeStyle = "rgba(36, 88, 211, 0.45)";
+  ctx.beginPath();
+  ctx.moveTo(padding.left, baselineY);
+  ctx.lineTo(width - padding.right, baselineY);
+  ctx.stroke();
+  ctx.restore();
+  ctx.fillStyle = "#2458d3";
+  ctx.textAlign = "left";
+  ctx.fillText("開始 ¥1,000,000", padding.left + 8, baselineY - 12);
+
+  ctx.fillStyle = "rgba(23, 20, 15, 0.72)";
+  ctx.font = "700 12px system-ui, sans-serif";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "top";
+  points.forEach((point, index) => {
+    const x = xFor(index);
+    ctx.beginPath();
+    ctx.moveTo(x, padding.top + chartHeight);
+    ctx.lineTo(x, padding.top + chartHeight + 6);
+    ctx.strokeStyle = "rgba(23, 20, 15, 0.24)";
+    ctx.stroke();
+    ctx.fillText(point.date, x, padding.top + chartHeight + 12);
   });
+
+  ctx.save();
+  ctx.fillStyle = "rgba(23, 20, 15, 0.76)";
+  ctx.font = "800 13px system-ui, sans-serif";
+  ctx.textAlign = "center";
+  ctx.translate(20, padding.top + chartHeight / 2);
+  ctx.rotate(-Math.PI / 2);
+  ctx.fillText("金額（円）", 0, 0);
+  ctx.restore();
+
+  ctx.fillStyle = "rgba(23, 20, 15, 0.76)";
+  ctx.font = "800 13px system-ui, sans-serif";
+  ctx.textAlign = "center";
+  ctx.fillText("日付（EST）", padding.left + chartWidth / 2, height - 16);
+
+  const coords = points.map((point, index) => ({
+    x: xFor(index),
+    y: yFor(point.value),
+  }));
 
   ctx.beginPath();
   coords.forEach((point, index) => {
     if (index === 0) ctx.moveTo(point.x, point.y);
     else ctx.lineTo(point.x, point.y);
   });
-  ctx.lineTo(width - padding, height - padding);
-  ctx.lineTo(padding, height - padding);
+  ctx.lineTo(width - padding.right, padding.top + chartHeight);
+  ctx.lineTo(padding.left, padding.top + chartHeight);
   ctx.closePath();
-  const gradient = ctx.createLinearGradient(0, padding, 0, height - padding);
+  const gradient = ctx.createLinearGradient(0, padding.top, 0, padding.top + chartHeight);
   gradient.addColorStop(0, "rgba(239, 59, 50, 0.32)");
   gradient.addColorStop(1, "rgba(255, 217, 40, 0.02)");
   ctx.fillStyle = gradient;
@@ -111,13 +184,12 @@ function drawChart() {
     ctx.stroke();
   });
 
+  const latestPoint = coords[coords.length - 1];
   ctx.fillStyle = "#17140f";
-  ctx.font = "700 20px system-ui, sans-serif";
-  ctx.fillText(`100万円チャレンジ / ${lastUpdated}`, padding, 34);
-  ctx.font = "900 34px system-ui, sans-serif";
-  ctx.fillText(formatYen(latest), padding, 76);
-  ctx.font = "700 18px system-ui, sans-serif";
-  ctx.fillText(`通算損益 ${formatSignedYen(totalPnl)} / ${totalPnlPercent >= 0 ? "+" : ""}${totalPnlPercent.toFixed(1)}%`, padding, 108);
+  ctx.font = "900 14px system-ui, sans-serif";
+  ctx.textAlign = "right";
+  ctx.textBaseline = "bottom";
+  ctx.fillText("5/26", latestPoint.x - 12, latestPoint.y - 12);
 }
 
 drawChart();

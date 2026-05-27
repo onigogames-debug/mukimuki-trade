@@ -76,26 +76,24 @@
       </div>
     </section>
 
-    <section class="reading-path" aria-label="読む順番">
-      <a href="#x-feed">
-        <span>1</span>
-        <strong>まずXで今を確認</strong>
-        <small>最新投稿をそのまま表示</small>
+    <section class="reading-path" aria-label="注目コンテンツ">
+      <a class="story-card feature-story" href="#performance">
+        <span>FEATURED</span>
+        <strong>5/26実績レポート</strong>
+        <p>100万円比 +3.1%。日次の資産推移、取引数、保有銘柄をまとめて確認。</p>
+        <small>公開実績を読む</small>
       </a>
-      <a href="#performance">
-        <span>2</span>
-        <strong>次に実績を見る</strong>
-        <small>評価額・損益・取引数</small>
+      <a class="story-card" href="#x-feed">
+        <span>LIVE</span>
+        <strong>X最新投稿ログ</strong>
+        <p>X公式表示が不安定な環境でも、投稿内容をサイト上で確認できます。</p>
+        <small>@OnigoGames</small>
       </a>
-      <a href="#articles">
-        <span>3</span>
-        <strong>気になる記事へ</strong>
-        <small>実績、銘柄、反省メモ</small>
-      </a>
-      <a href="#broker">
-        <span>4</span>
-        <strong>moomooで確認</strong>
-        <small>ニュースとチャート導線</small>
+      <a class="story-card" href="#articles">
+        <span>GUIDE</span>
+        <strong>銘柄検討テンプレ</strong>
+        <p>注目理由、数字、売買条件、振り返りを同じ型で追える記事棚。</p>
+        <small>記事一覧へ</small>
       </a>
     </section>
 
@@ -162,7 +160,7 @@
             <p class="eyebrow">ASSET LINE</p>
             <h3>100万円チャレンジ資産曲線</h3>
           </div>
-          <canvas id="performanceChart" width="900" height="280" aria-label="資産曲線チャート"></canvas>
+          <canvas id="performanceChart" width="980" height="380" aria-label="縦軸に金額、横軸に日付を表示した資産曲線チャート"></canvas>
         </div>
         <aside class="report-card">
           <h3>この日の要点</h3>
