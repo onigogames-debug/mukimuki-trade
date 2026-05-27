@@ -1,0 +1,9 @@
+{
+  "name": "mukimuki-trade",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "preview": "python3 -m http.server 4173",
+    "deploy": "npx wrangler pages deploy . --project-name mukimuki-trade"
+  }
+}

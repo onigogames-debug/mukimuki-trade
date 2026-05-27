@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MUKIMUKI trade | 実績公開・銘柄研究ブログ</title>
+  <meta name="description" content="MUKIMUKI tradeは、株式投資の実績公開、銘柄検討、相場雑談をキャラクターと一緒に発信する投資ブログです。">
+  <link rel="canonical" href="https://mukimuki-trade.com/">
+  <meta name="theme-color" content="#ffd928">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MUKIMUKI trade">
+  <meta property="og:title" content="MUKIMUKI trade | 実績公開・銘柄研究ブログ">
+  <meta property="og:description" content="MUKIMUKIが株式投資の実績、銘柄研究、相場雑談を公開する投資ブログ。">
+  <meta property="og:url" content="https://mukimuki-trade.com/">
+  <meta property="og:image" content="https://mukimuki-trade.com/assets/mukimuki-main.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/mukimuki-main.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="MUKIMUKI trade home">
+      <span class="brand-mark">MT</span>
+      <span>
+        <strong>MUKIMUKI trade</strong>
+        <small>公開トレード研究所</small>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="主要メニュー">
+      <a href="#performance">実績</a>
+      <a href="#series">連載</a>
+      <a href="#research">銘柄研究</a>
+      <a href="#broker">口座比較</a>
+      <a href="#policy">方針</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="ticker" aria-label="サイトの注目トピック">
+        <span>日次成績 +2.4%</span>
+        <span>監視銘柄 28</span>
+        <span>決算メモ 7本</span>
+        <span>入金力強化月間</span>
+        <span>NISA比較準備中</span>
+      </div>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">REAL PERFORMANCE / STOCK IDEAS / MARKET TALK</p>
+          <h1 id="hero-title">握力を鍛えて、投資判断を太くする。</h1>
+          <p class="hero-lead">MUKIMUKIが毎週の実績、気になる銘柄、相場で感じたことを公開。勝ちも負けも記録して、投資の筋肉を育てるブログです。</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#latest">最新記事を読む</a>
+            <a class="button ghost" href="#broker">証券口座を比べる</a>
+          </div>
+        </div>
+        <div class="hero-character" aria-label="MUKIMUKI character">
+          <img src="assets/mukimuki-main.png" alt="両腕を上げたメインキャラクターMUKIMUKI">
+          <div class="power-badge">
+            <span>公開損益</span>
+            <strong>+18.7%</strong>
+            <small>2026 YTD sample</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mission-strip" id="policy" aria-label="編集方針">
+      <article>
+        <span>01</span>
+        <h2>実績は数字で出す</h2>
+        <p>資産推移、確定損益、含み損益、売買理由を同じ型で公開。</p>
+      </article>
+      <article>
+        <span>02</span>
+        <h2>銘柄は仮説で見る</h2>
+        <p>買い煽りではなく、業績・需給・テーマ・リスクを分けて検討。</p>
+      </article>
+      <article>
+        <span>03</span>
+        <h2>収益導線は自然に置く</h2>
+        <p>証券会社比較は、読者の投資スタイル別に記事から接続。</p>
+      </article>
+    </section>
+
+    <section class="dashboard" id="performance" aria-label="投資実績ダッシュボード">
+      <div class="section-heading split">
+        <div>
+          <p class="eyebrow">PERFORMANCE</p>
+          <h2>週次の成績を、見やすく公開。</h2>
+        </div>
+        <a class="mini-link" href="#archive">月次アーカイブへ</a>
+      </div>
+      <div class="stats-grid">
+        <article class="stat-card red">
+          <span>総資産推移</span>
+          <strong>¥3,842,000</strong>
+          <small>前週比 +¥92,400</small>
+        </article>
+        <article class="stat-card yellow">
+          <span>今月確定損益</span>
+          <strong>+¥148,200</strong>
+          <small>勝率 61.5%</small>
+        </article>
+        <article class="stat-card blue">
+          <span>含み損益</span>
+          <strong>-¥36,800</strong>
+          <small>守りの監視中</small>
+        </article>
+        <article class="stat-card green">
+          <span>配当予定</span>
+          <strong>¥74,500</strong>
+          <small>年間見込み</small>
+        </article>
+      </div>
+      <div class="chart-stack">
+        <div class="chart-panel">
+          <div>
+            <p class="eyebrow">MUKIMUKI LINE</p>
+            <h3>資産曲線サンプル</h3>
+          </div>
+          <canvas id="performanceChart" width="900" height="280" aria-label="資産曲線チャート"></canvas>
+        </div>
+        <aside class="trade-log">
+          <h3>今日の売買メモ</h3>
+          <ol>
+            <li><strong>利確</strong><span>半導体Aを分割売り。決算前に軽くする。</span></li>
+            <li><strong>監視</strong><span>銀行Bは出来高増。押し目候補に追加。</span></li>
+            <li><strong>反省</strong><span>寄り付きの勢い買いを我慢。ルール通り。</span></li>
+          </ol>
+        </aside>
+      </div>
+    </section>
+
+    <section class="series-band" id="series" aria-label="連載カテゴリ">
+      <div class="section-heading">
+        <p class="eyebrow">SERIES FORMAT</p>
+        <h2>MUKIMUKI画像を連載の顔にする。</h2>
+      </div>
+      <div class="series-grid">
+        <article class="series-card">
+          <img src="assets/mukimuki-performance.png" alt="実績公開を担当するMUKIMUKI">
+          <div>
+            <span>毎週更新</span>
+            <h3>ムキムキ実績公開</h3>
+            <p>資産推移、売買履歴、良かった点、悪かった点を固定フォーマットで更新。</p>
+          </div>
+        </article>
+        <article class="series-card">
+          <img src="assets/mukimuki-research.png" alt="銘柄研究を担当するMUKIMUKI">
+          <div>
+            <span>決算期強化</span>
+            <h3>握力銘柄研究</h3>
+            <p>業績・テーマ・株価位置・撤退条件を整理し、読者が比較しやすい形に。</p>
+          </div>
+        </article>
+        <article class="series-card">
+          <img src="assets/mukimuki-diary.png" alt="雑談記事を担当するMUKIMUKI">
+          <div>
+            <span>不定期</span>
+            <h3>相場の筋トレ日記</h3>
+            <p>投資メンタル、生活、入金力、失敗談をキャラクターの熱量で読ませる。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-layout" id="latest">
+      <div class="main-feed">
+        <div class="section-heading">
+          <p class="eyebrow">LATEST POSTS</p>
+          <h2>読ませるだけでなく、次の行動が見える記事設計。</h2>
+        </div>
+        <div class="filter-tabs" role="tablist" aria-label="記事カテゴリ">
+          <button class="tab active" type="button" data-filter="all">全部</button>
+          <button class="tab" type="button" data-filter="performance">実績公開</button>
+          <button class="tab" type="button" data-filter="research">銘柄検討</button>
+          <button class="tab" type="button" data-filter="diary">雑談</button>
+          <button class="tab" type="button" data-filter="broker">証券会社</button>
+        </div>
+
+        <div class="post-grid">
+          <article class="post-card feature" data-category="performance">
+            <img src="assets/mukimuki-performance.png" alt="">
+            <div class="post-kicker">実績公開</div>
+            <h3>5月第4週：AI関連の利確と、守りに回した理由</h3>
+            <p>売買理由、反省点、次週の監視ラインを1本の記事で整理する週次フォーマット。</p>
+            <div class="post-meta"><span>7 min read</span><span>損益つき</span></div>
+          </article>
+          <article class="post-card strong" data-category="research" id="research">
+            <img src="assets/mukimuki-research.png" alt="">
+            <div class="post-kicker">銘柄検討</div>
+            <h3>高配当株の握力チェック：増配余地と景気耐性</h3>
+            <p>業績、配当性向、キャッシュフローをMUKIMUKI式の5段階で評価。</p>
+            <div class="post-meta"><span>12 min read</span><span>チェック表</span></div>
+          </article>
+          <article class="post-card" data-category="diary" id="diary">
+            <img src="assets/mukimuki-diary.png" alt="">
+            <div class="post-kicker">雑談</div>
+            <h3>負けた日に筋トレへ行くと、なぜ冷静になるのか</h3>
+            <p>相場メンタル、生活習慣、長く続けるための投資日記。</p>
+            <div class="post-meta"><span>4 min read</span><span>日記</span></div>
+          </article>
+          <article class="post-card broker-post" data-category="broker">
+            <img src="assets/mukimuki-editor.png" alt="">
+            <div class="post-kicker">証券会社</div>
+            <h3>NISA口座を選ぶ前に見る、ムキムキ比較表</h3>
+            <p>手数料、アプリ、投信、単元未満株、ポイント還元を目的別に比較。</p>
+            <div class="post-meta"><span>10 min read</span><span>比較表</span></div>
+          </article>
+        </div>
+      </div>
+
+      <aside class="side-rail" aria-label="サイド情報">
+        <section class="profile-card">
+          <img src="assets/mukimuki-editor.png" alt="編集長MUKIMUKI">
+          <h2>編集長 MUKIMUKI</h2>
+          <p>短期の熱狂に流されず、数字と反省で握力を鍛える投資キャラクター。</p>
+        </section>
+        <section class="watchlist">
+          <h2>監視リスト</h2>
+          <ul>
+            <li><span>半導体</span><strong>押し目待ち</strong></li>
+            <li><span>銀行</span><strong>決算確認</strong></li>
+            <li><span>商社</span><strong>配当軸</strong></li>
+            <li><span>小型成長</span><strong>出来高待ち</strong></li>
+          </ul>
+        </section>
+        <section class="newsletter">
+          <h2>週刊ムキレポ</h2>
+          <p>週次損益、注目銘柄、読んだ決算をまとめて配信する想定枠。</p>
+          <a href="#">登録導線を置く</a>
+        </section>
+      </aside>
+    </section>
+
+    <section class="research-lab" aria-label="銘柄研究フォーマット">
+      <div class="section-heading">
+        <p class="eyebrow">STOCK RESEARCH TEMPLATE</p>
+        <h2>銘柄記事は、毎回同じ型で読みやすく。</h2>
+      </div>
+      <div class="lab-grid">
+        <article><span>1</span><h3>なぜ見るか</h3><p>テーマ、業績変化、株価位置、ニュースのどれで注目したか。</p></article>
+        <article><span>2</span><h3>数字の確認</h3><p>売上、利益率、CF、配当、自己資本比率を表で整理。</p></article>
+        <article><span>3</span><h3>買う条件</h3><p>エントリー価格、分割、損切り、決算跨ぎの可否を明文化。</p></article>
+        <article><span>4</span><h3>読者CTA</h3><p>関連する証券口座比較やNISA記事へ自然に接続。</p></article>
+      </div>
+    </section>
+
+    <section class="archive-band" id="archive" aria-label="実績アーカイブ">
+      <div class="section-heading">
+        <p class="eyebrow">ARCHIVE</p>
+        <h2>月次の実績公開を積み上げる。</h2>
+      </div>
+      <div class="archive-table" role="table" aria-label="月次実績サンプル">
+        <div role="row"><strong>2026年5月</strong><span>+¥148,200</span><em>AI・銀行・商社</em><a href="#">読む</a></div>
+        <div role="row"><strong>2026年4月</strong><span>-¥42,100</span><em>決算跨ぎ反省</em><a href="#">読む</a></div>
+        <div role="row"><strong>2026年3月</strong><span>+¥96,500</span><em>高配当仕込み</em><a href="#">読む</a></div>
+      </div>
+    </section>
+
+    <section class="broker-band" id="broker">
+      <div>
+        <p class="eyebrow">AFFILIATE AREA</p>
+        <h2>証券会社比較・口座開設導線</h2>
+        <p>記事の文脈に合わせて、手数料、NISA対応、アプリの使いやすさ、ポイント還元などで自然に比較できる収益エリア。</p>
+      </div>
+      <div class="broker-cards">
+        <a class="broker-card" href="#" aria-label="証券会社Aの詳細を見る">
+          <span>初心者向け</span>
+          <strong>スマホで見やすい証券</strong>
+          <small>口座開設CTA</small>
+        </a>
+        <a class="broker-card accent" href="#" aria-label="証券会社Bの詳細を見る">
+          <span>NISA重視</span>
+          <strong>積立・配当管理に強い証券</strong>
+          <small>比較記事へ</small>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <strong>MUKIMUKI trade</strong>
+    <p>掲載内容は情報提供を目的としたもので、特定銘柄の売買を推奨するものではありません。投資判断はご自身の責任で行ってください。アフィリエイト広告を含む場合があります。</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

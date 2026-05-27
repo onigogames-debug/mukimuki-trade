@@ -1,0 +1,17 @@
+{
+  "name": "MUKIMUKI trade",
+  "short_name": "MUKIMUKI",
+  "description": "株式投資の実績公開・銘柄研究ブログ",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff8e1",
+  "theme_color": "#ffd928",
+  "icons": [
+    {
+      "src": "/assets/mukimuki-main.png",
+      "sizes": "1226x764",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
