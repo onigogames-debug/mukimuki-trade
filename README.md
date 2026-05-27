@@ -37,5 +37,6 @@ Current deployment status is tracked in [DEPLOYMENT.md](DEPLOYMENT.md).
 ## 公開前チェック
 
 - Search Console: `https://mukimuki-trade.com/` を登録済み、`sitemap.xml` 送信済み
+- SEO: favicon、RSS、パンくず構造化データ、記事メタ情報を実装済み
 - Analytics: Google Analytics / Cloudflare Web Analytics を必要に応じて追加する
 - 運営情報: 実名・連絡先を公開する場合は `/about/` に追記する
