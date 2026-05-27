@@ -61,3 +61,9 @@ No domain action remains. Both apex and `www` custom domains return `HTTP/2 200`
 - Initial content expansion: 3 stock research articles and 3 trade logic articles
 - Official X link: `https://x.com/OnigoGames`
 - Top page banners: Official X and moomoo affiliate introduction as first-view promo banners
+
+## AI Crawler Access
+
+- Cloudflare AI Crawl Control: `Block AI training bots` is set to `Do not block (allow crawlers)`.
+- Reason: Claude-User / ClaudeBot returned `HTTP/2 403` on the custom domain while Pages direct URLs returned `HTTP/2 200`.
+- Verification after change: ClaudeBot, Claude-User, Claude-SearchBot, GPTBot, and Googlebot return `200` on `https://mukimuki-trade.com/`.
