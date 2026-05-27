@@ -17,14 +17,18 @@ tabs.forEach((tab) => {
 
 const canvas = document.getElementById("performanceChart");
 const ctx = canvas.getContext("2d");
-const points = [300, 322, 318, 344, 356, 349, 372, 386, 378, 404, 418, 436];
+const points = [1000000, 1000000, 1000000, 1000000, 1000000, 1000000];
+
+function formatYen(value) {
+  return `¥${Math.round(value).toLocaleString("ja-JP")}`;
+}
 
 function drawChart() {
   const width = canvas.width;
   const height = canvas.height;
   const padding = 34;
-  const min = Math.min(...points) - 14;
-  const max = Math.max(...points) + 14;
+  const min = Math.min(...points) - 50000;
+  const max = Math.max(...points) + 50000;
 
   ctx.clearRect(0, 0, width, height);
   ctx.fillStyle = "#fffdf4";
@@ -83,7 +87,9 @@ function drawChart() {
 
   ctx.fillStyle = "#17140f";
   ctx.font = "700 20px system-ui, sans-serif";
-  ctx.fillText("MUKIMUKI資産指数", padding, 34);
+  ctx.fillText("100万円チャレンジ", padding, 34);
+  ctx.font = "900 34px system-ui, sans-serif";
+  ctx.fillText(formatYen(points[points.length - 1]), padding, 76);
 }
 
 drawChart();

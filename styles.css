@@ -270,8 +270,10 @@ h1 {
 
 .mission-strip,
 .dashboard,
+.challenge-band,
 .series-band,
 .content-layout,
+.x-band,
 .research-lab,
 .archive-band,
 .broker-band,
@@ -344,7 +346,10 @@ h1 {
 .stat-card,
 .chart-panel,
 .trade-log,
+.challenge-card,
 .post-card,
+.x-feature,
+.x-embed,
 .profile-card,
 .watchlist,
 .newsletter,
@@ -382,6 +387,71 @@ h1 {
 .stat-card.yellow { background: #fff06f; }
 .stat-card.blue { background: #d9e6ff; }
 .stat-card.green { background: #dff8ea; }
+
+.challenge-band {
+  border-bottom: 3px solid var(--ink);
+  background:
+    linear-gradient(135deg, rgba(20, 99, 255, 0.18), transparent 38%),
+    #fffdf4;
+}
+
+.challenge-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) repeat(2, minmax(220px, 0.55fr));
+  gap: 16px;
+  max-width: 1240px;
+}
+
+.challenge-card {
+  min-height: 240px;
+  padding: 20px;
+  background: var(--cream);
+}
+
+.challenge-card.main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 250px;
+  gap: 20px;
+  align-items: center;
+  background: var(--ink);
+  color: white;
+}
+
+.challenge-card.main img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+  border: 3px solid var(--ink);
+  border-radius: 8px;
+  background: var(--sun);
+}
+
+.challenge-card h3 {
+  margin: 10px 0;
+  font-size: clamp(28px, 4vw, 52px);
+  line-height: 1.08;
+}
+
+.challenge-card p {
+  margin-bottom: 0;
+  line-height: 1.75;
+  font-weight: 700;
+}
+
+.challenge-card > span {
+  display: inline-block;
+  margin-bottom: 16px;
+  font-family: Impact, "Arial Black", system-ui, sans-serif;
+  font-size: 30px;
+}
+
+.challenge-card > strong {
+  display: block;
+  margin-bottom: 12px;
+  font-family: Impact, "Arial Black", system-ui, sans-serif;
+  font-size: clamp(42px, 5vw, 68px);
+  line-height: 0.95;
+}
 
 .chart-stack {
   display: grid;
@@ -622,6 +692,51 @@ h1 {
   margin-top: 16px;
 }
 
+.x-band {
+  border-block: 3px solid var(--ink);
+  background: #e9f7ef;
+}
+
+.x-layout {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.58fr) minmax(0, 1fr);
+  gap: 16px;
+  max-width: 1240px;
+}
+
+.x-feature {
+  display: flex;
+  min-height: 460px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 22px;
+  background: var(--blue);
+  color: white;
+}
+
+.x-feature h3 {
+  margin: 10px 0;
+  font-size: clamp(30px, 4vw, 54px);
+  line-height: 1.08;
+}
+
+.x-feature p {
+  line-height: 1.8;
+  font-weight: 700;
+}
+
+.x-embed {
+  min-height: 560px;
+  overflow: hidden;
+  padding: 14px;
+  background: var(--cream);
+}
+
+.twitter-timeline {
+  display: block;
+  min-height: 520px;
+}
+
 .research-lab {
   background: #fffdf4;
   border-top: 3px solid var(--ink);
@@ -736,6 +851,11 @@ h1 {
   color: white;
 }
 
+.broker-card.moomoo-main {
+  background: #101820;
+  color: white;
+}
+
 .broker-card strong {
   font-size: 22px;
   line-height: 1.35;
@@ -808,6 +928,8 @@ h1 {
 
   .chart-stack,
   .content-layout,
+  .challenge-grid,
+  .x-layout,
   .broker-band {
     grid-template-columns: 1fr;
   }
@@ -832,6 +954,10 @@ h1 {
   }
 
   .archive-table div {
+    grid-template-columns: 1fr;
+  }
+
+  .challenge-card.main {
     grid-template-columns: 1fr;
   }
 }
