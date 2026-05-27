@@ -13,7 +13,7 @@ Last updated: 2026-05-27
 - Account: `onigo.games@gmail.com`
 - Project: `mukimuki-trade`
 - Production URL: https://mukimuki-trade.pages.dev
-- Latest deployment URL: https://741b5b1b.mukimuki-trade.pages.dev
+- Latest deployment URL: https://2ffc89e9.mukimuki-trade.pages.dev
 - Deployment method: Wrangler direct upload
 
 ## Custom Domains
@@ -60,3 +60,4 @@ No domain action remains. Both apex and `www` custom domains return `HTTP/2 200`
 - Public performance dataset: `/datasets/performance-latest.json` and date-stamped JSON files
 - Initial content expansion: 3 stock research articles and 3 trade logic articles
 - Official X link: `https://x.com/OnigoGames`
+- Top page banners: Official X and moomoo affiliate introduction
