@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const siteUrl = 'https://mukimuki-trade.com';
+const officialXUrl = 'https://x.com/OnigoGames';
 const articlesPath = path.join(root, 'data', 'articles.json');
 const { articles } = JSON.parse(await readFile(articlesPath, 'utf8'));
 
@@ -25,6 +26,7 @@ const nav = `    <nav class="nav-links" aria-label="主要メニュー">
       <a href="/moomoo/">moomoo</a>
       <a href="/archive/">アーカイブ</a>
       <a href="/about/">方針</a>
+      <a href="${officialXUrl}" target="_blank" rel="me noopener">公式X</a>
     </nav>`;
 
 const header = `  <header class="site-header">
@@ -38,7 +40,7 @@ ${nav}
 const footer = `  <footer class="site-footer">
     <strong>MUKIMUKI trade</strong>
     <p>掲載内容は情報提供を目的としたもので、特定銘柄の売買を推奨するものではありません。アフィリエイト広告を含む場合があります。</p>
-    <nav class="footer-links" aria-label="補助リンク"><a href="/archive/">アーカイブ</a><a href="/feed.xml">RSS</a><a href="/about/">運営方針</a></nav>
+    <nav class="footer-links" aria-label="補助リンク"><a href="/archive/">アーカイブ</a><a href="/feed.xml">RSS</a><a href="/about/">運営方針</a><a href="${officialXUrl}" target="_blank" rel="me noopener">公式X</a></nav>
   </footer>`;
 
 const renderSection = (section) => `      <section class="article-panel">
