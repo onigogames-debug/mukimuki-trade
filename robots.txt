@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://mukimuki-trade.com/sitemap.xml
+Sitemap: https://mukimuki-trade.com/feed.xml

@@ -16,3 +16,9 @@
 
 /robots.txt
   Cache-Control: public, max-age=0, must-revalidate
+
+/data/*
+  X-Robots-Tag: noindex
+
+/scripts/*
+  X-Robots-Tag: noindex

@@ -1,0 +1,44 @@
+{
+  "site": {
+    "url": "https://mukimuki-trade.com",
+    "title": "MUKIMUKI trade",
+    "description": "100万円からの株式投資実績、銘柄検討、相場メモを公開する投資ブログ。",
+    "language": "ja",
+    "lastBuildDate": "2026-05-27T15:50:00+09:00"
+  },
+  "pages": [
+    { "path": "/", "lastmod": "2026-05-27", "changefreq": "daily", "priority": "1.0" },
+    { "path": "/performance/", "lastmod": "2026-05-27", "changefreq": "daily", "priority": "0.9" },
+    { "path": "/research/", "lastmod": "2026-05-27", "changefreq": "weekly", "priority": "0.8" },
+    { "path": "/moomoo/", "lastmod": "2026-05-27", "changefreq": "weekly", "priority": "0.7" },
+    { "path": "/category/performance/", "lastmod": "2026-05-27", "changefreq": "weekly", "priority": "0.7" },
+    { "path": "/category/research/", "lastmod": "2026-05-27", "changefreq": "weekly", "priority": "0.7" },
+    { "path": "/category/moomoo/", "lastmod": "2026-05-27", "changefreq": "weekly", "priority": "0.6" },
+    { "path": "/archive/", "lastmod": "2026-05-27", "changefreq": "weekly", "priority": "0.6" },
+    { "path": "/archive/2026-05/", "lastmod": "2026-05-27", "changefreq": "monthly", "priority": "0.6" },
+    { "path": "/about/", "lastmod": "2026-05-27", "changefreq": "monthly", "priority": "0.5" }
+  ],
+  "posts": [
+    {
+      "title": "5/26実績レポート: 100万円比 +3.1%",
+      "path": "/performance/",
+      "description": "2026年5月26日ESTの公開実績。評価額、通算損益、前日比、取引数、保有銘柄を整理。",
+      "pubDate": "2026-05-27T15:00:00+09:00",
+      "category": "実績公開"
+    },
+    {
+      "title": "銘柄検討テンプレ",
+      "path": "/research/",
+      "description": "注目理由、数字、売買条件、振り返りを同じ型で整理する銘柄検討テンプレート。",
+      "pubDate": "2026-05-27T15:00:00+09:00",
+      "category": "銘柄検討"
+    },
+    {
+      "title": "moomoo証券の活用メモ",
+      "path": "/moomoo/",
+      "description": "米国株ニュース、チャート、決算確認、銘柄検討へのmoomoo活用メモ。",
+      "pubDate": "2026-05-27T15:00:00+09:00",
+      "category": "moomoo"
+    }
+  ]
+}

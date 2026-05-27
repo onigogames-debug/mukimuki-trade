@@ -25,6 +25,36 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://mukimuki-trade.com/category/performance/</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mukimuki-trade.com/category/research/</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mukimuki-trade.com/category/moomoo/</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mukimuki-trade.com/archive/</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mukimuki-trade.com/archive/2026-05/</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://mukimuki-trade.com/about/</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>

@@ -5,28 +5,31 @@
     <link>https://mukimuki-trade.com/</link>
     <description>100万円からの株式投資実績、銘柄検討、相場メモを公開する投資ブログ。</description>
     <language>ja</language>
-    <lastBuildDate>Wed, 27 May 2026 15:40:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 27 May 2026 06:50:00 GMT</lastBuildDate>
     <atom:link href="https://mukimuki-trade.com/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>5/26実績レポート: 100万円比 +3.1%</title>
       <link>https://mukimuki-trade.com/performance/</link>
       <guid isPermaLink="true">https://mukimuki-trade.com/performance/</guid>
-      <pubDate>Wed, 27 May 2026 15:00:00 +0900</pubDate>
-      <description><![CDATA[2026年5月26日ESTの公開実績。評価額、通算損益、前日比、取引数、保有銘柄を整理。]]></description>
+      <pubDate>Wed, 27 May 2026 06:00:00 GMT</pubDate>
+      <category>実績公開</category>
+      <description>2026年5月26日ESTの公開実績。評価額、通算損益、前日比、取引数、保有銘柄を整理。</description>
     </item>
     <item>
       <title>銘柄検討テンプレ</title>
       <link>https://mukimuki-trade.com/research/</link>
       <guid isPermaLink="true">https://mukimuki-trade.com/research/</guid>
-      <pubDate>Wed, 27 May 2026 15:00:00 +0900</pubDate>
-      <description><![CDATA[注目理由、数字、売買条件、振り返りを同じ型で整理する銘柄検討テンプレート。]]></description>
+      <pubDate>Wed, 27 May 2026 06:00:00 GMT</pubDate>
+      <category>銘柄検討</category>
+      <description>注目理由、数字、売買条件、振り返りを同じ型で整理する銘柄検討テンプレート。</description>
     </item>
     <item>
       <title>moomoo証券の活用メモ</title>
       <link>https://mukimuki-trade.com/moomoo/</link>
       <guid isPermaLink="true">https://mukimuki-trade.com/moomoo/</guid>
-      <pubDate>Wed, 27 May 2026 15:00:00 +0900</pubDate>
-      <description><![CDATA[米国株ニュース、チャート、決算確認、銘柄検討へのmoomoo活用メモ。]]></description>
+      <pubDate>Wed, 27 May 2026 06:00:00 GMT</pubDate>
+      <category>moomoo</category>
+      <description>米国株ニュース、チャート、決算確認、銘柄検討へのmoomoo活用メモ。</description>
     </item>
   </channel>
 </rss>

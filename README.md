@@ -10,6 +10,14 @@ python3 -m http.server 4173
 
 ブラウザで `http://127.0.0.1:4173/` を開きます。
 
+## SEOファイル生成
+
+```sh
+npm run seo:generate
+```
+
+`data/content.json` をもとに `sitemap.xml` と `feed.xml` を生成します。記事やカテゴリを増やすときは、ページ作成後にこのコマンドを実行します。
+
 ## GitHub
 
 - GitHub account: `onigogames-debug`
@@ -37,6 +45,6 @@ Current deployment status is tracked in [DEPLOYMENT.md](DEPLOYMENT.md).
 ## 公開前チェック
 
 - Search Console: `https://mukimuki-trade.com/` を登録済み、`sitemap.xml` 送信済み
-- SEO: favicon、RSS、パンくず構造化データ、記事メタ情報を実装済み
+- SEO: favicon、RSS、パンくず構造化データ、カテゴリページ、月次アーカイブ、記事メタ情報を実装済み
 - Analytics: Google Analytics / Cloudflare Web Analytics を必要に応じて追加する
 - 運営情報: 実名・連絡先を公開する場合は `/about/` に追記する
