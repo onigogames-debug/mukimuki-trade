@@ -193,24 +193,3 @@ function drawChart() {
 }
 
 drawChart();
-
-function refreshXWidget() {
-  const embed = document.querySelector(".x-embed");
-  if (!embed) return;
-
-  const markLoaded = () => {
-    const hasTimelineFrame = [...embed.querySelectorAll("iframe")].some((frame) =>
-      frame.src.includes("twitter.com") || frame.src.includes("x.com"),
-    );
-    embed.classList.toggle("is-loaded", hasTimelineFrame);
-  };
-
-  if (window.twttr?.widgets?.load) {
-    window.twttr.widgets.load(embed);
-  }
-
-  setTimeout(markLoaded, 2500);
-  setTimeout(markLoaded, 6000);
-}
-
-window.addEventListener("load", refreshXWidget);
