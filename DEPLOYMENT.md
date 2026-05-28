@@ -1,6 +1,6 @@
 # Deployment Status
 
-Last updated: 2026-05-28
+Last updated: 2026-05-29
 
 ## GitHub
 
@@ -13,7 +13,7 @@ Last updated: 2026-05-28
 - Account: `onigo.games@gmail.com`
 - Project: `mukimuki-trade`
 - Production URL: https://mukimuki-trade.pages.dev
-- Latest deployment URL: https://5e350fc2.mukimuki-trade.pages.dev
+- Latest deployment URL: https://9c104d94.mukimuki-trade.pages.dev
 - Deployment method: Wrangler direct upload
 
 ## Custom Domains
@@ -45,7 +45,7 @@ No domain action remains. Both apex and `www` custom domains return `HTTP/2 200`
 - Verification: HTML file (`googlefd5cf11d7eb2c415.html`)
 - Sitemap submitted: `https://mukimuki-trade.com/sitemap.xml`
 - RSS feed submitted as sitemap: `https://mukimuki-trade.com/feed.xml` (success)
-- Current sitemap URLs: 19
+- Current sitemap URLs: 20
 - Manual indexing requested: top page and `/performance/`
 
 ## SEO Enhancements
@@ -60,6 +60,7 @@ No domain action remains. Both apex and `www` custom domains return `HTTP/2 200`
 - SEO generator: `npm run seo:generate` creates `sitemap.xml` and `feed.xml` from `data/content.json`
 - Public performance dataset: `/datasets/performance-latest.json` and date-stamped JSON files
 - Daily update for 2026-05-27 EST: `/performance/` refreshed and `/performance/2026-05-27-xndu-rebuild/` added
+- Daily update for 2026-05-28 EST: `/performance/` refreshed and `/performance/2026-05-28-asts-rotation/` added
 - Initial content expansion: 3 stock research articles and 3 trade logic articles
 - Official X link: `https://x.com/OnigoGames`
 - Top page banners: Official X and moomoo affiliate introduction as first-view promo banners
