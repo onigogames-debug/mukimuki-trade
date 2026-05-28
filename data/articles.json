@@ -1,6 +1,90 @@
 {
   "articles": [
     {
+      "path": "/performance/2026-05-28-asts-rotation/",
+      "categoryKey": "performance",
+      "category": "実績公開",
+      "categoryUrl": "/category/performance/",
+      "eyebrow": "TRADE TOPIC / PERFORMANCE",
+      "title": "5/28売買トピック: ASTSを利確し、SOUNとSOFIを持ち越し",
+      "description": "2026年5月28日ESTの売買トピック。100万円チャレンジは評価額110.1万円、前日比+14,385円。ASTSの値動きとSOUN・SOFIなどの持ち越しを整理。",
+      "summary": "5/28 ESTは、評価額が110.1万円まで伸び、100万円比は+10.06%になりました。日次レポートの資産額に加え、約定履歴CSVでは24件の売買が確認でき、ASTSの利確とSOUN・SOFIなどの持ち越しが中心です。",
+      "image": "/assets/mukimuki-performance.png",
+      "published": "2026-05-29T08:00:00+09:00",
+      "modified": "2026-05-29T08:00:00+09:00",
+      "tags": [
+        "実績公開",
+        "売買トピック",
+        "ASTS",
+        "SOUN",
+        "SOFI"
+      ],
+      "sections": [
+        {
+          "heading": "この日の全体像",
+          "paragraphs": [
+            "2026年5月28日ESTのMUKIMUKI tradeは、JPY総資産が¥1,086,182.27から¥1,100,567.07へ増え、前日比は+¥14,384.81でした。100万円スタート比では+10.06%です。",
+            "Autotrade日次レポートでは資産推移と引け後ポジションを確認し、同日朝に取得した約定履歴CSVでは5/28 ESTの約定を24件確認しました。買付総額は$11,589.71、売却総額は$10,380.05で、差し引きでは$1,209.66の買い越しです。"
+          ]
+        },
+        {
+          "heading": "売買トピック: 利確と持ち越しの入れ替え",
+          "paragraphs": [
+            "前日から残っていたMETAとALABは売却し、AMZNも一度買い増し後に売却しました。その後はMSFT、RKLB、SOFI、SOUN、OKLO、HOODなどに資金を振り分けています。",
+            "引け後ポジションはSOUN 114株、SOFI 73株、RKLB 13株、PL 1株、OKLO 9株、MSFT 4株、HOOD 4株、AMPX 1株です。SOUNは含み損、SOFIとRKLBは小幅含み益で、翌日の確認対象が分散しました。"
+          ],
+          "bullets": [
+            "確定寄り: META 1株、ALAB 5株、AMZN 15株、ASTS 15株を売却",
+            "新規・追加: SOUN 114株、SOFI 73株、RKLB 13株などを買付",
+            "日次資産: ¥1,100,567.07、前日比+¥14,384.81"
+          ]
+        },
+        {
+          "heading": "個別分析: ASTSを選んだ理由",
+          "paragraphs": [
+            "この日の個別分析はASTSにします。約定価格ベースで$124.67から$131.8122まで動き、確認できる約定価格レンジは約5.73%でした。5/28 ESTに売買した銘柄の中では、ASTSが最も大きい値幅でした。",
+            "ASTSは15株を平均$124.92で買い、同日中に15株を平均$130.54で売却しています。約定履歴上は全量を利確しており、引け後ポジションには残していません。日中高安と出来高の完全な市場データは今回のローカルデータだけでは確認できないため、選定は約定価格レンジを主な根拠にしています。"
+          ],
+          "bullets": [
+            "ASTS買付: 15株、買付総額$1,873.76、平均$124.92",
+            "ASTS売却: 15株、売却総額$1,958.06、平均$130.54",
+            "約定価格レンジ: $124.67〜$131.8122、約5.73%"
+          ]
+        },
+        {
+          "heading": "価格変動の背景と売買との関係",
+          "paragraphs": [
+            "ASTSは直近で、通信キャリア連携や衛星ネットワークの進捗を材料にした高ベータの宇宙通信テーマとして注目されていました。会社側の1Q 2026アップデートでも、BlueBird衛星の生産進捗や商用サービス拡大の方向性が示されています。",
+            "今回の売買は、そのテーマ性に乗って伸びた場面を追いかけるというより、買いシグナル後の値幅を同日中に回収した形です。全量売却で終えているため、翌日の上昇を取り逃がす可能性はありますが、急反落時に含み益を消すリスクは抑えています。"
+          ]
+        },
+        {
+          "heading": "翌日に見る水準とリスク",
+          "paragraphs": [
+            "ASTSは持ち越していないため、翌日に直接見るのは再エントリーの有無です。再び見るなら、今回の売却価格帯である$129〜$132付近を上回って維持できるか、または$125近辺まで押した時に出来高を伴って反発するかを確認します。",
+            "保有側では、SOUNの含み損が広がるか、SOFIとRKLBの小幅含み益が伸びるかを見ます。買い越しの日なので、相場全体が弱い場合は保有銘柄の分散が逆に損益を広く削るリスクがあります。"
+          ]
+        },
+        {
+          "heading": "読者向けメモ",
+          "paragraphs": [
+            "この記録は投資助言ではなく、自己運用ログを読み返すためのものです。銘柄名が出ていても、売買を推奨する意図はありません。",
+            "今回は日次レポートの取引明細が0件表示だった一方、約定履歴CSVで24件の約定を確認しています。資産額は日次レポート、売買の中身はCSVというように、参照データの範囲を分けて読んでください。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "AST SpaceMobile: 1Q 2026 Business Update and Results",
+          "url": "https://www.businesswire.com/news/home/20260511685431/en/AST-SpaceMobile-Provides-Business-Update-and-First-Quarter-2026-Results"
+        },
+        {
+          "label": "StocksToTrade: ASTS carrier JV and ETF momentum note",
+          "url": "https://stockstotrade.com/news/ast-spacemobile-inc-asts-news-2026_05_27/"
+        }
+      ]
+    },
+    {
       "path": "/performance/2026-05-27-xndu-rebuild/",
       "categoryKey": "performance",
       "category": "実績公開",
@@ -12,7 +96,13 @@
       "image": "/assets/mukimuki-performance.png",
       "published": "2026-05-28T08:00:00+09:00",
       "modified": "2026-05-28T08:00:00+09:00",
-      "tags": ["実績公開", "売買トピック", "XNDU", "META", "ALAB"],
+      "tags": [
+        "実績公開",
+        "売買トピック",
+        "XNDU",
+        "META",
+        "ALAB"
+      ],
       "sections": [
         {
           "heading": "この日の全体像",
@@ -73,7 +163,12 @@
       "image": "/assets/mukimuki-research.png",
       "published": "2026-05-27T17:20:00+09:00",
       "modified": "2026-05-27T17:20:00+09:00",
-      "tags": ["AIインフラ", "半導体", "米国株", "銘柄候補"],
+      "tags": [
+        "AIインフラ",
+        "半導体",
+        "米国株",
+        "銘柄候補"
+      ],
       "sections": [
         {
           "heading": "市場の読み",
@@ -100,8 +195,14 @@
         }
       ],
       "sources": [
-        { "label": "AP: 米主要指数の5/26終値", "url": "https://apnews.com/article/wall-street-stocks-dow-nasdaq-b2fb9ef30834ed73768f2afd65ec7de0" },
-        { "label": "AP: AI関連株主導のアジア市場動向", "url": "https://apnews.com/article/stocks-markets-ai-iran-trump-8191917f4f1d7ebc54584dd3c3265032" }
+        {
+          "label": "AP: 米主要指数の5/26終値",
+          "url": "https://apnews.com/article/wall-street-stocks-dow-nasdaq-b2fb9ef30834ed73768f2afd65ec7de0"
+        },
+        {
+          "label": "AP: AI関連株主導のアジア市場動向",
+          "url": "https://apnews.com/article/stocks-markets-ai-iran-trump-8191917f4f1d7ebc54584dd3c3265032"
+        }
       ]
     },
     {
@@ -116,7 +217,12 @@
       "image": "/assets/mukimuki-editor.png",
       "published": "2026-05-27T17:25:00+09:00",
       "modified": "2026-05-27T17:25:00+09:00",
-      "tags": ["アプリ株", "広告テック", "金融テック", "米国株"],
+      "tags": [
+        "アプリ株",
+        "広告テック",
+        "金融テック",
+        "米国株"
+      ],
       "sections": [
         {
           "heading": "市場の読み",
@@ -143,7 +249,10 @@
         }
       ],
       "sources": [
-        { "label": "Federal Reserve: 2026年4月FOMC議事要旨", "url": "https://www.federalreserve.gov/monetarypolicy/files/fomcminutes20260429.pdf" }
+        {
+          "label": "Federal Reserve: 2026年4月FOMC議事要旨",
+          "url": "https://www.federalreserve.gov/monetarypolicy/files/fomcminutes20260429.pdf"
+        }
       ]
     },
     {
@@ -158,7 +267,12 @@
       "image": "/assets/mukimuki-research.png",
       "published": "2026-05-27T17:30:00+09:00",
       "modified": "2026-05-27T17:30:00+09:00",
-      "tags": ["EV", "宇宙株", "小型成長株", "高ボラティリティ"],
+      "tags": [
+        "EV",
+        "宇宙株",
+        "小型成長株",
+        "高ボラティリティ"
+      ],
       "sections": [
         {
           "heading": "市場の読み",
@@ -185,7 +299,10 @@
         }
       ],
       "sources": [
-        { "label": "AP: 米主要指数の5/26終値", "url": "https://apnews.com/article/wall-street-stocks-dow-nasdaq-b2fb9ef30834ed73768f2afd65ec7de0" }
+        {
+          "label": "AP: 米主要指数の5/26終値",
+          "url": "https://apnews.com/article/wall-street-stocks-dow-nasdaq-b2fb9ef30834ed73768f2afd65ec7de0"
+        }
       ]
     },
     {
@@ -200,7 +317,12 @@
       "image": "/assets/mukimuki-editor.png",
       "published": "2026-05-27T17:35:00+09:00",
       "modified": "2026-05-27T17:35:00+09:00",
-      "tags": ["投資ロジック", "シグナル", "トレンド", "出来高"],
+      "tags": [
+        "投資ロジック",
+        "シグナル",
+        "トレンド",
+        "出来高"
+      ],
       "sections": [
         {
           "heading": "公開する範囲",
@@ -239,7 +361,12 @@
       "image": "/assets/mukimuki-performance.png",
       "published": "2026-05-27T17:40:00+09:00",
       "modified": "2026-05-27T17:40:00+09:00",
-      "tags": ["リスク管理", "分割エントリー", "損切り", "100万円チャレンジ"],
+      "tags": [
+        "リスク管理",
+        "分割エントリー",
+        "損切り",
+        "100万円チャレンジ"
+      ],
       "sections": [
         {
           "heading": "基本方針",
@@ -278,7 +405,12 @@
       "image": "/assets/mukimuki-diary.png",
       "published": "2026-05-27T17:45:00+09:00",
       "modified": "2026-05-27T17:45:00+09:00",
-      "tags": ["利確", "撤退条件", "振り返り", "投資ロジック"],
+      "tags": [
+        "利確",
+        "撤退条件",
+        "振り返り",
+        "投資ロジック"
+      ],
       "sections": [
         {
           "heading": "出口の考え方",

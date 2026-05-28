@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "siteName": "MUKIMUKI trade",
   "sourceName": "Autotrade daily report",
-  "sourceReport": "report_2026-05-27.txt",
-  "generatedAt": "2026-05-28T05:01:04+09:00",
-  "generatedAtDisplay": "2026.05.28 05:01:04 JST",
+  "sourceReport": "report_2026-05-28.txt + jp_account_mix_report.csv",
+  "generatedAt": "2026-05-29T05:00:21+09:00",
+  "generatedAtDisplay": "2026.05.29 05:00:21 JST",
   "timezone": {
     "reportDate": "EST",
     "generatedAt": "Asia/Tokyo"
@@ -14,354 +14,285 @@
   "challengeStartDate": "2026-04-24",
   "affiliateUrl": "https://j.jp.moomoo.com/0BdcjG",
   "latest": {
-    "reportDate": "2026-05-27",
-    "reportDateDisplay": "2026.05.27 EST",
-    "label": "5/27",
+    "reportDate": "2026-05-28",
+    "reportDateDisplay": "2026.05.28 EST",
+    "label": "5/28",
     "jpy": {
-      "start": 1029399.27,
-      "end": 1085692.74,
-      "delta": 56293.47
+      "start": 1086182.27,
+      "end": 1100567.07,
+      "delta": 14384.81
     },
     "usd": {
-      "start": 6459.68,
-      "end": 6805.04,
-      "delta": 345.3621
+      "start": 6806.34,
+      "end": 6911.02,
+      "delta": 104.6852
     },
     "summary": {
-      "totalTrades": 37,
-      "totalBuyUsd": 18464.21,
-      "totalSellUsd": 18716.83,
-      "usdPnl": 345.36,
-      "cashFlowUsd": 252.63,
-      "totalPnlJpy": 85692.74,
-      "totalReturnPct": 8.57,
-      "dailyReturnPct": 5.47
+      "totalTrades": 24,
+      "totalBuyUsd": 11589.71,
+      "totalSellUsd": 10380.05,
+      "usdPnl": 104.69,
+      "cashFlowUsd": -1209.66,
+      "totalPnlJpy": 100567.07,
+      "totalReturnPct": 10.06,
+      "dailyReturnPct": 1.32
     },
     "trades": [
       {
         "side": "SELL",
-        "symbol": "US.XNDU",
-        "shares": 26,
-        "priceUsd": 18.95,
-        "amountUsd": 492.68,
-        "executedAtEst": "2026-05-27 04:18:58.104"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.OKLO",
-        "shares": 7,
-        "priceUsd": 70.1,
-        "amountUsd": 490.7,
-        "executedAtEst": "2026-05-27 04:19:52.228"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.XNDU",
-        "shares": 27,
-        "priceUsd": 19.61,
-        "amountUsd": 529.47,
-        "executedAtEst": "2026-05-27 04:40:46.854"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.OKLO",
-        "shares": 7,
-        "priceUsd": 69.94,
-        "amountUsd": 489.58,
-        "executedAtEst": "2026-05-27 04:59:56.182"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.TSLA",
-        "shares": 7,
-        "priceUsd": 443.44,
-        "amountUsd": 3104.08,
-        "executedAtEst": "2026-05-27 07:58:00.916"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.OKLO",
-        "shares": 43,
-        "priceUsd": 70.31,
-        "amountUsd": 3023.33,
-        "executedAtEst": "2026-05-27 07:58:01.184"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.CRDO",
-        "shares": 2,
-        "priceUsd": 227.2,
-        "amountUsd": 454.4,
-        "executedAtEst": "2026-05-27 07:58:01.632"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.TSLA",
-        "shares": 4,
-        "priceUsd": 443.28,
-        "amountUsd": 1773.12,
-        "executedAtEst": "2026-05-27 08:07:16.974"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.XNDU",
-        "shares": 52,
-        "priceUsd": 19.05,
-        "amountUsd": 990.52,
-        "executedAtEst": "2026-05-27 08:07:17.453"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.CRDO",
-        "shares": 4,
-        "priceUsd": 229.34,
-        "amountUsd": 917.36,
-        "executedAtEst": "2026-05-27 08:07:17.907"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.XNDU",
-        "shares": 26,
-        "priceUsd": 19.01,
-        "amountUsd": 494.28,
-        "executedAtEst": "2026-05-27 08:07:58.442"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.XNDU",
-        "shares": 26,
-        "priceUsd": 19.01,
-        "amountUsd": 494.26,
-        "executedAtEst": "2026-05-27 08:08:05.036"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.TSLA",
-        "shares": 3,
-        "priceUsd": 442.99,
-        "amountUsd": 1328.97,
-        "executedAtEst": "2026-05-27 08:20:42.396"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.CRDO",
-        "shares": 4,
-        "priceUsd": 219.75,
-        "amountUsd": 878.99,
-        "executedAtEst": "2026-05-27 09:37:09.540"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.CRDO",
-        "shares": 4,
-        "priceUsd": 217,
-        "amountUsd": 868,
-        "executedAtEst": "2026-05-27 09:51:22.768"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.SOFI",
-        "shares": 101,
-        "priceUsd": 16.34,
-        "amountUsd": 1650.11,
-        "executedAtEst": "2026-05-27 09:51:23.151"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.CRDO",
-        "shares": 4,
-        "priceUsd": 216.62,
-        "amountUsd": 866.48,
-        "executedAtEst": "2026-05-27 09:51:34.286"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.SOFI",
-        "shares": 18,
-        "priceUsd": 16.52,
-        "amountUsd": 297.27,
-        "executedAtEst": "2026-05-27 10:07:55.559"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.SOFI",
-        "shares": 119,
-        "priceUsd": 16.52,
-        "amountUsd": 1966.12,
-        "executedAtEst": "2026-05-27 10:30:20.339"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.XNDU",
-        "shares": 55,
-        "priceUsd": 17.1,
-        "amountUsd": 940.68,
-        "executedAtEst": "2026-05-27 10:38:12.829"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.TSLA",
-        "shares": 7,
-        "priceUsd": 443.33,
-        "amountUsd": 3103.31,
-        "executedAtEst": "2026-05-27 10:44:18.900"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.XNDU",
-        "shares": 65,
-        "priceUsd": 16.91,
-        "amountUsd": 1098.83,
-        "executedAtEst": "2026-05-27 10:53:55.607"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.XNDU",
-        "shares": 80,
-        "priceUsd": 16.77,
-        "amountUsd": 1341.6,
-        "executedAtEst": "2026-05-27 11:19:28.275"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.CRDO",
-        "shares": 4,
-        "priceUsd": 213.12,
-        "amountUsd": 852.48,
-        "executedAtEst": "2026-05-27 11:22:23.085"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.CRDO",
-        "shares": 4,
-        "priceUsd": 212.67,
-        "amountUsd": 850.69,
-        "executedAtEst": "2026-05-27 11:22:53.631"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.XNDU",
-        "shares": 50,
-        "priceUsd": 16.7,
-        "amountUsd": 835,
-        "executedAtEst": "2026-05-27 11:23:10.958"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.BKSY",
-        "shares": 46,
-        "priceUsd": 49.56,
-        "amountUsd": 2279.76,
-        "executedAtEst": "2026-05-27 11:25:44.845"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.AKTX",
-        "shares": 3,
-        "priceUsd": 16.36,
-        "amountUsd": 49.08,
-        "executedAtEst": "2026-05-27 11:53:54.146"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.AKTX",
-        "shares": 3,
-        "priceUsd": 15.83,
-        "amountUsd": 47.49,
-        "executedAtEst": "2026-05-27 12:00:40.935"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.QBTS",
-        "shares": 2,
-        "priceUsd": 27.16,
-        "amountUsd": 54.33,
-        "executedAtEst": "2026-05-27 12:03:45.172"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.BKSY",
-        "shares": 23,
-        "priceUsd": 51.12,
-        "amountUsd": 1175.64,
-        "executedAtEst": "2026-05-27 12:09:29.109"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.BKSY",
-        "shares": 11,
-        "priceUsd": 51.11,
-        "amountUsd": 562.16,
-        "executedAtEst": "2026-05-27 12:09:53.504"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.ALAB",
-        "shares": 5,
-        "priceUsd": 319.3,
-        "amountUsd": 1596.5,
-        "executedAtEst": "2026-05-27 12:11:44.982"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.BKSY",
-        "shares": 12,
-        "priceUsd": 51.48,
-        "amountUsd": 617.76,
-        "executedAtEst": "2026-05-27 12:14:49.298"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.QBTS",
-        "shares": 1,
-        "priceUsd": 28.04,
-        "amountUsd": 28.04,
-        "executedAtEst": "2026-05-27 13:03:39.959"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.QBTS",
-        "shares": 1,
-        "priceUsd": 27.66,
-        "amountUsd": 27.66,
-        "executedAtEst": "2026-05-27 13:08:33.754"
-      },
-      {
-        "side": "BUY",
         "symbol": "US.META",
         "shares": 1,
-        "priceUsd": 610.32,
-        "amountUsd": 610.32,
-        "executedAtEst": "2026-05-27 13:08:34.289"
+        "priceUsd": 630.2601,
+        "amountUsd": 630.26,
+        "executedAtEst": "2026-05-28 09:37:48.742"
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.AMZN",
+        "shares": 3,
+        "priceUsd": 267.815,
+        "amountUsd": 803.44,
+        "executedAtEst": "2026-05-28 10:10:38.603"
+      },
+      {
+        "side": "SELL",
+        "symbol": "US.ALAB",
+        "shares": 5,
+        "priceUsd": 347.99,
+        "amountUsd": 1739.95,
+        "executedAtEst": "2026-05-28 11:09:24.368"
+      },
+      {
+        "side": "SELL",
+        "symbol": "US.AMZN",
+        "shares": 15,
+        "priceUsd": 269.71,
+        "amountUsd": 4045.65,
+        "executedAtEst": "2026-05-28 11:11:47.700"
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.MSFT",
+        "shares": 4,
+        "priceUsd": 425.03,
+        "amountUsd": 1700.12,
+        "executedAtEst": "2026-05-28 11:25:55.847"
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.PCLA",
+        "shares": 188,
+        "priceUsd": 10.9484,
+        "amountUsd": 2058.3,
+        "executedAtEst": "2026-05-28 11:31:26.598"
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.RKLB",
+        "shares": 6,
+        "priceUsd": 146.63,
+        "amountUsd": 879.78,
+        "executedAtEst": "2026-05-28 11:31:26.973"
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.ASTS",
+        "shares": 8,
+        "priceUsd": 124.67,
+        "amountUsd": 997.36,
+        "executedAtEst": "2026-05-28 11:33:39.603"
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.SOFI",
+        "shares": 70,
+        "priceUsd": 16.815,
+        "amountUsd": 1177.05,
+        "executedAtEst": "2026-05-28 11:35:51.468"
+      },
+      {
+        "side": "SELL",
+        "symbol": "US.PCLA",
+        "shares": 188,
+        "priceUsd": 10.5604,
+        "amountUsd": 1985.36,
+        "executedAtEst": "2026-05-28 11:36:57.717"
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.RKLB",
+        "shares": 7,
+        "priceUsd": 147.32,
+        "amountUsd": 1031.24,
+        "executedAtEst": "2026-05-28 11:38:04.019"
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.ASTS",
+        "shares": 7,
+        "priceUsd": 125.2,
+        "amountUsd": 876.4,
+        "executedAtEst": "2026-05-28 11:39:10.946"
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.PL",
+        "shares": 1,
+        "priceUsd": 50.3,
+        "amountUsd": 50.3,
+        "executedAtEst": "2026-05-28 11:42:30.458"
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.SOFI",
+        "shares": 3,
+        "priceUsd": 16.8597,
+        "amountUsd": 50.58,
+        "executedAtEst": "2026-05-28 11:46:57.400"
+      },
+      {
+        "side": "SELL",
+        "symbol": "US.ASTS",
+        "shares": 7,
+        "priceUsd": 129.0805,
+        "amountUsd": 903.56,
+        "executedAtEst": "2026-05-28 13:51:41.643"
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.SOUN",
+        "shares": 103,
+        "priceUsd": 8.6398,
+        "amountUsd": 889.9,
+        "executedAtEst": "2026-05-28 13:52:49.196"
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.SOUN",
+        "shares": 1,
+        "priceUsd": 8.6063,
+        "amountUsd": 8.61,
+        "executedAtEst": "2026-05-28 14:02:52.640"
+      },
+      {
+        "side": "SELL",
+        "symbol": "US.ASTS",
+        "shares": 8,
+        "priceUsd": 131.8122,
+        "amountUsd": 1054.5,
+        "executedAtEst": "2026-05-28 14:55:20.621"
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.HOOD",
+        "shares": 4,
+        "priceUsd": 83.5684,
+        "amountUsd": 334.27,
+        "executedAtEst": "2026-05-28 14:56:28.149"
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.OKLO",
+        "shares": 9,
+        "priceUsd": 68.28,
+        "amountUsd": 614.52,
+        "executedAtEst": "2026-05-28 14:56:28.651"
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.AMPX",
+        "shares": 1,
+        "priceUsd": 21.73,
+        "amountUsd": 21.73,
+        "executedAtEst": "2026-05-28 14:56:29.353"
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.SOUN",
+        "shares": 10,
+        "priceUsd": 8.5863,
+        "amountUsd": 85.86,
+        "executedAtEst": "2026-05-28 15:03:11.984"
+      },
+      {
+        "side": "SELL",
+        "symbol": "US.AMPX",
+        "shares": 1,
+        "priceUsd": 20.77,
+        "amountUsd": 20.77,
+        "executedAtEst": "2026-05-28 16:00:14.884"
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.AI",
+        "shares": 1,
+        "priceUsd": 10.25,
+        "amountUsd": 10.25,
+        "executedAtEst": "2026-05-28 16:16:39.390"
       }
     ],
     "positions": [
       {
-        "symbol": "US.XNDU",
-        "shares": 250,
-        "averagePriceUsd": 16.89,
-        "unrealizedPnlPct": 1.85,
-        "unrealizedPnlUsd": 78.33
+        "symbol": "US.SOUN",
+        "shares": 114,
+        "averagePriceUsd": 8.65,
+        "unrealizedPnlPct": -0.99,
+        "unrealizedPnlUsd": -9.82
       },
       {
-        "symbol": "US.META",
+        "symbol": "US.SOFI",
+        "shares": 73,
+        "averagePriceUsd": 16.84,
+        "unrealizedPnlPct": 0.78,
+        "unrealizedPnlUsd": 9.57
+      },
+      {
+        "symbol": "US.RKLB",
+        "shares": 13,
+        "averagePriceUsd": 147.19,
+        "unrealizedPnlPct": 0.57,
+        "unrealizedPnlUsd": 10.85
+      },
+      {
+        "symbol": "US.PL",
         "shares": 1,
-        "averagePriceUsd": 611.12,
-        "unrealizedPnlPct": 3.92,
-        "unrealizedPnlUsd": 23.97
+        "averagePriceUsd": 50.36,
+        "unrealizedPnlPct": 2.07,
+        "unrealizedPnlUsd": 1.04
       },
       {
-        "symbol": "US.ALAB",
-        "shares": 5,
-        "averagePriceUsd": 319.72,
-        "unrealizedPnlPct": 1.75,
-        "unrealizedPnlUsd": 28.04
+        "symbol": "US.OKLO",
+        "shares": 9,
+        "averagePriceUsd": 68.37,
+        "unrealizedPnlPct": -0.41,
+        "unrealizedPnlUsd": -2.52
+      },
+      {
+        "symbol": "US.MSFT",
+        "shares": 4,
+        "averagePriceUsd": 425.59,
+        "unrealizedPnlPct": 0.32,
+        "unrealizedPnlUsd": 5.52
+      },
+      {
+        "symbol": "US.HOOD",
+        "shares": 4,
+        "averagePriceUsd": 83.68,
+        "unrealizedPnlPct": 1.19,
+        "unrealizedPnlUsd": 3.97
+      },
+      {
+        "symbol": "US.AMPX",
+        "shares": 1,
+        "averagePriceUsd": 21.76,
+        "unrealizedPnlPct": -4.55,
+        "unrealizedPnlUsd": -0.99
       }
     ],
     "signals": {
-      "loops": 886,
-      "buySignals": 1924,
-      "sellSignals": 2478,
+      "loops": 382,
+      "buySignals": 619,
+      "sellSignals": 7832,
       "holds": 11572
     }
   },
@@ -545,10 +476,21 @@
       "totalPnlJpy": 85692.74,
       "totalReturnPct": 8.57,
       "totalTrades": 37
+    },
+    {
+      "date": "2026-05-28",
+      "label": "5/28",
+      "jpyStart": 1086182.27,
+      "jpyEnd": 1100567.07,
+      "jpyDelta": 14384.81,
+      "totalPnlJpy": 100567.07,
+      "totalReturnPct": 10.06,
+      "totalTrades": 24
     }
   ],
   "notes": [
     "公開実績は自己運用ログをもとにした記録です。",
+    "資産推移と引け後ポジションはAutotrade日次レポート、約定件数と売買金額は同日朝に取得したjp_account_mix_report.csvの約定履歴を補完して掲載しています。",
     "掲載内容は情報提供を目的としたもので、特定銘柄の売買を推奨するものではありません。"
   ]
 }

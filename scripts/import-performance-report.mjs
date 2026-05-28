@@ -189,7 +189,7 @@ const history = reports
     jpyDelta: report.jpy.delta,
     totalPnlJpy: round(report.jpy.end - startCapitalJpy, 2),
     totalReturnPct: round(((report.jpy.end - startCapitalJpy) / startCapitalJpy) * 100, 2),
-    totalTrades: report.summary.totalTrades,
+    totalTrades: report.date === latest.date ? latest.summary.totalTrades : report.summary.totalTrades,
   }));
 
 const dataset = {

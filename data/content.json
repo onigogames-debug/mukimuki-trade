@@ -4,35 +4,143 @@
     "title": "MUKIMUKI trade",
     "description": "100万円からの株式投資実績、資産曲線、銘柄検討、相場メモを読者が追いやすい順番で整理する投資ブログ。",
     "language": "ja",
-    "lastBuildDate": "2026-05-28T08:00:00+09:00"
+    "lastBuildDate": "2026-05-29T08:00:00+09:00"
   },
   "pages": [
-    { "path": "/", "lastmod": "2026-05-28", "changefreq": "daily", "priority": "1.0" },
-    { "path": "/performance/", "lastmod": "2026-05-28", "changefreq": "daily", "priority": "0.9" },
-    { "path": "/performance/2026-05-27-xndu-rebuild/", "lastmod": "2026-05-28", "changefreq": "monthly", "priority": "0.85" },
-    { "path": "/research/", "lastmod": "2026-05-27", "changefreq": "weekly", "priority": "0.8" },
-    { "path": "/research/ai-infrastructure/", "lastmod": "2026-05-27", "changefreq": "monthly", "priority": "0.8" },
-    { "path": "/research/app-software-fintech/", "lastmod": "2026-05-27", "changefreq": "monthly", "priority": "0.8" },
-    { "path": "/research/frontier-growth/", "lastmod": "2026-05-27", "changefreq": "monthly", "priority": "0.8" },
-    { "path": "/logic/", "lastmod": "2026-05-27", "changefreq": "weekly", "priority": "0.8" },
-    { "path": "/logic/signal-score/", "lastmod": "2026-05-27", "changefreq": "monthly", "priority": "0.75" },
-    { "path": "/logic/entry-risk/", "lastmod": "2026-05-27", "changefreq": "monthly", "priority": "0.75" },
-    { "path": "/logic/exit-review/", "lastmod": "2026-05-27", "changefreq": "monthly", "priority": "0.75" },
-    { "path": "/moomoo/", "lastmod": "2026-05-27", "changefreq": "weekly", "priority": "0.7" },
-    { "path": "/category/performance/", "lastmod": "2026-05-28", "changefreq": "weekly", "priority": "0.7" },
-    { "path": "/category/research/", "lastmod": "2026-05-27", "changefreq": "weekly", "priority": "0.7" },
-    { "path": "/category/moomoo/", "lastmod": "2026-05-27", "changefreq": "weekly", "priority": "0.6" },
-    { "path": "/archive/", "lastmod": "2026-05-28", "changefreq": "weekly", "priority": "0.6" },
-    { "path": "/archive/2026-05/", "lastmod": "2026-05-28", "changefreq": "monthly", "priority": "0.6" },
-    { "path": "/profile/", "lastmod": "2026-05-27", "changefreq": "monthly", "priority": "0.6" },
-    { "path": "/about/", "lastmod": "2026-05-27", "changefreq": "monthly", "priority": "0.5" }
+    {
+      "path": "/",
+      "lastmod": "2026-05-29",
+      "changefreq": "daily",
+      "priority": "1.0"
+    },
+    {
+      "path": "/performance/",
+      "lastmod": "2026-05-29",
+      "changefreq": "daily",
+      "priority": "0.9"
+    },
+    {
+      "path": "/performance/2026-05-28-asts-rotation/",
+      "lastmod": "2026-05-29",
+      "changefreq": "monthly",
+      "priority": "0.85"
+    },
+    {
+      "path": "/performance/2026-05-27-xndu-rebuild/",
+      "lastmod": "2026-05-28",
+      "changefreq": "monthly",
+      "priority": "0.85"
+    },
+    {
+      "path": "/research/",
+      "lastmod": "2026-05-27",
+      "changefreq": "weekly",
+      "priority": "0.8"
+    },
+    {
+      "path": "/research/ai-infrastructure/",
+      "lastmod": "2026-05-27",
+      "changefreq": "monthly",
+      "priority": "0.8"
+    },
+    {
+      "path": "/research/app-software-fintech/",
+      "lastmod": "2026-05-27",
+      "changefreq": "monthly",
+      "priority": "0.8"
+    },
+    {
+      "path": "/research/frontier-growth/",
+      "lastmod": "2026-05-27",
+      "changefreq": "monthly",
+      "priority": "0.8"
+    },
+    {
+      "path": "/logic/",
+      "lastmod": "2026-05-27",
+      "changefreq": "weekly",
+      "priority": "0.8"
+    },
+    {
+      "path": "/logic/signal-score/",
+      "lastmod": "2026-05-27",
+      "changefreq": "monthly",
+      "priority": "0.75"
+    },
+    {
+      "path": "/logic/entry-risk/",
+      "lastmod": "2026-05-27",
+      "changefreq": "monthly",
+      "priority": "0.75"
+    },
+    {
+      "path": "/logic/exit-review/",
+      "lastmod": "2026-05-27",
+      "changefreq": "monthly",
+      "priority": "0.75"
+    },
+    {
+      "path": "/moomoo/",
+      "lastmod": "2026-05-27",
+      "changefreq": "weekly",
+      "priority": "0.7"
+    },
+    {
+      "path": "/category/performance/",
+      "lastmod": "2026-05-29",
+      "changefreq": "weekly",
+      "priority": "0.7"
+    },
+    {
+      "path": "/category/research/",
+      "lastmod": "2026-05-27",
+      "changefreq": "weekly",
+      "priority": "0.7"
+    },
+    {
+      "path": "/category/moomoo/",
+      "lastmod": "2026-05-27",
+      "changefreq": "weekly",
+      "priority": "0.6"
+    },
+    {
+      "path": "/archive/",
+      "lastmod": "2026-05-29",
+      "changefreq": "weekly",
+      "priority": "0.6"
+    },
+    {
+      "path": "/archive/2026-05/",
+      "lastmod": "2026-05-29",
+      "changefreq": "monthly",
+      "priority": "0.6"
+    },
+    {
+      "path": "/profile/",
+      "lastmod": "2026-05-27",
+      "changefreq": "monthly",
+      "priority": "0.6"
+    },
+    {
+      "path": "/about/",
+      "lastmod": "2026-05-27",
+      "changefreq": "monthly",
+      "priority": "0.5"
+    }
   ],
   "posts": [
     {
-      "title": "5/27実績レポート: 100万円比 +8.6%の読み方",
+      "title": "5/28実績レポート: 100万円比 +10.1%の読み方",
       "path": "/performance/",
-      "description": "2026年5月27日ESTの公開実績。評価額、通算損益、前日比、取引数、保有銘柄、今日の読み方を整理。",
-      "pubDate": "2026-05-28T08:00:00+09:00",
+      "description": "2026年5月28日ESTの公開実績。評価額、通算損益、前日比、取引数、保有銘柄、今日の読み方を整理。",
+      "pubDate": "2026-05-29T08:00:00+09:00",
+      "category": "実績公開"
+    },
+    {
+      "title": "5/28売買トピック: ASTSを利確し、SOUNとSOFIを持ち越し",
+      "path": "/performance/2026-05-28-asts-rotation/",
+      "description": "2026年5月28日ESTの売買トピック。100万円チャレンジは評価額110.1万円、前日比+14,385円。ASTSの値動きとSOUN・SOFIなどの持ち越しを整理。",
+      "pubDate": "2026-05-29T08:00:00+09:00",
       "category": "実績公開"
     },
     {
