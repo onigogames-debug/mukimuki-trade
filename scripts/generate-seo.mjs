@@ -1,4 +1,4 @@
-import { readFile, writeFile } from 'node:fs/promises';
+import { readdir, readFile, stat, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -19,10 +19,87 @@ const absoluteUrl = (pagePath) => {
 };
 
 const toRssDate = (value) => new Date(value).toUTCString();
+const toDate = (value) => new Date(value).toISOString().slice(0, 10);
+
+const ignoredDirs = new Set(['.git', '.wrangler', 'assets', 'data', 'datasets', 'scripts', 'node_modules']);
+const ignoredFiles = new Set(['404.html', 'googlefd5cf11d7eb2c415.html']);
+const ignoredRoutes = new Set(['/performance/']);
+
+const htmlPathToRoute = (filePath) => {
+  const relative = path.relative(root, filePath);
+  if (relative === 'index.html') return '/';
+  if (!relative.endsWith('/index.html')) return null;
+  const route = `/${relative.slice(0, -'index.html'.length)}`;
+  return ignoredRoutes.has(route) ? null : route;
+};
+
+const walkHtmlPages = async (dir = root) => {
+  const entries = await readdir(dir, { withFileTypes: true });
+  const pages = [];
+
+  for (const entry of entries) {
+    if (entry.isDirectory()) {
+      if (ignoredDirs.has(entry.name)) continue;
+      pages.push(...await walkHtmlPages(path.join(dir, entry.name)));
+      continue;
+    }
+
+    if (!entry.isFile() || entry.name !== 'index.html') continue;
+    const filePath = path.join(dir, entry.name);
+    if (ignoredFiles.has(path.relative(root, filePath))) continue;
+    const route = htmlPathToRoute(filePath);
+    if (route) pages.push({ path: route, filePath });
+  }
+
+  return pages;
+};
+
+const inferChangefreq = (pagePath) => {
+  if (pagePath === '/' || pagePath.startsWith('/performance/')) return 'daily';
+  if (pagePath.startsWith('/research/') || pagePath.startsWith('/category/') || pagePath.startsWith('/archive/')) return 'weekly';
+  if (pagePath.startsWith('/logic/')) return 'monthly';
+  return 'monthly';
+};
+
+const inferPriority = (pagePath) => {
+  if (pagePath === '/') return '1.0';
+  if (pagePath === '/performance/latest/') return '0.9';
+  if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/$/.test(pagePath)) return '0.88';
+  if (pagePath === '/research/' || pagePath === '/logic/') return '0.8';
+  if (pagePath.startsWith('/research/')) return '0.8';
+  if (pagePath.startsWith('/logic/')) return '0.75';
+  if (pagePath.startsWith('/category/') || pagePath.startsWith('/archive/')) return '0.65';
+  return '0.6';
+};
+
+const explicitPages = new Map(content.pages.map((page) => [page.path, page]));
+const discoveredPages = await walkHtmlPages();
+const pageMap = new Map();
+
+for (const { path: pagePath, filePath } of discoveredPages) {
+  const fileStat = await stat(filePath);
+  const explicit = explicitPages.get(pagePath) || {};
+  pageMap.set(pagePath, {
+    path: pagePath,
+    lastmod: toDate(fileStat.mtime),
+    changefreq: inferChangefreq(pagePath) || explicit.changefreq,
+    priority: explicit.priority || inferPriority(pagePath),
+  });
+}
+
+for (const page of content.pages) {
+  if (!pageMap.has(page.path)) pageMap.set(page.path, page);
+}
+
+const pages = [...pageMap.values()].sort((a, b) => {
+  const priority = Number(b.priority) - Number(a.priority);
+  if (priority !== 0) return priority;
+  return a.path.localeCompare(b.path);
+});
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${content.pages.map((page) => `  <url>
+${pages.map((page) => `  <url>
     <loc>${escapeXml(absoluteUrl(page.path))}</loc>
     <lastmod>${escapeXml(page.lastmod)}</lastmod>
     <changefreq>${escapeXml(page.changefreq)}</changefreq>
@@ -55,4 +132,4 @@ ${content.posts.map((post) => `    <item>
 await writeFile(path.join(root, 'sitemap.xml'), sitemap);
 await writeFile(path.join(root, 'feed.xml'), feed);
 
-console.log(`Generated sitemap.xml (${content.pages.length} URLs) and feed.xml (${content.posts.length} posts).`);
+console.log(`Generated sitemap.xml (${pages.length} URLs) and feed.xml (${content.posts.length} posts).`);

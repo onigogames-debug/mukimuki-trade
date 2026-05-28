@@ -64,6 +64,15 @@ const { frontMatter } = parseFrontMatter(markdownSource);
 const jsonLdScript = renderJsonLdScript(frontMatter);
 ```
 
+## 内部リンクとパンくず
+
+`scripts/internal-links.mjs` で、記事タグ、カテゴリ、本文に登場する銘柄コードをもとに関連記事を最大3件サジェストします。`scripts/breadcrumbs.mjs` は階層URLからHTMLパンくずと `BreadcrumbList` JSON-LDを生成します。
+
+```js
+import { suggestRelatedArticles } from './scripts/internal-links.mjs';
+import { renderBreadcrumbComponent } from './scripts/breadcrumbs.mjs';
+```
+
 ## 実績データ更新
 
 ```sh

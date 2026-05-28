@@ -2,12 +2,17 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { renderJsonLdScript } from './structured-data.mjs';
+import { buildBreadcrumbsFromPath, renderBreadcrumbHtml } from './breadcrumbs.mjs';
+import { buildArticleIndex, renderRelatedArticlesSection } from './internal-links.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const siteUrl = 'https://mukimuki-trade.com';
 const officialXUrl = 'https://x.com/OnigoGames';
 const articlesPath = path.join(root, 'data', 'articles.json');
+const contentPath = path.join(root, 'data', 'content.json');
 const { articles } = JSON.parse(await readFile(articlesPath, 'utf8'));
+const content = JSON.parse(await readFile(contentPath, 'utf8'));
+const articleIndex = buildArticleIndex({ articles, posts: content.posts });
 
 const escapeHtml = (value) => String(value)
   .replaceAll('&', '&amp;')
@@ -80,11 +85,7 @@ ${sources.map((source) => `          <li><a href="${escapeHtml(source.url)}" tar
 };
 
 const renderArticle = (article) => {
-  const breadcrumbs = [
-    { name: 'Home', item: `${siteUrl}/` },
-    { name: article.category, item: absoluteUrl(article.categoryUrl) },
-    { name: article.title, item: absoluteUrl(article.path) },
-  ];
+  const breadcrumbs = buildBreadcrumbsFromPath(article.path, article.title);
   const jsonLdScript = renderJsonLdScript({
     pageType: article.categoryKey === 'research' ? 'research' : 'article',
     title: article.title,
@@ -131,7 +132,7 @@ ${header}
   <main>
     <section class="article-hero">
       <div class="article-hero-inner">
-        <nav class="breadcrumb" aria-label="breadcrumb"><a href="/">Home</a><span>/</span><a href="${escapeHtml(article.categoryUrl)}">${escapeHtml(article.category)}</a><span>/</span><span>${escapeHtml(article.title)}</span></nav>
+        ${renderBreadcrumbHtml(breadcrumbs, escapeHtml)}
         <p class="eyebrow">${escapeHtml(article.eyebrow)}</p>
         <h1>${escapeHtml(article.title)}</h1>
         <p>${escapeHtml(article.summary)}</p>
@@ -153,6 +154,8 @@ ${article.tags.map((tag) => `          <span>${escapeHtml(tag)}</span>`).join('\
 ${article.sections.map(renderSection).join('\n\n')}
 
 ${renderSources(article.sources)}
+
+${renderRelatedArticlesSection(article, articleIndex, { escapeHtml })}
 
       <section class="article-panel">
         <h2>次に読む</h2>

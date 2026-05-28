@@ -2,11 +2,17 @@ import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { absoluteUrl, renderJsonLdScript } from './structured-data.mjs';
+import { renderBreadcrumbHtml } from './breadcrumbs.mjs';
+import { buildArticleIndex, renderRelatedArticlesSection } from './internal-links.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const datasetsDir = path.join(root, 'datasets');
+const articlesPath = path.join(root, 'data', 'articles.json');
+const contentPath = path.join(root, 'data', 'content.json');
 const siteUrl = 'https://mukimuki-trade.com';
 const officialXUrl = 'https://x.com/OnigoGames';
+const { articles } = JSON.parse(await readFile(articlesPath, 'utf8'));
+const content = JSON.parse(await readFile(contentPath, 'utf8'));
 
 const escapeHtml = (value) => String(value ?? '')
   .replaceAll('&', '&amp;')
@@ -139,12 +145,18 @@ ${trades.slice(0, 12).map((trade) => `          <div class="comparison-row">
         ${trades.length > 12 ? `<p>表示は先頭12件です。全${trades.length}件はJSONデータで確認できます。</p>` : ''}`;
 };
 
-const renderDailyPage = (report) => {
+const renderDailyPage = (report, articleIndex) => {
   const latest = report.latest;
   const pagePath = datePath(latest.reportDate);
   const monthlyPath = monthPath(latest.reportDate);
   const title = `${latest.label}実績レポート: 100万円比 ${latest.summary.totalReturnPct >= 0 ? '+' : ''}${latest.summary.totalReturnPct.toFixed(1)}%`;
   const description = `${latest.reportDateDisplay}の固定実績ページ。評価額${formatJpy(latest.jpy.end)}、前日比${formatJpy(latest.jpy.delta)}、取引${latest.summary.totalTrades}件を記録。`;
+  const breadcrumbs = [
+    { name: 'Home', item: `${siteUrl}/` },
+    { name: '実績公開', item: absoluteUrl('/performance/latest/') },
+    { name: `${dateParts(latest.reportDate).year}年${Number(dateParts(latest.reportDate).month)}月`, item: absoluteUrl(monthlyPath) },
+    { name: latest.reportDateDisplay, item: absoluteUrl(pagePath) },
+  ];
   const jsonLdScript = renderJsonLdScript({
     pageType: 'performance',
     title,
@@ -157,13 +169,17 @@ const renderDailyPage = (report) => {
     section: '実績公開',
     image: '/assets/mukimuki-performance.png',
     keywords: ['実績公開', '100万円チャレンジ', '株式投資', latest.reportDate],
-    breadcrumbs: [
-      { name: 'Home', item: `${siteUrl}/` },
-      { name: '実績公開', item: absoluteUrl('/performance/latest/') },
-      { name: `${dateParts(latest.reportDate).year}年${Number(dateParts(latest.reportDate).month)}月`, item: absoluteUrl(monthlyPath) },
-      { name: latest.reportDateDisplay, item: absoluteUrl(pagePath) },
-    ],
+    breadcrumbs,
   });
+  const relatedContext = {
+    title,
+    description,
+    summary: `${latest.reportDateDisplay} 保有銘柄 ${(latest.positions || []).map((position) => position.symbol).join(', ')}`,
+    path: pagePath,
+    category: '実績公開',
+    categoryKey: 'performance',
+    tags: ['実績公開', '100万円チャレンジ', ...(latest.positions || []).map((position) => position.symbol)],
+  };
 
   return `<!doctype html>
 <html lang="ja">
@@ -195,7 +211,7 @@ ${header}
   <main>
     <section class="article-hero">
       <div class="article-hero-inner">
-        <nav class="breadcrumb" aria-label="breadcrumb"><a href="/">Home</a><span>/</span><a href="/performance/latest/">実績公開</a><span>/</span><a href="${escapeHtml(monthlyPath)}">${escapeHtml(dateParts(latest.reportDate).year)}年${Number(dateParts(latest.reportDate).month)}月</a><span>/</span><span>${escapeHtml(latest.reportDateDisplay)}</span></nav>
+        ${renderBreadcrumbHtml(breadcrumbs, escapeHtml)}
         <p class="eyebrow">PERFORMANCE / DAILY ARCHIVE</p>
         <h1>${escapeHtml(title)}</h1>
         <p>このページは${escapeHtml(latest.reportDateDisplay)}の固定実績URLです。最新ページが更新されても、この日の評価額、損益、保有銘柄、取引ログは同じURLで残ります。</p>
@@ -223,6 +239,7 @@ ${header}
         <h2>データ確認</h2>
         <p><a href="/datasets/performance-${escapeHtml(latest.reportDate)}.json">この日のJSONデータ</a>、<a href="/performance/latest/">最新実績</a>、<a href="${escapeHtml(monthlyPath)}">月次アーカイブ</a>を確認できます。</p>
       </section>
+${renderRelatedArticlesSection(relatedContext, articleIndex, { escapeHtml })}
     </article>
   </main>
 ${footer}
@@ -389,11 +406,16 @@ const updateRedirects = async (latestPath) => {
 };
 
 const { latest, reports } = await loadPerformanceDatasets();
+const articleIndex = buildArticleIndex({
+  articles,
+  posts: content.posts,
+  performanceReports: reports.map(({ report }) => report),
+});
 
 for (const { report } of reports) {
   const outputDir = path.join(root, datePath(report.latest.reportDate));
   await mkdir(outputDir, { recursive: true });
-  await writeFile(path.join(outputDir, 'index.html'), renderDailyPage(report));
+  await writeFile(path.join(outputDir, 'index.html'), renderDailyPage(report, articleIndex));
 }
 
 const monthKeys = [...new Set(reports.map(({ report }) => report.latest.reportDate.slice(0, 7)))];
