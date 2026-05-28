@@ -13,7 +13,7 @@ Last updated: 2026-05-29
 - Account: `onigo.games@gmail.com`
 - Project: `mukimuki-trade`
 - Production URL: https://mukimuki-trade.pages.dev
-- Latest deployment URL: https://9c104d94.mukimuki-trade.pages.dev
+- Latest deployment URL: https://837f8b94.mukimuki-trade.pages.dev
 - Deployment method: Wrangler direct upload
 
 ## Custom Domains
@@ -52,12 +52,13 @@ No domain action remains. Both apex and `www` custom domains return `HTTP/2 200`
 
 - Search favicon: `/assets/favicon.svg`
 - RSS feed: `/feed.xml`
-- Structured data: `WebSite`, `Blog`, `ItemList`, `BlogPosting`, `BreadcrumbList`, `AboutPage`, `Dataset`
+- Structured data: `WebSite`, `Person`, `Article`, `FAQPage`, `CollectionPage`, `BreadcrumbList`, `ItemList`, `AboutPage`, `Dataset`
 - Trust structured data: `ProfilePage`, `Person`, `FAQPage`
 - Article Open Graph metadata: locale, published time, modified time, section
 - Category pages: `/category/performance/`, `/category/research/`, `/category/moomoo/`
 - Archive pages: `/archive/`, `/archive/2026-05/`
 - SEO generator: `npm run seo:generate` creates `sitemap.xml` and `feed.xml` from `data/content.json`
+- JSON-LD generator: `scripts/structured-data.mjs` builds schema from YAML front matter and renders `<script type="application/ld+json">`
 - Public performance dataset: `/datasets/performance-latest.json` and date-stamped JSON files
 - Daily update for 2026-05-27 EST: `/performance/` refreshed and `/performance/2026-05-27-xndu-rebuild/` added
 - Daily update for 2026-05-28 EST: `/performance/` refreshed and `/performance/2026-05-28-asts-rotation/` added
