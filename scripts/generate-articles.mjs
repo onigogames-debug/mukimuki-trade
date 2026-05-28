@@ -29,11 +29,27 @@ const nav = `    <nav class="nav-links" aria-label="主要メニュー">
       <a href="${officialXUrl}" target="_blank" rel="me noopener">公式X</a>
     </nav>`;
 
+const mobileMenu = `    <details class="mobile-menu">
+      <summary aria-label="メニュー">
+        <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      </summary>
+      <nav class="mobile-nav-links" aria-label="スマホメニュー">
+        <a href="/performance/">実績</a>
+        <a href="/research/">銘柄検討</a>
+        <a href="/logic/">ロジック</a>
+        <a href="/moomoo/">moomoo</a>
+        <a href="/archive/">アーカイブ</a>
+        <a href="/profile/">運営者</a>
+        <a href="${officialXUrl}" target="_blank" rel="me noopener">公式X</a>
+      </nav>
+    </details>`;
+
 const header = `  <header class="site-header">
     <a class="brand" href="/" aria-label="MUKIMUKI trade home">
       <img src="/assets/mukimuki-main.png" alt="">
       <span><strong>MUKIMUKI trade</strong><small>数字で追う公開記録</small></span>
     </a>
+${mobileMenu}
 ${nav}
   </header>`;
 
