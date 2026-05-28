@@ -21,7 +21,7 @@ const imageUrl = (imagePath) => `${siteUrl}${imagePath}`;
 const displayDate = (value) => value.slice(0, 10).replaceAll('-', '.');
 
 const nav = `    <nav class="nav-links" aria-label="主要メニュー">
-      <a href="/performance/">実績</a>
+      <a href="/performance/latest/">実績</a>
       <a href="/research/">銘柄検討</a>
       <a href="/logic/">ロジック</a>
       <a href="/moomoo/">moomoo</a>
@@ -35,7 +35,7 @@ const mobileMenu = `    <details class="mobile-menu">
         <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
       </summary>
       <nav class="mobile-nav-links" aria-label="スマホメニュー">
-        <a href="/performance/">実績</a>
+        <a href="/performance/latest/">実績</a>
         <a href="/research/">銘柄検討</a>
         <a href="/logic/">ロジック</a>
         <a href="/moomoo/">moomoo</a>
@@ -156,7 +156,7 @@ ${renderSources(article.sources)}
 
       <section class="article-panel">
         <h2>次に読む</h2>
-        <p><a href="${escapeHtml(article.categoryUrl)}">${escapeHtml(article.category)}の記事一覧</a> と <a href="/performance/">最新の実績レポート</a> をあわせて読むと、候補整理と実際の売買結果をつなげて確認できます。</p>
+        <p><a href="${escapeHtml(article.categoryUrl)}">${escapeHtml(article.category)}の記事一覧</a> と <a href="/performance/latest/">最新の実績レポート</a> をあわせて読むと、候補整理と実際の売買結果をつなげて確認できます。</p>
       </section>
     </article>
   </main>

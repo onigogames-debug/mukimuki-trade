@@ -26,6 +26,33 @@ npm run articles:generate
 
 `data/articles.json` をもとに、銘柄検討と投資ロジックの個別記事ページを生成します。記事本文を更新したら、このコマンドを実行してからSEOファイルを再生成します。
 
+## 実績ページ生成
+
+```sh
+npm run performance:pages
+```
+
+`datasets/performance-YYYY-MM-DD.json` をもとに、日付固定の実績ページ、月次アーカイブ、最新実績ページを生成します。`/performance/` はCloudflare Pagesの `_redirects` で最新の日付固定URLへ301リダイレクトします。
+
+```text
+performance/
+├── latest/
+│   └── index.html
+├── 2026/
+│   └── 05/
+│       ├── index.html
+│       ├── 26/
+│       │   └── index.html
+│       ├── 27/
+│       │   └── index.html
+│       └── 28/
+│           └── index.html
+├── 2026-05-27-xndu-rebuild/
+│   └── index.html
+└── 2026-05-28-asts-rotation/
+    └── index.html
+```
+
 ## JSON-LD構造化データ
 
 `scripts/structured-data.mjs` で、YAMLフロントマター形式のメタ情報から `application/ld+json` を生成します。記事生成ではこのモジュールを使い、記事ページは `Article`、一覧ページは `CollectionPage`、パンくずがあるページは `BreadcrumbList` を `<head>` 内に出力します。
@@ -43,7 +70,7 @@ const jsonLdScript = renderJsonLdScript(frontMatter);
 npm run performance:import
 ```
 
-`../../moomoo/reports` の最新Autotradeレポートを読み取り、`data/performance.json` と `datasets/performance-latest.json` を生成します。実績更新後はこのコマンドを実行してから `npm run seo:generate` と公開作業を行います。
+`../../moomoo/reports` の最新Autotradeレポートを読み取り、`data/performance.json` と `datasets/performance-latest.json` を生成します。実績更新後は `npm run performance:pages`、`npm run seo:generate` の順に実行してから公開作業を行います。
 
 ## GitHub
 

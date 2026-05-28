@@ -14,10 +14,34 @@
       "priority": "1.0"
     },
     {
-      "path": "/performance/",
+      "path": "/performance/latest/",
       "lastmod": "2026-05-29",
       "changefreq": "daily",
       "priority": "0.9"
+    },
+    {
+      "path": "/performance/2026/05/",
+      "lastmod": "2026-05-29",
+      "changefreq": "weekly",
+      "priority": "0.78"
+    },
+    {
+      "path": "/performance/2026/05/26/",
+      "lastmod": "2026-05-27",
+      "changefreq": "monthly",
+      "priority": "0.84"
+    },
+    {
+      "path": "/performance/2026/05/27/",
+      "lastmod": "2026-05-28",
+      "changefreq": "monthly",
+      "priority": "0.86"
+    },
+    {
+      "path": "/performance/2026/05/28/",
+      "lastmod": "2026-05-29",
+      "changefreq": "monthly",
+      "priority": "0.88"
     },
     {
       "path": "/performance/2026-05-28-asts-rotation/",
@@ -131,8 +155,8 @@
   "posts": [
     {
       "title": "5/28実績レポート: 100万円比 +10.1%の読み方",
-      "path": "/performance/",
-      "description": "2026年5月28日ESTの公開実績。評価額、通算損益、前日比、取引数、保有銘柄、今日の読み方を整理。",
+      "path": "/performance/2026/05/28/",
+      "description": "2026年5月28日ESTの固定実績ページ。評価額、通算損益、前日比、取引数、保有銘柄を日付URLで保存。",
       "pubDate": "2026-05-29T08:00:00+09:00",
       "category": "実績公開"
     },
