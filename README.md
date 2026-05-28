@@ -26,6 +26,17 @@ npm run articles:generate
 
 `data/articles.json` をもとに、銘柄検討と投資ロジックの個別記事ページを生成します。記事本文を更新したら、このコマンドを実行してからSEOファイルを再生成します。
 
+## JSON-LD構造化データ
+
+`scripts/structured-data.mjs` で、YAMLフロントマター形式のメタ情報から `application/ld+json` を生成します。記事生成ではこのモジュールを使い、記事ページは `Article`、一覧ページは `CollectionPage`、パンくずがあるページは `BreadcrumbList` を `<head>` 内に出力します。
+
+```js
+import { parseFrontMatter, renderJsonLdScript } from './scripts/structured-data.mjs';
+
+const { frontMatter } = parseFrontMatter(markdownSource);
+const jsonLdScript = renderJsonLdScript(frontMatter);
+```
+
 ## 実績データ更新
 
 ```sh

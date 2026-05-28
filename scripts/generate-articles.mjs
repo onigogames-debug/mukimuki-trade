@@ -1,6 +1,7 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { renderJsonLdScript } from './structured-data.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const siteUrl = 'https://mukimuki-trade.com';
@@ -84,41 +85,21 @@ const renderArticle = (article) => {
     { name: article.category, item: absoluteUrl(article.categoryUrl) },
     { name: article.title, item: absoluteUrl(article.path) },
   ];
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'BlogPosting',
-        '@id': `${absoluteUrl(article.path)}#article`,
-        headline: article.title,
-        description: article.description,
-        image: imageUrl(article.image),
-        datePublished: article.published,
-        dateModified: article.modified,
-        inLanguage: 'ja-JP',
-        articleSection: article.category,
-        keywords: article.tags,
-        isPartOf: { '@id': `${siteUrl}/#blog` },
-        author: { '@id': 'https://mukimuki-trade.com/profile/#author' },
-        publisher: {
-          '@type': 'Organization',
-          name: 'MUKIMUKI trade',
-          logo: { '@type': 'ImageObject', url: `${siteUrl}/assets/mukimuki-main.png` },
-        },
-        mainEntityOfPage: { '@type': 'WebPage', '@id': absoluteUrl(article.path) },
-      },
-      {
-        '@type': 'BreadcrumbList',
-        '@id': `${absoluteUrl(article.path)}#breadcrumb`,
-        itemListElement: breadcrumbs.map((crumb, index) => ({
-          '@type': 'ListItem',
-          position: index + 1,
-          name: crumb.name,
-          item: crumb.item,
-        })),
-      },
-    ],
-  };
+  const jsonLdScript = renderJsonLdScript({
+    pageType: article.categoryKey === 'research' ? 'research' : 'article',
+    title: article.title,
+    description: article.description,
+    published_time: article.published,
+    modified_time: article.modified,
+    author: 'MUKIMUKI trade',
+    url: absoluteUrl(article.path),
+    path: article.path,
+    section: article.category,
+    image: article.image,
+    keywords: article.tags,
+    breadcrumbs,
+    faq: article.faq || [],
+  });
 
   return `<!doctype html>
 <html lang="ja">
@@ -142,9 +123,7 @@ const renderArticle = (article) => {
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="alternate" type="application/rss+xml" title="MUKIMUKI trade RSS" href="/feed.xml">
   <link rel="stylesheet" href="/styles.css">
-  <script type="application/ld+json">
-  ${JSON.stringify(jsonLd, null, 2)}
-  </script>
+  ${jsonLdScript}
 </head>
 <body>
 ${header}
@@ -194,39 +173,22 @@ const buildCollectionPage = (categoryKey) => {
   const categoryUrl = categoryArticles[0].categoryUrl;
   const title = `${category}の記事一覧`;
   const description = 'MUKIMUKI tradeの投資ロジック記事一覧。シグナル、エントリー、リスク管理、出口判断を公開できる範囲で紹介します。';
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'CollectionPage',
-        '@id': `${absoluteUrl(categoryUrl)}#webpage`,
-        url: absoluteUrl(categoryUrl),
-        name: title,
-        description,
-        inLanguage: 'ja-JP',
-        isPartOf: { '@id': `${siteUrl}/#website` },
-        mainEntity: { '@id': `${absoluteUrl(categoryUrl)}#list` },
-      },
-      {
-        '@type': 'ItemList',
-        '@id': `${absoluteUrl(categoryUrl)}#list`,
-        itemListElement: categoryArticles.map((article, index) => ({
-          '@type': 'ListItem',
-          position: index + 1,
-          url: absoluteUrl(article.path),
-          name: article.title,
-        })),
-      },
-      {
-        '@type': 'BreadcrumbList',
-        '@id': `${absoluteUrl(categoryUrl)}#breadcrumb`,
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/` },
-          { '@type': 'ListItem', position: 2, name: category, item: absoluteUrl(categoryUrl) },
-        ],
-      },
+  const jsonLdScript = renderJsonLdScript({
+    pageType: 'collection',
+    title,
+    description,
+    url: absoluteUrl(categoryUrl),
+    path: categoryUrl,
+    section: category,
+    breadcrumbs: [
+      { name: 'Home', item: `${siteUrl}/` },
+      { name: category, item: absoluteUrl(categoryUrl) },
     ],
-  };
+    items: categoryArticles.map((article) => ({
+      name: article.title,
+      path: article.path,
+    })),
+  });
 
   return `<!doctype html>
 <html lang="ja">
@@ -247,9 +209,7 @@ const buildCollectionPage = (categoryKey) => {
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="alternate" type="application/rss+xml" title="MUKIMUKI trade RSS" href="/feed.xml">
   <link rel="stylesheet" href="/styles.css">
-  <script type="application/ld+json">
-  ${JSON.stringify(jsonLd, null, 2)}
-  </script>
+  ${jsonLdScript}
 </head>
 <body>
 ${header}
