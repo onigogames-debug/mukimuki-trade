@@ -14,11 +14,18 @@ const truthy = new Set(['true', 'yes', 'on']);
 const falsy = new Set(['false', 'no', 'off']);
 
 const trimSlash = (value) => String(value || '').replace(/\/$/, '');
+const ensureTrailingSlash = (value) => String(value || '/').endsWith('/') ? String(value || '/') : `${value}/`;
 
 export const absoluteUrl = (value = '/') => {
   if (/^https?:\/\//.test(String(value))) return String(value);
   const path = String(value || '/').startsWith('/') ? String(value || '/') : `/${value}`;
   return `${trimSlash(site.url)}${path}`;
+};
+
+export const absoluteUrlForSite = (value = '/', siteUrl = site.url) => {
+  if (/^https?:\/\//.test(String(value))) return String(value);
+  const path = String(value || '/').startsWith('/') ? String(value || '/') : `/${value}`;
+  return `${trimSlash(siteUrl || site.url)}${path}`;
 };
 
 const imageUrl = (value) => absoluteUrl(value || site.logo);
@@ -109,8 +116,8 @@ export const normalizePageMeta = (frontMatter = {}) => {
     pageType: frontMatter.pageType || frontMatter.type || inferPageType(path, frontMatter.section),
     title: frontMatter.title,
     description: frontMatter.description,
-    published: frontMatter.published_time || frontMatter.published || frontMatter.datePublished || frontMatter.pubDate,
-    modified: frontMatter.modified_time || frontMatter.modified || frontMatter.dateModified || frontMatter.published_time,
+    published: frontMatter.publishedTime || frontMatter.published_time || frontMatter.published || frontMatter.datePublished || frontMatter.pubDate,
+    modified: frontMatter.modifiedTime || frontMatter.modified_time || frontMatter.modified || frontMatter.dateModified || frontMatter.publishedTime || frontMatter.published_time,
     author: frontMatter.author || site.name,
     url: frontMatter.url || absoluteUrl(path),
     path,
@@ -131,6 +138,50 @@ const inferPageType = (path, section) => {
   if (path === '/research/' || path.startsWith('/research/')) return 'research';
   if (section) return 'article';
   return 'page';
+};
+
+const titleizeSegment = (segment) => segment
+  .split('-')
+  .filter(Boolean)
+  .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+  .join(' ');
+
+export const breadcrumbLabelForSegment = (segment, { previous, next } = {}) => {
+  if (segment === 'performance') return '実績';
+  if (segment === 'research') return '銘柄検討';
+  if (segment === 'logic') return '投資ロジック';
+  if (segment === 'archive') return 'アーカイブ';
+  if (segment === 'category') return 'カテゴリ';
+  if (segment === 'profile') return 'プロフィール';
+  if (segment === 'about') return '運営方針';
+  if (segment === 'moomoo') return 'moomoo証券';
+  if (segment === 'latest') return '最新実績';
+  if (/^\d{4}$/.test(segment)) return `${segment}年`;
+  if (/^\d{2}$/.test(segment) && /^\d{4}$/.test(previous || '')) return `${Number(segment)}月`;
+  if (/^\d{2}$/.test(segment) && /^\d{2}$/.test(previous || '')) return `${Number(previous)}月${Number(segment)}日`;
+  return next ? titleizeSegment(segment) : titleizeSegment(segment);
+};
+
+export const buildBreadcrumbListFromPath = (pathValue = '/', options = {}) => {
+  const siteUrl = options.siteUrl || site.url;
+  const title = options.title;
+  const path = new URL(pathValue, ensureTrailingSlash(siteUrl)).pathname;
+  const segments = path.split('/').filter(Boolean);
+  const breadcrumbs = [{ name: 'Home', item: absoluteUrlForSite('/', siteUrl) }];
+  let current = '';
+
+  segments.forEach((segment, index) => {
+    current += `/${segment}`;
+    const isLast = index === segments.length - 1;
+    const previous = segments[index - 1];
+    const next = segments[index + 1];
+    breadcrumbs.push({
+      name: isLast && title ? title : breadcrumbLabelForSegment(segment, { previous, next }),
+      item: absoluteUrlForSite(`${current}/`, siteUrl),
+    });
+  });
+
+  return breadcrumbs;
 };
 
 const buildDefaultBreadcrumbs = (path, title, section) => {
@@ -262,6 +313,18 @@ export const faqPageSchema = (meta) => {
   };
 };
 
+export const faqPageSchemaFromQa = (qaItems = [], options = {}) => {
+  const url = options.url || site.url;
+  const faq = qaItems
+    .map((item) => ({
+      question: item.question || item.name || item.heading || item.h2,
+      answer: item.answer || item.text || item.body,
+    }))
+    .filter((item) => item.question && item.answer);
+
+  return faqPageSchema({ url, faq });
+};
+
 export const breadcrumbSchema = (meta) => ({
   '@type': 'BreadcrumbList',
   '@id': `${meta.url}#breadcrumb`,
@@ -302,5 +365,69 @@ export const buildStructuredData = (frontMatter = {}) => {
 
 export const renderJsonLdScript = (frontMatter = {}) => {
   const jsonLd = buildStructuredData(frontMatter);
+  return `<script type="application/ld+json">\n${JSON.stringify(jsonLd, null, 2)}\n</script>`;
+};
+
+export const buildJsonLdScriptFromFrontMatter = ({
+  title,
+  description,
+  url,
+  publishedTime,
+  modifiedTime,
+  section,
+  author,
+  siteUrl = site.url,
+  faq = [],
+  items = [],
+  image = site.logo,
+  pageType,
+} = {}) => {
+  const pageUrl = url || siteUrl;
+  const path = new URL(pageUrl, ensureTrailingSlash(siteUrl)).pathname;
+  const normalizedPageType = pageType || inferPageType(path, section);
+  const breadcrumbs = buildBreadcrumbListFromPath(path, { siteUrl });
+  const meta = {
+    pageType: normalizedPageType,
+    title,
+    description: description || title,
+    published: publishedTime,
+    modified: modifiedTime || publishedTime,
+    author: author || site.name,
+    url: absoluteUrlForSite(path, siteUrl),
+    path,
+    section,
+    image,
+    keywords: [],
+    breadcrumbs,
+    faq,
+    items,
+  };
+  const graph = [];
+
+  if (normalizedPageType === 'home') {
+    graph.push(
+      websiteSchema(meta),
+      personSchema(),
+    );
+  }
+
+  if (['performance', 'research', 'article'].includes(normalizedPageType)) {
+    graph.push(articleSchema(meta));
+  }
+
+  if (['archive', 'collection'].includes(normalizedPageType)) {
+    graph.push(collectionPageSchema(meta), itemListSchema(meta));
+  }
+
+  const faqSchema = faqPageSchemaFromQa(faq, { url: meta.url });
+  if (faqSchema && normalizedPageType === 'research') graph.push(faqSchema);
+
+  if (breadcrumbs.length) graph.push(breadcrumbSchema(meta));
+
+  const jsonLd = compactObject({
+    '@context': 'https://schema.org',
+    '@graph': graph,
+  });
+
   return `<script type="application/ld+json">\n${JSON.stringify(jsonLd, null, 2)}\n</script>`;
 };

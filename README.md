@@ -68,6 +68,32 @@ const { frontMatter } = parseFrontMatter(markdownSource);
 const jsonLdScript = renderJsonLdScript(frontMatter);
 ```
 
+Jekyll / Eleventy などのフロントマター値をそのまま渡す場合は、指定インターフェースの `buildJsonLdScriptFromFrontMatter` を使います。
+
+```js
+import {
+  buildJsonLdScriptFromFrontMatter,
+  buildBreadcrumbListFromPath,
+  faqPageSchemaFromQa,
+} from './scripts/structured-data.mjs';
+
+const jsonLdScript = buildJsonLdScriptFromFrontMatter({
+  title: '5/28実績レポート: 100万円比+10.1%の読み方',
+  description: '2026年5月28日ESTの実績レポート。',
+  url: 'https://mukimuki-trade.com/performance/2026/05/28/',
+  publishedTime: '2026-05-29T08:00:00+09:00',
+  modifiedTime: '2026-05-29T08:00:00+09:00',
+  section: '実績公開',
+  author: 'MUKIMUKI trade',
+  siteUrl: 'https://mukimuki-trade.com',
+});
+
+const breadcrumbs = buildBreadcrumbListFromPath('/performance/2026/05/28/');
+const faqSchema = faqPageSchemaFromQa([
+  { question: '実績は投資助言ですか？', answer: 'いいえ。情報提供を目的にした公開記録です。' },
+]);
+```
+
 ## 内部リンクとパンくず
 
 `scripts/internal-links.mjs` で、記事タグ、カテゴリ、本文に登場する銘柄コードをもとに関連記事を最大3件サジェストします。`scripts/breadcrumbs.mjs` は階層URLからHTMLパンくずと `BreadcrumbList` JSON-LDを生成します。
