@@ -21,7 +21,7 @@ const absoluteUrl = (pagePath) => {
 const toRssDate = (value) => new Date(value).toUTCString();
 const toDate = (value) => new Date(value).toISOString().slice(0, 10);
 
-const ignoredDirs = new Set(['.git', '.wrangler', 'assets', 'data', 'datasets', 'scripts', 'node_modules']);
+const ignoredDirs = new Set(['.git', '.wrangler', '_site', 'assets', 'data', 'datasets', 'scripts', 'node_modules']);
 const ignoredFiles = new Set(['404.html', 'googlefd5cf11d7eb2c415.html']);
 const ignoredRoutes = new Set(['/performance/', '/performance/latest/']);
 
@@ -65,6 +65,7 @@ const inferPriority = (pagePath) => {
   if (pagePath === '/') return '1.0';
   if (pagePath === '/performance/latest/') return '0.9';
   if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/$/.test(pagePath)) return '0.88';
+  if (/^\/performance\/\d{4}\/$/.test(pagePath)) return '0.82';
   if (pagePath === '/research/' || pagePath === '/logic/') return '0.8';
   if (pagePath.startsWith('/research/')) return '0.8';
   if (pagePath.startsWith('/logic/')) return '0.75';

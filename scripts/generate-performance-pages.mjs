@@ -6,6 +6,9 @@ import { renderBreadcrumbHtml } from './breadcrumbs.mjs';
 import { buildArticleIndex, renderRelatedArticlesSection } from './internal-links.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const outputRoot = process.env.PERFORMANCE_OUTPUT_DIR
+  ? path.resolve(root, process.env.PERFORMANCE_OUTPUT_DIR)
+  : root;
 const datasetsDir = path.join(root, 'datasets');
 const articlesPath = path.join(root, 'data', 'articles.json');
 const contentPath = path.join(root, 'data', 'content.json');
@@ -46,6 +49,11 @@ const datePath = (date) => {
 const monthPath = (date) => {
   const { year, month } = dateParts(date);
   return `/performance/${year}/${month}/`;
+};
+
+const yearPath = (date) => {
+  const { year } = dateParts(date);
+  return `/performance/${year}/`;
 };
 
 const displayDate = (date) => date.replaceAll('-', '.');
@@ -366,6 +374,101 @@ ${footer}
 `;
 };
 
+const renderYearPage = (date, reports) => {
+  const { year } = dateParts(date);
+  const pagePath = `/performance/${year}/`;
+  const title = `${year}年の実績アーカイブ`;
+  const description = `MUKIMUKI tradeの${year}年実績アーカイブ。月別の実績まとめと日次実績ページを確認できます。`;
+  const yearReports = reports.filter(({ report }) => report.latest.reportDate.startsWith(`${year}-`));
+  const monthKeys = [...new Set(yearReports.map(({ report }) => report.latest.reportDate.slice(0, 7)))].sort();
+  const jsonLdScript = renderJsonLdScript({
+    pageType: 'collection',
+    title,
+    description,
+    url: absoluteUrl(pagePath),
+    path: pagePath,
+    section: '実績公開',
+    breadcrumbs: [
+      { name: 'Home', item: `${siteUrl}/` },
+      { name: '実績公開', item: absoluteUrl('/performance/latest/') },
+      { name: title, item: absoluteUrl(pagePath) },
+    ],
+    items: monthKeys.map((key) => ({
+      name: `${key.replace('-', '年')}月の実績`,
+      path: `/performance/${key.replace('-', '/')}/`,
+    })),
+  });
+  const latestReport = yearReports.at(-1)?.report;
+  const firstReport = yearReports[0]?.report;
+  const yearlyDelta = latestReport && firstReport
+    ? latestReport.latest.jpy.end - firstReport.latest.jpy.end
+    : 0;
+
+  return `<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>${escapeHtml(title)} | MUKIMUKI trade</title>
+  <meta name="description" content="${escapeHtml(description)}">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="${escapeHtml(absoluteUrl(pagePath))}">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MUKIMUKI trade">
+  <meta property="og:title" content="${escapeHtml(title)} | MUKIMUKI trade">
+  <meta property="og:description" content="${escapeHtml(description)}">
+  <meta property="og:url" content="${escapeHtml(absoluteUrl(pagePath))}">
+  <meta property="og:image" content="${siteUrl}/assets/mukimuki-performance.png">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="application/rss+xml" title="MUKIMUKI trade RSS" href="/feed.xml">
+  <link rel="stylesheet" href="/styles.css">
+  ${jsonLdScript}
+</head>
+<body>
+${header}
+  <main>
+    <section class="article-hero">
+      <div class="article-hero-inner">
+        <nav class="breadcrumb" aria-label="breadcrumb"><a href="/">Home</a><span>/</span><a href="/performance/latest/">実績公開</a><span>/</span><span>${escapeHtml(title)}</span></nav>
+        <p class="eyebrow">PERFORMANCE / YEARLY ARCHIVE</p>
+        <h1>${escapeHtml(title)}</h1>
+        <p>${year}年の月次まとめと日次実績をたどる入口です。最新実績だけでなく、月単位・日単位の固定URLを積み上げて、過去のトレード記録を検索資産として残します。</p>
+      </div>
+    </section>
+    <section class="article-body">
+      <section class="article-panel">
+        <h2>${year}年の概況</h2>
+        <div class="stats-grid">
+          <div class="stat-card"><span>記録日数</span><strong>${escapeHtml(yearReports.length)}日</strong></div>
+          <div class="stat-card"><span>最新評価額</span><strong>${latestReport ? formatJpy(latestReport.latest.jpy.end) : '-'}</strong></div>
+          <div class="stat-card"><span>期間内変化</span><strong>${yearlyDelta >= 0 ? '+' : ''}${formatJpy(yearlyDelta)}</strong></div>
+        </div>
+        <p>年次ページでは、月ごとの実績ページへ進み、そこから日次レポートを確認できます。評価額、前日比、取引数、保有銘柄を同じ形式で残すことで、実績公開ブログとしての履歴を読み返しやすくします。</p>
+        <p>SEO上は、最新ページだけを更新し続けるよりも、年次、月次、日次の階層を分けておくほうが、過去実績を検索エンジンに発見してもらいやすくなります。この年次ページは、${year}年の実績全体を俯瞰し、月次まとめと日次の永続URLへ内部リンクを渡すためのハブです。</p>
+        <p>読者はまず年次ページで全体の流れをつかみ、次に月次ページで好調日と調整日を比較し、最後に日次ページで保有銘柄、売買件数、前日比を確認できます。100万円トレードの推移を、単発の記事ではなく蓄積された記録として読める構造にしています。</p>
+        <p>今後レポートが増えた場合も、この年次ページには月次まとめが自動で追加されます。日次JSONを置くだけで、日別ページ、月別ページ、年別ページ、最新ページへの導線が更新されるため、運用負荷を抑えながらSEO資産を増やせます。</p>
+      </section>
+    </section>
+    <section class="collection-body" aria-label="${escapeHtml(title)}">
+${monthKeys.reverse().map((key) => {
+  const monthlyReports = yearReports.filter(({ report }) => report.latest.reportDate.startsWith(key));
+  const monthlyLatest = monthlyReports.at(-1)?.report;
+  return `      <article class="collection-card">
+        <span class="post-kicker">${escapeHtml(key.replace('-', '年'))}月 / 月次まとめ</span>
+        <h2><a href="/performance/${escapeHtml(key.replace('-', '/'))}/">${escapeHtml(key.replace('-', '年'))}月の実績</a></h2>
+        <p>${monthlyReports.length}日分の実績を掲載。最新評価額 ${monthlyLatest ? formatJpy(monthlyLatest.latest.jpy.end) : '-'}、100万円比 ${monthlyLatest ? `${monthlyLatest.latest.summary.totalReturnPct >= 0 ? '+' : ''}${monthlyLatest.latest.summary.totalReturnPct.toFixed(2)}%` : '-'}。</p>
+        <div class="tag-row"><span>月次実績</span><span>日次URL</span><span>100万円チャレンジ</span></div>
+      </article>`;
+}).join('\n')}
+    </section>
+  </main>
+${footer}
+</body>
+</html>
+`;
+};
+
 const renderLatestPage = (latestReport) => {
   const latestPath = datePath(latestReport.latest.reportDate);
   const title = '最新実績レポート';
@@ -470,8 +573,14 @@ const updateRedirects = async (latestPath) => {
     .split('\n')
     .filter((line) => line.trim() && !line.startsWith('/performance/ '));
 
-  lines.push(`/performance/ ${latestPath} 301`);
+  lines.push('/performance/ /performance/latest/ 301');
   await writeFile(redirectsPath, `${lines.join('\n')}\n`);
+};
+
+const writePerformancePage = async (pagePath, html) => {
+  const outputDir = path.join(outputRoot, pagePath);
+  await mkdir(outputDir, { recursive: true });
+  await writeFile(path.join(outputDir, 'index.html'), html);
 };
 
 const { latest, reports } = await loadPerformanceDatasets();
@@ -482,21 +591,20 @@ const articleIndex = buildArticleIndex({
 });
 
 for (const { report } of reports) {
-  const outputDir = path.join(root, datePath(report.latest.reportDate));
-  await mkdir(outputDir, { recursive: true });
-  await writeFile(path.join(outputDir, 'index.html'), renderDailyPage(report, articleIndex));
+  await writePerformancePage(datePath(report.latest.reportDate), renderDailyPage(report, articleIndex));
 }
 
 const monthKeys = [...new Set(reports.map(({ report }) => report.latest.reportDate.slice(0, 7)))];
 for (const key of monthKeys) {
-  const outputDir = path.join(root, 'performance', ...key.split('-'));
-  await mkdir(outputDir, { recursive: true });
-  await writeFile(path.join(outputDir, 'index.html'), renderMonthPage(`${key}-01`, reports));
+  await writePerformancePage(`/performance/${key.replace('-', '/')}/`, renderMonthPage(`${key}-01`, reports));
 }
 
-const latestOutputDir = path.join(root, 'performance', 'latest');
-await mkdir(latestOutputDir, { recursive: true });
-await writeFile(path.join(latestOutputDir, 'index.html'), renderLatestPage(latest));
+const yearKeys = [...new Set(reports.map(({ report }) => report.latest.reportDate.slice(0, 4)))];
+for (const key of yearKeys) {
+  await writePerformancePage(`/performance/${key}/`, renderYearPage(`${key}-01-01`, reports));
+}
+
+await writePerformancePage('/performance/latest/', renderLatestPage(latest));
 await updateRedirects(datePath(latest.latest.reportDate));
 
-console.log(`Generated ${reports.length} daily performance pages, ${monthKeys.length} month archive page, and latest page.`);
+console.log(`Generated ${reports.length} daily performance pages, ${monthKeys.length} month archive page(s), ${yearKeys.length} year archive page(s), and latest page into ${process.env.PERFORMANCE_OUTPUT_DIR || '.'}.`);

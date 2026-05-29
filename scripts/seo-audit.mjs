@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const siteUrl = 'https://mukimuki-trade.com';
-const ignoredDirs = new Set(['.git', '.wrangler', 'assets', 'data', 'datasets', 'scripts', 'node_modules']);
+const ignoredDirs = new Set(['.git', '.wrangler', '_site', 'assets', 'data', 'datasets', 'scripts', 'node_modules']);
 
 const walkHtml = async (dir = root) => {
   const entries = await readdir(dir, { withFileTypes: true });

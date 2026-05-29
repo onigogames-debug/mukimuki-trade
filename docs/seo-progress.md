@@ -1,6 +1,6 @@
 # SEO Progress Report
 
-Generated: 2026-05-29T02:33:10.887Z
+Generated: 2026-05-29T02:39:52.423Z
 
 ## 実装状況
 
@@ -21,12 +21,12 @@ Generated: 2026-05-29T02:33:10.887Z
 
 ## ページ監査サマリー
 
-- 対象ページ: 25
-- インデックス対象ページ: 24
+- 対象ページ: 26
+- インデックス対象ページ: 25
 - 要確認ページ: 0
 - FAQ schemaページ: 7
-- パンくずschemaページ: 24
-- Critical CSS適用ページ: 25
+- パンくずschemaページ: 25
+- Critical CSS適用ページ: 26
 
 ## 要確認ページ
 
@@ -51,6 +51,7 @@ Generated: 2026-05-29T02:33:10.887Z
 | /performance/ | 45 | 70 | 1512 | 25 | Article, BreadcrumbList, Dataset, FAQPage |
 | /performance/2026-05-27-xndu-rebuild/ | 53 | 83 | 2023 | 24 | Article, BreadcrumbList |
 | /performance/2026-05-28-asts-rotation/ | 52 | 84 | 2716 | 24 | Article, BreadcrumbList |
+| /performance/2026/ | 30 | 52 | 968 | 20 | BreadcrumbList, CollectionPage, ItemList |
 | /performance/2026/05/ | 32 | 61 | 988 | 25 | BreadcrumbList, CollectionPage, ItemList |
 | /performance/2026/05/26/ | 30 | 61 | 1916 | 27 | Article, BreadcrumbList, FAQPage |
 | /performance/2026/05/27/ | 35 | 66 | 2029 | 27 | Article, BreadcrumbList, FAQPage |

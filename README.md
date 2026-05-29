@@ -111,6 +111,8 @@ npm run performance:import
 
 `../../moomoo/reports` の最新Autotradeレポートを読み取り、`data/performance.json` と `datasets/performance-latest.json` を生成します。実績更新後は `npm run performance:pages`、`npm run seo:generate` の順に実行してから公開作業を行います。
 
+`npm run performance:pages` はCloudflare Pages運用に合わせてリポジトリ直下へ `/performance/YYYY/MM/DD/`、`/performance/YYYY/MM/`、`/performance/YYYY/`、`/performance/latest/` を生成します。Jekyll / Eleventy など `_site` 出力を前提にする場合は `npm run performance:pages:site` を使います。
+
 ## GitHub
 
 - GitHub account: `onigogames-debug`

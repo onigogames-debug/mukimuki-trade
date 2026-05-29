@@ -63,8 +63,9 @@ No domain action remains. Both apex and `www` custom domains return `HTTP/2 200`
 - SEO generator: `npm run seo:generate` creates `sitemap.xml` and `feed.xml` from `data/content.json`
 - SEO audit: `npm run seo:audit` creates `docs/seo-progress.md`
 - JSON-LD generator: `scripts/structured-data.mjs` builds schema from YAML front matter and renders `<script type="application/ld+json">`
-- Performance page generator: `npm run performance:pages` creates `/performance/YYYY/MM/DD/`, `/performance/YYYY/MM/`, and `/performance/latest/` from date-stamped performance JSON
-- Performance redirect: `/performance/` returns `301` to the latest fixed daily URL, currently `/performance/2026/05/28/`
+- Performance page generator: `npm run performance:pages` creates `/performance/YYYY/MM/DD/`, `/performance/YYYY/MM/`, `/performance/YYYY/`, and `/performance/latest/` from date-stamped performance JSON
+- `_site` output for SSG workflows: `npm run performance:pages:site`
+- Performance redirect: `/performance/` returns `301` to `/performance/latest/`, while `/performance/latest/` canonical points to the latest fixed daily URL
 - Internal link generator: `scripts/internal-links.mjs` suggests up to 3 related articles from category, tags, body text, and ticker symbols
 - Breadcrumb component: `scripts/breadcrumbs.mjs` renders HTML breadcrumbs and `BreadcrumbList` JSON-LD from hierarchical URLs
 - Keyword map: `docs/keyword-map.md` stores category keyword targets, intent, difficulty, and insertion locations
