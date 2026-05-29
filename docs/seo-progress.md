@@ -1,6 +1,6 @@
 # SEO Progress Report
 
-Generated: 2026-05-29T03:07:02.814Z
+Generated: 2026-05-29T03:46:44.695Z
 
 ## 実装状況
 
@@ -37,7 +37,7 @@ Generated: 2026-05-29T03:07:02.814Z
 | URL | title | description | 本文文字数 | 内部リンク | schema |
 |---|---:|---:|---:|---:|---|
 | / | 35 | 57 | 2694 | 39 | Blog, ItemList, Organization, Person, WebSite |
-| /about/ | 26 | 58 | 975 | 19 | AboutPage, BreadcrumbList, FAQPage |
+| /about/ | 26 | 58 | 1573 | 19 | AboutPage, BreadcrumbList, FAQPage, WebPage |
 | /archive/ | 24 | 62 | 925 | 22 | BreadcrumbList, CollectionPage |
 | /archive/2026-05/ | 27 | 79 | 1046 | 29 | BreadcrumbList, CollectionPage, ItemList |
 | /category/moomoo/ | 30 | 62 | 912 | 23 | BreadcrumbList, CollectionPage, ItemList |
@@ -53,11 +53,11 @@ Generated: 2026-05-29T03:07:02.814Z
 | /performance/2026-05-28-asts-rotation/ | 52 | 84 | 2714 | 24 | Article, BreadcrumbList |
 | /performance/2026/ | 30 | 52 | 966 | 20 | BreadcrumbList, CollectionPage, ItemList |
 | /performance/2026/05/ | 32 | 61 | 986 | 25 | BreadcrumbList, CollectionPage, ItemList |
-| /performance/2026/05/26/ | 30 | 61 | 1914 | 27 | Article, BreadcrumbList, FAQPage |
-| /performance/2026/05/27/ | 35 | 66 | 2027 | 27 | Article, BreadcrumbList, FAQPage |
-| /performance/2026/05/28/ | 36 | 66 | 2241 | 27 | Article, BreadcrumbList, FAQPage |
+| /performance/2026/05/26/ | 30 | 61 | 2169 | 30 | Article, BreadcrumbList, FAQPage |
+| /performance/2026/05/27/ | 35 | 66 | 2282 | 30 | Article, BreadcrumbList, FAQPage |
+| /performance/2026/05/28/ | 36 | 66 | 2524 | 30 | Article, BreadcrumbList, FAQPage |
 | /performance/latest/ | 25 | 72 | 924 | 23 | BreadcrumbList, CollectionPage, ItemList |
-| /profile/ | 26 | 75 | 1375 | 21 | BreadcrumbList, FAQPage, Person, ProfilePage |
+| /profile/ | 26 | 75 | 1400 | 21 | BreadcrumbList, FAQPage, Person, ProfilePage |
 | /research/ | 25 | 59 | 1034 | 25 | Article, BreadcrumbList |
 | /research/ai-infrastructure/ | 47 | 47 | 1505 | 24 | Article, BreadcrumbList |
 | /research/app-software-fintech/ | 44 | 50 | 1533 | 24 | Article, BreadcrumbList |

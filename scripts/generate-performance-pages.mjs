@@ -160,6 +160,31 @@ ${trades.slice(0, 12).map((trade) => `          <div class="comparison-row">
         ${trades.length > 12 ? `<p>表示は先頭12件です。全${trades.length}件はJSONデータで確認できます。</p>` : ''}`;
 };
 
+const renderTrustSignals = (report) => {
+  const latest = report.latest;
+  const jsonPath = `/datasets/performance-${latest.reportDate}.json`;
+  return `      <section class="article-panel trust-signals" aria-labelledby="trust-signals-title">
+        <h2 id="trust-signals-title">この実績データの確認方法</h2>
+        <div class="fact-grid">
+          <div class="fact-card">
+            <h3>データソース</h3>
+            <p>評価額、損益、取引件数、保有銘柄はAutotrade日次レポートをもとに掲載しています。</p>
+            <blockquote>Source: ${escapeHtml(report.sourceName || 'Autotrade daily report')} / ${escapeHtml(report.sourceReport || `${latest.reportDate} report`)}</blockquote>
+          </div>
+          <div class="fact-card">
+            <h3>公開JSON</h3>
+            <p>グラフや本文と同じ元データを確認できます。数値の検証用に日付別JSONを公開しています。</p>
+            <p><a href="${escapeHtml(jsonPath)}">この日のJSONデータを見る</a></p>
+          </div>
+          <div class="fact-card">
+            <h3>更新履歴と著者</h3>
+            <p>日次ページは月次アーカイブに蓄積し、運営者情報はプロフィールで公開しています。</p>
+            <p><a href="${escapeHtml(monthPath(latest.reportDate))}">月次アーカイブ</a> / <a href="/profile/" rel="author">運営者プロフィール</a></p>
+          </div>
+        </div>
+      </section>`;
+};
+
 const renderDailyPage = (report, articleIndex) => {
   const latest = report.latest;
   const pagePath = datePath(latest.reportDate);
@@ -257,6 +282,7 @@ ${header}
         <h2>この日の実績サマリー</h2>
         ${renderMetrics(report)}
       </section>
+${renderTrustSignals(report)}
       <section class="article-panel">
         <h2>保有銘柄の見方</h2>
         <p>${escapeHtml(holdings.join('、'))}は値動きが大きくなりやすい米国株です。単日の損益だけでなく、翌日に持ち越した理由、含み益・含み損の変化、出来高の継続を確認します。</p>

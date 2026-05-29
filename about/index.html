@@ -27,16 +27,25 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "AboutPage",
+        "@type": ["AboutPage", "WebPage"],
         "@id": "https://mukimuki-trade.com/about/#webpage",
         "url": "https://mukimuki-trade.com/about/",
         "name": "運営方針・免責事項",
         "description": "MUKIMUKI tradeの運営方針、実績データの扱い、免責事項、アフィリエイト広告、投資情報の確認方法について。",
-        "dateModified": "2026-05-27T21:20:00+09:00",
+        "datePublished": "2026-05-27T21:20:00+09:00",
+        "dateModified": "2026-05-29T12:20:00+09:00",
+        "additionalType": "https://schema.org/LegalDocument",
         "inLanguage": "ja-JP",
         "isPartOf": { "@id": "https://mukimuki-trade.com/#website" },
         "sameAs": "https://x.com/OnigoGames",
-        "author": { "@id": "https://mukimuki-trade.com/profile/#author" }
+        "author": { "@id": "https://mukimuki-trade.com/profile/#author" },
+        "hasPart": {
+          "@type": ["DigitalDocument", "WebPageElement"],
+          "@id": "https://mukimuki-trade.com/about/#legal-document",
+          "name": "投資情報に関する免責事項",
+          "additionalType": "https://schema.org/LegalDocument",
+          "text": "掲載内容は情報提供と運用記録を目的としたもので、金融商品取引法上の投資助言・代理業、投資運用業、または投資勧誘を目的としたものではありません。"
+        }
       },
       {
         "@type": "FAQPage",
@@ -129,15 +138,29 @@
       </section>
 
       <section class="article-panel">
+        <h2>先に確認してほしい要点</h2>
+        <ul>
+          <li>MUKIMUKI tradeは個人の投資実績と考え方を公開する情報サイトです。</li>
+          <li>掲載内容は投資勧誘、投資助言、個別銘柄の売買推奨を目的としたものではありません。</li>
+          <li>運営者は金融商品取引業者、投資助言・代理業者、投資運用業者ではありません。</li>
+          <li>広告リンクを含む場合があります。moomoo証券の紹介リンク経由で申し込みが発生した場合、運営者が報酬を受け取ることがあります。</li>
+          <li>最終的な投資判断は、公式情報、決算資料、リスク許容度を確認したうえで読者自身の責任で行ってください。</li>
+        </ul>
+      </section>
+
+      <section class="article-panel" id="legal-document">
         <h2>免責事項</h2>
-        <p>掲載内容は情報提供を目的としたもので、特定銘柄の売買を推奨するものではありません。投資判断はご自身の責任で行ってください。</p>
-        <p>株式投資には価格変動、為替変動、流動性、決算内容、金利環境などによる損失リスクがあります。過去の実績や掲載メモは将来の成果を保証しません。</p>
+        <p>当サイトに掲載する実績、銘柄検討、投資ロジック、相場メモは、運営者本人の記録と一般的な情報提供を目的としたものです。金融商品取引法上の投資助言・代理業、投資運用業、または投資勧誘を目的としたものではありません。</p>
+        <p>当サイトは、特定の金融商品、銘柄、証券会社、投資手法の購入・売却・保有を推奨しません。個別の投資相談、売買タイミングの指示、ポートフォリオ助言も行いません。</p>
+        <p>株式投資には、価格変動、為替変動、流動性、決算内容、金利環境、制度変更、システム障害などによる損失リスクがあります。過去の実績、バックテスト、掲載メモ、運用履歴は将来の成果を保証しません。</p>
+        <p>掲載情報の正確性には注意していますが、内容の完全性、最新性、適時性を保証するものではありません。投資判断を行う場合は、証券会社、発行体、取引所、金融庁などの公式情報を必ず確認してください。</p>
       </section>
 
       <section class="article-panel">
-        <h2>広告について</h2>
-        <p>このサイトにはアフィリエイト広告を含む場合があります。広告リンク経由で申し込みが行われた場合、運営者が報酬を受け取ることがあります。</p>
-        <p>広告リンクを掲載する場合でも、サービス内容、手数料、キャンペーン条件、口座開設条件は必ず公式サイトで確認してください。</p>
+        <h2>アフィリエイト広告について</h2>
+        <p>このサイトには、moomoo証券を含む証券会社・金融関連サービスのアフィリエイト広告を掲載する場合があります。広告リンク経由で口座開設や申し込みが行われた場合、運営者が報酬を受け取ることがあります。</p>
+        <p>広告報酬の有無は、掲載する実績データ、銘柄検討、投資判断の説明方針を左右しません。紹介サービスを利用する場合は、手数料、取扱商品、リスク、キャンペーン条件、口座開設条件を必ず公式サイトで確認してください。</p>
+        <p><a href="https://j.jp.moomoo.com/0BdcjG" target="_blank" rel="sponsored noopener">moomoo証券の紹介リンク</a>はPRリンクです。</p>
       </section>
 
       <section class="article-panel">

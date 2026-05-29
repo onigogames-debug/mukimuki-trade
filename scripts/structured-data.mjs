@@ -207,6 +207,10 @@ export const personSchema = () => ({
   url: absoluteUrl('/profile/'),
   image: imageUrl(site.logo),
   sameAs: [site.officialX],
+  mainEntityOfPage: {
+    '@type': 'ProfilePage',
+    '@id': absoluteUrl('/profile/#webpage'),
+  },
   gender: 'Male',
   homeLocation: {
     '@type': 'Place',
@@ -218,8 +222,8 @@ export const personSchema = () => ({
     },
   },
   jobTitle: '兼業投資家 / 事業開発',
-  knowsAbout: ['株式投資', '自動売買', 'AIエージェント', '事業開発', '米国株ニュース確認', '投資実績の記録'],
-  description: '40代・港区在住の兼業投資家。投資歴20年弱。AIエージェント、自動売買、事業開発の視点から公開実績と投資メモを整理します。投資助言業者ではありません。',
+  knowsAbout: ['株式投資', '米国株', '自動売買', 'Autotrade', '裁量判断', 'AIエージェント', '事業開発', '投資実績の記録'],
+  description: '40代・東京都港区在住の兼業投資家。投資歴は約20年。自動売買（Autotrade）と裁量判断を組み合わせ、公開実績、銘柄検討、投資ロジックを検証しやすい形で整理します。投資助言業者ではありません。',
 });
 
 export const websiteSchema = (meta) => ({
