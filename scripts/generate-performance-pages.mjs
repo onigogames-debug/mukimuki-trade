@@ -187,7 +187,7 @@ const renderDailyPage = (report, articleIndex) => {
   ];
   const breadcrumbs = [
     { name: 'Home', item: `${siteUrl}/` },
-    { name: '実績公開', item: absoluteUrl('/performance/latest/') },
+    { name: '実績', item: absoluteUrl('/performance/latest/') },
     { name: `${dateParts(latest.reportDate).year}年${Number(dateParts(latest.reportDate).month)}月`, item: absoluteUrl(monthlyPath) },
     { name: latest.reportDateDisplay, item: absoluteUrl(pagePath) },
   ];
@@ -307,7 +307,7 @@ const renderMonthPage = (date, reports) => {
     section: '実績公開',
     breadcrumbs: [
       { name: 'Home', item: `${siteUrl}/` },
-      { name: '実績公開', item: absoluteUrl('/performance/latest/') },
+      { name: '実績', item: absoluteUrl('/performance/latest/') },
       { name: title, item: absoluteUrl(pagePath) },
     ],
     items: monthReports.map(({ report }) => ({
@@ -342,7 +342,7 @@ ${header}
   <main>
     <section class="article-hero">
       <div class="article-hero-inner">
-        <nav class="breadcrumb" aria-label="breadcrumb"><a href="/">Home</a><span>/</span><a href="/performance/latest/">実績公開</a><span>/</span><span>${escapeHtml(title)}</span></nav>
+        <nav class="breadcrumb" aria-label="breadcrumb"><a href="/">Home</a><span>/</span><a href="/performance/latest/">実績</a><span>/</span><span>${escapeHtml(title)}</span></nav>
         <p class="eyebrow">PERFORMANCE / MONTHLY ARCHIVE</p>
         <h1>${escapeHtml(title)}</h1>
         <p>毎日の実績を日付URLで固定し、Googleにインデックスされる履歴資産として蓄積します。</p>
@@ -390,7 +390,7 @@ const renderYearPage = (date, reports) => {
     section: '実績公開',
     breadcrumbs: [
       { name: 'Home', item: `${siteUrl}/` },
-      { name: '実績公開', item: absoluteUrl('/performance/latest/') },
+      { name: '実績', item: absoluteUrl('/performance/latest/') },
       { name: title, item: absoluteUrl(pagePath) },
     ],
     items: monthKeys.map((key) => ({
@@ -430,7 +430,7 @@ ${header}
   <main>
     <section class="article-hero">
       <div class="article-hero-inner">
-        <nav class="breadcrumb" aria-label="breadcrumb"><a href="/">Home</a><span>/</span><a href="/performance/latest/">実績公開</a><span>/</span><span>${escapeHtml(title)}</span></nav>
+        <nav class="breadcrumb" aria-label="breadcrumb"><a href="/">Home</a><span>/</span><a href="/performance/latest/">実績</a><span>/</span><span>${escapeHtml(title)}</span></nav>
         <p class="eyebrow">PERFORMANCE / YEARLY ARCHIVE</p>
         <h1>${escapeHtml(title)}</h1>
         <p>${year}年の月次まとめと日次実績をたどる入口です。最新実績だけでなく、月単位・日単位の固定URLを積み上げて、過去のトレード記録を検索資産として残します。</p>
@@ -475,7 +475,7 @@ const renderLatestPage = (latestReport) => {
   const description = 'MUKIMUKI tradeの最新実績ページ。JavaScriptで最新の実績JSONを読み込み、canonicalを日付固定URLへ向けます。';
   const breadcrumbs = [
     { name: 'Home', item: `${siteUrl}/` },
-    { name: '実績公開', item: absoluteUrl('/category/performance/') },
+    { name: '実績', item: absoluteUrl('/performance/latest/') },
     { name: '最新実績', item: absoluteUrl('/performance/latest/') },
   ];
   const jsonLdScript = renderJsonLdScript({
@@ -498,7 +498,7 @@ const renderLatestPage = (latestReport) => {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${title} | MUKIMUKI trade</title>
   <meta name="description" content="${description}">
-  <meta name="robots" content="noindex,follow,max-image-preview:large">
+  <meta name="robots" content="index,follow,max-image-preview:large">
   <link id="dynamic-canonical" rel="canonical" href="${escapeHtml(absoluteUrl(latestPath))}">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:type" content="article">
@@ -555,8 +555,17 @@ ${header}
         <p><a class="btn btn-primary" data-latest-link href="${escapeHtml(latestPath)}">日付固定URLで読む</a></p>
       </section>
       <section class="article-panel">
+        <h2>最新実績で見るポイント</h2>
+        <p>最新実績では、評価額の増減だけでなく、どの銘柄を保有し、どの程度の売買件数でその結果になったかを合わせて確認できます。MUKIMUKI tradeは100万円から米国株トレードを始めた前提で、日々の数字を固定URLに残し、後から比較しやすい形で公開しています。</p>
+        <p>短期のプラスやマイナスだけを見ると判断が偏りやすいため、日次ページでは前日比、100万円比、保有銘柄、売買トピックを同じ順番で掲載します。読者は最新の結果から入り、月次アーカイブや投資ロジックへ進むことで、資産推移と判断基準をつなげて読めます。</p>
+      </section>
+      <section class="article-panel">
+        <h2>次に確認するページ</h2>
+        <p>日付固定ページでは、その日の実績本文、FAQ、保有銘柄、売買件数を詳しく確認できます。月ごとの流れを見たい場合は<a href="${escapeHtml(monthPath(latestReport.latest.reportDate))}">月次まとめ</a>、売買判断の背景を知りたい場合は<a href="/logic/">投資ロジック</a>、候補銘柄の見方を深掘りしたい場合は<a href="/research/">銘柄検討</a>から読むと、単発の実績だけでは見えにくい流れを追いやすくなります。</p>
+      </section>
+      <section class="article-panel">
         <h2>検索エンジン向けの扱い</h2>
-        <p>このページは読者が常に最新実績へ進むための入口です。SEO上の評価を日付別の固定ページに集めるため、canonicalは最新の日付URLへ向け、ページ自体はnoindexにしています。検索に残したい実績本文、FAQ、保有銘柄、売買件数は日付固定ページに蓄積します。</p>
+        <p>このページは読者が常に最新実績へ進むための入口です。SEO上の評価を日付別の固定ページに集めるため、canonicalは最新の日付URLへ向けています。検索に残したい実績本文、FAQ、保有銘柄、売買件数は日付固定ページに蓄積します。</p>
       </section>
     </article>
   </main>

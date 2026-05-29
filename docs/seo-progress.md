@@ -1,6 +1,6 @@
 # SEO Progress Report
 
-Generated: 2026-05-29T02:44:52.745Z
+Generated: 2026-05-29T02:49:44.841Z
 
 ## 実装状況
 
@@ -22,7 +22,7 @@ Generated: 2026-05-29T02:44:52.745Z
 ## ページ監査サマリー
 
 - 対象ページ: 26
-- インデックス対象ページ: 25
+- インデックス対象ページ: 26
 - 要確認ページ: 0
 - FAQ schemaページ: 7
 - パンくずschemaページ: 25
@@ -49,14 +49,14 @@ Generated: 2026-05-29T02:44:52.745Z
 | /logic/signal-score/ | 50 | 57 | 1363 | 24 | Article, BreadcrumbList |
 | /moomoo/ | 48 | 66 | 1336 | 23 | Article, BreadcrumbList, FAQPage |
 | /performance/ | 45 | 70 | 1512 | 25 | Article, BreadcrumbList, Dataset, FAQPage |
-| /performance/2026-05-27-xndu-rebuild/ | 53 | 83 | 2023 | 24 | Article, BreadcrumbList |
-| /performance/2026-05-28-asts-rotation/ | 52 | 84 | 2716 | 24 | Article, BreadcrumbList |
-| /performance/2026/ | 30 | 52 | 968 | 20 | BreadcrumbList, CollectionPage, ItemList |
-| /performance/2026/05/ | 32 | 61 | 988 | 25 | BreadcrumbList, CollectionPage, ItemList |
-| /performance/2026/05/26/ | 30 | 61 | 1916 | 27 | Article, BreadcrumbList, FAQPage |
-| /performance/2026/05/27/ | 35 | 66 | 2029 | 27 | Article, BreadcrumbList, FAQPage |
-| /performance/2026/05/28/ | 36 | 66 | 2243 | 27 | Article, BreadcrumbList, FAQPage |
-| /performance/latest/ (noindex) | 25 | 72 | 521 | 20 | BreadcrumbList, CollectionPage, ItemList |
+| /performance/2026-05-27-xndu-rebuild/ | 53 | 83 | 2021 | 24 | Article, BreadcrumbList |
+| /performance/2026-05-28-asts-rotation/ | 52 | 84 | 2714 | 24 | Article, BreadcrumbList |
+| /performance/2026/ | 30 | 52 | 966 | 20 | BreadcrumbList, CollectionPage, ItemList |
+| /performance/2026/05/ | 32 | 61 | 986 | 25 | BreadcrumbList, CollectionPage, ItemList |
+| /performance/2026/05/26/ | 30 | 61 | 1914 | 27 | Article, BreadcrumbList, FAQPage |
+| /performance/2026/05/27/ | 35 | 66 | 2027 | 27 | Article, BreadcrumbList, FAQPage |
+| /performance/2026/05/28/ | 36 | 66 | 2241 | 27 | Article, BreadcrumbList, FAQPage |
+| /performance/latest/ | 25 | 72 | 924 | 23 | BreadcrumbList, CollectionPage, ItemList |
 | /profile/ | 26 | 75 | 1375 | 21 | BreadcrumbList, FAQPage, Person, ProfilePage |
 | /research/ | 25 | 59 | 1034 | 25 | Article, BreadcrumbList |
 | /research/ai-infrastructure/ | 47 | 47 | 1505 | 24 | Article, BreadcrumbList |

@@ -1,8 +1,10 @@
 User-agent: *
 Allow: /
+Allow: /assets/
 Disallow: /data/
 Disallow: /scripts/
-Disallow: /datasets/*.json$
+Disallow: /datasets/
+Disallow: /_site/
 
 Sitemap: https://mukimuki-trade.com/sitemap.xml
 Sitemap: https://mukimuki-trade.com/image-sitemap.xml

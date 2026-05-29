@@ -23,7 +23,7 @@ const toDate = (value) => new Date(value).toISOString().slice(0, 10);
 
 const ignoredDirs = new Set(['.git', '.wrangler', '_site', 'assets', 'data', 'datasets', 'scripts', 'node_modules']);
 const ignoredFiles = new Set(['404.html', 'googlefd5cf11d7eb2c415.html']);
-const ignoredRoutes = new Set(['/performance/', '/performance/latest/']);
+const ignoredRoutes = new Set(['/performance/']);
 
 const htmlPathToRoute = (filePath) => {
   const relative = path.relative(root, filePath);
@@ -55,22 +55,30 @@ const walkHtmlPages = async (dir = root) => {
 };
 
 const inferChangefreq = (pagePath) => {
-  if (pagePath === '/' || pagePath.startsWith('/performance/')) return 'daily';
-  if (pagePath.startsWith('/research/') || pagePath.startsWith('/category/') || pagePath.startsWith('/archive/')) return 'weekly';
+  if (pagePath === '/' || pagePath === '/performance/latest/') return 'daily';
+  if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/$/.test(pagePath)) return 'weekly';
+  if (pagePath.startsWith('/research/')) return 'weekly';
   if (pagePath.startsWith('/logic/')) return 'monthly';
+  if (pagePath.startsWith('/archive/')) return 'monthly';
+  if (pagePath === '/profile/' || pagePath === '/about/') return 'monthly';
+  if (pagePath.startsWith('/performance/')) return 'monthly';
+  if (pagePath.startsWith('/category/')) return 'weekly';
   return 'monthly';
 };
 
 const inferPriority = (pagePath) => {
   if (pagePath === '/') return '1.0';
   if (pagePath === '/performance/latest/') return '0.9';
-  if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/$/.test(pagePath)) return '0.88';
-  if (/^\/performance\/\d{4}\/$/.test(pagePath)) return '0.82';
-  if (pagePath === '/research/' || pagePath === '/logic/') return '0.8';
-  if (pagePath.startsWith('/research/')) return '0.8';
-  if (pagePath.startsWith('/logic/')) return '0.75';
-  if (pagePath.startsWith('/category/') || pagePath.startsWith('/archive/')) return '0.65';
-  return '0.6';
+  if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/$/.test(pagePath)) return '0.8';
+  if (pagePath.startsWith('/research/')) return '0.7';
+  if (pagePath.startsWith('/logic/')) return '0.6';
+  if (pagePath.startsWith('/archive/')) return '0.5';
+  if (pagePath === '/profile/' || pagePath === '/about/') return '0.4';
+  if (/^\/performance\/\d{4}\/\d{2}\/$/.test(pagePath)) return '0.7';
+  if (/^\/performance\/\d{4}\/$/.test(pagePath)) return '0.6';
+  if (pagePath.startsWith('/category/')) return '0.5';
+  if (pagePath === '/moomoo/') return '0.6';
+  return '0.5';
 };
 
 const explicitPages = new Map(content.pages.map((page) => [page.path, page]));
@@ -79,18 +87,23 @@ const pageMap = new Map();
 
 for (const { path: pagePath, filePath } of discoveredPages) {
   const fileStat = await stat(filePath);
-  const explicit = explicitPages.get(pagePath) || {};
   pageMap.set(pagePath, {
     path: pagePath,
     lastmod: toDate(fileStat.mtime),
-    changefreq: inferChangefreq(pagePath) || explicit.changefreq,
-    priority: explicit.priority || inferPriority(pagePath),
+    changefreq: inferChangefreq(pagePath),
+    priority: inferPriority(pagePath),
   });
 }
 
 for (const page of content.pages) {
   if (ignoredRoutes.has(page.path)) continue;
-  if (!pageMap.has(page.path)) pageMap.set(page.path, page);
+  if (!pageMap.has(page.path)) {
+    pageMap.set(page.path, {
+      ...page,
+      changefreq: inferChangefreq(page.path),
+      priority: inferPriority(page.path),
+    });
+  }
 }
 
 const pages = [...pageMap.values()].sort((a, b) => {

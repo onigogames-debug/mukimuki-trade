@@ -1,7 +1,7 @@
 import { absoluteUrl, breadcrumbSchema } from './structured-data.mjs';
 
 const staticLabels = new Map([
-  ['performance', '実績公開'],
+  ['performance', '実績'],
   ['latest', '最新実績'],
   ['research', '銘柄検討'],
   ['logic', '投資ロジック'],
@@ -41,7 +41,7 @@ export const buildBreadcrumbsFromPath = (pagePath, title) => {
 const labelForSegment = (segment, { previous, next } = {}) => {
   if (/^\d{4}$/.test(segment)) return `${segment}年`;
   if (/^\d{2}$/.test(segment) && /^\d{4}$/.test(previous || '')) return monthLabel(segment);
-  if (/^\d{2}$/.test(segment) && /^\d{2}$/.test(previous || '') && !next) return dayLabel(segment);
+  if (/^\d{2}$/.test(segment) && /^\d{2}$/.test(previous || '')) return `${Number(previous)}月${Number(segment)}日`;
   if (staticLabels.has(segment)) return staticLabels.get(segment);
   return segment
     .split('-')
