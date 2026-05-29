@@ -19,7 +19,37 @@
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="alternate" type="application/rss+xml" title="MUKIMUKI trade RSS" href="/feed.xml">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="stylesheet" href="styles.css">
+  <style data-critical-css>
+:root{--ink:#17140f;--muted:#6c6258;--paper:#fff8e6;--cream:#fffdf6;--line:rgba(23,20,15,.14);--sun:#ffd928;--fire:#ef3b32;--blue:#2458d3;--shadow:0 14px 36px rgba(23,20,15,.12)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:var(--paper);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3,p,dl{margin-top:0}
+h1,h2,h3,p,dd,strong{overflow-wrap:anywhere}
+.site-header{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:12px 32px;border-bottom:1px solid var(--line);background:rgba(255,248,230,.94);backdrop-filter:blur(14px)}
+.brand{display:flex;align-items:center;gap:12px;min-width:max-content}
+.brand picture{display:block;flex:0 0 46px;width:46px;height:46px}
+.brand img{width:46px;height:46px;border:2px solid var(--ink);border-radius:50%;background:var(--sun);object-fit:contain}
+.brand strong,.brand small{display:block;line-height:1.15}.brand strong{font-size:1rem}.brand small{margin-top:2px;color:var(--muted);font-size:.75rem;font-weight:700}
+.nav-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:4px;font-size:.9rem;font-weight:800}.nav-links a{padding:8px 10px;border-radius:999px}
+.mobile-menu{display:none;position:relative;margin-left:auto}.mobile-menu summary{display:grid;width:46px;height:46px;place-items:center;border:2px solid var(--ink);border-radius:8px;background:var(--cream);box-shadow:4px 4px 0 rgba(23,20,15,.14);color:var(--ink);cursor:pointer;list-style:none}.mobile-menu summary::-webkit-details-marker{display:none}
+.hero{padding:56px 32px;border-bottom:1px solid var(--line);background:linear-gradient(135deg,rgba(255,217,40,.55),rgba(255,255,255,.3)),var(--paper)}
+.hero-shell{display:grid;grid-template-columns:minmax(0,1.1fr) 380px;gap:28px;align-items:center;max-width:1120px;margin:0 auto}
+.hero-copy,.hero-panel{min-width:0}.eyebrow{margin-bottom:10px;color:var(--blue);font-size:.78rem;font-weight:900}
+.hero h1{max-width:700px;margin-bottom:18px;font-size:3.5rem;line-height:1.08}.hero-lead{max-width:680px;margin-bottom:24px;color:#3b332b;font-size:1.08rem;font-weight:700;line-height:1.85}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 16px;border:2px solid var(--ink);border-radius:8px;font:inherit;font-weight:900}.primary{background:var(--ink);color:#fff}.secondary{background:var(--cream)}
+.hero-panel{position:relative;overflow:hidden;padding:20px;border:2px solid var(--ink);border-radius:8px;background:var(--cream);box-shadow:var(--shadow)}
+.hero-mascot{position:relative;display:grid;min-height:218px;place-items:center;margin:-4px 0 14px}.hero-mascot picture{position:relative;z-index:2;width:min(220px,68%)}.hero-mascot img{width:100%;filter:drop-shadow(0 18px 18px rgba(23,20,15,.22));transform-origin:center bottom;animation:mascotFlex 2.8s ease-in-out infinite}
+.motion-ring{position:absolute;inset:50% auto auto 50%;z-index:1;width:170px;aspect-ratio:1;border:2px solid rgba(23,20,15,.22);border-radius:50%;background:rgba(255,217,40,.22);transform:translate(-50%,-50%);animation:ringPulse 2.8s ease-in-out infinite}
+.ring-two{width:220px;background:rgba(239,59,50,.08);animation-delay:.42s}.mascot-badge{position:absolute;z-index:3;padding:7px 10px;border:2px solid var(--ink);border-radius:999px;background:var(--cream);font-size:.78rem;font-weight:900;box-shadow:0 7px 0 rgba(23,20,15,.12)}
+@media(max-width:920px){.site-header{padding:10px 18px}.nav-links{display:none}.mobile-menu{display:block}.hero{padding:42px 18px}.hero-shell{grid-template-columns:1fr}.hero h1{font-size:2.5rem}.hero-panel{max-width:520px;width:100%;justify-self:center}}
+@media(max-width:560px){.brand span{display:none}.hero h1{font-size:2.15rem}.hero-lead{font-size:1rem}.button{width:100%}}
+  </style>
+  <link rel="preload" href="/styles.css" as="style">
+  <link rel="stylesheet" href="/styles.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="/styles.css"></noscript>
   <style>
     .hero-promo-stack{display:grid;gap:12px;margin-top:22px}
     .hero-promo{display:grid;grid-template-columns:52px minmax(0,1fr) auto;align-items:center;gap:14px;min-height:92px;padding:14px 16px;border:2px solid #17140f;border-radius:8px;box-shadow:6px 6px 0 #17140f;text-decoration:none}
@@ -186,7 +216,11 @@
 <body>
   <header class="site-header">
     <a class="brand" href="/" aria-label="MUKIMUKI trade home">
-      <img src="assets/mukimuki-main.png" alt="">
+      <picture data-cwv-picture>
+  <source type="image/avif" srcset="/assets/optimized/mukimuki-main-96.avif 96w, /assets/optimized/mukimuki-main-192.avif 192w, /assets/optimized/mukimuki-main-320.avif 320w, /assets/optimized/mukimuki-main-480.avif 480w, /assets/optimized/mukimuki-main-768.avif 768w, /assets/optimized/mukimuki-main-1024.avif 1024w, /assets/optimized/mukimuki-main-1226.avif 1226w" sizes="46px">
+  <source type="image/webp" srcset="/assets/optimized/mukimuki-main-96.webp 96w, /assets/optimized/mukimuki-main-192.webp 192w, /assets/optimized/mukimuki-main-320.webp 320w, /assets/optimized/mukimuki-main-480.webp 480w, /assets/optimized/mukimuki-main-768.webp 768w, /assets/optimized/mukimuki-main-1024.webp 1024w, /assets/optimized/mukimuki-main-1226.webp 1226w" sizes="46px">
+  <img src="/assets/mukimuki-main.png" alt="" width="1226" height="764" decoding="async" fetchpriority="high" data-cwv-fallback>
+</picture>
       <span>
         <strong>MUKIMUKI trade</strong>
         <small>数字で追う公開記録</small>
@@ -254,7 +288,11 @@
           <div class="hero-mascot" aria-label="動くメインキャラクターMUKIMUKI">
             <span class="motion-ring ring-one"></span>
             <span class="motion-ring ring-two"></span>
-            <img src="assets/mukimuki-main.png" alt="メインキャラクターMUKIMUKI">
+            <picture data-cwv-picture>
+  <source type="image/avif" srcset="/assets/optimized/mukimuki-main-96.avif 96w, /assets/optimized/mukimuki-main-192.avif 192w, /assets/optimized/mukimuki-main-320.avif 320w, /assets/optimized/mukimuki-main-480.avif 480w, /assets/optimized/mukimuki-main-768.avif 768w, /assets/optimized/mukimuki-main-1024.avif 1024w, /assets/optimized/mukimuki-main-1226.avif 1226w" sizes="(max-width: 720px) 68vw, 220px">
+  <source type="image/webp" srcset="/assets/optimized/mukimuki-main-96.webp 96w, /assets/optimized/mukimuki-main-192.webp 192w, /assets/optimized/mukimuki-main-320.webp 320w, /assets/optimized/mukimuki-main-480.webp 480w, /assets/optimized/mukimuki-main-768.webp 768w, /assets/optimized/mukimuki-main-1024.webp 1024w, /assets/optimized/mukimuki-main-1226.webp 1226w" sizes="(max-width: 720px) 68vw, 220px">
+  <img src="/assets/mukimuki-main.png" alt="メインキャラクターMUKIMUKI" width="1226" height="764" decoding="async" fetchpriority="high" data-cwv-fallback>
+</picture>
             <span class="mascot-badge badge-live">LIVE</span>
             <span class="mascot-badge badge-profit" data-performance="total-return">+10.1%</span>
           </div>
@@ -384,7 +422,11 @@
 
       <div class="article-list">
         <article class="post-card" data-category="performance">
-          <img src="assets/mukimuki-performance.png" alt="">
+          <picture data-cwv-picture>
+  <source type="image/avif" srcset="/assets/optimized/mukimuki-performance-96.avif 96w, /assets/optimized/mukimuki-performance-192.avif 192w, /assets/optimized/mukimuki-performance-320.avif 320w, /assets/optimized/mukimuki-performance-480.avif 480w, /assets/optimized/mukimuki-performance-768.avif 768w, /assets/optimized/mukimuki-performance-1024.avif 1024w, /assets/optimized/mukimuki-performance-1226.avif 1226w" sizes="(max-width: 720px) 92vw, 280px">
+  <source type="image/webp" srcset="/assets/optimized/mukimuki-performance-96.webp 96w, /assets/optimized/mukimuki-performance-192.webp 192w, /assets/optimized/mukimuki-performance-320.webp 320w, /assets/optimized/mukimuki-performance-480.webp 480w, /assets/optimized/mukimuki-performance-768.webp 768w, /assets/optimized/mukimuki-performance-1024.webp 1024w, /assets/optimized/mukimuki-performance-1226.webp 1226w" sizes="(max-width: 720px) 92vw, 280px">
+  <img src="/assets/mukimuki-performance.png" alt="" width="1226" height="766" loading="lazy" decoding="async" data-cwv-fallback>
+</picture>
           <div>
             <span class="post-kicker">実績公開</span>
             <h3 data-performance="latest-title">5/28の実績: 100万円比 +10.1%</h3>
@@ -393,7 +435,11 @@
           </div>
         </article>
         <article class="post-card" data-category="performance">
-          <img src="assets/mukimuki-performance.png" alt="">
+          <picture data-cwv-picture>
+  <source type="image/avif" srcset="/assets/optimized/mukimuki-performance-96.avif 96w, /assets/optimized/mukimuki-performance-192.avif 192w, /assets/optimized/mukimuki-performance-320.avif 320w, /assets/optimized/mukimuki-performance-480.avif 480w, /assets/optimized/mukimuki-performance-768.avif 768w, /assets/optimized/mukimuki-performance-1024.avif 1024w, /assets/optimized/mukimuki-performance-1226.avif 1226w" sizes="(max-width: 720px) 92vw, 280px">
+  <source type="image/webp" srcset="/assets/optimized/mukimuki-performance-96.webp 96w, /assets/optimized/mukimuki-performance-192.webp 192w, /assets/optimized/mukimuki-performance-320.webp 320w, /assets/optimized/mukimuki-performance-480.webp 480w, /assets/optimized/mukimuki-performance-768.webp 768w, /assets/optimized/mukimuki-performance-1024.webp 1024w, /assets/optimized/mukimuki-performance-1226.webp 1226w" sizes="(max-width: 720px) 92vw, 280px">
+  <img src="/assets/mukimuki-performance.png" alt="" width="1226" height="766" loading="lazy" decoding="async" data-cwv-fallback>
+</picture>
           <div>
             <span class="post-kicker">売買トピック</span>
             <h3>5/28売買トピック: ASTSを利確</h3>
@@ -402,7 +448,11 @@
           </div>
         </article>
         <article class="post-card" data-category="research" id="research">
-          <img src="assets/mukimuki-research.png" alt="">
+          <picture data-cwv-picture>
+  <source type="image/avif" srcset="/assets/optimized/mukimuki-research-96.avif 96w, /assets/optimized/mukimuki-research-192.avif 192w, /assets/optimized/mukimuki-research-320.avif 320w, /assets/optimized/mukimuki-research-480.avif 480w, /assets/optimized/mukimuki-research-768.avif 768w, /assets/optimized/mukimuki-research-1024.avif 1024w, /assets/optimized/mukimuki-research-1224.avif 1224w" sizes="(max-width: 720px) 92vw, 280px">
+  <source type="image/webp" srcset="/assets/optimized/mukimuki-research-96.webp 96w, /assets/optimized/mukimuki-research-192.webp 192w, /assets/optimized/mukimuki-research-320.webp 320w, /assets/optimized/mukimuki-research-480.webp 480w, /assets/optimized/mukimuki-research-768.webp 768w, /assets/optimized/mukimuki-research-1024.webp 1024w, /assets/optimized/mukimuki-research-1224.webp 1224w" sizes="(max-width: 720px) 92vw, 280px">
+  <img src="/assets/mukimuki-research.png" alt="" width="1224" height="764" loading="lazy" decoding="async" data-cwv-fallback>
+</picture>
           <div>
             <span class="post-kicker">銘柄検討</span>
             <h3>銘柄を見る順番: ニュース、チャート、決算</h3>
@@ -411,7 +461,11 @@
           </div>
         </article>
         <article class="post-card" data-category="research">
-          <img src="assets/mukimuki-research.png" alt="">
+          <picture data-cwv-picture>
+  <source type="image/avif" srcset="/assets/optimized/mukimuki-research-96.avif 96w, /assets/optimized/mukimuki-research-192.avif 192w, /assets/optimized/mukimuki-research-320.avif 320w, /assets/optimized/mukimuki-research-480.avif 480w, /assets/optimized/mukimuki-research-768.avif 768w, /assets/optimized/mukimuki-research-1024.avif 1024w, /assets/optimized/mukimuki-research-1224.avif 1224w" sizes="(max-width: 720px) 92vw, 280px">
+  <source type="image/webp" srcset="/assets/optimized/mukimuki-research-96.webp 96w, /assets/optimized/mukimuki-research-192.webp 192w, /assets/optimized/mukimuki-research-320.webp 320w, /assets/optimized/mukimuki-research-480.webp 480w, /assets/optimized/mukimuki-research-768.webp 768w, /assets/optimized/mukimuki-research-1024.webp 1024w, /assets/optimized/mukimuki-research-1224.webp 1224w" sizes="(max-width: 720px) 92vw, 280px">
+  <img src="/assets/mukimuki-research.png" alt="" width="1224" height="764" loading="lazy" decoding="async" data-cwv-fallback>
+</picture>
           <div>
             <span class="post-kicker">銘柄検討</span>
             <h3>AIインフラ銘柄の候補整理</h3>
@@ -420,7 +474,11 @@
           </div>
         </article>
         <article class="post-card" data-category="research">
-          <img src="assets/mukimuki-editor.png" alt="">
+          <picture data-cwv-picture>
+  <source type="image/avif" srcset="/assets/optimized/mukimuki-editor-96.avif 96w, /assets/optimized/mukimuki-editor-192.avif 192w, /assets/optimized/mukimuki-editor-320.avif 320w, /assets/optimized/mukimuki-editor-480.avif 480w, /assets/optimized/mukimuki-editor-752.avif 752w" sizes="(max-width: 720px) 92vw, 280px">
+  <source type="image/webp" srcset="/assets/optimized/mukimuki-editor-96.webp 96w, /assets/optimized/mukimuki-editor-192.webp 192w, /assets/optimized/mukimuki-editor-320.webp 320w, /assets/optimized/mukimuki-editor-480.webp 480w, /assets/optimized/mukimuki-editor-752.webp 752w" sizes="(max-width: 720px) 92vw, 280px">
+  <img src="/assets/mukimuki-editor.png" alt="" width="752" height="592" loading="lazy" decoding="async" data-cwv-fallback>
+</picture>
           <div>
             <span class="post-kicker">銘柄検討</span>
             <h3>アプリ・広告・金融テック銘柄</h3>
@@ -429,7 +487,11 @@
           </div>
         </article>
         <article class="post-card" data-category="research">
-          <img src="assets/mukimuki-research.png" alt="">
+          <picture data-cwv-picture>
+  <source type="image/avif" srcset="/assets/optimized/mukimuki-research-96.avif 96w, /assets/optimized/mukimuki-research-192.avif 192w, /assets/optimized/mukimuki-research-320.avif 320w, /assets/optimized/mukimuki-research-480.avif 480w, /assets/optimized/mukimuki-research-768.avif 768w, /assets/optimized/mukimuki-research-1024.avif 1024w, /assets/optimized/mukimuki-research-1224.avif 1224w" sizes="(max-width: 720px) 92vw, 280px">
+  <source type="image/webp" srcset="/assets/optimized/mukimuki-research-96.webp 96w, /assets/optimized/mukimuki-research-192.webp 192w, /assets/optimized/mukimuki-research-320.webp 320w, /assets/optimized/mukimuki-research-480.webp 480w, /assets/optimized/mukimuki-research-768.webp 768w, /assets/optimized/mukimuki-research-1024.webp 1024w, /assets/optimized/mukimuki-research-1224.webp 1224w" sizes="(max-width: 720px) 92vw, 280px">
+  <img src="/assets/mukimuki-research.png" alt="" width="1224" height="764" loading="lazy" decoding="async" data-cwv-fallback>
+</picture>
           <div>
             <span class="post-kicker">銘柄検討</span>
             <h3>フロンティア成長株</h3>
@@ -438,7 +500,11 @@
           </div>
         </article>
         <article class="post-card" data-category="logic">
-          <img src="assets/mukimuki-editor.png" alt="">
+          <picture data-cwv-picture>
+  <source type="image/avif" srcset="/assets/optimized/mukimuki-editor-96.avif 96w, /assets/optimized/mukimuki-editor-192.avif 192w, /assets/optimized/mukimuki-editor-320.avif 320w, /assets/optimized/mukimuki-editor-480.avif 480w, /assets/optimized/mukimuki-editor-752.avif 752w" sizes="(max-width: 720px) 92vw, 280px">
+  <source type="image/webp" srcset="/assets/optimized/mukimuki-editor-96.webp 96w, /assets/optimized/mukimuki-editor-192.webp 192w, /assets/optimized/mukimuki-editor-320.webp 320w, /assets/optimized/mukimuki-editor-480.webp 480w, /assets/optimized/mukimuki-editor-752.webp 752w" sizes="(max-width: 720px) 92vw, 280px">
+  <img src="/assets/mukimuki-editor.png" alt="" width="752" height="592" loading="lazy" decoding="async" data-cwv-fallback>
+</picture>
           <div>
             <span class="post-kicker">投資ロジック</span>
             <h3>シグナルは3点で見る</h3>
@@ -447,7 +513,11 @@
           </div>
         </article>
         <article class="post-card" data-category="logic">
-          <img src="assets/mukimuki-performance.png" alt="">
+          <picture data-cwv-picture>
+  <source type="image/avif" srcset="/assets/optimized/mukimuki-performance-96.avif 96w, /assets/optimized/mukimuki-performance-192.avif 192w, /assets/optimized/mukimuki-performance-320.avif 320w, /assets/optimized/mukimuki-performance-480.avif 480w, /assets/optimized/mukimuki-performance-768.avif 768w, /assets/optimized/mukimuki-performance-1024.avif 1024w, /assets/optimized/mukimuki-performance-1226.avif 1226w" sizes="(max-width: 720px) 92vw, 280px">
+  <source type="image/webp" srcset="/assets/optimized/mukimuki-performance-96.webp 96w, /assets/optimized/mukimuki-performance-192.webp 192w, /assets/optimized/mukimuki-performance-320.webp 320w, /assets/optimized/mukimuki-performance-480.webp 480w, /assets/optimized/mukimuki-performance-768.webp 768w, /assets/optimized/mukimuki-performance-1024.webp 1024w, /assets/optimized/mukimuki-performance-1226.webp 1226w" sizes="(max-width: 720px) 92vw, 280px">
+  <img src="/assets/mukimuki-performance.png" alt="" width="1226" height="766" loading="lazy" decoding="async" data-cwv-fallback>
+</picture>
           <div>
             <span class="post-kicker">投資ロジック</span>
             <h3>エントリーとリスク管理</h3>
@@ -456,7 +526,11 @@
           </div>
         </article>
         <article class="post-card" data-category="logic">
-          <img src="assets/mukimuki-diary.png" alt="">
+          <picture data-cwv-picture>
+  <source type="image/avif" srcset="/assets/optimized/mukimuki-diary-96.avif 96w, /assets/optimized/mukimuki-diary-192.avif 192w, /assets/optimized/mukimuki-diary-320.avif 320w, /assets/optimized/mukimuki-diary-480.avif 480w, /assets/optimized/mukimuki-diary-768.avif 768w, /assets/optimized/mukimuki-diary-1024.avif 1024w, /assets/optimized/mukimuki-diary-1226.avif 1226w" sizes="(max-width: 720px) 92vw, 280px">
+  <source type="image/webp" srcset="/assets/optimized/mukimuki-diary-96.webp 96w, /assets/optimized/mukimuki-diary-192.webp 192w, /assets/optimized/mukimuki-diary-320.webp 320w, /assets/optimized/mukimuki-diary-480.webp 480w, /assets/optimized/mukimuki-diary-768.webp 768w, /assets/optimized/mukimuki-diary-1024.webp 1024w, /assets/optimized/mukimuki-diary-1226.webp 1226w" sizes="(max-width: 720px) 92vw, 280px">
+  <img src="/assets/mukimuki-diary.png" alt="" width="1226" height="766" loading="lazy" decoding="async" data-cwv-fallback>
+</picture>
           <div>
             <span class="post-kicker">投資ロジック</span>
             <h3>利確と撤退の考え方</h3>
@@ -465,7 +539,11 @@
           </div>
         </article>
         <article class="post-card" data-category="diary">
-          <img src="assets/mukimuki-diary.png" alt="">
+          <picture data-cwv-picture>
+  <source type="image/avif" srcset="/assets/optimized/mukimuki-diary-96.avif 96w, /assets/optimized/mukimuki-diary-192.avif 192w, /assets/optimized/mukimuki-diary-320.avif 320w, /assets/optimized/mukimuki-diary-480.avif 480w, /assets/optimized/mukimuki-diary-768.avif 768w, /assets/optimized/mukimuki-diary-1024.avif 1024w, /assets/optimized/mukimuki-diary-1226.avif 1226w" sizes="(max-width: 720px) 92vw, 280px">
+  <source type="image/webp" srcset="/assets/optimized/mukimuki-diary-96.webp 96w, /assets/optimized/mukimuki-diary-192.webp 192w, /assets/optimized/mukimuki-diary-320.webp 320w, /assets/optimized/mukimuki-diary-480.webp 480w, /assets/optimized/mukimuki-diary-768.webp 768w, /assets/optimized/mukimuki-diary-1024.webp 1024w, /assets/optimized/mukimuki-diary-1226.webp 1226w" sizes="(max-width: 720px) 92vw, 280px">
+  <img src="/assets/mukimuki-diary.png" alt="" width="1226" height="766" loading="lazy" decoding="async" data-cwv-fallback>
+</picture>
           <div>
             <span class="post-kicker">雑談</span>
             <h3>速報メモとサイトに残すこと</h3>
@@ -474,7 +552,11 @@
           </div>
         </article>
         <article class="post-card" data-category="broker">
-          <img src="assets/mukimuki-editor.png" alt="">
+          <picture data-cwv-picture>
+  <source type="image/avif" srcset="/assets/optimized/mukimuki-editor-96.avif 96w, /assets/optimized/mukimuki-editor-192.avif 192w, /assets/optimized/mukimuki-editor-320.avif 320w, /assets/optimized/mukimuki-editor-480.avif 480w, /assets/optimized/mukimuki-editor-752.avif 752w" sizes="(max-width: 720px) 92vw, 280px">
+  <source type="image/webp" srcset="/assets/optimized/mukimuki-editor-96.webp 96w, /assets/optimized/mukimuki-editor-192.webp 192w, /assets/optimized/mukimuki-editor-320.webp 320w, /assets/optimized/mukimuki-editor-480.webp 480w, /assets/optimized/mukimuki-editor-752.webp 752w" sizes="(max-width: 720px) 92vw, 280px">
+  <img src="/assets/mukimuki-editor.png" alt="" width="752" height="592" loading="lazy" decoding="async" data-cwv-fallback>
+</picture>
           <div>
             <span class="post-kicker">PR / moomoo</span>
             <h3>moomooで何を見るか</h3>
@@ -543,6 +625,12 @@
     <nav class="footer-links" aria-label="補助リンク"><a href="/profile/">運営者</a><a href="/archive/">アーカイブ</a><a href="/feed.xml">RSS</a><a href="/about/">運営方針</a><a href="https://x.com/OnigoGames" target="_blank" rel="me noopener">公式X</a></nav>
   </footer>
 
-  <script src="script.js?v=20260529-daily-update"></script>
+  <script id="performance-data" type="application/json">{"schemaVersion":1,"siteName":"MUKIMUKI trade","sourceName":"Autotrade daily report","sourceReport":"report_2026-05-28.txt + jp_account_mix_report.csv","generatedAt":"2026-05-29T05:00:21+09:00","generatedAtDisplay":"2026.05.29 05:00:21 JST","timezone":{"reportDate":"EST","generatedAt":"Asia/Tokyo"},"startCapitalJpy":1000000,"minimumChallengeAssetJpy":900000,"challengeStartDate":"2026-04-24","affiliateUrl":"https://j.jp.moomoo.com/0BdcjG","latest":{"reportDate":"2026-05-28","reportDateDisplay":"2026.05.28 EST","label":"5/28","jpy":{"start":1086182.27,"end":1100567.07,"delta":14384.81},"usd":{"start":6806.34,"end":6911.02,"delta":104.6852},"summary":{"totalTrades":24,"totalBuyUsd":11589.71,"totalSellUsd":10380.05,"usdPnl":104.69,"cashFlowUsd":-1209.66,"totalPnlJpy":100567.07,"totalReturnPct":10.06,"dailyReturnPct":1.32},"trades":[{"side":"SELL","symbol":"US.META","shares":1,"priceUsd":630.2601,"amountUsd":630.26,"executedAtEst":"2026-05-28 09:37:48.742"},{"side":"BUY","symbol":"US.AMZN","shares":3,"priceUsd":267.815,"amountUsd":803.44,"executedAtEst":"2026-05-28 10:10:38.603"},{"side":"SELL","symbol":"US.ALAB","shares":5,"priceUsd":347.99,"amountUsd":1739.95,"executedAtEst":"2026-05-28 11:09:24.368"},{"side":"SELL","symbol":"US.AMZN","shares":15,"priceUsd":269.71,"amountUsd":4045.65,"executedAtEst":"2026-05-28 11:11:47.700"},{"side":"BUY","symbol":"US.MSFT","shares":4,"priceUsd":425.03,"amountUsd":1700.12,"executedAtEst":"2026-05-28 11:25:55.847"},{"side":"BUY","symbol":"US.PCLA","shares":188,"priceUsd":10.9484,"amountUsd":2058.3,"executedAtEst":"2026-05-28 11:31:26.598"},{"side":"BUY","symbol":"US.RKLB","shares":6,"priceUsd":146.63,"amountUsd":879.78,"executedAtEst":"2026-05-28 11:31:26.973"},{"side":"BUY","symbol":"US.ASTS","shares":8,"priceUsd":124.67,"amountUsd":997.36,"executedAtEst":"2026-05-28 11:33:39.603"},{"side":"BUY","symbol":"US.SOFI","shares":70,"priceUsd":16.815,"amountUsd":1177.05,"executedAtEst":"2026-05-28 11:35:51.468"},{"side":"SELL","symbol":"US.PCLA","shares":188,"priceUsd":10.5604,"amountUsd":1985.36,"executedAtEst":"2026-05-28 11:36:57.717"},{"side":"BUY","symbol":"US.RKLB","shares":7,"priceUsd":147.32,"amountUsd":1031.24,"executedAtEst":"2026-05-28 11:38:04.019"},{"side":"BUY","symbol":"US.ASTS","shares":7,"priceUsd":125.2,"amountUsd":876.4,"executedAtEst":"2026-05-28 11:39:10.946"},{"side":"BUY","symbol":"US.PL","shares":1,"priceUsd":50.3,"amountUsd":50.3,"executedAtEst":"2026-05-28 11:42:30.458"},{"side":"BUY","symbol":"US.SOFI","shares":3,"priceUsd":16.8597,"amountUsd":50.58,"executedAtEst":"2026-05-28 11:46:57.400"},{"side":"SELL","symbol":"US.ASTS","shares":7,"priceUsd":129.0805,"amountUsd":903.56,"executedAtEst":"2026-05-28 13:51:41.643"},{"side":"BUY","symbol":"US.SOUN","shares":103,"priceUsd":8.6398,"amountUsd":889.9,"executedAtEst":"2026-05-28 13:52:49.196"},{"side":"BUY","symbol":"US.SOUN","shares":1,"priceUsd":8.6063,"amountUsd":8.61,"executedAtEst":"2026-05-28 14:02:52.640"},{"side":"SELL","symbol":"US.ASTS","shares":8,"priceUsd":131.8122,"amountUsd":1054.5,"executedAtEst":"2026-05-28 14:55:20.621"},{"side":"BUY","symbol":"US.HOOD","shares":4,"priceUsd":83.5684,"amountUsd":334.27,"executedAtEst":"2026-05-28 14:56:28.149"},{"side":"BUY","symbol":"US.OKLO","shares":9,"priceUsd":68.28,"amountUsd":614.52,"executedAtEst":"2026-05-28 14:56:28.651"},{"side":"BUY","symbol":"US.AMPX","shares":1,"priceUsd":21.73,"amountUsd":21.73,"executedAtEst":"2026-05-28 14:56:29.353"},{"side":"BUY","symbol":"US.SOUN","shares":10,"priceUsd":8.5863,"amountUsd":85.86,"executedAtEst":"2026-05-28 15:03:11.984"},{"side":"SELL","symbol":"US.AMPX","shares":1,"priceUsd":20.77,"amountUsd":20.77,"executedAtEst":"2026-05-28 16:00:14.884"},{"side":"BUY","symbol":"US.AI","shares":1,"priceUsd":10.25,"amountUsd":10.25,"executedAtEst":"2026-05-28 16:16:39.390"}],"positions":[{"symbol":"US.SOUN","shares":114,"averagePriceUsd":8.65,"unrealizedPnlPct":-0.99,"unrealizedPnlUsd":-9.82},{"symbol":"US.SOFI","shares":73,"averagePriceUsd":16.84,"unrealizedPnlPct":0.78,"unrealizedPnlUsd":9.57},{"symbol":"US.RKLB","shares":13,"averagePriceUsd":147.19,"unrealizedPnlPct":0.57,"unrealizedPnlUsd":10.85},{"symbol":"US.PL","shares":1,"averagePriceUsd":50.36,"unrealizedPnlPct":2.07,"unrealizedPnlUsd":1.04},{"symbol":"US.OKLO","shares":9,"averagePriceUsd":68.37,"unrealizedPnlPct":-0.41,"unrealizedPnlUsd":-2.52},{"symbol":"US.MSFT","shares":4,"averagePriceUsd":425.59,"unrealizedPnlPct":0.32,"unrealizedPnlUsd":5.52},{"symbol":"US.HOOD","shares":4,"averagePriceUsd":83.68,"unrealizedPnlPct":1.19,"unrealizedPnlUsd":3.97},{"symbol":"US.AMPX","shares":1,"averagePriceUsd":21.76,"unrealizedPnlPct":-4.55,"unrealizedPnlUsd":-0.99}],"signals":{"loops":382,"buySignals":619,"sellSignals":7832,"holds":11572}},"history":[{"date":"2026-04-24","label":"4/24","jpyStart":1012851.7,"jpyEnd":1012851.7,"jpyDelta":0,"totalPnlJpy":12851.7,"totalReturnPct":1.29,"totalTrades":0},{"date":"2026-05-07","label":"5/7","jpyStart":1029935.17,"jpyEnd":1029935.17,"jpyDelta":0,"totalPnlJpy":29935.17,"totalReturnPct":2.99,"totalTrades":8},{"date":"2026-05-08","label":"5/8","jpyStart":1029935.17,"jpyEnd":1035548.25,"jpyDelta":5613.08,"totalPnlJpy":35548.25,"totalReturnPct":3.55,"totalTrades":62},{"date":"2026-05-11","label":"5/11","jpyStart":1033749.31,"jpyEnd":1062147.8,"jpyDelta":28398.49,"totalPnlJpy":62147.8,"totalReturnPct":6.21,"totalTrades":6},{"date":"2026-05-12","label":"5/12","jpyStart":1066550.52,"jpyEnd":1063199.31,"jpyDelta":-3351.21,"totalPnlJpy":63199.31,"totalReturnPct":6.32,"totalTrades":2},{"date":"2026-05-13","label":"5/13","jpyStart":1063334.37,"jpyEnd":1064697.8,"jpyDelta":1363.43,"totalPnlJpy":64697.8,"totalReturnPct":6.47,"totalTrades":0},{"date":"2026-05-14","label":"5/14","jpyStart":1064350.51,"jpyEnd":1073384.39,"jpyDelta":9033.88,"totalPnlJpy":73384.39,"totalReturnPct":7.34,"totalTrades":14},{"date":"2026-05-15","label":"5/15","jpyStart":1074933.52,"jpyEnd":1073384.39,"jpyDelta":-1549.13,"totalPnlJpy":73384.39,"totalReturnPct":7.34,"totalTrades":9},{"date":"2026-05-18","label":"5/18","jpyStart":1042329.78,"jpyEnd":1027479.25,"jpyDelta":-14850.53,"totalPnlJpy":27479.25,"totalReturnPct":2.75,"totalTrades":56},{"date":"2026-05-19","label":"5/19","jpyStart":1044600.51,"jpyEnd":1026949.5,"jpyDelta":-17651.01,"totalPnlJpy":26949.5,"totalReturnPct":2.69,"totalTrades":35},{"date":"2026-05-20","label":"5/20","jpyStart":1024532.71,"jpyEnd":1026483.73,"jpyDelta":1951.02,"totalPnlJpy":26483.73,"totalReturnPct":2.65,"totalTrades":20},{"date":"2026-05-21","label":"5/21","jpyStart":1035990.99,"jpyEnd":1041901.98,"jpyDelta":5911,"totalPnlJpy":41901.98,"totalReturnPct":4.19,"totalTrades":14},{"date":"2026-05-22","label":"5/22","jpyStart":1049224.81,"jpyEnd":1059394.13,"jpyDelta":10169.32,"totalPnlJpy":59394.13,"totalReturnPct":5.94,"totalTrades":13},{"date":"2026-05-23","label":"5/23","jpyStart":1059670.2,"jpyEnd":1059670.2,"jpyDelta":0,"totalPnlJpy":59670.2,"totalReturnPct":5.97,"totalTrades":0},{"date":"2026-05-24","label":"5/24","jpyStart":1059670.2,"jpyEnd":1059670.2,"jpyDelta":0,"totalPnlJpy":59670.2,"totalReturnPct":5.97,"totalTrades":0},{"date":"2026-05-25","label":"5/25","jpyStart":1057943.97,"jpyEnd":1059166.12,"jpyDelta":1222.15,"totalPnlJpy":59166.12,"totalReturnPct":5.92,"totalTrades":0},{"date":"2026-05-26","label":"5/26","jpyStart":1060557.02,"jpyEnd":1030833.63,"jpyDelta":-29723.39,"totalPnlJpy":30833.63,"totalReturnPct":3.08,"totalTrades":18},{"date":"2026-05-27","label":"5/27","jpyStart":1029399.27,"jpyEnd":1085692.74,"jpyDelta":56293.47,"totalPnlJpy":85692.74,"totalReturnPct":8.57,"totalTrades":37},{"date":"2026-05-28","label":"5/28","jpyStart":1086182.27,"jpyEnd":1100567.07,"jpyDelta":14384.81,"totalPnlJpy":100567.07,"totalReturnPct":10.06,"totalTrades":24}],"notes":["公開実績は自己運用ログをもとにした記録です。","資産推移と引け後ポジションはAutotrade日次レポート、約定件数と売買金額は同日朝に取得したjp_account_mix_report.csvの約定履歴を補完して掲載しています。","掲載内容は情報提供を目的としたもので、特定銘柄の売買を推奨するものではありません。"]}</script>
+  <script src="script.js?v=20260529-cwv" defer></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js'));
+    }
+  </script>
 </body>
 </html>

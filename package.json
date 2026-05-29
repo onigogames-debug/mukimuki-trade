@@ -4,10 +4,16 @@
   "private": true,
   "scripts": {
     "preview": "python3 -m http.server 4173",
+    "images:optimize": "node scripts/optimize-images.mjs",
     "articles:generate": "node scripts/generate-articles.mjs",
     "performance:pages": "node scripts/generate-performance-pages.mjs",
     "performance:import": "node scripts/import-performance-report.mjs",
     "seo:generate": "node scripts/generate-seo.mjs",
+    "cwv:apply": "node scripts/apply-cwv-optimizations.mjs",
+    "build": "npm run images:optimize && npm run articles:generate && npm run performance:pages && npm run seo:generate && npm run cwv:apply",
     "deploy": "npx wrangler pages deploy . --project-name mukimuki-trade"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.5"
   }
 }

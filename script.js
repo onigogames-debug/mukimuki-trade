@@ -55,6 +55,16 @@ const fallbackPerformance = {
 };
 let performanceState = fallbackPerformance;
 
+function getEmbeddedPerformanceData() {
+  const element = document.getElementById("performance-data");
+  if (!element?.textContent) return null;
+  try {
+    return JSON.parse(element.textContent);
+  } catch (error) {
+    return null;
+  }
+}
+
 function asNumber(value) {
   return typeof value === "number" && Number.isFinite(value) ? value : null;
 }
@@ -302,16 +312,21 @@ function drawChart(data = performanceState) {
 }
 
 async function loadPerformanceData() {
-  try {
-    const response = await fetch("/data/performance.json", { cache: "no-store" });
-    if (!response.ok) throw new Error(`Performance data returned ${response.status}`);
-    performanceState = await response.json();
-  } catch (error) {
-    performanceState = fallbackPerformance;
+  const embeddedPerformance = getEmbeddedPerformanceData();
+  if (embeddedPerformance) {
+    performanceState = embeddedPerformance;
+  } else {
+    try {
+      const response = await fetch("/datasets/performance-latest.json", { cache: "force-cache" });
+      if (!response.ok) throw new Error(`Performance data returned ${response.status}`);
+      performanceState = await response.json();
+    } catch (error) {
+      performanceState = fallbackPerformance;
+    }
   }
 
   updatePerformanceText(performanceState);
-  drawChart(performanceState);
+  window.requestAnimationFrame(() => drawChart(performanceState));
 }
 
 drawChart(fallbackPerformance);

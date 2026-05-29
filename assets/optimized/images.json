@@ -1,0 +1,362 @@
+{
+  "assets/mukimuki-diary.png": {
+    "width": 1226,
+    "height": 766,
+    "variants": [
+      {
+        "format": "avif",
+        "width": 96,
+        "src": "/assets/optimized/mukimuki-diary-96.avif"
+      },
+      {
+        "format": "webp",
+        "width": 96,
+        "src": "/assets/optimized/mukimuki-diary-96.webp"
+      },
+      {
+        "format": "avif",
+        "width": 192,
+        "src": "/assets/optimized/mukimuki-diary-192.avif"
+      },
+      {
+        "format": "webp",
+        "width": 192,
+        "src": "/assets/optimized/mukimuki-diary-192.webp"
+      },
+      {
+        "format": "avif",
+        "width": 320,
+        "src": "/assets/optimized/mukimuki-diary-320.avif"
+      },
+      {
+        "format": "webp",
+        "width": 320,
+        "src": "/assets/optimized/mukimuki-diary-320.webp"
+      },
+      {
+        "format": "avif",
+        "width": 480,
+        "src": "/assets/optimized/mukimuki-diary-480.avif"
+      },
+      {
+        "format": "webp",
+        "width": 480,
+        "src": "/assets/optimized/mukimuki-diary-480.webp"
+      },
+      {
+        "format": "avif",
+        "width": 768,
+        "src": "/assets/optimized/mukimuki-diary-768.avif"
+      },
+      {
+        "format": "webp",
+        "width": 768,
+        "src": "/assets/optimized/mukimuki-diary-768.webp"
+      },
+      {
+        "format": "avif",
+        "width": 1024,
+        "src": "/assets/optimized/mukimuki-diary-1024.avif"
+      },
+      {
+        "format": "webp",
+        "width": 1024,
+        "src": "/assets/optimized/mukimuki-diary-1024.webp"
+      },
+      {
+        "format": "avif",
+        "width": 1226,
+        "src": "/assets/optimized/mukimuki-diary-1226.avif"
+      },
+      {
+        "format": "webp",
+        "width": 1226,
+        "src": "/assets/optimized/mukimuki-diary-1226.webp"
+      }
+    ]
+  },
+  "assets/mukimuki-editor.png": {
+    "width": 752,
+    "height": 592,
+    "variants": [
+      {
+        "format": "avif",
+        "width": 96,
+        "src": "/assets/optimized/mukimuki-editor-96.avif"
+      },
+      {
+        "format": "webp",
+        "width": 96,
+        "src": "/assets/optimized/mukimuki-editor-96.webp"
+      },
+      {
+        "format": "avif",
+        "width": 192,
+        "src": "/assets/optimized/mukimuki-editor-192.avif"
+      },
+      {
+        "format": "webp",
+        "width": 192,
+        "src": "/assets/optimized/mukimuki-editor-192.webp"
+      },
+      {
+        "format": "avif",
+        "width": 320,
+        "src": "/assets/optimized/mukimuki-editor-320.avif"
+      },
+      {
+        "format": "webp",
+        "width": 320,
+        "src": "/assets/optimized/mukimuki-editor-320.webp"
+      },
+      {
+        "format": "avif",
+        "width": 480,
+        "src": "/assets/optimized/mukimuki-editor-480.avif"
+      },
+      {
+        "format": "webp",
+        "width": 480,
+        "src": "/assets/optimized/mukimuki-editor-480.webp"
+      },
+      {
+        "format": "avif",
+        "width": 752,
+        "src": "/assets/optimized/mukimuki-editor-752.avif"
+      },
+      {
+        "format": "webp",
+        "width": 752,
+        "src": "/assets/optimized/mukimuki-editor-752.webp"
+      }
+    ]
+  },
+  "assets/mukimuki-main.png": {
+    "width": 1226,
+    "height": 764,
+    "variants": [
+      {
+        "format": "avif",
+        "width": 96,
+        "src": "/assets/optimized/mukimuki-main-96.avif"
+      },
+      {
+        "format": "webp",
+        "width": 96,
+        "src": "/assets/optimized/mukimuki-main-96.webp"
+      },
+      {
+        "format": "avif",
+        "width": 192,
+        "src": "/assets/optimized/mukimuki-main-192.avif"
+      },
+      {
+        "format": "webp",
+        "width": 192,
+        "src": "/assets/optimized/mukimuki-main-192.webp"
+      },
+      {
+        "format": "avif",
+        "width": 320,
+        "src": "/assets/optimized/mukimuki-main-320.avif"
+      },
+      {
+        "format": "webp",
+        "width": 320,
+        "src": "/assets/optimized/mukimuki-main-320.webp"
+      },
+      {
+        "format": "avif",
+        "width": 480,
+        "src": "/assets/optimized/mukimuki-main-480.avif"
+      },
+      {
+        "format": "webp",
+        "width": 480,
+        "src": "/assets/optimized/mukimuki-main-480.webp"
+      },
+      {
+        "format": "avif",
+        "width": 768,
+        "src": "/assets/optimized/mukimuki-main-768.avif"
+      },
+      {
+        "format": "webp",
+        "width": 768,
+        "src": "/assets/optimized/mukimuki-main-768.webp"
+      },
+      {
+        "format": "avif",
+        "width": 1024,
+        "src": "/assets/optimized/mukimuki-main-1024.avif"
+      },
+      {
+        "format": "webp",
+        "width": 1024,
+        "src": "/assets/optimized/mukimuki-main-1024.webp"
+      },
+      {
+        "format": "avif",
+        "width": 1226,
+        "src": "/assets/optimized/mukimuki-main-1226.avif"
+      },
+      {
+        "format": "webp",
+        "width": 1226,
+        "src": "/assets/optimized/mukimuki-main-1226.webp"
+      }
+    ]
+  },
+  "assets/mukimuki-performance.png": {
+    "width": 1226,
+    "height": 766,
+    "variants": [
+      {
+        "format": "avif",
+        "width": 96,
+        "src": "/assets/optimized/mukimuki-performance-96.avif"
+      },
+      {
+        "format": "webp",
+        "width": 96,
+        "src": "/assets/optimized/mukimuki-performance-96.webp"
+      },
+      {
+        "format": "avif",
+        "width": 192,
+        "src": "/assets/optimized/mukimuki-performance-192.avif"
+      },
+      {
+        "format": "webp",
+        "width": 192,
+        "src": "/assets/optimized/mukimuki-performance-192.webp"
+      },
+      {
+        "format": "avif",
+        "width": 320,
+        "src": "/assets/optimized/mukimuki-performance-320.avif"
+      },
+      {
+        "format": "webp",
+        "width": 320,
+        "src": "/assets/optimized/mukimuki-performance-320.webp"
+      },
+      {
+        "format": "avif",
+        "width": 480,
+        "src": "/assets/optimized/mukimuki-performance-480.avif"
+      },
+      {
+        "format": "webp",
+        "width": 480,
+        "src": "/assets/optimized/mukimuki-performance-480.webp"
+      },
+      {
+        "format": "avif",
+        "width": 768,
+        "src": "/assets/optimized/mukimuki-performance-768.avif"
+      },
+      {
+        "format": "webp",
+        "width": 768,
+        "src": "/assets/optimized/mukimuki-performance-768.webp"
+      },
+      {
+        "format": "avif",
+        "width": 1024,
+        "src": "/assets/optimized/mukimuki-performance-1024.avif"
+      },
+      {
+        "format": "webp",
+        "width": 1024,
+        "src": "/assets/optimized/mukimuki-performance-1024.webp"
+      },
+      {
+        "format": "avif",
+        "width": 1226,
+        "src": "/assets/optimized/mukimuki-performance-1226.avif"
+      },
+      {
+        "format": "webp",
+        "width": 1226,
+        "src": "/assets/optimized/mukimuki-performance-1226.webp"
+      }
+    ]
+  },
+  "assets/mukimuki-research.png": {
+    "width": 1224,
+    "height": 764,
+    "variants": [
+      {
+        "format": "avif",
+        "width": 96,
+        "src": "/assets/optimized/mukimuki-research-96.avif"
+      },
+      {
+        "format": "webp",
+        "width": 96,
+        "src": "/assets/optimized/mukimuki-research-96.webp"
+      },
+      {
+        "format": "avif",
+        "width": 192,
+        "src": "/assets/optimized/mukimuki-research-192.avif"
+      },
+      {
+        "format": "webp",
+        "width": 192,
+        "src": "/assets/optimized/mukimuki-research-192.webp"
+      },
+      {
+        "format": "avif",
+        "width": 320,
+        "src": "/assets/optimized/mukimuki-research-320.avif"
+      },
+      {
+        "format": "webp",
+        "width": 320,
+        "src": "/assets/optimized/mukimuki-research-320.webp"
+      },
+      {
+        "format": "avif",
+        "width": 480,
+        "src": "/assets/optimized/mukimuki-research-480.avif"
+      },
+      {
+        "format": "webp",
+        "width": 480,
+        "src": "/assets/optimized/mukimuki-research-480.webp"
+      },
+      {
+        "format": "avif",
+        "width": 768,
+        "src": "/assets/optimized/mukimuki-research-768.avif"
+      },
+      {
+        "format": "webp",
+        "width": 768,
+        "src": "/assets/optimized/mukimuki-research-768.webp"
+      },
+      {
+        "format": "avif",
+        "width": 1024,
+        "src": "/assets/optimized/mukimuki-research-1024.avif"
+      },
+      {
+        "format": "webp",
+        "width": 1024,
+        "src": "/assets/optimized/mukimuki-research-1024.webp"
+      },
+      {
+        "format": "avif",
+        "width": 1224,
+        "src": "/assets/optimized/mukimuki-research-1224.avif"
+      },
+      {
+        "format": "webp",
+        "width": 1224,
+        "src": "/assets/optimized/mukimuki-research-1224.webp"
+      }
+    ]
+  }
+}
