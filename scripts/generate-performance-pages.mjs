@@ -101,7 +101,7 @@ ${nav}
 
 const footer = `  <footer class="site-footer">
     <strong>MUKIMUKI trade</strong>
-    <p>初めての方は最新実績からどうぞ。資産曲線、銘柄候補、売買ロジックを短く追えるように整理しています。広告リンクを含む場合があります。</p>
+    <p>100万円からの米国株トレード実績、銘柄メモ、売買ロジックを記録しています。掲載内容には広告リンクを含む場合があります。</p>
     <nav class="footer-links" aria-label="補助リンク"><a href="/profile/">運営者</a><a href="/archive/">アーカイブ</a><a href="/feed.xml">RSS</a><a href="/about/">運営方針</a><a href="${officialXUrl}" target="_blank" rel="me noopener">公式X</a></nav>
   </footer>`;
 
@@ -157,14 +157,13 @@ ${trades.slice(0, 12).map((trade) => `          <div class="comparison-row">
             <span>${formatUsd(trade.priceUsd)} / ${formatUsd(trade.amountUsd)}</span>
           </div>`).join('\n')}
         </div>
-        ${trades.length > 12 ? `<p>表示は先頭12件です。全${trades.length}件はJSONデータで確認できます。</p>` : ''}`;
+        ${trades.length > 12 ? `<p>主要な約定を先頭から12件掲載しています。全体像は取引件数、買付額、売却額のサマリーで確認します。</p>` : ''}`;
 };
 
 const renderTrustSignals = (report) => {
   const latest = report.latest;
-  const jsonPath = `/datasets/performance-${latest.reportDate}.json`;
   return `      <section class="article-panel trust-signals" aria-labelledby="trust-signals-title">
-        <h2 id="trust-signals-title">この実績データの確認方法</h2>
+        <h2 id="trust-signals-title">実績の前提</h2>
         <div class="fact-grid">
           <div class="fact-card">
             <h3>データソース</h3>
@@ -172,14 +171,14 @@ const renderTrustSignals = (report) => {
             <blockquote>Source: ${escapeHtml(report.sourceName || 'Autotrade daily report')} / ${escapeHtml(report.sourceReport || `${latest.reportDate} report`)}</blockquote>
           </div>
           <div class="fact-card">
-            <h3>公開JSON</h3>
-            <p>グラフや本文と同じ元データを確認できます。数値の検証用に日付別JSONを公開しています。</p>
-            <p><a href="${escapeHtml(jsonPath)}">この日のJSONデータを見る</a></p>
+            <h3>更新履歴</h3>
+            <p>日次ページは月次アーカイブに残し、同じ形式で推移を振り返れるようにしています。</p>
+            <p><a href="${escapeHtml(monthPath(latest.reportDate))}">月次アーカイブ</a></p>
           </div>
           <div class="fact-card">
-            <h3>更新履歴と著者</h3>
-            <p>日次ページは月次アーカイブに蓄積し、運営者情報はプロフィールで公開しています。</p>
-            <p><a href="${escapeHtml(monthPath(latest.reportDate))}">月次アーカイブ</a> / <a href="/profile/" rel="author">運営者プロフィール</a></p>
+            <h3>運営者</h3>
+            <p>運営者情報、投資歴、免責事項はプロフィールにまとめています。</p>
+            <p><a href="/profile/" rel="author">運営者プロフィール</a></p>
           </div>
         </div>
       </section>`;
@@ -262,7 +261,6 @@ const renderDailyPage = (report, articleIndex) => {
   <meta property="article:section" content="実績公開">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="alternate" type="application/rss+xml" title="MUKIMUKI trade RSS" href="/feed.xml">
-  <link rel="alternate" type="application/json" title="${escapeHtml(latest.reportDate)} performance data" href="/datasets/performance-${escapeHtml(latest.reportDate)}.json">
   <link rel="stylesheet" href="/styles.css">
   ${jsonLdScript}
 </head>
@@ -297,8 +295,8 @@ ${renderTrustSignals(report)}
         ${renderTrades(latest.trades)}
       </section>
       <section class="article-panel">
-        <h2>次に読むべき内容</h2>
-        <p>この日の実績だけで判断せず、<a href="${escapeHtml(monthlyPath)}">月次アーカイブ</a>、<a href="/category/performance/">売買トピック</a>、<a href="/logic/">投資ロジック</a>を合わせて確認すると、資産推移と判断基準をつなげて読みやすくなります。元データは<a href="/datasets/performance-${escapeHtml(latest.reportDate)}.json">この日のJSONデータ</a>で確認できます。</p>
+        <h2>関連する記録</h2>
+        <p><a href="${escapeHtml(monthlyPath)}">月次アーカイブ</a>、<a href="/category/performance/">売買トピック</a>、<a href="/logic/">投資ロジック</a>では、同じ期間の資産推移と判断基準を別の角度から整理しています。</p>
       </section>
       <section class="article-panel">
         <h2>よくある質問</h2>
@@ -371,7 +369,7 @@ ${header}
         <nav class="breadcrumb" aria-label="breadcrumb"><a href="/">Home</a><span>/</span><a href="/performance/latest/">実績</a><span>/</span><span>${escapeHtml(title)}</span></nav>
         <p class="eyebrow">PERFORMANCE / MONTHLY ARCHIVE</p>
         <h1>${escapeHtml(title)}</h1>
-        <p>毎日の実績を日付URLで固定し、Googleにインデックスされる履歴資産として蓄積します。</p>
+        <p>毎日の実績を日付ごとに残し、評価額、前日比、100万円比の推移を月単位で振り返ります。</p>
       </div>
     </section>
     <section class="collection-body" aria-label="${escapeHtml(title)}">
@@ -471,9 +469,10 @@ ${header}
           <div class="stat-card"><span>期間内変化</span><strong>${yearlyDelta >= 0 ? '+' : ''}${formatJpy(yearlyDelta)}</strong></div>
         </div>
         <p>年次ページでは、月ごとの実績ページへ進み、そこから日次レポートを確認できます。評価額、前日比、取引数、保有銘柄を同じ形式で残すことで、実績公開ブログとしての履歴を読み返しやすくします。</p>
-        <p>SEO上は、最新ページだけを更新し続けるよりも、年次、月次、日次の階層を分けておくほうが、過去実績を検索エンジンに発見してもらいやすくなります。この年次ページは、${year}年の実績全体を俯瞰し、月次まとめと日次の永続URLへ内部リンクを渡すためのハブです。</p>
-        <p>読者はまず年次ページで全体の流れをつかみ、次に月次ページで好調日と調整日を比較し、最後に日次ページで保有銘柄、売買件数、前日比を確認できます。100万円トレードの推移を、単発の記事ではなく蓄積された記録として読める構造にしています。</p>
-        <p>今後レポートが増えた場合も、この年次ページには月次まとめが自動で追加されます。日次JSONを置くだけで、日別ページ、月別ページ、年別ページ、最新ページへの導線が更新されるため、運用負荷を抑えながらSEO資産を増やせます。</p>
+        <p>${year}年の実績全体を俯瞰し、月次まとめと日次レポートをたどれる年次アーカイブです。月ごとの変化と日々の売買記録を分けて読むことで、100万円トレードの推移を振り返りやすくしています。</p>
+        <p>年次ページで全体の流れをつかみ、月次ページで好調日と調整日を比較し、日次ページで保有銘柄、売買件数、前日比を確認できます。</p>
+        <p>日次の実績だけでは、好調な銘柄に資金が集まったのか、相場全体の追い風で評価額が伸びたのかを判別しにくくなります。年次アーカイブでは、月ごとの評価額、取引件数、持ち越し銘柄の変化をたどり、運用の流れを大きく確認します。</p>
+        <p>今後レポートが増えた場合も、この年次ページには月次まとめが追加されます。日別、月別、年別の記録を同じ形式で残していきます。</p>
       </section>
     </section>
     <section class="collection-body" aria-label="${escapeHtml(title)}">
@@ -498,7 +497,7 @@ ${footer}
 const renderLatestPage = (latestReport) => {
   const latestPath = datePath(latestReport.latest.reportDate);
   const title = '最新実績レポート';
-  const description = 'MUKIMUKI tradeの最新実績ページ。JavaScriptで最新の実績JSONを読み込み、canonicalを日付固定URLへ向けます。';
+  const description = 'MUKIMUKI tradeの最新実績ページ。評価額、100万円比、保有銘柄、売買件数を日次で整理します。';
   const breadcrumbs = [
     { name: 'Home', item: `${siteUrl}/` },
     { name: '実績', item: absoluteUrl('/performance/latest/') },
@@ -535,7 +534,6 @@ const renderLatestPage = (latestReport) => {
   <meta property="og:image" content="${siteUrl}/assets/mukimuki-performance.png">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="alternate" type="application/rss+xml" title="MUKIMUKI trade RSS" href="/feed.xml">
-  <link rel="alternate" type="application/json" title="MUKIMUKI trade latest performance data" href="/datasets/performance-latest.json">
   <link rel="stylesheet" href="/styles.css">
   ${jsonLdScript}
   <script>
@@ -568,7 +566,7 @@ ${header}
         ${renderBreadcrumbHtml(breadcrumbs, escapeHtml)}
         <p class="eyebrow">PERFORMANCE / LATEST</p>
         <h1>最新実績レポート</h1>
-        <p>このページは常に最新実績を表示します。検索エンジン向けの正規URLは、日付固定ページへ向けます。</p>
+        <p>評価額、100万円比、主要な保有銘柄を日次で整理します。詳しい記録は日付別ページに残しています。</p>
       </div>
     </section>
     <article class="article-body">
@@ -583,15 +581,14 @@ ${header}
       <section class="article-panel">
         <h2>最新実績で見るポイント</h2>
         <p>最新実績では、評価額の増減だけでなく、どの銘柄を保有し、どの程度の売買件数でその結果になったかを合わせて確認できます。MUKIMUKI tradeは100万円から米国株トレードを始めた前提で、日々の数字を固定URLに残し、後から比較しやすい形で公開しています。</p>
-        <p>短期のプラスやマイナスだけを見ると判断が偏りやすいため、日次ページでは前日比、100万円比、保有銘柄、売買トピックを同じ順番で掲載します。読者は最新の結果から入り、月次アーカイブや投資ロジックへ進むことで、資産推移と判断基準をつなげて読めます。</p>
+        <p>短期のプラスやマイナスだけを見ると判断が偏りやすいため、日次ページでは前日比、100万円比、保有銘柄、売買トピックを同じ順番で掲載します。</p>
+        <p>評価額が増えた日でも、買い越しでリスクを増やしたのか、利確で現金化したのかによって意味は変わります。逆に前日比がマイナスでも、持ち越し銘柄の整理や損切りで翌日のリスクを下げている場合があります。最新実績では、損益、取引件数、保有銘柄を分けて記録します。</p>
       </section>
       <section class="article-panel">
-        <h2>次に確認するページ</h2>
-        <p>日付固定ページでは、その日の実績本文、FAQ、保有銘柄、売買件数を詳しく確認できます。月ごとの流れを見たい場合は<a href="${escapeHtml(monthPath(latestReport.latest.reportDate))}">月次まとめ</a>、売買判断の背景を知りたい場合は<a href="/logic/">投資ロジック</a>、候補銘柄の見方を深掘りしたい場合は<a href="/research/">銘柄検討</a>から読むと、単発の実績だけでは見えにくい流れを追いやすくなります。</p>
-      </section>
-      <section class="article-panel">
-        <h2>検索エンジン向けの扱い</h2>
-        <p>このページは読者が常に最新実績へ進むための入口です。SEO上の評価を日付別の固定ページに集めるため、canonicalは最新の日付URLへ向けています。検索に残したい実績本文、FAQ、保有銘柄、売買件数は日付固定ページに蓄積します。</p>
+        <h2>関連するページ</h2>
+        <p>月ごとの流れは<a href="${escapeHtml(monthPath(latestReport.latest.reportDate))}">月次まとめ</a>、売買判断の背景は<a href="/logic/">投資ロジック</a>、候補銘柄の見方は<a href="/research/">銘柄検討</a>にまとめています。</p>
+        <p>日付別ページには、その日の評価額、前日比、取引件数、主要保有銘柄、よくある質問をまとめています。最新ページは現在地をすばやく確認するためのページとして使い、詳しい振り返りは日付別ページと月次まとめに残します。</p>
+        <p>保有銘柄が変わった日は、翌日の評価額にも影響しやすいため、月次まとめで前後の日付を並べて確認します。</p>
       </section>
     </article>
   </main>

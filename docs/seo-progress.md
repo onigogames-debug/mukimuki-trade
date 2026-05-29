@@ -1,6 +1,6 @@
 # SEO Progress Report
 
-Generated: 2026-05-29T03:46:44.695Z
+Generated: 2026-05-29T04:10:29.974Z
 
 ## 実装状況
 
@@ -12,12 +12,12 @@ Generated: 2026-05-29T03:46:44.695Z
 | image-sitemap.xml | 完了 | 各ページと代表AVIF画像を紐づけ |
 | RSS feed | 完了 | `feed.xml` を自動生成 |
 | JSON-LD | 完了 | Article / FAQPage / CollectionPage / BreadcrumbList |
-| 内部リンク | 完了 | 関連記事と主要導線を記事末尾・ヘッダー・フッターへ配置 |
+| 内部リンク | 完了 | 関連記事と主要リンクを記事末尾・ヘッダー・フッターへ配置 |
 | E-E-A-T | 完了 | `/profile/` とPerson schemaで運営者情報を公開 |
-| moomoo CVR導線 | 完了 | トップ・記事・カテゴリからPR導線を設置 |
+| moomoo紹介 | 完了 | トップ・記事・カテゴリにPRリンクを設置 |
 | 画像SEO | 完了 | WebP/AVIF、picture、image sitemapを実装 |
 | AI検索向け説明 | 完了 | `/llms.txt` を追加 |
-| Core Web Vitals | 完了 | Critical CSS、画像最適化、実績JSONインライン化 |
+| Core Web Vitals | 完了 | Critical CSS、画像最適化、実績データの初期表示を改善 |
 
 ## ページ監査サマリー
 
@@ -36,30 +36,30 @@ Generated: 2026-05-29T03:46:44.695Z
 
 | URL | title | description | 本文文字数 | 内部リンク | schema |
 |---|---:|---:|---:|---:|---|
-| / | 35 | 57 | 2694 | 39 | Blog, ItemList, Organization, Person, WebSite |
-| /about/ | 26 | 58 | 1573 | 19 | AboutPage, BreadcrumbList, FAQPage, WebPage |
-| /archive/ | 24 | 62 | 925 | 22 | BreadcrumbList, CollectionPage |
-| /archive/2026-05/ | 27 | 79 | 1046 | 29 | BreadcrumbList, CollectionPage, ItemList |
-| /category/moomoo/ | 30 | 62 | 912 | 23 | BreadcrumbList, CollectionPage, ItemList |
-| /category/performance/ | 26 | 61 | 905 | 23 | BreadcrumbList, CollectionPage, ItemList |
-| /category/research/ | 26 | 57 | 1060 | 24 | BreadcrumbList, CollectionPage, ItemList |
-| /logic/ | 28 | 62 | 1069 | 26 | BreadcrumbList, CollectionPage, ItemList |
-| /logic/entry-risk/ | 49 | 52 | 1363 | 24 | Article, BreadcrumbList |
-| /logic/exit-review/ | 51 | 48 | 1367 | 24 | Article, BreadcrumbList |
-| /logic/signal-score/ | 50 | 57 | 1363 | 24 | Article, BreadcrumbList |
-| /moomoo/ | 48 | 66 | 1336 | 23 | Article, BreadcrumbList, FAQPage |
-| /performance/ | 45 | 70 | 1512 | 25 | Article, BreadcrumbList, Dataset, FAQPage |
-| /performance/2026-05-27-xndu-rebuild/ | 53 | 83 | 2021 | 24 | Article, BreadcrumbList |
-| /performance/2026-05-28-asts-rotation/ | 52 | 84 | 2714 | 24 | Article, BreadcrumbList |
-| /performance/2026/ | 30 | 52 | 966 | 20 | BreadcrumbList, CollectionPage, ItemList |
-| /performance/2026/05/ | 32 | 61 | 986 | 25 | BreadcrumbList, CollectionPage, ItemList |
-| /performance/2026/05/26/ | 30 | 61 | 2169 | 30 | Article, BreadcrumbList, FAQPage |
-| /performance/2026/05/27/ | 35 | 66 | 2282 | 30 | Article, BreadcrumbList, FAQPage |
-| /performance/2026/05/28/ | 36 | 66 | 2524 | 30 | Article, BreadcrumbList, FAQPage |
-| /performance/latest/ | 25 | 72 | 924 | 23 | BreadcrumbList, CollectionPage, ItemList |
-| /profile/ | 26 | 75 | 1400 | 21 | BreadcrumbList, FAQPage, Person, ProfilePage |
-| /research/ | 25 | 59 | 1034 | 25 | Article, BreadcrumbList |
-| /research/ai-infrastructure/ | 47 | 47 | 1505 | 24 | Article, BreadcrumbList |
-| /research/app-software-fintech/ | 44 | 50 | 1533 | 24 | Article, BreadcrumbList |
-| /research/frontier-growth/ | 47 | 49 | 1470 | 24 | Article, BreadcrumbList |
+| / | 35 | 57 | 2645 | 39 | Blog, ItemList, Organization, Person, WebSite |
+| /about/ | 26 | 58 | 1562 | 19 | AboutPage, BreadcrumbList, FAQPage, WebPage |
+| /archive/ | 24 | 62 | 914 | 22 | BreadcrumbList, CollectionPage |
+| /archive/2026-05/ | 27 | 79 | 1040 | 29 | BreadcrumbList, CollectionPage, ItemList |
+| /category/moomoo/ | 30 | 62 | 911 | 23 | BreadcrumbList, CollectionPage, ItemList |
+| /category/performance/ | 26 | 61 | 926 | 23 | BreadcrumbList, CollectionPage, ItemList |
+| /category/research/ | 26 | 57 | 1049 | 24 | BreadcrumbList, CollectionPage, ItemList |
+| /logic/ | 28 | 62 | 1031 | 26 | BreadcrumbList, CollectionPage, ItemList |
+| /logic/entry-risk/ | 49 | 52 | 1357 | 24 | Article, BreadcrumbList |
+| /logic/exit-review/ | 51 | 48 | 1358 | 24 | Article, BreadcrumbList |
+| /logic/signal-score/ | 50 | 57 | 1355 | 24 | Article, BreadcrumbList |
+| /moomoo/ | 48 | 66 | 1320 | 23 | Article, BreadcrumbList, FAQPage |
+| /performance/ | 45 | 70 | 1357 | 22 | Article, BreadcrumbList, FAQPage |
+| /performance/2026-05-27-xndu-rebuild/ | 53 | 83 | 2003 | 24 | Article, BreadcrumbList |
+| /performance/2026-05-28-asts-rotation/ | 52 | 84 | 2706 | 24 | Article, BreadcrumbList |
+| /performance/2026/ | 30 | 52 | 931 | 20 | BreadcrumbList, CollectionPage, ItemList |
+| /performance/2026/05/ | 32 | 61 | 979 | 25 | BreadcrumbList, CollectionPage, ItemList |
+| /performance/2026/05/26/ | 30 | 61 | 2092 | 28 | Article, BreadcrumbList, FAQPage |
+| /performance/2026/05/27/ | 35 | 66 | 2205 | 28 | Article, BreadcrumbList, FAQPage |
+| /performance/2026/05/28/ | 36 | 66 | 2447 | 28 | Article, BreadcrumbList, FAQPage |
+| /performance/latest/ | 25 | 53 | 929 | 23 | BreadcrumbList, CollectionPage, ItemList |
+| /profile/ | 26 | 75 | 1363 | 21 | BreadcrumbList, FAQPage, Person, ProfilePage |
+| /research/ | 25 | 59 | 1006 | 25 | Article, BreadcrumbList |
+| /research/ai-infrastructure/ | 47 | 47 | 1499 | 24 | Article, BreadcrumbList |
+| /research/app-software-fintech/ | 44 | 50 | 1527 | 24 | Article, BreadcrumbList |
+| /research/frontier-growth/ | 47 | 49 | 1464 | 24 | Article, BreadcrumbList |
 

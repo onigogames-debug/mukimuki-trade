@@ -61,7 +61,7 @@ ${nav}
 
 const footer = `  <footer class="site-footer">
     <strong>MUKIMUKI trade</strong>
-    <p>初めての方は最新実績からどうぞ。資産曲線、銘柄候補、売買ロジックを短く追えるように整理しています。広告リンクを含む場合があります。</p>
+    <p>100万円からの米国株トレード実績、銘柄メモ、売買ロジックを記録しています。掲載内容には広告リンクを含む場合があります。</p>
     <nav class="footer-links" aria-label="補助リンク"><a href="/profile/">運営者</a><a href="/archive/">アーカイブ</a><a href="/feed.xml">RSS</a><a href="/about/">運営方針</a><a href="${officialXUrl}" target="_blank" rel="me noopener">公式X</a></nav>
   </footer>`;
 
@@ -158,8 +158,8 @@ ${renderSources(article.sources)}
 ${renderRelatedArticlesSection(article, articleIndex, { escapeHtml })}
 
       <section class="article-panel">
-        <h2>次に読む</h2>
-        <p><a href="${escapeHtml(article.categoryUrl)}">${escapeHtml(article.category)}の記事一覧</a> と <a href="/performance/latest/">最新の実績レポート</a> をあわせて読むと、候補整理と実際の売買結果をつなげて確認できます。</p>
+        <h2>関連する記録</h2>
+        <p><a href="${escapeHtml(article.categoryUrl)}">${escapeHtml(article.category)}の記事一覧</a> と <a href="/performance/latest/">最新の実績レポート</a> では、候補整理と実際の売買結果を別の角度から記録しています。</p>
       </section>
     </article>
   </main>
@@ -241,12 +241,12 @@ ${article.tags.slice(0, 4).map((tag) => `          <span>${escapeHtml(tag)}</spa
     <section class="article-body">
       <section class="article-panel">
         <h2>このカテゴリで確認できること</h2>
-        <p>投資ロジックの記事では、売買判断をひとつの正解として見せるのではなく、読者が自分の取引と比較できるように、シグナル、エントリー、リスク管理、利確、撤退の順番で整理します。毎日の実績公開とあわせて読むことで、数字の変化と判断の流れをつなげて確認できます。</p>
+        <p>投資ロジックの記事では、売買判断をひとつの正解として見せるのではなく、シグナル、エントリー、リスク管理、利確、撤退の順番で整理します。毎日の実績公開とあわせることで、数字の変化と判断の流れをつなげて確認できます。</p>
         <p>特に米国株は材料、出来高、決算、金利感応度によって短期の値動きが大きく変わります。ここでは公開できる範囲で、どの情報を先に見て、どの条件なら見送り、どの条件なら株数を抑えるのかを記事ごとに分けています。</p>
       </section>
       <section class="article-panel">
-        <h2>次に読む順番</h2>
-        <p>はじめて読む場合は、<a href="/logic/signal-score/">シグナルの見方</a>で候補化の基準を確認し、次に<a href="/logic/entry-risk/">エントリーとリスク</a>、最後に<a href="/logic/exit-review/">利確と撤退</a>を読むと流れがつかみやすくなります。実際の数字は<a href="/performance/latest/">最新実績</a>と<a href="/performance/2026/05/">月次実績アーカイブ</a>で確認できます。</p>
+        <h2>ロジック記事の構成</h2>
+        <p><a href="/logic/signal-score/">シグナルの見方</a>、<a href="/logic/entry-risk/">エントリーとリスク</a>、<a href="/logic/exit-review/">利確と撤退</a>の3本で、候補化から出口判断までを分けて記録しています。実際の数字は<a href="/performance/latest/">最新実績</a>と<a href="/performance/2026/05/">月次実績アーカイブ</a>にまとめています。</p>
       </section>
     </section>
   </main>

@@ -1,7 +1,7 @@
 const site = {
   url: 'https://mukimuki-trade.com',
   name: 'MUKIMUKI trade',
-  description: '100万円からの株式投資実績、資産曲線、銘柄検討、相場メモを読者が追いやすい順番で整理する投資ブログ。',
+  description: '100万円からの株式投資実績、資産曲線、銘柄検討、相場メモを整理する投資ブログ。',
   language: 'ja-JP',
   logo: '/assets/mukimuki-main.png',
   authorId: 'https://mukimuki-trade.com/profile/#author',

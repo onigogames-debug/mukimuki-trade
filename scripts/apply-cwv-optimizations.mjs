@@ -100,11 +100,9 @@ function inlinePerformanceData(content, filePath) {
   if (path.basename(filePath) !== "index.html" || path.dirname(filePath) !== rootDir) return content;
   const json = JSON.stringify(performanceData).replaceAll("</script", "<\\/script");
   const script = [
-    "<!-- LCP優先: A. 実績データはビルド時にHTMLへ埋め込むため、初回描画でJSON fetchを待たない。 -->",
     '<script id="perf-data" type="application/json">',
     json,
     "</script>",
-    "<!-- B. Service Workerは再訪問時の代替経路。キャッシュ優先で速いが、初回LCPはAのインライン化が有利。 -->",
   ].join("");
   if (content.includes('id="perf-data"')) {
     return content.replace(/<!-- LCP優先:[\s\S]*?Service Workerは[\s\S]*?-->|<script id="perf-data" type="application\/json">[\s\S]*?<\/script>/g, (match) => (
