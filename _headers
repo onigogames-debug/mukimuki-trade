@@ -23,7 +23,7 @@
   Cache-Control: public, max-age=0, must-revalidate
 
 /sw.js
-  Cache-Control: no-cache
+  Cache-Control: public, max-age=0, must-revalidate
   Service-Worker-Allowed: /
 
 /data/content.json
