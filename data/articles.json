@@ -1,6 +1,99 @@
 {
   "articles": [
     {
+      "path": "/performance/2026-05-29-bksy-range/",
+      "categoryKey": "performance",
+      "category": "実績公開",
+      "categoryUrl": "/category/performance/",
+      "eyebrow": "TRADE TOPIC / PERFORMANCE",
+      "title": "5/29売買トピック: BKSYの値幅を横目にSPIRを持ち越し",
+      "description": "2026年5月29日ESTの売買トピック。100万円チャレンジは評価額112.4万円、前日比+20,508円。CSV約定152件とBKSYの値動きを整理。",
+      "summary": "5/29 ESTは、評価額が112.4万円まで伸び、100万円比は+12.40%になりました。日次レポートの資産額に加え、同日朝に取得した約定履歴CSVでは152件の売買を確認し、SPIR、GSAT、SATS、AMZNなどを持ち越しています。",
+      "image": "/assets/mukimuki-performance.png",
+      "published": "2026-05-30T08:00:00+09:00",
+      "modified": "2026-05-30T08:00:00+09:00",
+      "tags": [
+        "実績公開",
+        "売買トピック",
+        "BKSY",
+        "SPIR",
+        "SATS"
+      ],
+      "sections": [
+        {
+          "heading": "この日の全体像",
+          "paragraphs": [
+            "2026年5月29日ESTのMUKIMUKI tradeは、JPY総資産が¥1,103,506.27から¥1,124,014.05へ増え、前日比は+¥20,507.78でした。100万円スタート比では+12.40%です。",
+            "日次レポート上の総取引件数は0件でしたが、同日朝に取得したjp_account_mix_report.csvでは5/29 ESTの約定を152件確認しました。資産額と引け後ポジションは日次レポート、売買の内訳はCSVを優先して掲載しています。"
+          ],
+          "bullets": [
+            "買付総額: $23,763.36、売却総額: $23,799.32",
+            "売買キャッシュ差額: +$35.96の小幅売り越し",
+            "USD資産差分: +$129.33、JPY前日比: +¥20,507.78"
+          ]
+        },
+        {
+          "heading": "売買トピック: 回転後にSPIRを残す",
+          "paragraphs": [
+            "CSV上ではSOFI、SOUN、HOOD、PL、RDW、AIなどを細かく回転し、利確と損切りを短い時間で繰り返した日でした。買付と売却の総額はほぼ同じで、ポジションを大きく増やすより、日中の値幅を取りに行った形です。",
+            "引け後ポジションはSPIR 93株、SATS 8株、RIVN 31株、GSAT 25株、AMZN 4株、QBTS 3株などです。評価損益率ではAMZNが-1.30%、SPIRが-1.03%で、翌日は持ち越し側の下押しを先に確認します。"
+          ],
+          "bullets": [
+            "SPIR: 93株を買付、平均約定$23.05、引け後評価損益-1.03%",
+            "SATS: 8株を買付、平均約定$128.09、引け後評価損益+0.73%",
+            "RIVN: 買付37株・売却6株、引け後31株を保有"
+          ]
+        },
+        {
+          "heading": "個別分析: BKSYを選んだ理由",
+          "paragraphs": [
+            "この日の個別分析はBKSYにします。売買銘柄の約定価格レンジを比較すると、BKSYは$45.33から$49.99まで動き、確認できる約定価格レンジは約10.28%でした。5/29 ESTに売買した銘柄の中で最も大きい値幅です。",
+            "市場データでも、BKSYは5/29に始値$48.99、高値$49.00、安値$43.81、終値$47.87、出来高2,025,569株で、日中高安レンジは約11.85%でした。ローカルの約定レンジだけでなく、市場の高安でも大きく振れた銘柄だったため、分析対象にしました。"
+          ],
+          "bullets": [
+            "BKSY買付: 15株、買付総額$729.28、平均$48.62",
+            "BKSY売却: 15株、売却総額$712.68、平均$47.51",
+            "約定価格レンジ: $45.33〜$49.99、約10.28%"
+          ]
+        },
+        {
+          "heading": "価格変動の背景と売買との関係",
+          "paragraphs": [
+            "BKSYは5/28に、非地球画像サービスの自動化を進める7桁規模の複数年契約更新を発表しました。一方で、5/7の1Q 2026決算では売上が前年同期比で減少し、純損失も拡大しています。契約材料で買われやすい一方、決算面の重さも残る銘柄です。",
+            "今回の売買は、材料後の値幅を短期で取りに行ったものの、平均売却価格が平均買付価格を下回り、BKSY単体では小さな損切りになりました。高値圏の材料株は約定レンジが広く、エントリー後に崩れると短時間でも損益が悪化しやすいことを確認する日でした。"
+          ]
+        },
+        {
+          "heading": "翌日に見る水準とリスク",
+          "paragraphs": [
+            "BKSYは引け後に残していないため、翌日は再エントリーの有無だけを見ます。見る水準は、5/29の終値$47.87を回復して保てるか、日中安値$43.81付近を割り込むかです。$50近辺を超えても出来高が細る場合は、追いかけより見送りを優先します。",
+            "保有側ではSPIRの-1.03%とAMZNの-1.30%が先に確認するリスクです。取引件数が152件と多い日は、利益が出ていても判断が細かくなりすぎるため、翌日は持ち越し銘柄を減らすのか、含み益銘柄だけを伸ばすのかを分けて見ます。"
+          ]
+        },
+        {
+          "heading": "記録メモ",
+          "paragraphs": [
+            "この記録は投資助言ではなく、自己運用ログを読み返すためのものです。銘柄名が出ていても、売買を推奨する意図はありません。",
+            "今回は日次レポートの取引明細が0件だった一方、約定履歴CSVには5/29 ESTの約定が152件ありました。公開数値は、資産額は日次レポート、売買件数と売買金額はCSVの約定履歴という前提でそろえています。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "StockAnalysis: BKSY historical price data, May 29 2026",
+          "url": "https://stockanalysis.com/stocks/bksy/history/"
+        },
+        {
+          "label": "BlackSky: seven-figure multi-year NEI renewal contract",
+          "url": "https://blacksky.com/press-releases/blacksky-secures-seven-figure-multi-year-renewal-contract-to-accelerate-automation-of-future-non-earth-imagery-services/"
+        },
+        {
+          "label": "BlackSky: Q1 2026 results and outlook",
+          "url": "https://blacksky.com/press-releases/blacksky-reports-first-quarter-2026-results/"
+        }
+      ]
+    },
+    {
       "path": "/performance/2026-05-28-asts-rotation/",
       "categoryKey": "performance",
       "category": "実績公開",

@@ -92,12 +92,66 @@ const parseTrades = (text) => {
   }).filter(Boolean);
 };
 
+const parseCsvRows = (text) => {
+  const lines = text.trim().split(/\r?\n/);
+  const headers = lines.shift()?.split(',') || [];
+  return lines.map((line) => {
+    const values = line.split(',');
+    return Object.fromEntries(headers.map((header, index) => [header, values[index] ?? '']));
+  });
+};
+
+const loadCsvTrades = async (date) => {
+  const csvPath = path.join(reportsDir, 'jp_account_mix_report.csv');
+  let raw;
+  try {
+    raw = await readFile(csvPath, 'utf8');
+  } catch {
+    return [];
+  }
+
+  return parseCsvRows(raw)
+    .filter((row) => row.label === '約定履歴')
+    .filter((row) => String(row.create_time || '').startsWith(date))
+    .filter((row) => numberFrom(row.dealt_qty) > 0)
+    .map((row) => {
+      const shares = numberFrom(row.dealt_qty);
+      const priceUsd = numberFrom(row.dealt_avg_price) || numberFrom(row.price);
+      return {
+        side: row.trd_side,
+        symbol: row.code,
+        shares,
+        priceUsd,
+        amountUsd: round(shares * priceUsd, 2),
+        executedAtEst: row.updated_time || row.create_time,
+        remark: row.remark || null,
+      };
+    })
+    .filter((trade) => trade.side && trade.symbol && trade.shares && trade.priceUsd);
+};
+
+const summarizeTrades = (trades) => {
+  const totalBuyUsd = trades
+    .filter((trade) => trade.side === 'BUY')
+    .reduce((sum, trade) => sum + trade.amountUsd, 0);
+  const totalSellUsd = trades
+    .filter((trade) => trade.side === 'SELL')
+    .reduce((sum, trade) => sum + trade.amountUsd, 0);
+
+  return {
+    totalTrades: trades.length,
+    totalBuyUsd: round(totalBuyUsd, 2),
+    totalSellUsd: round(totalSellUsd, 2),
+    cashFlowUsd: round(totalSellUsd - totalBuyUsd, 2),
+  };
+};
+
 const parsePositions = (text) => {
   const section = extractSection(text, '引け後ポジション');
   if (!section) return [];
 
   return section.split('\n').map((line) => {
-    const match = line.match(/(US\.[A-Z0-9.]+)\s+([0-9,]+)株\s+取得単価=\$([0-9,.]+)\s+評価損益=([+-]?[0-9,.]+)%\s+\(\$([+-]?[0-9,.]+)\)/);
+    const match = line.match(/(US\.[A-Z0-9.]+)\s+([0-9,]+)株\s+取得単価=\$([+-]?[0-9,.]+)\s+評価損益=([+-]?[0-9,.]+)%\s+\(\$([+-]?[0-9,.]+)\)/);
     if (!match) return null;
     return {
       symbol: match[1],
@@ -119,7 +173,7 @@ const parseSignals = (text) => {
   };
 };
 
-const parseReport = async (filePath) => {
+const parseReport = async (filePath, { mergeCsv = false } = {}) => {
   const raw = await readFile(filePath, 'utf8');
   const fileName = path.basename(filePath);
   const date = fileName.match(/^report_(\d{4}-\d{2}-\d{2})\.txt$/)?.[1]
@@ -137,9 +191,14 @@ const parseReport = async (filePath) => {
   const cashFlowUsd = parseMoneyLine(raw, '売買キャッシュ差額');
   const totalReturnPct = jpy.end !== null ? ((jpy.end - startCapitalJpy) / startCapitalJpy) * 100 : null;
   const dailyReturnPct = jpy.start && jpy.delta !== null ? (jpy.delta / jpy.start) * 100 : null;
+  const reportTrades = parseTrades(raw);
+  const csvTrades = mergeCsv && date ? await loadCsvTrades(date) : [];
+  const trades = csvTrades.length ? csvTrades : reportTrades;
+  const csvSummary = csvTrades.length ? summarizeTrades(csvTrades) : null;
 
   return {
     date,
+    filePath,
     fileName,
     generatedAt,
     generatedAtDisplay: displayTimestamp(generatedAt),
@@ -148,18 +207,19 @@ const parseReport = async (filePath) => {
     jpy,
     usd,
     summary: {
-      totalTrades,
-      totalBuyUsd,
-      totalSellUsd,
+      totalTrades: csvSummary?.totalTrades ?? totalTrades,
+      totalBuyUsd: csvSummary?.totalBuyUsd ?? totalBuyUsd,
+      totalSellUsd: csvSummary?.totalSellUsd ?? totalSellUsd,
       usdPnl,
-      cashFlowUsd,
+      cashFlowUsd: csvSummary?.cashFlowUsd ?? cashFlowUsd,
       totalPnlJpy: jpy.end !== null ? round(jpy.end - startCapitalJpy, 2) : null,
       totalReturnPct: round(totalReturnPct, 2),
       dailyReturnPct: round(dailyReturnPct, 2),
     },
-    trades: parseTrades(raw),
+    trades,
     positions: parsePositions(raw),
     signals: parseSignals(raw),
+    sourceReport: csvTrades.length ? `${fileName} + jp_account_mix_report.csv` : fileName,
   };
 };
 
@@ -167,13 +227,27 @@ const files = (await readdir(reportsDir))
   .filter((file) => /^report_\d{4}-\d{2}-\d{2}\.txt$/.test(file))
   .map((file) => path.join(reportsDir, file));
 
-const reports = (await Promise.all(files.map(parseReport)))
+const existingTradeCounts = new Map();
+try {
+  const existingDatasetFiles = (await readdir(path.join(root, 'datasets')))
+    .filter((file) => /^performance-\d{4}-\d{2}-\d{2}\.json$/.test(file));
+  for (const file of existingDatasetFiles) {
+    const dataset = JSON.parse(await readFile(path.join(root, 'datasets', file), 'utf8'));
+    if (dataset.latest?.reportDate && Number.isFinite(dataset.latest?.summary?.totalTrades)) {
+      existingTradeCounts.set(dataset.latest.reportDate, dataset.latest.summary.totalTrades);
+    }
+  }
+} catch {
+  // Existing site datasets are optional when bootstrapping the importer.
+}
+
+const reports = (await Promise.all(files.map((file) => parseReport(file))))
   .filter((report) => report.date && report.date >= '2026-01-01')
   .sort((a, b) => a.date.localeCompare(b.date));
 
 const latest = providedReportPath
-  ? await parseReport(providedReportPath)
-  : reports.filter((report) => report.jpy.end !== null).at(-1);
+  ? await parseReport(providedReportPath, { mergeCsv: true })
+  : await parseReport(reports.filter((report) => report.jpy.end !== null).at(-1).filePath, { mergeCsv: true });
 
 if (!latest || latest.jpy.end === null) {
   throw new Error('No report with JPY asset data was found.');
@@ -189,14 +263,16 @@ const history = reports
     jpyDelta: report.jpy.delta,
     totalPnlJpy: round(report.jpy.end - startCapitalJpy, 2),
     totalReturnPct: round(((report.jpy.end - startCapitalJpy) / startCapitalJpy) * 100, 2),
-    totalTrades: report.date === latest.date ? latest.summary.totalTrades : report.summary.totalTrades,
+    totalTrades: report.date === latest.date
+      ? latest.summary.totalTrades
+      : existingTradeCounts.get(report.date) ?? report.summary.totalTrades,
   }));
 
 const dataset = {
   schemaVersion: 1,
   siteName: 'MUKIMUKI trade',
   sourceName: 'Autotrade daily report',
-  sourceReport: latest.fileName,
+  sourceReport: latest.sourceReport || latest.fileName,
   generatedAt: latest.generatedAt,
   generatedAtDisplay: latest.generatedAtDisplay,
   timezone: {

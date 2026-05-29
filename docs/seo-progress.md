@@ -1,6 +1,6 @@
 # SEO Progress Report
 
-Generated: 2026-05-29T04:10:29.974Z
+Generated: 2026-05-29T22:53:58.524Z
 
 ## 実装状況
 
@@ -21,12 +21,12 @@ Generated: 2026-05-29T04:10:29.974Z
 
 ## ページ監査サマリー
 
-- 対象ページ: 26
-- インデックス対象ページ: 26
+- 対象ページ: 28
+- インデックス対象ページ: 28
 - 要確認ページ: 0
-- FAQ schemaページ: 7
-- パンくずschemaページ: 25
-- Critical CSS適用ページ: 26
+- FAQ schemaページ: 8
+- パンくずschemaページ: 27
+- Critical CSS適用ページ: 28
 
 ## 要確認ページ
 
@@ -36,12 +36,12 @@ Generated: 2026-05-29T04:10:29.974Z
 
 | URL | title | description | 本文文字数 | 内部リンク | schema |
 |---|---:|---:|---:|---:|---|
-| / | 35 | 57 | 2645 | 39 | Blog, ItemList, Organization, Person, WebSite |
+| / | 35 | 57 | 2640 | 39 | Blog, ItemList, Organization, Person, WebSite |
 | /about/ | 26 | 58 | 1562 | 19 | AboutPage, BreadcrumbList, FAQPage, WebPage |
 | /archive/ | 24 | 62 | 914 | 22 | BreadcrumbList, CollectionPage |
 | /archive/2026-05/ | 27 | 79 | 1040 | 29 | BreadcrumbList, CollectionPage, ItemList |
 | /category/moomoo/ | 30 | 62 | 911 | 23 | BreadcrumbList, CollectionPage, ItemList |
-| /category/performance/ | 26 | 61 | 926 | 23 | BreadcrumbList, CollectionPage, ItemList |
+| /category/performance/ | 26 | 61 | 1679 | 29 | BreadcrumbList, CollectionPage, ItemList |
 | /category/research/ | 26 | 57 | 1049 | 24 | BreadcrumbList, CollectionPage, ItemList |
 | /logic/ | 28 | 62 | 1031 | 26 | BreadcrumbList, CollectionPage, ItemList |
 | /logic/entry-risk/ | 49 | 52 | 1357 | 24 | Article, BreadcrumbList |
@@ -49,17 +49,19 @@ Generated: 2026-05-29T04:10:29.974Z
 | /logic/signal-score/ | 50 | 57 | 1355 | 24 | Article, BreadcrumbList |
 | /moomoo/ | 48 | 66 | 1320 | 23 | Article, BreadcrumbList, FAQPage |
 | /performance/ | 45 | 70 | 1357 | 22 | Article, BreadcrumbList, FAQPage |
-| /performance/2026-05-27-xndu-rebuild/ | 53 | 83 | 2003 | 24 | Article, BreadcrumbList |
-| /performance/2026-05-28-asts-rotation/ | 52 | 84 | 2706 | 24 | Article, BreadcrumbList |
+| /performance/2026-05-27-xndu-rebuild/ | 53 | 83 | 2035 | 24 | Article, BreadcrumbList |
+| /performance/2026-05-28-asts-rotation/ | 52 | 84 | 2736 | 24 | Article, BreadcrumbList |
+| /performance/2026-05-29-bksy-range/ | 49 | 77 | 2924 | 24 | Article, BreadcrumbList |
 | /performance/2026/ | 30 | 52 | 931 | 20 | BreadcrumbList, CollectionPage, ItemList |
-| /performance/2026/05/ | 32 | 61 | 979 | 25 | BreadcrumbList, CollectionPage, ItemList |
+| /performance/2026/05/ | 32 | 61 | 1077 | 26 | BreadcrumbList, CollectionPage, ItemList |
 | /performance/2026/05/26/ | 30 | 61 | 2092 | 28 | Article, BreadcrumbList, FAQPage |
 | /performance/2026/05/27/ | 35 | 66 | 2205 | 28 | Article, BreadcrumbList, FAQPage |
-| /performance/2026/05/28/ | 36 | 66 | 2447 | 28 | Article, BreadcrumbList, FAQPage |
+| /performance/2026/05/28/ | 36 | 66 | 2477 | 28 | Article, BreadcrumbList, FAQPage |
+| /performance/2026/05/29/ | 36 | 67 | 2451 | 28 | Article, BreadcrumbList, FAQPage |
 | /performance/latest/ | 25 | 53 | 929 | 23 | BreadcrumbList, CollectionPage, ItemList |
 | /profile/ | 26 | 75 | 1363 | 21 | BreadcrumbList, FAQPage, Person, ProfilePage |
 | /research/ | 25 | 59 | 1006 | 25 | Article, BreadcrumbList |
 | /research/ai-infrastructure/ | 47 | 47 | 1499 | 24 | Article, BreadcrumbList |
-| /research/app-software-fintech/ | 44 | 50 | 1527 | 24 | Article, BreadcrumbList |
-| /research/frontier-growth/ | 47 | 49 | 1464 | 24 | Article, BreadcrumbList |
+| /research/app-software-fintech/ | 44 | 50 | 1559 | 24 | Article, BreadcrumbList |
+| /research/frontier-growth/ | 47 | 49 | 1528 | 24 | Article, BreadcrumbList |
 
