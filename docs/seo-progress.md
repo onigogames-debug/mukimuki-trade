@@ -1,6 +1,6 @@
 # SEO Progress Report
 
-Generated: 2026-05-29T02:39:52.423Z
+Generated: 2026-05-29T02:44:52.745Z
 
 ## 実装状況
 
