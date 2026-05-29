@@ -237,6 +237,18 @@ ${article.tags.slice(0, 4).map((tag) => `          <span>${escapeHtml(tag)}</spa
         </div>
       </article>`).join('\n')}
     </section>
+
+    <section class="article-body">
+      <section class="article-panel">
+        <h2>このカテゴリで確認できること</h2>
+        <p>投資ロジックの記事では、売買判断をひとつの正解として見せるのではなく、読者が自分の取引と比較できるように、シグナル、エントリー、リスク管理、利確、撤退の順番で整理します。毎日の実績公開とあわせて読むことで、数字の変化と判断の流れをつなげて確認できます。</p>
+        <p>特に米国株は材料、出来高、決算、金利感応度によって短期の値動きが大きく変わります。ここでは公開できる範囲で、どの情報を先に見て、どの条件なら見送り、どの条件なら株数を抑えるのかを記事ごとに分けています。</p>
+      </section>
+      <section class="article-panel">
+        <h2>次に読む順番</h2>
+        <p>はじめて読む場合は、<a href="/logic/signal-score/">シグナルの見方</a>で候補化の基準を確認し、次に<a href="/logic/entry-risk/">エントリーとリスク</a>、最後に<a href="/logic/exit-review/">利確と撤退</a>を読むと流れがつかみやすくなります。実際の数字は<a href="/performance/latest/">最新実績</a>と<a href="/performance/2026/05/">月次実績アーカイブ</a>で確認できます。</p>
+      </section>
+    </section>
   </main>
 
 ${footer}

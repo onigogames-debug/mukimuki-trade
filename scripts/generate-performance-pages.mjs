@@ -348,6 +348,17 @@ ${monthReports.reverse().map(({ report }) => `      <article class="collection-c
         <div class="tag-row"><span>実績公開</span><span>100万円チャレンジ</span><span>${escapeHtml(report.latest.summary.totalTrades)}件</span></div>
       </article>`).join('\n')}
     </section>
+    <section class="article-body">
+      <section class="article-panel">
+        <h2>月次アーカイブの読み方</h2>
+        <p>このページでは、日次実績を固定URLで残し、あとから資産推移を比較できるようにしています。単日の利益や損失だけを見るのではなく、前日比、100万円比、取引件数、保有銘柄の変化を並べて読むことで、トレードの流れを把握しやすくなります。</p>
+        <p>月次で見ると、好調な日と調整した日がどの順番で出ているか、回転売買が多かった日と保有を優先した日がどこかを確認できます。日別ページには保有銘柄と売買履歴を残しているため、気になる日付から詳細へ進んでください。</p>
+      </section>
+      <section class="article-panel">
+        <h2>関連して確認するページ</h2>
+        <p>実績の背景を読む場合は<a href="/category/performance/">売買トピック</a>、判断基準を読む場合は<a href="/logic/">投資ロジック</a>、候補銘柄の見方を読む場合は<a href="/research/">銘柄検討</a>が入口になります。数字、理由、候補を分けて読むことで、公開実績を追いやすくしています。</p>
+      </section>
+    </section>
   </main>
 ${footer}
 </body>
@@ -359,6 +370,23 @@ const renderLatestPage = (latestReport) => {
   const latestPath = datePath(latestReport.latest.reportDate);
   const title = '最新実績レポート';
   const description = 'MUKIMUKI tradeの最新実績ページ。JavaScriptで最新の実績JSONを読み込み、canonicalを日付固定URLへ向けます。';
+  const breadcrumbs = [
+    { name: 'Home', item: `${siteUrl}/` },
+    { name: '実績公開', item: absoluteUrl('/category/performance/') },
+    { name: '最新実績', item: absoluteUrl('/performance/latest/') },
+  ];
+  const jsonLdScript = renderJsonLdScript({
+    pageType: 'collection',
+    title,
+    description,
+    url: absoluteUrl('/performance/latest/'),
+    path: '/performance/latest/',
+    section: '実績公開',
+    breadcrumbs,
+    items: [
+      { name: `${latestReport.latest.reportDateDisplay} 実績レポート`, path: latestPath },
+    ],
+  });
 
   return `<!doctype html>
 <html lang="ja">
@@ -367,7 +395,7 @@ const renderLatestPage = (latestReport) => {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${title} | MUKIMUKI trade</title>
   <meta name="description" content="${description}">
-  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="robots" content="noindex,follow,max-image-preview:large">
   <link id="dynamic-canonical" rel="canonical" href="${escapeHtml(absoluteUrl(latestPath))}">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:type" content="article">
@@ -380,6 +408,7 @@ const renderLatestPage = (latestReport) => {
   <link rel="alternate" type="application/rss+xml" title="MUKIMUKI trade RSS" href="/feed.xml">
   <link rel="alternate" type="application/json" title="MUKIMUKI trade latest performance data" href="/datasets/performance-latest.json">
   <link rel="stylesheet" href="/styles.css">
+  ${jsonLdScript}
   <script>
     (async () => {
       try {
@@ -407,7 +436,7 @@ ${header}
   <main>
     <section class="article-hero">
       <div class="article-hero-inner">
-        <nav class="breadcrumb" aria-label="breadcrumb"><a href="/">Home</a><span>/</span><span>最新実績</span></nav>
+        ${renderBreadcrumbHtml(breadcrumbs, escapeHtml)}
         <p class="eyebrow">PERFORMANCE / LATEST</p>
         <h1>最新実績レポート</h1>
         <p>このページは常に最新実績を表示します。検索エンジン向けの正規URLは、日付固定ページへ向けます。</p>
@@ -421,6 +450,10 @@ ${header}
           <div class="stat-card"><span>100万円比</span><strong data-return>${latestReport.latest.summary.totalReturnPct >= 0 ? '+' : ''}${latestReport.latest.summary.totalReturnPct.toFixed(2)}%</strong></div>
         </div>
         <p><a class="btn btn-primary" data-latest-link href="${escapeHtml(latestPath)}">日付固定URLで読む</a></p>
+      </section>
+      <section class="article-panel">
+        <h2>検索エンジン向けの扱い</h2>
+        <p>このページは読者が常に最新実績へ進むための入口です。SEO上の評価を日付別の固定ページに集めるため、canonicalは最新の日付URLへ向け、ページ自体はnoindexにしています。検索に残したい実績本文、FAQ、保有銘柄、売買件数は日付固定ページに蓄積します。</p>
       </section>
     </article>
   </main>

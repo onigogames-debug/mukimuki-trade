@@ -9,8 +9,9 @@
     "performance:pages": "node scripts/generate-performance-pages.mjs",
     "performance:import": "node scripts/import-performance-report.mjs",
     "seo:generate": "node scripts/generate-seo.mjs",
+    "seo:audit": "node scripts/seo-audit.mjs",
     "cwv:apply": "node scripts/apply-cwv-optimizations.mjs",
-    "build": "npm run images:optimize && npm run articles:generate && npm run performance:pages && npm run seo:generate && npm run cwv:apply",
+    "build": "npm run images:optimize && npm run articles:generate && npm run performance:pages && npm run seo:generate && npm run cwv:apply && npm run seo:audit",
     "deploy": "npx wrangler pages deploy . --project-name mukimuki-trade"
   },
   "devDependencies": {

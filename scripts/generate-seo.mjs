@@ -23,7 +23,7 @@ const toDate = (value) => new Date(value).toISOString().slice(0, 10);
 
 const ignoredDirs = new Set(['.git', '.wrangler', 'assets', 'data', 'datasets', 'scripts', 'node_modules']);
 const ignoredFiles = new Set(['404.html', 'googlefd5cf11d7eb2c415.html']);
-const ignoredRoutes = new Set(['/performance/']);
+const ignoredRoutes = new Set(['/performance/', '/performance/latest/']);
 
 const htmlPathToRoute = (filePath) => {
   const relative = path.relative(root, filePath);
@@ -88,6 +88,7 @@ for (const { path: pagePath, filePath } of discoveredPages) {
 }
 
 for (const page of content.pages) {
+  if (ignoredRoutes.has(page.path)) continue;
   if (!pageMap.has(page.path)) pageMap.set(page.path, page);
 }
 
@@ -97,6 +98,23 @@ const pages = [...pageMap.values()].sort((a, b) => {
   return a.path.localeCompare(b.path);
 });
 
+const imageForPage = (pagePath) => {
+  if (pagePath.startsWith('/research/')) return '/assets/optimized/mukimuki-research-768.avif';
+  if (pagePath.startsWith('/logic/')) return '/assets/optimized/mukimuki-editor-752.avif';
+  if (pagePath.startsWith('/moomoo/') || pagePath.startsWith('/category/moomoo/')) return '/assets/optimized/mukimuki-editor-752.avif';
+  if (pagePath.startsWith('/archive/') || pagePath.startsWith('/category/')) return '/assets/optimized/mukimuki-diary-768.avif';
+  if (pagePath.startsWith('/performance/')) return '/assets/optimized/mukimuki-performance-768.avif';
+  return '/assets/optimized/mukimuki-main-768.avif';
+};
+
+const imageCaptionForPage = (pagePath) => {
+  if (pagePath.startsWith('/research/')) return 'MUKIMUKI tradeの米国株銘柄検討イメージ';
+  if (pagePath.startsWith('/logic/')) return 'MUKIMUKI tradeの投資ロジック解説イメージ';
+  if (pagePath.startsWith('/moomoo/') || pagePath.startsWith('/category/moomoo/')) return 'moomoo証券の活用メモを読むMUKIMUKI';
+  if (pagePath.startsWith('/performance/')) return 'MUKIMUKI tradeの100万円トレード実績イメージ';
+  return 'MUKIMUKI trade公式キャラクター';
+};
+
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${pages.map((page) => `  <url>
@@ -104,6 +122,20 @@ ${pages.map((page) => `  <url>
     <lastmod>${escapeXml(page.lastmod)}</lastmod>
     <changefreq>${escapeXml(page.changefreq)}</changefreq>
     <priority>${escapeXml(page.priority)}</priority>
+  </url>`).join('\n')}
+</urlset>
+`;
+
+const imageSitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+${pages.map((page) => `  <url>
+    <loc>${escapeXml(absoluteUrl(page.path))}</loc>
+    <image:image>
+      <image:loc>${escapeXml(absoluteUrl(imageForPage(page.path)))}</image:loc>
+      <image:caption>${escapeXml(imageCaptionForPage(page.path))}</image:caption>
+      <image:title>${escapeXml(content.site.title)}</image:title>
+    </image:image>
   </url>`).join('\n')}
 </urlset>
 `;
@@ -130,6 +162,7 @@ ${content.posts.map((post) => `    <item>
 `;
 
 await writeFile(path.join(root, 'sitemap.xml'), sitemap);
+await writeFile(path.join(root, 'image-sitemap.xml'), imageSitemap);
 await writeFile(path.join(root, 'feed.xml'), feed);
 
-console.log(`Generated sitemap.xml (${pages.length} URLs) and feed.xml (${content.posts.length} posts).`);
+console.log(`Generated sitemap.xml (${pages.length} URLs), image-sitemap.xml, and feed.xml (${content.posts.length} posts).`);

@@ -13,7 +13,13 @@
 /sitemap.xml
   Cache-Control: public, max-age=0, must-revalidate
 
+/image-sitemap.xml
+  Cache-Control: public, max-age=0, must-revalidate
+
 /feed.xml
+  Cache-Control: public, max-age=0, must-revalidate
+
+/llms.txt
   Cache-Control: public, max-age=0, must-revalidate
 
 /datasets/*

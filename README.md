@@ -16,9 +16,11 @@ python3 -m http.server 4173
 npm run seo:generate
 ```
 
-`data/content.json` をもとに `sitemap.xml` と `feed.xml` を生成します。記事やカテゴリを増やすときは、ページ作成後にこのコマンドを実行します。
+`data/content.json` と実際のHTMLをもとに `sitemap.xml`、`image-sitemap.xml`、`feed.xml` を生成します。記事やカテゴリを増やすときは、ページ作成後にこのコマンドを実行します。
 
 キーワード設計は [docs/keyword-map.md](docs/keyword-map.md) に整理しています。
+
+SEO進捗は `npm run seo:audit` で [docs/seo-progress.md](docs/seo-progress.md) に出力します。
 
 ## 記事生成
 

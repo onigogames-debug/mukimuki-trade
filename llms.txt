@@ -1,0 +1,32 @@
+# MUKIMUKI trade
+
+MUKIMUKI trade is a Japanese investment blog that publishes a 1,000,000 JPY US stock trading record, daily performance pages, stock research notes, trading logic notes, and a reader-first moomoo Securities usage guide.
+
+Site: https://mukimuki-trade.com/
+Language: Japanese
+Official X: https://x.com/OnigoGames
+
+## Important Pages
+
+- Latest performance: https://mukimuki-trade.com/performance/latest/
+- Fixed daily performance archive: https://mukimuki-trade.com/performance/2026/05/28/
+- Performance category: https://mukimuki-trade.com/category/performance/
+- Stock research: https://mukimuki-trade.com/research/
+- Trading logic: https://mukimuki-trade.com/logic/
+- moomoo Securities guide: https://mukimuki-trade.com/moomoo/
+- Operator profile and disclosure: https://mukimuki-trade.com/profile/
+- Archive: https://mukimuki-trade.com/archive/
+
+## Site Summary
+
+The site records actual trading results from an Autotrade daily report and explains how the numbers should be read. It also publishes stock candidate notes and partial explanations of the trade logic used to organize entries, exits, risk, and reviews.
+
+The site contains affiliate links, including moomoo Securities links. Content is for information only and is not investment advice or a recommendation to buy or sell specific securities.
+
+## Data Sources
+
+- Public performance pages: /performance/YYYY/MM/DD/
+- Latest performance JSON: /datasets/performance-latest.json
+- RSS: /feed.xml
+- Sitemap: /sitemap.xml
+- Image sitemap: /image-sitemap.xml
