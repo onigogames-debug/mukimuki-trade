@@ -18,6 +18,8 @@ npm run seo:generate
 
 `data/content.json` をもとに `sitemap.xml` と `feed.xml` を生成します。記事やカテゴリを増やすときは、ページ作成後にこのコマンドを実行します。
 
+キーワード設計は [docs/keyword-map.md](docs/keyword-map.md) に整理しています。
+
 ## 記事生成
 
 ```sh

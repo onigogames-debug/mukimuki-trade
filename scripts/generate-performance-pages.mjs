@@ -25,7 +25,7 @@ const formatJpy = (value) => Number(value || 0).toLocaleString('ja-JP', {
   style: 'currency',
   currency: 'JPY',
   maximumFractionDigits: 0,
-});
+}).replace('￥', '¥');
 
 const formatUsd = (value) => Number(value || 0).toLocaleString('en-US', {
   style: 'currency',
@@ -49,6 +49,13 @@ const monthPath = (date) => {
 };
 
 const displayDate = (date) => date.replaceAll('-', '.');
+
+const shortSymbol = (symbol) => String(symbol || '').replace(/^US\./, '');
+
+const primaryHoldings = (positions = [], limit = 3) => positions
+  .slice(0, limit)
+  .map((position) => shortSymbol(position.symbol))
+  .filter(Boolean);
 
 const nav = `    <nav class="nav-links" aria-label="主要メニュー">
       <a href="/performance/latest/">実績</a>
@@ -149,8 +156,27 @@ const renderDailyPage = (report, articleIndex) => {
   const latest = report.latest;
   const pagePath = datePath(latest.reportDate);
   const monthlyPath = monthPath(latest.reportDate);
-  const title = `${latest.label}実績レポート: 100万円比 ${latest.summary.totalReturnPct >= 0 ? '+' : ''}${latest.summary.totalReturnPct.toFixed(1)}%`;
-  const description = `${latest.reportDateDisplay}の固定実績ページ。評価額${formatJpy(latest.jpy.end)}、前日比${formatJpy(latest.jpy.delta)}、取引${latest.summary.totalTrades}件を記録。`;
+  const holdings = primaryHoldings(latest.positions);
+  const holdingsText = holdings.join('・');
+  const rateText = `${latest.summary.totalReturnPct >= 0 ? '+' : ''}${latest.summary.totalReturnPct.toFixed(1)}%`;
+  const title = `${latest.reportDate}実績 ${rateText}｜${holdingsText}保有`;
+  const h1 = `${latest.reportDate}実績: 100万円比 ${rateText}、評価額 ${formatJpy(latest.jpy.end)}`;
+  const description = `100万円米国株トレード実績。評価額${formatJpy(latest.jpy.end)}、前日比${latest.jpy.delta >= 0 ? '+' : ''}${formatJpy(latest.jpy.delta)}。${holdingsText}と${latest.summary.totalTrades}件の売買を確認。`;
+  const intro = `100万円から始めた米国株トレードの実績公開です。${latest.reportDate}は評価額が${formatJpy(latest.jpy.end)}、前日比は${latest.jpy.delta >= 0 ? '+' : ''}${formatJpy(latest.jpy.delta)}、100万円比は${rateText}でした。主要保有銘柄は${holdings.join('、')}で、売買件数は${latest.summary.totalTrades}件です。投資実績公開ブログとして、資産推移と売買判断を日次で確認します。`;
+  const faqs = [
+    {
+      question: 'この実績は投資助言ですか？',
+      answer: 'いいえ。MUKIMUKI tradeは自己運用の実績を公開する情報サイトであり、特定銘柄の売買を推奨するものではありません。',
+    },
+    {
+      question: `100万円比 ${rateText} は何を意味しますか？`,
+      answer: `初期資金100万円に対して、評価額がどれだけ増減したかを示す指標です。この日は評価額${formatJpy(latest.jpy.end)}で、100万円比${rateText}です。`,
+    },
+    {
+      question: `${holdings.join('、')}は買うべき銘柄ですか？`,
+      answer: '買い推奨ではありません。保有銘柄として公開しているだけで、投資判断は決算、ニュース、リスク許容度を確認したうえで読者自身が行う必要があります。',
+    },
+  ];
   const breadcrumbs = [
     { name: 'Home', item: `${siteUrl}/` },
     { name: '実績公開', item: absoluteUrl('/performance/latest/') },
@@ -168,8 +194,9 @@ const renderDailyPage = (report, articleIndex) => {
     path: pagePath,
     section: '実績公開',
     image: '/assets/mukimuki-performance.png',
-    keywords: ['実績公開', '100万円チャレンジ', '株式投資', latest.reportDate],
+    keywords: ['100万円トレード', '投資実績公開', '米国株', '100万円チャレンジ', latest.reportDate, ...holdings],
     breadcrumbs,
+    faq: faqs,
   });
   const relatedContext = {
     title,
@@ -186,7 +213,7 @@ const renderDailyPage = (report, articleIndex) => {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>${escapeHtml(title)} | MUKIMUKI trade</title>
+  <title>${escapeHtml(title)}</title>
   <meta name="description" content="${escapeHtml(description)}">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="${escapeHtml(absoluteUrl(pagePath))}">
@@ -213,31 +240,40 @@ ${header}
       <div class="article-hero-inner">
         ${renderBreadcrumbHtml(breadcrumbs, escapeHtml)}
         <p class="eyebrow">PERFORMANCE / DAILY ARCHIVE</p>
-        <h1>${escapeHtml(title)}</h1>
-        <p>このページは${escapeHtml(latest.reportDateDisplay)}の固定実績URLです。最新ページが更新されても、この日の評価額、損益、保有銘柄、取引ログは同じURLで残ります。</p>
+        <h1>${escapeHtml(h1)}</h1>
+        <p>${escapeHtml(intro)}</p>
       </div>
     </section>
     <article class="article-body">
       <section class="article-panel">
-        <h2>この日の実績</h2>
+        <h2>この日の実績サマリー</h2>
         ${renderMetrics(report)}
       </section>
       <section class="article-panel">
-        <h2>読者向けの読み方</h2>
-        <p>評価額は${formatJpy(latest.jpy.end)}、100万円スタート比は${latest.summary.totalReturnPct >= 0 ? '+' : ''}${latest.summary.totalReturnPct.toFixed(2)}%です。単日の増減だけでなく、取引件数、買付と売却の偏り、翌日に残した銘柄を合わせて見ると、資産曲線の変化を追いやすくなります。</p>
-        <p>この記録は投資助言ではありません。銘柄名が出ていても売買を推奨するものではなく、自己運用ログを検証しやすくするための公開データです。</p>
+        <h2>保有銘柄の見方</h2>
+        <p>${escapeHtml(holdings.join('、'))}は値動きが大きくなりやすい米国株です。単日の損益だけでなく、翌日に持ち越した理由、含み益・含み損の変化、出来高の継続を確認します。</p>
       </section>
       <section class="article-panel">
-        <h2>保有銘柄</h2>
+        <h2>主要保有銘柄</h2>
         ${renderPositions(latest.positions)}
       </section>
       <section class="article-panel">
-        <h2>約定履歴</h2>
+        <h2>売買件数${escapeHtml(latest.summary.totalTrades)}件から見るトレードの特徴</h2>
+        <p>売買件数が多い日は、利益額だけでなく回転の多さにも注意します。買付と売却の偏り、利確した銘柄、翌日に残した銘柄を分けて見ることで、実績の再現性を確認できます。</p>
         ${renderTrades(latest.trades)}
       </section>
       <section class="article-panel">
-        <h2>データ確認</h2>
-        <p><a href="/datasets/performance-${escapeHtml(latest.reportDate)}.json">この日のJSONデータ</a>、<a href="/performance/latest/">最新実績</a>、<a href="${escapeHtml(monthlyPath)}">月次アーカイブ</a>を確認できます。</p>
+        <h2>次に読むべき内容</h2>
+        <p>この日の実績だけで判断せず、<a href="${escapeHtml(monthlyPath)}">月次アーカイブ</a>、<a href="/category/performance/">売買トピック</a>、<a href="/logic/">投資ロジック</a>を合わせて確認すると、資産推移と判断基準をつなげて読みやすくなります。元データは<a href="/datasets/performance-${escapeHtml(latest.reportDate)}.json">この日のJSONデータ</a>で確認できます。</p>
+      </section>
+      <section class="article-panel">
+        <h2>よくある質問</h2>
+        <div class="faq-list">
+${faqs.map((faq) => `          <div class="faq-item">
+            <h3>${escapeHtml(faq.question)}</h3>
+            <p>${escapeHtml(faq.answer)}</p>
+          </div>`).join('\n')}
+        </div>
       </section>
 ${renderRelatedArticlesSection(relatedContext, articleIndex, { escapeHtml })}
     </article>

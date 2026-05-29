@@ -290,7 +290,7 @@ export const buildStructuredData = (frontMatter = {}) => {
   }
 
   const faq = faqPageSchema(meta);
-  if (faq && meta.pageType === 'research') graph.push(faq);
+  if (faq && ['performance', 'research', 'article'].includes(meta.pageType)) graph.push(faq);
 
   if (meta.breadcrumbs.length) graph.push(breadcrumbSchema(meta));
 
