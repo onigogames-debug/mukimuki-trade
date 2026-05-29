@@ -56,6 +56,7 @@ export function renderPicture({
   const source = (format) => {
     const variants = image.variants
       .filter((variant) => variant.format === format)
+      .filter((variant) => [480, 800, 1200].includes(variant.width))
       .map((variant) => `${variant.src} ${variant.width}w`)
       .join(", ");
     return variants

@@ -1,4 +1,4 @@
-const CACHE_VERSION = "mukimuki-cwv-20260529";
+const CACHE_VERSION = "mukimuki-cwv-20260529-v2";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;
 const STATIC_ASSETS = [
@@ -31,7 +31,7 @@ self.addEventListener("fetch", (event) => {
   if (url.origin !== location.origin || event.request.method !== "GET") return;
 
   if (url.pathname.startsWith("/datasets/") || url.pathname.startsWith("/data/")) {
-    event.respondWith(networkFirst(event.request));
+    event.respondWith(cacheFirstWithBackgroundUpdate(event.request));
     return;
   }
 
@@ -60,4 +60,17 @@ async function networkFirst(request) {
     if (cached) return cached;
     throw error;
   }
+}
+
+async function cacheFirstWithBackgroundUpdate(request) {
+  const cache = await caches.open(DATA_CACHE);
+  const cached = await cache.match(request);
+  const update = fetch(request)
+    .then((response) => {
+      cache.put(request, response.clone());
+      return response;
+    })
+    .catch(() => null);
+
+  return cached || await update || fetch(request);
 }

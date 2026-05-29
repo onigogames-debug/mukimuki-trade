@@ -113,12 +113,12 @@ const pages = [...pageMap.values()].sort((a, b) => {
 });
 
 const imageForPage = (pagePath) => {
-  if (pagePath.startsWith('/research/')) return '/assets/optimized/mukimuki-research-768.avif';
-  if (pagePath.startsWith('/logic/')) return '/assets/optimized/mukimuki-editor-752.avif';
-  if (pagePath.startsWith('/moomoo/') || pagePath.startsWith('/category/moomoo/')) return '/assets/optimized/mukimuki-editor-752.avif';
-  if (pagePath.startsWith('/archive/') || pagePath.startsWith('/category/')) return '/assets/optimized/mukimuki-diary-768.avif';
-  if (pagePath.startsWith('/performance/')) return '/assets/optimized/mukimuki-performance-768.avif';
-  return '/assets/optimized/mukimuki-main-768.avif';
+  if (pagePath.startsWith('/research/')) return '/assets/optimized/mukimuki-research-800.avif';
+  if (pagePath.startsWith('/logic/')) return '/assets/optimized/mukimuki-editor-800.avif';
+  if (pagePath.startsWith('/moomoo/') || pagePath.startsWith('/category/moomoo/')) return '/assets/optimized/mukimuki-editor-800.avif';
+  if (pagePath.startsWith('/archive/') || pagePath.startsWith('/category/')) return '/assets/optimized/mukimuki-diary-800.avif';
+  if (pagePath.startsWith('/performance/')) return '/assets/optimized/mukimuki-performance-800.avif';
+  return '/assets/optimized/mukimuki-main-800.avif';
 };
 
 const imageCaptionForPage = (pagePath) => {

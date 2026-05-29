@@ -56,7 +56,9 @@ const fallbackPerformance = {
 let performanceState = fallbackPerformance;
 
 function getEmbeddedPerformanceData() {
-  const element = document.getElementById("performance-data");
+  // Pattern A: build-time inline JSON. This avoids a render-blocking data fetch for
+  // the first view and is the best option for LCP on a static homepage.
+  const element = document.getElementById("perf-data") || document.getElementById("performance-data");
   if (!element?.textContent) return null;
   try {
     return JSON.parse(element.textContent);
@@ -317,6 +319,8 @@ async function loadPerformanceData() {
     performanceState = embeddedPerformance;
   } else {
     try {
+      // Pattern B: cache-first Service Worker path. This is useful on repeat visits,
+      // but the first visit still waits for network, so it is weaker for LCP than A.
       const response = await fetch("/datasets/performance-latest.json", { cache: "force-cache" });
       if (!response.ok) throw new Error(`Performance data returned ${response.status}`);
       performanceState = await response.json();

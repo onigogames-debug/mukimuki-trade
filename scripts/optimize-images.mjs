@@ -7,12 +7,13 @@ const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(scriptDir, "..");
 const assetDir = path.join(rootDir, "assets");
 const outputDir = path.join(assetDir, "optimized");
-const widths = [96, 192, 320, 480, 768, 1024];
+const widths = [480, 800, 1200];
 const formats = [
   { name: "avif", options: { quality: 56, effort: 5 } },
   { name: "webp", options: { quality: 78, effort: 5 } },
 ];
 
+await fs.rm(outputDir, { recursive: true, force: true });
 await fs.mkdir(outputDir, { recursive: true });
 
 const files = (await fs.readdir(assetDir))
@@ -28,7 +29,7 @@ for (const file of files) {
   const metadata = await image.metadata();
   const originalWidth = metadata.width || 0;
   const originalHeight = metadata.height || 0;
-  const targetWidths = [...new Set([...widths.filter((width) => width < originalWidth), originalWidth])];
+  const targetWidths = widths;
   const variants = [];
 
   for (const width of targetWidths) {
@@ -36,7 +37,7 @@ for (const file of files) {
       const outputFile = `${baseName}-${width}.${format.name}`;
       const outputPath = path.join(outputDir, outputFile);
       await sharp(inputPath)
-        .resize({ width, withoutEnlargement: true })
+        .resize({ width })
         [format.name](format.options)
         .toFile(outputPath);
       variants.push({

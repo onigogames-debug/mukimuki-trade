@@ -1,0 +1,15 @@
+{% macro picture(src, alt="", sizes="(max-width: 720px) 92vw, 800px", aboveFold=false, className="") %}
+  {%- set clean = src | replace("/assets/", "") | replace("assets/", "") | replace(".png", "") -%}
+  {%- set base = "/assets/optimized/" + clean -%}
+  <picture data-cwv-picture>
+    <source type="image/avif" srcset="{{ base }}-480.avif 480w, {{ base }}-800.avif 800w, {{ base }}-1200.avif 1200w" sizes="{{ sizes }}">
+    <source type="image/webp" srcset="{{ base }}-480.webp 480w, {{ base }}-800.webp 800w, {{ base }}-1200.webp 1200w" sizes="{{ sizes }}">
+    <img
+      src="/assets/{{ clean }}.png"
+      alt="{{ alt }}"
+      loading="{{ "eager" if aboveFold else "lazy" }}"
+      decoding="async"
+      {% if aboveFold %}fetchpriority="high"{% endif %}
+      {% if className %}class="{{ className }}"{% endif %}>
+  </picture>
+{% endmacro %}

@@ -47,15 +47,31 @@ function sizesFor(src, tag, before) {
 
 function loadingFor(src, before) {
   if (before.endsWith('<a class="brand" href="/" aria-label="MUKIMUKI trade home">\n      ')) {
-    return { loading: "", fetchpriority: "high" };
+    return { loading: "eager", fetchpriority: "high" };
   }
   if (src.includes("mukimuki-main") && before.includes('class="hero-mascot"')) {
-    return { loading: "", fetchpriority: "high" };
+    return { loading: "eager", fetchpriority: "high" };
   }
   return { loading: "lazy", fetchpriority: "" };
 }
 
 function optimizeImages(content) {
+  content = content.replace(/<picture\b[^>]*data-cwv-picture[^>]*>[\s\S]*?<img\b[^>]*\bsrc=(["'])(\/?assets\/mukimuki-[^"']+\.png)\1[^>]*>[\s\S]*?<\/picture>/g, (picture, _quote, src, offset) => {
+    const imgTag = picture.match(/<img\b[^>]*>/i)?.[0] || "";
+    const sourceTag = picture.match(/<source\b[^>]*\bsizes=(["'])(.*?)\1[^>]*>/i)?.[0] || "";
+    const before = content.slice(Math.max(0, offset - 360), offset);
+    const normalizedSrc = src.startsWith("/") ? src.slice(1) : src;
+    const { loading, fetchpriority } = loadingFor(normalizedSrc, before);
+    return renderPicture({
+      src: normalizedSrc,
+      alt: attrValue(imgTag, "alt"),
+      className: attrValue(imgTag, "class"),
+      sizes: attrValue(sourceTag, "sizes") || sizesFor(normalizedSrc, imgTag, before),
+      loading: attrValue(imgTag, "loading") || loading,
+      fetchpriority: attrValue(imgTag, "fetchpriority") || fetchpriority,
+    });
+  });
+
   return content.replace(/<img\b[^>]*\bsrc=(["'])(\/?assets\/mukimuki-[^"']+\.png)\1[^>]*>/g, (tag, _quote, src, offset) => {
     if (tag.includes("data-cwv-fallback")) return tag;
     const before = content.slice(Math.max(0, offset - 360), offset);
@@ -74,14 +90,27 @@ function optimizeImages(content) {
 }
 
 function applyHead(content) {
-  if (content.includes("data-critical-css")) return content;
+  if (content.includes("data-critical-css")) {
+    return content.replace(/  <style data-critical-css>[\s\S]*?<\/style>\n  <link rel="preload" href="\/styles\.css" as="style">\n  <link rel="stylesheet" href="\/styles\.css" media="print" onload="this\.media='all'">\n  <noscript><link rel="stylesheet" href="\/styles\.css"><\/noscript>/, `  ${stylesheetBlock()}`);
+  }
   return content.replace(/  <link rel="stylesheet" href="\/?styles\.css">\n?/, `  ${stylesheetBlock()}\n`);
 }
 
 function inlinePerformanceData(content, filePath) {
   if (path.basename(filePath) !== "index.html" || path.dirname(filePath) !== rootDir) return content;
   const json = JSON.stringify(performanceData).replaceAll("</script", "<\\/script");
-  const script = `<script id="performance-data" type="application/json">${json}</script>`;
+  const script = [
+    "<!-- LCP優先: A. 実績データはビルド時にHTMLへ埋め込むため、初回描画でJSON fetchを待たない。 -->",
+    '<script id="perf-data" type="application/json">',
+    json,
+    "</script>",
+    "<!-- B. Service Workerは再訪問時の代替経路。キャッシュ優先で速いが、初回LCPはAのインライン化が有利。 -->",
+  ].join("");
+  if (content.includes('id="perf-data"')) {
+    return content.replace(/<!-- LCP優先:[\s\S]*?Service Workerは[\s\S]*?-->|<script id="perf-data" type="application\/json">[\s\S]*?<\/script>/g, (match) => (
+      match.includes('id="perf-data"') ? script : ''
+    ));
+  }
   if (content.includes('id="performance-data"')) {
     return content.replace(/<script id="performance-data" type="application\/json">[\s\S]*?<\/script>/, script);
   }
