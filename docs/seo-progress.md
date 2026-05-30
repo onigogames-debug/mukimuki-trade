@@ -1,6 +1,6 @@
 # SEO Progress Report
 
-Generated: 2026-05-30T12:11:11.502Z
+Generated: 2026-05-30T12:30:59.954Z
 
 ## 実装状況
 
@@ -24,7 +24,7 @@ Generated: 2026-05-30T12:11:11.502Z
 - 対象ページ: 28
 - インデックス対象ページ: 28
 - 要確認ページ: 0
-- FAQ schemaページ: 8
+- FAQ schemaページ: 11
 - パンくずschemaページ: 27
 - Critical CSS適用ページ: 28
 
@@ -61,7 +61,7 @@ Generated: 2026-05-30T12:11:11.502Z
 | /performance/latest/ | 25 | 53 | 929 | 23 | BreadcrumbList, CollectionPage, ItemList |
 | /profile/ | 26 | 75 | 1363 | 21 | BreadcrumbList, FAQPage, Person, ProfilePage |
 | /research/ | 25 | 59 | 1006 | 25 | Article, BreadcrumbList |
-| /research/ai-infrastructure/ | 47 | 47 | 1499 | 24 | Article, BreadcrumbList |
-| /research/app-software-fintech/ | 44 | 50 | 1559 | 24 | Article, BreadcrumbList |
-| /research/frontier-growth/ | 47 | 49 | 1528 | 24 | Article, BreadcrumbList |
+| /research/ai-infrastructure/ | 47 | 47 | 1719 | 24 | Article, BreadcrumbList, FAQPage |
+| /research/app-software-fintech/ | 44 | 50 | 1776 | 24 | Article, BreadcrumbList, FAQPage |
+| /research/frontier-growth/ | 47 | 49 | 1748 | 24 | Article, BreadcrumbList, FAQPage |
 

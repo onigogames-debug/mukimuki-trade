@@ -53,7 +53,15 @@
         "description": "100万円からの株式投資実績、資産曲線、銘柄検討、相場メモを整理する投資ブログ。",
         "inLanguage": "ja-JP",
         "author": { "@id": "https://mukimuki-trade.com/profile/#author" },
-        "publisher": { "@id": "https://mukimuki-trade.com/#organization" }
+        "publisher": { "@id": "https://mukimuki-trade.com/#organization" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://mukimuki-trade.com/search/?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
       },
       {
         "@type": "Blog",

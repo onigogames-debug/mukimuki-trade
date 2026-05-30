@@ -1,0 +1,17 @@
+{# Render inside <head>. Requires eleventy.config.mjs jsonLd shortcode/filter. #}
+{% set schemaInput = {
+  type: schemaType or pageType or type,
+  title: title,
+  description: description,
+  url: url or page.url,
+  publishedTime: publishedTime or published_time or published,
+  modifiedTime: modifiedTime or modified_time or modified,
+  section: section or category,
+  author: author,
+  siteUrl: siteUrl or site.url,
+  sameAs: sameAs,
+  faqs: faqs or faq,
+  items: items,
+  image: image
+} %}
+{{ jsonLd(schemaInput) | safe }}

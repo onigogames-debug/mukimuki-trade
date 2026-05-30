@@ -84,8 +84,42 @@ ${sources.map((source) => `          <li><a href="${escapeHtml(source.url)}" tar
       </section>`;
 };
 
+const defaultResearchFaq = (article) => {
+  if (article.categoryKey !== 'research') return [];
+  return [
+    {
+      question: `${article.title}は買い推奨ですか？`,
+      answer: 'いいえ。銘柄検討は自己運用の候補整理であり、特定銘柄の売買を推奨するものではありません。',
+    },
+    {
+      question: '銘柄検討では何を確認しますか？',
+      answer: '注目理由、決算や売上成長、利益率、ニュース、株価位置、出来高、撤退条件を分けて確認します。',
+    },
+    {
+      question: '実際の保有状況はどこで確認できますか？',
+      answer: '最新実績ページと日付別の実績ページで、評価額、前日比、保有銘柄、売買件数を記録しています。',
+    },
+  ];
+};
+
+const articleFaq = (article) => article.faq || article.faqs || defaultResearchFaq(article);
+
+const renderFaqSection = (faqs = []) => {
+  if (!faqs.length) return '';
+  return `      <section class="article-panel">
+        <h2>よくある質問</h2>
+        <div class="faq-list">
+${faqs.map((item) => `          <div class="faq-item">
+            <h3>${escapeHtml(item.question || item.name)}</h3>
+            <p>${escapeHtml(item.answer || item.text)}</p>
+          </div>`).join('\n')}
+        </div>
+      </section>`;
+};
+
 const renderArticle = (article) => {
   const breadcrumbs = buildBreadcrumbsFromPath(article.path, article.title);
+  const faqs = articleFaq(article);
   const jsonLdScript = renderJsonLdScript({
     pageType: article.categoryKey === 'research' ? 'research' : 'article',
     title: article.title,
@@ -99,7 +133,7 @@ const renderArticle = (article) => {
     image: article.image,
     keywords: article.tags,
     breadcrumbs,
-    faq: article.faq || [],
+    faq: faqs,
   });
 
   return `<!doctype html>
@@ -154,6 +188,8 @@ ${article.tags.map((tag) => `          <span>${escapeHtml(tag)}</span>`).join('\
 ${article.sections.map(renderSection).join('\n\n')}
 
 ${renderSources(article.sources)}
+
+${renderFaqSection(faqs)}
 
 ${renderRelatedArticlesSection(article, articleIndex, { escapeHtml })}
 

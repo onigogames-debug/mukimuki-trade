@@ -15,6 +15,10 @@ const falsy = new Set(['false', 'no', 'off']);
 
 const trimSlash = (value) => String(value || '').replace(/\/$/, '');
 const ensureTrailingSlash = (value) => String(value || '/').endsWith('/') ? String(value || '/') : `${value}/`;
+const normalizeSameAs = (value = site.officialX) => {
+  if (Array.isArray(value)) return value.filter(Boolean);
+  return value ? [value] : [];
+};
 
 export const absoluteUrl = (value = '/') => {
   if (/^https?:\/\//.test(String(value))) return String(value);
@@ -112,8 +116,9 @@ export const parseFrontMatter = (source) => {
 
 export const normalizePageMeta = (frontMatter = {}) => {
   const path = frontMatter.path || new URL(frontMatter.url || '/', site.url).pathname;
+  const pageType = normalizePageType(frontMatter.pageType || frontMatter.type || inferPageType(path, frontMatter.section), path);
   return {
-    pageType: frontMatter.pageType || frontMatter.type || inferPageType(path, frontMatter.section),
+    pageType,
     title: frontMatter.title,
     description: frontMatter.description,
     published: frontMatter.publishedTime || frontMatter.published_time || frontMatter.published || frontMatter.datePublished || frontMatter.pubDate,
@@ -124,20 +129,56 @@ export const normalizePageMeta = (frontMatter = {}) => {
     section: frontMatter.section || frontMatter.category,
     image: frontMatter.image || site.logo,
     keywords: frontMatter.keywords || frontMatter.tags || [],
-    breadcrumbs: frontMatter.breadcrumbs || buildDefaultBreadcrumbs(path, frontMatter.title, frontMatter.section),
-    faq: frontMatter.faq || frontMatter.faqs || [],
+    breadcrumbs: frontMatter.breadcrumbs || buildBreadcrumbListFromPath(path, { title: frontMatter.title }),
+    faq: frontMatter.faq || frontMatter.faqs || frontMatter.faqItems || [],
     items: frontMatter.items || [],
+    sameAs: normalizeSameAs(frontMatter.sameAs || frontMatter.same_as || site.officialX),
   };
 };
 
 const inferPageType = (path, section) => {
   if (path === '/') return 'home';
+  if (path === '/profile/') return 'profile';
+  if (path === '/about/') return 'legal';
   if (path.startsWith('/archive/')) return 'archive';
   if (path.startsWith('/category/')) return 'collection';
+  if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/$/.test(path)) return 'performanceDaily';
+  if (/^\/performance\/\d{4}\/\d{2}\/$/.test(path)) return 'performanceMonthly';
+  if (/^\/performance\/\d{4}\/$/.test(path) || path === '/performance/latest/') return 'collection';
   if (path === '/performance/' || path.startsWith('/performance/')) return 'performance';
   if (path === '/research/' || path.startsWith('/research/')) return 'research';
+  if (path === '/logic/' || path.startsWith('/logic/')) return path === '/logic/' ? 'collection' : 'logic';
   if (section) return 'article';
   return 'page';
+};
+
+const normalizePageType = (value, path = '/') => {
+  const type = String(value || inferPageType(path)).trim();
+  const aliases = new Map([
+    ['top', 'home'],
+    ['website', 'home'],
+    ['dailyPerformance', 'performanceDaily'],
+    ['daily-performance', 'performanceDaily'],
+    ['performance-daily', 'performanceDaily'],
+    ['performance_daily', 'performanceDaily'],
+    ['monthlyPerformance', 'performanceMonthly'],
+    ['monthly-performance', 'performanceMonthly'],
+    ['performance-monthly', 'performanceMonthly'],
+    ['performance_monthly', 'performanceMonthly'],
+    ['stockResearch', 'research'],
+    ['stock-research', 'research'],
+    ['investmentLogic', 'logic'],
+    ['investment-logic', 'logic'],
+    ['profilePage', 'profile'],
+    ['profile-page', 'profile'],
+    ['disclaimer', 'legal'],
+    ['about', 'legal'],
+    ['legalDocument', 'legal'],
+    ['legal-document', 'legal'],
+    ['archive', 'collection'],
+    ['monthly', 'performanceMonthly'],
+  ]);
+  return aliases.get(type) || type;
 };
 
 const titleizeSegment = (segment) => segment
@@ -168,6 +209,36 @@ export const buildBreadcrumbListFromPath = (pathValue = '/', options = {}) => {
   const path = new URL(pathValue, ensureTrailingSlash(siteUrl)).pathname;
   const segments = path.split('/').filter(Boolean);
   const breadcrumbs = [{ name: 'Home', item: absoluteUrlForSite('/', siteUrl) }];
+
+  const performanceMatch = path.match(/^\/performance\/(\d{4})(?:\/(\d{2})(?:\/(\d{2}))?)?\/$/);
+  if (performanceMatch) {
+    const [, year, month, day] = performanceMatch;
+    breadcrumbs.push({ name: '実績', item: absoluteUrlForSite('/performance/latest/', siteUrl) });
+    if (year && month) {
+      breadcrumbs.push({
+        name: `${year}年${Number(month)}月`,
+        item: absoluteUrlForSite(`/performance/${year}/${month}/`, siteUrl),
+      });
+    } else if (year) {
+      breadcrumbs.push({
+        name: `${year}年`,
+        item: absoluteUrlForSite(`/performance/${year}/`, siteUrl),
+      });
+    }
+    if (day) {
+      breadcrumbs.push({
+        name: title || `${Number(month)}月${Number(day)}日`,
+        item: absoluteUrlForSite(`/performance/${year}/${month}/${day}/`, siteUrl),
+      });
+    }
+    return breadcrumbs;
+  }
+
+  if (path === '/performance/latest/' || path === '/performance/') {
+    breadcrumbs.push({ name: '実績', item: absoluteUrlForSite('/performance/latest/', siteUrl) });
+    return breadcrumbs;
+  }
+
   let current = '';
 
   segments.forEach((segment, index) => {
@@ -199,14 +270,14 @@ const buildDefaultBreadcrumbs = (path, title, section) => {
   return crumbs;
 };
 
-export const personSchema = () => ({
+export const personSchema = (options = {}) => ({
   '@type': 'Person',
   '@id': site.authorId,
-  name: 'MUKIMUKI trade編集部',
-  alternateName: 'OnigoGames',
-  url: absoluteUrl('/profile/'),
-  image: imageUrl(site.logo),
-  sameAs: [site.officialX],
+  name: options.name || 'MUKIMUKI trade編集部',
+  alternateName: options.alternateName || 'OnigoGames',
+  url: options.url || absoluteUrl('/profile/'),
+  image: imageUrl(options.image || site.logo),
+  sameAs: normalizeSameAs(options.sameAs || site.officialX),
   mainEntityOfPage: {
     '@type': 'ProfilePage',
     '@id': absoluteUrl('/profile/#webpage'),
@@ -221,9 +292,9 @@ export const personSchema = () => ({
       addressCountry: 'JP',
     },
   },
-  jobTitle: '兼業投資家 / 事業開発',
-  knowsAbout: ['株式投資', '米国株', '自動売買', 'Autotrade', '裁量判断', 'AIエージェント', '事業開発', '投資実績の記録'],
-  description: '40代・東京都港区在住の兼業投資家。投資歴は約20年。自動売買（Autotrade）と裁量判断を組み合わせ、公開実績、銘柄検討、投資ロジックを検証しやすい形で整理します。投資助言業者ではありません。',
+  jobTitle: options.jobTitle || '兼業投資家 / 事業開発',
+  knowsAbout: options.knowsAbout || ['株式投資', '米国株', '自動売買', 'Autotrade', '裁量判断', 'AIエージェント', '事業開発', '投資実績の記録'],
+  description: options.description || '40代・東京都港区在住の兼業投資家。投資歴は約20年。自動売買（Autotrade）と裁量判断を組み合わせ、公開実績、銘柄検討、投資ロジックを検証しやすい形で整理します。投資助言業者ではありません。',
 });
 
 export const websiteSchema = (meta) => ({
@@ -235,6 +306,14 @@ export const websiteSchema = (meta) => ({
   inLanguage: site.language,
   publisher: { '@id': `${site.url}/#organization` },
   author: { '@id': site.authorId },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: `${site.url}/search/?q={search_term_string}`,
+    },
+    'query-input': 'required name=search_term_string',
+  },
 });
 
 export const organizationSchema = () => ({
@@ -285,6 +364,40 @@ export const collectionPageSchema = (meta) => ({
   inLanguage: site.language,
   isPartOf: { '@id': site.websiteId },
   mainEntity: meta.items.length ? { '@id': `${meta.url}#list` } : undefined,
+});
+
+export const profilePageSchema = (meta) => ({
+  '@type': 'ProfilePage',
+  '@id': `${absoluteUrl('/profile/')}#webpage`,
+  url: absoluteUrl('/profile/'),
+  name: meta.title || '運営者プロフィール',
+  description: meta.description || 'MUKIMUKI tradeの運営者プロフィール。',
+  datePublished: meta.published,
+  dateModified: meta.modified || meta.published,
+  inLanguage: site.language,
+  isPartOf: { '@id': site.websiteId },
+  mainEntity: { '@id': site.authorId },
+});
+
+export const legalWebPageSchema = (meta) => ({
+  '@type': ['WebPage', 'AboutPage'],
+  '@id': `${meta.url}#webpage`,
+  url: meta.url,
+  name: meta.title || '運営方針・免責事項',
+  description: meta.description || 'MUKIMUKI tradeの運営方針と免責事項。',
+  datePublished: meta.published,
+  dateModified: meta.modified || meta.published,
+  additionalType: 'https://schema.org/LegalDocument',
+  inLanguage: site.language,
+  isPartOf: { '@id': site.websiteId },
+  author: { '@id': site.authorId },
+  hasPart: {
+    '@type': ['DigitalDocument', 'WebPageElement'],
+    '@id': `${meta.url}#legal-document`,
+    name: '投資情報に関する免責事項',
+    additionalType: 'https://schema.org/LegalDocument',
+    text: '掲載内容は情報提供と運用記録を目的としたもので、金融商品取引法上の投資助言・代理業、投資運用業、または投資勧誘を目的としたものではありません。',
+  },
 });
 
 export const itemListSchema = (meta) => {
@@ -345,19 +458,27 @@ export const buildStructuredData = (frontMatter = {}) => {
   const graph = [];
 
   if (meta.pageType === 'home') {
-    graph.push(websiteSchema(meta), personSchema(), organizationSchema());
+    graph.push(websiteSchema(meta), personSchema({ sameAs: meta.sameAs }), organizationSchema());
   }
 
-  if (['performance', 'research', 'article'].includes(meta.pageType)) {
+  if (['performance', 'performanceDaily', 'research', 'logic', 'article'].includes(meta.pageType)) {
     graph.push(articleSchema(meta));
   }
 
-  if (['archive', 'collection'].includes(meta.pageType)) {
+  if (['performanceMonthly', 'archive', 'collection'].includes(meta.pageType)) {
     graph.push(collectionPageSchema(meta), itemListSchema(meta));
   }
 
+  if (meta.pageType === 'profile') {
+    graph.push(profilePageSchema(meta), personSchema({ sameAs: meta.sameAs }));
+  }
+
+  if (meta.pageType === 'legal') {
+    graph.push(legalWebPageSchema(meta));
+  }
+
   const faq = faqPageSchema(meta);
-  if (faq && ['performance', 'research', 'article'].includes(meta.pageType)) graph.push(faq);
+  if (faq && ['performance', 'performanceDaily', 'research', 'article', 'legal'].includes(meta.pageType)) graph.push(faq);
 
   if (meta.breadcrumbs.length) graph.push(breadcrumbSchema(meta));
 
@@ -373,6 +494,7 @@ export const renderJsonLdScript = (frontMatter = {}) => {
 };
 
 export const buildJsonLdScriptFromFrontMatter = ({
+  type,
   title,
   description,
   url,
@@ -382,14 +504,17 @@ export const buildJsonLdScriptFromFrontMatter = ({
   author,
   siteUrl = site.url,
   faq = [],
+  faqs = [],
   items = [],
   image = site.logo,
   pageType,
+  sameAs = site.officialX,
 } = {}) => {
   const pageUrl = url || siteUrl;
   const path = new URL(pageUrl, ensureTrailingSlash(siteUrl)).pathname;
-  const normalizedPageType = pageType || inferPageType(path, section);
-  const breadcrumbs = buildBreadcrumbListFromPath(path, { siteUrl });
+  const normalizedPageType = normalizePageType(type || pageType || inferPageType(path, section), path);
+  const breadcrumbs = buildBreadcrumbListFromPath(path, { siteUrl, title });
+  const faqItems = faqs.length ? faqs : faq;
   const meta = {
     pageType: normalizedPageType,
     title,
@@ -403,28 +528,38 @@ export const buildJsonLdScriptFromFrontMatter = ({
     image,
     keywords: [],
     breadcrumbs,
-    faq,
+    faq: faqItems,
     items,
+    sameAs: normalizeSameAs(sameAs),
   };
   const graph = [];
 
   if (normalizedPageType === 'home') {
     graph.push(
       websiteSchema(meta),
-      personSchema(),
+      personSchema({ sameAs: meta.sameAs }),
+      organizationSchema(),
     );
   }
 
-  if (['performance', 'research', 'article'].includes(normalizedPageType)) {
+  if (['performance', 'performanceDaily', 'research', 'logic', 'article'].includes(normalizedPageType)) {
     graph.push(articleSchema(meta));
   }
 
-  if (['archive', 'collection'].includes(normalizedPageType)) {
+  if (['performanceMonthly', 'archive', 'collection'].includes(normalizedPageType)) {
     graph.push(collectionPageSchema(meta), itemListSchema(meta));
   }
 
-  const faqSchema = faqPageSchemaFromQa(faq, { url: meta.url });
-  if (faqSchema && normalizedPageType === 'research') graph.push(faqSchema);
+  if (normalizedPageType === 'profile') {
+    graph.push(profilePageSchema(meta), personSchema({ sameAs: meta.sameAs }));
+  }
+
+  if (normalizedPageType === 'legal') {
+    graph.push(legalWebPageSchema(meta));
+  }
+
+  const faqSchema = faqPageSchemaFromQa(faqItems, { url: meta.url });
+  if (faqSchema && ['performance', 'performanceDaily', 'research', 'article', 'legal'].includes(normalizedPageType)) graph.push(faqSchema);
 
   if (breadcrumbs.length) graph.push(breadcrumbSchema(meta));
 

@@ -59,7 +59,7 @@ performance/
 
 ## JSON-LD構造化データ
 
-`scripts/structured-data.mjs` で、YAMLフロントマター形式のメタ情報から `application/ld+json` を生成します。記事生成ではこのモジュールを使い、記事ページは `Article`、一覧ページは `CollectionPage`、パンくずがあるページは `BreadcrumbList` を `<head>` 内に出力します。
+`scripts/structured-data.mjs` で、YAMLフロントマター形式のメタ情報から `application/ld+json` を生成します。トップページは `WebSite`（`SearchAction` 付き）と `Person`、日次実績は `Article` + `FAQPage` + `BreadcrumbList`、月次実績は `CollectionPage` + `BreadcrumbList`、プロフィールは `ProfilePage` + `Person`、免責事項は `WebPage` + `LegalDocument` 相当の `additionalType` を `<head>` 内に出力できます。
 
 ```js
 import { parseFrontMatter, renderJsonLdScript } from './scripts/structured-data.mjs';
@@ -78,20 +78,31 @@ import {
 } from './scripts/structured-data.mjs';
 
 const jsonLdScript = buildJsonLdScriptFromFrontMatter({
-  title: '5/28実績レポート: 100万円比+10.1%の読み方',
+  type: 'performanceDaily',
+  title: '2026-05-28実績: 100万円比 +10.1%、評価額 ¥1,100,567',
   description: '2026年5月28日ESTの実績レポート。',
   url: 'https://mukimuki-trade.com/performance/2026/05/28/',
-  publishedTime: '2026-05-29T08:00:00+09:00',
-  modifiedTime: '2026-05-29T08:00:00+09:00',
+  publishedTime: '2026-05-29T05:00:21+09:00',
+  modifiedTime: '2026-05-29T05:00:21+09:00',
   section: '実績公開',
   author: 'MUKIMUKI trade',
   siteUrl: 'https://mukimuki-trade.com',
+  sameAs: 'https://x.com/OnigoGames',
+  faqs: [
+    { question: '2026年5月28日の評価額はいくらですか？', answer: '¥1,100,567です。' },
+  ],
 });
 
 const breadcrumbs = buildBreadcrumbListFromPath('/performance/2026/05/28/');
 const faqSchema = faqPageSchemaFromQa([
   { question: '実績は投資助言ですか？', answer: 'いいえ。情報提供を目的にした公開記録です。' },
 ]);
+```
+
+Eleventy / Nunjucks では `eleventy.config.mjs` の `jsonLd` フィルターを使います。通常は `_includes/json-ld.njk` を `<head>` 内に include します。
+
+```njk
+{% include "json-ld.njk" %}
 ```
 
 ## 内部リンクとパンくず
@@ -140,6 +151,6 @@ Current deployment status is tracked in [DEPLOYMENT.md](DEPLOYMENT.md).
 ## 公開前チェック
 
 - Search Console: `https://mukimuki-trade.com/` を登録済み、`sitemap.xml` 送信済み
-- SEO: favicon、RSS、パンくず構造化データ、Dataset構造化データ、カテゴリページ、月次アーカイブ、記事メタ情報を実装済み
+- SEO: favicon、RSS、パンくず構造化データ、JSON-LD、カテゴリページ、月次アーカイブ、記事メタ情報を実装済み
 - Analytics: Google Analytics / Cloudflare Web Analytics を必要に応じて追加する
 - 運営情報: 実名・連絡先を公開する場合は `/about/` に追記する

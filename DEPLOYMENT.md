@@ -55,7 +55,7 @@ No domain action remains. Both apex and `www` custom domains return `HTTP/2 200`
 - RSS feed: `/feed.xml`
 - Image sitemap: `/image-sitemap.xml`
 - AI/search summary: `/llms.txt`
-- Structured data: `WebSite`, `Person`, `Article`, `FAQPage`, `CollectionPage`, `BreadcrumbList`, `ItemList`, `AboutPage`, `Dataset`
+- Structured data: `WebSite`, `SearchAction`, `Person`, `Article`, `FAQPage`, `CollectionPage`, `BreadcrumbList`, `ItemList`, `ProfilePage`, `AboutPage`
 - Trust structured data: `ProfilePage`, `Person`, `FAQPage`
 - Article Open Graph metadata: locale, published time, modified time, section
 - Category pages: `/category/performance/`, `/category/research/`, `/category/moomoo/`
