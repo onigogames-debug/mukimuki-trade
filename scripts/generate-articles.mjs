@@ -52,7 +52,7 @@ const mobileMenu = `    <details class="mobile-menu">
 
 const header = `  <header class="site-header">
     <a class="brand" href="/" aria-label="MUKIMUKI trade home">
-      <img src="/assets/mukimuki-main.png" alt="">
+      <img src="/assets/mukimuki-main.png" alt="MUKIMUKIキャラクター - 100万円トレード記録ブログのロゴ">
       <span><strong>MUKIMUKI trade</strong><small>数字で追う公開記録</small></span>
     </a>
 ${mobileMenu}

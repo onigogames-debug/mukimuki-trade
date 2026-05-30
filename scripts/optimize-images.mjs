@@ -9,8 +9,8 @@ const assetDir = path.join(rootDir, "assets");
 const outputDir = path.join(assetDir, "optimized");
 const widths = [480, 800, 1200];
 const formats = [
-  { name: "avif", options: { quality: 56, effort: 5 } },
-  { name: "webp", options: { quality: 78, effort: 5 } },
+  { name: "avif", options: { quality: 75, effort: 5 } },
+  { name: "webp", options: { quality: 85, effort: 5 } },
 ];
 
 await fs.rm(outputDir, { recursive: true, force: true });
@@ -32,6 +32,15 @@ for (const file of files) {
   const targetWidths = widths;
   const variants = [];
 
+  for (const format of formats) {
+    const outputFile = `${baseName}.${format.name}`;
+    const outputPath = path.join(assetDir, outputFile);
+    await sharp(inputPath)
+      [format.name](format.options)
+      .toFile(outputPath);
+    console.log(`Converted ${file} -> assets/${outputFile}`);
+  }
+
   for (const width of targetWidths) {
     for (const format of formats) {
       const outputFile = `${baseName}-${width}.${format.name}`;
@@ -45,6 +54,7 @@ for (const file of files) {
         width,
         src: `/assets/optimized/${outputFile}`,
       });
+      console.log(`Converted ${file} -> assets/optimized/${outputFile}`);
     }
   }
 

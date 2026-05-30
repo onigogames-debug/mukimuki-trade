@@ -1,20 +1,20 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { renderPicture } from "./image-component.mjs";
+import { altForImage, renderPicture } from "./image-component.mjs";
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(scriptDir, "..");
 const criticalCss = await fs.readFile(path.join(rootDir, "critical.css"), "utf8");
 const performanceData = JSON.parse(await fs.readFile(path.join(rootDir, "datasets", "performance-latest.json"), "utf8"));
 const htmlFiles = await collectHtml(rootDir);
+await fs.copyFile(path.join(rootDir, "styles.css"), path.join(rootDir, "assets", "main.css"));
 
 function stylesheetBlock() {
   return [
     `<style data-critical-css>\n${criticalCss.trim()}\n  </style>`,
-    '  <link rel="preload" href="/styles.css" as="style">',
-    '  <link rel="stylesheet" href="/styles.css" media="print" onload="this.media=\'all\'">',
-    '  <noscript><link rel="stylesheet" href="/styles.css"></noscript>',
+    '  <link rel="preload" as="style" href="/assets/main.css" onload="this.onload=null;this.rel=\'stylesheet\'">',
+    '  <noscript><link rel="stylesheet" href="/assets/main.css"></noscript>',
   ].join("\n");
 }
 
@@ -64,7 +64,7 @@ function optimizeImages(content) {
     const { loading, fetchpriority } = loadingFor(normalizedSrc, before);
     return renderPicture({
       src: normalizedSrc,
-      alt: attrValue(imgTag, "alt"),
+      alt: altForImage(normalizedSrc, attrValue(imgTag, "alt")),
       className: attrValue(imgTag, "class"),
       sizes: attrValue(sourceTag, "sizes") || sizesFor(normalizedSrc, imgTag, before),
       loading: attrValue(imgTag, "loading") || loading,
@@ -80,7 +80,7 @@ function optimizeImages(content) {
     const { loading, fetchpriority } = loadingFor(normalizedSrc, before);
     return renderPicture({
       src: normalizedSrc,
-      alt: attrValue(tag, "alt"),
+      alt: altForImage(normalizedSrc, attrValue(tag, "alt")),
       className: attrValue(tag, "class"),
       sizes: sizesFor(normalizedSrc, tag, before),
       loading,
@@ -91,7 +91,7 @@ function optimizeImages(content) {
 
 function applyHead(content) {
   if (content.includes("data-critical-css")) {
-    return content.replace(/  <style data-critical-css>[\s\S]*?<\/style>\n  <link rel="preload" href="\/styles\.css" as="style">\n  <link rel="stylesheet" href="\/styles\.css" media="print" onload="this\.media='all'">\n  <noscript><link rel="stylesheet" href="\/styles\.css"><\/noscript>/, `  ${stylesheetBlock()}`);
+    return content.replace(/  <style data-critical-css>[\s\S]*?<\/style>\n(?:  <link rel="preload"[^>]+(?:\/styles\.css|\/assets\/main\.css)[^>]*>\n)?(?:  <link rel="stylesheet"[^>]+\/styles\.css[^>]*>\n)?  <noscript><link rel="stylesheet" href="(?:\/styles\.css|\/assets\/main\.css)"><\/noscript>/, `  ${stylesheetBlock()}`);
   }
   return content.replace(/  <link rel="stylesheet" href="\/?styles\.css">\n?/, `  ${stylesheetBlock()}\n`);
 }

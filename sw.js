@@ -1,8 +1,8 @@
-const CACHE_VERSION = "mukimuki-cwv-20260529-v2";
+const CACHE_VERSION = "mukimuki-cwv-20260530-v3";
 const STATIC_CACHE = `${CACHE_VERSION}-static`;
 const DATA_CACHE = `${CACHE_VERSION}-data`;
 const STATIC_ASSETS = [
-  "/styles.css",
+  "/assets/main.css",
   "/assets/optimized/images.json",
   "/datasets/performance-latest.json",
   "/data/performance.json",
@@ -35,7 +35,7 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  if (url.pathname.startsWith("/assets/optimized/") || STATIC_ASSETS.includes(url.pathname)) {
+  if (url.pathname.startsWith("/assets/") || STATIC_ASSETS.includes(url.pathname)) {
     event.respondWith(cacheFirst(event.request));
   }
 });

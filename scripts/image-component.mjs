@@ -5,6 +5,14 @@ import { fileURLToPath } from "node:url";
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(scriptDir, "..");
 const manifestPath = path.join(rootDir, "assets", "optimized", "images.json");
+const imageAltText = {
+  "assets/mukimuki-main.png": "MUKIMUKIキャラクター - 100万円トレード記録ブログのロゴ",
+  "assets/mukimuki-performance.png": "実績グラフアイコン",
+  "assets/mukimuki-research.png": "銘柄検討アイコン",
+  "assets/mukimuki-editor.png": "投資ロジックアイコン",
+  "assets/mukimuki-diary.png": "雑談・日記アイコン",
+};
+const genericAltText = new Set(["", "MUKIMUKI", "メインキャラクターMUKIMUKI", "画像", "アイコン"]);
 
 function readManifest() {
   if (!fs.existsSync(manifestPath)) return {};
@@ -23,6 +31,13 @@ function normalizeAssetPath(src) {
   return src.replace(/^\/+/, "").replace(/^\.\/+/, "");
 }
 
+export function altForImage(src, alt = "") {
+  const key = normalizeAssetPath(src);
+  const currentAlt = String(alt || "").trim();
+  if (imageAltText[key] && genericAltText.has(currentAlt)) return imageAltText[key];
+  return currentAlt || imageAltText[key] || "";
+}
+
 export function renderPicture({
   src,
   alt = "",
@@ -36,9 +51,10 @@ export function renderPicture({
   const manifest = readManifest();
   const key = normalizeAssetPath(src);
   const image = manifest[key];
+  const normalizedAlt = altForImage(key, alt);
   const imgAttrs = [
     `src="/${key}"`,
-    `alt="${escapeHtml(alt)}"`,
+    `alt="${escapeHtml(normalizedAlt)}"`,
     image?.width ? `width="${image.width}"` : "",
     image?.height ? `height="${image.height}"` : "",
     loading ? `loading="${loading}"` : "",
