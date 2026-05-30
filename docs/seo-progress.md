@@ -1,6 +1,6 @@
 # SEO Progress Report
 
-Generated: 2026-05-30T13:33:27.866Z
+Generated: 2026-05-30T13:40:44.657Z
 
 ## 実装状況
 
@@ -37,7 +37,7 @@ Generated: 2026-05-30T13:33:27.866Z
 | URL | title | description | 本文文字数 | 内部リンク | schema |
 |---|---:|---:|---:|---:|---|
 | / | 35 | 57 | 2769 | 39 | Blog, ItemList, Organization, Person, WebSite |
-| /about/ | 26 | 58 | 1562 | 19 | AboutPage, BreadcrumbList, FAQPage, WebPage |
+| /about/ | 26 | 58 | 1772 | 19 | AboutPage, BreadcrumbList, FAQPage, WebPage |
 | /archive/ | 24 | 62 | 914 | 22 | BreadcrumbList, CollectionPage |
 | /archive/2026-05/ | 27 | 79 | 1040 | 29 | BreadcrumbList, CollectionPage, ItemList |
 | /category/moomoo/ | 30 | 62 | 911 | 23 | BreadcrumbList, CollectionPage, ItemList |
@@ -54,12 +54,12 @@ Generated: 2026-05-30T13:33:27.866Z
 | /performance/2026-05-29-bksy-range/ | 49 | 77 | 2851 | 24 | Article, BreadcrumbList |
 | /performance/2026/ | 30 | 52 | 931 | 20 | BreadcrumbList, CollectionPage, ItemList |
 | /performance/2026/05/ | 41 | 62 | 1371 | 30 | BreadcrumbList, CollectionPage, ItemList |
-| /performance/2026/05/26/ | 47 | 61 | 2116 | 29 | Article, BreadcrumbList, FAQPage |
-| /performance/2026/05/27/ | 52 | 66 | 2268 | 30 | Article, BreadcrumbList, FAQPage |
-| /performance/2026/05/28/ | 53 | 66 | 2476 | 30 | Article, BreadcrumbList, FAQPage |
-| /performance/2026/05/29/ | 53 | 67 | 2435 | 29 | Article, BreadcrumbList, FAQPage |
+| /performance/2026/05/26/ | 47 | 61 | 2151 | 31 | Article, BreadcrumbList, FAQPage |
+| /performance/2026/05/27/ | 52 | 66 | 2303 | 32 | Article, BreadcrumbList, FAQPage |
+| /performance/2026/05/28/ | 53 | 66 | 2511 | 32 | Article, BreadcrumbList, FAQPage |
+| /performance/2026/05/29/ | 53 | 67 | 2470 | 31 | Article, BreadcrumbList, FAQPage |
 | /performance/latest/ (noindex) | 25 | 53 | 929 | 23 | BreadcrumbList, CollectionPage, ItemList |
-| /profile/ | 26 | 75 | 1363 | 21 | BreadcrumbList, FAQPage, Person, ProfilePage |
+| /profile/ | 26 | 75 | 1353 | 21 | BreadcrumbList, FAQPage, Person, ProfilePage |
 | /research/ | 25 | 59 | 1006 | 25 | Article, BreadcrumbList |
 | /research/ai-infrastructure/ | 47 | 47 | 1718 | 24 | Article, BreadcrumbList, FAQPage |
 | /research/app-software-fintech/ | 44 | 50 | 1794 | 24 | Article, BreadcrumbList, FAQPage |

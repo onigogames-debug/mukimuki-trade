@@ -173,7 +173,7 @@ ${trades.slice(0, 12).map((trade) => `          <div class="comparison-row">
 const renderTrustSignals = (report) => {
   const latest = report.latest;
   return `      <section class="article-panel trust-signals" aria-labelledby="trust-signals-title">
-        <h2 id="trust-signals-title">実績の前提</h2>
+        <h2 id="trust-signals-title">信頼性の確認</h2>
         <div class="fact-grid">
           <div class="fact-card">
             <h3>データソース</h3>
@@ -181,14 +181,14 @@ const renderTrustSignals = (report) => {
             <blockquote>Source: ${escapeHtml(report.sourceName || 'Autotrade daily report')} / ${escapeHtml(report.sourceReport || `${latest.reportDate} report`)}</blockquote>
           </div>
           <div class="fact-card">
-            <h3>更新履歴</h3>
-            <p>日次ページは月次アーカイブに残し、同じ形式で推移を振り返れるようにしています。</p>
-            <p><a href="${escapeHtml(monthPath(latest.reportDate))}">月次アーカイブ</a></p>
+            <h3>著者と免責</h3>
+            <p>運営者情報と投資情報の扱いを明示しています。掲載内容は投資助言ではありません。</p>
+            <p><a href="/profile/" rel="author">運営者プロフィール</a> / <a href="/about/">免責事項</a></p>
           </div>
           <div class="fact-card">
-            <h3>運営者</h3>
-            <p>運営者情報、投資歴、免責事項はプロフィールにまとめています。</p>
-            <p><a href="/profile/" rel="author">運営者プロフィール</a></p>
+            <h3>検証用リンク</h3>
+            <p>日次ページは月次アーカイブへ保存し、最新の公開データも確認できるようにしています。</p>
+            <p><a href="${escapeHtml(monthPath(latest.reportDate))}">月次アーカイブ</a> / <a href="/datasets/performance-latest.json">公開JSONデータ</a></p>
           </div>
         </div>
       </section>`;

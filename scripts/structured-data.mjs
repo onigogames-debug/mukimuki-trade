@@ -273,8 +273,8 @@ const buildDefaultBreadcrumbs = (path, title, section) => {
 export const personSchema = (options = {}) => ({
   '@type': 'Person',
   '@id': site.authorId,
-  name: options.name || 'MUKIMUKI trade編集部',
-  alternateName: options.alternateName || 'OnigoGames',
+  name: options.name || 'MUKIMUKI trade 編集部',
+  alternateName: options.alternateName || ['MUKIMUKI trade', 'OnigoGames'],
   url: options.url || absoluteUrl('/profile/'),
   image: imageUrl(options.image || site.logo),
   sameAs: normalizeSameAs(options.sameAs || site.officialX),
@@ -292,9 +292,9 @@ export const personSchema = (options = {}) => ({
       addressCountry: 'JP',
     },
   },
-  jobTitle: options.jobTitle || '兼業投資家 / 事業開発',
-  knowsAbout: options.knowsAbout || ['株式投資', '米国株', '自動売買', 'Autotrade', '裁量判断', 'AIエージェント', '事業開発', '投資実績の記録'],
-  description: options.description || '40代・東京都港区在住の兼業投資家。投資歴は約20年。自動売買（Autotrade）と裁量判断を組み合わせ、公開実績、銘柄検討、投資ロジックを検証しやすい形で整理します。投資助言業者ではありません。',
+  jobTitle: options.jobTitle || '兼業投資家・投資ブロガー',
+  knowsAbout: options.knowsAbout || ['米国株投資', '自動売買', 'AIエージェント', '株式トレード', 'リスク管理', '事業開発', 'Autotrade'],
+  description: options.description || '投資歴20年弱の兼業投資家。40代男性、東京都港区在住。AIエージェント、自動売買、事業開発、株式投資を専門領域とし、Autotradeの日次レポートをもとに米国株トレード実績、銘柄検討、投資ロジックを検証しやすい形で整理します。投資助言業者ではありません。',
 });
 
 export const websiteSchema = (meta) => ({
@@ -376,6 +376,7 @@ export const profilePageSchema = (meta) => ({
   dateModified: meta.modified || meta.published,
   inLanguage: site.language,
   isPartOf: { '@id': site.websiteId },
+  publishedOn: { '@id': site.websiteId },
   mainEntity: { '@id': site.authorId },
 });
 
@@ -391,6 +392,10 @@ export const legalWebPageSchema = (meta) => ({
   inLanguage: site.language,
   isPartOf: { '@id': site.websiteId },
   author: { '@id': site.authorId },
+  speakable: {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['#disclaimer-summary', '#affiliate-disclosure', '#data-source-policy'],
+  },
   hasPart: {
     '@type': ['DigitalDocument', 'WebPageElement'],
     '@id': `${meta.url}#legal-document`,

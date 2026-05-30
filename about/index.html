@@ -38,6 +38,10 @@
         "isPartOf": { "@id": "https://mukimuki-trade.com/#website" },
         "sameAs": "https://x.com/OnigoGames",
         "author": { "@id": "https://mukimuki-trade.com/profile/#author" },
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["#disclaimer-summary", "#affiliate-disclosure", "#data-source-policy"]
+        },
         "hasPart": {
           "@type": ["DigitalDocument", "WebPageElement"],
           "@id": "https://mukimuki-trade.com/about/#legal-document",
@@ -126,7 +130,7 @@
     </section>
 
     <article class="article-body">
-      <section class="article-panel">
+      <section class="article-panel" id="data-source-policy">
         <h2>運営方針</h2>
         <p>数字はAutotradeのレポートをもとに更新します。サイトは実績と考え方の保存場所として運営し、あとから比較しやすいように同じ形式で記録します。</p>
         <div class="fact-grid">
@@ -136,14 +140,14 @@
         </div>
       </section>
 
-      <section class="article-panel">
+      <section class="article-panel" id="disclaimer-summary">
         <h2>先に確認してほしい要点</h2>
         <ul>
           <li>MUKIMUKI tradeは個人の投資実績と考え方を公開する情報サイトです。</li>
-          <li>掲載内容は投資勧誘、投資助言、個別銘柄の売買推奨を目的としたものではありません。</li>
+          <li>掲載内容は情報提供を目的としており、特定銘柄の売買を推奨するものではありません。</li>
           <li>運営者は金融商品取引業者、投資助言・代理業者、投資運用業者ではありません。</li>
           <li>広告リンクを含む場合があります。moomoo証券の紹介リンク経由で申し込みが発生した場合、運営者が報酬を受け取ることがあります。</li>
-          <li>最終的な投資判断は、公式情報、決算資料、リスク許容度を確認したうえで読者自身の責任で行ってください。</li>
+          <li>投資判断はご自身の責任のもとで行ってください。</li>
         </ul>
       </section>
 
@@ -155,11 +159,25 @@
         <p>掲載情報の正確性には注意していますが、内容の完全性、最新性、適時性を保証するものではありません。投資判断を行う場合は、証券会社、発行体、取引所、金融庁などの公式情報を必ず確認してください。</p>
       </section>
 
-      <section class="article-panel">
+      <section class="article-panel" id="affiliate-disclosure">
         <h2>アフィリエイト広告について</h2>
         <p>このサイトには、moomoo証券を含む証券会社・金融関連サービスのアフィリエイト広告を掲載する場合があります。広告リンク経由で口座開設や申し込みが行われた場合、運営者が報酬を受け取ることがあります。</p>
         <p>広告報酬の有無は、掲載する実績データ、銘柄検討、投資判断の説明方針を左右しません。紹介サービスを利用する場合は、手数料、取扱商品、リスク、キャンペーン条件、口座開設条件を必ず公式サイトで確認してください。</p>
         <p><a href="https://j.jp.moomoo.com/0BdcjG" target="_blank" rel="sponsored noopener">moomoo証券の紹介リンク</a>はPRリンクです。</p>
+      </section>
+
+      <section class="article-panel">
+        <h2>確認を推奨する公式情報</h2>
+        <p>制度、広告表示、金融商品取引業に関する考え方は、金融庁などの公的機関が公開する情報を確認してください。当サイトでは、断定的な利益表示や誤認を招く表示を避け、実績とリスクを分けて掲載します。</p>
+        <div class="data-links">
+          <a href="https://www.fsa.go.jp/" target="_blank" rel="noopener">金融庁</a>
+          <a href="https://www.fsa.go.jp/common/law/guide/kinyushohin/" target="_blank" rel="noopener">金融商品取引業者等向け監督指針</a>
+        </div>
+      </section>
+
+      <section class="article-panel">
+        <h2>訂正方針</h2>
+        <p>掲載内容に誤りが判明した場合は、確認できた時点で本文、更新履歴、または該当ページ内に訂正内容を明記します。数値データについてはAutotradeレポート、証券会社画面、公式資料など確認可能な情報を優先します。</p>
       </section>
 
       <section class="article-panel">
