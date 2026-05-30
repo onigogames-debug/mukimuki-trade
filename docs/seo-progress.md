@@ -1,6 +1,6 @@
 # SEO Progress Report
 
-Generated: 2026-05-30T13:12:52.649Z
+Generated: 2026-05-30T13:33:27.866Z
 
 ## 実装状況
 
@@ -53,11 +53,11 @@ Generated: 2026-05-30T13:12:52.649Z
 | /performance/2026-05-28-asts-rotation/ | 52 | 84 | 2731 | 24 | Article, BreadcrumbList |
 | /performance/2026-05-29-bksy-range/ | 49 | 77 | 2851 | 24 | Article, BreadcrumbList |
 | /performance/2026/ | 30 | 52 | 931 | 20 | BreadcrumbList, CollectionPage, ItemList |
-| /performance/2026/05/ | 32 | 61 | 1077 | 26 | BreadcrumbList, CollectionPage, ItemList |
-| /performance/2026/05/26/ | 30 | 61 | 2085 | 28 | Article, BreadcrumbList, FAQPage |
-| /performance/2026/05/27/ | 35 | 66 | 2223 | 28 | Article, BreadcrumbList, FAQPage |
-| /performance/2026/05/28/ | 36 | 66 | 2431 | 28 | Article, BreadcrumbList, FAQPage |
-| /performance/2026/05/29/ | 36 | 67 | 2404 | 28 | Article, BreadcrumbList, FAQPage |
+| /performance/2026/05/ | 41 | 62 | 1371 | 30 | BreadcrumbList, CollectionPage, ItemList |
+| /performance/2026/05/26/ | 47 | 61 | 2116 | 29 | Article, BreadcrumbList, FAQPage |
+| /performance/2026/05/27/ | 52 | 66 | 2268 | 30 | Article, BreadcrumbList, FAQPage |
+| /performance/2026/05/28/ | 53 | 66 | 2476 | 30 | Article, BreadcrumbList, FAQPage |
+| /performance/2026/05/29/ | 53 | 67 | 2435 | 29 | Article, BreadcrumbList, FAQPage |
 | /performance/latest/ (noindex) | 25 | 53 | 929 | 23 | BreadcrumbList, CollectionPage, ItemList |
 | /profile/ | 26 | 75 | 1363 | 21 | BreadcrumbList, FAQPage, Person, ProfilePage |
 | /research/ | 25 | 59 | 1006 | 25 | Article, BreadcrumbList |

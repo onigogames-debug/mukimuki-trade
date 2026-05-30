@@ -60,7 +60,17 @@ const displayDate = (date) => date.replaceAll('-', '.');
 
 const shortSymbol = (symbol) => String(symbol || '').replace(/^US\./, '');
 
+const monthLabel = (key) => {
+  const [year, month] = key.split('-');
+  return `${year}年${Number(month)}月`;
+};
+
 const primaryHoldings = (positions = [], limit = 3) => positions
+  .slice(0, limit)
+  .map((position) => shortSymbol(position.symbol))
+  .filter(Boolean);
+
+const allSymbols = (positions = [], limit = 4) => positions
   .slice(0, limit)
   .map((position) => shortSymbol(position.symbol))
   .filter(Boolean);
@@ -184,7 +194,22 @@ const renderTrustSignals = (report) => {
       </section>`;
 };
 
-const renderDailyPage = (report, articleIndex) => {
+const renderDailyPagination = (report, reports) => {
+  const dates = reports.map((entry) => entry.report.latest.reportDate).sort();
+  const currentDate = report.latest.reportDate;
+  const currentIndex = dates.indexOf(currentDate);
+  const prevDate = currentIndex > 0 ? dates[currentIndex - 1] : '';
+  const nextDate = currentIndex >= 0 && currentIndex < dates.length - 1 ? dates[currentIndex + 1] : '';
+
+  if (!prevDate && !nextDate) return '';
+
+  return `      <nav class="pagination-nav" aria-label="日次実績の前後移動">
+        ${prevDate ? `<a href="${escapeHtml(datePath(prevDate))}"><span>前日</span><strong>${escapeHtml(displayDate(prevDate))}</strong></a>` : '<span></span>'}
+        ${nextDate ? `<a href="${escapeHtml(datePath(nextDate))}"><span>翌日</span><strong>${escapeHtml(displayDate(nextDate))}</strong></a>` : '<span></span>'}
+      </nav>`;
+};
+
+const renderDailyPage = (report, articleIndex, reports) => {
   const latest = report.latest;
   const pagePath = datePath(latest.reportDate);
   const monthlyPath = monthPath(latest.reportDate);
@@ -245,7 +270,7 @@ const renderDailyPage = (report, articleIndex) => {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>${escapeHtml(title)}</title>
+  <title>${escapeHtml(title)} | MUKIMUKI trade</title>
   <meta name="description" content="${escapeHtml(description)}">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="${escapeHtml(absoluteUrl(pagePath))}">
@@ -298,6 +323,7 @@ ${renderTrustSignals(report)}
         <h2>関連する記録</h2>
         <p><a href="${escapeHtml(monthlyPath)}">月次アーカイブ</a>、<a href="/category/performance/">売買トピック</a>、<a href="/logic/">投資ロジック</a>では、同じ期間の資産推移と判断基準を別の角度から整理しています。</p>
       </section>
+${renderDailyPagination(report, reports)}
       <section class="article-panel">
         <h2>よくある質問</h2>
         <div class="faq-list">
@@ -316,12 +342,54 @@ ${footer}
 `;
 };
 
+const renderMonthSummaryTable = (monthReports) => {
+  if (!monthReports.length) return '<p>この月の実績データはまだありません。</p>';
+
+  return `<div class="performance-table-wrap">
+        <table class="performance-summary-table">
+          <thead>
+            <tr>
+              <th>日付</th>
+              <th>評価額</th>
+              <th>前日比</th>
+              <th>保有銘柄</th>
+            </tr>
+          </thead>
+          <tbody>
+${monthReports.map(({ report }) => `            <tr>
+              <td><a href="${escapeHtml(datePath(report.latest.reportDate))}">${escapeHtml(displayDate(report.latest.reportDate))}</a></td>
+              <td>${escapeHtml(formatJpy(report.latest.jpy.end))}</td>
+              <td>${escapeHtml(`${report.latest.jpy.delta >= 0 ? '+' : ''}${formatJpy(report.latest.jpy.delta)}`)}</td>
+              <td>${escapeHtml(allSymbols(report.latest.positions).join(' / ') || '-')}</td>
+            </tr>`).join('\n')}
+          </tbody>
+        </table>
+      </div>`;
+};
+
+const renderMonthPagination = (currentKey, reports) => {
+  const monthKeys = [...new Set(reports.map(({ report }) => report.latest.reportDate.slice(0, 7)))].sort();
+  const currentIndex = monthKeys.indexOf(currentKey);
+  const prevKey = currentIndex > 0 ? monthKeys[currentIndex - 1] : '';
+  const nextKey = currentIndex >= 0 && currentIndex < monthKeys.length - 1 ? monthKeys[currentIndex + 1] : '';
+
+  if (!prevKey && !nextKey) return '';
+
+  return `      <nav class="pagination-nav" aria-label="月次実績の前後移動">
+        ${prevKey ? `<a href="/performance/${escapeHtml(prevKey.replace('-', '/'))}/"><span>前月</span><strong>${escapeHtml(monthLabel(prevKey))}</strong></a>` : '<span></span>'}
+        ${nextKey ? `<a href="/performance/${escapeHtml(nextKey.replace('-', '/'))}/"><span>翌月</span><strong>${escapeHtml(monthLabel(nextKey))}</strong></a>` : '<span></span>'}
+      </nav>`;
+};
+
 const renderMonthPage = (date, reports) => {
   const { year, month } = dateParts(date);
+  const monthKey = `${year}-${month}`;
   const pagePath = `/performance/${year}/${month}/`;
-  const title = `${year}年${Number(month)}月の実績アーカイブ`;
-  const description = `MUKIMUKI tradeの${year}年${Number(month)}月実績アーカイブ。日別の評価額、前日比、100万円比を固定URLで確認できます。`;
-  const monthReports = reports.filter(({ report }) => report.latest.reportDate.startsWith(`${year}-${month}`));
+  const title = `${year}年${Number(month)}月の実績まとめ: 米国株トレード記録`;
+  const description = `MUKIMUKI tradeの${year}年${Number(month)}月実績まとめ。米国株トレードの日付別評価額、前日比、保有銘柄を一覧で確認できます。`;
+  const monthReports = reports
+    .filter(({ report }) => report.latest.reportDate.startsWith(`${year}-${month}`))
+    .sort((a, b) => a.report.latest.reportDate.localeCompare(b.report.latest.reportDate));
   const jsonLdScript = renderJsonLdScript({
     pageType: 'collection',
     title,
@@ -369,11 +437,18 @@ ${header}
         <nav class="breadcrumb" aria-label="breadcrumb"><a href="/">Home</a><span>/</span><a href="/performance/latest/">実績</a><span>/</span><span>${escapeHtml(title)}</span></nav>
         <p class="eyebrow">PERFORMANCE / MONTHLY ARCHIVE</p>
         <h1>${escapeHtml(title)}</h1>
-        <p>毎日の実績を日付ごとに残し、評価額、前日比、100万円比の推移を月単位で振り返ります。</p>
+        <p>${year}年${Number(month)}月の米国株トレード記録を、日付、評価額、前日比、保有銘柄で一覧化しています。気になる日は日次ページで100万円比、売買件数、取引の背景を確認できます。</p>
       </div>
     </section>
-    <section class="collection-body" aria-label="${escapeHtml(title)}">
-${monthReports.reverse().map(({ report }) => `      <article class="collection-card">
+    <section class="article-body">
+      <section class="article-panel">
+        <h2>月間サマリー表</h2>
+        ${renderMonthSummaryTable(monthReports)}
+      </section>
+${renderMonthPagination(monthKey, reports)}
+    </section>
+    <section class="collection-body" aria-label="${escapeHtml(title)}の日次レポート">
+${[...monthReports].reverse().map(({ report }) => `      <article class="collection-card">
         <span class="post-kicker">${escapeHtml(report.latest.reportDateDisplay)} / 実績公開</span>
         <h2><a href="${escapeHtml(datePath(report.latest.reportDate))}">${escapeHtml(report.latest.label)}実績レポート</a></h2>
         <p>評価額 ${formatJpy(report.latest.jpy.end)}、前日比 ${report.latest.jpy.delta >= 0 ? '+' : ''}${formatJpy(report.latest.jpy.delta)}、100万円比 ${report.latest.summary.totalReturnPct >= 0 ? '+' : ''}${report.latest.summary.totalReturnPct.toFixed(2)}%。</p>
@@ -629,7 +704,7 @@ const articleIndex = buildArticleIndex({
 });
 
 for (const { report } of reports) {
-  await writePerformancePage(datePath(report.latest.reportDate), renderDailyPage(report, articleIndex));
+  await writePerformancePage(datePath(report.latest.reportDate), renderDailyPage(report, articleIndex, reports));
 }
 
 const monthKeys = [...new Set(reports.map(({ report }) => report.latest.reportDate.slice(0, 7)))];
