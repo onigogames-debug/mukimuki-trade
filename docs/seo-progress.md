@@ -1,6 +1,6 @@
 # SEO Progress Report
 
-Generated: 2026-05-30T13:40:44.657Z
+Generated: 2026-05-30T13:51:23.352Z
 
 ## 実装状況
 
@@ -36,34 +36,34 @@ Generated: 2026-05-30T13:40:44.657Z
 
 | URL | title | description | 本文文字数 | 内部リンク | schema |
 |---|---:|---:|---:|---:|---|
-| / | 35 | 57 | 2769 | 39 | Blog, ItemList, Organization, Person, WebSite |
-| /about/ | 26 | 58 | 1772 | 19 | AboutPage, BreadcrumbList, FAQPage, WebPage |
+| / | 35 | 57 | 2792 | 39 | Blog, ItemList, Organization, Person, WebSite |
+| /about/ | 26 | 58 | 1800 | 19 | AboutPage, BreadcrumbList, FAQPage, WebPage |
 | /archive/ | 24 | 62 | 914 | 22 | BreadcrumbList, CollectionPage |
 | /archive/2026-05/ | 27 | 79 | 1040 | 29 | BreadcrumbList, CollectionPage, ItemList |
 | /category/moomoo/ | 30 | 62 | 911 | 23 | BreadcrumbList, CollectionPage, ItemList |
 | /category/performance/ | 26 | 61 | 1679 | 29 | BreadcrumbList, CollectionPage, ItemList |
 | /category/research/ | 26 | 57 | 1049 | 24 | BreadcrumbList, CollectionPage, ItemList |
 | /logic/ | 28 | 62 | 1031 | 26 | BreadcrumbList, CollectionPage, ItemList |
-| /logic/entry-risk/ | 49 | 52 | 1285 | 24 | Article, BreadcrumbList |
-| /logic/exit-review/ | 51 | 48 | 1288 | 24 | Article, BreadcrumbList |
-| /logic/signal-score/ | 50 | 57 | 1287 | 24 | Article, BreadcrumbList |
+| /logic/entry-risk/ | 49 | 52 | 1307 | 24 | Article, BreadcrumbList |
+| /logic/exit-review/ | 51 | 48 | 1310 | 24 | Article, BreadcrumbList |
+| /logic/signal-score/ | 50 | 57 | 1309 | 24 | Article, BreadcrumbList |
 | /moomoo/ | 48 | 66 | 1320 | 23 | Article, BreadcrumbList, FAQPage |
 | /performance/ | 45 | 70 | 1468 | 22 | Article, BreadcrumbList, FAQPage |
-| /performance/2026-05-27-xndu-rebuild/ | 53 | 83 | 2030 | 24 | Article, BreadcrumbList |
-| /performance/2026-05-28-asts-rotation/ | 52 | 84 | 2731 | 24 | Article, BreadcrumbList |
-| /performance/2026-05-29-bksy-range/ | 49 | 77 | 2851 | 24 | Article, BreadcrumbList |
-| /performance/2026/ | 30 | 52 | 931 | 20 | BreadcrumbList, CollectionPage, ItemList |
-| /performance/2026/05/ | 41 | 62 | 1371 | 30 | BreadcrumbList, CollectionPage, ItemList |
-| /performance/2026/05/26/ | 47 | 61 | 2151 | 31 | Article, BreadcrumbList, FAQPage |
-| /performance/2026/05/27/ | 52 | 66 | 2303 | 32 | Article, BreadcrumbList, FAQPage |
-| /performance/2026/05/28/ | 53 | 66 | 2511 | 32 | Article, BreadcrumbList, FAQPage |
-| /performance/2026/05/29/ | 53 | 67 | 2470 | 31 | Article, BreadcrumbList, FAQPage |
-| /performance/latest/ (noindex) | 25 | 53 | 929 | 23 | BreadcrumbList, CollectionPage, ItemList |
-| /profile/ | 26 | 75 | 1353 | 21 | BreadcrumbList, FAQPage, Person, ProfilePage |
+| /performance/2026-05-27-xndu-rebuild/ | 53 | 83 | 2052 | 24 | Article, BreadcrumbList |
+| /performance/2026-05-28-asts-rotation/ | 52 | 84 | 2753 | 24 | Article, BreadcrumbList |
+| /performance/2026-05-29-bksy-range/ | 49 | 77 | 2873 | 24 | Article, BreadcrumbList |
+| /performance/2026/ | 30 | 52 | 939 | 20 | BreadcrumbList, CollectionPage, ItemList |
+| /performance/2026/05/ | 41 | 62 | 1384 | 30 | BreadcrumbList, CollectionPage, ItemList |
+| /performance/2026/05/26/ | 47 | 61 | 2184 | 31 | Article, BreadcrumbList, FAQPage |
+| /performance/2026/05/27/ | 52 | 66 | 2336 | 32 | Article, BreadcrumbList, FAQPage |
+| /performance/2026/05/28/ | 53 | 66 | 2544 | 32 | Article, BreadcrumbList, FAQPage |
+| /performance/2026/05/29/ | 53 | 67 | 2503 | 31 | Article, BreadcrumbList, FAQPage |
+| /performance/latest/ (noindex) | 25 | 53 | 942 | 23 | BreadcrumbList, CollectionPage, ItemList |
+| /profile/ | 26 | 75 | 1373 | 21 | BreadcrumbList, FAQPage, Person, ProfilePage |
 | /research/ | 25 | 59 | 1006 | 25 | Article, BreadcrumbList |
-| /research/ai-infrastructure/ | 47 | 47 | 1718 | 24 | Article, BreadcrumbList, FAQPage |
-| /research/app-software-fintech/ | 44 | 50 | 1794 | 24 | Article, BreadcrumbList, FAQPage |
-| /research/frontier-growth/ | 47 | 49 | 1711 | 24 | Article, BreadcrumbList, FAQPage |
+| /research/ai-infrastructure/ | 47 | 47 | 1740 | 24 | Article, BreadcrumbList, FAQPage |
+| /research/app-software-fintech/ | 44 | 50 | 1816 | 24 | Article, BreadcrumbList, FAQPage |
+| /research/frontier-growth/ | 47 | 49 | 1733 | 24 | Article, BreadcrumbList, FAQPage |
 | /research/tag/alab/ | 30 | 65 | 1287 | 25 | BreadcrumbList, CollectionPage, ItemList |
 | /research/tag/amd/ | 29 | 64 | 954 | 23 | BreadcrumbList, CollectionPage, ItemList |
 | /research/tag/ampx/ | 30 | 65 | 1126 | 24 | BreadcrumbList, CollectionPage, ItemList |

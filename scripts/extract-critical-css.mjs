@@ -38,6 +38,8 @@ const criticalSelectorHints = [
   ".motion-ring",
   ".ring-two",
   ".mascot-badge",
+  ".stamp-row",
+  ".muki-stamp",
   ".eyebrow",
   ".button",
   ".primary",

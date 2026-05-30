@@ -115,6 +115,18 @@ const footer = `  <footer class="site-footer">
     <nav class="footer-links" aria-label="補助リンク"><a href="/profile/">運営者</a><a href="/archive/">アーカイブ</a><a href="/feed.xml">RSS</a><a href="/about/">運営方針</a><a href="${officialXUrl}" target="_blank" rel="me noopener">公式X</a></nav>
   </footer>`;
 
+const renderMukiStamp = (label, tone = 'yellow') => `<span class="muki-stamp muki-stamp--${escapeHtml(tone)}">
+          <img src="/assets/mukimuki-main.png" alt="MUKIMUKIキャラクターのチェックスタンプ">
+          <strong>${escapeHtml(label)}</strong>
+        </span>`;
+
+const renderStampRow = (items = []) => {
+  if (!items.length) return '';
+  return `        <div class="stamp-row" aria-label="MUKIMUKIチェック">
+${items.map(([label, tone]) => `          ${renderMukiStamp(label, tone)}`).join('\n')}
+        </div>`;
+};
+
 const loadPerformanceDatasets = async () => {
   const latest = JSON.parse(await readFile(path.join(datasetsDir, 'performance-latest.json'), 'utf8'));
   const files = (await readdir(datasetsDir))
@@ -174,6 +186,7 @@ const renderTrustSignals = (report) => {
   const latest = report.latest;
   return `      <section class="article-panel trust-signals" aria-labelledby="trust-signals-title">
         <h2 id="trust-signals-title">信頼性の確認</h2>
+${renderStampRow([['データ元を確認', 'yellow']])}
         <div class="fact-grid">
           <div class="fact-card">
             <h3>データソース</h3>
@@ -298,11 +311,13 @@ ${header}
         <p class="eyebrow">PERFORMANCE / DAILY ARCHIVE</p>
         <h1>${escapeHtml(h1)}</h1>
         <p>${escapeHtml(intro)}</p>
+${renderStampRow([['数字チェック', 'yellow'], ['投資助言ではありません', 'alert']])}
       </div>
     </section>
     <article class="article-body">
       <section class="article-panel">
         <h2>この日の実績サマリー</h2>
+${renderStampRow([['まず評価額', 'blue']])}
         ${renderMetrics(report)}
       </section>
 ${renderTrustSignals(report)}
@@ -438,6 +453,7 @@ ${header}
         <p class="eyebrow">PERFORMANCE / MONTHLY ARCHIVE</p>
         <h1>${escapeHtml(title)}</h1>
         <p>${year}年${Number(month)}月の米国株トレード記録を、日付、評価額、前日比、保有銘柄で一覧化しています。気になる日は日次ページで100万円比、売買件数、取引の背景を確認できます。</p>
+${renderStampRow([['月次で比較', 'blue'], ['日別に深掘り', 'yellow']])}
       </div>
     </section>
     <section class="article-body">
@@ -533,6 +549,7 @@ ${header}
         <p class="eyebrow">PERFORMANCE / YEARLY ARCHIVE</p>
         <h1>${escapeHtml(title)}</h1>
         <p>${year}年の月次まとめと日次実績をたどる入口です。最新実績だけでなく、月単位・日単位の固定URLを積み上げて、過去のトレード記録を検索資産として残します。</p>
+${renderStampRow([['年次アーカイブ', 'blue']])}
       </div>
     </section>
     <section class="article-body">
@@ -647,6 +664,7 @@ ${header}
         <p class="eyebrow">PERFORMANCE / LATEST</p>
         <h1>最新実績レポート</h1>
         <p>評価額、100万円比、主要な保有銘柄を日次で整理します。詳しい記録は日付別ページに残しています。</p>
+${renderStampRow([['最新版', 'yellow'], ['固定URLで保存', 'blue']])}
       </div>
     </section>
     <article class="article-body">

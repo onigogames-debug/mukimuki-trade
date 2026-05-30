@@ -79,6 +79,18 @@ const footer = `  <footer class="site-footer">
     <nav class="footer-links" aria-label="補助リンク"><a href="/profile/">運営者</a><a href="/archive/">アーカイブ</a><a href="/feed.xml">RSS</a><a href="/about/">運営方針</a><a href="${officialXUrl}" target="_blank" rel="me noopener">公式X</a></nav>
   </footer>`;
 
+const renderMukiStamp = (label, tone = 'yellow') => `<span class="muki-stamp muki-stamp--${escapeHtml(tone)}">
+          <img src="/assets/mukimuki-main.png" alt="MUKIMUKIキャラクターのチェックスタンプ">
+          <strong>${escapeHtml(label)}</strong>
+        </span>`;
+
+const renderStampRow = (items = []) => {
+  if (!items.length) return '';
+  return `        <div class="stamp-row" aria-label="MUKIMUKIチェック">
+${items.map(([label, tone]) => `          ${renderMukiStamp(label, tone)}`).join('\n')}
+        </div>`;
+};
+
 const renderSection = (section) => `      <section class="article-panel">
         <h2>${escapeHtml(section.heading)}</h2>
 ${(section.paragraphs || []).map((paragraph) => `        <p>${escapeHtml(paragraph)}</p>`).join('\n')}
@@ -189,6 +201,9 @@ ${header}
         <p class="eyebrow">${escapeHtml(article.eyebrow)}</p>
         <h1>${escapeHtml(article.title)}</h1>
         <p>${escapeHtml(article.summary)}</p>
+${renderStampRow(article.categoryKey === 'research'
+  ? [['銘柄メモ', 'blue'], ['買い推奨ではありません', 'alert']]
+  : [['ロジック確認', 'yellow'], ['実績とセットで読む', 'blue']])}
       </div>
     </section>
 
@@ -199,6 +214,7 @@ ${header}
           <span>${escapeHtml(article.category)}</span>
         </div>
         <p>${escapeHtml(article.summary)}</p>
+${renderStampRow([[article.categoryKey === 'research' ? '候補整理' : '判断メモ', 'yellow']])}
         <div class="tag-row">
 ${article.tags.map((tag) => `          <span>${escapeHtml(tag)}</span>`).join('\n')}
         </div>
