@@ -9,6 +9,7 @@
     "articles:generate": "node scripts/generate-articles.mjs",
     "performance:pages": "PERFORMANCE_OUTPUT_DIR=. node scripts/generate-performance-pages.mjs",
     "performance:pages:site": "PERFORMANCE_OUTPUT_DIR=_site node scripts/generate-performance-pages.mjs",
+    "performance:latest-url": "node scripts/latest-performance-url.mjs",
     "performance:import": "node scripts/import-performance-report.mjs",
     "seo:generate": "node scripts/generate-seo.mjs",
     "seo:audit": "node scripts/seo-audit.mjs",

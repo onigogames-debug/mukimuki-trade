@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>最新実績レポート | MUKIMUKI trade</title>
   <meta name="description" content="MUKIMUKI tradeの最新実績ページ。評価額、100万円比、保有銘柄、売買件数を日次で整理します。">
-  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="robots" content="noindex,follow,max-image-preview:large">
   <link id="dynamic-canonical" rel="canonical" href="https://mukimuki-trade.com/performance/2026/05/29/">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:type" content="article">
@@ -80,6 +80,11 @@
 }
 </script>
   <script>
+    // Google Search Consoleで「重複URL」警告が出た場合:
+    // 1. /performance/latest/ が noindex,follow になっていることをURL検査で確認する。
+    // 2. canonical が最新の日付固定URLを指していることを確認する。
+    // 3. 正規の日付固定URLをURL検査からインデックス登録リクエストする。
+    // 4. 古い /performance/latest/ の検索結果が残る場合は、再クロール後の反映を待つ。
     (async () => {
       try {
         const response = await fetch('/datasets/performance-latest.json', { cache: 'no-store' });

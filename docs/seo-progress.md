@@ -1,6 +1,6 @@
 # SEO Progress Report
 
-Generated: 2026-05-30T12:30:59.954Z
+Generated: 2026-05-30T12:42:29.189Z
 
 ## 実装状況
 
@@ -22,7 +22,7 @@ Generated: 2026-05-30T12:30:59.954Z
 ## ページ監査サマリー
 
 - 対象ページ: 28
-- インデックス対象ページ: 28
+- インデックス対象ページ: 27
 - 要確認ページ: 0
 - FAQ schemaページ: 11
 - パンくずschemaページ: 27
@@ -58,7 +58,7 @@ Generated: 2026-05-30T12:30:59.954Z
 | /performance/2026/05/27/ | 35 | 66 | 2205 | 28 | Article, BreadcrumbList, FAQPage |
 | /performance/2026/05/28/ | 36 | 66 | 2477 | 28 | Article, BreadcrumbList, FAQPage |
 | /performance/2026/05/29/ | 36 | 67 | 2451 | 28 | Article, BreadcrumbList, FAQPage |
-| /performance/latest/ | 25 | 53 | 929 | 23 | BreadcrumbList, CollectionPage, ItemList |
+| /performance/latest/ (noindex) | 25 | 53 | 929 | 23 | BreadcrumbList, CollectionPage, ItemList |
 | /profile/ | 26 | 75 | 1363 | 21 | BreadcrumbList, FAQPage, Person, ProfilePage |
 | /research/ | 25 | 59 | 1006 | 25 | Article, BreadcrumbList |
 | /research/ai-infrastructure/ | 47 | 47 | 1719 | 24 | Article, BreadcrumbList, FAQPage |

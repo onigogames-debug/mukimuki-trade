@@ -4,6 +4,18 @@
 
 # Netlify applies gzip and Brotli compression automatically for supported assets.
 
+[[redirects]]
+  from = "/performance/"
+  to = "/performance/latest/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/performance/old/"
+  to = "/performance/latest/"
+  status = 301
+  force = true
+
 [[headers]]
   for = "/*.html"
   [headers.values]

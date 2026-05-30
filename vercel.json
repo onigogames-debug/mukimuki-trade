@@ -2,6 +2,18 @@
   "cleanUrls": true,
   "trailingSlash": true,
   "compress": true,
+  "redirects": [
+    {
+      "source": "/performance/",
+      "destination": "/performance/latest/",
+      "permanent": true
+    },
+    {
+      "source": "/performance/old/",
+      "destination": "/performance/latest/",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

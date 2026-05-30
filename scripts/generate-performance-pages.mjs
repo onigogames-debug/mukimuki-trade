@@ -523,7 +523,7 @@ const renderLatestPage = (latestReport) => {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${title} | MUKIMUKI trade</title>
   <meta name="description" content="${description}">
-  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="robots" content="noindex,follow,max-image-preview:large">
   <link id="dynamic-canonical" rel="canonical" href="${escapeHtml(absoluteUrl(latestPath))}">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:type" content="article">
@@ -537,6 +537,11 @@ const renderLatestPage = (latestReport) => {
   <link rel="stylesheet" href="/styles.css">
   ${jsonLdScript}
   <script>
+    // Google Search Consoleで「重複URL」警告が出た場合:
+    // 1. /performance/latest/ が noindex,follow になっていることをURL検査で確認する。
+    // 2. canonical が最新の日付固定URLを指していることを確認する。
+    // 3. 正規の日付固定URLをURL検査からインデックス登録リクエストする。
+    // 4. 古い /performance/latest/ の検索結果が残る場合は、再クロール後の反映を待つ。
     (async () => {
       try {
         const response = await fetch('/datasets/performance-latest.json', { cache: 'no-store' });
@@ -603,9 +608,10 @@ const updateRedirects = async (latestPath) => {
   const current = await readFile(redirectsPath, 'utf8');
   const lines = current
     .split('\n')
-    .filter((line) => line.trim() && !line.startsWith('/performance/ '));
+    .filter((line) => line.trim() && !line.startsWith('/performance/ ') && !line.startsWith('/performance/old/ '));
 
   lines.push('/performance/ /performance/latest/ 301');
+  lines.push('/performance/old/ /performance/latest/ 301');
   await writeFile(redirectsPath, `${lines.join('\n')}\n`);
 };
 
