@@ -1,5 +1,4 @@
 /*
-  Cache-Control: public, max-age=300, must-revalidate
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'; upgrade-insecure-requests
@@ -7,6 +6,36 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   Cross-Origin-Opener-Policy: same-origin
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+/
+  Cache-Control: public, max-age=300, must-revalidate
+
+/*.html
+  Cache-Control: public, max-age=300, must-revalidate
+
+/performance/*
+  Cache-Control: public, max-age=300, must-revalidate
+
+/research/*
+  Cache-Control: public, max-age=300, must-revalidate
+
+/logic/*
+  Cache-Control: public, max-age=300, must-revalidate
+
+/moomoo/*
+  Cache-Control: public, max-age=300, must-revalidate
+
+/archive/*
+  Cache-Control: public, max-age=300, must-revalidate
+
+/category/*
+  Cache-Control: public, max-age=300, must-revalidate
+
+/profile/*
+  Cache-Control: public, max-age=300, must-revalidate
+
+/about/*
+  Cache-Control: public, max-age=300, must-revalidate
 
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
