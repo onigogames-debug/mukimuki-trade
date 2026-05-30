@@ -1,6 +1,6 @@
 # SEO Progress Report
 
-Generated: 2026-05-29T22:53:58.524Z
+Generated: 2026-05-30T12:11:11.502Z
 
 ## 実装状況
 
@@ -36,7 +36,7 @@ Generated: 2026-05-29T22:53:58.524Z
 
 | URL | title | description | 本文文字数 | 内部リンク | schema |
 |---|---:|---:|---:|---:|---|
-| / | 35 | 57 | 2640 | 39 | Blog, ItemList, Organization, Person, WebSite |
+| / | 35 | 57 | 2769 | 39 | Blog, ItemList, Organization, Person, WebSite |
 | /about/ | 26 | 58 | 1562 | 19 | AboutPage, BreadcrumbList, FAQPage, WebPage |
 | /archive/ | 24 | 62 | 914 | 22 | BreadcrumbList, CollectionPage |
 | /archive/2026-05/ | 27 | 79 | 1040 | 29 | BreadcrumbList, CollectionPage, ItemList |
@@ -48,10 +48,10 @@ Generated: 2026-05-29T22:53:58.524Z
 | /logic/exit-review/ | 51 | 48 | 1358 | 24 | Article, BreadcrumbList |
 | /logic/signal-score/ | 50 | 57 | 1355 | 24 | Article, BreadcrumbList |
 | /moomoo/ | 48 | 66 | 1320 | 23 | Article, BreadcrumbList, FAQPage |
-| /performance/ | 45 | 70 | 1357 | 22 | Article, BreadcrumbList, FAQPage |
+| /performance/ | 45 | 70 | 1468 | 22 | Article, BreadcrumbList, FAQPage |
 | /performance/2026-05-27-xndu-rebuild/ | 53 | 83 | 2035 | 24 | Article, BreadcrumbList |
 | /performance/2026-05-28-asts-rotation/ | 52 | 84 | 2736 | 24 | Article, BreadcrumbList |
-| /performance/2026-05-29-bksy-range/ | 49 | 77 | 2924 | 24 | Article, BreadcrumbList |
+| /performance/2026-05-29-bksy-range/ | 49 | 77 | 2920 | 24 | Article, BreadcrumbList |
 | /performance/2026/ | 30 | 52 | 931 | 20 | BreadcrumbList, CollectionPage, ItemList |
 | /performance/2026/05/ | 32 | 61 | 1077 | 26 | BreadcrumbList, CollectionPage, ItemList |
 | /performance/2026/05/26/ | 30 | 61 | 2092 | 28 | Article, BreadcrumbList, FAQPage |
