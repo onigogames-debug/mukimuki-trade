@@ -1,7 +1,29 @@
 import { buildJsonLdScriptFromFrontMatter } from './scripts/structured-data.mjs';
 import performanceLatest from './_data/performanceLatest.mjs';
+import { extractTickers } from './scripts/internal-links.mjs';
+
+function tickerArchivePlugin(eleventyConfig) {
+  eleventyConfig.addCollection('tickerArchives', (collectionApi) => {
+    const tickerMap = new Map();
+    for (const item of collectionApi.getAll()) {
+      const tags = item.data.tags || [];
+      const body = `${item.data.title || ''} ${item.data.description || ''} ${tags.join(' ')} ${item.templateContent || ''}`;
+      for (const ticker of extractTickers(body)) {
+        if (!tickerMap.has(ticker)) tickerMap.set(ticker, []);
+        tickerMap.get(ticker).push(item);
+      }
+    }
+    return [...tickerMap.entries()].map(([ticker, items]) => ({
+      ticker,
+      url: `/research/tag/${ticker.toLowerCase()}/`,
+      title: `${ticker}の銘柄検討記事一覧 | MUKIMUKI trade`,
+      items,
+    }));
+  });
+}
 
 export default function configureEleventy(eleventyConfig) {
+  eleventyConfig.addPlugin(tickerArchivePlugin);
   eleventyConfig.addShortcode('jsonLd', (pageData = {}) => buildJsonLdScriptFromFrontMatter(pageData));
   eleventyConfig.addFilter('jsonLd', (pageData = {}) => buildJsonLdScriptFromFrontMatter(pageData));
   eleventyConfig.addShortcode('inlinePerformanceData', (data = performanceLatest) => {

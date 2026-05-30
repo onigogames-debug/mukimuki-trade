@@ -1,18 +1,32 @@
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { renderJsonLdScript } from './structured-data.mjs';
 import { buildBreadcrumbsFromPath, renderBreadcrumbHtml } from './breadcrumbs.mjs';
-import { buildArticleIndex, renderRelatedArticlesSection } from './internal-links.mjs';
+import { buildArticleIndex, extractTickers, renderRelatedArticlesSection } from './internal-links.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const siteUrl = 'https://mukimuki-trade.com';
 const officialXUrl = 'https://x.com/OnigoGames';
 const articlesPath = path.join(root, 'data', 'articles.json');
 const contentPath = path.join(root, 'data', 'content.json');
+const datasetsDir = path.join(root, 'datasets');
 const { articles } = JSON.parse(await readFile(articlesPath, 'utf8'));
 const content = JSON.parse(await readFile(contentPath, 'utf8'));
-const articleIndex = buildArticleIndex({ articles, posts: content.posts });
+
+const loadPerformanceReports = async () => {
+  const files = (await readdir(datasetsDir))
+    .filter((file) => /^performance-\d{4}-\d{2}-\d{2}\.json$/.test(file))
+    .sort();
+  const reports = [];
+  for (const file of files) {
+    reports.push(JSON.parse(await readFile(path.join(datasetsDir, file), 'utf8')));
+  }
+  return reports;
+};
+
+const performanceReports = await loadPerformanceReports();
+const articleIndex = buildArticleIndex({ articles, posts: content.posts, performanceReports });
 
 const escapeHtml = (value) => String(value)
   .replaceAll('&', '&amp;')
@@ -100,6 +114,11 @@ const defaultResearchFaq = (article) => {
       answer: '最新実績ページと日付別の実績ページで、評価額、前日比、保有銘柄、売買件数を記録しています。',
     },
   ];
+};
+
+const displayArchiveDate = (value = '') => {
+  if (!value) return '';
+  return String(value).slice(0, 10).replaceAll('-', '.');
 };
 
 const articleFaq = (article) => article.faq || article.faqs || defaultResearchFaq(article);
@@ -293,6 +312,117 @@ ${footer}
 `;
 };
 
+const tickerArchiveArticles = () => {
+  const tickerMap = new Map();
+  for (const article of articleIndex) {
+    const text = [
+      article.title,
+      article.description,
+      article.summary,
+      ...(article.tags || []),
+      article.tokens,
+    ].filter(Boolean).join(' ');
+    const tickers = [...new Set([...(article.tickers || []), ...extractTickers(text)])];
+    for (const ticker of tickers) {
+      if (!tickerMap.has(ticker)) tickerMap.set(ticker, []);
+      tickerMap.get(ticker).push(article);
+    }
+  }
+  return [...tickerMap.entries()]
+    .filter(([, tickerArticles]) => tickerArticles.length > 0)
+    .sort(([a], [b]) => a.localeCompare(b));
+};
+
+const renderTickerArchivePage = (ticker, tickerArticles) => {
+  const archivePath = `/research/tag/${ticker.toLowerCase()}/`;
+  const title = `${ticker}の銘柄検討記事一覧`;
+  const description = `${ticker}に関連する銘柄検討、売買トピック、日次実績をまとめたアーカイブです。保有状況、売買理由、関連テーマを時系列で確認できます。`;
+  const sortedArticles = [...tickerArticles].sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')) || a.path.localeCompare(b.path));
+  const breadcrumbs = [
+    { name: 'Home', item: `${siteUrl}/` },
+    { name: '銘柄検討', item: absoluteUrl('/research/') },
+    { name: ticker, item: absoluteUrl(archivePath) },
+  ];
+  const jsonLdScript = renderJsonLdScript({
+    pageType: 'collection',
+    title,
+    description,
+    url: absoluteUrl(archivePath),
+    path: archivePath,
+    section: '銘柄別アーカイブ',
+    breadcrumbs,
+    items: sortedArticles.map((article) => ({
+      name: article.title,
+      path: article.path,
+    })),
+  });
+
+  return `<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>${escapeHtml(title)} | MUKIMUKI trade</title>
+  <meta name="description" content="${escapeHtml(description)}">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="${escapeHtml(absoluteUrl(archivePath))}">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MUKIMUKI trade">
+  <meta property="og:title" content="${escapeHtml(title)} | MUKIMUKI trade">
+  <meta property="og:description" content="${escapeHtml(description)}">
+  <meta property="og:url" content="${escapeHtml(absoluteUrl(archivePath))}">
+  <meta property="og:image" content="${siteUrl}/assets/mukimuki-research.png">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="application/rss+xml" title="MUKIMUKI trade RSS" href="/feed.xml">
+  <link rel="stylesheet" href="/styles.css">
+  ${jsonLdScript}
+</head>
+<body>
+${header}
+
+  <main>
+    <section class="article-hero">
+      <div class="article-hero-inner">
+        ${renderBreadcrumbHtml(breadcrumbs, escapeHtml)}
+        <p class="eyebrow">RESEARCH TAG / ${escapeHtml(ticker)}</p>
+        <h1>${escapeHtml(title)}</h1>
+        <p>${escapeHtml(description)}</p>
+      </div>
+    </section>
+
+    <section class="collection-body" aria-label="${escapeHtml(ticker)}の記事一覧">
+${sortedArticles.map((article) => `      <article class="collection-card">
+        <span class="post-kicker">${escapeHtml(displayArchiveDate(article.date))} / ${escapeHtml(article.category || '関連記事')}</span>
+        <h2><a href="${escapeHtml(article.path)}">${escapeHtml(article.title)}</a></h2>
+        <p>${escapeHtml(article.description || article.summary || '')}</p>
+        <div class="tag-row">
+${[ticker, ...(article.tags || []).filter((tag) => tag !== ticker).slice(0, 3)].map((tag) => `          <span>${escapeHtml(tag)}</span>`).join('\n')}
+        </div>
+      </article>`).join('\n')}
+    </section>
+
+    <section class="article-body">
+      <section class="article-panel">
+        <h2>${escapeHtml(ticker)}を読む時の見方</h2>
+        <p>銘柄別アーカイブでは、候補整理、売買トピック、日次実績を同じ銘柄軸で並べています。単独の記事だけで判断せず、保有状況、売買件数、関連テーマの変化を時系列で確認できます。</p>
+        <p>${escapeHtml(ticker)}のような米国株は、決算、材料、出来高、地合いによって短期間で評価が変わりやすくなります。このページでは、銘柄検討の記事だけでなく、実際の売買記録や日次実績に出てきた場面もまとめ、候補として見た理由と運用上の扱いをつなげて読めるようにしています。</p>
+        <p>初めて読む場合は、まず一覧の新しい記事から確認し、次に同じ月の実績ページで評価額、前日比、保有株数の変化を見ます。候補として強いテーマに見えても、売買件数が増えすぎている日や、含み損を抱えたまま持ち越している日は、リスクの取り方まで確認することが大切です。</p>
+        <p>掲載内容は自己運用ログと市場メモであり、特定銘柄の売買を推奨するものではありません。</p>
+      </section>
+      <section class="article-panel">
+        <h2>あわせて確認するページ</h2>
+        <p>直近の数字は<a href="/performance/latest/">最新実績</a>、日別の固定記録は<a href="/performance/2026/05/">月次実績アーカイブ</a>、候補化や撤退条件の考え方は<a href="/logic/">投資ロジック</a>にまとめています。銘柄別ページから実績とロジックへ戻ることで、テーマだけでなく資産推移との関係も追いやすくなります。</p>
+      </section>
+    </section>
+  </main>
+
+${footer}
+</body>
+</html>
+`;
+};
+
 for (const article of articles) {
   const outputDir = path.join(root, article.path);
   await mkdir(outputDir, { recursive: true });
@@ -303,4 +433,12 @@ const logicDir = path.join(root, 'logic');
 await mkdir(logicDir, { recursive: true });
 await writeFile(path.join(logicDir, 'index.html'), buildCollectionPage('logic'));
 
-console.log(`Generated ${articles.length} article pages and logic index.`);
+await rm(path.join(root, 'research', 'tag'), { recursive: true, force: true });
+const tickerArchives = tickerArchiveArticles();
+for (const [ticker, tickerArticles] of tickerArchives) {
+  const outputDir = path.join(root, 'research', 'tag', ticker.toLowerCase());
+  await mkdir(outputDir, { recursive: true });
+  await writeFile(path.join(outputDir, 'index.html'), renderTickerArchivePage(ticker, tickerArticles));
+}
+
+console.log(`Generated ${articles.length} article pages, logic index, and ${tickerArchives.length} ticker archive pages.`);

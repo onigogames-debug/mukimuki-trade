@@ -1,11 +1,18 @@
 User-agent: *
 Allow: /
 Allow: /assets/
+Allow: /feed.xml
 Disallow: /data/
 Disallow: /scripts/
 Disallow: /datasets/
 Disallow: /_site/
+Disallow: /*?*
+
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
 
 Sitemap: https://mukimuki-trade.com/sitemap.xml
 Sitemap: https://mukimuki-trade.com/image-sitemap.xml
-Sitemap: https://mukimuki-trade.com/feed.xml

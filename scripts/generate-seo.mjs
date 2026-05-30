@@ -1,10 +1,13 @@
-import { readdir, readFile, stat, writeFile } from 'node:fs/promises';
+import { mkdir, readdir, readFile, stat, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { parseFrontMatter } from './structured-data.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const contentPath = path.join(root, 'data', 'content.json');
+const articlesPath = path.join(root, 'data', 'articles.json');
 const content = JSON.parse(await readFile(contentPath, 'utf8'));
+const { articles } = JSON.parse(await readFile(articlesPath, 'utf8'));
 
 const escapeXml = (value) => String(value)
   .replaceAll('&', '&amp;')
@@ -57,10 +60,12 @@ const walkHtmlPages = async (dir = root) => {
 const inferChangefreq = (pagePath) => {
   if (pagePath === '/' || pagePath === '/performance/latest/') return 'daily';
   if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/$/.test(pagePath)) return 'weekly';
+  if (/^\/performance\/\d{4}\/\d{2}\/$/.test(pagePath)) return 'monthly';
+  if (/^\/performance\/\d{4}\/$/.test(pagePath)) return 'yearly';
   if (pagePath.startsWith('/research/')) return 'weekly';
   if (pagePath.startsWith('/logic/')) return 'monthly';
   if (pagePath.startsWith('/archive/')) return 'monthly';
-  if (pagePath === '/profile/' || pagePath === '/about/') return 'monthly';
+  if (pagePath === '/profile/' || pagePath === '/about/' || pagePath === '/moomoo/') return 'monthly';
   if (pagePath.startsWith('/performance/')) return 'monthly';
   if (pagePath.startsWith('/category/')) return 'weekly';
   return 'monthly';
@@ -68,28 +73,70 @@ const inferChangefreq = (pagePath) => {
 
 const inferPriority = (pagePath) => {
   if (pagePath === '/') return '1.0';
-  if (pagePath === '/performance/latest/') return '0.9';
-  if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/$/.test(pagePath)) return '0.8';
-  if (pagePath.startsWith('/research/')) return '0.7';
-  if (pagePath.startsWith('/logic/')) return '0.6';
-  if (pagePath.startsWith('/archive/')) return '0.5';
-  if (pagePath === '/profile/' || pagePath === '/about/') return '0.4';
+  if (pagePath === '/performance/latest/') return '0.1';
+  if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/$/.test(pagePath)) return '0.9';
   if (/^\/performance\/\d{4}\/\d{2}\/$/.test(pagePath)) return '0.7';
   if (/^\/performance\/\d{4}\/$/.test(pagePath)) return '0.6';
+  if (pagePath.startsWith('/research/')) return '0.7';
+  if (pagePath.startsWith('/logic/')) return '0.6';
+  if (pagePath === '/moomoo/') return '0.5';
+  if (pagePath === '/archive/' || pagePath.startsWith('/archive/')) return '0.5';
+  if (pagePath === '/profile/' || pagePath === '/about/') return '0.4';
   if (pagePath.startsWith('/category/')) return '0.5';
-  if (pagePath === '/moomoo/') return '0.6';
   return '0.5';
 };
 
 const explicitPages = new Map(content.pages.map((page) => [page.path, page]));
+const articlePages = new Map(articles.map((article) => [article.path, article]));
+const postPages = new Map(content.posts.map((post) => [post.path, post]));
 const discoveredPages = await walkHtmlPages();
 const pageMap = new Map();
 
-for (const { path: pagePath, filePath } of discoveredPages) {
+const htmlMeta = (html, name) => {
+  const pattern = new RegExp(`<meta\\s+(?:name|property)=["']${name}["']\\s+content=["']([^"']+)["']`, 'i');
+  return html.match(pattern)?.[1];
+};
+
+const toDateOrNull = (value) => {
+  if (!value) return null;
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return String(value).slice(0, 10);
+  return date.toISOString().slice(0, 10);
+};
+
+const lastmodForPage = async (pagePath, filePath) => {
+  const source = await readFile(filePath, 'utf8');
+  const { frontMatter } = parseFrontMatter(source);
+  const frontMatterDate = toDateOrNull(frontMatter.modified_time || frontMatter.modifiedTime || frontMatter.modified || frontMatter.dateModified);
+  if (frontMatterDate) return frontMatterDate;
+
+  const article = articlePages.get(pagePath);
+  const articleDate = toDateOrNull(article?.modified || article?.modified_time || article?.published);
+  if (articleDate) return articleDate;
+
+  const post = postPages.get(pagePath);
+  const postDate = toDateOrNull(post?.modified_time || post?.modified || post?.pubDate);
+  if (postDate) return postDate;
+
+  const explicit = explicitPages.get(pagePath);
+  const explicitDate = toDateOrNull(explicit?.modified_time || explicit?.modifiedTime || explicit?.lastmod);
+  if (explicitDate) return explicitDate;
+
+  const htmlDate = toDateOrNull(
+    htmlMeta(source, 'article:modified_time')
+    || htmlMeta(source, 'og:updated_time')
+    || htmlMeta(source, 'dateModified'),
+  );
+  if (htmlDate) return htmlDate;
+
   const fileStat = await stat(filePath);
+  return toDate(fileStat.mtime);
+};
+
+for (const { path: pagePath, filePath } of discoveredPages) {
   pageMap.set(pagePath, {
     path: pagePath,
-    lastmod: toDate(fileStat.mtime),
+    lastmod: await lastmodForPage(pagePath, filePath),
     changefreq: inferChangefreq(pagePath),
     priority: inferPriority(pagePath),
   });
@@ -176,7 +223,31 @@ ${content.posts.map((post) => `    <item>
 `;
 
 await writeFile(path.join(root, 'sitemap.xml'), sitemap);
+await mkdir(path.join(root, '_site'), { recursive: true });
+await writeFile(path.join(root, '_site', 'sitemap.xml'), sitemap);
 await writeFile(path.join(root, 'image-sitemap.xml'), imageSitemap);
 await writeFile(path.join(root, 'feed.xml'), feed);
 
-console.log(`Generated sitemap.xml (${pages.length} URLs), image-sitemap.xml, and feed.xml (${content.posts.length} posts).`);
+const robots = `User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /feed.xml
+Disallow: /data/
+Disallow: /scripts/
+Disallow: /datasets/
+Disallow: /_site/
+Disallow: /*?*
+
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+Sitemap: ${content.site.url}/sitemap.xml
+Sitemap: ${content.site.url}/image-sitemap.xml
+`;
+
+await writeFile(path.join(root, 'robots.txt'), robots);
+
+console.log(`Generated sitemap.xml (${pages.length} URLs), _site/sitemap.xml, image-sitemap.xml, robots.txt, and feed.xml (${content.posts.length} posts).`);
