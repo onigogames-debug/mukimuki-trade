@@ -1,8 +1,8 @@
 const tickerPattern = /\b(?:US\.)?[A-Z]{2,5}\b/g;
 const stopTickers = new Set([
-  'AI', 'EV', 'EST', 'JPY', 'USD', 'FAQ', 'PR',
+  'AI', 'EV', 'EST', 'JST', 'JPY', 'USD', 'FAQ', 'PR',
   'BUY', 'SELL', 'RISK', 'MA', 'VWAP', 'RSI', 'TP', 'SL', 'CSV',
-  'TRADE', 'TOPIC', 'STOCK', 'LOGIC', 'DAILY', 'URL', 'FOMC',
+  'TRADE', 'TOPIC', 'STOCK', 'LOGIC', 'DAILY', 'URL', 'FOMC', 'AWS',
 ]);
 
 const normalizeTicker = (value) => String(value || '').replace(/^US\./, '').toUpperCase();
