@@ -4,26 +4,50 @@
     "title": "MUKIMUKI trade",
     "description": "100万円からの株式投資実績、資産曲線、銘柄検討、相場メモを整理する投資ブログ。",
     "language": "ja",
-    "lastBuildDate": "2026-05-31T08:00:00+09:00"
+    "lastBuildDate": "2026-06-01T08:00:00+09:00"
   },
   "pages": [
     {
       "path": "/",
-      "lastmod": "2026-05-31",
+      "lastmod": "2026-06-01",
       "changefreq": "daily",
       "priority": "1.0"
     },
     {
       "path": "/performance/latest/",
-      "lastmod": "2026-05-31",
+      "lastmod": "2026-06-01",
       "changefreq": "daily",
       "priority": "0.9"
     },
     {
       "path": "/performance/2026/05/",
-      "lastmod": "2026-05-31",
+      "lastmod": "2026-06-01",
       "changefreq": "weekly",
       "priority": "0.78"
+    },
+    {
+      "path": "/performance/2026-05-31-weekend-amzn-risk-check/",
+      "lastmod": "2026-06-01",
+      "changefreq": "monthly",
+      "priority": "0.85"
+    },
+    {
+      "path": "/archive/",
+      "lastmod": "2026-06-01",
+      "changefreq": "weekly",
+      "priority": "0.6"
+    },
+    {
+      "path": "/archive/2026-06/",
+      "lastmod": "2026-06-01",
+      "changefreq": "monthly",
+      "priority": "0.6"
+    },
+    {
+      "path": "/category/performance/",
+      "lastmod": "2026-06-01",
+      "changefreq": "weekly",
+      "priority": "0.7"
     },
     {
       "path": "/performance/2026-05-30-weekend-amzn-hold/",
@@ -116,12 +140,6 @@
       "priority": "0.7"
     },
     {
-      "path": "/category/performance/",
-      "lastmod": "2026-05-30",
-      "changefreq": "weekly",
-      "priority": "0.7"
-    },
-    {
       "path": "/category/research/",
       "lastmod": "2026-05-27",
       "changefreq": "weekly",
@@ -130,12 +148,6 @@
     {
       "path": "/category/moomoo/",
       "lastmod": "2026-05-27",
-      "changefreq": "weekly",
-      "priority": "0.6"
-    },
-    {
-      "path": "/archive/",
-      "lastmod": "2026-05-30",
       "changefreq": "weekly",
       "priority": "0.6"
     },
@@ -171,6 +183,13 @@
     }
   ],
   "posts": [
+    {
+      "title": "5/31週末メモ: 売買なし、AMZNの取得位置を再確認",
+      "path": "/performance/2026-05-31-weekend-amzn-risk-check/",
+      "description": "2026年6月1日JST朝時点で新規日次レポートはなく、5/29引け後保有を基準にAMZNの取得位置と翌営業日の確認点を整理。",
+      "pubDate": "2026-06-01T08:00:00+09:00",
+      "category": "実績公開"
+    },
     {
       "title": "5/30週末メモ: 売買なし、AMZNの含み損を点検",
       "path": "/performance/2026-05-30-weekend-amzn-hold/",

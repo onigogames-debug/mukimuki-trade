@@ -1,6 +1,6 @@
 # SEO Progress Report
 
-Generated: 2026-05-31T15:19:38.609Z
+Generated: 2026-06-01T02:36:13.612Z
 
 ## 実装状況
 
@@ -21,12 +21,12 @@ Generated: 2026-05-31T15:19:38.609Z
 
 ## ページ監査サマリー
 
-- 対象ページ: 57
-- インデックス対象ページ: 56
+- 対象ページ: 59
+- インデックス対象ページ: 58
 - 要確認ページ: 0
 - FAQ schemaページ: 11
-- パンくずschemaページ: 56
-- Critical CSS適用ページ: 57
+- パンくずschemaページ: 58
+- Critical CSS適用ページ: 59
 
 ## 要確認ページ
 
@@ -36,12 +36,13 @@ Generated: 2026-05-31T15:19:38.609Z
 
 | URL | title | description | 本文文字数 | 内部リンク | schema |
 |---|---:|---:|---:|---:|---|
-| / | 35 | 57 | 2793 | 39 | Blog, ItemList, Organization, Person, WebSite |
+| / | 35 | 57 | 2875 | 40 | Blog, ItemList, Organization, Person, WebSite |
 | /about/ | 26 | 58 | 1800 | 19 | AboutPage, BreadcrumbList, FAQPage, WebPage |
-| /archive/ | 24 | 62 | 914 | 22 | BreadcrumbList, CollectionPage |
+| /archive/ | 24 | 62 | 1001 | 23 | BreadcrumbList, CollectionPage |
 | /archive/2026-05/ | 27 | 79 | 1330 | 32 | BreadcrumbList, CollectionPage, ItemList |
+| /archive/2026-06/ | 27 | 79 | 915 | 23 | BreadcrumbList, CollectionPage, ItemList |
 | /category/moomoo/ | 30 | 62 | 911 | 23 | BreadcrumbList, CollectionPage, ItemList |
-| /category/performance/ | 26 | 61 | 1796 | 30 | BreadcrumbList, CollectionPage, ItemList |
+| /category/performance/ | 26 | 61 | 1921 | 31 | BreadcrumbList, CollectionPage, ItemList |
 | /category/research/ | 26 | 57 | 1049 | 24 | BreadcrumbList, CollectionPage, ItemList |
 | /logic/ | 28 | 62 | 1031 | 26 | BreadcrumbList, CollectionPage, ItemList |
 | /logic/entry-risk/ | 49 | 52 | 1307 | 24 | Article, BreadcrumbList |
@@ -51,14 +52,15 @@ Generated: 2026-05-31T15:19:38.609Z
 | /performance/ | 45 | 70 | 1468 | 22 | Article, BreadcrumbList, FAQPage |
 | /performance/2026-05-27-xndu-rebuild/ | 53 | 83 | 2052 | 24 | Article, BreadcrumbList |
 | /performance/2026-05-28-asts-rotation/ | 52 | 84 | 2753 | 24 | Article, BreadcrumbList |
-| /performance/2026-05-29-bksy-range/ | 49 | 77 | 2909 | 24 | Article, BreadcrumbList |
-| /performance/2026-05-30-weekend-amzn-hold/ | 43 | 64 | 3016 | 24 | Article, BreadcrumbList |
+| /performance/2026-05-29-bksy-range/ | 49 | 77 | 2881 | 24 | Article, BreadcrumbList |
+| /performance/2026-05-30-weekend-amzn-hold/ | 43 | 64 | 2988 | 24 | Article, BreadcrumbList |
+| /performance/2026-05-31-weekend-amzn-risk-check/ | 45 | 63 | 3114 | 24 | Article, BreadcrumbList |
 | /performance/2026/ | 30 | 52 | 939 | 20 | BreadcrumbList, CollectionPage, ItemList |
 | /performance/2026/05/ | 41 | 62 | 1384 | 30 | BreadcrumbList, CollectionPage, ItemList |
 | /performance/2026/05/26/ | 47 | 61 | 2184 | 31 | Article, BreadcrumbList, FAQPage |
 | /performance/2026/05/27/ | 52 | 66 | 2336 | 32 | Article, BreadcrumbList, FAQPage |
 | /performance/2026/05/28/ | 53 | 66 | 2544 | 32 | Article, BreadcrumbList, FAQPage |
-| /performance/2026/05/29/ | 53 | 67 | 2474 | 31 | Article, BreadcrumbList, FAQPage |
+| /performance/2026/05/29/ | 53 | 67 | 2511 | 31 | Article, BreadcrumbList, FAQPage |
 | /performance/latest/ (noindex) | 25 | 53 | 942 | 23 | BreadcrumbList, CollectionPage, ItemList |
 | /profile/ | 26 | 75 | 1373 | 21 | BreadcrumbList, FAQPage, Person, ProfilePage |
 | /research/ | 25 | 59 | 1006 | 25 | Article, BreadcrumbList |
@@ -68,14 +70,14 @@ Generated: 2026-05-31T15:19:38.609Z
 | /research/tag/alab/ | 30 | 65 | 1287 | 25 | BreadcrumbList, CollectionPage, ItemList |
 | /research/tag/amd/ | 29 | 64 | 954 | 23 | BreadcrumbList, CollectionPage, ItemList |
 | /research/tag/ampx/ | 30 | 65 | 1126 | 24 | BreadcrumbList, CollectionPage, ItemList |
-| /research/tag/amzn/ | 30 | 65 | 1408 | 26 | BreadcrumbList, CollectionPage, ItemList |
+| /research/tag/amzn/ | 30 | 65 | 1539 | 27 | BreadcrumbList, CollectionPage, ItemList |
 | /research/tag/app/ | 29 | 64 | 954 | 23 | BreadcrumbList, CollectionPage, ItemList |
 | /research/tag/asts/ | 30 | 65 | 1023 | 23 | BreadcrumbList, CollectionPage, ItemList |
 | /research/tag/avgo/ | 30 | 65 | 962 | 23 | BreadcrumbList, CollectionPage, ItemList |
 | /research/tag/bksy/ | 30 | 65 | 1174 | 24 | BreadcrumbList, CollectionPage, ItemList |
 | /research/tag/crdo/ | 30 | 65 | 1123 | 24 | BreadcrumbList, CollectionPage, ItemList |
 | /research/tag/googl/ | 31 | 66 | 970 | 23 | BreadcrumbList, CollectionPage, ItemList |
-| /research/tag/gsat/ | 30 | 65 | 1247 | 25 | BreadcrumbList, CollectionPage, ItemList |
+| /research/tag/gsat/ | 30 | 65 | 1378 | 26 | BreadcrumbList, CollectionPage, ItemList |
 | /research/tag/hood/ | 30 | 65 | 1277 | 25 | BreadcrumbList, CollectionPage, ItemList |
 | /research/tag/meta/ | 30 | 65 | 1387 | 26 | BreadcrumbList, CollectionPage, ItemList |
 | /research/tag/msft/ | 30 | 65 | 1126 | 24 | BreadcrumbList, CollectionPage, ItemList |
@@ -83,14 +85,14 @@ Generated: 2026-05-31T15:19:38.609Z
 | /research/tag/nvda/ | 30 | 65 | 962 | 23 | BreadcrumbList, CollectionPage, ItemList |
 | /research/tag/oklo/ | 30 | 65 | 1287 | 25 | BreadcrumbList, CollectionPage, ItemList |
 | /research/tag/pl/ | 28 | 63 | 1350 | 26 | BreadcrumbList, CollectionPage, ItemList |
-| /research/tag/qbts/ | 30 | 65 | 1408 | 26 | BreadcrumbList, CollectionPage, ItemList |
+| /research/tag/qbts/ | 30 | 65 | 1539 | 27 | BreadcrumbList, CollectionPage, ItemList |
 | /research/tag/rdw/ | 29 | 64 | 1005 | 23 | BreadcrumbList, CollectionPage, ItemList |
-| /research/tag/rivn/ | 30 | 65 | 1247 | 25 | BreadcrumbList, CollectionPage, ItemList |
+| /research/tag/rivn/ | 30 | 65 | 1378 | 26 | BreadcrumbList, CollectionPage, ItemList |
 | /research/tag/rklb/ | 30 | 65 | 1221 | 25 | BreadcrumbList, CollectionPage, ItemList |
-| /research/tag/sats/ | 30 | 65 | 1247 | 25 | BreadcrumbList, CollectionPage, ItemList |
-| /research/tag/sofi/ | 30 | 65 | 1642 | 28 | BreadcrumbList, CollectionPage, ItemList |
-| /research/tag/soun/ | 30 | 65 | 1381 | 26 | BreadcrumbList, CollectionPage, ItemList |
-| /research/tag/spir/ | 30 | 65 | 1247 | 25 | BreadcrumbList, CollectionPage, ItemList |
+| /research/tag/sats/ | 30 | 65 | 1378 | 26 | BreadcrumbList, CollectionPage, ItemList |
+| /research/tag/sofi/ | 30 | 65 | 1773 | 29 | BreadcrumbList, CollectionPage, ItemList |
+| /research/tag/soun/ | 30 | 65 | 1512 | 27 | BreadcrumbList, CollectionPage, ItemList |
+| /research/tag/spir/ | 30 | 65 | 1378 | 26 | BreadcrumbList, CollectionPage, ItemList |
 | /research/tag/tsla/ | 30 | 65 | 1222 | 25 | BreadcrumbList, CollectionPage, ItemList |
 | /research/tag/xndu/ | 30 | 65 | 1230 | 25 | BreadcrumbList, CollectionPage, ItemList |
 
