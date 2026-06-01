@@ -18,29 +18,23 @@ tabs.forEach((tab) => {
 const canvas = document.getElementById("performanceChart");
 const fallbackPerformance = {
   startCapitalJpy: 1000000,
-  generatedAtDisplay: "2026.05.30 05:00:58 JST",
+  generatedAtDisplay: "2026.06.02 05:01:04 JST",
   latest: {
-    reportDateDisplay: "2026.05.29 EST",
-    label: "5/29",
-    jpy: { start: 1103506.27, end: 1124014.05, delta: 20507.78 },
-    usd: { start: 6928.29, end: 7057.62, delta: 129.3269 },
+    reportDateDisplay: "2026.06.01 EST",
+    label: "6/1",
+    jpy: { start: 1124796.18, end: 1078726.75, delta: -46069.44 },
+    usd: { start: 7053.36, end: 6754.98, delta: -298.3819 },
     summary: {
-      totalTrades: 152,
-      totalBuyUsd: 23763.39,
-      totalSellUsd: 23799.32,
-      totalPnlJpy: 124014.05,
-      totalReturnPct: 12.4,
-      dailyReturnPct: 1.86,
+      totalTrades: 35,
+      totalBuyUsd: 18305.72,
+      totalSellUsd: 22594.92,
+      totalPnlJpy: 78726.75,
+      totalReturnPct: 7.87,
+      dailyReturnPct: -4.1,
     },
     positions: [
-      { symbol: "US.SPIR", shares: 93 },
-      { symbol: "US.SOUN", shares: 3 },
-      { symbol: "US.SOFI", shares: 2 },
-      { symbol: "US.SATS", shares: 8 },
-      { symbol: "US.RIVN", shares: 31 },
-      { symbol: "US.QBTS", shares: 3 },
-      { symbol: "US.GSAT", shares: 25 },
-      { symbol: "US.AMZN", shares: 4 },
+      { symbol: "US.QUBT", shares: 165 },
+      { symbol: "US.CRDO", shares: 4 },
     ],
   },
   history: [
@@ -57,6 +51,8 @@ const fallbackPerformance = {
     { label: "5/27", jpyEnd: 1085692.74 },
     { label: "5/28", jpyEnd: 1100567.07 },
     { label: "5/29", jpyEnd: 1124014.05 },
+    { label: "5/30", jpyEnd: 1124125.55 },
+    { label: "6/1", jpyEnd: 1078726.75 },
   ],
 };
 let performanceState = fallbackPerformance;
