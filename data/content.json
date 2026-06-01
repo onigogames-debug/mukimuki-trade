@@ -4,18 +4,18 @@
     "title": "MUKIMUKI trade",
     "description": "100万円からの株式投資実績、資産曲線、銘柄検討、相場メモを整理する投資ブログ。",
     "language": "ja",
-    "lastBuildDate": "2026-06-01T08:00:00+09:00"
+    "lastBuildDate": "2026-06-02T08:00:00+09:00"
   },
   "pages": [
     {
       "path": "/",
-      "lastmod": "2026-06-01",
+      "lastmod": "2026-06-02",
       "changefreq": "daily",
       "priority": "1.0"
     },
     {
       "path": "/performance/latest/",
-      "lastmod": "2026-06-01",
+      "lastmod": "2026-06-02",
       "changefreq": "daily",
       "priority": "0.9"
     },
@@ -33,21 +33,21 @@
     },
     {
       "path": "/archive/",
-      "lastmod": "2026-06-01",
+      "lastmod": "2026-06-02",
       "changefreq": "weekly",
       "priority": "0.6"
     },
     {
       "path": "/archive/2026-06/",
-      "lastmod": "2026-06-01",
+      "lastmod": "2026-06-02",
       "changefreq": "monthly",
       "priority": "0.6"
     },
     {
       "path": "/category/performance/",
-      "lastmod": "2026-06-01",
+      "lastmod": "2026-06-02",
       "changefreq": "weekly",
-      "priority": "0.7"
+      "priority": "0.6"
     },
     {
       "path": "/performance/2026-05-30-weekend-amzn-hold/",
@@ -180,9 +180,28 @@
       "lastmod": "2026-05-30",
       "changefreq": "monthly",
       "priority": "0.85"
+    },
+    {
+      "path": "/performance/2026/06/",
+      "lastmod": "2026-06-02",
+      "changefreq": "weekly",
+      "priority": "0.78"
+    },
+    {
+      "path": "/performance/2026-06-01-qbts-range/",
+      "lastmod": "2026-06-02",
+      "changefreq": "monthly",
+      "priority": "0.85"
     }
   ],
   "posts": [
+    {
+      "title": "6/1売買トピック: QBTSの値幅と損切り回転を確認",
+      "path": "/performance/2026-06-01-qbts-range/",
+      "description": "2026年6月1日ESTの売買トピック。評価額は107.9万円、前日比-46,069円。約定35件とQBTSの値幅、翌日に見る水準を整理。",
+      "pubDate": "2026-06-02T08:00:00+09:00",
+      "category": "実績公開"
+    },
     {
       "title": "5/31週末メモ: 売買なし、AMZNの取得位置を再確認",
       "path": "/performance/2026-05-31-weekend-amzn-risk-check/",
