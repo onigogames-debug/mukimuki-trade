@@ -391,6 +391,97 @@ const renderMonthPagination = (currentKey, reports) => {
       </nav>`;
 };
 
+const countValues = (values = []) => {
+  const counts = new Map();
+  for (const value of values) {
+    if (!value) continue;
+    counts.set(value, (counts.get(value) || 0) + 1);
+  }
+  return counts;
+};
+
+const topCountEntries = (counts, limit = 6) => [...counts.entries()]
+  .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+  .slice(0, limit);
+
+const buildMonthInsights = (monthReports) => {
+  if (!monthReports.length) return null;
+  const sorted = [...monthReports].sort((a, b) => a.report.latest.reportDate.localeCompare(b.report.latest.reportDate));
+  const first = sorted[0].report.latest;
+  const last = sorted.at(-1).report.latest;
+  const dayRows = sorted.map(({ report }) => report.latest);
+  const bestDay = [...dayRows].sort((a, b) => b.jpy.delta - a.jpy.delta)[0];
+  const worstDay = [...dayRows].sort((a, b) => a.jpy.delta - b.jpy.delta)[0];
+  const totalTrades = dayRows.reduce((sum, latest) => sum + Number(latest.summary.totalTrades || 0), 0);
+  const winningDays = dayRows.filter((latest) => Number(latest.jpy.delta || 0) >= 0).length;
+  const monthStart = Number(first.jpy.start || first.jpy.end || 0);
+  const monthEnd = Number(last.jpy.end || 0);
+  const monthDelta = monthEnd - monthStart;
+  const monthReturnPct = monthStart ? (monthDelta / monthStart) * 100 : 0;
+  const tradeTickers = dayRows.flatMap((latest) => (latest.trades || []).map((trade) => shortSymbol(trade.symbol)));
+  const holdingTickers = dayRows.flatMap((latest) => (latest.positions || []).map((position) => shortSymbol(position.symbol)));
+  const activeTickers = topCountEntries(countValues([...tradeTickers, ...holdingTickers]), 8);
+  const latestHoldings = allSymbols(last.positions, 6);
+
+  return {
+    bestDay,
+    worstDay,
+    totalTrades,
+    winningDays,
+    monthStart,
+    monthEnd,
+    monthDelta,
+    monthReturnPct,
+    activeTickers,
+    latestHoldings,
+    dayCount: dayRows.length,
+  };
+};
+
+const renderMonthInsights = (monthReports, label) => {
+  const insights = buildMonthInsights(monthReports);
+  if (!insights) return '';
+  const activeTickerText = insights.activeTickers.length
+    ? insights.activeTickers.map(([ticker, count]) => `${ticker}(${count})`).join(' / ')
+    : '主要銘柄は日次レポートの追加にあわせて更新されます。';
+  const latestHoldingsText = insights.latestHoldings.length ? insights.latestHoldings.join(' / ') : '-';
+  const bestDayText = `${displayDate(insights.bestDay.reportDate)} ${insights.bestDay.jpy.delta >= 0 ? '+' : ''}${formatJpy(insights.bestDay.jpy.delta)}`;
+  const worstDayText = `${displayDate(insights.worstDay.reportDate)} ${insights.worstDay.jpy.delta >= 0 ? '+' : ''}${formatJpy(insights.worstDay.jpy.delta)}`;
+
+  return `      <section class="article-panel">
+        <h2>${escapeHtml(label)}の運用概況</h2>
+${renderStampRow([['月間損益を確認', 'blue'], ['主要銘柄を把握', 'yellow']])}
+        <div class="stats-grid">
+          <div class="stat-card"><span>月初評価額</span><strong>${escapeHtml(formatJpy(insights.monthStart))}</strong></div>
+          <div class="stat-card"><span>月末評価額</span><strong>${escapeHtml(formatJpy(insights.monthEnd))}</strong></div>
+          <div class="stat-card"><span>月間変化</span><strong>${insights.monthDelta >= 0 ? '+' : ''}${escapeHtml(formatJpy(insights.monthDelta))}</strong></div>
+          <div class="stat-card"><span>月間リターン</span><strong>${insights.monthReturnPct >= 0 ? '+' : ''}${insights.monthReturnPct.toFixed(2)}%</strong></div>
+          <div class="stat-card"><span>記録日数</span><strong>${escapeHtml(insights.dayCount)}日</strong></div>
+          <div class="stat-card"><span>総取引数</span><strong>${escapeHtml(insights.totalTrades)}件</strong></div>
+        </div>
+        <p>${escapeHtml(label)}は、${escapeHtml(insights.dayCount)}日分の実績をもとに月間変化、取引数、主要銘柄を整理しています。日別の勝ち負けだけでなく、どの日に評価額が動き、どの銘柄が繰り返し出ているかを確認します。</p>
+        <div class="fact-grid">
+          <div class="fact-card">
+            <h3>上昇日と調整日</h3>
+            <p>プラス日: ${escapeHtml(insights.winningDays)}日 / 最良日: <a href="${escapeHtml(datePath(insights.bestDay.reportDate))}">${escapeHtml(bestDayText)}</a> / 最大調整: <a href="${escapeHtml(datePath(insights.worstDay.reportDate))}">${escapeHtml(worstDayText)}</a></p>
+          </div>
+          <div class="fact-card">
+            <h3>主要銘柄</h3>
+            <p>${escapeHtml(activeTickerText)}</p>
+          </div>
+          <div class="fact-card">
+            <h3>月末時点の保有</h3>
+            <p>${escapeHtml(latestHoldingsText)}</p>
+          </div>
+        </div>
+      </section>`;
+};
+
+const renderMonthSearchConsoleChecklist = (pagePath) => `      <section class="article-panel">
+        <h2>検索流入の確認メモ</h2>
+        <p>この月次まとめは、日次実績と売買トピックへの内部リンクを集約するページです。Search Consoleでは、<code>${escapeHtml(pagePath)}</code> のインデックス登録、日次ページへの内部リンク認識、旧売買トピックURLの301反映を確認します。</p>
+      </section>`;
+
 const renderMonthPage = (date, reports) => {
   const { year, month } = dateParts(date);
   const monthKey = `${year}-${month}`;
@@ -448,6 +539,7 @@ ${renderStampRow([['月次で比較', 'blue'], ['日別に深掘り', 'yellow']]
       </div>
     </section>
     <section class="article-body">
+${renderMonthInsights(monthReports, `${year}年${Number(month)}月`)}
       <section class="article-panel">
         <h2>月間サマリー表</h2>
         ${renderMonthSummaryTable(monthReports)}
@@ -472,6 +564,7 @@ ${[...monthReports].reverse().map(({ report }) => `      <article class="collect
         <h2>関連して確認するページ</h2>
         <p>実績の背景を読む場合は<a href="/category/performance/">売買トピック</a>、判断基準を読む場合は<a href="/logic/">投資ロジック</a>、候補銘柄の見方を読む場合は<a href="/research/">銘柄検討</a>が入口になります。数字、理由、候補を分けて読むことで、公開実績を追いやすくしています。</p>
       </section>
+${renderMonthSearchConsoleChecklist(pagePath)}
     </section>
   </main>
 ${footer}

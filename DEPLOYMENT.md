@@ -13,7 +13,7 @@ Last updated: 2026-06-02
 - Account: `onigo.games@gmail.com`
 - Project: `mukimuki-trade`
 - Production URL: https://mukimuki-trade.pages.dev
-- Latest deployment URL: https://300ee575.mukimuki-trade.pages.dev
+- Latest deployment URL: https://41c73d4a.mukimuki-trade.pages.dev
 - Deployment method: Wrangler direct upload
 
 ## Custom Domains
@@ -72,6 +72,9 @@ No domain action remains. Both apex and `www` custom domains return `HTTP/2 200`
 - Performance redirect: `/performance/` returns `301` to `/performance/latest/`, while `/performance/latest/` canonical points to the latest fixed daily URL
 - Internal link generator: `scripts/internal-links.mjs` suggests up to 3 related articles from category, tags, body text, and ticker symbols
 - Breadcrumb component: `scripts/breadcrumbs.mjs` renders HTML breadcrumbs and `BreadcrumbList` JSON-LD from hierarchical URLs
+- Ticker hub pages: `/research/tag/{ticker}/` aggregate related research, trade topics, daily performance pages, and related themes
+- Monthly archive insights: `/performance/YYYY/MM/` automatically summarizes monthly asset change, total trades, best/worst days, active tickers, and latest holdings
+- Search Console checklist: `docs/search-console-checklist.md` lists URL inspection, sitemap, rich result, and crawl checks after SEO deployment
 - Keyword map: `docs/keyword-map.md` stores category keyword targets, intent, difficulty, and insertion locations
 - Daily performance SEO template: title, meta description, H1, H2 structure, intro copy, and FAQPage schema are generated from performance JSON
 - Public performance dataset: `/datasets/performance-latest.json` and date-stamped JSON files

@@ -378,6 +378,77 @@ const tickerArchiveArticles = () => {
     .sort(([a], [b]) => a.localeCompare(b));
 };
 
+const categoryLabel = (article) => {
+  if (article.categoryKey === 'performance' && /^\/performance\/\d{4}\/\d{2}\/\d{2}\/$/.test(article.path || '')) return '日次実績';
+  if (article.categoryKey === 'performance') return '売買トピック';
+  if (article.categoryKey === 'research') return '銘柄検討';
+  if (article.categoryKey === 'logic') return '投資ロジック';
+  return article.category || '関連記事';
+};
+
+const countBy = (items, getKey) => {
+  const counts = new Map();
+  for (const item of items) {
+    const key = getKey(item);
+    if (!key) continue;
+    counts.set(key, (counts.get(key) || 0) + 1);
+  }
+  return counts;
+};
+
+const topEntries = (counts, limit = 5) => [...counts.entries()]
+  .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+  .slice(0, limit);
+
+const renderTickerHubSummary = (ticker, sortedArticles) => {
+  const typeCounts = countBy(sortedArticles, categoryLabel);
+  const dailyArticles = sortedArticles.filter((article) => /^\/performance\/\d{4}\/\d{2}\/\d{2}\/$/.test(article.path || ''));
+  const topicArticles = sortedArticles.filter((article) => article.categoryKey === 'performance' && !dailyArticles.includes(article));
+  const researchArticles = sortedArticles.filter((article) => article.categoryKey === 'research');
+  const latestArticle = sortedArticles[0];
+  const relatedTags = topEntries(countBy(sortedArticles.flatMap((article) => article.tags || []), (tag) => (
+    String(tag).toUpperCase() === ticker ? '' : tag
+  )), 6).map(([tag]) => tag);
+
+  return `    <section class="article-body ticker-hub" aria-label="${escapeHtml(ticker)}の銘柄ハブ">
+      <section class="article-panel">
+        <h2>${escapeHtml(ticker)}の記録サマリー</h2>
+${renderStampRow([['銘柄別ハブ', 'blue'], ['実績と候補を接続', 'yellow']])}
+        <div class="stats-grid">
+          <div class="stat-card"><span>関連ページ</span><strong>${escapeHtml(sortedArticles.length)}件</strong></div>
+          <div class="stat-card"><span>日次実績</span><strong>${escapeHtml(dailyArticles.length)}件</strong></div>
+          <div class="stat-card"><span>売買トピック</span><strong>${escapeHtml(topicArticles.length)}件</strong></div>
+          <div class="stat-card"><span>銘柄検討</span><strong>${escapeHtml(researchArticles.length)}件</strong></div>
+        </div>
+        <p>${escapeHtml(ticker)}に関する実績公開、売買トピック、銘柄検討を同じページに集約しています。新しい記事から順に読み、実際の保有や売買が出た日を日次実績で確認できます。</p>
+        <p>直近の関連記録は${latestArticle ? `<a href="${escapeHtml(latestArticle.path)}">${escapeHtml(latestArticle.title)}</a>` : 'まだありません'}です。銘柄テーマだけでなく、評価額、取引件数、持ち越し状況と合わせて見ることで、運用上の扱いを確認しやすくしています。</p>
+      </section>
+      <section class="article-panel">
+        <h2>${escapeHtml(ticker)}の日次実績で出た日</h2>
+        ${dailyArticles.length ? `<div class="link-grid">
+${dailyArticles.slice(0, 6).map((article) => `          <a class="link-card" href="${escapeHtml(article.path)}"><span>${escapeHtml(displayArchiveDate(article.date))}</span><strong>${escapeHtml(article.title)}</strong><p>${escapeHtml(article.description || article.summary || '')}</p></a>`).join('\n')}
+        </div>` : `<p>${escapeHtml(ticker)}が日次実績に出た記録はまだ少ないため、売買トピックと銘柄検討を中心に確認してください。</p>`}
+      </section>
+      <section class="article-panel">
+        <h2>関連テーマと読み順</h2>
+        <div class="fact-grid">
+          <div class="fact-card">
+            <h3>ページ種別</h3>
+            <p>${topEntries(typeCounts, 4).map(([label, count]) => `${label}: ${count}件`).join(' / ')}</p>
+          </div>
+          <div class="fact-card">
+            <h3>関連テーマ</h3>
+            <p>${relatedTags.length ? relatedTags.map(escapeHtml).join(' / ') : '関連テーマは記事追加にあわせて更新されます。'}</p>
+          </div>
+          <div class="fact-card">
+            <h3>確認順</h3>
+            <p>銘柄検討で候補理由を読み、売買トピックで判断背景を確認し、日次実績で評価額と取引件数を見ます。</p>
+          </div>
+        </div>
+      </section>
+    </section>`;
+};
+
 const renderTickerArchivePage = (ticker, tickerArticles) => {
   const archivePath = `/research/tag/${ticker.toLowerCase()}/`;
   const title = `${ticker}の銘柄検討記事一覧`;
@@ -446,6 +517,8 @@ ${[ticker, ...(article.tags || []).filter((tag) => tag !== ticker).slice(0, 3)].
         </div>
       </article>`).join('\n')}
     </section>
+
+${renderTickerHubSummary(ticker, sortedArticles)}
 
     <section class="article-body">
       <section class="article-panel">
