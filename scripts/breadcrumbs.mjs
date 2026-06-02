@@ -10,6 +10,7 @@ const staticLabels = new Map([
   ['category', 'カテゴリ'],
   ['profile', '運営者プロフィール'],
   ['about', '免責事項'],
+  ['topics', '売買トピック'],
 ]);
 
 const monthLabel = (value) => `${Number(value)}月`;

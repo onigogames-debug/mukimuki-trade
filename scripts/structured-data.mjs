@@ -235,6 +235,7 @@ export const breadcrumbLabelForSegment = (segment, { previous, next } = {}) => {
   if (segment === 'about') return '免責事項';
   if (segment === 'moomoo') return 'moomoo証券';
   if (segment === 'latest') return '最新実績';
+  if (segment === 'topics') return '売買トピック';
   if (/^\d{4}$/.test(segment)) return `${segment}年`;
   if (/^\d{2}$/.test(segment) && /^\d{4}$/.test(previous || '')) return `${Number(segment)}月`;
   if (/^\d{2}$/.test(segment) && /^\d{2}$/.test(previous || '')) return `${Number(previous)}月${Number(segment)}日`;

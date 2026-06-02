@@ -140,8 +140,33 @@ export const suggestRelatedArticles = (current, index, { max = 3 } = {}) => {
     .slice(0, max);
 };
 
+export const suggestRelatedArticlesByTicker = (current, index, { max = 3 } = {}) => {
+  const source = tokenize(current);
+  const sourceTickers = source.tickers || [];
+  if (!sourceTickers.length) return [];
+
+  return index
+    .filter((candidate) => candidate.path && candidate.path !== source.path)
+    .map((candidate) => {
+      const matchedTickers = (candidate.tickers || []).filter((ticker) => sourceTickers.includes(ticker));
+      return {
+        ...candidate,
+        matchedTickers,
+        url: candidate.url || candidate.path,
+        date: displayDate(candidate.date || candidate.published || candidate.pubDate || ''),
+      };
+    })
+    .filter((candidate) => candidate.matchedTickers.length)
+    .sort((a, b) => (
+      b.matchedTickers.length - a.matchedTickers.length
+      || String(b.date || '').localeCompare(String(a.date || ''))
+      || a.path.localeCompare(b.path)
+    ))
+    .slice(0, max);
+};
+
 export const getRelatedArticleSummaries = (current, allArticles, { max = 3 } = {}) => (
-  suggestRelatedArticles(current, allArticles, { max }).map((article) => ({
+  suggestRelatedArticlesByTicker(current, allArticles, { max }).map((article) => ({
     title: article.title,
     url: article.url || article.path,
     date: displayDate(article.date || ''),
@@ -150,7 +175,7 @@ export const getRelatedArticleSummaries = (current, allArticles, { max = 3 } = {
 
 export const renderRelatedArticlesSection = (current, index, { escapeHtml, max = 3 } = {}) => {
   const escape = escapeHtml || ((value) => String(value ?? ''));
-  const related = suggestRelatedArticles(current, index, { max });
+  const related = suggestRelatedArticlesByTicker(current, index, { max });
   if (!related.length) return '';
 
   return `      <section class="article-panel related-articles" aria-labelledby="related-articles-title">

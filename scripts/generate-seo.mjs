@@ -61,6 +61,7 @@ const walkHtmlPages = async (dir = root) => {
 const inferChangefreq = (pagePath) => {
   if (pagePath === '/' || pagePath === '/performance/latest/') return 'daily';
   if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/$/.test(pagePath)) return 'weekly';
+  if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/topics\/[^/]+\/$/.test(pagePath)) return 'weekly';
   if (/^\/performance\/\d{4}\/\d{2}\/$/.test(pagePath)) return 'monthly';
   if (/^\/performance\/\d{4}\/$/.test(pagePath)) return 'yearly';
   if (pagePath.startsWith('/research/')) return 'weekly';
@@ -76,6 +77,7 @@ const inferPriority = (pagePath) => {
   if (pagePath === '/') return '1.0';
   if (pagePath === '/performance/latest/') return '0.1';
   if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/$/.test(pagePath)) return '0.9';
+  if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/topics\/[^/]+\/$/.test(pagePath)) return '0.8';
   if (/^\/performance\/\d{4}\/\d{2}\/$/.test(pagePath)) return '0.7';
   if (/^\/performance\/\d{4}\/$/.test(pagePath)) return '0.6';
   if (pagePath.startsWith('/research/')) return '0.7';
@@ -100,6 +102,8 @@ const htmlMeta = (html, name) => {
 
 const toDateOrNull = (value) => {
   if (!value) return null;
+  const datePart = String(value).match(/^\d{4}-\d{2}-\d{2}/)?.[0];
+  if (datePart) return datePart;
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return String(value).slice(0, 10);
   return date.toISOString().slice(0, 10);
@@ -232,23 +236,11 @@ await writeFile(path.join(root, 'image-sitemap.xml'), imageSitemap);
 await writeFile(path.join(root, 'feed.xml'), feed);
 
 const robots = `User-agent: *
-Allow: /
+Disallow: /datasets/
 Allow: /assets/
 Allow: /feed.xml
-Disallow: /data/
-Disallow: /scripts/
-Disallow: /datasets/
-Disallow: /_site/
-Disallow: /*?*
-
-User-agent: AhrefsBot
-Crawl-delay: 10
-
-User-agent: SemrushBot
-Crawl-delay: 10
 
 Sitemap: ${content.site.url}/sitemap.xml
-Sitemap: ${content.site.url}/image-sitemap.xml
 `;
 
 await writeFile(path.join(root, 'robots.txt'), robots);

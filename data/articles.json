@@ -1,7 +1,7 @@
 {
   "articles": [
     {
-      "path": "/performance/2026-06-01-qbts-range/",
+      "path": "/performance/2026/06/01/topics/qbts-range/",
       "categoryKey": "performance",
       "category": "実績公開",
       "categoryUrl": "/category/performance/",
@@ -91,10 +91,11 @@
           "label": "Business Wire: D-Wave Q1 2026 results and Investor Day notice",
           "url": "https://www.businesswire.com/news/home/20260512684377/en/D-Wave-Reports-First-Quarter-2026-Results"
         }
-      ]
+      ],
+      "redirectFrom": "/performance/2026-06-01-qbts-range/"
     },
     {
-      "path": "/performance/2026-05-31-weekend-amzn-risk-check/",
+      "path": "/performance/2026/05/31/topics/weekend-amzn-risk-check/",
       "categoryKey": "performance",
       "category": "実績公開",
       "categoryUrl": "/category/performance/",
@@ -184,10 +185,11 @@
           "label": "AP News: US stock indexes, May 29 2026 market close",
           "url": "https://apnews.com/article/82c0b13a9b0bec79cc907cc122cac328"
         }
-      ]
+      ],
+      "redirectFrom": "/performance/2026-05-31-weekend-amzn-risk-check/"
     },
     {
-      "path": "/performance/2026-05-30-weekend-amzn-hold/",
+      "path": "/performance/2026/05/30/topics/weekend-amzn-hold/",
       "categoryKey": "performance",
       "category": "実績公開",
       "categoryUrl": "/category/performance/",
@@ -277,10 +279,11 @@
           "label": "Amazon.com: Q1 2026 earnings release",
           "url": "https://s2.q4cdn.com/299287126/files/doc_earnings/2026/q1/earnings-result/AMZN-Q1-2026-Earnings-Release.pdf"
         }
-      ]
+      ],
+      "redirectFrom": "/performance/2026-05-30-weekend-amzn-hold/"
     },
     {
-      "path": "/performance/2026-05-29-bksy-range/",
+      "path": "/performance/2026/05/29/topics/bksy-range/",
       "categoryKey": "performance",
       "category": "実績公開",
       "categoryUrl": "/category/performance/",
@@ -370,10 +373,11 @@
           "label": "BlackSky: Q1 2026 results and outlook",
           "url": "https://blacksky.com/press-releases/blacksky-reports-first-quarter-2026-results/"
         }
-      ]
+      ],
+      "redirectFrom": "/performance/2026-05-29-bksy-range/"
     },
     {
-      "path": "/performance/2026-05-28-asts-rotation/",
+      "path": "/performance/2026/05/28/topics/asts-rotation/",
       "categoryKey": "performance",
       "category": "実績公開",
       "categoryUrl": "/category/performance/",
@@ -454,10 +458,11 @@
           "label": "StocksToTrade: ASTS carrier JV and ETF momentum note",
           "url": "https://stockstotrade.com/news/ast-spacemobile-inc-asts-news-2026_05_27/"
         }
-      ]
+      ],
+      "redirectFrom": "/performance/2026-05-28-asts-rotation/"
     },
     {
-      "path": "/performance/2026-05-27-xndu-rebuild/",
+      "path": "/performance/2026/05/27/topics/xndu-rebuild/",
       "categoryKey": "performance",
       "category": "実績公開",
       "categoryUrl": "/category/performance/",
@@ -521,7 +526,8 @@
             "数字を見る時は、単日のプラスだけで判断せず、取引回数、持ち越し銘柄、翌日の資産曲線への影響をセットで確認します。"
           ]
         }
-      ]
+      ],
+      "redirectFrom": "/performance/2026-05-27-xndu-rebuild/"
     },
     {
       "path": "/research/ai-infrastructure/",

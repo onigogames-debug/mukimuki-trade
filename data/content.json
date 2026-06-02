@@ -26,10 +26,11 @@
       "priority": "0.78"
     },
     {
-      "path": "/performance/2026-05-31-weekend-amzn-risk-check/",
+      "path": "/performance/2026/05/31/topics/weekend-amzn-risk-check/",
       "lastmod": "2026-06-01",
       "changefreq": "monthly",
-      "priority": "0.85"
+      "priority": "0.85",
+      "redirectFrom": "/performance/2026-05-31-weekend-amzn-risk-check/"
     },
     {
       "path": "/archive/",
@@ -50,10 +51,11 @@
       "priority": "0.6"
     },
     {
-      "path": "/performance/2026-05-30-weekend-amzn-hold/",
+      "path": "/performance/2026/05/30/topics/weekend-amzn-hold/",
       "lastmod": "2026-05-31",
       "changefreq": "monthly",
-      "priority": "0.85"
+      "priority": "0.85",
+      "redirectFrom": "/performance/2026-05-30-weekend-amzn-hold/"
     },
     {
       "path": "/performance/2026/05/26/",
@@ -74,16 +76,18 @@
       "priority": "0.88"
     },
     {
-      "path": "/performance/2026-05-28-asts-rotation/",
+      "path": "/performance/2026/05/28/topics/asts-rotation/",
       "lastmod": "2026-05-29",
       "changefreq": "monthly",
-      "priority": "0.85"
+      "priority": "0.85",
+      "redirectFrom": "/performance/2026-05-28-asts-rotation/"
     },
     {
-      "path": "/performance/2026-05-27-xndu-rebuild/",
+      "path": "/performance/2026/05/27/topics/xndu-rebuild/",
       "lastmod": "2026-05-28",
       "changefreq": "monthly",
-      "priority": "0.85"
+      "priority": "0.85",
+      "redirectFrom": "/performance/2026-05-27-xndu-rebuild/"
     },
     {
       "path": "/research/",
@@ -176,10 +180,11 @@
       "priority": "0.89"
     },
     {
-      "path": "/performance/2026-05-29-bksy-range/",
+      "path": "/performance/2026/05/29/topics/bksy-range/",
       "lastmod": "2026-05-30",
       "changefreq": "monthly",
-      "priority": "0.85"
+      "priority": "0.85",
+      "redirectFrom": "/performance/2026-05-29-bksy-range/"
     },
     {
       "path": "/performance/2026/06/",
@@ -188,33 +193,37 @@
       "priority": "0.78"
     },
     {
-      "path": "/performance/2026-06-01-qbts-range/",
+      "path": "/performance/2026/06/01/topics/qbts-range/",
       "lastmod": "2026-06-02",
       "changefreq": "monthly",
-      "priority": "0.85"
+      "priority": "0.85",
+      "redirectFrom": "/performance/2026-06-01-qbts-range/"
     }
   ],
   "posts": [
     {
       "title": "6/1売買トピック: QBTSの値幅と損切り回転を確認",
-      "path": "/performance/2026-06-01-qbts-range/",
+      "path": "/performance/2026/06/01/topics/qbts-range/",
       "description": "2026年6月1日ESTの売買トピック。評価額は107.9万円、前日比-46,069円。約定35件とQBTSの値幅、翌日に見る水準を整理。",
       "pubDate": "2026-06-02T08:00:00+09:00",
-      "category": "実績公開"
+      "category": "実績公開",
+      "redirectFrom": "/performance/2026-06-01-qbts-range/"
     },
     {
       "title": "5/31週末メモ: 売買なし、AMZNの取得位置を再確認",
-      "path": "/performance/2026-05-31-weekend-amzn-risk-check/",
+      "path": "/performance/2026/05/31/topics/weekend-amzn-risk-check/",
       "description": "2026年6月1日JST朝時点で新規日次レポートはなく、5/29引け後保有を基準にAMZNの取得位置と翌営業日の確認点を整理。",
       "pubDate": "2026-06-01T08:00:00+09:00",
-      "category": "実績公開"
+      "category": "実績公開",
+      "redirectFrom": "/performance/2026-05-31-weekend-amzn-risk-check/"
     },
     {
       "title": "5/30週末メモ: 売買なし、AMZNの含み損を点検",
-      "path": "/performance/2026-05-30-weekend-amzn-hold/",
+      "path": "/performance/2026/05/30/topics/weekend-amzn-hold/",
       "description": "2026年5月30日JST朝以降に新規日次レポートはなく、5/29引け後保有を基準にAMZNの評価損益と翌営業日の確認点を整理。",
       "pubDate": "2026-05-31T08:00:00+09:00",
-      "category": "実績公開"
+      "category": "実績公開",
+      "redirectFrom": "/performance/2026-05-30-weekend-amzn-hold/"
     },
     {
       "title": "5/29実績レポート: 100万円比 +12.4%の読み方",
@@ -225,10 +234,11 @@
     },
     {
       "title": "5/29売買トピック: BKSYの値幅を横目にSPIRを持ち越し",
-      "path": "/performance/2026-05-29-bksy-range/",
+      "path": "/performance/2026/05/29/topics/bksy-range/",
       "description": "2026年5月29日ESTの売買トピック。100万円チャレンジは評価額112.4万円、前日比+20,508円。CSV約定152件とBKSYの値動きを整理。",
       "pubDate": "2026-05-30T08:00:00+09:00",
-      "category": "実績公開"
+      "category": "実績公開",
+      "redirectFrom": "/performance/2026-05-29-bksy-range/"
     },
     {
       "title": "5/28実績レポート: 100万円比 +10.1%の読み方",
@@ -239,17 +249,19 @@
     },
     {
       "title": "5/28売買トピック: ASTSを利確し、SOUNとSOFIを持ち越し",
-      "path": "/performance/2026-05-28-asts-rotation/",
+      "path": "/performance/2026/05/28/topics/asts-rotation/",
       "description": "2026年5月28日ESTの売買トピック。100万円チャレンジは評価額110.1万円、前日比+14,385円。ASTSの値動きとSOUN・SOFIなどの持ち越しを整理。",
       "pubDate": "2026-05-29T08:00:00+09:00",
-      "category": "実績公開"
+      "category": "実績公開",
+      "redirectFrom": "/performance/2026-05-28-asts-rotation/"
     },
     {
       "title": "5/27売買トピック: XNDUを組み直し、METAとALABを持ち越し",
-      "path": "/performance/2026-05-27-xndu-rebuild/",
+      "path": "/performance/2026/05/27/topics/xndu-rebuild/",
       "description": "2026年5月27日ESTの売買トピック。100万円チャレンジは評価額108.6万円、前日比+56,293円。XNDUの組み直しとMETA・ALABの持ち越しを整理。",
       "pubDate": "2026-05-28T08:00:00+09:00",
-      "category": "実績公開"
+      "category": "実績公開",
+      "redirectFrom": "/performance/2026-05-27-xndu-rebuild/"
     },
     {
       "title": "AIインフラ銘柄の候補整理",

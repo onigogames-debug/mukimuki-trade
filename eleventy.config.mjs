@@ -20,6 +20,12 @@ function tickerArchivePlugin(eleventyConfig) {
       items,
     }));
   });
+
+  eleventyConfig.addCollection('tradeTopics', (collectionApi) => (
+    collectionApi.getAll()
+      .filter((item) => /^\/performance\/\d{4}\/\d{2}\/\d{2}\/topics\/[^/]+\/$/.test(item.url || item.data?.page?.url || ''))
+      .sort((a, b) => String(b.data?.date || b.date || '').localeCompare(String(a.data?.date || a.date || '')))
+  ));
 }
 
 export default function configureEleventy(eleventyConfig) {

@@ -135,6 +135,10 @@ const displayArchiveDate = (value = '') => {
 
 const articleFaq = (article) => article.faq || article.faqs || defaultResearchFaq(article);
 
+const topicRedirects = articles
+  .filter((article) => article.redirectFrom && article.redirectFrom !== article.path)
+  .map((article) => [article.redirectFrom, article.path]);
+
 const schemaPageTypeForArticle = (article) => {
   if (article.categoryKey === 'performance') return 'trade-topic';
   if (article.categoryKey === 'research') return 'research';
@@ -246,6 +250,24 @@ ${footer}
 </body>
 </html>
 `;
+};
+
+const updateTopicRedirects = async () => {
+  const redirectsPath = path.join(root, '_redirects');
+  const current = await readFile(redirectsPath, 'utf8');
+  const oldRedirects = new Set(topicRedirects.map(([from]) => from));
+  const lines = current
+    .split('\n')
+    .filter((line) => {
+      const route = line.trim().split(/\s+/)[0];
+      return line.trim() && !oldRedirects.has(route);
+    });
+
+  for (const [from, to] of topicRedirects) {
+    lines.push(`${from} ${to} 301`);
+  }
+
+  await writeFile(redirectsPath, `${lines.join('\n')}\n`);
 };
 
 const buildCollectionPage = (categoryKey) => {
@@ -447,10 +469,15 @@ ${footer}
 };
 
 for (const article of articles) {
+  if (article.redirectFrom && article.redirectFrom !== article.path) {
+    await rm(path.join(root, article.redirectFrom), { recursive: true, force: true });
+  }
   const outputDir = path.join(root, article.path);
   await mkdir(outputDir, { recursive: true });
   await writeFile(path.join(outputDir, 'index.html'), renderArticle(article));
 }
+
+await updateTopicRedirects();
 
 const logicDir = path.join(root, 'logic');
 await mkdir(logicDir, { recursive: true });

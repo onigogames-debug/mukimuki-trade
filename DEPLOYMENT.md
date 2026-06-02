@@ -13,7 +13,7 @@ Last updated: 2026-06-02
 - Account: `onigo.games@gmail.com`
 - Project: `mukimuki-trade`
 - Production URL: https://mukimuki-trade.pages.dev
-- Latest deployment URL: https://62438dc8.mukimuki-trade.pages.dev
+- Latest deployment URL: https://300ee575.mukimuki-trade.pages.dev
 - Deployment method: Wrangler direct upload
 
 ## Custom Domains
@@ -65,6 +65,9 @@ No domain action remains. Both apex and `www` custom domains return `HTTP/2 200`
 - JSON-LD generator: `scripts/structured-data.mjs` builds schema from YAML front matter and renders `<script type="application/ld+json">`
 - Performance page generator: `npm run performance:pages` creates `/performance/YYYY/MM/DD/`, `/performance/YYYY/MM/`, `/performance/YYYY/`, and `/performance/latest/` from date-stamped performance JSON
 - Latest performance SEO control: `/performance/latest/` returns `X-Robots-Tag: noindex`, has `<meta name="robots" content="noindex,follow">`, and canonical points to the latest fixed daily URL
+- Crawl directives: `robots.txt` disallows `/datasets/`, allows `/assets/` and `/feed.xml`, and points crawlers to `https://mukimuki-trade.com/sitemap.xml`
+- Sitemap priorities: `/` is `1.0/daily`, daily performance pages are `0.9/weekly`, trade topics are `0.8/weekly`, and `/performance/latest/` is excluded
+- Trade topic URLs: legacy `/performance/YYYY-MM-DD-slug/` paths now 301 to `/performance/YYYY/MM/DD/topics/slug/`
 - `_site` output for SSG workflows: `npm run performance:pages:site`
 - Performance redirect: `/performance/` returns `301` to `/performance/latest/`, while `/performance/latest/` canonical points to the latest fixed daily URL
 - Internal link generator: `scripts/internal-links.mjs` suggests up to 3 related articles from category, tags, body text, and ticker symbols
@@ -72,8 +75,8 @@ No domain action remains. Both apex and `www` custom domains return `HTTP/2 200`
 - Keyword map: `docs/keyword-map.md` stores category keyword targets, intent, difficulty, and insertion locations
 - Daily performance SEO template: title, meta description, H1, H2 structure, intro copy, and FAQPage schema are generated from performance JSON
 - Public performance dataset: `/datasets/performance-latest.json` and date-stamped JSON files
-- Daily update for 2026-05-27 EST: `/performance/` refreshed and `/performance/2026-05-27-xndu-rebuild/` added
-- Daily update for 2026-05-28 EST: `/performance/` refreshed and `/performance/2026-05-28-asts-rotation/` added
+- Daily update for 2026-05-27 EST: `/performance/` refreshed and `/performance/2026/05/27/topics/xndu-rebuild/` added
+- Daily update for 2026-05-28 EST: `/performance/` refreshed and `/performance/2026/05/28/topics/asts-rotation/` added
 - Initial content expansion: 3 stock research articles and 3 trade logic articles
 - Official X link: `https://x.com/OnigoGames`
 - Top page banners: Official X and moomoo affiliate introduction as first-view promo banners

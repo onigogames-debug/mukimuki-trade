@@ -1,6 +1,6 @@
 # SEO Progress Report
 
-Generated: 2026-06-02T05:38:47.871Z
+Generated: 2026-06-02T06:35:41.968Z
 
 ## 実装状況
 
@@ -45,31 +45,31 @@ Generated: 2026-06-02T05:38:47.871Z
 | /category/performance/ | 26 | 61 | 1921 | 31 | BreadcrumbList, CollectionPage, ItemList |
 | /category/research/ | 26 | 57 | 1049 | 24 | BreadcrumbList, CollectionPage, ItemList |
 | /logic/ | 28 | 62 | 1031 | 26 | BreadcrumbList, CollectionPage |
-| /logic/entry-risk/ | 49 | 52 | 1306 | 24 | Article, BreadcrumbList |
-| /logic/exit-review/ | 51 | 48 | 1309 | 24 | Article, BreadcrumbList |
-| /logic/signal-score/ | 50 | 57 | 1308 | 24 | Article, BreadcrumbList |
+| /logic/entry-risk/ | 49 | 52 | 1097 | 21 | Article, BreadcrumbList |
+| /logic/exit-review/ | 51 | 48 | 1097 | 21 | Article, BreadcrumbList |
+| /logic/signal-score/ | 50 | 57 | 1102 | 21 | Article, BreadcrumbList |
 | /moomoo/ | 48 | 66 | 1320 | 23 | Article, BreadcrumbList, FAQPage |
 | /performance/ | 45 | 70 | 1468 | 22 | Article, BreadcrumbList, FAQPage |
-| /performance/2026-05-27-xndu-rebuild/ | 53 | 83 | 2093 | 24 | Article, BreadcrumbList |
-| /performance/2026-05-28-asts-rotation/ | 52 | 84 | 2752 | 24 | Article, BreadcrumbList |
-| /performance/2026-05-29-bksy-range/ | 49 | 77 | 2886 | 24 | Article, BreadcrumbList |
-| /performance/2026-05-30-weekend-amzn-hold/ | 43 | 64 | 3028 | 24 | Article, BreadcrumbList |
-| /performance/2026-05-31-weekend-amzn-risk-check/ | 45 | 63 | 3154 | 24 | Article, BreadcrumbList |
-| /performance/2026-06-01-qbts-range/ | 44 | 69 | 3073 | 24 | Article, BreadcrumbList |
 | /performance/2026/ | 30 | 52 | 1023 | 21 | BreadcrumbList, CollectionPage |
 | /performance/2026/05/ | 41 | 62 | 1380 | 32 | BreadcrumbList, CollectionPage |
-| /performance/2026/05/26/ | 47 | 61 | 2177 | 32 | Article, BreadcrumbList, FAQPage |
-| /performance/2026/05/27/ | 52 | 66 | 2329 | 33 | Article, BreadcrumbList, FAQPage |
-| /performance/2026/05/28/ | 53 | 66 | 2537 | 33 | Article, BreadcrumbList, FAQPage |
+| /performance/2026/05/26/ | 47 | 61 | 2180 | 32 | Article, BreadcrumbList, FAQPage |
+| /performance/2026/05/27/ | 52 | 66 | 2332 | 33 | Article, BreadcrumbList, FAQPage |
+| /performance/2026/05/27/topics/xndu-rebuild/ | 53 | 83 | 2123 | 28 | Article, BreadcrumbList |
+| /performance/2026/05/28/ | 53 | 66 | 2578 | 33 | Article, BreadcrumbList, FAQPage |
+| /performance/2026/05/28/topics/asts-rotation/ | 52 | 84 | 2782 | 28 | Article, BreadcrumbList |
 | /performance/2026/05/29/ | 53 | 67 | 2524 | 33 | Article, BreadcrumbList, FAQPage |
+| /performance/2026/05/29/topics/bksy-range/ | 49 | 77 | 2916 | 28 | Article, BreadcrumbList |
+| /performance/2026/05/30/topics/weekend-amzn-hold/ | 43 | 64 | 3058 | 28 | Article, BreadcrumbList |
+| /performance/2026/05/31/topics/weekend-amzn-risk-check/ | 45 | 63 | 3149 | 28 | Article, BreadcrumbList |
 | /performance/2026/06/ | 41 | 62 | 926 | 26 | BreadcrumbList, CollectionPage |
-| /performance/2026/06/01/ | 47 | 61 | 2252 | 32 | Article, BreadcrumbList, FAQPage |
+| /performance/2026/06/01/ | 47 | 61 | 2257 | 32 | Article, BreadcrumbList, FAQPage |
+| /performance/2026/06/01/topics/qbts-range/ | 44 | 69 | 3102 | 28 | Article, BreadcrumbList |
 | /performance/latest/ (noindex) | 25 | 53 | 940 | 23 |  |
 | /profile/ | 26 | 75 | 1373 | 21 | BreadcrumbList, FAQPage, Person, ProfilePage |
 | /research/ | 25 | 59 | 1006 | 25 | Article, BreadcrumbList |
 | /research/ai-infrastructure/ | 47 | 47 | 1787 | 24 | Article, BreadcrumbList, FAQPage |
-| /research/app-software-fintech/ | 44 | 50 | 1815 | 24 | Article, BreadcrumbList, FAQPage |
-| /research/frontier-growth/ | 47 | 49 | 1732 | 24 | Article, BreadcrumbList, FAQPage |
+| /research/app-software-fintech/ | 44 | 50 | 1802 | 24 | Article, BreadcrumbList, FAQPage |
+| /research/frontier-growth/ | 47 | 49 | 1722 | 24 | Article, BreadcrumbList, FAQPage |
 | /research/tag/alab/ | 30 | 65 | 1287 | 25 | BreadcrumbList, CollectionPage |
 | /research/tag/amd/ | 29 | 64 | 954 | 23 | BreadcrumbList, CollectionPage |
 | /research/tag/ampx/ | 30 | 65 | 1126 | 24 | BreadcrumbList, CollectionPage |
