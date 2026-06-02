@@ -3,17 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>最新実績レポート | MUKIMUKI trade</title>
-  <meta name="description" content="MUKIMUKI tradeの最新実績ページ。評価額、100万円比、保有銘柄、売買件数を日次で整理します。">
-  <meta name="robots" content="noindex,follow">
+  <title>2026-06-02実績 +5.8%｜RDW・QUBT・OKLO保有 | MUKIMUKI trade</title>
+  <meta name="description" content="100万円米国株トレード実績。評価額¥1,057,568、前日比-¥2,978。RDW・QUBT・OKLOと54件の売買を確認。">
+  <meta name="robots" content="index,follow,max-image-preview:large">
   <link rel="canonical" href="https://mukimuki-trade.com/performance/2026/06/02/">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="MUKIMUKI trade">
-  <meta property="og:title" content="最新実績レポート | MUKIMUKI trade">
-  <meta property="og:description" content="MUKIMUKI tradeの最新実績ページ。評価額、100万円比、保有銘柄、売買件数を日次で整理します。">
-  <meta property="og:url" content="https://mukimuki-trade.com/performance/latest/">
+  <meta property="og:title" content="2026-06-02実績 +5.8%｜RDW・QUBT・OKLO保有 | MUKIMUKI trade">
+  <meta property="og:description" content="100万円米国株トレード実績。評価額¥1,057,568、前日比-¥2,978。RDW・QUBT・OKLOと54件の売買を確認。">
+  <meta property="og:url" content="https://mukimuki-trade.com/performance/2026/06/02/">
   <meta property="og:image" content="https://mukimuki-trade.com/assets/mukimuki-performance.png">
+  <meta property="article:published_time" content="2026-06-03T05:00:38+09:00">
+  <meta property="article:modified_time" content="2026-06-03T05:00:38+09:00">
+  <meta property="article:section" content="実績公開">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="alternate" type="application/rss+xml" title="MUKIMUKI trade RSS" href="/feed.xml">
   <style data-critical-css>
@@ -21,26 +24,118 @@
   </style>
   <link rel="preload" as="style" href="/assets/main.css" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/assets/main.css"></noscript>
-  <script>
-    // Google Search Consoleで「重複URL」警告が出た場合:
-    // 1. /performance/latest/ が noindex,follow になっていることをURL検査で確認する。
-    // 2. canonical が最新の日付固定URLを指していることを確認する。
-    // 3. 正規の日付固定URLをURL検査からインデックス登録リクエストする。
-    // 4. 古い /performance/latest/ の検索結果が残る場合は、再クロール後の反映を待つ。
-    (async () => {
-      try {
-        const response = await fetch('/datasets/performance-latest.json', { cache: 'no-store' });
-        const data = await response.json();
-        const [year, month, day] = data.latest.reportDate.split('-');
-        document.querySelector('[data-latest-link]').href = `/performance/${year}/${month}/${day}/`;
-        document.querySelector('[data-report-date]').textContent = data.latest.reportDateDisplay;
-        document.querySelector('[data-asset]').textContent = new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY', maximumFractionDigits: 0 }).format(data.latest.jpy.end);
-        document.querySelector('[data-return]').textContent = `${data.latest.summary.totalReturnPct >= 0 ? '+' : ''}${data.latest.summary.totalReturnPct.toFixed(2)}%`;
-      } catch (error) {
-        console.error('Failed to load latest performance data', error);
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://mukimuki-trade.com/performance/2026/06/02/#article",
+      "headline": "2026-06-02実績 +5.8%｜RDW・QUBT・OKLO保有",
+      "description": "100万円米国株トレード実績。評価額¥1,057,568、前日比-¥2,978。RDW・QUBT・OKLOと54件の売買を確認。",
+      "image": [
+        "https://mukimuki-trade.com/assets/mukimuki-performance.png"
+      ],
+      "datePublished": "2026-06-03T05:00:38+09:00",
+      "dateModified": "2026-06-03T05:00:38+09:00",
+      "inLanguage": "ja-JP",
+      "articleSection": "実績公開",
+      "keywords": [
+        "100万円トレード",
+        "投資実績公開",
+        "米国株",
+        "100万円チャレンジ",
+        "2026-06-02",
+        "RDW",
+        "QUBT",
+        "OKLO"
+      ],
+      "author": {
+        "@id": "https://mukimuki-trade.com/profile/#author",
+        "name": "MUKIMUKI trade"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "MUKIMUKI trade",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://mukimuki-trade.com/assets/mukimuki-main.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://mukimuki-trade.com/performance/2026/06/02/"
       }
-    })();
-  </script>
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://mukimuki-trade.com/performance/2026/06/02/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "この実績は投資助言ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "いいえ。MUKIMUKI tradeは自己運用の実績を公開する情報サイトであり、特定銘柄の売買を推奨するものではありません。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "100万円比 +5.8% は何を意味しますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "初期資金100万円に対して、評価額がどれだけ増減したかを示す指標です。この日は評価額¥1,057,568で、100万円比+5.8%です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "RDW、QUBT、OKLOは買うべき銘柄ですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "買い推奨ではありません。保有銘柄として公開しているだけで、投資判断は決算、ニュース、リスク許容度を確認したうえで読者自身が行う必要があります。"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://mukimuki-trade.com/performance/2026/06/02/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "ホーム",
+          "item": "https://mukimuki-trade.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "実績",
+          "item": "https://mukimuki-trade.com/performance/latest/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "2026年",
+          "item": "https://mukimuki-trade.com/performance/2026/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "6月",
+          "item": "https://mukimuki-trade.com/performance/2026/06/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "6月2日",
+          "item": "https://mukimuki-trade.com/performance/2026/06/02/"
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <header class="site-header">
@@ -79,10 +174,10 @@
   <main>
     <section class="article-hero">
       <div class="article-hero-inner">
-        <nav class="breadcrumb" aria-label="breadcrumb"><a href="/">ホーム</a><span>/</span><a href="/performance/latest/">実績</a><span>/</span><span>最新実績</span></nav>
-        <p class="eyebrow">PERFORMANCE / LATEST</p>
-        <h1>最新実績レポート</h1>
-        <p>評価額、100万円比、主要な保有銘柄を日次で整理します。詳しい記録は日付別ページに残しています。</p>
+        <nav class="breadcrumb" aria-label="breadcrumb"><a href="/">ホーム</a><span>/</span><a href="/performance/latest/">実績</a><span>/</span><a href="/performance/2026/">2026年</a><span>/</span><a href="/performance/2026/06/">6月</a><span>/</span><span>6月2日</span></nav>
+        <p class="eyebrow">PERFORMANCE / DAILY ARCHIVE</p>
+        <h1>2026-06-02実績: 100万円比 +5.8%、評価額 ¥1,057,568</h1>
+        <p>100万円から始めた米国株トレードの実績公開です。2026-06-02は評価額が¥1,057,568、前日比は-¥2,978、100万円比は+5.8%でした。主要保有銘柄はRDW、QUBT、OKLOで、売買件数は54件です。投資実績公開ブログとして、資産推移と売買判断を日次で確認します。</p>
         <div class="stamp-row" aria-label="MUKIMUKIチェック">
           <span class="muki-stamp muki-stamp--yellow">
           <picture data-cwv-picture>
@@ -90,39 +185,209 @@
   <source type="image/webp" srcset="/assets/optimized/mukimuki-main-480.webp 480w, /assets/optimized/mukimuki-main-800.webp 800w, /assets/optimized/mukimuki-main-1200.webp 1200w" sizes="(max-width: 720px) 92vw, 360px">
   <img src="/assets/mukimuki-main.png" alt="MUKIMUKIキャラクターのチェックスタンプ" width="1226" height="764" loading="lazy" decoding="async" data-cwv-fallback>
 </picture>
-          <strong>最新版</strong>
+          <strong>数字チェック</strong>
         </span>
-          <span class="muki-stamp muki-stamp--blue">
+          <span class="muki-stamp muki-stamp--alert">
           <picture data-cwv-picture>
   <source type="image/avif" srcset="/assets/optimized/mukimuki-main-480.avif 480w, /assets/optimized/mukimuki-main-800.avif 800w, /assets/optimized/mukimuki-main-1200.avif 1200w" sizes="(max-width: 720px) 92vw, 360px">
   <source type="image/webp" srcset="/assets/optimized/mukimuki-main-480.webp 480w, /assets/optimized/mukimuki-main-800.webp 800w, /assets/optimized/mukimuki-main-1200.webp 1200w" sizes="(max-width: 720px) 92vw, 360px">
   <img src="/assets/mukimuki-main.png" alt="MUKIMUKIキャラクターのチェックスタンプ" width="1226" height="764" loading="lazy" decoding="async" data-cwv-fallback>
 </picture>
-          <strong>固定URLで保存</strong>
+          <strong>投資助言ではありません</strong>
         </span>
         </div>
       </div>
     </section>
     <article class="article-body">
       <section class="article-panel">
-        <h2><span data-report-date>2026.06.02 EST</span></h2>
-        <div class="stats-grid">
-          <div class="stat-card"><span>評価額</span><strong data-asset>¥1,057,568</strong></div>
-          <div class="stat-card"><span>100万円比</span><strong data-return>+5.76%</strong></div>
+        <h2>この日の実績サマリー</h2>
+        <div class="stamp-row" aria-label="MUKIMUKIチェック">
+          <span class="muki-stamp muki-stamp--blue">
+          <picture data-cwv-picture>
+  <source type="image/avif" srcset="/assets/optimized/mukimuki-main-480.avif 480w, /assets/optimized/mukimuki-main-800.avif 800w, /assets/optimized/mukimuki-main-1200.avif 1200w" sizes="(max-width: 720px) 92vw, 360px">
+  <source type="image/webp" srcset="/assets/optimized/mukimuki-main-480.webp 480w, /assets/optimized/mukimuki-main-800.webp 800w, /assets/optimized/mukimuki-main-1200.webp 1200w" sizes="(max-width: 720px) 92vw, 360px">
+  <img src="/assets/mukimuki-main.png" alt="MUKIMUKIキャラクターのチェックスタンプ" width="1226" height="764" loading="lazy" decoding="async" data-cwv-fallback>
+</picture>
+          <strong>まず評価額</strong>
+        </span>
         </div>
-        <p><a class="btn btn-primary" data-latest-link href="/performance/2026/06/02/">日付固定URLで読む</a></p>
+        <div class="stats-grid">
+          <div class="stat-card"><span>評価額</span><strong>¥1,057,568</strong></div>
+          <div class="stat-card"><span>前日比</span><strong>-¥2,978</strong></div>
+          <div class="stat-card"><span>100万円比</span><strong>+5.76%</strong></div>
+          <div class="stat-card"><span>日次リターン</span><strong>-0.28%</strong></div>
+          <div class="stat-card"><span>取引件数</span><strong>54件</strong></div>
+          <div class="stat-card"><span>USD損益</span><strong>-$30.61</strong></div>
+        </div>
+      </section>
+      <section class="article-panel trust-signals" aria-labelledby="trust-signals-title">
+        <h2 id="trust-signals-title">信頼性の確認</h2>
+        <div class="stamp-row" aria-label="MUKIMUKIチェック">
+          <span class="muki-stamp muki-stamp--yellow">
+          <picture data-cwv-picture>
+  <source type="image/avif" srcset="/assets/optimized/mukimuki-main-480.avif 480w, /assets/optimized/mukimuki-main-800.avif 800w, /assets/optimized/mukimuki-main-1200.avif 1200w" sizes="(max-width: 720px) 92vw, 360px">
+  <source type="image/webp" srcset="/assets/optimized/mukimuki-main-480.webp 480w, /assets/optimized/mukimuki-main-800.webp 800w, /assets/optimized/mukimuki-main-1200.webp 1200w" sizes="(max-width: 720px) 92vw, 360px">
+  <img src="/assets/mukimuki-main.png" alt="MUKIMUKIキャラクターのチェックスタンプ" width="1226" height="764" loading="lazy" decoding="async" data-cwv-fallback>
+</picture>
+          <strong>データ元を確認</strong>
+        </span>
+        </div>
+        <div class="fact-grid">
+          <div class="fact-card">
+            <h3>データソース</h3>
+            <p>評価額、損益、取引件数、保有銘柄はAutotrade日次レポートをもとに掲載しています。</p>
+            <blockquote>Source: Autotrade daily report / report_2026-06-02.txt</blockquote>
+          </div>
+          <div class="fact-card">
+            <h3>著者と免責</h3>
+            <p>運営者情報と投資情報の扱いを明示しています。掲載内容は投資助言ではありません。</p>
+            <p><a href="/profile/" rel="author">運営者プロフィール</a> / <a href="/about/">免責事項</a></p>
+          </div>
+          <div class="fact-card">
+            <h3>検証用リンク</h3>
+            <p>日次ページは月次アーカイブへ保存し、最新の公開データも確認できるようにしています。</p>
+            <p><a href="/performance/2026/06/">月次アーカイブ</a> / <a href="/datasets/performance-latest.json">公開JSONデータ</a></p>
+          </div>
+        </div>
       </section>
       <section class="article-panel">
-        <h2>最新実績で見るポイント</h2>
-        <p>最新実績では、評価額の増減だけでなく、どの銘柄を保有し、どの程度の売買件数でその結果になったかを合わせて確認できます。MUKIMUKI tradeは100万円から米国株トレードを始めた前提で、日々の数字を固定URLに残し、後から比較しやすい形で公開しています。</p>
-        <p>短期のプラスやマイナスだけを見ると判断が偏りやすいため、日次ページでは前日比、100万円比、保有銘柄、売買トピックを同じ順番で掲載します。</p>
-        <p>評価額が増えた日でも、買い越しでリスクを増やしたのか、利確で現金化したのかによって意味は変わります。逆に前日比がマイナスでも、持ち越し銘柄の整理や損切りで翌日のリスクを下げている場合があります。最新実績では、損益、取引件数、保有銘柄を分けて記録します。</p>
+        <h2>保有銘柄の見方</h2>
+        <p>RDW、QUBT、OKLOは値動きが大きくなりやすい米国株です。単日の損益だけでなく、翌日に持ち越した理由、含み益・含み損の変化、出来高の継続を確認します。</p>
       </section>
       <section class="article-panel">
-        <h2>関連するページ</h2>
-        <p>月ごとの流れは<a href="/performance/2026/06/">月次まとめ</a>、売買判断の背景は<a href="/logic/">投資ロジック</a>、候補銘柄の見方は<a href="/research/">銘柄検討</a>にまとめています。</p>
-        <p>日付別ページには、その日の評価額、前日比、取引件数、主要保有銘柄、よくある質問をまとめています。最新ページは現在地をすばやく確認するためのページとして使い、詳しい振り返りは日付別ページと月次まとめに残します。</p>
-        <p>保有銘柄が変わった日は、翌日の評価額にも影響しやすいため、月次まとめで前後の日付を並べて確認します。</p>
+        <h2>主要保有銘柄</h2>
+        <div class="comparison-table">
+          <div class="comparison-row">
+            <span>US.RDW</span>
+            <strong>24株</strong>
+            <span>平均 $21.07 / 含み損益 -2.33%</span>
+          </div>
+          <div class="comparison-row">
+            <span>US.QUBT</span>
+            <strong>63株</strong>
+            <span>平均 $12.34 / 含み損益 -0.97%</span>
+          </div>
+          <div class="comparison-row">
+            <span>US.OKLO</span>
+            <strong>13株</strong>
+            <span>平均 $72.12 / 含み損益 +1.91%</span>
+          </div>
+          <div class="comparison-row">
+            <span>US.NVDA</span>
+            <strong>5株</strong>
+            <span>平均 $224.18 / 含み損益 -0.66%</span>
+          </div>
+          <div class="comparison-row">
+            <span>US.LUNR</span>
+            <strong>19株</strong>
+            <span>平均 $40.10 / 含み損益 -1.33%</span>
+          </div>
+          <div class="comparison-row">
+            <span>US.CRDO</span>
+            <strong>5株</strong>
+            <span>平均 $227.12 / 含み損益 +0.83%</span>
+          </div>
+        </div>
+      </section>
+      <section class="article-panel">
+        <h2>売買件数54件から見るトレードの特徴</h2>
+        <p>売買件数が多い日は、利益額だけでなく回転の多さにも注意します。買付と売却の偏り、利確した銘柄、翌日に残した銘柄を分けて見ることで、実績の再現性を確認できます。</p>
+        <div class="comparison-table">
+          <div class="comparison-row">
+            <span>SELL US.CRDO</span>
+            <strong>2株</strong>
+            <span>$223.84 / $447.68</span>
+          </div>
+          <div class="comparison-row">
+            <span>BUY US.QBTS</span>
+            <strong>15株</strong>
+            <span>$29.25 / $438.75</span>
+          </div>
+          <div class="comparison-row">
+            <span>BUY US.QBTS</span>
+            <strong>6株</strong>
+            <span>$29.29 / $175.74</span>
+          </div>
+          <div class="comparison-row">
+            <span>BUY US.QBTS</span>
+            <strong>3株</strong>
+            <span>$29.32 / $87.96</span>
+          </div>
+          <div class="comparison-row">
+            <span>BUY US.QBTS</span>
+            <strong>1株</strong>
+            <span>$29.54 / $29.54</span>
+          </div>
+          <div class="comparison-row">
+            <span>BUY US.QBTS</span>
+            <strong>1株</strong>
+            <span>$29.49 / $29.49</span>
+          </div>
+          <div class="comparison-row">
+            <span>BUY US.QUBT</span>
+            <strong>1株</strong>
+            <span>$12.51 / $12.51</span>
+          </div>
+          <div class="comparison-row">
+            <span>SELL US.QUBT</span>
+            <strong>1株</strong>
+            <span>$12.27 / $12.27</span>
+          </div>
+          <div class="comparison-row">
+            <span>SELL US.QBTS</span>
+            <strong>13株</strong>
+            <span>$30.33 / $394.27</span>
+          </div>
+          <div class="comparison-row">
+            <span>SELL US.SOUN</span>
+            <strong>129株</strong>
+            <span>$8.96 / $1,155.19</span>
+          </div>
+          <div class="comparison-row">
+            <span>SELL US.AMZN</span>
+            <strong>6株</strong>
+            <span>$254.69 / $1,528.14</span>
+          </div>
+          <div class="comparison-row">
+            <span>BUY US.NVTS</span>
+            <strong>30株</strong>
+            <span>$25.71 / $771.26</span>
+          </div>
+        </div>
+        <p>主要な約定を先頭から12件掲載しています。全体像は取引件数、買付額、売却額のサマリーで確認します。</p>
+      </section>
+      <section class="article-panel">
+        <h2>関連する記録</h2>
+        <p><a href="/performance/2026/06/">月次アーカイブ</a>、<a href="/category/performance/">売買トピック</a>、<a href="/logic/">投資ロジック</a>では、同じ期間の資産推移と判断基準を別の角度から整理しています。</p>
+      </section>
+      <nav class="pagination-nav" aria-label="日次実績の前後移動">
+        <a href="/performance/2026/06/01/"><span>前日</span><strong>2026.06.01</strong></a>
+        <span></span>
+      </nav>
+      <section class="article-panel">
+        <h2>よくある質問</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3>この実績は投資助言ですか？</h3>
+            <p>いいえ。MUKIMUKI tradeは自己運用の実績を公開する情報サイトであり、特定銘柄の売買を推奨するものではありません。</p>
+          </div>
+          <div class="faq-item">
+            <h3>100万円比 +5.8% は何を意味しますか？</h3>
+            <p>初期資金100万円に対して、評価額がどれだけ増減したかを示す指標です。この日は評価額¥1,057,568で、100万円比+5.8%です。</p>
+          </div>
+          <div class="faq-item">
+            <h3>RDW、QUBT、OKLOは買うべき銘柄ですか？</h3>
+            <p>買い推奨ではありません。保有銘柄として公開しているだけで、投資判断は決算、ニュース、リスク許容度を確認したうえで読者自身が行う必要があります。</p>
+          </div>
+        </div>
+      </section>
+      <section class="article-panel related-articles" aria-labelledby="related-articles-title">
+        <h2 id="related-articles-title">関連する記事</h2>
+        <div class="link-grid">
+          <a class="link-card" href="/performance/2026/06/02/topics/qbts-range/"><span>2026-06-03</span><strong>6/2売買トピック: QBTSを同値回転し、RDW・QUBTを持ち越し</strong><p>2026年6月2日ESTの売買トピック。評価額は105.8万円、前日比-2,978円。約定54件、QBTSの約定レンジ5.98%と持ち越しを整理。</p></a>
+          <a class="link-card" href="/performance/2026/06/01/topics/qbts-range/"><span>2026-06-02</span><strong>6/1売買トピック: QBTSの値幅と損切り回転を確認</strong><p>2026年6月1日ESTの売買トピック。評価額は107.9万円、前日比-46,069円。約定35件とQBTSの値幅、翌日に見る水準を整理。</p></a>
+          <a class="link-card" href="/performance/2026/06/01/"><span>2026-06-01</span><strong>2026.06.01 EST 実績レポート</strong><p>評価額 1,078,727円、前日比 -46,069円、取引35件。</p></a>
+        </div>
       </section>
     </article>
   </main>

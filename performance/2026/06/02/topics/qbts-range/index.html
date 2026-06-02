@@ -3,17 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>最新実績レポート | MUKIMUKI trade</title>
-  <meta name="description" content="MUKIMUKI tradeの最新実績ページ。評価額、100万円比、保有銘柄、売買件数を日次で整理します。">
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://mukimuki-trade.com/performance/2026/06/02/">
+  <title>6/2売買トピック: QBTSを同値回転し、RDW・QUBTを持ち越し | MUKIMUKI trade</title>
+  <meta name="description" content="2026年6月2日ESTの売買トピック。評価額は105.8万円、前日比-2,978円。約定54件、QBTSの約定レンジ5.98%と持ち越しを整理。">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://mukimuki-trade.com/performance/2026/06/02/topics/qbts-range/">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="MUKIMUKI trade">
-  <meta property="og:title" content="最新実績レポート | MUKIMUKI trade">
-  <meta property="og:description" content="MUKIMUKI tradeの最新実績ページ。評価額、100万円比、保有銘柄、売買件数を日次で整理します。">
-  <meta property="og:url" content="https://mukimuki-trade.com/performance/latest/">
+  <meta property="og:title" content="6/2売買トピック: QBTSを同値回転し、RDW・QUBTを持ち越し | MUKIMUKI trade">
+  <meta property="og:description" content="2026年6月2日ESTの売買トピック。評価額は105.8万円、前日比-2,978円。約定54件、QBTSの約定レンジ5.98%と持ち越しを整理。">
+  <meta property="og:url" content="https://mukimuki-trade.com/performance/2026/06/02/topics/qbts-range/">
   <meta property="og:image" content="https://mukimuki-trade.com/assets/mukimuki-performance.png">
+  <meta property="article:published_time" content="2026-06-03T08:00:00+09:00">
+  <meta property="article:modified_time" content="2026-06-03T08:00:00+09:00">
+  <meta property="article:section" content="実績公開">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="alternate" type="application/rss+xml" title="MUKIMUKI trade RSS" href="/feed.xml">
   <style data-critical-css>
@@ -21,26 +24,99 @@
   </style>
   <link rel="preload" as="style" href="/assets/main.css" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/assets/main.css"></noscript>
-  <script>
-    // Google Search Consoleで「重複URL」警告が出た場合:
-    // 1. /performance/latest/ が noindex,follow になっていることをURL検査で確認する。
-    // 2. canonical が最新の日付固定URLを指していることを確認する。
-    // 3. 正規の日付固定URLをURL検査からインデックス登録リクエストする。
-    // 4. 古い /performance/latest/ の検索結果が残る場合は、再クロール後の反映を待つ。
-    (async () => {
-      try {
-        const response = await fetch('/datasets/performance-latest.json', { cache: 'no-store' });
-        const data = await response.json();
-        const [year, month, day] = data.latest.reportDate.split('-');
-        document.querySelector('[data-latest-link]').href = `/performance/${year}/${month}/${day}/`;
-        document.querySelector('[data-report-date]').textContent = data.latest.reportDateDisplay;
-        document.querySelector('[data-asset]').textContent = new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY', maximumFractionDigits: 0 }).format(data.latest.jpy.end);
-        document.querySelector('[data-return]').textContent = `${data.latest.summary.totalReturnPct >= 0 ? '+' : ''}${data.latest.summary.totalReturnPct.toFixed(2)}%`;
-      } catch (error) {
-        console.error('Failed to load latest performance data', error);
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://mukimuki-trade.com/performance/2026/06/02/topics/qbts-range/#article",
+      "headline": "6/2売買トピック: QBTSを同値回転し、RDW・QUBTを持ち越し",
+      "description": "2026年6月2日ESTの売買トピック。評価額は105.8万円、前日比-2,978円。約定54件、QBTSの約定レンジ5.98%と持ち越しを整理。",
+      "image": [
+        "https://mukimuki-trade.com/assets/mukimuki-performance.png"
+      ],
+      "datePublished": "2026-06-03T08:00:00+09:00",
+      "dateModified": "2026-06-03T08:00:00+09:00",
+      "inLanguage": "ja-JP",
+      "articleSection": "実績公開",
+      "keywords": [
+        "実績公開",
+        "売買トピック",
+        "QBTS",
+        "RDW",
+        "QUBT",
+        "OKLO",
+        "SOUN"
+      ],
+      "author": {
+        "@id": "https://mukimuki-trade.com/profile/#author",
+        "name": "MUKIMUKI trade"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "MUKIMUKI trade",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://mukimuki-trade.com/assets/mukimuki-main.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://mukimuki-trade.com/performance/2026/06/02/topics/qbts-range/"
       }
-    })();
-  </script>
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://mukimuki-trade.com/performance/2026/06/02/topics/qbts-range/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "ホーム",
+          "item": "https://mukimuki-trade.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "実績",
+          "item": "https://mukimuki-trade.com/performance/latest/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "2026年",
+          "item": "https://mukimuki-trade.com/performance/2026/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "6月",
+          "item": "https://mukimuki-trade.com/performance/2026/06/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "6月2日",
+          "item": "https://mukimuki-trade.com/performance/2026/06/02/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "売買トピック",
+          "item": "https://mukimuki-trade.com/performance/2026/06/02/topics/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "6/2売買トピック: QBTSを同値回転し、RDW・QUBTを持ち越し",
+          "item": "https://mukimuki-trade.com/performance/2026/06/02/topics/qbts-range/"
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <header class="site-header">
@@ -76,13 +152,14 @@
       <a href="https://x.com/OnigoGames" target="_blank" rel="me noopener">公式X</a>
     </nav>
   </header>
+
   <main>
     <section class="article-hero">
       <div class="article-hero-inner">
-        <nav class="breadcrumb" aria-label="breadcrumb"><a href="/">ホーム</a><span>/</span><a href="/performance/latest/">実績</a><span>/</span><span>最新実績</span></nav>
-        <p class="eyebrow">PERFORMANCE / LATEST</p>
-        <h1>最新実績レポート</h1>
-        <p>評価額、100万円比、主要な保有銘柄を日次で整理します。詳しい記録は日付別ページに残しています。</p>
+        <nav class="breadcrumb" aria-label="breadcrumb"><a href="/">ホーム</a><span>/</span><a href="/performance/latest/">実績</a><span>/</span><a href="/performance/2026/">2026年</a><span>/</span><a href="/performance/2026/06/">6月</a><span>/</span><a href="/performance/2026/06/02/">6月2日</a><span>/</span><a href="/performance/2026/06/02/topics/">売買トピック</a><span>/</span><span>6/2売買トピック: QBTSを同値回転し、RDW・QUBTを持ち越し</span></nav>
+        <p class="eyebrow">TRADE TOPIC / PERFORMANCE</p>
+        <h1>6/2売買トピック: QBTSを同値回転し、RDW・QUBTを持ち越し</h1>
+        <p>6/2 ESTは、評価額が¥1,057,567.60へ小幅に下がり、100万円比は+5.76%でした。約定は54件で、売買銘柄の中ではQBTSの約定価格レンジが最も大きく、$29.25から$31.00までの約5.98%を確認しました。大きく勝った日ではなく、回転売買でキャッシュを戻しながら保有を組み替えた日として整理します。</p>
         <div class="stamp-row" aria-label="MUKIMUKIチェック">
           <span class="muki-stamp muki-stamp--yellow">
           <picture data-cwv-picture>
@@ -90,7 +167,7 @@
   <source type="image/webp" srcset="/assets/optimized/mukimuki-main-480.webp 480w, /assets/optimized/mukimuki-main-800.webp 800w, /assets/optimized/mukimuki-main-1200.webp 1200w" sizes="(max-width: 720px) 92vw, 360px">
   <img src="/assets/mukimuki-main.png" alt="MUKIMUKIキャラクターのチェックスタンプ" width="1226" height="764" loading="lazy" decoding="async" data-cwv-fallback>
 </picture>
-          <strong>最新版</strong>
+          <strong>ロジック確認</strong>
         </span>
           <span class="muki-stamp muki-stamp--blue">
           <picture data-cwv-picture>
@@ -98,34 +175,130 @@
   <source type="image/webp" srcset="/assets/optimized/mukimuki-main-480.webp 480w, /assets/optimized/mukimuki-main-800.webp 800w, /assets/optimized/mukimuki-main-1200.webp 1200w" sizes="(max-width: 720px) 92vw, 360px">
   <img src="/assets/mukimuki-main.png" alt="MUKIMUKIキャラクターのチェックスタンプ" width="1226" height="764" loading="lazy" decoding="async" data-cwv-fallback>
 </picture>
-          <strong>固定URLで保存</strong>
+          <strong>実績とセットで読む</strong>
         </span>
         </div>
       </div>
     </section>
-    <article class="article-body">
-      <section class="article-panel">
-        <h2><span data-report-date>2026.06.02 EST</span></h2>
-        <div class="stats-grid">
-          <div class="stat-card"><span>評価額</span><strong data-asset>¥1,057,568</strong></div>
-          <div class="stat-card"><span>100万円比</span><strong data-return>+5.76%</strong></div>
+
+    <article class="article-body article-longform">
+      <section class="article-panel article-intro">
+        <div class="article-meta-row">
+          <span>2026.06.03</span>
+          <span>実績公開</span>
         </div>
-        <p><a class="btn btn-primary" data-latest-link href="/performance/2026/06/02/">日付固定URLで読む</a></p>
+        <p>6/2 ESTは、評価額が¥1,057,567.60へ小幅に下がり、100万円比は+5.76%でした。約定は54件で、売買銘柄の中ではQBTSの約定価格レンジが最も大きく、$29.25から$31.00までの約5.98%を確認しました。大きく勝った日ではなく、回転売買でキャッシュを戻しながら保有を組み替えた日として整理します。</p>
+        <div class="stamp-row" aria-label="MUKIMUKIチェック">
+          <span class="muki-stamp muki-stamp--yellow">
+          <picture data-cwv-picture>
+  <source type="image/avif" srcset="/assets/optimized/mukimuki-main-480.avif 480w, /assets/optimized/mukimuki-main-800.avif 800w, /assets/optimized/mukimuki-main-1200.avif 1200w" sizes="(max-width: 720px) 92vw, 360px">
+  <source type="image/webp" srcset="/assets/optimized/mukimuki-main-480.webp 480w, /assets/optimized/mukimuki-main-800.webp 800w, /assets/optimized/mukimuki-main-1200.webp 1200w" sizes="(max-width: 720px) 92vw, 360px">
+  <img src="/assets/mukimuki-main.png" alt="MUKIMUKIキャラクターのチェックスタンプ" width="1226" height="764" loading="lazy" decoding="async" data-cwv-fallback>
+</picture>
+          <strong>判断メモ</strong>
+        </span>
+        </div>
+        <div class="tag-row">
+          <span>実績公開</span>
+          <span>売買トピック</span>
+          <span>QBTS</span>
+          <span>RDW</span>
+          <span>QUBT</span>
+          <span>OKLO</span>
+          <span>SOUN</span>
+        </div>
       </section>
+
       <section class="article-panel">
-        <h2>最新実績で見るポイント</h2>
-        <p>最新実績では、評価額の増減だけでなく、どの銘柄を保有し、どの程度の売買件数でその結果になったかを合わせて確認できます。MUKIMUKI tradeは100万円から米国株トレードを始めた前提で、日々の数字を固定URLに残し、後から比較しやすい形で公開しています。</p>
-        <p>短期のプラスやマイナスだけを見ると判断が偏りやすいため、日次ページでは前日比、100万円比、保有銘柄、売買トピックを同じ順番で掲載します。</p>
-        <p>評価額が増えた日でも、買い越しでリスクを増やしたのか、利確で現金化したのかによって意味は変わります。逆に前日比がマイナスでも、持ち越し銘柄の整理や損切りで翌日のリスクを下げている場合があります。最新実績では、損益、取引件数、保有銘柄を分けて記録します。</p>
+        <h2>この日の全体像</h2>
+        <p>2026年6月2日ESTのMUKIMUKI tradeは、JPY総資産が¥1,060,545.95から¥1,057,567.60へ下がり、前日比は-¥2,978.35でした。100万円スタート比では+5.76%、日次リターンは-0.28%です。</p>
+        <p>約定は54件でした。買付総額は$14,749.28、売却総額は$15,833.10で、売買キャッシュ差額は+$1,083.82の売り越しです。USD資産差分は-$30.61で、前日からの下落は小幅にとどまりました。</p>
+        <ul>
+          <li>評価額: ¥1,057,567.60、100万円比 +5.76%</li>
+          <li>前日比: -¥2,978.35、日次リターン -0.28%</li>
+          <li>引け後保有: RDW 24株、QUBT 63株、OKLO 13株、NVDA 5株、LUNR 19株、CRDO 5株</li>
+        </ul>
+
       </section>
+
       <section class="article-panel">
-        <h2>関連するページ</h2>
-        <p>月ごとの流れは<a href="/performance/2026/06/">月次まとめ</a>、売買判断の背景は<a href="/logic/">投資ロジック</a>、候補銘柄の見方は<a href="/research/">銘柄検討</a>にまとめています。</p>
-        <p>日付別ページには、その日の評価額、前日比、取引件数、主要保有銘柄、よくある質問をまとめています。最新ページは現在地をすばやく確認するためのページとして使い、詳しい振り返りは日付別ページと月次まとめに残します。</p>
-        <p>保有銘柄が変わった日は、翌日の評価額にも影響しやすいため、月次まとめで前後の日付を並べて確認します。</p>
+        <h2>売買トピック: 売り越しでキャッシュを戻しながら組み替え</h2>
+        <p>この日はSOUN、AMZN、SOFI、HOODなどの売却でキャッシュを戻しつつ、RDW、OKLO、LUNR、CRDO、QUBTなどを新しく残す形になりました。SOUNは133株を買い、262株を売り、銘柄単体の売買キャッシュ差額は+$1,155.85でした。</p>
+        <p>一方で、評価額は小幅マイナスです。売却額が買付額を上回っても、日中の損切り、保有銘柄の含み損、ドル建て資産差分が全体の評価額に影響します。読者が見るべきポイントは、単純な売買額よりも、どの銘柄で値幅を取りに行き、どの銘柄を翌日に残したかです。</p>
+        <ul>
+          <li>売り越し: 売却総額$15,833.10、買付総額$14,749.28</li>
+          <li>SOUN: 売買キャッシュ差額+$1,155.85で、この日の資金回収役</li>
+          <li>持ち越し: RDWとQUBTは含み損、OKLOとCRDOは含み益で翌日に残る</li>
+        </ul>
+
+      </section>
+
+      <section class="article-panel">
+        <h2>個別分析: QBTSを選んだ理由</h2>
+        <p>この日の個別分析はQBTSにします。売買銘柄ごとの約定価格レンジを比較すると、QBTSは$29.25から$31.00まで動き、確認できる約定レンジは約5.98%でした。6/2 ESTに売買した銘柄の中で最も大きい値幅です。</p>
+        <p>QBTSは16件の約定があり、買付104株、売却104株で株数は同数でした。買付総額は$3,083.54、売却総額は$3,119.06で、銘柄単体の売買キャッシュ差額は+$35.52です。大きな利幅ではありませんが、値幅のある銘柄を同数で回転し、ポジションを残さず終えた点がこの日の特徴です。</p>
+        <ul>
+          <li>選定理由: 売買銘柄の約定価格レンジが最大（QBTS 約5.98%）</li>
+          <li>QBTS売買: 買付104株 / 売却104株、16件の回転</li>
+          <li>銘柄単体の売買キャッシュ差額: +$35.52</li>
+        </ul>
+
+      </section>
+
+      <section class="article-panel">
+        <h2>市場データと背景</h2>
+        <p>外部の市場データでも、QBTSは6/2に始値$29.41、高値$31.30、安値$28.99、終値$29.91、出来高48,164,724株でした。日中高安レンジは約7.97%、終値ベースの前日比は+2.50%です。</p>
+        <p>前日にはD-Wave Quantumがゲートモデル量子コンピューティングのロードマップを公表し、2032年までに100論理量子ビットと100万回超の演算を目標にする計画を示しました。材料が残るテーマ株として出来高は続きましたが、6/2も高値$31.30から終値$29.91へ押し戻されており、上値追いと利確売りが交錯した日として見ます。</p>
+        <ul>
+          <li>市場データ: 6/2終値$29.91、前日比+2.50%、出来高48,164,724株</li>
+          <li>日中高安: $28.99から$31.30、レンジ約7.97%</li>
+          <li>自動売買の約定レンジ: $29.25から$31.00、市場高値までは追い切らず</li>
+        </ul>
+
+      </section>
+
+      <section class="article-panel">
+        <h2>翌日に見る水準とリスク</h2>
+        <p>翌日に見る水準は、6/2終値の$29.91を保てるか、再び$30台で安定できるかです。$31.30を上回る動きが出れば、Investor Day後の買いが続いているかを確認します。</p>
+        <p>下方向では、6/2安値の$28.99を割ると、前日の材料を消化した後の失速として見られやすくなります。QBTSはテーマ性と値幅が大きい銘柄なので、ニュースだけでなく、約定価格、損切り条件、翌日の出来高を分けて見る必要があります。</p>
+
+
+      </section>
+
+      <section class="article-panel">
+        <h2>記録メモ</h2>
+        <p>この記録は投資助言ではなく、自己運用ログを読み返すためのものです。銘柄名が出ていても、売買を推奨する意図はありません。</p>
+        <p>今回はreport_2026-06-02.txtをもとに、資産額、売買件数、保有銘柄、銘柄別の約定レンジを確認しました。市場データは参考情報として外部サイトを確認し、自己運用ログとは分けて扱っています。</p>
+
+
+      </section>
+
+      <section class="article-panel">
+        <h2>参考にした外部情報</h2>
+        <ul class="source-list">
+          <li><a href="https://stockanalysis.com/stocks/qbts/history/" target="_blank" rel="noopener">StockAnalysis: QBTS historical price data, Jun 2 2026</a></li>
+          <li><a href="https://www.sec.gov/Archives/edgar/data/1907982/000190798226000076/d-wavechartsanewcoursetofa.htm" target="_blank" rel="noopener">SEC filing: D-Wave gate-model roadmap, Jun 1 2026</a></li>
+        </ul>
+      </section>
+
+
+
+      <section class="article-panel related-articles" aria-labelledby="related-articles-title">
+        <h2 id="related-articles-title">関連する記事</h2>
+        <div class="link-grid">
+          <a class="link-card" href="/performance/2026/06/01/topics/qbts-range/"><span>2026-06-02</span><strong>6/1売買トピック: QBTSの値幅と損切り回転を確認</strong><p>2026年6月1日ESTの売買トピック。評価額は107.9万円、前日比-46,069円。約定35件とQBTSの値幅、翌日に見る水準を整理。</p></a>
+          <a class="link-card" href="/performance/2026/06/02/"><span>2026-06-02</span><strong>2026.06.02 EST 実績レポート</strong><p>評価額 1,057,568円、前日比 -2,978円、取引54件。</p></a>
+          <a class="link-card" href="/performance/2026/05/29/topics/bksy-range/"><span>2026-05-30</span><strong>5/29売買トピック: BKSYの値幅を横目にSPIRを持ち越し</strong><p>2026年5月29日ESTの売買トピック。100万円チャレンジは評価額112.4万円、前日比+20,508円。CSV約定152件とBKSYの値動きを整理。</p></a>
+        </div>
+      </section>
+
+      <section class="article-panel">
+        <h2>関連する記録</h2>
+        <p><a href="/category/performance/">実績公開の記事一覧</a> と <a href="/performance/latest/">最新の実績レポート</a> では、候補整理と実際の売買結果を別の角度から記録しています。</p>
       </section>
     </article>
   </main>
+
   <footer class="site-footer">
     <strong>MUKIMUKI trade</strong>
     <p>100万円からの米国株トレード実績、銘柄メモ、売買ロジックを記録しています。掲載内容には広告リンクを含む場合があります。</p>

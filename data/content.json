@@ -4,18 +4,18 @@
     "title": "MUKIMUKI trade",
     "description": "100万円からの株式投資実績、資産曲線、銘柄検討、相場メモを整理する投資ブログ。",
     "language": "ja",
-    "lastBuildDate": "2026-06-02T08:00:00+09:00"
+    "lastBuildDate": "2026-06-03T08:00:00+09:00"
   },
   "pages": [
     {
       "path": "/",
-      "lastmod": "2026-06-02",
+      "lastmod": "2026-06-03",
       "changefreq": "daily",
       "priority": "1.0"
     },
     {
       "path": "/performance/latest/",
-      "lastmod": "2026-06-02",
+      "lastmod": "2026-06-03",
       "changefreq": "daily",
       "priority": "0.9"
     },
@@ -34,19 +34,19 @@
     },
     {
       "path": "/archive/",
-      "lastmod": "2026-06-02",
+      "lastmod": "2026-06-03",
       "changefreq": "weekly",
       "priority": "0.6"
     },
     {
       "path": "/archive/2026-06/",
-      "lastmod": "2026-06-02",
+      "lastmod": "2026-06-03",
       "changefreq": "monthly",
       "priority": "0.6"
     },
     {
       "path": "/category/performance/",
-      "lastmod": "2026-06-02",
+      "lastmod": "2026-06-03",
       "changefreq": "weekly",
       "priority": "0.6"
     },
@@ -188,9 +188,16 @@
     },
     {
       "path": "/performance/2026/06/",
-      "lastmod": "2026-06-02",
+      "lastmod": "2026-06-03",
       "changefreq": "weekly",
       "priority": "0.78"
+    },
+    {
+      "path": "/performance/2026/06/02/topics/qbts-range/",
+      "lastmod": "2026-06-03",
+      "changefreq": "monthly",
+      "priority": "0.85",
+      "redirectFrom": "/performance/2026-06-02-qbts-range/"
     },
     {
       "path": "/performance/2026/06/01/topics/qbts-range/",
@@ -201,6 +208,14 @@
     }
   ],
   "posts": [
+    {
+      "title": "6/2売買トピック: QBTSを同値回転し、RDW・QUBTを持ち越し",
+      "path": "/performance/2026/06/02/topics/qbts-range/",
+      "description": "2026年6月2日ESTの売買トピック。評価額は105.8万円、前日比-2,978円。約定54件、QBTSの約定レンジ5.98%と持ち越しを整理。",
+      "pubDate": "2026-06-03T08:00:00+09:00",
+      "category": "実績公開",
+      "redirectFrom": "/performance/2026-06-02-qbts-range/"
+    },
     {
       "title": "6/1売買トピック: QBTSの値幅と損切り回転を確認",
       "path": "/performance/2026/06/01/topics/qbts-range/",

@@ -18,23 +18,27 @@ tabs.forEach((tab) => {
 const canvas = document.getElementById("performanceChart");
 const fallbackPerformance = {
   startCapitalJpy: 1000000,
-  generatedAtDisplay: "2026.06.02 05:01:04 JST",
+  generatedAtDisplay: "2026.06.03 05:00:38 JST",
   latest: {
-    reportDateDisplay: "2026.06.01 EST",
-    label: "6/1",
-    jpy: { start: 1124796.18, end: 1078726.75, delta: -46069.44 },
-    usd: { start: 7053.36, end: 6754.98, delta: -298.3819 },
+    reportDateDisplay: "2026.06.02 EST",
+    label: "6/2",
+    jpy: { start: 1060545.95, end: 1057567.6, delta: -2978.35 },
+    usd: { start: 6643.03, end: 6612.42, delta: -30.6106 },
     summary: {
-      totalTrades: 35,
-      totalBuyUsd: 18305.72,
-      totalSellUsd: 22594.92,
-      totalPnlJpy: 78726.75,
-      totalReturnPct: 7.87,
-      dailyReturnPct: -4.1,
+      totalTrades: 54,
+      totalBuyUsd: 14749.28,
+      totalSellUsd: 15833.1,
+      totalPnlJpy: 57567.6,
+      totalReturnPct: 5.76,
+      dailyReturnPct: -0.28,
     },
     positions: [
-      { symbol: "US.QUBT", shares: 165 },
-      { symbol: "US.CRDO", shares: 4 },
+      { symbol: "US.RDW", shares: 24 },
+      { symbol: "US.QUBT", shares: 63 },
+      { symbol: "US.OKLO", shares: 13 },
+      { symbol: "US.NVDA", shares: 5 },
+      { symbol: "US.LUNR", shares: 19 },
+      { symbol: "US.CRDO", shares: 5 },
     ],
   },
   history: [
@@ -53,6 +57,7 @@ const fallbackPerformance = {
     { label: "5/29", jpyEnd: 1124014.05 },
     { label: "5/30", jpyEnd: 1124125.55 },
     { label: "6/1", jpyEnd: 1078726.75 },
+    { label: "6/2", jpyEnd: 1057567.6 },
   ],
 };
 let performanceState = fallbackPerformance;

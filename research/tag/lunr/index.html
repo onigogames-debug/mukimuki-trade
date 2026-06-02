@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>最新実績レポート | MUKIMUKI trade</title>
-  <meta name="description" content="MUKIMUKI tradeの最新実績ページ。評価額、100万円比、保有銘柄、売買件数を日次で整理します。">
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://mukimuki-trade.com/performance/2026/06/02/">
+  <title>LUNRの銘柄検討記事一覧 | MUKIMUKI trade</title>
+  <meta name="description" content="LUNRに関連する銘柄検討、売買トピック、日次実績をまとめたアーカイブです。保有状況、売買理由、関連テーマを時系列で確認できます。">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://mukimuki-trade.com/research/tag/lunr/">
   <meta property="og:locale" content="ja_JP">
-  <meta property="og:type" content="article">
+  <meta property="og:type" content="website">
   <meta property="og:site_name" content="MUKIMUKI trade">
-  <meta property="og:title" content="最新実績レポート | MUKIMUKI trade">
-  <meta property="og:description" content="MUKIMUKI tradeの最新実績ページ。評価額、100万円比、保有銘柄、売買件数を日次で整理します。">
-  <meta property="og:url" content="https://mukimuki-trade.com/performance/latest/">
-  <meta property="og:image" content="https://mukimuki-trade.com/assets/mukimuki-performance.png">
+  <meta property="og:title" content="LUNRの銘柄検討記事一覧 | MUKIMUKI trade">
+  <meta property="og:description" content="LUNRに関連する銘柄検討、売買トピック、日次実績をまとめたアーカイブです。保有状況、売買理由、関連テーマを時系列で確認できます。">
+  <meta property="og:url" content="https://mukimuki-trade.com/research/tag/lunr/">
+  <meta property="og:image" content="https://mukimuki-trade.com/assets/mukimuki-research.png">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="alternate" type="application/rss+xml" title="MUKIMUKI trade RSS" href="/feed.xml">
   <style data-critical-css>
@@ -21,26 +21,51 @@
   </style>
   <link rel="preload" as="style" href="/assets/main.css" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/assets/main.css"></noscript>
-  <script>
-    // Google Search Consoleで「重複URL」警告が出た場合:
-    // 1. /performance/latest/ が noindex,follow になっていることをURL検査で確認する。
-    // 2. canonical が最新の日付固定URLを指していることを確認する。
-    // 3. 正規の日付固定URLをURL検査からインデックス登録リクエストする。
-    // 4. 古い /performance/latest/ の検索結果が残る場合は、再クロール後の反映を待つ。
-    (async () => {
-      try {
-        const response = await fetch('/datasets/performance-latest.json', { cache: 'no-store' });
-        const data = await response.json();
-        const [year, month, day] = data.latest.reportDate.split('-');
-        document.querySelector('[data-latest-link]').href = `/performance/${year}/${month}/${day}/`;
-        document.querySelector('[data-report-date]').textContent = data.latest.reportDateDisplay;
-        document.querySelector('[data-asset]').textContent = new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY', maximumFractionDigits: 0 }).format(data.latest.jpy.end);
-        document.querySelector('[data-return]').textContent = `${data.latest.summary.totalReturnPct >= 0 ? '+' : ''}${data.latest.summary.totalReturnPct.toFixed(2)}%`;
-      } catch (error) {
-        console.error('Failed to load latest performance data', error);
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://mukimuki-trade.com/research/tag/lunr/#webpage",
+      "url": "https://mukimuki-trade.com/research/tag/lunr/",
+      "name": "LUNRの銘柄検討記事一覧",
+      "description": "LUNRに関連する銘柄検討、売買トピック、日次実績をまとめたアーカイブです。保有状況、売買理由、関連テーマを時系列で確認できます。",
+      "inLanguage": "ja-JP",
+      "isPartOf": {
+        "@id": "https://mukimuki-trade.com/#website"
+      },
+      "mainEntity": {
+        "@id": "https://mukimuki-trade.com/research/tag/lunr/#list"
       }
-    })();
-  </script>
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://mukimuki-trade.com/research/tag/lunr/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mukimuki-trade.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "銘柄検討",
+          "item": "https://mukimuki-trade.com/research/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "LUNR",
+          "item": "https://mukimuki-trade.com/research/tag/lunr/"
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <header class="site-header">
@@ -76,56 +101,112 @@
       <a href="https://x.com/OnigoGames" target="_blank" rel="me noopener">公式X</a>
     </nav>
   </header>
+
   <main>
     <section class="article-hero">
       <div class="article-hero-inner">
-        <nav class="breadcrumb" aria-label="breadcrumb"><a href="/">ホーム</a><span>/</span><a href="/performance/latest/">実績</a><span>/</span><span>最新実績</span></nav>
-        <p class="eyebrow">PERFORMANCE / LATEST</p>
-        <h1>最新実績レポート</h1>
-        <p>評価額、100万円比、主要な保有銘柄を日次で整理します。詳しい記録は日付別ページに残しています。</p>
+        <nav class="breadcrumb" aria-label="breadcrumb"><a href="/">Home</a><span>/</span><a href="/research/">銘柄検討</a><span>/</span><span>LUNR</span></nav>
+        <p class="eyebrow">RESEARCH TAG / LUNR</p>
+        <h1>LUNRの銘柄検討記事一覧</h1>
+        <p>LUNRに関連する銘柄検討、売買トピック、日次実績をまとめたアーカイブです。保有状況、売買理由、関連テーマを時系列で確認できます。</p>
+      </div>
+    </section>
+
+    <section class="collection-body" aria-label="LUNRの記事一覧">
+      <article class="collection-card">
+        <span class="post-kicker">2026.06.03 / 実績公開</span>
+        <h2><a href="/performance/2026/06/02/topics/qbts-range/">6/2売買トピック: QBTSを同値回転し、RDW・QUBTを持ち越し</a></h2>
+        <p>2026年6月2日ESTの売買トピック。評価額は105.8万円、前日比-2,978円。約定54件、QBTSの約定レンジ5.98%と持ち越しを整理。</p>
+        <div class="tag-row">
+          <span>LUNR</span>
+          <span>実績公開</span>
+          <span>売買トピック</span>
+          <span>QBTS</span>
+        </div>
+      </article>
+      <article class="collection-card">
+        <span class="post-kicker">2026.06.02 / 実績公開</span>
+        <h2><a href="/performance/2026/06/02/">2026.06.02 EST 実績レポート</a></h2>
+        <p>評価額 1,057,568円、前日比 -2,978円、取引54件。</p>
+        <div class="tag-row">
+          <span>LUNR</span>
+          <span>実績公開</span>
+          <span>100万円チャレンジ</span>
+          <span>US.RDW</span>
+        </div>
+      </article>
+    </section>
+
+    <section class="article-body ticker-hub" aria-label="LUNRの銘柄ハブ">
+      <section class="article-panel">
+        <h2>LUNRの記録サマリー</h2>
         <div class="stamp-row" aria-label="MUKIMUKIチェック">
-          <span class="muki-stamp muki-stamp--yellow">
-          <picture data-cwv-picture>
-  <source type="image/avif" srcset="/assets/optimized/mukimuki-main-480.avif 480w, /assets/optimized/mukimuki-main-800.avif 800w, /assets/optimized/mukimuki-main-1200.avif 1200w" sizes="(max-width: 720px) 92vw, 360px">
-  <source type="image/webp" srcset="/assets/optimized/mukimuki-main-480.webp 480w, /assets/optimized/mukimuki-main-800.webp 800w, /assets/optimized/mukimuki-main-1200.webp 1200w" sizes="(max-width: 720px) 92vw, 360px">
-  <img src="/assets/mukimuki-main.png" alt="MUKIMUKIキャラクターのチェックスタンプ" width="1226" height="764" loading="lazy" decoding="async" data-cwv-fallback>
-</picture>
-          <strong>最新版</strong>
-        </span>
           <span class="muki-stamp muki-stamp--blue">
           <picture data-cwv-picture>
   <source type="image/avif" srcset="/assets/optimized/mukimuki-main-480.avif 480w, /assets/optimized/mukimuki-main-800.avif 800w, /assets/optimized/mukimuki-main-1200.avif 1200w" sizes="(max-width: 720px) 92vw, 360px">
   <source type="image/webp" srcset="/assets/optimized/mukimuki-main-480.webp 480w, /assets/optimized/mukimuki-main-800.webp 800w, /assets/optimized/mukimuki-main-1200.webp 1200w" sizes="(max-width: 720px) 92vw, 360px">
   <img src="/assets/mukimuki-main.png" alt="MUKIMUKIキャラクターのチェックスタンプ" width="1226" height="764" loading="lazy" decoding="async" data-cwv-fallback>
 </picture>
-          <strong>固定URLで保存</strong>
+          <strong>銘柄別ハブ</strong>
+        </span>
+          <span class="muki-stamp muki-stamp--yellow">
+          <picture data-cwv-picture>
+  <source type="image/avif" srcset="/assets/optimized/mukimuki-main-480.avif 480w, /assets/optimized/mukimuki-main-800.avif 800w, /assets/optimized/mukimuki-main-1200.avif 1200w" sizes="(max-width: 720px) 92vw, 360px">
+  <source type="image/webp" srcset="/assets/optimized/mukimuki-main-480.webp 480w, /assets/optimized/mukimuki-main-800.webp 800w, /assets/optimized/mukimuki-main-1200.webp 1200w" sizes="(max-width: 720px) 92vw, 360px">
+  <img src="/assets/mukimuki-main.png" alt="MUKIMUKIキャラクターのチェックスタンプ" width="1226" height="764" loading="lazy" decoding="async" data-cwv-fallback>
+</picture>
+          <strong>実績と候補を接続</strong>
         </span>
         </div>
-      </div>
-    </section>
-    <article class="article-body">
-      <section class="article-panel">
-        <h2><span data-report-date>2026.06.02 EST</span></h2>
         <div class="stats-grid">
-          <div class="stat-card"><span>評価額</span><strong data-asset>¥1,057,568</strong></div>
-          <div class="stat-card"><span>100万円比</span><strong data-return>+5.76%</strong></div>
+          <div class="stat-card"><span>関連ページ</span><strong>2件</strong></div>
+          <div class="stat-card"><span>日次実績</span><strong>1件</strong></div>
+          <div class="stat-card"><span>売買トピック</span><strong>1件</strong></div>
+          <div class="stat-card"><span>銘柄検討</span><strong>0件</strong></div>
         </div>
-        <p><a class="btn btn-primary" data-latest-link href="/performance/2026/06/02/">日付固定URLで読む</a></p>
+        <p>LUNRに関する実績公開、売買トピック、銘柄検討を同じページに集約しています。新しい記事から順に読み、実際の保有や売買が出た日を日次実績で確認できます。</p>
+        <p>直近の関連記録は<a href="/performance/2026/06/02/topics/qbts-range/">6/2売買トピック: QBTSを同値回転し、RDW・QUBTを持ち越し</a>です。銘柄テーマだけでなく、評価額、取引件数、持ち越し状況と合わせて見ることで、運用上の扱いを確認しやすくしています。</p>
       </section>
       <section class="article-panel">
-        <h2>最新実績で見るポイント</h2>
-        <p>最新実績では、評価額の増減だけでなく、どの銘柄を保有し、どの程度の売買件数でその結果になったかを合わせて確認できます。MUKIMUKI tradeは100万円から米国株トレードを始めた前提で、日々の数字を固定URLに残し、後から比較しやすい形で公開しています。</p>
-        <p>短期のプラスやマイナスだけを見ると判断が偏りやすいため、日次ページでは前日比、100万円比、保有銘柄、売買トピックを同じ順番で掲載します。</p>
-        <p>評価額が増えた日でも、買い越しでリスクを増やしたのか、利確で現金化したのかによって意味は変わります。逆に前日比がマイナスでも、持ち越し銘柄の整理や損切りで翌日のリスクを下げている場合があります。最新実績では、損益、取引件数、保有銘柄を分けて記録します。</p>
+        <h2>LUNRの日次実績で出た日</h2>
+        <div class="link-grid">
+          <a class="link-card" href="/performance/2026/06/02/"><span>2026.06.02</span><strong>2026.06.02 EST 実績レポート</strong><p>評価額 1,057,568円、前日比 -2,978円、取引54件。</p></a>
+        </div>
       </section>
       <section class="article-panel">
-        <h2>関連するページ</h2>
-        <p>月ごとの流れは<a href="/performance/2026/06/">月次まとめ</a>、売買判断の背景は<a href="/logic/">投資ロジック</a>、候補銘柄の見方は<a href="/research/">銘柄検討</a>にまとめています。</p>
-        <p>日付別ページには、その日の評価額、前日比、取引件数、主要保有銘柄、よくある質問をまとめています。最新ページは現在地をすばやく確認するためのページとして使い、詳しい振り返りは日付別ページと月次まとめに残します。</p>
-        <p>保有銘柄が変わった日は、翌日の評価額にも影響しやすいため、月次まとめで前後の日付を並べて確認します。</p>
+        <h2>関連テーマと読み順</h2>
+        <div class="fact-grid">
+          <div class="fact-card">
+            <h3>ページ種別</h3>
+            <p>売買トピック: 1件 / 日次実績: 1件</p>
+          </div>
+          <div class="fact-card">
+            <h3>関連テーマ</h3>
+            <p>実績公開 / 100万円チャレンジ / OKLO / QBTS / QUBT / RDW</p>
+          </div>
+          <div class="fact-card">
+            <h3>確認順</h3>
+            <p>銘柄検討で候補理由を読み、売買トピックで判断背景を確認し、日次実績で評価額と取引件数を見ます。</p>
+          </div>
+        </div>
       </section>
-    </article>
+    </section>
+
+    <section class="article-body">
+      <section class="article-panel">
+        <h2>LUNRを読む時の見方</h2>
+        <p>銘柄別アーカイブでは、候補整理、売買トピック、日次実績を同じ銘柄軸で並べています。単独の記事だけで判断せず、保有状況、売買件数、関連テーマの変化を時系列で確認できます。</p>
+        <p>LUNRのような米国株は、決算、材料、出来高、地合いによって短期間で評価が変わりやすくなります。このページでは、銘柄検討の記事だけでなく、実際の売買記録や日次実績に出てきた場面もまとめ、候補として見た理由と運用上の扱いをつなげて読めるようにしています。</p>
+        <p>初めて読む場合は、まず一覧の新しい記事から確認し、次に同じ月の実績ページで評価額、前日比、保有株数の変化を見ます。候補として強いテーマに見えても、売買件数が増えすぎている日や、含み損を抱えたまま持ち越している日は、リスクの取り方まで確認することが大切です。</p>
+        <p>掲載内容は自己運用ログと市場メモであり、特定銘柄の売買を推奨するものではありません。</p>
+      </section>
+      <section class="article-panel">
+        <h2>あわせて確認するページ</h2>
+        <p>直近の数字は<a href="/performance/latest/">最新実績</a>、日別の固定記録は<a href="/performance/2026/05/">月次実績アーカイブ</a>、候補化や撤退条件の考え方は<a href="/logic/">投資ロジック</a>にまとめています。銘柄別ページから実績とロジックへ戻ることで、テーマだけでなく資産推移との関係も追いやすくなります。</p>
+      </section>
+    </section>
   </main>
+
   <footer class="site-footer">
     <strong>MUKIMUKI trade</strong>
     <p>100万円からの米国株トレード実績、銘柄メモ、売買ロジックを記録しています。掲載内容には広告リンクを含む場合があります。</p>
