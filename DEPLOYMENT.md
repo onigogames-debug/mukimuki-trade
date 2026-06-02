@@ -13,7 +13,7 @@ Last updated: 2026-06-02
 - Account: `onigo.games@gmail.com`
 - Project: `mukimuki-trade`
 - Production URL: https://mukimuki-trade.pages.dev
-- Latest deployment URL: https://41c73d4a.mukimuki-trade.pages.dev
+- Latest deployment URL: https://bc8ad3ac.mukimuki-trade.pages.dev
 - Deployment method: Wrangler direct upload
 
 ## Custom Domains
@@ -46,7 +46,7 @@ No domain action remains. Both apex and `www` custom domains return `HTTP/2 200`
 - Sitemap submitted: `https://mukimuki-trade.com/sitemap.xml`
 - Image sitemap: `https://mukimuki-trade.com/image-sitemap.xml`
 - RSS feed submitted as sitemap: `https://mukimuki-trade.com/feed.xml` (success)
-- Current sitemap URLs: 62
+- Current sitemap URLs: 63
 - Manual indexing requested: top page and `/performance/`
 
 ## SEO Enhancements
@@ -54,6 +54,7 @@ No domain action remains. Both apex and `www` custom domains return `HTTP/2 200`
 - Search favicon: `/assets/favicon.svg`
 - RSS feed: `/feed.xml`
 - Image sitemap: `/image-sitemap.xml`
+- HTML sitemap: `/sitemap/`
 - AI/search summary: `/llms.txt`
 - Structured data: `WebSite`, `SearchAction`, `Person`, `Article`, `FAQPage`, `CollectionPage`, `BreadcrumbList`, `ProfilePage`, `AboutPage`
 - Trust structured data: `ProfilePage`, `Person`, `FAQPage`
@@ -67,6 +68,7 @@ No domain action remains. Both apex and `www` custom domains return `HTTP/2 200`
 - Latest performance SEO control: `/performance/latest/` returns `X-Robots-Tag: noindex`, has `<meta name="robots" content="noindex,follow">`, and canonical points to the latest fixed daily URL
 - Crawl directives: `robots.txt` disallows `/datasets/`, allows `/assets/` and `/feed.xml`, and points crawlers to `https://mukimuki-trade.com/sitemap.xml`
 - Sitemap priorities: `/` is `1.0/daily`, daily performance pages are `0.9/weekly`, trade topics are `0.8/weekly`, and `/performance/latest/` is excluded
+- HTML sitemap page: `/sitemap/` lists the main pages, performance pages, topic pages, research hubs, logic pages, archives, and categories, and is linked from the footer
 - Trade topic URLs: legacy `/performance/YYYY-MM-DD-slug/` paths now 301 to `/performance/YYYY/MM/DD/topics/slug/`
 - `_site` output for SSG workflows: `npm run performance:pages:site`
 - Performance redirect: `/performance/` returns `301` to `/performance/latest/`, while `/performance/latest/` canonical points to the latest fixed daily URL

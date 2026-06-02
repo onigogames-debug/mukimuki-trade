@@ -16,6 +16,13 @@ const escapeXml = (value) => String(value)
   .replaceAll('"', '&quot;')
   .replaceAll("'", '&apos;');
 
+const escapeHtml = (value) => String(value ?? '')
+  .replaceAll('&', '&amp;')
+  .replaceAll('<', '&lt;')
+  .replaceAll('>', '&gt;')
+  .replaceAll('"', '&quot;')
+  .replaceAll("'", '&#39;');
+
 const absoluteUrl = (pagePath) => {
   const normalized = pagePath.startsWith('/') ? pagePath : `/${pagePath}`;
   return `${content.site.url}${normalized}`;
@@ -60,6 +67,7 @@ const walkHtmlPages = async (dir = root) => {
 
 const inferChangefreq = (pagePath) => {
   if (pagePath === '/' || pagePath === '/performance/latest/') return 'daily';
+  if (pagePath === '/sitemap/') return 'weekly';
   if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/$/.test(pagePath)) return 'weekly';
   if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/topics\/[^/]+\/$/.test(pagePath)) return 'weekly';
   if (/^\/performance\/\d{4}\/\d{2}\/$/.test(pagePath)) return 'monthly';
@@ -76,6 +84,7 @@ const inferChangefreq = (pagePath) => {
 const inferPriority = (pagePath) => {
   if (pagePath === '/') return '1.0';
   if (pagePath === '/performance/latest/') return '0.1';
+  if (pagePath === '/sitemap/') return '0.6';
   if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/$/.test(pagePath)) return '0.9';
   if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/topics\/[^/]+\/$/.test(pagePath)) return '0.8';
   if (/^\/performance\/\d{4}\/\d{2}\/$/.test(pagePath)) return '0.7';
@@ -107,6 +116,15 @@ const toDateOrNull = (value) => {
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return String(value).slice(0, 10);
   return date.toISOString().slice(0, 10);
+};
+
+const titleFromHtml = (html, pagePath) => {
+  const rawTitle = html.match(/<title>(.*?)<\/title>/is)?.[1];
+  if (!rawTitle) return pagePath;
+  return rawTitle
+    .replace(/\s*\|\s*MUKIMUKI trade\s*$/i, '')
+    .replace(/\s+/g, ' ')
+    .trim();
 };
 
 const lastmodForPage = async (pagePath, filePath) => {
@@ -143,6 +161,7 @@ for (const { path: pagePath, filePath } of discoveredPages) {
   if (hasNoindexRobots(html)) continue;
   pageMap.set(pagePath, {
     path: pagePath,
+    title: titleFromHtml(html, pagePath),
     lastmod: await lastmodForPage(pagePath, filePath),
     changefreq: inferChangefreq(pagePath),
     priority: inferPriority(pagePath),
@@ -154,11 +173,20 @@ for (const page of content.pages) {
   if (!pageMap.has(page.path)) {
     pageMap.set(page.path, {
       ...page,
+      title: page.title || page.name || page.path,
       changefreq: inferChangefreq(page.path),
       priority: inferPriority(page.path),
     });
   }
 }
+
+pageMap.set('/sitemap/', {
+  path: '/sitemap/',
+  title: 'サイトマップ',
+  lastmod: toDate(content.site.lastBuildDate),
+  changefreq: inferChangefreq('/sitemap/'),
+  priority: inferPriority('/sitemap/'),
+});
 
 const pages = [...pageMap.values()].sort((a, b) => {
   const priority = Number(b.priority) - Number(a.priority);
@@ -229,11 +257,151 @@ ${content.posts.map((post) => `    <item>
 </rss>
 `;
 
+const sitemapGroups = [
+  {
+    heading: '主要ページ',
+    match: (page) => ['/', '/profile/', '/about/', '/moomoo/', '/archive/', '/sitemap/'].includes(page.path),
+  },
+  {
+    heading: '日次実績',
+    match: (page) => /^\/performance\/\d{4}\/\d{2}\/\d{2}\/$/.test(page.path),
+  },
+  {
+    heading: '月次・年次まとめ',
+    match: (page) => /^\/performance\/\d{4}\/(\d{2}\/)?$/.test(page.path),
+  },
+  {
+    heading: '売買トピック',
+    match: (page) => /^\/performance\/\d{4}\/\d{2}\/\d{2}\/topics\/[^/]+\/$/.test(page.path),
+  },
+  {
+    heading: '銘柄検討・タグ',
+    match: (page) => page.path.startsWith('/research/'),
+  },
+  {
+    heading: '投資ロジック',
+    match: (page) => page.path.startsWith('/logic/'),
+  },
+  {
+    heading: 'アーカイブ・カテゴリ',
+    match: (page) => (page.path !== '/archive/' && page.path.startsWith('/archive/')) || page.path.startsWith('/category/'),
+  },
+];
+
+const renderSitemapList = (groupPages) => `      <ul class="sitemap-link-list">
+${groupPages.map((page) => `        <li><a href="${escapeHtml(page.path)}">${escapeHtml(page.title || page.path)}</a><span>${escapeHtml(page.path)}</span></li>`).join('\n')}
+      </ul>`;
+
+const sitemapHtmlBody = sitemapGroups
+  .map((group) => {
+    const groupPages = pages.filter(group.match);
+    if (!groupPages.length) return '';
+    return `    <section class="article-panel">
+      <h2>${escapeHtml(group.heading)}</h2>
+${renderSitemapList(groupPages)}
+    </section>`;
+  })
+  .filter(Boolean)
+  .join('\n');
+
+const sitemapJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      name: 'サイトマップ',
+      url: `${content.site.url}/sitemap/`,
+      inLanguage: content.site.language,
+      isPartOf: {
+        '@type': 'WebSite',
+        name: content.site.title,
+        url: `${content.site.url}/`,
+      },
+      mainEntity: {
+        '@type': 'ItemList',
+        itemListElement: pages.map((page, index) => ({
+          '@type': 'ListItem',
+          position: index + 1,
+          name: page.title || page.path,
+          url: absoluteUrl(page.path),
+        })),
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'ホーム',
+          item: `${content.site.url}/`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'サイトマップ',
+          item: `${content.site.url}/sitemap/`,
+        },
+      ],
+    },
+  ],
+};
+
+const htmlSitemap = `<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>サイトマップ | MUKIMUKI trade</title>
+  <meta name="description" content="MUKIMUKI tradeの主要ページ、日次実績、銘柄検討、投資ロジックを一覧で確認できます。">
+  <link rel="canonical" href="${content.site.url}/sitemap/">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="application/ld+json">${JSON.stringify(sitemapJsonLd, null, 2)}</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="MUKIMUKI trade home">
+      <img src="/assets/mukimuki-main.png" alt="MUKIMUKIキャラクター - 100万円トレード記録ブログのロゴ">
+      <span><strong>MUKIMUKI trade</strong><small>数字で追う公開記録</small></span>
+    </a>
+    <nav class="nav-links" aria-label="主要メニュー">
+      <a href="/performance/latest/">実績</a>
+      <a href="/research/">銘柄検討</a>
+      <a href="/logic/">ロジック</a>
+      <a href="/moomoo/">moomoo</a>
+      <a href="/archive/">アーカイブ</a>
+      <a href="/profile/">運営者</a>
+    </nav>
+  </header>
+  <main class="article-page">
+    <section class="article-hero">
+      <p class="section-kicker">Site map</p>
+      <h1>サイトマップ</h1>
+      <p>MUKIMUKI tradeの実績公開、銘柄検討、投資ロジックを一覧からたどれます。</p>
+    </section>
+    <article class="article-body article-longform">
+${sitemapHtmlBody}
+    </article>
+  </main>
+  <footer class="site-footer">
+    <strong>MUKIMUKI trade</strong>
+    <p>100万円からの米国株トレード実績、銘柄メモ、売買ロジックを記録しています。掲載内容には広告リンクを含む場合があります。</p>
+    <nav class="footer-links" aria-label="補助リンク"><a href="/profile/">運営者</a><a href="/archive/">アーカイブ</a><a href="/sitemap/">サイトマップ</a><a href="/feed.xml">RSS</a><a href="/about/">運営方針</a><a href="https://x.com/OnigoGames" target="_blank" rel="me noopener">公式X</a></nav>
+  </footer>
+</body>
+</html>
+`;
+
 await writeFile(path.join(root, 'sitemap.xml'), sitemap);
 await mkdir(path.join(root, '_site'), { recursive: true });
 await writeFile(path.join(root, '_site', 'sitemap.xml'), sitemap);
 await writeFile(path.join(root, 'image-sitemap.xml'), imageSitemap);
 await writeFile(path.join(root, 'feed.xml'), feed);
+await mkdir(path.join(root, 'sitemap'), { recursive: true });
+await writeFile(path.join(root, 'sitemap', 'index.html'), htmlSitemap);
+await mkdir(path.join(root, '_site', 'sitemap'), { recursive: true });
+await writeFile(path.join(root, '_site', 'sitemap', 'index.html'), htmlSitemap);
 
 const robots = `User-agent: *
 Disallow: /datasets/
@@ -245,4 +413,4 @@ Sitemap: ${content.site.url}/sitemap.xml
 
 await writeFile(path.join(root, 'robots.txt'), robots);
 
-console.log(`Generated sitemap.xml (${pages.length} URLs), _site/sitemap.xml, image-sitemap.xml, robots.txt, and feed.xml (${content.posts.length} posts).`);
+console.log(`Generated sitemap.xml (${pages.length} URLs), HTML sitemap, _site/sitemap.xml, image-sitemap.xml, robots.txt, and feed.xml (${content.posts.length} posts).`);

@@ -426,6 +426,14 @@
     </image:image>
   </url>
   <url>
+    <loc>https://mukimuki-trade.com/sitemap/</loc>
+    <image:image>
+      <image:loc>https://mukimuki-trade.com/assets/optimized/mukimuki-main-800.avif</image:loc>
+      <image:caption>MUKIMUKI trade公式キャラクター</image:caption>
+      <image:title>MUKIMUKI trade</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://mukimuki-trade.com/archive/</loc>
     <image:image>
       <image:loc>https://mukimuki-trade.com/assets/optimized/mukimuki-diary-800.avif</image:loc>

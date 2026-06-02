@@ -45,11 +45,13 @@ Check these URLs after each SEO deployment:
 | `https://mukimuki-trade.com/performance/2026-06-01-qbts-range/` | Redirected by 301 to the hierarchical topic URL |
 | `https://mukimuki-trade.com/performance/2026/06/` | Indexed, internal links point to daily and topic URLs |
 | `https://mukimuki-trade.com/research/tag/qubt/` | Indexed, ticker hub links to related performance and topic pages |
+| `https://mukimuki-trade.com/sitemap/` | Indexed, canonical is self, links to major indexable sections |
 
 ## Sitemap
 
 - Submit `https://mukimuki-trade.com/sitemap.xml`.
 - Confirm `/performance/latest/` is not listed.
+- Confirm `/sitemap/` is listed.
 - Confirm hierarchical topic URLs are listed.
 - Confirm ticker hub pages under `/research/tag/` are listed.
 

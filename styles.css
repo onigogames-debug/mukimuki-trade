@@ -1335,6 +1335,35 @@ strong {
   padding-left: 20px;
 }
 
+.sitemap-link-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sitemap-link-list li {
+  display: grid;
+  gap: 4px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+}
+
+.sitemap-link-list a {
+  color: var(--blue);
+  font-weight: 900;
+}
+
+.sitemap-link-list span {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
 .article-kpis {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
