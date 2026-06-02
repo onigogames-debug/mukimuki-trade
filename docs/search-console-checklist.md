@@ -22,9 +22,13 @@ Current Search Console state:
 | HTTPS | 3 HTTPS URLs / 0 non-HTTPS URLs |
 | Core Web Vitals | Not enough Chrome UX Report traffic data for mobile or desktop |
 
+Recovery action completed:
+
+- `/sitemap.xml` was resubmitted in Search Console on 2026-06-02.
+
 Recommended recovery actions:
 
-- Resubmit `/sitemap.xml` after each SEO deployment until Search Console catches up with the current sitemap URL count.
+- Resubmit `/sitemap.xml` after future SEO deployments until Search Console catches up with the current sitemap URL count.
 - Use URL Inspection for the top page, latest fixed daily page, the newest topic page, the newest month archive, and the most important ticker hub.
 - Do not treat `Discovered - currently not indexed` as a code defect while the site is new; prioritize stronger monthly archives, ticker hubs, and internal links.
 
