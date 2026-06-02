@@ -1,7 +1,7 @@
 import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { absoluteUrl, renderJsonLdScript } from './structured-data.mjs';
+import { absoluteUrl, buildBreadcrumbListFromPath, renderJsonLdScript } from './structured-data.mjs';
 import { renderBreadcrumbHtml } from './breadcrumbs.mjs';
 import { buildArticleIndex, renderRelatedArticlesSection } from './internal-links.mjs';
 
@@ -247,14 +247,9 @@ const renderDailyPage = (report, articleIndex, reports) => {
       answer: '買い推奨ではありません。保有銘柄として公開しているだけで、投資判断は決算、ニュース、リスク許容度を確認したうえで読者自身が行う必要があります。',
     },
   ];
-  const breadcrumbs = [
-    { name: 'Home', item: `${siteUrl}/` },
-    { name: '実績', item: absoluteUrl('/performance/latest/') },
-    { name: `${dateParts(latest.reportDate).year}年${Number(dateParts(latest.reportDate).month)}月`, item: absoluteUrl(monthlyPath) },
-    { name: latest.reportDateDisplay, item: absoluteUrl(pagePath) },
-  ];
+  const breadcrumbs = buildBreadcrumbListFromPath(pagePath);
   const jsonLdScript = renderJsonLdScript({
-    pageType: 'performance',
+    pageType: 'daily-performance',
     title,
     description,
     published_time: report.generatedAt,
@@ -406,17 +401,13 @@ const renderMonthPage = (date, reports) => {
     .filter(({ report }) => report.latest.reportDate.startsWith(`${year}-${month}`))
     .sort((a, b) => a.report.latest.reportDate.localeCompare(b.report.latest.reportDate));
   const jsonLdScript = renderJsonLdScript({
-    pageType: 'collection',
+    pageType: 'monthly-archive',
     title,
     description,
     url: absoluteUrl(pagePath),
     path: pagePath,
     section: '実績公開',
-    breadcrumbs: [
-      { name: 'Home', item: `${siteUrl}/` },
-      { name: '実績', item: absoluteUrl('/performance/latest/') },
-      { name: title, item: absoluteUrl(pagePath) },
-    ],
+    breadcrumbs: buildBreadcrumbListFromPath(pagePath),
     items: monthReports.map(({ report }) => ({
       name: `${report.latest.reportDateDisplay} 実績レポート`,
       path: datePath(report.latest.reportDate),
@@ -449,7 +440,7 @@ ${header}
   <main>
     <section class="article-hero">
       <div class="article-hero-inner">
-        <nav class="breadcrumb" aria-label="breadcrumb"><a href="/">Home</a><span>/</span><a href="/performance/latest/">実績</a><span>/</span><span>${escapeHtml(title)}</span></nav>
+        ${renderBreadcrumbHtml(buildBreadcrumbListFromPath(pagePath), escapeHtml)}
         <p class="eyebrow">PERFORMANCE / MONTHLY ARCHIVE</p>
         <h1>${escapeHtml(title)}</h1>
         <p>${year}年${Number(month)}月の米国株トレード記録を、日付、評価額、前日比、保有銘柄で一覧化しています。気になる日は日次ページで100万円比、売買件数、取引の背景を確認できます。</p>
@@ -497,17 +488,13 @@ const renderYearPage = (date, reports) => {
   const yearReports = reports.filter(({ report }) => report.latest.reportDate.startsWith(`${year}-`));
   const monthKeys = [...new Set(yearReports.map(({ report }) => report.latest.reportDate.slice(0, 7)))].sort();
   const jsonLdScript = renderJsonLdScript({
-    pageType: 'collection',
+    pageType: 'yearly-archive',
     title,
     description,
     url: absoluteUrl(pagePath),
     path: pagePath,
     section: '実績公開',
-    breadcrumbs: [
-      { name: 'Home', item: `${siteUrl}/` },
-      { name: '実績', item: absoluteUrl('/performance/latest/') },
-      { name: title, item: absoluteUrl(pagePath) },
-    ],
+    breadcrumbs: buildBreadcrumbListFromPath(pagePath),
     items: monthKeys.map((key) => ({
       name: `${key.replace('-', '年')}月の実績`,
       path: `/performance/${key.replace('-', '/')}/`,
@@ -545,7 +532,7 @@ ${header}
   <main>
     <section class="article-hero">
       <div class="article-hero-inner">
-        <nav class="breadcrumb" aria-label="breadcrumb"><a href="/">Home</a><span>/</span><a href="/performance/latest/">実績</a><span>/</span><span>${escapeHtml(title)}</span></nav>
+        ${renderBreadcrumbHtml(buildBreadcrumbListFromPath(pagePath), escapeHtml)}
         <p class="eyebrow">PERFORMANCE / YEARLY ARCHIVE</p>
         <h1>${escapeHtml(title)}</h1>
         <p>${year}年の月次まとめと日次実績をたどる入口です。最新実績だけでなく、月単位・日単位の固定URLを積み上げて、過去のトレード記録を検索資産として残します。</p>
@@ -591,22 +578,10 @@ const renderLatestPage = (latestReport) => {
   const title = '最新実績レポート';
   const description = 'MUKIMUKI tradeの最新実績ページ。評価額、100万円比、保有銘柄、売買件数を日次で整理します。';
   const breadcrumbs = [
-    { name: 'Home', item: `${siteUrl}/` },
+    { name: 'ホーム', item: `${siteUrl}/` },
     { name: '実績', item: absoluteUrl('/performance/latest/') },
     { name: '最新実績', item: absoluteUrl('/performance/latest/') },
   ];
-  const jsonLdScript = renderJsonLdScript({
-    pageType: 'collection',
-    title,
-    description,
-    url: absoluteUrl('/performance/latest/'),
-    path: '/performance/latest/',
-    section: '実績公開',
-    breadcrumbs,
-    items: [
-      { name: `${latestReport.latest.reportDateDisplay} 実績レポート`, path: latestPath },
-    ],
-  });
 
   return `<!doctype html>
 <html lang="ja">
@@ -627,7 +602,6 @@ const renderLatestPage = (latestReport) => {
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="alternate" type="application/rss+xml" title="MUKIMUKI trade RSS" href="/feed.xml">
   <link rel="stylesheet" href="/styles.css">
-  ${jsonLdScript}
   <script>
     // Google Search Consoleで「重複URL」警告が出た場合:
     // 1. /performance/latest/ が noindex,follow になっていることをURL検査で確認する。

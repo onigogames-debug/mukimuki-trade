@@ -10,6 +10,18 @@ const site = {
   officialX: 'https://x.com/OnigoGames',
 };
 
+export const JSON_LD_PAGE_TYPES = [
+  'daily-performance',
+  'monthly-archive',
+  'yearly-archive',
+  'trade-topic',
+  'research',
+  'logic',
+  'top',
+  'profile',
+  'about',
+];
+
 const truthy = new Set(['true', 'yes', 'on']);
 const falsy = new Set(['false', 'no', 'off']);
 
@@ -49,6 +61,18 @@ const compactObject = (value) => {
       }),
   );
 };
+
+const breadcrumbPageTypes = new Set([
+  'performance',
+  'performanceDaily',
+  'performanceMonthly',
+  'performanceYearly',
+  'research',
+  'logic',
+  'article',
+  'archive',
+  'collection',
+]);
 
 const parseScalar = (value) => {
   const trimmed = value.trim();
@@ -140,11 +164,12 @@ const inferPageType = (path, section) => {
   if (path === '/') return 'home';
   if (path === '/profile/') return 'profile';
   if (path === '/about/') return 'legal';
+  if (path === '/performance/latest/') return 'skip';
   if (path.startsWith('/archive/')) return 'archive';
   if (path.startsWith('/category/')) return 'collection';
   if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/$/.test(path)) return 'performanceDaily';
   if (/^\/performance\/\d{4}\/\d{2}\/$/.test(path)) return 'performanceMonthly';
-  if (/^\/performance\/\d{4}\/$/.test(path) || path === '/performance/latest/') return 'collection';
+  if (/^\/performance\/\d{4}\/$/.test(path)) return 'performanceYearly';
   if (path === '/performance/' || path.startsWith('/performance/')) return 'performance';
   if (path === '/research/' || path.startsWith('/research/')) return 'research';
   if (path === '/logic/' || path.startsWith('/logic/')) return path === '/logic/' ? 'collection' : 'logic';
@@ -157,14 +182,23 @@ const normalizePageType = (value, path = '/') => {
   const aliases = new Map([
     ['top', 'home'],
     ['website', 'home'],
-    ['dailyPerformance', 'performanceDaily'],
     ['daily-performance', 'performanceDaily'],
+    ['dailyPerformance', 'performanceDaily'],
     ['performance-daily', 'performanceDaily'],
     ['performance_daily', 'performanceDaily'],
+    ['monthly-archive', 'performanceMonthly'],
     ['monthlyPerformance', 'performanceMonthly'],
     ['monthly-performance', 'performanceMonthly'],
     ['performance-monthly', 'performanceMonthly'],
     ['performance_monthly', 'performanceMonthly'],
+    ['yearly-archive', 'performanceYearly'],
+    ['yearlyArchive', 'performanceYearly'],
+    ['annual-archive', 'performanceYearly'],
+    ['annualArchive', 'performanceYearly'],
+    ['performanceYearly', 'performanceYearly'],
+    ['performance-yearly', 'performanceYearly'],
+    ['trade-topic', 'performance'],
+    ['tradeTopic', 'performance'],
     ['stockResearch', 'research'],
     ['stock-research', 'research'],
     ['investmentLogic', 'logic'],
@@ -177,6 +211,9 @@ const normalizePageType = (value, path = '/') => {
     ['legal-document', 'legal'],
     ['archive', 'collection'],
     ['monthly', 'performanceMonthly'],
+    ['latest-performance', 'skip'],
+    ['latestPerformance', 'skip'],
+    ['noindex', 'skip'],
   ]);
   return aliases.get(type) || type;
 };
@@ -188,13 +225,14 @@ const titleizeSegment = (segment) => segment
   .join(' ');
 
 export const breadcrumbLabelForSegment = (segment, { previous, next } = {}) => {
+  if (segment === '') return 'ホーム';
   if (segment === 'performance') return '実績';
   if (segment === 'research') return '銘柄検討';
   if (segment === 'logic') return '投資ロジック';
   if (segment === 'archive') return 'アーカイブ';
   if (segment === 'category') return 'カテゴリ';
   if (segment === 'profile') return 'プロフィール';
-  if (segment === 'about') return '運営方針';
+  if (segment === 'about') return '免責事項';
   if (segment === 'moomoo') return 'moomoo証券';
   if (segment === 'latest') return '最新実績';
   if (/^\d{4}$/.test(segment)) return `${segment}年`;
@@ -208,26 +246,27 @@ export const buildBreadcrumbListFromPath = (pathValue = '/', options = {}) => {
   const title = options.title;
   const path = new URL(pathValue, ensureTrailingSlash(siteUrl)).pathname;
   const segments = path.split('/').filter(Boolean);
-  const breadcrumbs = [{ name: 'Home', item: absoluteUrlForSite('/', siteUrl) }];
+  const breadcrumbs = [{ name: 'ホーム', item: absoluteUrlForSite('/', siteUrl) }];
 
   const performanceMatch = path.match(/^\/performance\/(\d{4})(?:\/(\d{2})(?:\/(\d{2}))?)?\/$/);
   if (performanceMatch) {
     const [, year, month, day] = performanceMatch;
     breadcrumbs.push({ name: '実績', item: absoluteUrlForSite('/performance/latest/', siteUrl) });
-    if (year && month) {
-      breadcrumbs.push({
-        name: `${year}年${Number(month)}月`,
-        item: absoluteUrlForSite(`/performance/${year}/${month}/`, siteUrl),
-      });
-    } else if (year) {
+    if (year) {
       breadcrumbs.push({
         name: `${year}年`,
         item: absoluteUrlForSite(`/performance/${year}/`, siteUrl),
       });
     }
+    if (month) {
+      breadcrumbs.push({
+        name: `${Number(month)}月`,
+        item: absoluteUrlForSite(`/performance/${year}/${month}/`, siteUrl),
+      });
+    }
     if (day) {
       breadcrumbs.push({
-        name: title || `${Number(month)}月${Number(day)}日`,
+        name: `${Number(month)}月${Number(day)}日`,
         item: absoluteUrlForSite(`/performance/${year}/${month}/${day}/`, siteUrl),
       });
     }
@@ -256,7 +295,7 @@ export const buildBreadcrumbListFromPath = (pathValue = '/', options = {}) => {
 };
 
 const buildDefaultBreadcrumbs = (path, title, section) => {
-  const crumbs = [{ name: 'Home', item: `${site.url}/` }];
+  const crumbs = [{ name: 'ホーム', item: `${site.url}/` }];
   if (path.startsWith('/performance/') && path !== '/performance/') {
     crumbs.push({ name: '実績公開', item: absoluteUrl('/category/performance/') });
   }
@@ -304,7 +343,7 @@ export const websiteSchema = (meta) => ({
   name: site.name,
   description: meta.description || site.description,
   inLanguage: site.language,
-  publisher: { '@id': `${site.url}/#organization` },
+  publisher: { '@id': site.authorId },
   author: { '@id': site.authorId },
   potentialAction: {
     '@type': 'SearchAction',
@@ -424,7 +463,7 @@ export const faqPageSchema = (meta) => {
   return {
     '@type': 'FAQPage',
     '@id': `${meta.url}#faq`,
-    mainEntity: meta.faq.map((item) => ({
+    mainEntity: meta.faq.slice(0, 3).map((item) => ({
       '@type': 'Question',
       name: item.question || item.name,
       acceptedAnswer: {
@@ -462,16 +501,23 @@ export const buildStructuredData = (frontMatter = {}) => {
   const meta = normalizePageMeta(frontMatter);
   const graph = [];
 
+  if (meta.pageType === 'skip') {
+    return compactObject({
+      '@context': 'https://schema.org',
+      '@graph': graph,
+    });
+  }
+
   if (meta.pageType === 'home') {
-    graph.push(websiteSchema(meta), personSchema({ sameAs: meta.sameAs }), organizationSchema());
+    graph.push(websiteSchema(meta), personSchema({ sameAs: meta.sameAs }));
   }
 
   if (['performance', 'performanceDaily', 'research', 'logic', 'article'].includes(meta.pageType)) {
     graph.push(articleSchema(meta));
   }
 
-  if (['performanceMonthly', 'archive', 'collection'].includes(meta.pageType)) {
-    graph.push(collectionPageSchema(meta), itemListSchema(meta));
+  if (['performanceMonthly', 'performanceYearly', 'archive', 'collection'].includes(meta.pageType)) {
+    graph.push(collectionPageSchema(meta));
   }
 
   if (meta.pageType === 'profile') {
@@ -485,7 +531,7 @@ export const buildStructuredData = (frontMatter = {}) => {
   const faq = faqPageSchema(meta);
   if (faq && ['performance', 'performanceDaily', 'research', 'article', 'legal'].includes(meta.pageType)) graph.push(faq);
 
-  if (meta.breadcrumbs.length) graph.push(breadcrumbSchema(meta));
+  if (breadcrumbPageTypes.has(meta.pageType) && meta.breadcrumbs.length) graph.push(breadcrumbSchema(meta));
 
   return compactObject({
     '@context': 'https://schema.org',
@@ -495,7 +541,49 @@ export const buildStructuredData = (frontMatter = {}) => {
 
 export const renderJsonLdScript = (frontMatter = {}) => {
   const jsonLd = buildStructuredData(frontMatter);
+  if (!jsonLd['@graph']?.length) return '';
   return `<script type="application/ld+json">\n${JSON.stringify(jsonLd, null, 2)}\n</script>`;
+};
+
+export const generateJsonLdScript = ({
+  pageType = 'top',
+  title,
+  description,
+  url,
+  publishedTime,
+  modifiedTime,
+  section,
+  author,
+  faqs = [],
+  items = [],
+  image = site.logo,
+  siteUrl = site.url,
+  sameAs = site.officialX,
+} = {}) => buildJsonLdScriptFromFrontMatter({
+  pageType,
+  title,
+  description,
+  url,
+  publishedTime,
+  modifiedTime,
+  section,
+  author,
+  faqs,
+  items,
+  image,
+  siteUrl,
+  sameAs,
+});
+
+export const buildFAQPageSchema = (faqs = [], options = {}) => faqPageSchemaFromQa(faqs, options);
+
+export const buildBreadcrumbListJsonLd = (pathValue = '/', options = {}) => {
+  const siteUrl = options.siteUrl || site.url;
+  const url = absoluteUrlForSite(pathValue, siteUrl);
+  return breadcrumbSchema({
+    url,
+    breadcrumbs: buildBreadcrumbListFromPath(pathValue, options),
+  });
 };
 
 export const buildJsonLdScriptFromFrontMatter = ({
@@ -539,11 +627,12 @@ export const buildJsonLdScriptFromFrontMatter = ({
   };
   const graph = [];
 
+  if (normalizedPageType === 'skip') return '';
+
   if (normalizedPageType === 'home') {
     graph.push(
       websiteSchema(meta),
       personSchema({ sameAs: meta.sameAs }),
-      organizationSchema(),
     );
   }
 
@@ -551,8 +640,8 @@ export const buildJsonLdScriptFromFrontMatter = ({
     graph.push(articleSchema(meta));
   }
 
-  if (['performanceMonthly', 'archive', 'collection'].includes(normalizedPageType)) {
-    graph.push(collectionPageSchema(meta), itemListSchema(meta));
+  if (['performanceMonthly', 'performanceYearly', 'archive', 'collection'].includes(normalizedPageType)) {
+    graph.push(collectionPageSchema(meta));
   }
 
   if (normalizedPageType === 'profile') {
@@ -566,7 +655,7 @@ export const buildJsonLdScriptFromFrontMatter = ({
   const faqSchema = faqPageSchemaFromQa(faqItems, { url: meta.url });
   if (faqSchema && ['performance', 'performanceDaily', 'research', 'article', 'legal'].includes(normalizedPageType)) graph.push(faqSchema);
 
-  if (breadcrumbs.length) graph.push(breadcrumbSchema(meta));
+  if (breadcrumbPageTypes.has(normalizedPageType) && breadcrumbs.length) graph.push(breadcrumbSchema(meta));
 
   const jsonLd = compactObject({
     '@context': 'https://schema.org',

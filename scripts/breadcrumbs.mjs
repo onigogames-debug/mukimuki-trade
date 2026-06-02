@@ -9,15 +9,27 @@ const staticLabels = new Map([
   ['archive', 'アーカイブ'],
   ['category', 'カテゴリ'],
   ['profile', '運営者プロフィール'],
-  ['about', '運営方針'],
+  ['about', '免責事項'],
 ]);
 
 const monthLabel = (value) => `${Number(value)}月`;
 const dayLabel = (value) => `${Number(value)}日`;
 
 export const buildBreadcrumbsFromPath = (pagePath, title) => {
-  const segments = String(pagePath || '/').split('/').filter(Boolean);
-  const breadcrumbs = [{ name: 'Home', item: absoluteUrl('/') }];
+  const path = String(pagePath || '/');
+  const performanceMatch = path.match(/^\/performance\/(\d{4})(?:\/(\d{2})(?:\/(\d{2}))?)?\/$/);
+  const breadcrumbs = [{ name: 'ホーム', item: absoluteUrl('/') }];
+
+  if (performanceMatch) {
+    const [, year, month, day] = performanceMatch;
+    breadcrumbs.push({ name: '実績', item: absoluteUrl('/performance/latest/') });
+    breadcrumbs.push({ name: `${year}年`, item: absoluteUrl(`/performance/${year}/`) });
+    if (month) breadcrumbs.push({ name: `${Number(month)}月`, item: absoluteUrl(`/performance/${year}/${month}/`) });
+    if (day) breadcrumbs.push({ name: `${Number(month)}月${Number(day)}日`, item: absoluteUrl(`/performance/${year}/${month}/${day}/`) });
+    return breadcrumbs;
+  }
+
+  const segments = path.split('/').filter(Boolean);
   let current = '';
 
   segments.forEach((segment, index) => {

@@ -1,6 +1,6 @@
 # Deployment Status
 
-Last updated: 2026-05-29
+Last updated: 2026-06-02
 
 ## GitHub
 
@@ -13,7 +13,7 @@ Last updated: 2026-05-29
 - Account: `onigo.games@gmail.com`
 - Project: `mukimuki-trade`
 - Production URL: https://mukimuki-trade.pages.dev
-- Latest deployment URL: https://a115369f.mukimuki-trade.pages.dev
+- Latest deployment URL: https://91f49ee5.mukimuki-trade.pages.dev
 - Deployment method: Wrangler direct upload
 
 ## Custom Domains
@@ -46,7 +46,7 @@ No domain action remains. Both apex and `www` custom domains return `HTTP/2 200`
 - Sitemap submitted: `https://mukimuki-trade.com/sitemap.xml`
 - Image sitemap: `https://mukimuki-trade.com/image-sitemap.xml`
 - RSS feed submitted as sitemap: `https://mukimuki-trade.com/feed.xml` (success)
-- Current sitemap URLs: 24
+- Current sitemap URLs: 62
 - Manual indexing requested: top page and `/performance/`
 
 ## SEO Enhancements
@@ -55,7 +55,7 @@ No domain action remains. Both apex and `www` custom domains return `HTTP/2 200`
 - RSS feed: `/feed.xml`
 - Image sitemap: `/image-sitemap.xml`
 - AI/search summary: `/llms.txt`
-- Structured data: `WebSite`, `SearchAction`, `Person`, `Article`, `FAQPage`, `CollectionPage`, `BreadcrumbList`, `ItemList`, `ProfilePage`, `AboutPage`
+- Structured data: `WebSite`, `SearchAction`, `Person`, `Article`, `FAQPage`, `CollectionPage`, `BreadcrumbList`, `ProfilePage`, `AboutPage`
 - Trust structured data: `ProfilePage`, `Person`, `FAQPage`
 - Article Open Graph metadata: locale, published time, modified time, section
 - Category pages: `/category/performance/`, `/category/research/`, `/category/moomoo/`

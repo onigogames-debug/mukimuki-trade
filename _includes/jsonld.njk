@@ -1,0 +1,50 @@
+{# Usage:
+   {% from "jsonld.njk" import jsonld %}
+   {{ jsonld({
+     pageType: pageType,
+     title: title,
+     description: description,
+     url: url or page.url,
+     publishedTime: publishedTime,
+     modifiedTime: modifiedTime,
+     section: section,
+     author: author,
+     faqs: faqs
+   }) }}
+#}
+{% macro jsonld(input={}) %}
+  {% set schemaInput = {
+    type: input.pageType or input.schemaType or input.type,
+    title: input.title,
+    description: input.description,
+    url: input.url,
+    publishedTime: input.publishedTime or input.published_time or input.published,
+    modifiedTime: input.modifiedTime or input.modified_time or input.modified,
+    section: input.section or input.category,
+    author: input.author,
+    siteUrl: input.siteUrl,
+    sameAs: input.sameAs,
+    faqs: input.faqs or input.faq,
+    items: input.items,
+    image: input.image
+  } %}
+  {{- jsonLd(schemaInput) | safe -}}
+{% endmacro %}
+
+{% macro jsonldFromFrontMatter(data={}) %}
+  {{- jsonld({
+    pageType: data.pageType or data.schemaType or data.type,
+    title: data.title,
+    description: data.description,
+    url: data.url or data.page.url,
+    publishedTime: data.publishedTime or data.published_time or data.published,
+    modifiedTime: data.modifiedTime or data.modified_time or data.modified,
+    section: data.section or data.category,
+    author: data.author,
+    siteUrl: data.siteUrl or data.site.url,
+    sameAs: data.sameAs,
+    faqs: data.faqs or data.faq,
+    items: data.items,
+    image: data.image
+  }) -}}
+{% endmacro %}

@@ -135,6 +135,13 @@ const displayArchiveDate = (value = '') => {
 
 const articleFaq = (article) => article.faq || article.faqs || defaultResearchFaq(article);
 
+const schemaPageTypeForArticle = (article) => {
+  if (article.categoryKey === 'performance') return 'trade-topic';
+  if (article.categoryKey === 'research') return 'research';
+  if (article.categoryKey === 'logic') return 'logic';
+  return 'article';
+};
+
 const renderFaqSection = (faqs = []) => {
   if (!faqs.length) return '';
   return `      <section class="article-panel">
@@ -152,7 +159,7 @@ const renderArticle = (article) => {
   const breadcrumbs = buildBreadcrumbsFromPath(article.path, article.title);
   const faqs = articleFaq(article);
   const jsonLdScript = renderJsonLdScript({
-    pageType: article.categoryKey === 'research' ? 'research' : 'article',
+    pageType: schemaPageTypeForArticle(article),
     title: article.title,
     description: article.description,
     published_time: article.published,
