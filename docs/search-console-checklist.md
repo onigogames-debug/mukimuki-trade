@@ -1,5 +1,33 @@
 # Search Console Checklist
 
+## Latest Browser Check
+
+Checked in the logged-in Chrome profile `GAMES ONIGO (onigo.games@gmail.com)` on 2026-06-02.
+
+Property:
+
+- URL prefix property `https://mukimuki-trade.com/` is accessible.
+- Domain property `sc-domain:mukimuki-trade.com` is not accessible from this Google account.
+
+Current Search Console state:
+
+| Report | Observed state |
+|---|---|
+| Search performance | 0 clicks / 0 impressions over the last 3 months |
+| Page indexing | 2 indexed pages / 24 not indexed pages |
+| Not indexed reasons | `Discovered - currently not indexed`: 23, `Crawled - currently not indexed`: 1 |
+| Sitemap `/sitemap.xml` | Success, last read 2026-06-01, 57 discovered pages |
+| RSS `/feed.xml` | Success, last read 2026-06-02, 17 discovered pages |
+| Breadcrumbs | 1 valid item / 0 invalid items |
+| HTTPS | 3 HTTPS URLs / 0 non-HTTPS URLs |
+| Core Web Vitals | Not enough Chrome UX Report traffic data for mobile or desktop |
+
+Recommended recovery actions:
+
+- Resubmit `/sitemap.xml` after each SEO deployment until Search Console catches up with the current sitemap URL count.
+- Use URL Inspection for the top page, latest fixed daily page, the newest topic page, the newest month archive, and the most important ticker hub.
+- Do not treat `Discovered - currently not indexed` as a code defect while the site is new; prioritize stronger monthly archives, ticker hubs, and internal links.
+
 ## URL Inspection
 
 Check these URLs after each SEO deployment:
@@ -46,4 +74,3 @@ Expected:
 - `/performance/latest/` returns `X-Robots-Tag: noindex`.
 - Fixed daily, topic, and ticker hub URLs do not return `X-Robots-Tag: noindex`.
 - Legacy topic URLs return `301`.
-
