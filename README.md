@@ -137,6 +137,19 @@ npm run performance:import
 
 `npm run performance:pages` はCloudflare Pages運用に合わせてリポジトリ直下へ `/performance/YYYY/MM/DD/`、`/performance/YYYY/MM/`、`/performance/YYYY/`、`/performance/latest/` を生成します。Jekyll / Eleventy など `_site` 出力を前提にする場合は `npm run performance:pages:site` を使います。
 
+`/performance/latest/` は評価分散を避けるため、HTMLでは `noindex,follow`、canonical は最新の日付固定URLに設定します。Cloudflare Pages の `_headers` でも `X-Robots-Tag: noindex` を返します。
+
+```sh
+curl -I https://mukimuki-trade.com/performance/latest/
+```
+
+確認ポイント:
+
+- `X-Robots-Tag: noindex`
+- HTML内の `<meta name="robots" content="noindex,follow">`
+- HTML内の `<link rel="canonical" href="https://mukimuki-trade.com/performance/YYYY/MM/DD/">`
+- `sitemap.xml` に `/performance/latest/` が含まれないこと
+
 ## GitHub
 
 - GitHub account: `onigogames-debug`

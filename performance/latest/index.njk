@@ -1,0 +1,26 @@
+---
+title: 最新実績レポート
+description: MUKIMUKI tradeの最新実績ページ。評価額、100万円比、保有銘柄、売買件数を日次で整理します。
+permalink: /performance/latest/index.html
+eleventyExcludeFromCollections: true
+robots: noindex,follow
+eleventyComputed:
+  latestDateUrl: "{{ latestDate.url }}"
+---
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }} | MUKIMUKI trade</title>
+  <meta name="description" content="{{ description }}">
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="{{ latestDateUrl }}">
+</head>
+<body>
+  <main>
+    <h1>{{ title }}</h1>
+    <p>最新の実績詳細は <a href="{{ latestDateUrl }}">日付固定URL</a> で確認できます。</p>
+  </main>
+</body>
+</html>

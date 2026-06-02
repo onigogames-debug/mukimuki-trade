@@ -13,7 +13,7 @@ Last updated: 2026-06-02
 - Account: `onigo.games@gmail.com`
 - Project: `mukimuki-trade`
 - Production URL: https://mukimuki-trade.pages.dev
-- Latest deployment URL: https://91f49ee5.mukimuki-trade.pages.dev
+- Latest deployment URL: https://62438dc8.mukimuki-trade.pages.dev
 - Deployment method: Wrangler direct upload
 
 ## Custom Domains
@@ -64,6 +64,7 @@ No domain action remains. Both apex and `www` custom domains return `HTTP/2 200`
 - SEO audit: `npm run seo:audit` creates `docs/seo-progress.md`
 - JSON-LD generator: `scripts/structured-data.mjs` builds schema from YAML front matter and renders `<script type="application/ld+json">`
 - Performance page generator: `npm run performance:pages` creates `/performance/YYYY/MM/DD/`, `/performance/YYYY/MM/`, `/performance/YYYY/`, and `/performance/latest/` from date-stamped performance JSON
+- Latest performance SEO control: `/performance/latest/` returns `X-Robots-Tag: noindex`, has `<meta name="robots" content="noindex,follow">`, and canonical points to the latest fixed daily URL
 - `_site` output for SSG workflows: `npm run performance:pages:site`
 - Performance redirect: `/performance/` returns `301` to `/performance/latest/`, while `/performance/latest/` canonical points to the latest fixed daily URL
 - Internal link generator: `scripts/internal-links.mjs` suggests up to 3 related articles from category, tags, body text, and ticker symbols

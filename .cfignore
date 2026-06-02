@@ -1,0 +1,9 @@
+.git/
+.wrangler/
+node_modules/
+_site/
+_data/
+_includes/
+scripts/
+docs/
+**/*.njk

@@ -27,6 +27,7 @@ const toDate = (value) => new Date(value).toISOString().slice(0, 10);
 const ignoredDirs = new Set(['.git', '.wrangler', '_site', 'assets', 'data', 'datasets', 'scripts', 'node_modules']);
 const ignoredFiles = new Set(['404.html', 'googlefd5cf11d7eb2c415.html']);
 const ignoredRoutes = new Set(['/performance/', '/performance/latest/']);
+const hasNoindexRobots = (html) => /<meta\s+name=["']robots["']\s+content=["'][^"']*noindex/i.test(html);
 
 const htmlPathToRoute = (filePath) => {
   const relative = path.relative(root, filePath);
@@ -134,6 +135,8 @@ const lastmodForPage = async (pagePath, filePath) => {
 };
 
 for (const { path: pagePath, filePath } of discoveredPages) {
+  const html = await readFile(filePath, 'utf8');
+  if (hasNoindexRobots(html)) continue;
   pageMap.set(pagePath, {
     path: pagePath,
     lastmod: await lastmodForPage(pagePath, filePath),

@@ -590,8 +590,8 @@ const renderLatestPage = (latestReport) => {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${title} | MUKIMUKI trade</title>
   <meta name="description" content="${description}">
-  <meta name="robots" content="noindex,follow,max-image-preview:large">
-  <link id="dynamic-canonical" rel="canonical" href="${escapeHtml(absoluteUrl(latestPath))}">
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="${escapeHtml(absoluteUrl(latestPath))}">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="MUKIMUKI trade">
@@ -613,12 +613,6 @@ const renderLatestPage = (latestReport) => {
         const response = await fetch('/datasets/performance-latest.json', { cache: 'no-store' });
         const data = await response.json();
         const [year, month, day] = data.latest.reportDate.split('-');
-        const canonicalUrl = \`https://mukimuki-trade.com/performance/\${year}/\${month}/\${day}/\`;
-        const canonical = document.getElementById('dynamic-canonical') || document.createElement('link');
-        canonical.id = 'dynamic-canonical';
-        canonical.rel = 'canonical';
-        canonical.href = canonicalUrl;
-        if (!canonical.parentNode) document.head.appendChild(canonical);
         document.querySelector('[data-latest-link]').href = \`/performance/\${year}/\${month}/\${day}/\`;
         document.querySelector('[data-report-date]').textContent = data.latest.reportDateDisplay;
         document.querySelector('[data-asset]').textContent = new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY', maximumFractionDigits: 0 }).format(data.latest.jpy.end);
@@ -675,9 +669,13 @@ const updateRedirects = async (latestPath) => {
   const current = await readFile(redirectsPath, 'utf8');
   const lines = current
     .split('\n')
-    .filter((line) => line.trim() && !line.startsWith('/performance/ ') && !line.startsWith('/performance/old/ '));
+    .filter((line) => line.trim()
+      && !line.startsWith('/performance/ ')
+      && !line.startsWith('/performance/latest ')
+      && !line.startsWith('/performance/old/ '));
 
   lines.push('/performance/ /performance/latest/ 301');
+  lines.push('/performance/latest /performance/latest/ 301');
   lines.push('/performance/old/ /performance/latest/ 301');
   await writeFile(redirectsPath, `${lines.join('\n')}\n`);
 };

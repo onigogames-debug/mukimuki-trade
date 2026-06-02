@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>最新実績レポート | MUKIMUKI trade</title>
   <meta name="description" content="MUKIMUKI tradeの最新実績ページ。評価額、100万円比、保有銘柄、売買件数を日次で整理します。">
-  <meta name="robots" content="noindex,follow,max-image-preview:large">
-  <link id="dynamic-canonical" rel="canonical" href="https://mukimuki-trade.com/performance/2026/06/01/">
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="https://mukimuki-trade.com/performance/2026/06/01/">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="MUKIMUKI trade">
@@ -32,12 +32,6 @@
         const response = await fetch('/datasets/performance-latest.json', { cache: 'no-store' });
         const data = await response.json();
         const [year, month, day] = data.latest.reportDate.split('-');
-        const canonicalUrl = `https://mukimuki-trade.com/performance/${year}/${month}/${day}/`;
-        const canonical = document.getElementById('dynamic-canonical') || document.createElement('link');
-        canonical.id = 'dynamic-canonical';
-        canonical.rel = 'canonical';
-        canonical.href = canonicalUrl;
-        if (!canonical.parentNode) document.head.appendChild(canonical);
         document.querySelector('[data-latest-link]').href = `/performance/${year}/${month}/${day}/`;
         document.querySelector('[data-report-date]').textContent = data.latest.reportDateDisplay;
         document.querySelector('[data-asset]').textContent = new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY', maximumFractionDigits: 0 }).format(data.latest.jpy.end);

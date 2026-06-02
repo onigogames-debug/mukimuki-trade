@@ -16,6 +16,15 @@
 /performance/*
   Cache-Control: public, max-age=300, must-revalidate
 
+/performance/latest
+  X-Robots-Tag: noindex
+
+/performance/latest/
+  X-Robots-Tag: noindex
+
+/performance/latest/index.html
+  X-Robots-Tag: noindex
+
 /research/*
   Cache-Control: public, max-age=300, must-revalidate
 
