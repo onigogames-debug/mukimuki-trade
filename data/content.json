@@ -4,18 +4,18 @@
     "title": "MUKIMUKI trade",
     "description": "100万円からの株式投資実績、資産曲線、銘柄検討、相場メモを整理する投資ブログ。",
     "language": "ja",
-    "lastBuildDate": "2026-06-03T08:00:00+09:00"
+    "lastBuildDate": "2026-06-04T08:00:00+09:00"
   },
   "pages": [
     {
       "path": "/",
-      "lastmod": "2026-06-03",
+      "lastmod": "2026-06-04",
       "changefreq": "daily",
       "priority": "1.0"
     },
     {
       "path": "/performance/latest/",
-      "lastmod": "2026-06-03",
+      "lastmod": "2026-06-04",
       "changefreq": "daily",
       "priority": "0.9"
     },
@@ -34,19 +34,19 @@
     },
     {
       "path": "/archive/",
-      "lastmod": "2026-06-03",
+      "lastmod": "2026-06-04",
       "changefreq": "weekly",
       "priority": "0.6"
     },
     {
       "path": "/archive/2026-06/",
-      "lastmod": "2026-06-03",
+      "lastmod": "2026-06-04",
       "changefreq": "monthly",
       "priority": "0.6"
     },
     {
       "path": "/category/performance/",
-      "lastmod": "2026-06-03",
+      "lastmod": "2026-06-04",
       "changefreq": "weekly",
       "priority": "0.6"
     },
@@ -193,6 +193,13 @@
       "priority": "0.78"
     },
     {
+      "path": "/performance/2026/06/03/topics/no-new-report-rdw-check/",
+      "lastmod": "2026-06-04",
+      "changefreq": "monthly",
+      "priority": "0.85",
+      "redirectFrom": "/performance/2026-06-03-no-new-report-rdw-check/"
+    },
+    {
       "path": "/performance/2026/06/02/topics/qbts-range/",
       "lastmod": "2026-06-03",
       "changefreq": "monthly",
@@ -208,6 +215,14 @@
     }
   ],
   "posts": [
+    {
+      "title": "6/3更新メモ: 新規レポート未取得、RDWの含み損を点検",
+      "path": "/performance/2026/06/03/topics/no-new-report-rdw-check/",
+      "description": "2026年6月3日EST分の新規Autotradeレポート未取得メモ。最新確定値は6/2の評価額105.8万円、保有銘柄RDWの評価損益率-2.33%を確認。",
+      "pubDate": "2026-06-04T08:00:00+09:00",
+      "category": "実績公開",
+      "redirectFrom": "/performance/2026-06-03-no-new-report-rdw-check/"
+    },
     {
       "title": "6/2売買トピック: QBTSを同値回転し、RDW・QUBTを持ち越し",
       "path": "/performance/2026/06/02/topics/qbts-range/",
