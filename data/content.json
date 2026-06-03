@@ -188,16 +188,9 @@
     },
     {
       "path": "/performance/2026/06/",
-      "lastmod": "2026-06-03",
+      "lastmod": "2026-06-04",
       "changefreq": "weekly",
       "priority": "0.78"
-    },
-    {
-      "path": "/performance/2026/06/03/topics/no-new-report-rdw-check/",
-      "lastmod": "2026-06-04",
-      "changefreq": "monthly",
-      "priority": "0.85",
-      "redirectFrom": "/performance/2026-06-03-no-new-report-rdw-check/"
     },
     {
       "path": "/performance/2026/06/02/topics/qbts-range/",
@@ -212,16 +205,23 @@
       "changefreq": "monthly",
       "priority": "0.85",
       "redirectFrom": "/performance/2026-06-01-qbts-range/"
+    },
+    {
+      "path": "/performance/2026/06/03/topics/soun-range/",
+      "lastmod": "2026-06-04",
+      "changefreq": "monthly",
+      "priority": "0.85",
+      "redirectFrom": "/performance/2026-06-03-soun-range/"
     }
   ],
   "posts": [
     {
-      "title": "6/3更新メモ: 新規レポート未取得、RDWの含み損を点検",
-      "path": "/performance/2026/06/03/topics/no-new-report-rdw-check/",
-      "description": "2026年6月3日EST分の新規Autotradeレポート未取得メモ。最新確定値は6/2の評価額105.8万円、保有銘柄RDWの評価損益率-2.33%を確認。",
+      "title": "6/3売買トピック: SOUNの売り越しとGSAT持ち越しを確認",
+      "path": "/performance/2026/06/03/topics/soun-range/",
+      "description": "2026年6月3日ESTの売買トピック。評価額は102.3万円、前日比-29,097円。約定29件、SOUNの約定レンジ5.17%とGSAT持ち越しを整理。",
       "pubDate": "2026-06-04T08:00:00+09:00",
       "category": "実績公開",
-      "redirectFrom": "/performance/2026-06-03-no-new-report-rdw-check/"
+      "redirectFrom": "/performance/2026-06-03-soun-range/"
     },
     {
       "title": "6/2売買トピック: QBTSを同値回転し、RDW・QUBTを持ち越し",

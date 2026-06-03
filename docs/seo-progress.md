@@ -1,6 +1,6 @@
 # SEO Progress Report
 
-Generated: 2026-06-03T22:51:46.566Z
+Generated: 2026-06-03T23:08:02.162Z
 
 ## 実装状況
 
@@ -21,12 +21,12 @@ Generated: 2026-06-03T22:51:46.566Z
 
 ## ページ監査サマリー
 
-- 対象ページ: 69
-- インデックス対象ページ: 68
+- 対象ページ: 72
+- インデックス対象ページ: 71
 - 要確認ページ: 0
-- FAQ schemaページ: 13
-- パンくずschemaページ: 67
-- Critical CSS適用ページ: 69
+- FAQ schemaページ: 14
+- パンくずschemaページ: 70
+- Critical CSS適用ページ: 72
 
 ## 要確認ページ
 
@@ -36,13 +36,13 @@ Generated: 2026-06-03T22:51:46.566Z
 
 | URL | title | description | 本文文字数 | 内部リンク | schema |
 |---|---:|---:|---:|---:|---|
-| / | 35 | 57 | 2741 | 41 | Person, WebSite |
+| / | 35 | 57 | 2685 | 41 | Person, WebSite |
 | /about/ | 26 | 58 | 1800 | 19 | AboutPage, BreadcrumbList, FAQPage, WebPage |
-| /archive/ | 24 | 62 | 1012 | 23 | BreadcrumbList, CollectionPage |
+| /archive/ | 24 | 62 | 1008 | 23 | BreadcrumbList, CollectionPage |
 | /archive/2026-05/ | 27 | 79 | 1330 | 32 | BreadcrumbList, CollectionPage, ItemList |
-| /archive/2026-06/ | 27 | 79 | 1222 | 26 | BreadcrumbList, CollectionPage, ItemList |
+| /archive/2026-06/ | 27 | 79 | 1224 | 26 | BreadcrumbList, CollectionPage, ItemList |
 | /category/moomoo/ | 30 | 62 | 911 | 23 | BreadcrumbList, CollectionPage, ItemList |
-| /category/performance/ | 26 | 61 | 2185 | 33 | BreadcrumbList, CollectionPage, ItemList |
+| /category/performance/ | 26 | 61 | 2176 | 33 | BreadcrumbList, CollectionPage, ItemList |
 | /category/research/ | 26 | 57 | 1049 | 24 | BreadcrumbList, CollectionPage, ItemList |
 | /logic/ | 28 | 62 | 1038 | 27 | BreadcrumbList, CollectionPage |
 | /logic/entry-risk/ | 49 | 52 | 1104 | 22 | Article, BreadcrumbList |
@@ -50,7 +50,7 @@ Generated: 2026-06-03T22:51:46.566Z
 | /logic/signal-score/ | 50 | 57 | 1109 | 22 | Article, BreadcrumbList |
 | /moomoo/ | 48 | 66 | 1320 | 23 | Article, BreadcrumbList, FAQPage |
 | /performance/ | 45 | 70 | 1468 | 22 | Article, BreadcrumbList, FAQPage |
-| /performance/2026/ | 30 | 52 | 1030 | 22 | BreadcrumbList, CollectionPage |
+| /performance/2026/ | 30 | 52 | 1029 | 22 | BreadcrumbList, CollectionPage |
 | /performance/2026/05/ | 41 | 62 | 1928 | 35 | BreadcrumbList, CollectionPage |
 | /performance/2026/05/26/ | 47 | 61 | 2187 | 33 | Article, BreadcrumbList, FAQPage |
 | /performance/2026/05/27/ | 52 | 66 | 2339 | 34 | Article, BreadcrumbList, FAQPage |
@@ -61,48 +61,51 @@ Generated: 2026-06-03T22:51:46.566Z
 | /performance/2026/05/29/topics/bksy-range/ | 49 | 77 | 2923 | 29 | Article, BreadcrumbList |
 | /performance/2026/05/30/topics/weekend-amzn-hold/ | 43 | 64 | 3065 | 29 | Article, BreadcrumbList |
 | /performance/2026/05/31/topics/weekend-amzn-risk-check/ | 45 | 63 | 3156 | 29 | Article, BreadcrumbList |
-| /performance/2026/06/ | 41 | 62 | 1617 | 31 | BreadcrumbList, CollectionPage |
-| /performance/2026/06/01/ | 47 | 61 | 2315 | 34 | Article, BreadcrumbList, FAQPage |
+| /performance/2026/06/ | 41 | 62 | 1718 | 33 | BreadcrumbList, CollectionPage |
+| /performance/2026/06/01/ | 47 | 61 | 2317 | 34 | Article, BreadcrumbList, FAQPage |
 | /performance/2026/06/01/topics/qbts-range/ | 44 | 69 | 3109 | 29 | Article, BreadcrumbList |
-| /performance/2026/06/02/ | 51 | 64 | 2426 | 33 | Article, BreadcrumbList, FAQPage |
-| /performance/2026/06/02/topics/qbts-range/ | 52 | 73 | 3175 | 29 | Article, BreadcrumbList |
-| /performance/2026/06/03/topics/no-new-report-rdw-check/ | 46 | 79 | 3078 | 29 | Article, BreadcrumbList |
+| /performance/2026/06/02/ | 51 | 64 | 2442 | 34 | Article, BreadcrumbList, FAQPage |
+| /performance/2026/06/02/topics/qbts-range/ | 52 | 73 | 3177 | 29 | Article, BreadcrumbList |
+| /performance/2026/06/03/ | 42 | 56 | 2203 | 33 | Article, BreadcrumbList, FAQPage |
+| /performance/2026/06/03/topics/soun-range/ | 49 | 78 | 3141 | 29 | Article, BreadcrumbList |
 | /performance/latest/ (noindex) | 25 | 53 | 947 | 24 |  |
 | /profile/ | 26 | 75 | 1373 | 21 | BreadcrumbList, FAQPage, Person, ProfilePage |
 | /research/ | 25 | 59 | 1006 | 25 | Article, BreadcrumbList |
-| /research/ai-infrastructure/ | 47 | 47 | 1794 | 25 | Article, BreadcrumbList, FAQPage |
+| /research/ai-infrastructure/ | 47 | 47 | 1796 | 25 | Article, BreadcrumbList, FAQPage |
 | /research/app-software-fintech/ | 44 | 50 | 1821 | 25 | Article, BreadcrumbList, FAQPage |
 | /research/frontier-growth/ | 47 | 49 | 1729 | 25 | Article, BreadcrumbList, FAQPage |
 | /research/tag/alab/ | 30 | 65 | 1763 | 28 | BreadcrumbList, CollectionPage |
 | /research/tag/amd/ | 29 | 64 | 1357 | 25 | BreadcrumbList, CollectionPage |
 | /research/tag/ampx/ | 30 | 65 | 1603 | 27 | BreadcrumbList, CollectionPage |
 | /research/tag/amzn/ | 30 | 65 | 2298 | 32 | BreadcrumbList, CollectionPage |
+| /research/tag/api/ | 29 | 64 | 1439 | 25 | BreadcrumbList, CollectionPage |
 | /research/tag/app/ | 29 | 64 | 1359 | 25 | BreadcrumbList, CollectionPage |
 | /research/tag/asts/ | 30 | 65 | 1449 | 25 | BreadcrumbList, CollectionPage |
 | /research/tag/avgo/ | 30 | 65 | 1369 | 25 | BreadcrumbList, CollectionPage |
 | /research/tag/bksy/ | 30 | 65 | 1611 | 26 | BreadcrumbList, CollectionPage |
-| /research/tag/crdo/ | 30 | 65 | 2318 | 33 | BreadcrumbList, CollectionPage |
+| /research/tag/crdo/ | 30 | 65 | 2321 | 33 | BreadcrumbList, CollectionPage |
 | /research/tag/googl/ | 31 | 66 | 1383 | 25 | BreadcrumbList, CollectionPage |
-| /research/tag/gsat/ | 30 | 65 | 1979 | 30 | BreadcrumbList, CollectionPage |
+| /research/tag/gsat/ | 30 | 65 | 2317 | 33 | BreadcrumbList, CollectionPage |
 | /research/tag/hood/ | 30 | 65 | 1903 | 29 | BreadcrumbList, CollectionPage |
-| /research/tag/lunr/ | 30 | 65 | 1735 | 28 | BreadcrumbList, CollectionPage |
+| /research/tag/lunr/ | 30 | 65 | 1739 | 28 | BreadcrumbList, CollectionPage |
 | /research/tag/meta/ | 30 | 65 | 1874 | 29 | BreadcrumbList, CollectionPage |
 | /research/tag/msft/ | 30 | 65 | 1603 | 27 | BreadcrumbList, CollectionPage |
 | /research/tag/mu/ | 28 | 63 | 1345 | 25 | BreadcrumbList, CollectionPage |
-| /research/tag/nvda/ | 30 | 65 | 1846 | 29 | BreadcrumbList, CollectionPage |
-| /research/tag/oklo/ | 30 | 65 | 2227 | 32 | BreadcrumbList, CollectionPage |
+| /research/tag/nvda/ | 30 | 65 | 1850 | 29 | BreadcrumbList, CollectionPage |
+| /research/tag/oasys/ | 31 | 66 | 1463 | 25 | BreadcrumbList, CollectionPage |
+| /research/tag/oklo/ | 30 | 65 | 2234 | 32 | BreadcrumbList, CollectionPage |
 | /research/tag/pl/ | 28 | 63 | 1826 | 29 | BreadcrumbList, CollectionPage |
 | /research/tag/qbts/ | 30 | 65 | 2297 | 32 | BreadcrumbList, CollectionPage |
-| /research/tag/qubt/ | 30 | 65 | 2045 | 31 | BreadcrumbList, CollectionPage |
-| /research/tag/rdw/ | 29 | 64 | 1873 | 29 | BreadcrumbList, CollectionPage |
+| /research/tag/qubt/ | 30 | 65 | 2049 | 31 | BreadcrumbList, CollectionPage |
+| /research/tag/rdw/ | 29 | 64 | 1728 | 28 | BreadcrumbList, CollectionPage |
 | /research/tag/rgti/ | 30 | 65 | 1425 | 25 | BreadcrumbList, CollectionPage |
 | /research/tag/rivn/ | 30 | 65 | 1979 | 30 | BreadcrumbList, CollectionPage |
 | /research/tag/rklb/ | 30 | 65 | 1704 | 28 | BreadcrumbList, CollectionPage |
 | /research/tag/sats/ | 30 | 65 | 1979 | 30 | BreadcrumbList, CollectionPage |
 | /research/tag/sofi/ | 30 | 65 | 2616 | 35 | BreadcrumbList, CollectionPage |
-| /research/tag/soun/ | 30 | 65 | 2347 | 33 | BreadcrumbList, CollectionPage |
+| /research/tag/soun/ | 30 | 65 | 2493 | 34 | BreadcrumbList, CollectionPage |
 | /research/tag/spir/ | 30 | 65 | 1979 | 30 | BreadcrumbList, CollectionPage |
 | /research/tag/tsla/ | 30 | 65 | 1710 | 28 | BreadcrumbList, CollectionPage |
 | /research/tag/xndu/ | 30 | 65 | 1779 | 29 | BreadcrumbList, CollectionPage |
-| /sitemap/ | 23 | 48 | 3145 | 79 | BreadcrumbList, CollectionPage |
+| /sitemap/ | 23 | 48 | 3254 | 82 | BreadcrumbList, CollectionPage |
 

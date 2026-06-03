@@ -135,9 +135,15 @@ const displayArchiveDate = (value = '') => {
 
 const articleFaq = (article) => article.faq || article.faqs || defaultResearchFaq(article);
 
-const topicRedirects = articles
-  .filter((article) => article.redirectFrom && article.redirectFrom !== article.path)
-  .map((article) => [article.redirectFrom, article.path]);
+const redirectPathsFor = (article) => {
+  if (Array.isArray(article.redirectFrom)) return article.redirectFrom;
+  if (article.redirectFrom) return [article.redirectFrom];
+  return [];
+};
+
+const topicRedirects = articles.flatMap((article) => redirectPathsFor(article)
+  .filter((from) => from && from !== article.path)
+  .map((from) => [from, article.path]));
 
 const schemaPageTypeForArticle = (article) => {
   if (article.categoryKey === 'performance') return 'trade-topic';
@@ -542,8 +548,8 @@ ${footer}
 };
 
 for (const article of articles) {
-  if (article.redirectFrom && article.redirectFrom !== article.path) {
-    await rm(path.join(root, article.redirectFrom), { recursive: true, force: true });
+  for (const from of redirectPathsFor(article).filter((item) => item && item !== article.path)) {
+    await rm(path.join(root, from), { recursive: true, force: true });
   }
   const outputDir = path.join(root, article.path);
   await mkdir(outputDir, { recursive: true });

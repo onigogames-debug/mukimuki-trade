@@ -186,8 +186,12 @@ const parseReport = async (filePath, { mergeCsv = false } = {}) => {
   const totalTrades = integerFromLine(raw.split('\n').find((line) => line.includes('総取引件数')) || '');
   const totalBuyUsd = parseMoneyLine(raw, '買付総額') ?? parseMoneyLine(raw, '買付件数/総額');
   const totalSellUsd = parseMoneyLine(raw, '売却総額') ?? parseMoneyLine(raw, '売却件数/総額');
-  const pnlLine = raw.split('\n').find((line) => line.includes('損益') && !line.includes('最大利益'));
-  const usdPnl = pnlLine ? numbersFromLine(pnlLine).at(-1) ?? null : null;
+  const pnlLine = raw.split('\n').find((line) => line.includes('損益(USD資産差分'))
+    || raw.split('\n').find((line) => line.includes('損益') && !line.includes('最大利益'));
+  const pnlValues = pnlLine ? numbersFromLine(pnlLine) : [];
+  const usdPnl = pnlLine?.includes('実現損益')
+    ? pnlValues[0] ?? null
+    : pnlValues.at(-1) ?? null;
   const cashFlowUsd = parseMoneyLine(raw, '売買キャッシュ差額');
   const totalReturnPct = jpy.end !== null ? ((jpy.end - startCapitalJpy) / startCapitalJpy) * 100 : null;
   const dailyReturnPct = jpy.start && jpy.delta !== null ? (jpy.delta / jpy.start) * 100 : null;
