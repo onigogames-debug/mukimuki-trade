@@ -190,12 +190,12 @@ function drawChart(data = performanceState) {
   const yFor = (value) => padding.top + chartHeight - ((value - min) / (max - min)) * chartHeight;
 
   ctx.clearRect(0, 0, width, height);
-  ctx.fillStyle = "#fffdf4";
+  ctx.fillStyle = "#ffffff";
   ctx.fillRect(0, 0, width, height);
   ctx.textAlign = "left";
   ctx.textBaseline = "alphabetic";
 
-  ctx.fillStyle = "#17140f";
+  ctx.fillStyle = "#111827";
   ctx.font = "700 18px system-ui, sans-serif";
   ctx.fillText(`資産推移 / ${lastUpdated}`, padding.left, 30);
   ctx.font = "900 30px system-ui, sans-serif";
@@ -203,7 +203,7 @@ function drawChart(data = performanceState) {
   ctx.font = "700 16px system-ui, sans-serif";
   ctx.fillText(`通算損益 ${formatSignedYen(totalPnl)} / ${totalPnlPercent >= 0 ? "+" : ""}${totalPnlPercent.toFixed(1)}%`, padding.left, 88);
 
-  ctx.strokeStyle = "rgba(23, 20, 15, 0.2)";
+  ctx.strokeStyle = "rgba(17, 24, 39, 0.18)";
   ctx.lineWidth = 2;
   ctx.beginPath();
   ctx.moveTo(padding.left, padding.top);
@@ -211,8 +211,8 @@ function drawChart(data = performanceState) {
   ctx.lineTo(width - padding.right, padding.top + chartHeight);
   ctx.stroke();
 
-  ctx.strokeStyle = "rgba(23, 20, 15, 0.12)";
-  ctx.fillStyle = "rgba(23, 20, 15, 0.72)";
+  ctx.strokeStyle = "rgba(17, 24, 39, 0.1)";
+  ctx.fillStyle = "rgba(17, 24, 39, 0.68)";
   ctx.font = "700 12px system-ui, sans-serif";
   ctx.textAlign = "right";
   ctx.textBaseline = "middle";
@@ -230,17 +230,17 @@ function drawChart(data = performanceState) {
   const baselineY = yFor(startCapital);
   ctx.save();
   ctx.setLineDash([8, 7]);
-  ctx.strokeStyle = "rgba(36, 88, 211, 0.45)";
+  ctx.strokeStyle = "rgba(31, 94, 255, 0.42)";
   ctx.beginPath();
   ctx.moveTo(padding.left, baselineY);
   ctx.lineTo(width - padding.right, baselineY);
   ctx.stroke();
   ctx.restore();
-  ctx.fillStyle = "#2458d3";
+  ctx.fillStyle = "#1f5eff";
   ctx.textAlign = "left";
   ctx.fillText("スタート ¥1,000,000", padding.left + 8, baselineY - 12);
 
-  ctx.fillStyle = "rgba(23, 20, 15, 0.72)";
+  ctx.fillStyle = "rgba(17, 24, 39, 0.68)";
   ctx.font = "700 12px system-ui, sans-serif";
   ctx.textAlign = "center";
   ctx.textBaseline = "top";
@@ -249,13 +249,13 @@ function drawChart(data = performanceState) {
     ctx.beginPath();
     ctx.moveTo(x, padding.top + chartHeight);
     ctx.lineTo(x, padding.top + chartHeight + 6);
-    ctx.strokeStyle = "rgba(23, 20, 15, 0.24)";
+    ctx.strokeStyle = "rgba(17, 24, 39, 0.2)";
     ctx.stroke();
     ctx.fillText(point.date, x, padding.top + chartHeight + 12);
   });
 
   ctx.save();
-  ctx.fillStyle = "rgba(23, 20, 15, 0.76)";
+  ctx.fillStyle = "rgba(17, 24, 39, 0.72)";
   ctx.font = "800 13px system-ui, sans-serif";
   ctx.textAlign = "center";
   ctx.translate(20, padding.top + chartHeight / 2);
@@ -282,8 +282,8 @@ function drawChart(data = performanceState) {
   ctx.lineTo(padding.left, padding.top + chartHeight);
   ctx.closePath();
   const gradient = ctx.createLinearGradient(0, padding.top, 0, padding.top + chartHeight);
-  gradient.addColorStop(0, "rgba(239, 59, 50, 0.32)");
-  gradient.addColorStop(1, "rgba(255, 217, 40, 0.02)");
+  gradient.addColorStop(0, "rgba(31, 94, 255, 0.26)");
+  gradient.addColorStop(1, "rgba(19, 132, 92, 0.02)");
   ctx.fillStyle = gradient;
   ctx.fill();
 
@@ -292,8 +292,8 @@ function drawChart(data = performanceState) {
     if (index === 0) ctx.moveTo(point.x, point.y);
     else ctx.lineTo(point.x, point.y);
   });
-  ctx.strokeStyle = "#ef3b32";
-  ctx.lineWidth = 7;
+  ctx.strokeStyle = "#1f5eff";
+  ctx.lineWidth = 6;
   ctx.lineJoin = "round";
   ctx.lineCap = "round";
   ctx.stroke();
@@ -301,15 +301,15 @@ function drawChart(data = performanceState) {
   coords.forEach((point, index) => {
     ctx.beginPath();
     ctx.arc(point.x, point.y, index === coords.length - 1 ? 9 : 6, 0, Math.PI * 2);
-    ctx.fillStyle = index === coords.length - 1 ? "#1463ff" : "#ffd928";
+    ctx.fillStyle = index === coords.length - 1 ? "#df5142" : "#f5c84b";
     ctx.fill();
-    ctx.strokeStyle = "#17140f";
+    ctx.strokeStyle = "#111827";
     ctx.lineWidth = 3;
     ctx.stroke();
   });
 
   const latestPoint = coords[coords.length - 1];
-  ctx.fillStyle = "#17140f";
+  ctx.fillStyle = "#111827";
   ctx.font = "900 14px system-ui, sans-serif";
   ctx.textAlign = "right";
   ctx.textBaseline = "bottom";
