@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://mukimuki-trade.com/</loc>
-    <lastmod>2026-06-04</lastmod>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -45,6 +45,12 @@
   <url>
     <loc>https://mukimuki-trade.com/performance/2026/06/03/</loc>
     <lastmod>2026-06-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mukimuki-trade.com/performance/2026/06/04/</loc>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -97,6 +103,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://mukimuki-trade.com/performance/2026/06/04/topics/rddt-range/</loc>
+    <lastmod>2026-06-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://mukimuki-trade.com/performance/2026/05/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -104,7 +116,7 @@
   </url>
   <url>
     <loc>https://mukimuki-trade.com/performance/2026/06/</loc>
-    <lastmod>2026-06-04</lastmod>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -129,6 +141,12 @@
   <url>
     <loc>https://mukimuki-trade.com/research/frontier-growth/</loc>
     <lastmod>2026-05-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mukimuki-trade.com/research/tag/aapl/</loc>
+    <lastmod>2026-06-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -175,6 +193,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://mukimuki-trade.com/research/tag/avav/</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://mukimuki-trade.com/research/tag/avgo/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -206,6 +230,12 @@
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/hood/</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mukimuki-trade.com/research/tag/ionq/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -253,6 +283,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://mukimuki-trade.com/research/tag/peng/</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://mukimuki-trade.com/research/tag/pl/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -266,6 +302,12 @@
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/qubt/</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mukimuki-trade.com/research/tag/rddt/</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -362,13 +404,13 @@
   </url>
   <url>
     <loc>https://mukimuki-trade.com/sitemap/</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/archive/</loc>
-    <lastmod>2026-06-04</lastmod>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -380,7 +422,7 @@
   </url>
   <url>
     <loc>https://mukimuki-trade.com/archive/2026-06/</loc>
-    <lastmod>2026-06-04</lastmod>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -392,7 +434,7 @@
   </url>
   <url>
     <loc>https://mukimuki-trade.com/category/performance/</loc>
-    <lastmod>2026-06-04</lastmod>
+    <lastmod>2026-06-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
