@@ -96,12 +96,12 @@
       <description>2026年5月27日ESTの売買トピック。100万円チャレンジは評価額108.6万円、前日比+56,293円。XNDUの組み直しとMETA・ALABの持ち越しを整理。</description>
     </item>
     <item>
-      <title>AIインフラ銘柄の候補整理</title>
+      <title>AIインフラ関連株の銘柄検討</title>
       <link>https://mukimuki-trade.com/research/ai-infrastructure/</link>
       <guid isPermaLink="true">https://mukimuki-trade.com/research/ai-infrastructure/</guid>
       <pubDate>Wed, 27 May 2026 08:20:00 GMT</pubDate>
       <category>銘柄検討</category>
-      <description>AIインフラ関連の投資候補を、半導体、メモリ、通信部品、周辺インフラに分けて整理する市場メモ。</description>
+      <description>AIインフラ関連の米国株を検討。半導体、メモリ、通信部品、CRDO、QBTSなどを需要と過熱感で整理。</description>
     </item>
     <item>
       <title>アプリ・広告・金融テック銘柄</title>
@@ -120,44 +120,44 @@
       <description>EV、宇宙、衛星、小型テーマ株を高ボラティリティ枠として分け、候補化と撤退条件を整理。</description>
     </item>
     <item>
-      <title>投資ロジック紹介1: シグナルの見方</title>
+      <title>米国株の売買シグナル</title>
       <link>https://mukimuki-trade.com/logic/signal-score/</link>
       <guid isPermaLink="true">https://mukimuki-trade.com/logic/signal-score/</guid>
       <pubDate>Wed, 27 May 2026 08:35:00 GMT</pubDate>
       <category>投資ロジック</category>
-      <description>トレンド、出来高、材料を使ったシグナル確認の考え方を紹介。</description>
+      <description>米国株の売買シグナルを、トレンド、出来高、材料の3点で確認する考え方として整理。</description>
     </item>
     <item>
-      <title>投資ロジック紹介2: エントリーとリスク</title>
+      <title>分割エントリーと損切りルール</title>
       <link>https://mukimuki-trade.com/logic/entry-risk/</link>
       <guid isPermaLink="true">https://mukimuki-trade.com/logic/entry-risk/</guid>
       <pubDate>Wed, 27 May 2026 08:40:00 GMT</pubDate>
       <category>投資ロジック</category>
-      <description>分割エントリー、損切り幅、株数調整の考え方を紹介。</description>
+      <description>米国株の分割エントリー、損切り幅、株数調整を100万円運用のリスク管理として整理。</description>
     </item>
     <item>
-      <title>投資ロジック紹介3: 利確と撤退</title>
+      <title>利確と撤退ルール</title>
       <link>https://mukimuki-trade.com/logic/exit-review/</link>
       <guid isPermaLink="true">https://mukimuki-trade.com/logic/exit-review/</guid>
       <pubDate>Wed, 27 May 2026 08:45:00 GMT</pubDate>
       <category>投資ロジック</category>
-      <description>利確、撤退、時間切れ、振り返りログの考え方を紹介。</description>
+      <description>米国株の利確、撤退、時間切れ、振り返りログを小型成長株の出口判断として整理。</description>
     </item>
     <item>
-      <title>銘柄検討テンプレ</title>
+      <title>米国株の銘柄検討｜SOFI・SOUN・小型成長株候補</title>
       <link>https://mukimuki-trade.com/research/</link>
       <guid isPermaLink="true">https://mukimuki-trade.com/research/</guid>
       <pubDate>Wed, 27 May 2026 06:00:00 GMT</pubDate>
       <category>銘柄検討</category>
-      <description>注目理由、数字、売買条件、振り返りを同じ型で整理する銘柄検討テンプレート。</description>
+      <description>米国株の銘柄検討ページ。SOFI、SOUN、QBTSなど小型成長株候補を、決算・ニュース・売買条件で整理します。</description>
     </item>
     <item>
-      <title>moomoo証券の使い方: 米国株ニュース・チャート確認ガイド</title>
+      <title>moomoo証券の使い方｜米国株ニュース・チャート確認</title>
       <link>https://mukimuki-trade.com/moomoo/</link>
       <guid isPermaLink="true">https://mukimuki-trade.com/moomoo/</guid>
       <pubDate>Wed, 27 May 2026 06:00:00 GMT</pubDate>
       <category>moomoo</category>
-      <description>moomoo証券の使い方を、米国株ニュース、チャート、決算確認、銘柄検討の流れで整理。</description>
+      <description>PRを含みます。moomoo証券で米国株ニュース、チャート、決算を確認する流れと注意点を整理します。</description>
     </item>
   </channel>
 </rss>

@@ -14,6 +14,20 @@ const truncate = (value, maxLength) => {
 };
 
 const datePath = (date) => `/performance/${String(date).replaceAll('-', '/')}/`;
+const normalizePercent = (value) => {
+  const text = String(value ?? '').trim();
+  return text.endsWith('%') ? text : `${text}%`;
+};
+const normalizeJpy = (value) => {
+  const text = String(value ?? '').trim();
+  if (!text) return '';
+  if (text.startsWith('¥') || text.startsWith('+¥') || text.startsWith('-¥')) return text;
+  if (text.startsWith('+') || text.startsWith('-')) return `${text[0]}¥${text.slice(1)}`;
+  return `¥${text}`;
+};
+const normalizeHoldings = (holdings = []) => (Array.isArray(holdings) ? holdings : String(holdings).split(/[、/・,\s]+/))
+  .map((item) => String(item || '').replace(/^US\./, '').trim().toUpperCase())
+  .filter(Boolean);
 
 export const keywordMap = {
   performance: [
@@ -64,6 +78,127 @@ export const keywordMap = {
     ['OnigoGames 投資', '情報収集型', '低', 'profile / footer'],
     ['moomoo 米国株 実績ブログ', '比較検討型', '中', 'moomoo / 本文冒頭'],
   ],
+};
+
+export const titleMetaCandidates = {
+  researchTop: [
+    {
+      title: '米国株の銘柄検討｜SOFI・SOUN・小型成長株候補',
+      metaDescription: '米国株の銘柄検討ページ。SOFI、SOUN、QBTSなど小型成長株候補を、決算・ニュース・売買条件で整理します。',
+    },
+    {
+      title: '米国株の注目銘柄候補｜小型成長株とAI関連株を検討',
+      metaDescription: '100万円米国株トレードで監視する注目銘柄候補を整理。AI関連株、フィンテック、宇宙株を検討します。',
+    },
+    {
+      title: '銘柄検討｜米国株の小型成長株・AI関連株候補',
+      metaDescription: '米国株の小型成長株やAI関連株を、注目理由、数字、売買条件、撤退条件に分けて記録します。',
+    },
+  ],
+  aiInfrastructure: [
+    {
+      title: 'AIインフラ関連株の銘柄検討｜半導体・CRDO・QBTS',
+      metaDescription: 'AIインフラ関連の米国株を検討。半導体、メモリ、通信部品、CRDO、QBTSなどを需要と過熱感で整理します。',
+    },
+    {
+      title: 'AI関連株の見通し｜米国株インフラ銘柄を候補整理',
+      metaDescription: 'AI関連株の中でもインフラ銘柄を中心に、半導体・データセンター・通信部品の候補とリスクを確認します。',
+    },
+    {
+      title: '米国株AIインフラ銘柄｜半導体・小型成長株の見方',
+      metaDescription: '米国株のAIインフラ銘柄を、決算、出来高、材料、過熱感で分類。小型成長株候補の見方を整理します。',
+    },
+  ],
+  logicTop: [
+    {
+      title: '米国株の投資ロジック｜損切り・分割エントリー・自動売買',
+      metaDescription: '米国株トレードの投資ロジックを整理。損切りルール、分割エントリー、自動売買と裁量判断の見方を記録します。',
+    },
+    {
+      title: '米国株トレード手法｜損切りルールと売買判断',
+      metaDescription: '100万円運用で使う米国株トレード手法を公開できる範囲で整理。シグナル、リスク管理、利確を確認します。',
+    },
+    {
+      title: '自動売買と裁量判断の投資ロジック｜米国株実績ブログ',
+      metaDescription: 'Autotradeの記録と裁量判断を組み合わせた米国株の投資ロジック。売買条件と振り返り方法をまとめます。',
+    },
+  ],
+  moomoo: [
+    {
+      title: 'moomoo証券の使い方｜米国株ニュース・チャート確認',
+      metaDescription: 'PRを含みます。moomoo証券で米国株ニュース、チャート、決算を確認する流れと注意点を整理します。',
+    },
+    {
+      title: 'moomoo証券で米国株を調べる方法｜PR・注意点あり',
+      metaDescription: 'アフィリエイト広告を含みます。moomoo証券で米国株のニュース、決算、チャートを見る手順を紹介します。',
+    },
+    {
+      title: 'moomoo証券レビュー｜米国株の銘柄検討に使う見方',
+      metaDescription: 'PRリンクを含むmoomoo証券活用メモ。米国株の銘柄検討で見るニュース、チャート、決算情報を整理します。',
+    },
+  ],
+};
+
+export const generateDailyPerformanceSeo = ({
+  date,
+  rate,
+  rateNum,
+  jpyTotal,
+  dailyPnl,
+  holdings = [],
+  tradeCount,
+  prevDate,
+  nextDate,
+} = {}) => {
+  const tickers = normalizeHoldings(holdings).slice(0, 3);
+  const holdingsText = tickers.join('・') || '主要銘柄';
+  const rateText = normalizePercent(rate || rateNum || '');
+  const rateNumText = normalizePercent(rateNum || rate || '');
+  const jpyTotalText = normalizeJpy(jpyTotal);
+  const dailyPnlText = normalizeJpy(dailyPnl);
+  const title = truncate(`${date}実績 ${rateText}｜${holdingsText}保有`, 60);
+  const metaDescription = truncate(`${date}の米国株実績公開。評価額${jpyTotalText}、前日比${dailyPnlText}、100万円比${rateNumText}。${holdingsText}と売買${tradeCount}件を記録。`, 120);
+  const h1 = `${date}の米国株実績公開: 100万円比 ${rateNumText}、評価額 ${jpyTotalText}`;
+  const h2s = [
+    `米国株トレード実績: 評価額${jpyTotalText}と100万円比${rateNumText}`,
+    `保有銘柄 ${holdingsText} の見方`,
+    `売買件数${tradeCount}件の振り返り`,
+    '自動売買と裁量判断で見るポイント',
+    '明日以降に見る米国株の確認点',
+  ];
+  const intro = truncate(`${date}の米国株トレード実績公開です。100万円から始めた投資ブログとして、評価額${jpyTotalText}、前日比${dailyPnlText}、100万円比${rateNumText}を記録します。主要保有銘柄は${holdingsText}で、売買件数は${tradeCount}件でした。自動売買と裁量判断の結果を日次で検証します。`, 200);
+
+  return {
+    title,
+    metaDescription,
+    h1,
+    h2s,
+    intro,
+    faqs: [
+      {
+        question: `${date}の評価額はいくらですか？`,
+        answer: `${jpyTotalText}です。100万円比${rateNumText}、前日比${dailyPnlText}となっています。`,
+      },
+      {
+        question: `${holdingsText}は買い推奨ですか？`,
+        answer: 'いいえ。保有銘柄として公開している自己運用ログであり、特定銘柄の売買を推奨するものではありません。',
+      },
+      {
+        question: `${date}の売買件数は何件ですか？`,
+        answer: `${tradeCount}件です。前日${prevDate || '前日'}や翌日${nextDate || '翌日'}の実績と合わせて、資産推移と売買判断を確認します。`,
+      },
+    ],
+  };
+};
+
+export const generateResearchSeoMeta = ({ ticker, companyName, theme } = {}) => {
+  const symbol = String(ticker || '').toUpperCase();
+  const company = companyName ? `（${companyName}）` : '';
+  const themeText = theme || '米国株';
+  return {
+    title: truncate(`${symbol}株の見通し｜${themeText}銘柄の注目理由と売買条件`, 60),
+    metaDescription: truncate(`${symbol}${company}を${themeText}銘柄として検討。決算、ニュース、株価材料、分割エントリー、損切り条件を整理します。`, 120),
+  };
 };
 
 export const dailyPerformanceNunjucksTemplate = `{% set rateText = rate ~ "%" %}

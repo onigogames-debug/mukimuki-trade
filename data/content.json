@@ -309,9 +309,9 @@
       "redirectFrom": "/performance/2026-05-27-xndu-rebuild/"
     },
     {
-      "title": "AIインフラ銘柄の候補整理",
+      "title": "AIインフラ関連株の銘柄検討",
       "path": "/research/ai-infrastructure/",
-      "description": "AIインフラ関連の投資候補を、半導体、メモリ、通信部品、周辺インフラに分けて整理する市場メモ。",
+      "description": "AIインフラ関連の米国株を検討。半導体、メモリ、通信部品、CRDO、QBTSなどを需要と過熱感で整理。",
       "pubDate": "2026-05-27T17:20:00+09:00",
       "category": "銘柄検討"
     },
@@ -330,37 +330,37 @@
       "category": "銘柄検討"
     },
     {
-      "title": "投資ロジック紹介1: シグナルの見方",
+      "title": "米国株の売買シグナル",
       "path": "/logic/signal-score/",
-      "description": "トレンド、出来高、材料を使ったシグナル確認の考え方を紹介。",
+      "description": "米国株の売買シグナルを、トレンド、出来高、材料の3点で確認する考え方として整理。",
       "pubDate": "2026-05-27T17:35:00+09:00",
       "category": "投資ロジック"
     },
     {
-      "title": "投資ロジック紹介2: エントリーとリスク",
+      "title": "分割エントリーと損切りルール",
       "path": "/logic/entry-risk/",
-      "description": "分割エントリー、損切り幅、株数調整の考え方を紹介。",
+      "description": "米国株の分割エントリー、損切り幅、株数調整を100万円運用のリスク管理として整理。",
       "pubDate": "2026-05-27T17:40:00+09:00",
       "category": "投資ロジック"
     },
     {
-      "title": "投資ロジック紹介3: 利確と撤退",
+      "title": "利確と撤退ルール",
       "path": "/logic/exit-review/",
-      "description": "利確、撤退、時間切れ、振り返りログの考え方を紹介。",
+      "description": "米国株の利確、撤退、時間切れ、振り返りログを小型成長株の出口判断として整理。",
       "pubDate": "2026-05-27T17:45:00+09:00",
       "category": "投資ロジック"
     },
     {
-      "title": "銘柄検討テンプレ",
+      "title": "米国株の銘柄検討｜SOFI・SOUN・小型成長株候補",
       "path": "/research/",
-      "description": "注目理由、数字、売買条件、振り返りを同じ型で整理する銘柄検討テンプレート。",
+      "description": "米国株の銘柄検討ページ。SOFI、SOUN、QBTSなど小型成長株候補を、決算・ニュース・売買条件で整理します。",
       "pubDate": "2026-05-27T15:00:00+09:00",
       "category": "銘柄検討"
     },
     {
-      "title": "moomoo証券の使い方: 米国株ニュース・チャート確認ガイド",
+      "title": "moomoo証券の使い方｜米国株ニュース・チャート確認",
       "path": "/moomoo/",
-      "description": "moomoo証券の使い方を、米国株ニュース、チャート、決算確認、銘柄検討の流れで整理。",
+      "description": "PRを含みます。moomoo証券で米国株ニュース、チャート、決算を確認する流れと注意点を整理します。",
       "pubDate": "2026-05-27T15:00:00+09:00",
       "category": "moomoo"
     }
