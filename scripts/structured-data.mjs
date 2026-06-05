@@ -420,7 +420,12 @@ export const articleSchema = (meta) => ({
   inLanguage: site.language,
   articleSection: meta.section,
   keywords: Array.isArray(meta.keywords) ? meta.keywords : String(meta.keywords || '').split(',').map((item) => item.trim()).filter(Boolean),
-  author: { '@id': site.authorId, name: meta.author || site.name },
+  author: {
+    '@type': 'Person',
+    '@id': site.authorId,
+    name: meta.author || site.name,
+    url: absoluteUrl('/profile/'),
+  },
   publisher: {
     '@type': 'Organization',
     name: site.name,
