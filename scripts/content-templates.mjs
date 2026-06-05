@@ -151,22 +151,33 @@ export const generateDailyPerformanceSeo = ({
   nextDate,
 } = {}) => {
   const tickers = normalizeHoldings(holdings).slice(0, 3);
-  const holdingsText = tickers.join('・') || '主要銘柄';
+  const hasHoldings = tickers.length > 0;
+  const holdingsText = hasHoldings ? tickers.join('・') : 'ノーポジション';
+  const titleSuffix = hasHoldings ? `${holdingsText}保有` : holdingsText;
+  const holdingsDescription = hasHoldings ? `${holdingsText}と売買${tradeCount}件` : `引け後保有なし、売買${tradeCount}件`;
+  const holdingsHeading = hasHoldings ? `保有銘柄 ${holdingsText} の見方` : '保有なしの日の見方';
+  const introHoldings = hasHoldings ? `主要保有銘柄は${holdingsText}で` : '引け後保有はなく';
+  const holdingsQuestion = hasHoldings ? `${holdingsText}は買い推奨ですか？` : 'この日の銘柄は買い推奨ですか？';
+  const recommendationAnswer = hasHoldings
+    ? 'いいえ。保有銘柄として公開している自己運用ログであり、特定銘柄の売買を推奨するものではありません。'
+    : 'いいえ。売買記録として公開している自己運用ログであり、特定銘柄の売買を推奨するものではありません。';
+  const prevText = prevDate ? `前日${prevDate}` : '前日';
+  const nextText = nextDate ? `翌日${nextDate}` : '次回';
   const rateText = normalizePercent(rate || rateNum || '');
   const rateNumText = normalizePercent(rateNum || rate || '');
   const jpyTotalText = normalizeJpy(jpyTotal);
   const dailyPnlText = normalizeJpy(dailyPnl);
-  const title = truncate(`${date}実績 ${rateText}｜${holdingsText}保有`, 60);
-  const metaDescription = truncate(`${date}の米国株実績公開。評価額${jpyTotalText}、前日比${dailyPnlText}、100万円比${rateNumText}。${holdingsText}と売買${tradeCount}件を記録。`, 120);
+  const title = truncate(`${date}実績 ${rateText}｜${titleSuffix}`, 60);
+  const metaDescription = truncate(`${date}の米国株実績公開。評価額${jpyTotalText}、前日比${dailyPnlText}、100万円比${rateNumText}。${holdingsDescription}を記録。`, 120);
   const h1 = `${date}の米国株実績公開: 100万円比 ${rateNumText}、評価額 ${jpyTotalText}`;
   const h2s = [
     `米国株トレード実績: 評価額${jpyTotalText}と100万円比${rateNumText}`,
-    `保有銘柄 ${holdingsText} の見方`,
+    holdingsHeading,
     `売買件数${tradeCount}件の振り返り`,
     '自動売買と裁量判断で見るポイント',
     '明日以降に見る米国株の確認点',
   ];
-  const intro = truncate(`${date}の米国株トレード実績公開です。100万円から始めた投資ブログとして、評価額${jpyTotalText}、前日比${dailyPnlText}、100万円比${rateNumText}を記録します。主要保有銘柄は${holdingsText}で、売買件数は${tradeCount}件でした。自動売買と裁量判断の結果を日次で検証します。`, 200);
+  const intro = truncate(`${date}の米国株トレード実績公開です。100万円から始めた投資ブログとして、評価額${jpyTotalText}、前日比${dailyPnlText}、100万円比${rateNumText}を記録します。${introHoldings}、売買件数は${tradeCount}件でした。自動売買と裁量判断の結果を日次で検証します。`, 200);
 
   return {
     title,
@@ -180,12 +191,12 @@ export const generateDailyPerformanceSeo = ({
         answer: `${jpyTotalText}です。100万円比${rateNumText}、前日比${dailyPnlText}となっています。`,
       },
       {
-        question: `${holdingsText}は買い推奨ですか？`,
-        answer: 'いいえ。保有銘柄として公開している自己運用ログであり、特定銘柄の売買を推奨するものではありません。',
+        question: holdingsQuestion,
+        answer: recommendationAnswer,
       },
       {
         question: `${date}の売買件数は何件ですか？`,
-        answer: `${tradeCount}件です。前日${prevDate || '前日'}や翌日${nextDate || '翌日'}の実績と合わせて、資産推移と売買判断を確認します。`,
+        answer: `${tradeCount}件です。${prevText}や${nextText}の実績と合わせて、資産推移と売買判断を確認します。`,
       },
     ],
   };

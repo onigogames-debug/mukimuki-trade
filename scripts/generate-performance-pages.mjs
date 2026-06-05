@@ -161,7 +161,7 @@ ${metrics.map(([label, value]) => `          <div class="stat-card"><span>${esca
 };
 
 const renderPositions = (positions = []) => {
-  if (!positions.length) return '<p>この日の保有銘柄データはありません。</p>';
+  if (!positions.length) return '<p>この日は引け後保有なしです。翌営業日に持ち越した含み損益はなく、売買履歴と前日比からポジションを外した判断を確認します。</p>';
   return `<div class="comparison-table">
 ${positions.map((position) => `          <div class="comparison-row">
             <span>${escapeHtml(position.symbol)}</span>
@@ -228,6 +228,9 @@ const renderDailyPage = (report, articleIndex, reports) => {
   const pagePath = datePath(latest.reportDate);
   const monthlyPath = monthPath(latest.reportDate);
   const holdings = primaryHoldings(latest.positions);
+  const holdingsInsight = holdings.length
+    ? `${holdings.join('、')}は値動きが大きくなりやすい米国株です。単日の損益だけでなく、翌日に持ち越した理由、含み益・含み損の変化、出来高の継続を確認します。`
+    : 'この日は引け後保有なしで終えているため、翌日に持ち越した銘柄の含み損益はありません。売買履歴と前日比から、ポジションを外した判断と損益への影響を確認します。';
   const rateText = `${latest.summary.totalReturnPct >= 0 ? '+' : ''}${latest.summary.totalReturnPct.toFixed(1)}%`;
   const dates = reports.map((entry) => entry.report.latest.reportDate).sort();
   const currentIndex = dates.indexOf(latest.reportDate);
@@ -258,18 +261,18 @@ const renderDailyPage = (report, articleIndex, reports) => {
     path: pagePath,
     section: '実績公開',
     image: '/assets/mukimuki-performance.png',
-    keywords: ['100万円トレード', '投資実績公開', '米国株', '100万円チャレンジ', latest.reportDate, ...holdings],
+    keywords: ['100万円トレード', '投資実績公開', '米国株', '100万円チャレンジ', latest.reportDate, ...(holdings.length ? holdings : ['ノーポジション'])],
     breadcrumbs,
     faq: faqs,
   });
   const relatedContext = {
     title,
     description,
-    summary: `${latest.reportDateDisplay} 保有銘柄 ${(latest.positions || []).map((position) => position.symbol).join(', ')}`,
+    summary: `${latest.reportDateDisplay} ${(latest.positions || []).length ? `保有銘柄 ${(latest.positions || []).map((position) => position.symbol).join(', ')}` : '引け後保有なし'}`,
     path: pagePath,
     category: '実績公開',
     categoryKey: 'performance',
-    tags: ['実績公開', '100万円チャレンジ', ...(latest.positions || []).map((position) => position.symbol)],
+    tags: ['実績公開', '100万円チャレンジ', ...((latest.positions || []).length ? (latest.positions || []).map((position) => position.symbol) : ['ノーポジション'])],
     tickers: (latest.positions || []).map((position) => shortSymbol(position.symbol)),
   };
 
@@ -318,7 +321,7 @@ ${renderStampRow([['まず評価額', 'blue']])}
 ${renderTrustSignals(report)}
       <section class="article-panel">
         <h2>${escapeHtml(seo.h2s[1])}</h2>
-        <p>${escapeHtml(holdings.join('、'))}は値動きが大きくなりやすい米国株です。単日の損益だけでなく、翌日に持ち越した理由、含み益・含み損の変化、出来高の継続を確認します。</p>
+        <p>${escapeHtml(holdingsInsight)}</p>
       </section>
       <section class="article-panel">
         <h2>主要保有銘柄</h2>

@@ -1,6 +1,6 @@
 # SEO Progress Report
 
-Generated: 2026-06-05T22:46:45.448Z
+Generated: 2026-06-05T22:51:43.583Z
 
 ## 実装状況
 
@@ -52,7 +52,7 @@ Generated: 2026-06-05T22:46:45.448Z
 | /performance/ | 45 | 70 | 1468 | 22 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/ | 30 | 52 | 1026 | 22 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /performance/2026/05/ | 41 | 62 | 1928 | 35 | BreadcrumbList, CollectionPage, Person, WebSite |
-| /performance/2026/05/26/ | 47 | 77 | 2369 | 34 | Article, BreadcrumbList, FAQPage, Person, WebSite |
+| /performance/2026/05/26/ | 47 | 77 | 2367 | 34 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/05/27/ | 52 | 82 | 2577 | 35 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/05/27/topics/xndu-rebuild/ | 53 | 83 | 2394 | 32 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/05/28/ | 53 | 83 | 2972 | 37 | Article, BreadcrumbList, FAQPage, Person, WebSite |
@@ -70,7 +70,7 @@ Generated: 2026-06-05T22:46:45.448Z
 | /performance/2026/06/03/topics/soun-range/ | 49 | 78 | 3410 | 32 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/06/04/ | 52 | 82 | 2761 | 37 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/06/04/topics/rddt-range/ | 48 | 69 | 3705 | 32 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/06/05/ | 42 | 70 | 1932 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
+| /performance/2026/06/05/ | 43 | 73 | 1980 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/06/05/topics/peng-range/ | 48 | 74 | 3300 | 32 | Article, BreadcrumbList, Person, WebSite |
 | /performance/latest/ (noindex) | 25 | 53 | 945 | 24 |  |
 | /profile/ | 26 | 75 | 1373 | 21 | BreadcrumbList, FAQPage, Person, ProfilePage, WebSite |
@@ -117,5 +117,5 @@ Generated: 2026-06-05T22:46:45.448Z
 | /research/tag/spir/ | 30 | 65 | 2085 | 31 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/tsla/ | 30 | 65 | 1710 | 28 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/xndu/ | 30 | 65 | 1779 | 29 | BreadcrumbList, CollectionPage, Person, WebSite |
-| /sitemap/ | 23 | 48 | 3747 | 92 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /sitemap/ | 23 | 48 | 3748 | 92 | BreadcrumbList, CollectionPage, Person, WebSite |
 
