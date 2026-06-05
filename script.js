@@ -147,6 +147,10 @@ function updatePerformanceText(data) {
   const dailyPnl = asNumber(jpy.delta) ?? fallbackPerformance.latest.jpy.delta;
   const dailyReturn = asNumber(summary.dailyReturnPct) ?? fallbackPerformance.latest.summary.dailyReturnPct;
   const polarity = (value) => (value >= 0 ? "positive" : "negative");
+  const positions = latest.positions || fallbackPerformance.latest.positions;
+  const holdingSummary = positions.length
+    ? `引け後保有は${positionsText(positions)}`
+    : "週末はノーポジション";
 
   setPerformanceText("report-date", reportDate);
   setPerformanceText("generated-at", generatedAt);
@@ -161,8 +165,8 @@ function updatePerformanceText(data) {
   setPerformanceText("jpy-range", `${formatYen(jpy.start ?? fallbackPerformance.latest.jpy.start)} → ${formatYen(latestJpy)}`);
   setPerformanceText("usd-range", `${formatUsd(usd.start ?? fallbackPerformance.latest.usd.start)} → ${formatUsd(usd.end ?? fallbackPerformance.latest.usd.end)}`);
   setPerformanceText("trade-flow", `買付 ${formatUsd(summary.totalBuyUsd ?? fallbackPerformance.latest.summary.totalBuyUsd)} / 売却 ${formatUsd(summary.totalSellUsd ?? fallbackPerformance.latest.summary.totalSellUsd)}`);
-  setPerformanceText("positions", positionsText(latest.positions || fallbackPerformance.latest.positions));
-  setPerformanceText("hero-summary", `今の状態: 100万円比 ${formatSignedPercent(totalReturn)}。約定${summary.totalTrades ?? 0}件、引け後保有は${positionsText(latest.positions || fallbackPerformance.latest.positions)}。`);
+  setPerformanceText("positions", positionsText(positions));
+  setPerformanceText("hero-summary", `今の状態: 100万円比 ${formatSignedPercent(totalReturn)}。約定${summary.totalTrades ?? 0}件、${holdingSummary}。`);
   setPerformanceText("latest-title", `${latest.label || fallbackPerformance.latest.label}の実績: 100万円比 ${formatSignedPercent(totalReturn)}`);
 }
 

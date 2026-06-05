@@ -4,18 +4,18 @@
     "title": "MUKIMUKI trade",
     "description": "100万円からの株式投資実績、資産曲線、銘柄検討、相場メモを整理する投資ブログ。",
     "language": "ja",
-    "lastBuildDate": "2026-06-05T08:00:00+09:00"
+    "lastBuildDate": "2026-06-06T08:00:00+09:00"
   },
   "pages": [
     {
       "path": "/",
-      "lastmod": "2026-06-05",
+      "lastmod": "2026-06-06",
       "changefreq": "daily",
       "priority": "1.0"
     },
     {
       "path": "/performance/latest/",
-      "lastmod": "2026-06-05",
+      "lastmod": "2026-06-06",
       "changefreq": "daily",
       "priority": "0.9"
     },
@@ -26,6 +26,13 @@
       "priority": "0.78"
     },
     {
+      "path": "/performance/2026/06/05/topics/peng-range/",
+      "lastmod": "2026-06-06",
+      "changefreq": "monthly",
+      "priority": "0.85",
+      "redirectFrom": "/performance/2026-06-05-peng-range/"
+    },
+    {
       "path": "/performance/2026/05/31/topics/weekend-amzn-risk-check/",
       "lastmod": "2026-06-01",
       "changefreq": "monthly",
@@ -34,19 +41,19 @@
     },
     {
       "path": "/archive/",
-      "lastmod": "2026-06-05",
+      "lastmod": "2026-06-06",
       "changefreq": "weekly",
       "priority": "0.6"
     },
     {
       "path": "/archive/2026-06/",
-      "lastmod": "2026-06-05",
+      "lastmod": "2026-06-06",
       "changefreq": "monthly",
       "priority": "0.6"
     },
     {
       "path": "/category/performance/",
-      "lastmod": "2026-06-05",
+      "lastmod": "2026-06-06",
       "changefreq": "weekly",
       "priority": "0.6"
     },
@@ -188,7 +195,7 @@
     },
     {
       "path": "/performance/2026/06/",
-      "lastmod": "2026-06-05",
+      "lastmod": "2026-06-06",
       "changefreq": "weekly",
       "priority": "0.78"
     },
@@ -222,6 +229,14 @@
     }
   ],
   "posts": [
+    {
+      "title": "6/5売買トピック: PENGの急落回転とノーポジションで終了",
+      "path": "/performance/2026/06/05/topics/peng-range/",
+      "description": "2026年6月5日ESTの売買トピック。評価額は100.0万円、前日比-32,347円。約定40件、PENGの約定レンジ4.79%と保有なしを整理。",
+      "pubDate": "2026-06-06T08:00:00+09:00",
+      "category": "実績公開",
+      "redirectFrom": "/performance/2026-06-05-peng-range/"
+    },
     {
       "title": "6/4売買トピック: RDDTの急伸回転と5銘柄持ち越しを確認",
       "path": "/performance/2026/06/04/topics/rddt-range/",

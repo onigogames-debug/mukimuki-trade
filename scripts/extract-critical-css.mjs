@@ -44,6 +44,8 @@ const criticalSelectorHints = [
   ".button",
   ".primary",
   ".secondary",
+  ".positive",
+  ".negative",
 ];
 
 const criticalKeyframes = new Set(["mascotFlex", "ringPulse"]);
