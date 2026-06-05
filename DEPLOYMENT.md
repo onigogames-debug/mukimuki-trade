@@ -13,7 +13,7 @@ Last updated: 2026-06-02
 - Account: `onigo.games@gmail.com`
 - Project: `mukimuki-trade`
 - Production URL: https://mukimuki-trade.pages.dev
-- Latest deployment URL: https://bc8ad3ac.mukimuki-trade.pages.dev
+- Latest deployment URL: https://a545c9a6.mukimuki-trade.pages.dev
 - Deployment method: Wrangler direct upload
 
 ## Custom Domains
@@ -46,7 +46,7 @@ No domain action remains. Both apex and `www` custom domains return `HTTP/2 200`
 - Sitemap submitted: `https://mukimuki-trade.com/sitemap.xml`
 - Image sitemap: `https://mukimuki-trade.com/image-sitemap.xml`
 - RSS feed submitted as sitemap: `https://mukimuki-trade.com/feed.xml` (success)
-- Current sitemap URLs: 63
+- Current sitemap URLs: 77
 - Manual indexing requested: top page and `/performance/`
 
 ## SEO Enhancements

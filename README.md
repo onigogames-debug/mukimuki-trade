@@ -80,20 +80,31 @@ import {
 
 const jsonLdScript = generateJsonLdScript({
   pageType: 'daily-performance',
-  title: '2026-06-01実績: 100万円比 +7.9%、評価額 ¥1,078,727',
-  description: '2026年6月1日ESTの実績レポート。',
-  url: 'https://mukimuki-trade.com/performance/2026/06/01/',
-  publishedTime: '2026-06-02T05:01:04+09:00',
-  modifiedTime: '2026-06-02T05:01:04+09:00',
+  title: '2026-06-04実績 +4.0%｜SOFI・RIVN・QBTS保有 | MUKIMUKI trade',
+  description: '評価額 ¥1,039,664、前日比 +¥17,906。2026年6月4日ESTの実績レポート。',
+  url: 'https://mukimuki-trade.com/performance/2026/06/04/',
+  publishedTime: '2026-06-05T05:01:41+09:00',
+  modifiedTime: '2026-06-05T05:01:41+09:00',
   section: '実績公開',
   author: 'MUKIMUKI trade',
   faqs: [
-    { question: '2026年6月1日の評価額はいくらですか？', answer: '¥1,078,727です。' },
+    { question: '2026年6月4日の評価額はいくらですか？', answer: '¥1,039,664です。' },
   ],
 });
 
-const breadcrumbs = buildBreadcrumbListFromPath('/performance/2026/06/01/');
-const breadcrumbSchema = buildBreadcrumbListJsonLd('/performance/2026/06/01/');
+const topicJsonLdScript = generateJsonLdScript({
+  pageType: 'trade-topic',
+  title: '6/3売買トピック: SOUNの値幅を確認',
+  description: '売買トピックの記録。',
+  url: 'https://mukimuki-trade.com/performance/2026/06/03/topics/soun-range/',
+  parentUrl: 'https://mukimuki-trade.com/performance/2026/06/03/',
+  publishedTime: '2026-06-04T05:00:00+09:00',
+  modifiedTime: '2026-06-04T05:00:00+09:00',
+  section: '実績公開',
+});
+
+const breadcrumbs = buildBreadcrumbListFromPath('/performance/2026/06/03/topics/soun-range/');
+const breadcrumbSchema = buildBreadcrumbListJsonLd('/performance/2026/06/03/topics/soun-range/');
 const faqSchema = buildFAQPageSchema([
   { question: '実績は投資助言ですか？', answer: 'いいえ。情報提供を目的にした公開記録です。' },
 ]);

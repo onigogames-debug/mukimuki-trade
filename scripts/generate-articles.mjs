@@ -152,6 +152,11 @@ const schemaPageTypeForArticle = (article) => {
   return 'article';
 };
 
+const parentDailyUrlForTopic = (article) => {
+  const match = String(article.path || '').match(/^(\/performance\/\d{4}\/\d{2}\/\d{2}\/)topics\/[^/]+\/$/);
+  return match ? absoluteUrl(match[1]) : undefined;
+};
+
 const renderFaqSection = (faqs = []) => {
   if (!faqs.length) return '';
   return `      <section class="article-panel">
@@ -180,6 +185,7 @@ const renderArticle = (article) => {
     section: article.category,
     image: article.image,
     keywords: article.tags,
+    parentUrl: parentDailyUrlForTopic(article),
     breadcrumbs,
     faq: faqs,
   });

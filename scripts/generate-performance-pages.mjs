@@ -251,6 +251,7 @@ const renderDailyPage = (report, articleIndex, reports) => {
   const jsonLdScript = renderJsonLdScript({
     pageType: 'daily-performance',
     title,
+    headline: h1,
     description,
     published_time: report.generatedAt,
     modified_time: report.generatedAt,

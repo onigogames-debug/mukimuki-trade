@@ -67,6 +67,7 @@ const breadcrumbPageTypes = new Set([
   'performanceDaily',
   'performanceMonthly',
   'performanceYearly',
+  'tradeTopic',
   'research',
   'logic',
   'article',
@@ -153,6 +154,8 @@ export const normalizePageMeta = (frontMatter = {}) => {
     section: frontMatter.section || frontMatter.category,
     image: frontMatter.image || site.logo,
     keywords: frontMatter.keywords || frontMatter.tags || [],
+    headline: frontMatter.headline,
+    parentUrl: frontMatter.parentUrl || frontMatter.parent_url,
     breadcrumbs: frontMatter.breadcrumbs || buildBreadcrumbListFromPath(path, { title: frontMatter.title }),
     faq: frontMatter.faq || frontMatter.faqs || frontMatter.faqItems || [],
     items: frontMatter.items || [],
@@ -197,8 +200,9 @@ const normalizePageType = (value, path = '/') => {
     ['annualArchive', 'performanceYearly'],
     ['performanceYearly', 'performanceYearly'],
     ['performance-yearly', 'performanceYearly'],
-    ['trade-topic', 'performance'],
-    ['tradeTopic', 'performance'],
+    ['trade-topic', 'tradeTopic'],
+    ['tradeTopic', 'tradeTopic'],
+    ['trade_topic', 'tradeTopic'],
     ['stockResearch', 'research'],
     ['stock-research', 'research'],
     ['investmentLogic', 'logic'],
@@ -218,6 +222,15 @@ const normalizePageType = (value, path = '/') => {
   return aliases.get(type) || type;
 };
 
+export const breadcrumbLabelMap = {
+  performance: { label: '実績', url: '/performance/latest/' },
+  research: { label: '銘柄検討', url: '/research/' },
+  logic: { label: '投資ロジック', url: '/logic/' },
+  topics: { label: '売買トピック' },
+  profile: { label: '運営者プロフィール' },
+  about: { label: '免責事項' },
+};
+
 const titleizeSegment = (segment) => segment
   .split('-')
   .filter(Boolean)
@@ -226,16 +239,11 @@ const titleizeSegment = (segment) => segment
 
 export const breadcrumbLabelForSegment = (segment, { previous, next } = {}) => {
   if (segment === '') return 'ホーム';
-  if (segment === 'performance') return '実績';
-  if (segment === 'research') return '銘柄検討';
-  if (segment === 'logic') return '投資ロジック';
+  if (breadcrumbLabelMap[segment]) return breadcrumbLabelMap[segment].label;
   if (segment === 'archive') return 'アーカイブ';
   if (segment === 'category') return 'カテゴリ';
-  if (segment === 'profile') return 'プロフィール';
-  if (segment === 'about') return '免責事項';
   if (segment === 'moomoo') return 'moomoo証券';
   if (segment === 'latest') return '最新実績';
-  if (segment === 'topics') return '売買トピック';
   if (/^\d{4}$/.test(segment)) return `${segment}年`;
   if (/^\d{2}$/.test(segment) && /^\d{4}$/.test(previous || '')) return `${Number(segment)}月`;
   if (/^\d{2}$/.test(segment) && /^\d{2}$/.test(previous || '')) return `${Number(previous)}月${Number(segment)}日`;
@@ -247,35 +255,51 @@ export const buildBreadcrumbListFromPath = (pathValue = '/', options = {}) => {
   const title = options.title;
   const path = new URL(pathValue, ensureTrailingSlash(siteUrl)).pathname;
   const segments = path.split('/').filter(Boolean);
-  const breadcrumbs = [{ name: 'ホーム', item: absoluteUrlForSite('/', siteUrl) }];
+  const breadcrumbs = [{ name: 'ホーム', item: absoluteUrlForSite('/', siteUrl), url: absoluteUrlForSite('/', siteUrl) }];
 
   const performanceMatch = path.match(/^\/performance\/(\d{4})(?:\/(\d{2})(?:\/(\d{2}))?)?\/$/);
   if (performanceMatch) {
     const [, year, month, day] = performanceMatch;
-    breadcrumbs.push({ name: '実績', item: absoluteUrlForSite('/performance/latest/', siteUrl) });
+    breadcrumbs.push({ name: '実績', item: absoluteUrlForSite('/performance/latest/', siteUrl), url: absoluteUrlForSite('/performance/latest/', siteUrl) });
     if (year) {
       breadcrumbs.push({
         name: `${year}年`,
         item: absoluteUrlForSite(`/performance/${year}/`, siteUrl),
+        url: absoluteUrlForSite(`/performance/${year}/`, siteUrl),
       });
     }
     if (month) {
       breadcrumbs.push({
         name: `${Number(month)}月`,
         item: absoluteUrlForSite(`/performance/${year}/${month}/`, siteUrl),
+        url: absoluteUrlForSite(`/performance/${year}/${month}/`, siteUrl),
       });
     }
     if (day) {
       breadcrumbs.push({
         name: `${Number(month)}月${Number(day)}日`,
         item: absoluteUrlForSite(`/performance/${year}/${month}/${day}/`, siteUrl),
+        url: absoluteUrlForSite(`/performance/${year}/${month}/${day}/`, siteUrl),
       });
     }
     return breadcrumbs;
   }
 
+  const topicMatch = path.match(/^\/performance\/(\d{4})\/(\d{2})\/(\d{2})\/topics\/[^/]+\/$/);
+  if (topicMatch) {
+    const [, year, month, day] = topicMatch;
+    breadcrumbs.push(
+      { name: '実績', item: absoluteUrlForSite('/performance/latest/', siteUrl), url: absoluteUrlForSite('/performance/latest/', siteUrl) },
+      { name: `${year}年`, item: absoluteUrlForSite(`/performance/${year}/`, siteUrl), url: absoluteUrlForSite(`/performance/${year}/`, siteUrl) },
+      { name: `${Number(month)}月`, item: absoluteUrlForSite(`/performance/${year}/${month}/`, siteUrl), url: absoluteUrlForSite(`/performance/${year}/${month}/`, siteUrl) },
+      { name: `${Number(month)}月${Number(day)}日`, item: absoluteUrlForSite(`/performance/${year}/${month}/${day}/`, siteUrl), url: absoluteUrlForSite(`/performance/${year}/${month}/${day}/`, siteUrl) },
+      { name: '売買トピック' },
+    );
+    return breadcrumbs;
+  }
+
   if (path === '/performance/latest/' || path === '/performance/') {
-    breadcrumbs.push({ name: '実績', item: absoluteUrlForSite('/performance/latest/', siteUrl) });
+    breadcrumbs.push({ name: '実績', item: absoluteUrlForSite('/performance/latest/', siteUrl), url: absoluteUrlForSite('/performance/latest/', siteUrl) });
     return breadcrumbs;
   }
 
@@ -286,9 +310,12 @@ export const buildBreadcrumbListFromPath = (pathValue = '/', options = {}) => {
     const isLast = index === segments.length - 1;
     const previous = segments[index - 1];
     const next = segments[index + 1];
+    const mappedUrl = breadcrumbLabelMap[segment]?.url;
+    const itemUrl = absoluteUrlForSite(mappedUrl || `${current}/`, siteUrl);
     breadcrumbs.push({
       name: isLast && title ? title : breadcrumbLabelForSegment(segment, { previous, next }),
-      item: absoluteUrlForSite(`${current}/`, siteUrl),
+      item: itemUrl,
+      url: itemUrl,
     });
   });
 
@@ -350,7 +377,7 @@ export const websiteSchema = (meta) => ({
     '@type': 'SearchAction',
     target: {
       '@type': 'EntryPoint',
-      urlTemplate: `${site.url}/search/?q={search_term_string}`,
+      urlTemplate: `${site.url}/?q={search_term_string}`,
     },
     'query-input': 'required name=search_term_string',
   },
@@ -369,10 +396,23 @@ export const organizationSchema = () => ({
   founder: { '@id': site.authorId },
 });
 
+const stripSiteName = (value = '') => String(value).replace(/\s*\|\s*MUKIMUKI trade\s*$/i, '').trim();
+
+const deriveDailyPerformanceHeadline = (meta) => {
+  if (meta.headline) return meta.headline;
+  if (meta.pageType !== 'performanceDaily') return stripSiteName(meta.title);
+  const sourceTitle = stripSiteName(meta.title);
+  const date = sourceTitle.match(/\d{4}-\d{2}-\d{2}/)?.[0];
+  const rate = sourceTitle.match(/[+-]\d+(?:\.\d+)?%/)?.[0];
+  const value = String(meta.description || '').match(/評価額\s*(¥[\d,]+)/)?.[1];
+  if (date && rate && value) return `${date}実績: 100万円比 ${rate}、評価額 ${value}`;
+  return sourceTitle;
+};
+
 export const articleSchema = (meta) => ({
   '@type': 'Article',
   '@id': `${meta.url}#article`,
-  headline: meta.title,
+  headline: deriveDailyPerformanceHeadline(meta),
   description: meta.description,
   image: [imageUrl(meta.image)],
   datePublished: meta.published,
@@ -393,6 +433,11 @@ export const articleSchema = (meta) => ({
     '@type': 'WebPage',
     '@id': meta.url,
   },
+  isPartOf: meta.parentUrl ? {
+    '@type': 'Article',
+    '@id': `${absoluteUrl(meta.parentUrl)}#article`,
+    url: absoluteUrl(meta.parentUrl),
+  } : undefined,
 });
 
 export const collectionPageSchema = (meta) => ({
@@ -513,7 +558,7 @@ export const buildStructuredData = (frontMatter = {}) => {
     graph.push(websiteSchema(meta), personSchema({ sameAs: meta.sameAs }));
   }
 
-  if (['performance', 'performanceDaily', 'research', 'logic', 'article'].includes(meta.pageType)) {
+  if (['performance', 'performanceDaily', 'tradeTopic', 'research', 'logic', 'article'].includes(meta.pageType)) {
     graph.push(articleSchema(meta));
   }
 
@@ -560,6 +605,7 @@ export const generateJsonLdScript = ({
   image = site.logo,
   siteUrl = site.url,
   sameAs = site.officialX,
+  parentUrl,
 } = {}) => buildJsonLdScriptFromFrontMatter({
   pageType,
   title,
@@ -574,16 +620,23 @@ export const generateJsonLdScript = ({
   image,
   siteUrl,
   sameAs,
+  parentUrl,
 });
 
-export const buildFAQPageSchema = (faqs = [], options = {}) => faqPageSchemaFromQa(faqs, options);
+export const buildFAQPageSchema = (faqs = [], options = {}) => compactObject({
+  '@context': 'https://schema.org',
+  ...faqPageSchemaFromQa(faqs, options),
+});
 
 export const buildBreadcrumbListJsonLd = (pathValue = '/', options = {}) => {
   const siteUrl = options.siteUrl || site.url;
   const url = absoluteUrlForSite(pathValue, siteUrl);
-  return breadcrumbSchema({
-    url,
-    breadcrumbs: buildBreadcrumbListFromPath(pathValue, options),
+  return compactObject({
+    '@context': 'https://schema.org',
+    ...breadcrumbSchema({
+      url,
+      breadcrumbs: buildBreadcrumbListFromPath(pathValue, options),
+    }),
   });
 };
 
@@ -603,6 +656,9 @@ export const buildJsonLdScriptFromFrontMatter = ({
   image = site.logo,
   pageType,
   sameAs = site.officialX,
+  parentUrl,
+  parent_url,
+  headline,
 } = {}) => {
   const pageUrl = url || siteUrl;
   const path = new URL(pageUrl, ensureTrailingSlash(siteUrl)).pathname;
@@ -621,6 +677,8 @@ export const buildJsonLdScriptFromFrontMatter = ({
     section,
     image,
     keywords: [],
+    headline,
+    parentUrl: parentUrl || parent_url,
     breadcrumbs,
     faq: faqItems,
     items,
@@ -637,7 +695,7 @@ export const buildJsonLdScriptFromFrontMatter = ({
     );
   }
 
-  if (['performance', 'performanceDaily', 'research', 'logic', 'article'].includes(normalizedPageType)) {
+  if (['performance', 'performanceDaily', 'tradeTopic', 'research', 'logic', 'article'].includes(normalizedPageType)) {
     graph.push(articleSchema(meta));
   }
 

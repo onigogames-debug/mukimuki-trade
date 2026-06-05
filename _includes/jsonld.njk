@@ -24,6 +24,8 @@
     author: input.author,
     siteUrl: input.siteUrl,
     sameAs: input.sameAs,
+    parentUrl: input.parentUrl or input.parent_url,
+    headline: input.headline,
     faqs: input.faqs or input.faq,
     items: input.items,
     image: input.image
@@ -43,6 +45,8 @@
     author: data.author,
     siteUrl: data.siteUrl or data.site.url,
     sameAs: data.sameAs,
+    parentUrl: data.parentUrl or data.parent_url,
+    headline: data.headline,
     faqs: data.faqs or data.faq,
     items: data.items,
     image: data.image
