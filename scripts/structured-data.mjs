@@ -383,6 +383,11 @@ export const websiteSchema = (meta) => ({
   },
 });
 
+const siteIdentitySchemas = (meta) => [
+  websiteSchema(meta),
+  personSchema({ sameAs: meta.sameAs }),
+];
+
 export const organizationSchema = () => ({
   '@type': 'Organization',
   '@id': `${site.url}/#organization`,
@@ -559,9 +564,7 @@ export const buildStructuredData = (frontMatter = {}) => {
     });
   }
 
-  if (meta.pageType === 'home') {
-    graph.push(websiteSchema(meta), personSchema({ sameAs: meta.sameAs }));
-  }
+  graph.push(...siteIdentitySchemas(meta));
 
   if (['performance', 'performanceDaily', 'tradeTopic', 'research', 'logic', 'article'].includes(meta.pageType)) {
     graph.push(articleSchema(meta));
@@ -572,7 +575,7 @@ export const buildStructuredData = (frontMatter = {}) => {
   }
 
   if (meta.pageType === 'profile') {
-    graph.push(profilePageSchema(meta), personSchema({ sameAs: meta.sameAs }));
+    graph.push(profilePageSchema(meta));
   }
 
   if (meta.pageType === 'legal') {
@@ -693,12 +696,7 @@ export const buildJsonLdScriptFromFrontMatter = ({
 
   if (normalizedPageType === 'skip') return '';
 
-  if (normalizedPageType === 'home') {
-    graph.push(
-      websiteSchema(meta),
-      personSchema({ sameAs: meta.sameAs }),
-    );
-  }
+  graph.push(...siteIdentitySchemas(meta));
 
   if (['performance', 'performanceDaily', 'tradeTopic', 'research', 'logic', 'article'].includes(normalizedPageType)) {
     graph.push(articleSchema(meta));
@@ -709,7 +707,7 @@ export const buildJsonLdScriptFromFrontMatter = ({
   }
 
   if (normalizedPageType === 'profile') {
-    graph.push(profilePageSchema(meta), personSchema({ sameAs: meta.sameAs }));
+    graph.push(profilePageSchema(meta));
   }
 
   if (normalizedPageType === 'legal') {

@@ -22,90 +22,144 @@
   <link rel="preload" as="style" href="/assets/main.css" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/assets/main.css"></noscript>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "ProfilePage",
-        "@id": "https://mukimuki-trade.com/profile/#webpage",
-        "url": "https://mukimuki-trade.com/profile/",
-        "name": "運営者プロフィール",
-        "description": "MUKIMUKI tradeの著者プロフィール、実績記録の扱い、広告方針、免責事項。",
-        "datePublished": "2026-05-27T20:30:00+09:00",
-        "dateModified": "2026-05-29T12:20:00+09:00",
-        "inLanguage": "ja-JP",
-        "publishedOn": { "@id": "https://mukimuki-trade.com/#website" },
-        "mainEntity": { "@id": "https://mukimuki-trade.com/profile/#author" },
-        "isPartOf": { "@id": "https://mukimuki-trade.com/#website" }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://mukimuki-trade.com/#website",
+      "url": "https://mukimuki-trade.com/",
+      "name": "MUKIMUKI trade",
+      "description": "100万円からの株式投資実績、資産曲線、銘柄検討、相場メモを整理する投資ブログ。",
+      "inLanguage": "ja-JP",
+      "publisher": {
+        "@id": "https://mukimuki-trade.com/profile/#author"
       },
-      {
-        "@type": "Person",
-        "@id": "https://mukimuki-trade.com/profile/#author",
-        "name": "MUKIMUKI trade 編集部",
-        "alternateName": ["MUKIMUKI trade", "OnigoGames"],
-        "url": "https://mukimuki-trade.com/profile/",
-        "image": "https://mukimuki-trade.com/assets/mukimuki-main.png",
-        "sameAs": ["https://x.com/OnigoGames"],
-        "mainEntityOfPage": {
-          "@type": "ProfilePage",
-          "@id": "https://mukimuki-trade.com/profile/#webpage"
+      "author": {
+        "@id": "https://mukimuki-trade.com/profile/#author"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://mukimuki-trade.com/?q={search_term_string}"
         },
-        "affiliation": { "@type": "Organization", "name": "MUKIMUKI trade" },
-        "gender": "Male",
-        "homeLocation": {
-          "@type": "Place",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "港区",
-            "addressRegion": "東京都",
-            "addressCountry": "JP"
-          }
-        },
-        "jobTitle": "兼業投資家・投資ブロガー",
-        "knowsAbout": ["米国株投資", "自動売買", "AIエージェント", "株式トレード", "リスク管理", "事業開発", "Autotrade"],
-        "description": "投資歴20年弱の兼業投資家。40代男性、東京都港区在住。AIエージェント、自動売買、事業開発、株式投資を専門領域とし、Autotradeの日次レポートをもとに米国株トレード実績、銘柄検討、投資ロジックを検証しやすい形で整理するMUKIMUKI tradeの著者。投資助言業者ではありません。"
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://mukimuki-trade.com/profile/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "MUKIMUKI tradeは投資助言サービスですか？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "いいえ。MUKIMUKI tradeは公開実績、銘柄検討、相場メモを記録する情報サイトです。特定銘柄の売買を推奨するものではありません。"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "実績データは何を元にしていますか？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Autotradeレポートから評価額、通算損益、取引数、保有銘柄を抽出し、サイト内の実績ページと資産曲線に反映しています。"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "広告リンクはありますか？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "はい。moomoo証券などの紹介リンクにはアフィリエイト広告を含む場合があります。広告の有無にかかわらず、投資判断は読者自身で行ってください。"
-            }
-          }
-        ]
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://mukimuki-trade.com/profile/#breadcrumb",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mukimuki-trade.com/" },
-          { "@type": "ListItem", "position": 2, "name": "運営者プロフィール", "item": "https://mukimuki-trade.com/profile/" }
-        ]
+        "query-input": "required name=search_term_string"
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://mukimuki-trade.com/profile/#webpage",
+      "url": "https://mukimuki-trade.com/profile/",
+      "name": "運営者プロフィール",
+      "description": "MUKIMUKI tradeの著者プロフィール、実績記録の扱い、広告方針、免責事項。",
+      "datePublished": "2026-05-27T20:30:00+09:00",
+      "dateModified": "2026-05-29T12:20:00+09:00",
+      "inLanguage": "ja-JP",
+      "publishedOn": {
+        "@id": "https://mukimuki-trade.com/#website"
+      },
+      "mainEntity": {
+        "@id": "https://mukimuki-trade.com/profile/#author"
+      },
+      "isPartOf": {
+        "@id": "https://mukimuki-trade.com/#website"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://mukimuki-trade.com/profile/#author",
+      "name": "MUKIMUKI trade 編集部",
+      "alternateName": [
+        "MUKIMUKI trade",
+        "OnigoGames"
+      ],
+      "url": "https://mukimuki-trade.com/profile/",
+      "image": "https://mukimuki-trade.com/assets/mukimuki-main.png",
+      "sameAs": [
+        "https://x.com/OnigoGames"
+      ],
+      "mainEntityOfPage": {
+        "@type": "ProfilePage",
+        "@id": "https://mukimuki-trade.com/profile/#webpage"
+      },
+      "affiliation": {
+        "@type": "Organization",
+        "name": "MUKIMUKI trade"
+      },
+      "gender": "Male",
+      "homeLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "港区",
+          "addressRegion": "東京都",
+          "addressCountry": "JP"
+        }
+      },
+      "jobTitle": "兼業投資家・投資ブロガー",
+      "knowsAbout": [
+        "米国株投資",
+        "自動売買",
+        "AIエージェント",
+        "株式トレード",
+        "リスク管理",
+        "事業開発",
+        "Autotrade"
+      ],
+      "description": "投資歴20年弱の兼業投資家。40代男性、東京都港区在住。AIエージェント、自動売買、事業開発、株式投資を専門領域とし、Autotradeの日次レポートをもとに米国株トレード実績、銘柄検討、投資ロジックを検証しやすい形で整理するMUKIMUKI tradeの著者。投資助言業者ではありません。"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://mukimuki-trade.com/profile/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "MUKIMUKI tradeは投資助言サービスですか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "いいえ。MUKIMUKI tradeは公開実績、銘柄検討、相場メモを記録する情報サイトです。特定銘柄の売買を推奨するものではありません。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "実績データは何を元にしていますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Autotradeレポートから評価額、通算損益、取引数、保有銘柄を抽出し、サイト内の実績ページと資産曲線に反映しています。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "広告リンクはありますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい。moomoo証券などの紹介リンクにはアフィリエイト広告を含む場合があります。広告の有無にかかわらず、投資判断は読者自身で行ってください。"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://mukimuki-trade.com/profile/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://mukimuki-trade.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "運営者プロフィール",
+          "item": "https://mukimuki-trade.com/profile/"
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
   <header class="site-header">
