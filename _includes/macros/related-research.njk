@@ -1,0 +1,27 @@
+{% macro relatedResearch(tickers=[], index=[]) %}
+{% set related = tickers | relatedResearchByTickers(index) %}
+{% if related.length %}
+      <section class="article-panel related-research" aria-labelledby="related-research-title">
+        <h2 id="related-research-title">関連する銘柄検討</h2>
+        <div class="link-grid">
+{% for article in related %}
+          <a class="link-card" href="{{ article.url }}"><span>{{ article.tickers | join(' / ') }}</span><strong>{{ article.title }}</strong><p>{{ article.description }}</p></a>
+{% endfor %}
+        </div>
+      </section>
+{% endif %}
+{% endmacro %}
+
+{% macro tickerPerformance(tickers=[], index=[]) %}
+{% set related = tickers | performanceByTickers(index) %}
+{% if related.length %}
+      <section class="article-panel related-performance" aria-labelledby="related-performance-title">
+        <h2 id="related-performance-title">この銘柄が登場した実績・売買トピック</h2>
+        <div class="link-grid">
+{% for article in related %}
+          <a class="link-card" href="{{ article.url }}"><span>{{ article.date }}{% if article.tickers.length %} - {{ article.tickers | join(' / ') }}{% endif %}</span><strong>{{ article.title }}</strong><p>{{ article.description }}</p></a>
+{% endfor %}
+        </div>
+      </section>
+{% endif %}
+{% endmacro %}

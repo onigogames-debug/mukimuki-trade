@@ -44,6 +44,7 @@ export const buildArticleIndex = ({ articles = [], posts = [], performanceReport
     category: article.category,
     categoryKey: article.categoryKey,
     tags: article.tags || [],
+    tickers: article.tickers || [],
     sections: article.sections || [],
   }));
 
@@ -113,6 +114,14 @@ const intersectionSize = (a, b) => {
 };
 
 const displayDate = (value = '') => String(value || '').slice(0, 10);
+const displayDateForArticle = (article = {}) => {
+  const performanceDate = String(article.path || '').match(/^\/performance\/(\d{4})\/(\d{2})\/(\d{2})\//);
+  if (performanceDate) return `${performanceDate[1]}-${performanceDate[2]}-${performanceDate[3]}`;
+  return displayDate(article.date || article.published || article.pubDate || '');
+};
+const normalizeTickerList = (tickers = []) => [...new Set((Array.isArray(tickers) ? tickers : [tickers])
+  .map(normalizeTicker)
+  .filter((ticker) => ticker && !stopTickers.has(ticker)))];
 
 export const suggestRelatedArticles = (current, index, { max = 3 } = {}) => {
   const source = tokenize(current);
@@ -131,7 +140,7 @@ export const suggestRelatedArticles = (current, index, { max = 3 } = {}) => {
       return {
         ...candidate,
         url: candidate.url || candidate.path,
-        date: displayDate(candidate.date || candidate.published || candidate.pubDate || ''),
+        date: displayDateForArticle(candidate),
         score: tickerScore + tagScore + categoryScore + themeScore + crossScore,
       };
     })
@@ -153,13 +162,66 @@ export const suggestRelatedArticlesByTicker = (current, index, { max = 3 } = {})
         ...candidate,
         matchedTickers,
         url: candidate.url || candidate.path,
-        date: displayDate(candidate.date || candidate.published || candidate.pubDate || ''),
+        date: displayDateForArticle(candidate),
       };
     })
     .filter((candidate) => candidate.matchedTickers.length)
     .sort((a, b) => (
       b.matchedTickers.length - a.matchedTickers.length
       || String(b.date || '').localeCompare(String(a.date || ''))
+      || a.path.localeCompare(b.path)
+    ))
+    .slice(0, max);
+};
+
+export const suggestResearchArticlesByTickers = (tickers = [], index = [], { max = 3 } = {}) => {
+  const sourceTickers = normalizeTickerList(tickers);
+  if (!sourceTickers.length) return [];
+
+  return index
+    .filter((candidate) => candidate.categoryKey === 'research' && candidate.path && !candidate.path.startsWith('/research/tag/'))
+    .map((candidate) => {
+      const matchedTickers = (candidate.tickers || []).filter((ticker) => sourceTickers.includes(ticker));
+      return {
+        ...candidate,
+        matchedTickers,
+        ticker: matchedTickers[0],
+        url: candidate.url || candidate.path,
+        date: displayDateForArticle(candidate),
+      };
+    })
+    .filter((candidate) => candidate.matchedTickers.length)
+    .sort((a, b) => (
+      b.matchedTickers.length - a.matchedTickers.length
+      || String(b.date || '').localeCompare(String(a.date || ''))
+      || a.path.localeCompare(b.path)
+    ))
+    .slice(0, max);
+};
+
+export const suggestPerformanceArticlesByTickers = (tickers = [], index = [], { max = 5, currentPath = '' } = {}) => {
+  const sourceTickers = normalizeTickerList(tickers);
+  if (!sourceTickers.length) return [];
+
+  return index
+    .filter((candidate) => candidate.categoryKey === 'performance' && candidate.path && candidate.path !== currentPath)
+    .map((candidate) => {
+      const matchedTickers = (candidate.tickers || []).filter((ticker) => sourceTickers.includes(ticker));
+      const isTopic = /^\/performance\/\d{4}\/\d{2}\/\d{2}\/topics\/[^/]+\/$/.test(candidate.path);
+      return {
+        ...candidate,
+        matchedTickers,
+        ticker: matchedTickers[0],
+        isTopic,
+        url: candidate.url || candidate.path,
+        date: displayDateForArticle(candidate),
+      };
+    })
+    .filter((candidate) => candidate.matchedTickers.length)
+    .sort((a, b) => (
+      String(b.date || '').localeCompare(String(a.date || ''))
+      || Number(b.isTopic) - Number(a.isTopic)
+      || b.matchedTickers.length - a.matchedTickers.length
       || a.path.localeCompare(b.path)
     ))
     .slice(0, max);
@@ -173,6 +235,14 @@ export const getRelatedArticleSummaries = (current, allArticles, { max = 3 } = {
   }))
 );
 
+export const getRelatedResearchSummariesByTickers = (tickers, allArticles, { max = 3 } = {}) => (
+  suggestResearchArticlesByTickers(tickers, allArticles, { max }).map((article) => ({
+    title: article.title,
+    url: article.url || article.path,
+    ticker: article.ticker,
+  }))
+);
+
 export const renderRelatedArticlesSection = (current, index, { escapeHtml, max = 3 } = {}) => {
   const escape = escapeHtml || ((value) => String(value ?? ''));
   const related = suggestRelatedArticlesByTicker(current, index, { max });
@@ -182,6 +252,34 @@ export const renderRelatedArticlesSection = (current, index, { escapeHtml, max =
         <h2 id="related-articles-title">関連する記事</h2>
         <div class="link-grid">
 ${related.map((article) => `          <a class="link-card" href="${escape(article.path)}"><span>${escape(article.date || article.category || '関連記事')}</span><strong>${escape(article.title)}</strong><p>${escape(article.description || article.summary || '')}</p></a>`).join('\n')}
+        </div>
+      </section>`;
+};
+
+export const renderRelatedResearchSection = (current, index, { escapeHtml, max = 3 } = {}) => {
+  const escape = escapeHtml || ((value) => String(value ?? ''));
+  const source = tokenize(current);
+  const related = suggestResearchArticlesByTickers(source.tickers || [], index, { max });
+  if (!related.length) return '';
+
+  return `      <section class="article-panel related-research" aria-labelledby="related-research-title">
+        <h2 id="related-research-title">関連する銘柄検討</h2>
+        <div class="link-grid">
+${related.map((article) => `          <a class="link-card" href="${escape(article.path)}"><span>${escape(article.matchedTickers.join(' / '))}</span><strong>${escape(article.title)}</strong><p>${escape(article.description || article.summary || '')}</p></a>`).join('\n')}
+        </div>
+      </section>`;
+};
+
+export const renderTickerPerformanceSection = (current, index, { escapeHtml, max = 5 } = {}) => {
+  const escape = escapeHtml || ((value) => String(value ?? ''));
+  const source = tokenize(current);
+  const related = suggestPerformanceArticlesByTickers(source.tickers || [], index, { max, currentPath: source.path });
+  if (!related.length) return '';
+
+  return `      <section class="article-panel related-performance" aria-labelledby="related-performance-title">
+        <h2 id="related-performance-title">この銘柄が登場した実績・売買トピック</h2>
+        <div class="link-grid">
+${related.map((article) => `          <a class="link-card" href="${escape(article.path)}"><span>${escape([article.date || article.category || '実績公開', article.matchedTickers.join(' / ')].filter(Boolean).join(' - '))}</span><strong>${escape(article.title)}</strong><p>${escape(article.description || article.summary || '')}</p></a>`).join('\n')}
         </div>
       </section>`;
 };

@@ -1,0 +1,3 @@
+{% macro breadcrumbJsonLd(path='/', title='') %}
+{{ path | breadcrumbJsonLd(title) | safe }}
+{% endmacro %}

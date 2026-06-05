@@ -3,7 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { absoluteUrl, buildBreadcrumbListFromPath, renderJsonLdScript } from './structured-data.mjs';
 import { renderBreadcrumbHtml } from './breadcrumbs.mjs';
-import { buildArticleIndex, renderRelatedArticlesSection } from './internal-links.mjs';
+import { buildArticleIndex, renderRelatedArticlesSection, renderRelatedResearchSection } from './internal-links.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const outputRoot = process.env.PERFORMANCE_OUTPUT_DIR
@@ -272,6 +272,7 @@ const renderDailyPage = (report, articleIndex, reports) => {
     category: '実績公開',
     categoryKey: 'performance',
     tags: ['実績公開', '100万円チャレンジ', ...(latest.positions || []).map((position) => position.symbol)],
+    tickers: (latest.positions || []).map((position) => shortSymbol(position.symbol)),
   };
 
   return `<!doctype html>
@@ -345,6 +346,7 @@ ${faqs.map((faq) => `          <div class="faq-item">
         </div>
       </section>
 ${renderRelatedArticlesSection(relatedContext, articleIndex, { escapeHtml })}
+${renderRelatedResearchSection(relatedContext, articleIndex, { escapeHtml })}
     </article>
   </main>
 ${footer}

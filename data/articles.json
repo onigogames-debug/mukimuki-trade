@@ -99,7 +99,14 @@
           "url": "https://investor.redditinc.com/news-events/news-releases/news-details/2026/Reddit-Reports-First-Quarter-2026-Results/default.aspx"
         }
       ],
-      "redirectFrom": "/performance/2026-06-04-rddt-range/"
+      "redirectFrom": "/performance/2026-06-04-rddt-range/",
+      "tickers": [
+        "RDDT",
+        "SOFI",
+        "QBTS",
+        "AVAV",
+        "AAPL"
+      ]
     },
     {
       "path": "/performance/2026/06/03/topics/soun-range/",
@@ -204,6 +211,13 @@
         "/performance/2026-06-03-soun-range/",
         "/performance/2026-06-03-no-new-report-rdw-check/",
         "/performance/2026/06/03/topics/no-new-report-rdw-check/"
+      ],
+      "tickers": [
+        "SOUN",
+        "GSAT",
+        "QUBT",
+        "LUNR",
+        "OKLO"
       ]
     },
     {
@@ -301,7 +315,14 @@
           "url": "https://www.sec.gov/Archives/edgar/data/1907982/000190798226000076/d-wavechartsanewcoursetofa.htm"
         }
       ],
-      "redirectFrom": "/performance/2026-06-02-qbts-range/"
+      "redirectFrom": "/performance/2026-06-02-qbts-range/",
+      "tickers": [
+        "QBTS",
+        "RDW",
+        "QUBT",
+        "OKLO",
+        "SOUN"
+      ]
     },
     {
       "path": "/performance/2026/06/01/topics/qbts-range/",
@@ -395,7 +416,12 @@
           "url": "https://www.businesswire.com/news/home/20260512684377/en/D-Wave-Reports-First-Quarter-2026-Results"
         }
       ],
-      "redirectFrom": "/performance/2026-06-01-qbts-range/"
+      "redirectFrom": "/performance/2026-06-01-qbts-range/",
+      "tickers": [
+        "QBTS",
+        "QUBT",
+        "CRDO"
+      ]
     },
     {
       "path": "/performance/2026/05/31/topics/weekend-amzn-risk-check/",
@@ -489,7 +515,10 @@
           "url": "https://apnews.com/article/82c0b13a9b0bec79cc907cc122cac328"
         }
       ],
-      "redirectFrom": "/performance/2026-05-31-weekend-amzn-risk-check/"
+      "redirectFrom": "/performance/2026-05-31-weekend-amzn-risk-check/",
+      "tickers": [
+        "AMZN"
+      ]
     },
     {
       "path": "/performance/2026/05/30/topics/weekend-amzn-hold/",
@@ -583,7 +612,10 @@
           "url": "https://s2.q4cdn.com/299287126/files/doc_earnings/2026/q1/earnings-result/AMZN-Q1-2026-Earnings-Release.pdf"
         }
       ],
-      "redirectFrom": "/performance/2026-05-30-weekend-amzn-hold/"
+      "redirectFrom": "/performance/2026-05-30-weekend-amzn-hold/",
+      "tickers": [
+        "AMZN"
+      ]
     },
     {
       "path": "/performance/2026/05/29/topics/bksy-range/",
@@ -677,7 +709,12 @@
           "url": "https://blacksky.com/press-releases/blacksky-reports-first-quarter-2026-results/"
         }
       ],
-      "redirectFrom": "/performance/2026-05-29-bksy-range/"
+      "redirectFrom": "/performance/2026-05-29-bksy-range/",
+      "tickers": [
+        "BKSY",
+        "SPIR",
+        "SATS"
+      ]
     },
     {
       "path": "/performance/2026/05/28/topics/asts-rotation/",
@@ -762,7 +799,12 @@
           "url": "https://stockstotrade.com/news/ast-spacemobile-inc-asts-news-2026_05_27/"
         }
       ],
-      "redirectFrom": "/performance/2026-05-28-asts-rotation/"
+      "redirectFrom": "/performance/2026-05-28-asts-rotation/",
+      "tickers": [
+        "ASTS",
+        "SOUN",
+        "SOFI"
+      ]
     },
     {
       "path": "/performance/2026/05/27/topics/xndu-rebuild/",
@@ -830,7 +872,12 @@
           ]
         }
       ],
-      "redirectFrom": "/performance/2026-05-27-xndu-rebuild/"
+      "redirectFrom": "/performance/2026-05-27-xndu-rebuild/",
+      "tickers": [
+        "XNDU",
+        "META",
+        "ALAB"
+      ]
     },
     {
       "path": "/research/ai-infrastructure/",
@@ -884,6 +931,16 @@
           "label": "AP: AI関連株主導のアジア市場動向",
           "url": "https://apnews.com/article/stocks-markets-ai-iran-trump-8191917f4f1d7ebc54584dd3c3265032"
         }
+      ],
+      "tickers": [
+        "NVDA",
+        "AMD",
+        "AVGO",
+        "MU",
+        "CRDO",
+        "QUBT",
+        "QBTS",
+        "SOUN"
       ]
     },
     {
@@ -934,6 +991,14 @@
           "label": "Federal Reserve: 2026年4月FOMC議事要旨",
           "url": "https://www.federalreserve.gov/monetarypolicy/files/fomcminutes20260429.pdf"
         }
+      ],
+      "tickers": [
+        "APP",
+        "SOFI",
+        "META",
+        "GOOGL",
+        "HOOD",
+        "RDDT"
       ]
     },
     {
@@ -984,6 +1049,19 @@
           "label": "AP: 米主要指数の5/26終値",
           "url": "https://apnews.com/article/wall-street-stocks-dow-nasdaq-b2fb9ef30834ed73768f2afd65ec7de0"
         }
+      ],
+      "tickers": [
+        "TSLA",
+        "RKLB",
+        "PL",
+        "ASTS",
+        "LUNR",
+        "OKLO",
+        "RDW",
+        "RIVN",
+        "SPIR",
+        "SATS",
+        "GSAT"
       ]
     },
     {

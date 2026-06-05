@@ -3,7 +3,13 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { renderJsonLdScript } from './structured-data.mjs';
 import { buildBreadcrumbsFromPath, renderBreadcrumbHtml } from './breadcrumbs.mjs';
-import { buildArticleIndex, extractTickers, renderRelatedArticlesSection } from './internal-links.mjs';
+import {
+  buildArticleIndex,
+  extractTickers,
+  renderRelatedArticlesSection,
+  renderRelatedResearchSection,
+  renderTickerPerformanceSection,
+} from './internal-links.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const siteUrl = 'https://mukimuki-trade.com';
@@ -250,6 +256,8 @@ ${renderSources(article.sources)}
 ${renderFaqSection(faqs)}
 
 ${renderRelatedArticlesSection(article, articleIndex, { escapeHtml })}
+${article.categoryKey === 'performance' ? renderRelatedResearchSection(article, articleIndex, { escapeHtml }) : ''}
+${article.categoryKey === 'research' ? renderTickerPerformanceSection(article, articleIndex, { escapeHtml }) : ''}
 
       <section class="article-panel">
         <h2>関連する記録</h2>

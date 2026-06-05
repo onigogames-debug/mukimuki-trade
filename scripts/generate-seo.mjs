@@ -1,8 +1,11 @@
 import { mkdir, readdir, readFile, stat, writeFile } from 'node:fs/promises';
+import { createRequire } from 'node:module';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseFrontMatter } from './structured-data.mjs';
 
+const require = createRequire(import.meta.url);
+const loadSitemapUrls = require('../_data/sitemapUrls.js');
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const contentPath = path.join(root, 'data', 'content.json');
 const articlesPath = path.join(root, 'data', 'articles.json');
@@ -188,11 +191,7 @@ pageMap.set('/sitemap/', {
   priority: inferPriority('/sitemap/'),
 });
 
-const pages = [...pageMap.values()].sort((a, b) => {
-  const priority = Number(b.priority) - Number(a.priority);
-  if (priority !== 0) return priority;
-  return a.path.localeCompare(b.path);
-});
+const pages = loadSitemapUrls();
 
 const imageForPage = (pagePath) => {
   if (pagePath.startsWith('/research/')) return '/assets/optimized/mukimuki-research-800.avif';
