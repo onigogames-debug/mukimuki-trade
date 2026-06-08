@@ -1,6 +1,6 @@
 # SEO Progress Report
 
-Generated: 2026-06-08T01:57:33.756Z
+Generated: 2026-06-08T02:42:21.517Z
 
 ## 実装状況
 
@@ -36,7 +36,7 @@ Generated: 2026-06-08T01:57:33.756Z
 
 | URL | title | description | 本文文字数 | 内部リンク | schema |
 |---|---:|---:|---:|---:|---|
-| / | 35 | 57 | 2854 | 43 | Person, WebSite |
+| / | 41 | 68 | 2957 | 43 | Person, WebSite |
 | /about/ | 26 | 58 | 1800 | 19 | AboutPage, BreadcrumbList, FAQPage, Person, WebPage, WebSite |
 | /archive/ | 24 | 62 | 1034 | 24 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /archive/2026-05/ | 27 | 79 | 1330 | 32 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
@@ -118,5 +118,5 @@ Generated: 2026-06-08T01:57:33.756Z
 | /research/tag/spir/ | 30 | 65 | 2085 | 31 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/tsla/ | 30 | 65 | 1710 | 28 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/xndu/ | 30 | 65 | 1779 | 29 | BreadcrumbList, CollectionPage, Person, WebSite |
-| /sitemap/ | 23 | 48 | 3835 | 93 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /sitemap/ | 23 | 48 | 3841 | 93 | BreadcrumbList, CollectionPage, Person, WebSite |
 
