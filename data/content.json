@@ -4,18 +4,18 @@
     "title": "MUKIMUKI trade",
     "description": "100万円からの株式投資実績、資産曲線、銘柄検討、相場メモを整理する投資ブログ。",
     "language": "ja",
-    "lastBuildDate": "2026-06-07T08:00:00+09:00"
+    "lastBuildDate": "2026-06-08T08:00:00+09:00"
   },
   "pages": [
     {
       "path": "/",
-      "lastmod": "2026-06-07",
+      "lastmod": "2026-06-08",
       "changefreq": "daily",
       "priority": "1.0"
     },
     {
       "path": "/performance/latest/",
-      "lastmod": "2026-06-07",
+      "lastmod": "2026-06-08",
       "changefreq": "daily",
       "priority": "0.9"
     },
@@ -41,19 +41,19 @@
     },
     {
       "path": "/archive/",
-      "lastmod": "2026-06-07",
+      "lastmod": "2026-06-08",
       "changefreq": "weekly",
       "priority": "0.6"
     },
     {
       "path": "/archive/2026-06/",
-      "lastmod": "2026-06-07",
+      "lastmod": "2026-06-08",
       "changefreq": "monthly",
       "priority": "0.6"
     },
     {
       "path": "/category/performance/",
-      "lastmod": "2026-06-07",
+      "lastmod": "2026-06-08",
       "changefreq": "weekly",
       "priority": "0.6"
     },
@@ -195,7 +195,7 @@
     },
     {
       "path": "/performance/2026/06/",
-      "lastmod": "2026-06-06",
+      "lastmod": "2026-06-08",
       "changefreq": "weekly",
       "priority": "0.78"
     },
@@ -233,9 +233,24 @@
       "changefreq": "monthly",
       "priority": "0.85",
       "redirectFrom": "/performance/2026-06-06-weekend-no-position-check/"
+    },
+    {
+      "path": "/performance/2026/06/07/topics/weekend-reset-check/",
+      "lastmod": "2026-06-08",
+      "changefreq": "monthly",
+      "priority": "0.85",
+      "redirectFrom": "/performance/2026-06-07-weekend-reset-check/"
     }
   ],
   "posts": [
+    {
+      "title": "6/7週末メモ: 新規データなし、月曜再開前のノーポジション確認",
+      "path": "/performance/2026/06/07/topics/weekend-reset-check/",
+      "description": "2026年6月7日ESTの週末メモ。新規Autotradeレポートはなく、最新確定値は6/5の評価額99.97万円、前日比-32,347円。月曜再開前の保有なしを確認。",
+      "pubDate": "2026-06-08T08:00:00+09:00",
+      "category": "実績公開",
+      "redirectFrom": "/performance/2026-06-07-weekend-reset-check/"
+    },
     {
       "title": "6/6週末メモ: 新規レポートなし、ノーポジションを点検",
       "path": "/performance/2026/06/06/topics/weekend-no-position-check/",
