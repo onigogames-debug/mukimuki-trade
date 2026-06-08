@@ -1,7 +1,7 @@
 const tickerPattern = /\b(?:US\.)?[A-Z]{2,5}\b/g;
 const stopTickers = new Set([
   'AI', 'EV', 'EST', 'JST', 'JPY', 'USD', 'FAQ', 'PR',
-  'BUY', 'SELL', 'RISK', 'MA', 'VWAP', 'RSI', 'TP', 'SL', 'CSV',
+  'BUY', 'SELL', 'RISK', 'MA', 'VWAP', 'RSI', 'TP', 'SL', 'CSV', 'JSON',
   'TRADE', 'TOPIC', 'STOCK', 'LOGIC', 'DAILY', 'URL', 'FOMC', 'AWS',
 ]);
 

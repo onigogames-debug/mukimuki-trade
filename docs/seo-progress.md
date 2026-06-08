@@ -1,6 +1,6 @@
 # SEO Progress Report
 
-Generated: 2026-06-05T22:51:43.583Z
+Generated: 2026-06-08T01:57:33.756Z
 
 ## 実装状況
 
@@ -21,12 +21,12 @@ Generated: 2026-06-05T22:51:43.583Z
 
 ## ページ監査サマリー
 
-- 対象ページ: 82
-- インデックス対象ページ: 81
+- 対象ページ: 83
+- インデックス対象ページ: 82
 - 要確認ページ: 0
 - FAQ schemaページ: 16
-- パンくずschemaページ: 80
-- Critical CSS適用ページ: 82
+- パンくずschemaページ: 81
+- Critical CSS適用ページ: 83
 
 ## 要確認ページ
 
@@ -36,13 +36,13 @@ Generated: 2026-06-05T22:51:43.583Z
 
 | URL | title | description | 本文文字数 | 内部リンク | schema |
 |---|---:|---:|---:|---:|---|
-| / | 35 | 57 | 2774 | 42 | Person, WebSite |
+| / | 35 | 57 | 2854 | 43 | Person, WebSite |
 | /about/ | 26 | 58 | 1800 | 19 | AboutPage, BreadcrumbList, FAQPage, Person, WebPage, WebSite |
-| /archive/ | 24 | 62 | 1012 | 23 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /archive/ | 24 | 62 | 1034 | 24 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /archive/2026-05/ | 27 | 79 | 1330 | 32 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
-| /archive/2026-06/ | 27 | 79 | 1331 | 27 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
+| /archive/2026-06/ | 27 | 79 | 1617 | 30 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /category/moomoo/ | 30 | 62 | 911 | 23 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
-| /category/performance/ | 26 | 61 | 2307 | 34 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
+| /category/performance/ | 26 | 61 | 2561 | 36 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /category/research/ | 26 | 57 | 1049 | 24 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /logic/ | 44 | 52 | 1046 | 27 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /logic/entry-risk/ | 48 | 41 | 1139 | 22 | Article, BreadcrumbList, Person, WebSite |
@@ -72,6 +72,7 @@ Generated: 2026-06-05T22:51:43.583Z
 | /performance/2026/06/04/topics/rddt-range/ | 48 | 69 | 3705 | 32 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/06/05/ | 43 | 73 | 1980 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/06/05/topics/peng-range/ | 48 | 74 | 3300 | 32 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/06/06/topics/weekend-no-position-check/ | 45 | 78 | 3093 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/latest/ (noindex) | 25 | 53 | 945 | 24 |  |
 | /profile/ | 26 | 75 | 1373 | 21 | BreadcrumbList, FAQPage, Person, ProfilePage, WebSite |
 | /research/ | 43 | 56 | 1086 | 25 | Article, BreadcrumbList, Person, WebSite |
@@ -102,7 +103,7 @@ Generated: 2026-06-05T22:51:43.583Z
 | /research/tag/nvts/ | 30 | 65 | 1448 | 25 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/oasys/ | 31 | 66 | 1463 | 25 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/oklo/ | 30 | 65 | 2340 | 33 | BreadcrumbList, CollectionPage, Person, WebSite |
-| /research/tag/peng/ | 30 | 65 | 1587 | 26 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /research/tag/peng/ | 30 | 65 | 1736 | 27 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/pl/ | 28 | 63 | 1826 | 29 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/qbts/ | 30 | 65 | 2987 | 38 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/qubt/ | 30 | 65 | 2165 | 32 | BreadcrumbList, CollectionPage, Person, WebSite |
@@ -117,5 +118,5 @@ Generated: 2026-06-05T22:51:43.583Z
 | /research/tag/spir/ | 30 | 65 | 2085 | 31 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/tsla/ | 30 | 65 | 1710 | 28 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/xndu/ | 30 | 65 | 1779 | 29 | BreadcrumbList, CollectionPage, Person, WebSite |
-| /sitemap/ | 23 | 48 | 3748 | 92 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /sitemap/ | 23 | 48 | 3835 | 93 | BreadcrumbList, CollectionPage, Person, WebSite |
 

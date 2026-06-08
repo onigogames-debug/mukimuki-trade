@@ -4,18 +4,18 @@
     "title": "MUKIMUKI trade",
     "description": "100万円からの株式投資実績、資産曲線、銘柄検討、相場メモを整理する投資ブログ。",
     "language": "ja",
-    "lastBuildDate": "2026-06-06T08:00:00+09:00"
+    "lastBuildDate": "2026-06-07T08:00:00+09:00"
   },
   "pages": [
     {
       "path": "/",
-      "lastmod": "2026-06-06",
+      "lastmod": "2026-06-07",
       "changefreq": "daily",
       "priority": "1.0"
     },
     {
       "path": "/performance/latest/",
-      "lastmod": "2026-06-06",
+      "lastmod": "2026-06-07",
       "changefreq": "daily",
       "priority": "0.9"
     },
@@ -41,19 +41,19 @@
     },
     {
       "path": "/archive/",
-      "lastmod": "2026-06-06",
+      "lastmod": "2026-06-07",
       "changefreq": "weekly",
       "priority": "0.6"
     },
     {
       "path": "/archive/2026-06/",
-      "lastmod": "2026-06-06",
+      "lastmod": "2026-06-07",
       "changefreq": "monthly",
       "priority": "0.6"
     },
     {
       "path": "/category/performance/",
-      "lastmod": "2026-06-06",
+      "lastmod": "2026-06-07",
       "changefreq": "weekly",
       "priority": "0.6"
     },
@@ -226,9 +226,24 @@
       "changefreq": "monthly",
       "priority": "0.85",
       "redirectFrom": "/performance/2026-06-04-rddt-range/"
+    },
+    {
+      "path": "/performance/2026/06/06/topics/weekend-no-position-check/",
+      "lastmod": "2026-06-07",
+      "changefreq": "monthly",
+      "priority": "0.85",
+      "redirectFrom": "/performance/2026-06-06-weekend-no-position-check/"
     }
   ],
   "posts": [
+    {
+      "title": "6/6週末メモ: 新規レポートなし、ノーポジションを点検",
+      "path": "/performance/2026/06/06/topics/weekend-no-position-check/",
+      "description": "2026年6月6日ESTの週末メモ。新規Autotradeレポートはなく、最新確定値は6/5の評価額99.97万円、前日比-32,347円。保有なしを確認。",
+      "pubDate": "2026-06-07T08:00:00+09:00",
+      "category": "実績公開",
+      "redirectFrom": "/performance/2026-06-06-weekend-no-position-check/"
+    },
     {
       "title": "6/5売買トピック: PENGの急落回転とノーポジションで終了",
       "path": "/performance/2026/06/05/topics/peng-range/",
