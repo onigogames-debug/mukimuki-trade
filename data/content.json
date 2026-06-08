@@ -4,18 +4,18 @@
     "title": "MUKIMUKI trade",
     "description": "100万円からの株式投資実績、資産曲線、銘柄検討、相場メモを整理する投資ブログ。",
     "language": "ja",
-    "lastBuildDate": "2026-06-08T08:00:00+09:00"
+    "lastBuildDate": "2026-06-09T08:00:00+09:00"
   },
   "pages": [
     {
       "path": "/",
-      "lastmod": "2026-06-08",
+      "lastmod": "2026-06-09",
       "changefreq": "daily",
       "priority": "1.0"
     },
     {
       "path": "/performance/latest/",
-      "lastmod": "2026-06-08",
+      "lastmod": "2026-06-09",
       "changefreq": "daily",
       "priority": "0.9"
     },
@@ -41,19 +41,19 @@
     },
     {
       "path": "/archive/",
-      "lastmod": "2026-06-08",
+      "lastmod": "2026-06-09",
       "changefreq": "weekly",
       "priority": "0.6"
     },
     {
       "path": "/archive/2026-06/",
-      "lastmod": "2026-06-08",
+      "lastmod": "2026-06-09",
       "changefreq": "monthly",
       "priority": "0.6"
     },
     {
       "path": "/category/performance/",
-      "lastmod": "2026-06-08",
+      "lastmod": "2026-06-09",
       "changefreq": "weekly",
       "priority": "0.6"
     },
@@ -195,9 +195,16 @@
     },
     {
       "path": "/performance/2026/06/",
-      "lastmod": "2026-06-08",
+      "lastmod": "2026-06-09",
       "changefreq": "weekly",
       "priority": "0.78"
+    },
+    {
+      "path": "/performance/2026/06/08/topics/ionq-range/",
+      "lastmod": "2026-06-09",
+      "changefreq": "monthly",
+      "priority": "0.85",
+      "redirectFrom": "/performance/2026-06-08-ionq-range/"
     },
     {
       "path": "/performance/2026/06/02/topics/qbts-range/",
@@ -243,6 +250,14 @@
     }
   ],
   "posts": [
+    {
+      "title": "6/8売買トピック: IONQの反発回転とHOOD・APP持ち越し",
+      "path": "/performance/2026/06/08/topics/ionq-range/",
+      "description": "2026年6月8日ESTの売買トピック。評価額は100.6万円、前日比+5,142円。約定20件、IONQの約定レンジ2.21%とHOOD・APP持ち越しを整理。",
+      "pubDate": "2026-06-09T08:00:00+09:00",
+      "category": "実績公開",
+      "redirectFrom": "/performance/2026-06-08-ionq-range/"
+    },
     {
       "title": "6/7週末メモ: 新規データなし、月曜再開前のノーポジション確認",
       "path": "/performance/2026/06/07/topics/weekend-reset-check/",
