@@ -1,6 +1,6 @@
 # SEO Progress Report
 
-Generated: 2026-06-09T14:22:14.857Z
+Generated: 2026-06-09T23:16:22.190Z
 
 ## 実装状況
 
@@ -21,12 +21,12 @@ Generated: 2026-06-09T14:22:14.857Z
 
 ## ページ監査サマリー
 
-- 対象ページ: 86
-- インデックス対象ページ: 85
+- 対象ページ: 87
+- インデックス対象ページ: 86
 - 要確認ページ: 0
 - FAQ schemaページ: 16
-- パンくずschemaページ: 84
-- Critical CSS適用ページ: 86
+- パンくずschemaページ: 85
+- Critical CSS適用ページ: 87
 
 ## 要確認ページ
 
@@ -36,7 +36,7 @@ Generated: 2026-06-09T14:22:14.857Z
 
 | URL | title | description | 本文文字数 | 内部リンク | schema |
 |---|---:|---:|---:|---:|---|
-| / | 41 | 68 | 3014 | 43 | Person, WebSite |
+| / | 41 | 68 | 3012 | 43 | Person, WebSite |
 | /about/ | 26 | 58 | 1800 | 19 | AboutPage, BreadcrumbList, FAQPage, Person, WebPage, WebSite |
 | /archive/ | 24 | 62 | 1034 | 24 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /archive/2026-05/ | 27 | 79 | 1330 | 32 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
@@ -76,6 +76,7 @@ Generated: 2026-06-09T14:22:14.857Z
 | /performance/2026/06/07/topics/weekend-reset-check/ | 49 | 84 | 3293 | 29 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/06/08/ | 46 | 75 | 2409 | 34 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/06/08/topics/ionq-range/ | 50 | 81 | 3847 | 32 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/06/09/topics/no-trade-profit-guard/ | 49 | 83 | 3027 | 26 | Article, BreadcrumbList, Person, WebSite |
 | /performance/latest/ (noindex) | 25 | 53 | 947 | 24 |  |
 | /profile/ | 26 | 75 | 1373 | 21 | BreadcrumbList, FAQPage, Person, ProfilePage, WebSite |
 | /research/ | 43 | 56 | 1086 | 25 | Article, BreadcrumbList, Person, WebSite |
@@ -121,5 +122,5 @@ Generated: 2026-06-09T14:22:14.857Z
 | /research/tag/spir/ | 30 | 65 | 2085 | 31 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /research/tag/tsla/ | 30 | 65 | 1710 | 28 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /research/tag/xndu/ | 30 | 65 | 1779 | 29 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
-| /sitemap/ | 23 | 48 | 4058 | 96 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /sitemap/ | 23 | 48 | 4145 | 97 | BreadcrumbList, CollectionPage, Person, WebSite |
 

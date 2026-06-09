@@ -5,8 +5,16 @@
     <link>https://mukimuki-trade.com/</link>
     <description>100万円からの株式投資実績、資産曲線、銘柄検討、相場メモを整理する投資ブログ。</description>
     <language>ja</language>
-    <lastBuildDate>Mon, 08 Jun 2026 23:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jun 2026 23:00:00 GMT</lastBuildDate>
     <atom:link href="https://mukimuki-trade.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>6/9運用メモ: 正式レポート未確認、約定なしと利益ガードを確認</title>
+      <link>https://mukimuki-trade.com/performance/2026/06/09/topics/no-trade-profit-guard/</link>
+      <guid isPermaLink="true">https://mukimuki-trade.com/performance/2026/06/09/topics/no-trade-profit-guard/</guid>
+      <pubDate>Tue, 09 Jun 2026 23:00:00 GMT</pubDate>
+      <category>実績公開</category>
+      <description>2026年6月9日ESTの運用メモ。正式なAutotrade日次レポートは未確認。取引履歴では6/9の新規約定なし、保有なし、日次利益ガードによる新規買い停止を確認。</description>
+    </item>
     <item>
       <title>6/8売買トピック: IONQの反発回転とHOOD・APP持ち越し</title>
       <link>https://mukimuki-trade.com/performance/2026/06/08/topics/ionq-range/</link>
