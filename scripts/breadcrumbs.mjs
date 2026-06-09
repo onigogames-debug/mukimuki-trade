@@ -23,7 +23,7 @@ export const buildBreadcrumbsFromPath = (pagePath, title) => {
 
   if (performanceMatch) {
     const [, year, month, day] = performanceMatch;
-    breadcrumbs.push({ name: '実績', item: absoluteUrl('/performance/latest/') });
+    breadcrumbs.push({ name: '実績', item: absoluteUrl('/performance/') });
     breadcrumbs.push({ name: `${year}年`, item: absoluteUrl(`/performance/${year}/`) });
     if (month) breadcrumbs.push({ name: `${Number(month)}月`, item: absoluteUrl(`/performance/${year}/${month}/`) });
     if (day) breadcrumbs.push({ name: `${Number(month)}月${Number(day)}日`, item: absoluteUrl(`/performance/${year}/${month}/${day}/`) });
@@ -44,7 +44,7 @@ export const buildBreadcrumbsFromPath = (pagePath, title) => {
 
     breadcrumbs.push({
       name,
-      item: absoluteUrl(segment === 'performance' ? '/performance/latest/' : `${current}/`),
+      item: absoluteUrl(segment === 'performance' ? '/performance/' : `${current}/`),
     });
   });
 

@@ -448,7 +448,7 @@ export const generateResearchArticleTemplate = ({
   focusReason = '',
   tradeConditions = [],
   avoidConditions = [],
-  relatedPerformanceUrl = '/performance/latest/',
+  relatedPerformanceUrl = '/performance/',
   relatedLogicUrl = '/logic/',
 } = {}) => {
   if (!ticker) throw new Error('ticker is required');

@@ -36,7 +36,7 @@ const toDate = (value) => new Date(value).toISOString().slice(0, 10);
 
 const ignoredDirs = new Set(['.git', '.wrangler', '_site', 'assets', 'data', 'datasets', 'scripts', 'node_modules']);
 const ignoredFiles = new Set(['404.html', 'googlefd5cf11d7eb2c415.html']);
-const ignoredRoutes = new Set(['/performance/', '/performance/latest/']);
+const ignoredRoutes = new Set(['/performance/latest/']);
 const hasNoindexRobots = (html) => /<meta\s+name=["']robots["']\s+content=["'][^"']*noindex/i.test(html);
 
 const htmlPathToRoute = (filePath) => {
@@ -69,7 +69,7 @@ const walkHtmlPages = async (dir = root) => {
 };
 
 const inferChangefreq = (pagePath) => {
-  if (pagePath === '/' || pagePath === '/performance/latest/') return 'daily';
+  if (pagePath === '/' || pagePath === '/performance/') return 'daily';
   if (pagePath === '/sitemap/') return 'weekly';
   if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/$/.test(pagePath)) return 'weekly';
   if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/topics\/[^/]+\/$/.test(pagePath)) return 'weekly';
@@ -86,6 +86,7 @@ const inferChangefreq = (pagePath) => {
 
 const inferPriority = (pagePath) => {
   if (pagePath === '/') return '1.0';
+  if (pagePath === '/performance/') return '0.8';
   if (pagePath === '/performance/latest/') return '0.1';
   if (pagePath === '/sitemap/') return '0.6';
   if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/$/.test(pagePath)) return '0.9';
@@ -365,7 +366,7 @@ const htmlSitemap = `<!doctype html>
       <span><strong>MUKIMUKI trade</strong><small>数字で追う公開記録</small></span>
     </a>
     <nav class="nav-links" aria-label="主要メニュー">
-      <a href="/performance/latest/">実績</a>
+      <a href="/performance/">実績</a>
       <a href="/research/">銘柄検討</a>
       <a href="/logic/">ロジック</a>
       <a href="/moomoo/">moomoo</a>

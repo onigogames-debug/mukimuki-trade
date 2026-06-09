@@ -16,6 +16,7 @@ const parseSitemap = (xml) => [...xml.matchAll(/<url>\s*<loc>(.*?)<\/loc>\s*<las
 
 const expectedForPath = (pagePath) => {
   if (pagePath === '/') return { priority: '1.0', changefreq: 'daily' };
+  if (pagePath === '/performance/') return { priority: '0.8', changefreq: 'daily' };
   if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/$/.test(pagePath)) return { priority: '0.9', changefreq: 'weekly' };
   if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/topics\/[^/]+\/$/.test(pagePath)) return { priority: '0.8', changefreq: 'weekly' };
   if (/^\/performance\/\d{4}\/\d{2}\/$/.test(pagePath)) return { priority: '0.7', changefreq: 'monthly' };

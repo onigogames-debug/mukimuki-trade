@@ -77,7 +77,7 @@ const allSymbols = (positions = [], limit = 4) => positions
   .filter(Boolean);
 
 const nav = `    <nav class="nav-links" aria-label="主要メニュー">
-      <a href="/performance/latest/">実績</a>
+      <a href="/performance/">実績</a>
       <a href="/research/">銘柄検討</a>
       <a href="/logic/">ロジック</a>
       <a href="/moomoo/">moomoo</a>
@@ -91,7 +91,7 @@ const mobileMenu = `    <details class="mobile-menu">
         <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
       </summary>
       <nav class="mobile-nav-links" aria-label="スマホメニュー">
-        <a href="/performance/latest/">実績</a>
+        <a href="/performance/">実績</a>
         <a href="/research/">銘柄検討</a>
         <a href="/logic/">ロジック</a>
         <a href="/moomoo/">moomoo</a>
@@ -674,13 +674,112 @@ ${footer}
 `;
 };
 
+const renderPerformanceIndexPage = (latestReport, reports) => {
+  const pagePath = '/performance/';
+  const latest = latestReport.latest;
+  const latestPath = datePath(latest.reportDate);
+  const title = '米国株トレード実績公開｜100万円チャレンジの最新記録';
+  const description = '100万円から始めた米国株トレードの実績公開ページ。最新評価額、日次損益、月次・年次アーカイブを一覧で確認できます。';
+  const recentReports = [...reports].slice(-6).reverse();
+  const monthKeys = [...new Set(reports.map(({ report }) => report.latest.reportDate.slice(0, 7)))].sort().reverse();
+  const yearKeys = [...new Set(reports.map(({ report }) => report.latest.reportDate.slice(0, 4)))].sort().reverse();
+  const breadcrumbs = buildBreadcrumbListFromPath(pagePath, { title: '実績公開' });
+  const jsonLdScript = renderJsonLdScript({
+    pageType: 'collection',
+    title,
+    description,
+    url: absoluteUrl(pagePath),
+    path: pagePath,
+    section: '実績公開',
+    breadcrumbs,
+    items: recentReports.map(({ report }) => ({
+      name: `${report.latest.reportDate} 実績レポート`,
+      path: datePath(report.latest.reportDate),
+    })),
+  });
+
+  return `<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>${escapeHtml(title)} | MUKIMUKI trade</title>
+  <meta name="description" content="${escapeHtml(description)}">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="${escapeHtml(absoluteUrl(pagePath))}">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MUKIMUKI trade">
+  <meta property="og:title" content="${escapeHtml(title)} | MUKIMUKI trade">
+  <meta property="og:description" content="${escapeHtml(description)}">
+  <meta property="og:url" content="${escapeHtml(absoluteUrl(pagePath))}">
+  <meta property="og:image" content="${siteUrl}/assets/mukimuki-performance.png">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="application/rss+xml" title="MUKIMUKI trade RSS" href="/feed.xml">
+  <link rel="stylesheet" href="/styles.css">
+  ${jsonLdScript}
+</head>
+<body>
+${header}
+  <main>
+    <section class="article-hero">
+      <div class="article-hero-inner">
+        ${renderBreadcrumbHtml(breadcrumbs, escapeHtml)}
+        <p class="eyebrow">PERFORMANCE / INDEX</p>
+        <h1>${escapeHtml(title)}</h1>
+        <p>毎朝更新する日次実績、月次まとめ、年次まとめをここから確認できます。最新の数字と過去の固定記録を分けてたどれるように整理しています。</p>
+${renderStampRow([['実績トップ', 'blue'], ['日付固定URLへ集約', 'yellow']])}
+      </div>
+    </section>
+    <section class="article-body">
+      <section class="article-panel">
+        <h2>最新の米国株トレード実績</h2>
+        <p>${escapeHtml(displayDate(latest.reportDate))}時点の評価額は${formatJpy(latest.jpy.end)}、100万円比は${latest.summary.totalReturnPct >= 0 ? '+' : ''}${latest.summary.totalReturnPct.toFixed(2)}%です。保有銘柄、売買件数、前日比は日付固定URLで確認できます。</p>
+        ${renderMetrics(latestReport)}
+        <p><a class="btn btn-primary" href="${escapeHtml(latestPath)}">最新の日次実績を読む</a> <a class="btn btn-secondary" href="${escapeHtml(monthPath(latest.reportDate))}">今月の実績まとめ</a></p>
+      </section>
+      <section class="article-panel">
+        <h2>直近の日次実績</h2>
+        <div class="link-grid">
+${recentReports.map(({ report }) => {
+  const holdings = allSymbols(report.latest.positions, 3);
+  return `          <a class="link-card" href="${escapeHtml(datePath(report.latest.reportDate))}"><span>${escapeHtml(displayDate(report.latest.reportDate))}</span><strong>${escapeHtml(report.latest.label)}実績レポート</strong><p>評価額 ${formatJpy(report.latest.jpy.end)} / 100万円比 ${report.latest.summary.totalReturnPct >= 0 ? '+' : ''}${report.latest.summary.totalReturnPct.toFixed(2)}%${holdings.length ? ` / ${holdings.join('・')}` : ''}</p></a>`;
+}).join('\n')}
+        </div>
+      </section>
+      <section class="article-panel">
+        <h2>月次・年次アーカイブ</h2>
+        <p>日次ページは固定URLで保存し、月次・年次ページにまとめています。特定の日の売買だけでなく、月単位の評価額推移と保有銘柄の変化を追える構成です。</p>
+        <div class="fact-grid">
+          <div class="fact-card">
+            <h3>月次まとめ</h3>
+            <p>${monthKeys.slice(0, 6).map((key) => `<a href="/performance/${escapeHtml(key.replace('-', '/'))}/">${escapeHtml(monthLabel(key))}</a>`).join(' / ')}</p>
+          </div>
+          <div class="fact-card">
+            <h3>年次まとめ</h3>
+            <p>${yearKeys.map((year) => `<a href="${escapeHtml(yearPath(`${year}-01-01`))}">${escapeHtml(year)}年</a>`).join(' / ')}</p>
+          </div>
+          <div class="fact-card">
+            <h3>関連ページ</h3>
+            <p><a href="/research/">銘柄検討</a> / <a href="/logic/">投資ロジック</a> / <a href="/archive/">記事アーカイブ</a></p>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+${footer}
+</body>
+</html>
+`;
+};
+
 const renderLatestPage = (latestReport) => {
   const latestPath = datePath(latestReport.latest.reportDate);
   const title = '最新実績レポート';
   const description = 'MUKIMUKI tradeの最新実績ページ。評価額、100万円比、保有銘柄、売買件数を日次で整理します。';
   const breadcrumbs = [
     { name: 'ホーム', item: `${siteUrl}/` },
-    { name: '実績', item: absoluteUrl('/performance/latest/') },
+    { name: '実績', item: absoluteUrl('/performance/') },
     { name: '最新実績', item: absoluteUrl('/performance/latest/') },
   ];
 
@@ -775,9 +874,8 @@ const updateRedirects = async (latestPath) => {
       && !line.startsWith('/performance/latest ')
       && !line.startsWith('/performance/old/ '));
 
-  lines.push('/performance/ /performance/latest/ 301');
   lines.push('/performance/latest /performance/latest/ 301');
-  lines.push('/performance/old/ /performance/latest/ 301');
+  lines.push('/performance/old/ /performance/ 301');
   await writeFile(redirectsPath, `${lines.join('\n')}\n`);
 };
 
@@ -809,6 +907,7 @@ for (const key of yearKeys) {
 }
 
 await writePerformancePage('/performance/latest/', renderLatestPage(latest));
+await writePerformancePage('/performance/', renderPerformanceIndexPage(latest, reports));
 await updateRedirects(datePath(latest.latest.reportDate));
 
-console.log(`Generated ${reports.length} daily performance pages, ${monthKeys.length} month archive page(s), ${yearKeys.length} year archive page(s), and latest page into ${process.env.PERFORMANCE_OUTPUT_DIR || '.'}.`);
+console.log(`Generated performance index, ${reports.length} daily performance pages, ${monthKeys.length} month archive page(s), ${yearKeys.length} year archive page(s), and latest page into ${process.env.PERFORMANCE_OUTPUT_DIR || '.'}.`);

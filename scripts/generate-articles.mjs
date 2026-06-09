@@ -33,6 +33,12 @@ const loadPerformanceReports = async () => {
 
 const performanceReports = await loadPerformanceReports();
 const articleIndex = buildArticleIndex({ articles, posts: content.posts, performanceReports });
+const latestPerformanceReport = [...performanceReports]
+  .sort((a, b) => a.latest.reportDate.localeCompare(b.latest.reportDate))
+  .at(-1);
+const latestPerformancePath = latestPerformanceReport
+  ? `/performance/${latestPerformanceReport.latest.reportDate.replaceAll('-', '/')}/`
+  : '/performance/';
 
 const escapeHtml = (value) => String(value)
   .replaceAll('&', '&amp;')
@@ -46,7 +52,7 @@ const imageUrl = (imagePath) => `${siteUrl}${imagePath}`;
 const displayDate = (value) => value.slice(0, 10).replaceAll('-', '.');
 
 const nav = `    <nav class="nav-links" aria-label="主要メニュー">
-      <a href="/performance/latest/">実績</a>
+      <a href="/performance/">実績</a>
       <a href="/research/">銘柄検討</a>
       <a href="/logic/">ロジック</a>
       <a href="/moomoo/">moomoo</a>
@@ -60,7 +66,7 @@ const mobileMenu = `    <details class="mobile-menu">
         <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
       </summary>
       <nav class="mobile-nav-links" aria-label="スマホメニュー">
-        <a href="/performance/latest/">実績</a>
+        <a href="/performance/">実績</a>
         <a href="/research/">銘柄検討</a>
         <a href="/logic/">ロジック</a>
         <a href="/moomoo/">moomoo</a>
@@ -261,7 +267,7 @@ ${article.categoryKey === 'research' ? renderTickerPerformanceSection(article, a
 
       <section class="article-panel">
         <h2>関連する記録</h2>
-        <p><a href="${escapeHtml(article.categoryUrl)}">${escapeHtml(article.category)}の記事一覧</a> と <a href="/performance/latest/">最新の実績レポート</a> では、候補整理と実際の売買結果を別の角度から記録しています。</p>
+        <p><a href="${escapeHtml(article.categoryUrl)}">${escapeHtml(article.category)}の記事一覧</a> と <a href="${escapeHtml(latestPerformancePath)}">最新の実績レポート</a> では、候補整理と実際の売買結果を別の角度から記録しています。</p>
       </section>
     </article>
   </main>
@@ -370,7 +376,7 @@ ${article.tags.slice(0, 4).map((tag) => `          <span>${escapeHtml(tag)}</spa
       </section>
       <section class="article-panel">
         <h2>損切り・分割エントリー・利確の読み順</h2>
-        <p><a href="/logic/signal-score/">シグナルの見方</a>、<a href="/logic/entry-risk/">エントリーとリスク</a>、<a href="/logic/exit-review/">利確と撤退</a>の3本で、候補化から出口判断までを分けて記録しています。実際の数字は<a href="/performance/latest/">最新実績</a>と<a href="/performance/2026/05/">月次実績アーカイブ</a>にまとめています。</p>
+        <p><a href="/logic/signal-score/">シグナルの見方</a>、<a href="/logic/entry-risk/">エントリーとリスク</a>、<a href="/logic/exit-review/">利確と撤退</a>の3本で、候補化から出口判断までを分けて記録しています。実際の数字は<a href="${escapeHtml(latestPerformancePath)}">最新実績</a>と<a href="/performance/2026/05/">月次実績アーカイブ</a>にまとめています。</p>
       </section>
     </section>
   </main>
@@ -554,7 +560,7 @@ ${renderTickerHubSummary(ticker, sortedArticles)}
       </section>
       <section class="article-panel">
         <h2>あわせて確認するページ</h2>
-        <p>直近の数字は<a href="/performance/latest/">最新実績</a>、日別の固定記録は<a href="/performance/2026/05/">月次実績アーカイブ</a>、候補化や撤退条件の考え方は<a href="/logic/">投資ロジック</a>にまとめています。銘柄別ページから実績とロジックへ戻ることで、テーマだけでなく資産推移との関係も追いやすくなります。</p>
+        <p>直近の数字は<a href="${escapeHtml(latestPerformancePath)}">最新実績</a>、日別の固定記録は<a href="/performance/2026/05/">月次実績アーカイブ</a>、候補化や撤退条件の考え方は<a href="/logic/">投資ロジック</a>にまとめています。銘柄別ページから実績とロジックへ戻ることで、テーマだけでなく資産推移との関係も追いやすくなります。</p>
       </section>
     </section>
   </main>

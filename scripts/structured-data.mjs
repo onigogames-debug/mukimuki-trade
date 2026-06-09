@@ -223,7 +223,7 @@ const normalizePageType = (value, path = '/') => {
 };
 
 export const breadcrumbLabelMap = {
-  performance: { label: '実績', url: '/performance/latest/' },
+  performance: { label: '実績', url: '/performance/' },
   research: { label: '銘柄検討', url: '/research/' },
   logic: { label: '投資ロジック', url: '/logic/' },
   topics: { label: '売買トピック' },
@@ -260,7 +260,7 @@ export const buildBreadcrumbListFromPath = (pathValue = '/', options = {}) => {
   const performanceMatch = path.match(/^\/performance\/(\d{4})(?:\/(\d{2})(?:\/(\d{2}))?)?\/$/);
   if (performanceMatch) {
     const [, year, month, day] = performanceMatch;
-    breadcrumbs.push({ name: '実績', item: absoluteUrlForSite('/performance/latest/', siteUrl), url: absoluteUrlForSite('/performance/latest/', siteUrl) });
+    breadcrumbs.push({ name: '実績', item: absoluteUrlForSite('/performance/', siteUrl), url: absoluteUrlForSite('/performance/', siteUrl) });
     if (year) {
       breadcrumbs.push({
         name: `${year}年`,
@@ -289,7 +289,7 @@ export const buildBreadcrumbListFromPath = (pathValue = '/', options = {}) => {
   if (topicMatch) {
     const [, year, month, day] = topicMatch;
     breadcrumbs.push(
-      { name: '実績', item: absoluteUrlForSite('/performance/latest/', siteUrl), url: absoluteUrlForSite('/performance/latest/', siteUrl) },
+      { name: '実績', item: absoluteUrlForSite('/performance/', siteUrl), url: absoluteUrlForSite('/performance/', siteUrl) },
       { name: `${year}年`, item: absoluteUrlForSite(`/performance/${year}/`, siteUrl), url: absoluteUrlForSite(`/performance/${year}/`, siteUrl) },
       { name: `${Number(month)}月`, item: absoluteUrlForSite(`/performance/${year}/${month}/`, siteUrl), url: absoluteUrlForSite(`/performance/${year}/${month}/`, siteUrl) },
       { name: `${Number(month)}月${Number(day)}日`, item: absoluteUrlForSite(`/performance/${year}/${month}/${day}/`, siteUrl), url: absoluteUrlForSite(`/performance/${year}/${month}/${day}/`, siteUrl) },
@@ -299,7 +299,7 @@ export const buildBreadcrumbListFromPath = (pathValue = '/', options = {}) => {
   }
 
   if (path === '/performance/latest/' || path === '/performance/') {
-    breadcrumbs.push({ name: '実績', item: absoluteUrlForSite('/performance/latest/', siteUrl), url: absoluteUrlForSite('/performance/latest/', siteUrl) });
+    breadcrumbs.push({ name: '実績', item: absoluteUrlForSite('/performance/', siteUrl), url: absoluteUrlForSite('/performance/', siteUrl) });
     return breadcrumbs;
   }
 
@@ -572,6 +572,8 @@ export const buildStructuredData = (frontMatter = {}) => {
 
   if (['performanceMonthly', 'performanceYearly', 'archive', 'collection'].includes(meta.pageType)) {
     graph.push(collectionPageSchema(meta));
+    const itemList = itemListSchema(meta);
+    if (itemList) graph.push(itemList);
   }
 
   if (meta.pageType === 'profile') {

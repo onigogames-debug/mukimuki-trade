@@ -4,7 +4,7 @@ const path = require('node:path');
 const root = path.resolve(__dirname, '..');
 const siteUrl = 'https://mukimuki-trade.com';
 const ignoredDirs = new Set(['.git', '.wrangler', '_data', '_includes', '_site', 'assets', 'data', 'datasets', 'node_modules', 'scripts']);
-const ignoredRoutes = new Set(['/performance/', '/performance/latest/']);
+const ignoredRoutes = new Set(['/performance/latest/']);
 
 const normalizeRoute = (filePath) => {
   const relative = path.relative(root, filePath);
@@ -72,6 +72,7 @@ const walkHtmlPages = (dir = root) => {
 
 const sitemapChangefreqForPath = (pagePath) => {
   if (pagePath === '/') return 'daily';
+  if (pagePath === '/performance/') return 'daily';
   if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/$/.test(pagePath)) return 'weekly';
   if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/topics\/[^/]+\/$/.test(pagePath)) return 'weekly';
   if (/^\/performance\/\d{4}\/\d{2}\/$/.test(pagePath)) return 'monthly';
@@ -86,6 +87,7 @@ const sitemapChangefreqForPath = (pagePath) => {
 
 const sitemapPriorityForPath = (pagePath) => {
   if (pagePath === '/') return '1.0';
+  if (pagePath === '/performance/') return '0.8';
   if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/$/.test(pagePath)) return '0.9';
   if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/topics\/[^/]+\/$/.test(pagePath)) return '0.8';
   if (/^\/performance\/\d{4}\/\d{2}\/$/.test(pagePath)) return '0.7';
