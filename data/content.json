@@ -4,7 +4,7 @@
     "title": "MUKIMUKI trade",
     "description": "100万円からの株式投資実績、資産曲線、銘柄検討、相場メモを整理する投資ブログ。",
     "language": "ja",
-    "lastBuildDate": "2026-06-10T08:00:00+09:00"
+    "lastBuildDate": "2026-06-10T14:30:00+09:00"
   },
   "pages": [
     {
@@ -200,11 +200,15 @@
       "priority": "0.78"
     },
     {
-      "path": "/performance/2026/06/09/topics/no-trade-profit-guard/",
+      "path": "/performance/2026/06/09/topics/rddt-overnight-check/",
       "lastmod": "2026-06-10",
       "changefreq": "monthly",
       "priority": "0.85",
-      "redirectFrom": "/performance/2026-06-09-no-trade-profit-guard/"
+      "redirectFrom": [
+        "/performance/2026-06-09-rddt-overnight-check/",
+        "/performance/2026/06/09/topics/no-trade-profit-guard/",
+        "/performance/2026-06-09-no-trade-profit-guard/"
+      ]
     },
     {
       "path": "/performance/2026/06/08/topics/ionq-range/",
@@ -258,12 +262,16 @@
   ],
   "posts": [
     {
-      "title": "6/9運用メモ: 正式レポート未確認、約定なしと利益ガードを確認",
-      "path": "/performance/2026/06/09/topics/no-trade-profit-guard/",
-      "description": "2026年6月9日ESTの運用メモ。正式なAutotrade日次レポートは未確認。取引履歴では6/9の新規約定なし、保有なし、日次利益ガードによる新規買い停止を確認。",
+      "title": "6/9運用メモ: 正式レポート未確認、RDDTの時間外買いを確認",
+      "path": "/performance/2026/06/09/topics/rddt-overnight-check/",
+      "description": "2026年6月9日ESTの運用メモ。正式なAutotrade日次レポートは未確認のまま、公開実績は6/8確定値を据え置き。6/10朝JSTの取引履歴でRDDT 5株の時間外買いと保有を確認。",
       "pubDate": "2026-06-10T08:00:00+09:00",
       "category": "実績公開",
-      "redirectFrom": "/performance/2026-06-09-no-trade-profit-guard/"
+      "redirectFrom": [
+        "/performance/2026-06-09-rddt-overnight-check/",
+        "/performance/2026/06/09/topics/no-trade-profit-guard/",
+        "/performance/2026-06-09-no-trade-profit-guard/"
+      ]
     },
     {
       "title": "6/8売買トピック: IONQの反発回転とHOOD・APP持ち越し",

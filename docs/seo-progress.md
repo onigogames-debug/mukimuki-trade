@@ -1,6 +1,6 @@
 # SEO Progress Report
 
-Generated: 2026-06-09T23:16:22.190Z
+Generated: 2026-06-10T07:53:11.380Z
 
 ## 実装状況
 
@@ -36,13 +36,13 @@ Generated: 2026-06-09T23:16:22.190Z
 
 | URL | title | description | 本文文字数 | 内部リンク | schema |
 |---|---:|---:|---:|---:|---|
-| / | 41 | 68 | 3012 | 43 | Person, WebSite |
+| / | 41 | 68 | 3045 | 43 | Person, WebSite |
 | /about/ | 26 | 58 | 1800 | 19 | AboutPage, BreadcrumbList, FAQPage, Person, WebPage, WebSite |
 | /archive/ | 24 | 62 | 1034 | 24 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /archive/2026-05/ | 27 | 79 | 1330 | 32 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
-| /archive/2026-06/ | 27 | 79 | 1750 | 31 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
+| /archive/2026-06/ | 27 | 79 | 1888 | 32 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /category/moomoo/ | 30 | 62 | 911 | 23 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
-| /category/performance/ | 26 | 61 | 2694 | 37 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
+| /category/performance/ | 26 | 61 | 2836 | 38 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /category/research/ | 26 | 57 | 1049 | 24 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /logic/ | 44 | 52 | 1046 | 27 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /logic/entry-risk/ | 48 | 41 | 1139 | 22 | Article, BreadcrumbList, Person, WebSite |
@@ -76,12 +76,12 @@ Generated: 2026-06-09T23:16:22.190Z
 | /performance/2026/06/07/topics/weekend-reset-check/ | 49 | 84 | 3293 | 29 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/06/08/ | 46 | 75 | 2409 | 34 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/06/08/topics/ionq-range/ | 50 | 81 | 3847 | 32 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/06/09/topics/no-trade-profit-guard/ | 49 | 83 | 3027 | 26 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/06/09/topics/rddt-overnight-check/ | 49 | 95 | 4124 | 30 | Article, BreadcrumbList, Person, WebSite |
 | /performance/latest/ (noindex) | 25 | 53 | 947 | 24 |  |
 | /profile/ | 26 | 75 | 1373 | 21 | BreadcrumbList, FAQPage, Person, ProfilePage, WebSite |
 | /research/ | 43 | 56 | 1086 | 25 | Article, BreadcrumbList, Person, WebSite |
 | /research/ai-infrastructure/ | 56 | 57 | 2541 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /research/app-software-fintech/ | 44 | 50 | 2397 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
+| /research/app-software-fintech/ | 44 | 50 | 2470 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /research/frontier-growth/ | 47 | 49 | 2358 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /research/tag/aapl/ | 30 | 65 | 1884 | 29 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /research/tag/alab/ | 30 | 65 | 1763 | 28 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
@@ -111,7 +111,7 @@ Generated: 2026-06-09T23:16:22.190Z
 | /research/tag/pl/ | 28 | 63 | 1826 | 29 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /research/tag/qbts/ | 30 | 65 | 3145 | 39 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /research/tag/qubt/ | 30 | 65 | 2165 | 32 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
-| /research/tag/rddt/ | 30 | 65 | 1698 | 27 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
+| /research/tag/rddt/ | 30 | 65 | 1872 | 28 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /research/tag/rdw/ | 29 | 64 | 1985 | 30 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /research/tag/rgti/ | 30 | 65 | 1425 | 25 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /research/tag/rivn/ | 30 | 65 | 2554 | 35 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
@@ -122,5 +122,5 @@ Generated: 2026-06-09T23:16:22.190Z
 | /research/tag/spir/ | 30 | 65 | 2085 | 31 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /research/tag/tsla/ | 30 | 65 | 1710 | 28 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /research/tag/xndu/ | 30 | 65 | 1779 | 29 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
-| /sitemap/ | 23 | 48 | 4145 | 97 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /sitemap/ | 23 | 48 | 4144 | 97 | BreadcrumbList, CollectionPage, Person, WebSite |
 

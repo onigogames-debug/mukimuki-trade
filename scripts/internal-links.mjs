@@ -3,6 +3,7 @@ const stopTickers = new Set([
   'AI', 'EV', 'EST', 'JST', 'JPY', 'USD', 'FAQ', 'PR',
   'BUY', 'SELL', 'RISK', 'MA', 'VWAP', 'RSI', 'TP', 'SL', 'CSV', 'JSON',
   'TRADE', 'TOPIC', 'STOCK', 'LOGIC', 'DAILY', 'URL', 'FOMC', 'AWS',
+  'AGM', 'OHLCV', 'US',
 ]);
 
 const normalizeTicker = (value) => String(value || '').replace(/^US\./, '').toUpperCase();
