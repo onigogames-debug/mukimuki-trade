@@ -4,18 +4,18 @@
     "title": "MUKIMUKI trade",
     "description": "100万円からの株式投資実績、資産曲線、銘柄検討、相場メモを整理する投資ブログ。",
     "language": "ja",
-    "lastBuildDate": "2026-06-10T14:30:00+09:00"
+    "lastBuildDate": "2026-06-11T08:00:00+09:00"
   },
   "pages": [
     {
       "path": "/",
-      "lastmod": "2026-06-10",
+      "lastmod": "2026-06-11",
       "changefreq": "daily",
       "priority": "1.0"
     },
     {
       "path": "/performance/latest/",
-      "lastmod": "2026-06-10",
+      "lastmod": "2026-06-11",
       "changefreq": "daily",
       "priority": "0.9"
     },
@@ -41,19 +41,19 @@
     },
     {
       "path": "/archive/",
-      "lastmod": "2026-06-10",
+      "lastmod": "2026-06-11",
       "changefreq": "weekly",
       "priority": "0.6"
     },
     {
       "path": "/archive/2026-06/",
-      "lastmod": "2026-06-10",
+      "lastmod": "2026-06-11",
       "changefreq": "monthly",
       "priority": "0.6"
     },
     {
       "path": "/category/performance/",
-      "lastmod": "2026-06-10",
+      "lastmod": "2026-06-11",
       "changefreq": "weekly",
       "priority": "0.6"
     },
@@ -195,7 +195,7 @@
     },
     {
       "path": "/performance/2026/06/",
-      "lastmod": "2026-06-10",
+      "lastmod": "2026-06-11",
       "changefreq": "weekly",
       "priority": "0.78"
     },
@@ -258,9 +258,32 @@
       "changefreq": "monthly",
       "priority": "0.85",
       "redirectFrom": "/performance/2026-06-07-weekend-reset-check/"
+    },
+    {
+      "path": "/performance/2026/06/10/topics/crdo-range/",
+      "lastmod": "2026-06-11",
+      "changefreq": "monthly",
+      "priority": "0.85",
+      "redirectFrom": [
+        "/performance/2026-06-10-crdo-range/",
+        "/performance/2026/06/10/topics/app-no-report-watch/",
+        "/performance/2026-06-10-app-no-report-watch/"
+      ]
     }
   ],
   "posts": [
+    {
+      "title": "6/10売買トピック: CRDOの損切り回転と3銘柄持ち越し",
+      "path": "/performance/2026/06/10/topics/crdo-range/",
+      "description": "2026年6月10日ESTの売買トピック。評価額は99.9万円、前日比-6,852円。約定18件、CRDOの約定レンジ2.10%とMETA・GSAT・AMZN持ち越しを整理。",
+      "pubDate": "2026-06-11T08:00:00+09:00",
+      "category": "実績公開",
+      "redirectFrom": [
+        "/performance/2026-06-10-crdo-range/",
+        "/performance/2026/06/10/topics/app-no-report-watch/",
+        "/performance/2026-06-10-app-no-report-watch/"
+      ]
+    },
     {
       "title": "6/9運用メモ: 正式レポート未確認、RDDTの時間外買いを確認",
       "path": "/performance/2026/06/09/topics/rddt-overnight-check/",
