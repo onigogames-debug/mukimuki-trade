@@ -1,6 +1,6 @@
 # SEO Progress Report
 
-Generated: 2026-06-10T23:15:39.582Z
+Generated: 2026-06-11T22:58:16.060Z
 
 ## 実装状況
 
@@ -21,12 +21,12 @@ Generated: 2026-06-10T23:15:39.582Z
 
 ## ページ監査サマリー
 
-- 対象ページ: 90
-- インデックス対象ページ: 89
+- 対象ページ: 92
+- インデックス対象ページ: 91
 - 要確認ページ: 0
-- FAQ schemaページ: 17
-- パンくずschemaページ: 88
-- Critical CSS適用ページ: 90
+- FAQ schemaページ: 18
+- パンくずschemaページ: 90
+- Critical CSS適用ページ: 92
 
 ## 要確認ページ
 
@@ -36,7 +36,7 @@ Generated: 2026-06-10T23:15:39.582Z
 
 | URL | title | description | 本文文字数 | 内部リンク | schema |
 |---|---:|---:|---:|---:|---|
-| / | 41 | 68 | 3070 | 43 | Person, WebSite |
+| / | 41 | 68 | 2977 | 43 | Person, WebSite |
 | /about/ | 26 | 58 | 1800 | 19 | AboutPage, BreadcrumbList, FAQPage, Person, WebPage, WebSite |
 | /archive/ | 24 | 62 | 1034 | 24 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /archive/2026-05/ | 27 | 79 | 1330 | 32 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
@@ -49,7 +49,7 @@ Generated: 2026-06-10T23:15:39.582Z
 | /logic/exit-review/ | 44 | 38 | 1134 | 22 | Article, BreadcrumbList, Person, WebSite |
 | /logic/signal-score/ | 46 | 43 | 1146 | 22 | Article, BreadcrumbList, Person, WebSite |
 | /moomoo/ | 44 | 50 | 1313 | 23 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/ | 44 | 58 | 1100 | 33 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
+| /performance/ | 44 | 58 | 1088 | 33 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /performance/2026/ | 30 | 52 | 1027 | 22 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /performance/2026/05/ | 41 | 62 | 1928 | 35 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /performance/2026/05/26/ | 47 | 77 | 2367 | 34 | Article, BreadcrumbList, FAQPage, Person, WebSite |
@@ -61,12 +61,12 @@ Generated: 2026-06-10T23:15:39.582Z
 | /performance/2026/05/29/topics/bksy-range/ | 49 | 77 | 3210 | 32 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/05/30/topics/weekend-amzn-hold/ | 43 | 64 | 3266 | 32 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/05/31/topics/weekend-amzn-risk-check/ | 45 | 63 | 3432 | 32 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/06/ | 41 | 62 | 2287 | 41 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
+| /performance/2026/06/ | 41 | 62 | 2398 | 43 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /performance/2026/06/01/ | 47 | 77 | 2480 | 35 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/06/01/topics/qbts-range/ | 44 | 69 | 3399 | 32 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/06/02/ | 51 | 80 | 2703 | 36 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/06/02/topics/qbts-range/ | 52 | 73 | 3466 | 32 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/06/03/ | 42 | 72 | 2384 | 35 | Article, BreadcrumbList, FAQPage, Person, WebSite |
+| /performance/2026/06/03/ | 42 | 72 | 2309 | 35 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/06/03/topics/soun-range/ | 49 | 78 | 3410 | 32 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/06/04/ | 52 | 82 | 2761 | 37 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/06/04/topics/rddt-range/ | 48 | 69 | 3773 | 32 | Article, BreadcrumbList, Person, WebSite |
@@ -77,14 +77,16 @@ Generated: 2026-06-10T23:15:39.582Z
 | /performance/2026/06/08/ | 46 | 75 | 2433 | 35 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/06/08/topics/ionq-range/ | 50 | 81 | 3847 | 32 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/06/09/topics/rddt-overnight-check/ | 49 | 95 | 4183 | 30 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/06/10/ | 52 | 79 | 2570 | 35 | Article, BreadcrumbList, FAQPage, Person, WebSite |
+| /performance/2026/06/10/ | 52 | 79 | 2594 | 36 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/06/10/topics/crdo-range/ | 47 | 87 | 4036 | 34 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/06/11/ | 42 | 68 | 1904 | 34 | Article, BreadcrumbList, FAQPage, Person, WebSite |
+| /performance/2026/06/11/topics/gsat-hold-check/ | 44 | 74 | 3452 | 32 | Article, BreadcrumbList, Person, WebSite |
 | /performance/latest/ (noindex) | 25 | 53 | 945 | 24 |  |
 | /profile/ | 26 | 75 | 1373 | 21 | BreadcrumbList, FAQPage, Person, ProfilePage, WebSite |
 | /research/ | 43 | 56 | 1086 | 25 | Article, BreadcrumbList, Person, WebSite |
 | /research/ai-infrastructure/ | 56 | 57 | 2527 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /research/app-software-fintech/ | 44 | 50 | 2405 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /research/frontier-growth/ | 47 | 49 | 2349 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
+| /research/frontier-growth/ | 47 | 49 | 2296 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /research/tag/aapl/ | 30 | 65 | 1884 | 29 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /research/tag/ai/ | 28 | 63 | 1442 | 25 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /research/tag/alab/ | 30 | 65 | 1922 | 29 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
@@ -99,7 +101,7 @@ Generated: 2026-06-10T23:15:39.582Z
 | /research/tag/bksy/ | 30 | 65 | 1611 | 26 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /research/tag/crdo/ | 30 | 65 | 2629 | 35 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /research/tag/googl/ | 31 | 66 | 1383 | 25 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
-| /research/tag/gsat/ | 30 | 65 | 2747 | 37 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
+| /research/tag/gsat/ | 30 | 65 | 3054 | 40 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /research/tag/hood/ | 30 | 65 | 2782 | 36 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /research/tag/ionq/ | 30 | 65 | 1745 | 27 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /research/tag/lunr/ | 30 | 65 | 1845 | 29 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
@@ -125,5 +127,5 @@ Generated: 2026-06-10T23:15:39.582Z
 | /research/tag/spir/ | 30 | 65 | 2085 | 31 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /research/tag/tsla/ | 30 | 65 | 1710 | 28 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /research/tag/xndu/ | 30 | 65 | 1779 | 29 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
-| /sitemap/ | 23 | 48 | 4309 | 100 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /sitemap/ | 23 | 48 | 4436 | 102 | BreadcrumbList, CollectionPage, Person, WebSite |
 
