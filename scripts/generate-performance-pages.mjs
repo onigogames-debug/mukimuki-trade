@@ -5,6 +5,7 @@ import { absoluteUrl, buildBreadcrumbListFromPath, renderJsonLdScript } from './
 import { renderBreadcrumbHtml } from './breadcrumbs.mjs';
 import { generateDailyPerformanceSeo } from './content-templates.mjs';
 import { buildArticleIndex, renderRelatedArticlesSection, renderRelatedResearchSection } from './internal-links.mjs';
+import { performanceXPostText, renderTwitterCardTags, renderXShareSection } from './social-sharing.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const outputRoot = process.env.PERFORMANCE_OUTPUT_DIR
@@ -292,6 +293,13 @@ const renderDailyPage = (report, articleIndex, reports) => {
   <meta property="og:description" content="${escapeHtml(description)}">
   <meta property="og:url" content="${escapeHtml(absoluteUrl(pagePath))}">
   <meta property="og:image" content="${siteUrl}/assets/mukimuki-performance.png">
+${renderTwitterCardTags({
+    title: `${title} | MUKIMUKI trade`,
+    description,
+    url: absoluteUrl(pagePath),
+    image: `${siteUrl}/assets/mukimuki-performance.png`,
+    escapeHtml,
+  })}
   <meta property="article:published_time" content="${escapeHtml(report.generatedAt)}">
   <meta property="article:modified_time" content="${escapeHtml(report.generatedAt)}">
   <meta property="article:section" content="実績公開">
@@ -352,6 +360,13 @@ ${faqs.map((faq) => `          <div class="faq-item">
       </section>
 ${renderRelatedArticlesSection(relatedContext, articleIndex, { escapeHtml })}
 ${renderRelatedResearchSection(relatedContext, articleIndex, { escapeHtml })}
+${renderXShareSection({
+    url: absoluteUrl(pagePath),
+    title,
+    text: performanceXPostText({ report, url: absoluteUrl(pagePath) }),
+    hashtags: ['MUKIMUKItrade', '米国株', '投資記録', ...holdings.slice(0, 2)],
+    escapeHtml,
+  })}
     </article>
   </main>
 ${footer}
@@ -529,6 +544,13 @@ const renderMonthPage = (date, reports) => {
   <meta property="og:description" content="${escapeHtml(description)}">
   <meta property="og:url" content="${escapeHtml(absoluteUrl(pagePath))}">
   <meta property="og:image" content="${siteUrl}/assets/mukimuki-performance.png">
+${renderTwitterCardTags({
+    title: `${title} | MUKIMUKI trade`,
+    description,
+    url: absoluteUrl(pagePath),
+    image: `${siteUrl}/assets/mukimuki-performance.png`,
+    escapeHtml,
+  })}
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="alternate" type="application/rss+xml" title="MUKIMUKI trade RSS" href="/feed.xml">
   <link rel="stylesheet" href="/styles.css">
@@ -623,6 +645,13 @@ const renderYearPage = (date, reports) => {
   <meta property="og:description" content="${escapeHtml(description)}">
   <meta property="og:url" content="${escapeHtml(absoluteUrl(pagePath))}">
   <meta property="og:image" content="${siteUrl}/assets/mukimuki-performance.png">
+${renderTwitterCardTags({
+    title: `${title} | MUKIMUKI trade`,
+    description,
+    url: absoluteUrl(pagePath),
+    image: `${siteUrl}/assets/mukimuki-performance.png`,
+    escapeHtml,
+  })}
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="alternate" type="application/rss+xml" title="MUKIMUKI trade RSS" href="/feed.xml">
   <link rel="stylesheet" href="/styles.css">
@@ -714,6 +743,13 @@ const renderPerformanceIndexPage = (latestReport, reports) => {
   <meta property="og:description" content="${escapeHtml(description)}">
   <meta property="og:url" content="${escapeHtml(absoluteUrl(pagePath))}">
   <meta property="og:image" content="${siteUrl}/assets/mukimuki-performance.png">
+${renderTwitterCardTags({
+    title: `${title} | MUKIMUKI trade`,
+    description,
+    url: absoluteUrl(pagePath),
+    image: `${siteUrl}/assets/mukimuki-performance.png`,
+    escapeHtml,
+  })}
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="alternate" type="application/rss+xml" title="MUKIMUKI trade RSS" href="/feed.xml">
   <link rel="stylesheet" href="/styles.css">
@@ -765,6 +801,13 @@ ${recentReports.map(({ report }) => {
           </div>
         </div>
       </section>
+${renderXShareSection({
+    url: absoluteUrl(pagePath),
+    title,
+    text: `${title}\n最新の日次実績と月次・年次アーカイブをまとめています。`,
+    hashtags: ['MUKIMUKItrade', '米国株', '投資記録'],
+    escapeHtml,
+  })}
     </section>
   </main>
 ${footer}
@@ -799,6 +842,13 @@ const renderLatestPage = (latestReport) => {
   <meta property="og:description" content="${description}">
   <meta property="og:url" content="${escapeHtml(absoluteUrl('/performance/latest/'))}">
   <meta property="og:image" content="${siteUrl}/assets/mukimuki-performance.png">
+${renderTwitterCardTags({
+    title: `${title} | MUKIMUKI trade`,
+    description,
+    url: absoluteUrl('/performance/latest/'),
+    image: `${siteUrl}/assets/mukimuki-performance.png`,
+    escapeHtml,
+  })}
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="alternate" type="application/rss+xml" title="MUKIMUKI trade RSS" href="/feed.xml">
   <link rel="stylesheet" href="/styles.css">

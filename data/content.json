@@ -4,18 +4,18 @@
     "title": "MUKIMUKI trade",
     "description": "100万円からの株式投資実績、資産曲線、銘柄検討、相場メモを整理する投資ブログ。",
     "language": "ja",
-    "lastBuildDate": "2026-06-12T08:00:00+09:00"
+    "lastBuildDate": "2026-06-13T08:00:00+09:00"
   },
   "pages": [
     {
       "path": "/",
-      "lastmod": "2026-06-12",
+      "lastmod": "2026-06-13",
       "changefreq": "daily",
       "priority": "1.0"
     },
     {
       "path": "/performance/latest/",
-      "lastmod": "2026-06-12",
+      "lastmod": "2026-06-13",
       "changefreq": "daily",
       "priority": "0.9"
     },
@@ -41,19 +41,19 @@
     },
     {
       "path": "/archive/",
-      "lastmod": "2026-06-12",
+      "lastmod": "2026-06-13",
       "changefreq": "weekly",
       "priority": "0.6"
     },
     {
       "path": "/archive/2026-06/",
-      "lastmod": "2026-06-12",
+      "lastmod": "2026-06-13",
       "changefreq": "monthly",
       "priority": "0.6"
     },
     {
       "path": "/category/performance/",
-      "lastmod": "2026-06-12",
+      "lastmod": "2026-06-13",
       "changefreq": "weekly",
       "priority": "0.6"
     },
@@ -195,7 +195,7 @@
     },
     {
       "path": "/performance/2026/06/",
-      "lastmod": "2026-06-12",
+      "lastmod": "2026-06-13",
       "changefreq": "weekly",
       "priority": "0.78"
     },
@@ -276,9 +276,24 @@
         "/performance/2026/06/10/topics/app-no-report-watch/",
         "/performance/2026-06-10-app-no-report-watch/"
       ]
+    },
+    {
+      "path": "/performance/2026/06/12/topics/crdo-loss-cut/",
+      "lastmod": "2026-06-13",
+      "changefreq": "monthly",
+      "priority": "0.85",
+      "redirectFrom": "/performance/2026-06-12-crdo-loss-cut/"
     }
   ],
   "posts": [
+    {
+      "title": "6/12売買トピック: CRDOの急落損切りとノーポジション確認",
+      "path": "/performance/2026/06/12/topics/crdo-loss-cut/",
+      "description": "2026年6月12日ESTの売買トピック。評価額は99.5万円、前日比-2,942円。約定4件、CRDOの約定レンジ1.70%とGSAT全売却、引け後ノーポジションを整理。",
+      "pubDate": "2026-06-13T08:00:00+09:00",
+      "category": "実績公開",
+      "redirectFrom": "/performance/2026-06-12-crdo-loss-cut/"
+    },
     {
       "title": "6/11運用メモ: 約定なし、GSATの小幅保有を確認",
       "path": "/performance/2026/06/11/topics/gsat-hold-check/",

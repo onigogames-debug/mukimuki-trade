@@ -10,6 +10,7 @@ import {
   renderRelatedResearchSection,
   renderTickerPerformanceSection,
 } from './internal-links.mjs';
+import { renderTwitterCardTags, renderXShareSection } from './social-sharing.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const siteUrl = 'https://mukimuki-trade.com';
@@ -218,6 +219,13 @@ const renderArticle = (article) => {
   <meta property="og:description" content="${escapeHtml(article.description)}">
   <meta property="og:url" content="${escapeHtml(absoluteUrl(article.path))}">
   <meta property="og:image" content="${escapeHtml(imageUrl(article.image))}">
+${renderTwitterCardTags({
+    title: `${article.title} | MUKIMUKI trade`,
+    description: article.description,
+    url: absoluteUrl(article.path),
+    image: imageUrl(article.image),
+    escapeHtml,
+  })}
   <meta property="article:published_time" content="${escapeHtml(article.published)}">
   <meta property="article:modified_time" content="${escapeHtml(article.modified)}">
   <meta property="article:section" content="${escapeHtml(article.category)}">
@@ -264,6 +272,13 @@ ${renderFaqSection(faqs)}
 ${renderRelatedArticlesSection(article, articleIndex, { escapeHtml })}
 ${article.categoryKey === 'performance' ? renderRelatedResearchSection(article, articleIndex, { escapeHtml }) : ''}
 ${article.categoryKey === 'research' ? renderTickerPerformanceSection(article, articleIndex, { escapeHtml }) : ''}
+${renderXShareSection({
+    url: absoluteUrl(article.path),
+    title: article.title,
+    text: `${article.title}\n${article.description}`,
+    hashtags: ['MUKIMUKItrade', article.categoryKey === 'research' ? '米国株' : '投資記録', ...(article.tickers || []).slice(0, 2)],
+    escapeHtml,
+  })}
 
       <section class="article-panel">
         <h2>関連する記録</h2>
@@ -339,6 +354,13 @@ const buildCollectionPage = (categoryKey) => {
   <meta property="og:description" content="${escapeHtml(description)}">
   <meta property="og:url" content="${escapeHtml(absoluteUrl(categoryUrl))}">
   <meta property="og:image" content="${siteUrl}/assets/mukimuki-editor.png">
+${renderTwitterCardTags({
+    title: `${title} | MUKIMUKI trade`,
+    description,
+    url: absoluteUrl(categoryUrl),
+    image: `${siteUrl}/assets/mukimuki-editor.png`,
+    escapeHtml,
+  })}
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="alternate" type="application/rss+xml" title="MUKIMUKI trade RSS" href="/feed.xml">
   <link rel="stylesheet" href="/styles.css">
@@ -519,6 +541,13 @@ const renderTickerArchivePage = (ticker, tickerArticles) => {
   <meta property="og:description" content="${escapeHtml(description)}">
   <meta property="og:url" content="${escapeHtml(absoluteUrl(archivePath))}">
   <meta property="og:image" content="${siteUrl}/assets/mukimuki-research.png">
+${renderTwitterCardTags({
+    title: `${title} | MUKIMUKI trade`,
+    description,
+    url: absoluteUrl(archivePath),
+    image: `${siteUrl}/assets/mukimuki-research.png`,
+    escapeHtml,
+  })}
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="alternate" type="application/rss+xml" title="MUKIMUKI trade RSS" href="/feed.xml">
   <link rel="stylesheet" href="/styles.css">

@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "siteName": "MUKIMUKI trade",
   "sourceName": "Autotrade daily report",
-  "sourceReport": "report_2026-06-11.txt",
-  "generatedAt": "2026-06-12T05:00:59+09:00",
-  "generatedAtDisplay": "2026.06.12 05:00:59 JST",
+  "sourceReport": "report_2026-06-12.txt",
+  "generatedAt": "2026-06-13T05:00:27+09:00",
+  "generatedAtDisplay": "2026.06.13 05:00:27 JST",
   "timezone": {
     "reportDate": "EST",
     "generatedAt": "Asia/Tokyo"
@@ -14,44 +14,69 @@
   "challengeStartDate": "2026-04-24",
   "affiliateUrl": "https://j.jp.moomoo.com/0BdcjG",
   "latest": {
-    "reportDate": "2026-06-11",
-    "reportDateDisplay": "2026.06.11 EST",
-    "label": "6/11",
+    "reportDate": "2026-06-12",
+    "reportDateDisplay": "2026.06.12 EST",
+    "label": "6/12",
     "jpy": {
-      "start": 997731.99,
-      "end": 994652.55,
-      "delta": -3079.44
+      "start": 998404.5,
+      "end": 995462.4,
+      "delta": -2942.1
     },
     "usd": {
-      "start": 6215.31,
-      "end": 6224.34,
-      "delta": 9.0261
+      "start": 6233.13,
+      "end": 6213.54,
+      "delta": -19.5919
     },
     "summary": {
-      "totalTrades": 0,
-      "totalBuyUsd": 0,
-      "totalSellUsd": 0,
-      "usdPnl": 9.03,
-      "cashFlowUsd": 0,
-      "totalPnlJpy": -5347.45,
-      "totalReturnPct": -0.53,
-      "dailyReturnPct": -0.31
+      "totalTrades": 4,
+      "totalBuyUsd": 745.74,
+      "totalSellUsd": 1630.38,
+      "usdPnl": -19.59,
+      "cashFlowUsd": 884.64,
+      "totalPnlJpy": -4537.6,
+      "totalReturnPct": -0.45,
+      "dailyReturnPct": -0.29
     },
-    "trades": [],
-    "positions": [
+    "trades": [
       {
+        "side": "SELL",
         "symbol": "US.GSAT",
-        "shares": 11,
-        "averagePriceUsd": 81.11,
-        "unrealizedPnlPct": 0,
-        "unrealizedPnlUsd": 0.04
+        "shares": 6,
+        "priceUsd": 81.52,
+        "amountUsd": 489.12,
+        "executedAtEst": "2026-06-12 08:38:30.911"
+      },
+      {
+        "side": "SELL",
+        "symbol": "US.GSAT",
+        "shares": 5,
+        "priceUsd": 81.6,
+        "amountUsd": 408,
+        "executedAtEst": "2026-06-12 08:54:26.925"
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.CRDO",
+        "shares": 3,
+        "priceUsd": 248.58,
+        "amountUsd": 745.74,
+        "executedAtEst": "2026-06-12 10:24:16.767"
+      },
+      {
+        "side": "SELL",
+        "symbol": "US.CRDO",
+        "shares": 3,
+        "priceUsd": 244.42,
+        "amountUsd": 733.26,
+        "executedAtEst": "2026-06-12 10:40:44.050"
       }
     ],
+    "positions": [],
     "signals": {
-      "loops": 350,
-      "buySignals": 60,
+      "loops": 306,
+      "buySignals": 26,
       "sellSignals": 0,
-      "holds": 11214
+      "holds": 10978
     }
   },
   "history": [
@@ -344,6 +369,16 @@
       "totalPnlJpy": -5347.45,
       "totalReturnPct": -0.53,
       "totalTrades": 0
+    },
+    {
+      "date": "2026-06-12",
+      "label": "6/12",
+      "jpyStart": 998404.5,
+      "jpyEnd": 995462.4,
+      "jpyDelta": -2942.1,
+      "totalPnlJpy": -4537.6,
+      "totalReturnPct": -0.45,
+      "totalTrades": 4
     }
   ],
   "notes": [
