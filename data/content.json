@@ -287,6 +287,14 @@
   ],
   "posts": [
     {
+      "title": "6/15売買トピック: RDDTの利益確定回転で100万円目前へ",
+      "path": "/performance/2026/06/15/topics/rddt-profit-turn/",
+      "description": "2026年6月15日ESTの売買トピック。評価額は99.9万円、前日比+3,588円。約定4件、RDDTの約定レンジ2.28%と引け後ノーポジションを整理。",
+      "pubDate": "2026-06-16T08:00:00+09:00",
+      "category": "実績公開",
+      "redirectFrom": "/performance/2026-06-15-rddt-profit-turn/"
+    },
+    {
       "title": "6/12売買トピック: CRDOの急落損切りとノーポジション確認",
       "path": "/performance/2026/06/12/topics/crdo-loss-cut/",
       "description": "2026年6月12日ESTの売買トピック。評価額は99.5万円、前日比-2,942円。約定4件、CRDOの約定レンジ1.70%とGSAT全売却、引け後ノーポジションを整理。",

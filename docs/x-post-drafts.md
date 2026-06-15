@@ -1,19 +1,19 @@
 # X Post Drafts
 
-Generated: 2026-06-12T22:49:16.375Z
+Generated: 2026-06-15T22:50:40.965Z
 
 MUKIMUKI tradeのX投稿下書きです。自動投稿はせず、毎朝の実績確認後に内容を読んでから投稿します。
 
 ## 1. 毎朝の日次実績
 
 ```text
-2026-06-12 米国株トレード実績
-評価額: 995,462円
-100万円比: -0.45%
-前日比: -2,942円
+2026-06-15 米国株トレード実績
+評価額: 998,908円
+100万円比: -0.11%
+前日比: +3,588円
 保有: なし
 
-https://mukimuki-trade.com/performance/2026/06/12/
+https://mukimuki-trade.com/performance/2026/06/15/
 
 #MUKIMUKItrade #米国株 #投資記録
 ```
@@ -21,11 +21,11 @@ https://mukimuki-trade.com/performance/2026/06/12/
 ## 2. 保有銘柄の観察
 
 ```text
-2026-06-12 の持ち越し確認
+2026-06-15 の持ち越し確認
 保有: なし
 評価額と前日比だけでなく、なぜ持ち越したかを翌日以降に見返します。
 
-https://mukimuki-trade.com/performance/2026/06/12/
+https://mukimuki-trade.com/performance/2026/06/15/
 
 #米国株 #投資記録 #MUKIMUKItrade
 ```
