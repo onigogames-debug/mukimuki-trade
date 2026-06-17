@@ -1,6 +1,68 @@
 {
   "articles": [
     {
+      "path": "/research/spacex-valuation-trends/",
+      "categoryKey": "research",
+      "category": "銘柄検討",
+      "categoryUrl": "/category/research/",
+      "eyebrow": "STOCK RESEARCH / SPACE",
+      "title": "SpaceXの動向と非公開株価評価: 宇宙リーダーの事業価値と間接投資",
+      "description": "SpaceX（スペースX）の非公開市場での株価評価・企業価値（約2000億ドル）と、Starlink・Starshipの最新動向、関連する上場宇宙銘柄への影響を整理する銘柄検討メモ。",
+      "summary": "宇宙セクターのリーダーであるSpaceXは非上場企業ですが、セカンダリー市場での取引や関連銘柄、間接的な投資機会を通じて、その株価価値と事業動向を把握することが、宇宙株投資全体の羅針盤になります。",
+      "image": "/assets/mukimuki-research.png",
+      "published": "2026-06-17T13:30:00+09:00",
+      "modified": "2026-06-17T13:30:00+09:00",
+      "tags": [
+        "宇宙株",
+        "SpaceX",
+        "Starlink",
+        "企業価値",
+        "米国株"
+      ],
+      "sections": [
+        {
+          "heading": "SpaceXの非公開株価と企業価値評価",
+          "paragraphs": [
+            "SpaceXは非上場（プライベート）企業であるため、一般の証券口座から直接株式を購入することはできません。しかし、定期的に実施される従業員や初期投資家向けのセカンダリー（二次）セールにおいて、株価の評価額が更新されています。",
+            "直近の2024年末から2025年にかけてのセカンダリー取引では、1株あたり約110ドル〜135ドルの価格で取引され、企業価値（時価総額相当）は2,000億ドルから2,100億ドル（約30兆円〜32兆円）規模に達しています。これは、ボーイングやロッキード・マーティンといった既存 of 宇宙防衛大手の時価総額を大きく上回る水準です。"
+          ]
+        },
+        {
+          "heading": "SpaceXの事業推進力: StarlinkとStarship",
+          "bullets": [
+            "Starlink（スターリンク）: 地球低軌道（LEO）衛星コンステレーションによるブロードバンド通信事業。ユーザー数は全世界で数百万人を超え、すでに単体でのキャッシュフローは黒字化しており、将来的なIPO（新規公開株）の有力候補とされています。",
+            "Starship（スターシップ）: 全長120メートルの完全再使用型巨大ロケット。アルテミス計画における有人月着陸船としての開発や、火星探査の主軸としてテスト飛行が重ねられており、ローンチコストの圧倒的な引き下げ（数分の一以下）を目指しています。",
+            "Falcon 9: 圧倒的な高頻度打ち上げと第1段ロケットの自動帰還・再使用技術により、世界のロケット打ち上げ市場における独占的シェアを確立しています。"
+          ]
+        },
+        {
+          "heading": "SpaceXへの間接投資ルートと関連銘柄",
+          "paragraphs": [
+            "SpaceXの成長をポートフォリオに取り入れるための間接的な手段として、いくつかのルートが存在します。1つ目は、同社の約8%〜10%の株式を保有しているとされるGoogleの親会社であるAlphabet（GOOGL）株の保有です。2つ目は、未公開株に投資するクローズド型ファンドであるDestiny Tech Joint (DXYZ) などの活用ですが、これらはプレミアム（乖離率）が非常に高くなるリスクに注意が必要です。",
+            "また、SpaceXの圧倒的な存在感は、競合する上場宇宙関連銘柄であるRocket Lab (RKLB)、AST Spacemobile (ASTS)、Intuitive Machines (LUNR) などの株価ボラティリティや事業領域の選定にも極めて大きな影響を与えます。SpaceXの打ち上げ価格低下は、小型衛星デプロイを狙う他社にとっての追い風にもなり得ます。"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "label": "Bloomberg: SpaceX Tender Offer Valuation",
+          "url": "https://www.bloomberg.com/news/articles/2024-12-13/spacex-shares-poised-to-be-valued-at-about-250-billion-in-tender"
+        },
+        {
+          "label": "CNBC: SpaceX Starlink and Starship Business Overview",
+          "url": "https://www.cnbc.com/2024/05/23/spacex-valuation-could-reach-200-billion-tender-offer.html"
+        }
+      ],
+      "tickers": [
+        "GOOGL",
+        "DXYZ",
+        "RKLB",
+        "ASTS",
+        "LUNR",
+        "SPX"
+      ]
+    },
+    {
       "path": "/performance/2026/06/15/topics/rddt-profit-turn/",
       "categoryKey": "performance",
       "category": "実績公開",

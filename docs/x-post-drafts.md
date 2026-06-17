@@ -1,31 +1,36 @@
 # X Post Drafts
 
-Generated: 2026-06-16T13:42:02.955Z
+Generated: 2026-06-17T04:38:29.680Z
 
 MUKIMUKI tradeのX投稿下書きです。自動投稿はせず、毎朝の実績確認後に内容を読んでから投稿します。
 
 ## 1. 毎朝の日次実績
 
 ```text
-2026-06-15 米国株トレード実績
-評価額: 998,908円
-100万円比: -0.11%
-前日比: +3,588円
-保有: なし
+MUKIMUKI trade 6/16実績
 
-https://mukimuki-trade.com/performance/2026/06/15/
+100万円スタート
+評価額 ¥977,176.77
+前日比 -¥20,869.52
+100万円比 -2.28%
+約定20件
 
-#MUKIMUKItrade #米国株 #投資記録
+ARMやMETAなど複数銘柄の売買を実施。引け後はALAB・TSLA・METAなどを保有。調整の一日を記録しました。
+
+https://mukimuki-trade.com/performance/2026/06/16/
+
+#米国株 #投資記録
+※投資助言ではありません
 ```
 
 ## 2. 保有銘柄の観察
 
 ```text
-2026-06-15 の持ち越し確認
-保有: なし
+2026-06-16 の持ち越し確認
+保有: ALAB / TSLA / META / BA
 評価額と前日比だけでなく、なぜ持ち越したかを翌日以降に見返します。
 
-https://mukimuki-trade.com/performance/2026/06/15/
+https://mukimuki-trade.com/performance/2026/06/16/
 
 #米国株 #投資記録 #MUKIMUKItrade
 ```
@@ -44,10 +49,10 @@ https://mukimuki-trade.com/performance/2026/06/
 ## 4. 銘柄検討ページへの誘導
 
 ```text
-AIインフラ関連株の銘柄検討: 半導体・CRDO・QBTSを需要と過熱感で見る
+アプリ・広告・金融テック銘柄: 利益化の進み方で分ける
 実績に出てきた銘柄は、候補理由と撤退条件も別ページで整理しています。
 
-https://mukimuki-trade.com/research/ai-infrastructure/
+https://mukimuki-trade.com/research/app-software-fintech/
 
 #米国株 #銘柄検討 #MUKIMUKItrade
 ```

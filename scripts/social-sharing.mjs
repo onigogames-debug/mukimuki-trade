@@ -61,23 +61,130 @@ export const renderXShareSection = ({
       </section>`;
 };
 
+export const generateTradesSummaryText = (report) => {
+  const latest = report.latest;
+  const trades = latest.trades || [];
+  const positions = latest.positions || [];
+  const jpyEnd = latest.jpy.end;
+  const jpyDelta = latest.jpy.delta;
+
+  let summary = '';
+
+  if (trades.length === 0) {
+    summary = `引け後は${positions.length ? positions.map(p => String(p.symbol || '').replace(/^US\./, '')).join('・') + 'を保有' : 'ノーポジション'}。`;
+  } else {
+    // Group trades by symbol
+    const tradeGroups = {};
+    for (const trade of trades) {
+      const symbol = String(trade.symbol || '').replace(/^US\./, '');
+      if (!tradeGroups[symbol]) {
+        tradeGroups[symbol] = [];
+      }
+      tradeGroups[symbol].push(trade);
+    }
+
+    const symbols = Object.keys(tradeGroups);
+    if (symbols.length <= 2) {
+      const parts = [];
+      for (const [symbol, symbolTrades] of Object.entries(tradeGroups)) {
+        const buys = symbolTrades.filter(t => t.side === 'BUY');
+        const sells = symbolTrades.filter(t => t.side === 'SELL');
+
+        const totalBuyShares = buys.reduce((sum, t) => sum + (t.shares || 0), 0);
+        const totalSellShares = sells.reduce((sum, t) => sum + (t.shares || 0), 0);
+
+        if (totalBuyShares > 0 && totalSellShares > 0) {
+          const avgBuyPrice = totalBuyShares > 0 ? buys.reduce((sum, t) => sum + (t.amountUsd || 0), 0) / totalBuyShares : 0;
+          const avgSellPrice = totalSellShares > 0 ? sells.reduce((sum, t) => sum + (t.amountUsd || 0), 0) / totalSellShares : 0;
+          const isProfit = avgSellPrice > avgBuyPrice;
+          const tradeTypeWord = isProfit ? '利確' : '損切り';
+
+          if (sells.length > 1) {
+            const sellsStr = sells.map(t => `${t.shares}株`).join('+');
+            parts.push(`${symbol}を${totalBuyShares}株買い、${sellsStr}で分割${tradeTypeWord}。`);
+          } else {
+            parts.push(`${symbol}を${totalBuyShares}株買い、${totalSellShares}株で${tradeTypeWord}。`);
+          }
+        } else if (totalBuyShares > 0) {
+          parts.push(`${symbol}を${totalBuyShares}株買い。`);
+        } else if (totalSellShares > 0) {
+          if (sells.length > 1) {
+            const sellsStr = sells.map(t => `${t.shares}株`).join('+');
+            parts.push(`${symbol}を${sellsStr}で分割売却。`);
+          } else {
+            parts.push(`${symbol}を${totalSellShares}株売却。`);
+          }
+        }
+      }
+      summary = parts.join(' ');
+    } else {
+      const sampleSymbols = symbols.slice(0, 2).join('や');
+      summary = `${sampleSymbols}など複数銘柄の売買を実施。`;
+    }
+
+    // EOD positions note
+    if (positions.length === 0) {
+      summary += '引け後はノーポジション。';
+    } else {
+      const holdingsStr = positions.slice(0, 3).map(p => `${String(p.symbol || '').replace(/^US\./, '')}`).join('・');
+      const moreStr = positions.length > 3 ? 'など' : '';
+      summary += `引け後は${holdingsStr}${moreStr}を保有。`;
+    }
+  }
+
+  // Concluding sentence
+  if (jpyEnd >= 990000 && jpyEnd < 1000000 && jpyDelta > 0) {
+    summary += '100万円目前まで戻した一日を記録しました。';
+  } else if (jpyEnd >= 1000000 && jpyDelta > 0) {
+    summary += '100万円の大台を突破・維持した一日を記録しました。';
+  } else if (jpyDelta > 0) {
+    summary += '前日比プラスとなった一日を記録しました。';
+  } else {
+    summary += '調整の一日を記録しました。';
+  }
+
+  return summary;
+};
+
 export const performanceXPostText = ({ report, url } = {}) => {
   const latest = report.latest;
-  const holdings = (latest.positions || [])
-    .slice(0, 4)
-    .map((position) => String(position.symbol || '').replace(/^US\./, ''))
-    .filter(Boolean);
-  const date = latest.reportDate;
+  const [, year, month, day] = latest.reportDate.match(/^(\d{4})-(\d{2})-(\d{2})$/) || [];
+  const monthDay = month && day ? `${Number(month)}/${Number(day)}` : latest.reportDate;
+
+  const formatJpyWithDecimalsSign = (val, showPlus = false) => {
+    const isNegative = val < 0;
+    const absValue = Math.abs(val);
+    const formatted = absValue.toLocaleString('ja-JP', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+    if (isNegative) {
+      return `-¥${formatted}`;
+    }
+    return `${showPlus ? '+' : ''}¥${formatted}`;
+  };
+
+  const asset = formatJpyWithDecimalsSign(latest.jpy.end, false);
+  const dailyPnl = formatJpyWithDecimalsSign(latest.jpy.delta, true);
   const totalReturn = `${latest.summary.totalReturnPct >= 0 ? '+' : ''}${latest.summary.totalReturnPct.toFixed(2)}%`;
-  const dailyPnl = `${latest.jpy.delta >= 0 ? '+' : ''}${Math.round(latest.jpy.delta).toLocaleString('ja-JP')}円`;
-  const asset = Math.round(latest.jpy.end).toLocaleString('ja-JP');
+  const tradeCount = latest.summary.totalTrades;
+
+  const tradesSummary = generateTradesSummaryText(report);
+
   return [
-    `${date} 米国株トレード実績`,
-    `評価額: ${asset}円`,
-    `100万円比: ${totalReturn}`,
-    `前日比: ${dailyPnl}`,
-    holdings.length ? `保有: ${holdings.join(' / ')}` : '保有: なし',
+    `MUKIMUKI trade ${monthDay}実績`,
+    '',
+    '100万円スタート',
+    `評価額 ${asset}`,
+    `前日比 ${dailyPnl}`,
+    `100万円比 ${totalReturn}`,
+    `約定${tradeCount}件`,
+    '',
+    tradesSummary,
     '',
     url,
+    '',
+    '#米国株 #投資記録',
+    '※投資助言ではありません',
   ].join('\n');
 };

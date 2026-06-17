@@ -14,7 +14,13 @@ const latest = JSON.parse(await readFile(latestPath, 'utf8'));
 const { articles } = JSON.parse(await readFile(articlesPath, 'utf8'));
 
 const shortSymbol = (symbol) => String(symbol || '').replace(/^US\./, '');
-const latestUrl = `${siteUrl}/performance/${latest.latest.reportDate.replaceAll('-', '/')}/`;
+const dailyTopicArticle = articles.find(
+  (article) => article.categoryKey === 'performance' && 
+  article.path.startsWith(`/performance/${latest.latest.reportDate.replaceAll('-', '/')}/topics/`)
+);
+const latestUrl = dailyTopicArticle 
+  ? `${siteUrl}${dailyTopicArticle.path}`
+  : `${siteUrl}/performance/${latest.latest.reportDate.replaceAll('-', '/')}/`;
 const monthlyUrl = `${siteUrl}/performance/${latest.latest.reportDate.slice(0, 7).replace('-', '/')}/`;
 const holdings = (latest.latest.positions || []).map((position) => shortSymbol(position.symbol)).filter(Boolean);
 const tickerArticle = articles
@@ -26,9 +32,7 @@ const logicArticle = articles.find((article) => article.categoryKey === 'logic')
 const drafts = [
   {
     title: '毎朝の日次実績',
-    body: `${performanceXPostText({ report: latest, url: latestUrl })}
-
-#MUKIMUKItrade #米国株 #投資記録`,
+    body: performanceXPostText({ report: latest, url: latestUrl }),
   },
   {
     title: '保有銘柄の観察',
