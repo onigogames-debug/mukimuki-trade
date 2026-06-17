@@ -1,6 +1,6 @@
 # SEO Progress Report
 
-Generated: 2026-06-17T04:38:29.862Z
+Generated: 2026-06-17T04:49:30.392Z
 
 ## 実装状況
 
@@ -36,7 +36,7 @@ Generated: 2026-06-17T04:38:29.862Z
 
 | URL | title | description | 本文文字数 | 内部リンク | schema |
 |---|---:|---:|---:|---:|---|
-| / | 41 | 68 | 2977 | 43 | Person, WebSite |
+| / | 41 | 68 | 2818 | 35 | Person, WebSite |
 | /about/ | 26 | 58 | 1800 | 19 | AboutPage, BreadcrumbList, FAQPage, Person, WebPage, WebSite |
 | /archive/ | 24 | 62 | 1034 | 24 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /archive/2026-05/ | 27 | 79 | 1330 | 32 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
