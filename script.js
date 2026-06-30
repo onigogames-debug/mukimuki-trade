@@ -454,6 +454,9 @@ if (canvas) {
   canvas.addEventListener("click", () => {
     if (hoveredIndex !== null && clickTargets[hoveredIndex]) {
       window.location.href = clickTargets[hoveredIndex].url;
+    } else {
+      const year = performanceState?.latest?.reportDate ? performanceState.latest.reportDate.slice(0, 4) : new Date().getFullYear();
+      window.location.href = `/performance/${year}/`;
     }
   });
 }
