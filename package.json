@@ -20,7 +20,7 @@
     "seo:audit": "node scripts/seo-audit.mjs",
     "cwv:apply": "node scripts/apply-cwv-optimizations.mjs",
     "build": "npm run images:optimize && npm run critical:extract && npm run articles:generate && npm run performance:pages && node scripts/update-homepage.mjs && npm run seo:generate && npm run sitemap:validate && npm run jsonld:identity && npm run cwv:apply && npm run links:canonical-performance && npm run social:cards && npm run social:drafts && npm run seo:audit",
-    "deploy": "npx wrangler pages deploy . --project-name mukimuki-trade"
+    "deploy": "npx wrangler@3 pages deploy . --project-name mukimuki-trade"
   },
   "devDependencies": {
     "postcss": "^8.5.6",

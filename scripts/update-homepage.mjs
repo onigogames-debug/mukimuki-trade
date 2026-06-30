@@ -77,12 +77,34 @@ const articleListRegex = /<div class="article-list">([\s\S]*?)<\/div>\s*<div cla
 indexHtml = indexHtml.replace(articleListRegex, `<div class="article-list">\n${latestArticlesListHtml}\n      </div>\n\n      <div class="category-strip"`);
 
 // 5. Update Inline Performance Data Script
+if (latest && Array.isArray(latest.history)) {
+  latest.history = latest.history.map((point) => {
+    const pointDate = point.date;
+    if (!pointDate) return point;
+    const formattedDatePath = pointDate.replaceAll('-', '/');
+    const targetTopicPrefix = `/performance/${formattedDatePath}/topics/`;
+    const matchedArticle = articles.find((art) => art.path && art.path.startsWith(targetTopicPrefix));
+    return {
+      ...point,
+      articleUrl: matchedArticle ? matchedArticle.path : `/performance/${formattedDatePath}/`
+    };
+  });
+}
+
 const perfDataRegex = /<script id="perf-data" type="application\/json">([\s\S]*?)<\/script>/;
 indexHtml = indexHtml.replace(
   perfDataRegex,
   `<script id="perf-data" type="application/json">${JSON.stringify(latest)}</script>`
 );
 
+// 6. Update script.js Cache Buster Parameter
+const scriptRegex = /<script src="script\.js\?v=[^"]+"/;
+const currentTimestamp = new Date().toISOString().replaceAll(/[-:.TZ]/g, '').slice(0, 12);
+indexHtml = indexHtml.replace(
+  scriptRegex,
+  `<script src="script.js?v=${currentTimestamp}"`
+);
+
 // Save index.html
 await writeFile(indexPath, indexHtml);
-console.log('Homepage index.html successfully updated with latest articles and performance!');
+console.log('Homepage index.html successfully updated with latest articles, performance and cache buster!');

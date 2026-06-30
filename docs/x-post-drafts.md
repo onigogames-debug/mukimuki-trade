@@ -1,23 +1,23 @@
 # X Post Drafts
 
-Generated: 2026-06-17T04:49:30.221Z
+Generated: 2026-06-29T23:27:19.204Z
 
 MUKIMUKI tradeのX投稿下書きです。自動投稿はせず、毎朝の実績確認後に内容を読んでから投稿します。
 
 ## 1. 毎朝の日次実績
 
 ```text
-MUKIMUKI trade 6/16実績
+MUKIMUKI trade 6/29実績
 
 100万円スタート
-評価額 ¥977,176.77
-前日比 -¥20,869.52
-100万円比 -2.28%
-約定20件
+評価額 ¥920,147.14
+前日比 +¥35,172.86
+100万円比 -7.99%
+約定5件
 
-ARMやMETAなど複数銘柄の売買を実施。引け後はALAB・TSLA・METAなどを保有。調整の一日を記録しました。
+IONQやHONなど複数銘柄の売買を実施。引け後はHON・VSAT・KTOSを保有。前日比プラスとなった一日を記録しました。
 
-https://mukimuki-trade.com/performance/2026/06/16/
+https://mukimuki-trade.com/performance/2026/06/29/topics/space-defense-rebound-ktos-vsat-buy/
 
 #米国株 #投資記録
 ※投資助言ではありません
@@ -26,11 +26,11 @@ https://mukimuki-trade.com/performance/2026/06/16/
 ## 2. 保有銘柄の観察
 
 ```text
-2026-06-16 の持ち越し確認
-保有: ALAB / TSLA / META / BA
+2026-06-29 の持ち越し確認
+保有: HON / VSAT / KTOS
 評価額と前日比だけでなく、なぜ持ち越したかを翌日以降に見返します。
 
-https://mukimuki-trade.com/performance/2026/06/16/
+https://mukimuki-trade.com/performance/2026/06/29/topics/space-defense-rebound-ktos-vsat-buy/
 
 #米国株 #投資記録 #MUKIMUKItrade
 ```
@@ -49,10 +49,10 @@ https://mukimuki-trade.com/performance/2026/06/
 ## 4. 銘柄検討ページへの誘導
 
 ```text
-アプリ・広告・金融テック銘柄: 利益化の進み方で分ける
+Kratos（KTOS）分析: 国策無人ジェットと防衛プラットフォームの実力
 実績に出てきた銘柄は、候補理由と撤退条件も別ページで整理しています。
 
-https://mukimuki-trade.com/research/app-software-fintech/
+https://mukimuki-trade.com/research/ktos-defense-analysis/
 
 #米国株 #銘柄検討 #MUKIMUKItrade
 ```

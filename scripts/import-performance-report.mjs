@@ -101,33 +101,108 @@ const parseCsvRows = (text) => {
   });
 };
 
+const loadJsonTrades = async (date) => {
+  const jsonPath = path.join(path.dirname(reportsDir), 'trade_history.json');
+  let raw;
+  try {
+    raw = await readFile(jsonPath, 'utf8');
+  } catch {
+    return [];
+  }
+  
+  const data = JSON.parse(raw);
+  const trades = [];
+  
+  // 1. Closed trades
+  const closed = data.closed_trades || [];
+  for (const t of closed) {
+    if (String(t.sell_time || '').startsWith(date)) {
+      const shares = Number(t.qty);
+      const priceUsd = Number(t.sell_price);
+      trades.push({
+        side: 'SELL',
+        symbol: t.code,
+        shares,
+        priceUsd,
+        amountUsd: round(shares * priceUsd, 2),
+        executedAtEst: t.sell_time,
+        remark: 'CLOSED_TRADE_SELL',
+      });
+    }
+    if (String(t.buy_time || '').startsWith(date)) {
+      const shares = Number(t.qty);
+      const priceUsd = Number(t.buy_price);
+      trades.push({
+        side: 'BUY',
+        symbol: t.code,
+        shares,
+        priceUsd,
+        amountUsd: round(shares * priceUsd, 2),
+        executedAtEst: t.buy_time,
+        remark: 'CLOSED_TRADE_BUY',
+      });
+    }
+  }
+  
+  // 2. Open positions
+  const openPositions = data.open_positions || {};
+  for (const [code, records] of Object.entries(openPositions)) {
+    for (const r of records) {
+      if (String(r.timestamp || '').startsWith(date)) {
+        const shares = Number(r.qty);
+        const priceUsd = Number(r.price);
+        trades.push({
+          side: 'BUY',
+          symbol: r.code || code,
+          shares,
+          priceUsd,
+          amountUsd: round(shares * priceUsd, 2),
+          executedAtEst: r.timestamp,
+          remark: r.remark || 'OPEN_POSITION_BUY',
+        });
+      }
+    }
+  }
+  
+  return trades;
+};
+
 const loadCsvTrades = async (date) => {
   const csvPath = path.join(reportsDir, 'jp_account_mix_report.csv');
   let raw;
   try {
     raw = await readFile(csvPath, 'utf8');
   } catch {
-    return [];
+    raw = '';
   }
 
-  return parseCsvRows(raw)
-    .filter((row) => row.label === '約定履歴')
-    .filter((row) => String(row.create_time || '').startsWith(date))
-    .filter((row) => numberFrom(row.dealt_qty) > 0)
-    .map((row) => {
-      const shares = numberFrom(row.dealt_qty);
-      const priceUsd = numberFrom(row.dealt_avg_price) || numberFrom(row.price);
-      return {
-        side: row.trd_side,
-        symbol: row.code,
-        shares,
-        priceUsd,
-        amountUsd: round(shares * priceUsd, 2),
-        executedAtEst: row.updated_time || row.create_time,
-        remark: row.remark || null,
-      };
-    })
-    .filter((trade) => trade.side && trade.symbol && trade.shares && trade.priceUsd);
+  let trades = [];
+  if (raw) {
+    trades = parseCsvRows(raw)
+      .filter((row) => row.label === '約定履歴')
+      .filter((row) => String(row.create_time || '').startsWith(date))
+      .filter((row) => numberFrom(row.dealt_qty) > 0)
+      .map((row) => {
+        const shares = numberFrom(row.dealt_qty);
+        const priceUsd = numberFrom(row.dealt_avg_price) || numberFrom(row.price);
+        return {
+          side: row.trd_side,
+          symbol: row.code,
+          shares,
+          priceUsd,
+          amountUsd: round(shares * priceUsd, 2),
+          executedAtEst: row.updated_time || row.create_time,
+          remark: row.remark || null,
+        };
+      })
+      .filter((trade) => trade.side && trade.symbol && trade.shares && trade.priceUsd);
+  }
+
+  if (trades.length === 0) {
+    trades = await loadJsonTrades(date);
+  }
+
+  return trades;
 };
 
 const summarizeTrades = (trades) => {

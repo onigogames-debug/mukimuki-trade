@@ -16,6 +16,8 @@ tabs.forEach((tab) => {
 });
 
 const canvas = document.getElementById("performanceChart");
+let clickTargets = [];
+let hoveredIndex = null;
 const fallbackPerformance = {
   startCapitalJpy: 1000000,
   generatedAtDisplay: "2026.06.04 05:00:56 JST",
@@ -124,12 +126,14 @@ function getChartPoints(data) {
   const validPoints = points.map((point) => ({
     date: point.label || point.date,
     value: asNumber(point.jpyEnd ?? point.value),
+    articleUrl: point.articleUrl || `/performance/${(point.date || '').replaceAll('-', '/')}/`,
   })).filter((point) => point.date && point.value !== null);
 
   if (validPoints.length >= 2) return validPoints.slice(-12);
   return fallbackPerformance.history.map((point) => ({
     date: point.label,
     value: point.jpyEnd,
+    articleUrl: `/performance/${(point.date || '').replaceAll('-', '/')}/`,
   }));
 }
 
@@ -318,6 +322,85 @@ function drawChart(data = performanceState) {
   ctx.textAlign = "right";
   ctx.textBaseline = "bottom";
   ctx.fillText(points[points.length - 1].date, latestPoint.x - 12, latestPoint.y - 12);
+
+  // Cache target coordinates and data
+  clickTargets = coords.map((point, index) => ({
+    x: point.x,
+    y: point.y,
+    url: points[index].articleUrl,
+    date: points[index].date,
+    value: points[index].value,
+  }));
+
+  // Draw tooltip for hovered point
+  if (hoveredIndex !== null && clickTargets[hoveredIndex]) {
+    const target = clickTargets[hoveredIndex];
+
+    ctx.save();
+
+    // Highlight hovered point with outer glow effect
+    ctx.beginPath();
+    ctx.arc(target.x, target.y, 13, 0, Math.PI * 2);
+    ctx.fillStyle = "rgba(31, 94, 255, 0.24)";
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(target.x, target.y, 8, 0, Math.PI * 2);
+    ctx.fillStyle = "#1f5eff";
+    ctx.fill();
+    ctx.strokeStyle = "#ffffff";
+    ctx.lineWidth = 2.5;
+    ctx.stroke();
+
+    // Setup tooltip text
+    ctx.font = "bold 12px system-ui, sans-serif";
+    const textDate = `${target.date} 実績`;
+    const textVal = formatYen(target.value);
+    const textLink = "クリックで詳細を見る ↗";
+    const metrics = [ctx.measureText(textDate), ctx.measureText(textVal), ctx.measureText(textLink)];
+    const tooltipWidth = Math.max(...metrics.map((m) => m.width)) + 24;
+    const tooltipHeight = 74;
+
+    // Tooltip position safety bounds
+    let tooltipX = target.x - tooltipWidth / 2;
+    if (tooltipX < padding.left) tooltipX = padding.left;
+    if (tooltipX + tooltipWidth > width - padding.right) tooltipX = width - padding.right - tooltipWidth;
+
+    let tooltipY = target.y - tooltipHeight - 16;
+    if (tooltipY < 12) {
+      tooltipY = target.y + 16; // flip below the point if it goes off screen
+    }
+
+    // Draw box shadow manually using context shadows
+    ctx.shadowColor = "rgba(17, 24, 39, 0.32)";
+    ctx.shadowBlur = 12;
+    ctx.shadowOffsetX = 0;
+    ctx.shadowOffsetY = 6;
+
+    ctx.fillStyle = "rgba(17, 24, 39, 0.96)";
+    ctx.beginPath();
+    ctx.roundRect(tooltipX, tooltipY, tooltipWidth, tooltipHeight, 8);
+    ctx.fill();
+
+    // Draw text inside tooltip
+    ctx.shadowColor = "transparent";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "top";
+
+    ctx.fillStyle = "rgba(255, 255, 255, 0.76)";
+    ctx.font = "700 11px system-ui, sans-serif";
+    ctx.fillText(textDate, tooltipX + tooltipWidth / 2, tooltipY + 10);
+
+    ctx.fillStyle = "#f5c84b";
+    ctx.font = "900 14px system-ui, sans-serif";
+    ctx.fillText(textVal, tooltipX + tooltipWidth / 2, tooltipY + 26);
+
+    ctx.fillStyle = "#93c5fd";
+    ctx.font = "800 10px system-ui, sans-serif";
+    ctx.fillText(textLink, tooltipX + tooltipWidth / 2, tooltipY + 48);
+
+    ctx.restore();
+  }
 }
 
 async function loadPerformanceData() {
@@ -342,3 +425,35 @@ async function loadPerformanceData() {
 
 drawChart(fallbackPerformance);
 loadPerformanceData();
+
+if (canvas) {
+  canvas.addEventListener("mousemove", (event) => {
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    const mouseX = (event.clientX - rect.left) * scaleX;
+    const mouseY = (event.clientY - rect.top) * scaleY;
+
+    let nextHoveredIndex = null;
+    for (let i = 0; i < clickTargets.length; i++) {
+      const target = clickTargets[i];
+      const dist = Math.hypot(mouseX - target.x, mouseY - target.y);
+      if (dist < 18) {
+        nextHoveredIndex = i;
+        break;
+      }
+    }
+
+    if (nextHoveredIndex !== hoveredIndex) {
+      hoveredIndex = nextHoveredIndex;
+      canvas.style.cursor = hoveredIndex !== null ? "pointer" : "default";
+      drawChart(performanceState);
+    }
+  });
+
+  canvas.addEventListener("click", () => {
+    if (hoveredIndex !== null && clickTargets[hoveredIndex]) {
+      window.location.href = clickTargets[hoveredIndex].url;
+    }
+  });
+}

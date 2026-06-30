@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "siteName": "MUKIMUKI trade",
   "sourceName": "Autotrade daily report",
-  "sourceReport": "report_2026-06-16.txt",
-  "generatedAt": "2026-06-17T05:00:11+09:00",
-  "generatedAtDisplay": "2026.06.17 05:00:11 JST",
+  "sourceReport": "report_2026-06-29.txt + jp_account_mix_report.csv",
+  "generatedAt": "2026-06-30T08:26:43+09:00",
+  "generatedAtDisplay": "2026.06.30 08:26:43 JST",
   "timezone": {
     "reportDate": "EST",
     "generatedAt": "Asia/Tokyo"
@@ -14,202 +14,104 @@
   "challengeStartDate": "2026-04-24",
   "affiliateUrl": "https://j.jp.moomoo.com/0BdcjG",
   "latest": {
-    "reportDate": "2026-06-16",
-    "reportDateDisplay": "2026.06.16 EST",
-    "label": "6/16",
+    "reportDate": "2026-06-29",
+    "reportDateDisplay": "2026.06.29 EST",
+    "label": "6/29",
     "jpy": {
-      "start": 998046.29,
-      "end": 977176.77,
-      "delta": -20869.52
+      "start": 884974.28,
+      "end": 920147.14,
+      "delta": 35172.86
     },
     "usd": {
-      "start": 6228,
-      "end": 6089.54,
-      "delta": -138.4614
+      "start": 5472.6791,
+      "end": 5683.7601,
+      "delta": 211.081
     },
     "summary": {
-      "totalTrades": 20,
-      "totalBuyUsd": 9523.83,
-      "totalSellUsd": 3469.75,
-      "usdPnl": -138.46,
-      "cashFlowUsd": -6054.09,
-      "totalPnlJpy": -22823.23,
-      "totalReturnPct": -2.28,
-      "dailyReturnPct": -2.09
+      "totalTrades": 5,
+      "totalBuyUsd": 1412.05,
+      "totalSellUsd": 354.6,
+      "usdPnl": -60.77,
+      "cashFlowUsd": -1057.45,
+      "totalPnlJpy": -79852.86,
+      "totalReturnPct": -7.99,
+      "dailyReturnPct": 3.97
     },
     "trades": [
       {
-        "side": "BUY",
-        "symbol": "US.ARM",
-        "shares": 2,
-        "priceUsd": 419.5,
-        "amountUsd": 839,
-        "executedAtEst": "2026-06-16 09:53:40.520"
+        "side": "SELL",
+        "symbol": "US.IONQ",
+        "shares": 7,
+        "priceUsd": 50.6575,
+        "amountUsd": 354.6,
+        "executedAtEst": "2026-06-29 08:34:47.563",
+        "remark": "CLOSED_TRADE_SELL"
       },
       {
         "side": "BUY",
-        "symbol": "US.META",
+        "symbol": "US.IONQ",
+        "shares": 7,
+        "priceUsd": 59.339,
+        "amountUsd": 415.37,
+        "executedAtEst": "2026-06-29T21:34:46",
+        "remark": "CLOSED_TRADE_BUY"
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.HON",
+        "shares": 3,
+        "priceUsd": 229.753,
+        "amountUsd": 689.26,
+        "executedAtEst": "2026-06-29T21:34:46",
+        "remark": "RECONCILED_BROKER"
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.VSAT",
         "shares": 1,
-        "priceUsd": 602.89,
-        "amountUsd": 602.89,
-        "executedAtEst": "2026-06-16 09:53:40.725"
+        "priceUsd": 71.42,
+        "amountUsd": 71.42,
+        "executedAtEst": "2026-06-29 10:03:15.185",
+        "remark": "BUY:【順張り】 / MAゴールデンク"
       },
       {
         "side": "BUY",
-        "symbol": "US.GOOGL",
-        "shares": 2,
-        "priceUsd": 368.97,
-        "amountUsd": 737.95,
-        "executedAtEst": "2026-06-16 10:01:27.591"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.RGTI",
-        "shares": 42,
-        "priceUsd": 21.86,
-        "amountUsd": 918.12,
-        "executedAtEst": "2026-06-16 10:01:28.813"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.TSLA",
-        "shares": 2,
-        "priceUsd": 409.22,
-        "amountUsd": 818.44,
-        "executedAtEst": "2026-06-16 10:01:38.081"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.ARM",
-        "shares": 1,
-        "priceUsd": 422.39,
-        "amountUsd": 422.39,
-        "executedAtEst": "2026-06-16 10:03:43.445"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.QCOM",
-        "shares": 4,
-        "priceUsd": 225.54,
-        "amountUsd": 902.16,
-        "executedAtEst": "2026-06-16 10:23:09.191"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.RGTI",
-        "shares": 42,
-        "priceUsd": 21.16,
-        "amountUsd": 888.93,
-        "executedAtEst": "2026-06-16 10:23:47.612"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.QCOM",
-        "shares": 2,
-        "priceUsd": 226.53,
-        "amountUsd": 453.06,
-        "executedAtEst": "2026-06-16 10:27:20.853"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.GOOGL",
-        "shares": 1,
-        "priceUsd": 373.39,
-        "amountUsd": 373.39,
-        "executedAtEst": "2026-06-16 10:43:55.620"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.ARM",
-        "shares": 1,
-        "priceUsd": 405.05,
-        "amountUsd": 405.05,
-        "executedAtEst": "2026-06-16 10:46:08.445"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.GOOGL",
-        "shares": 1,
-        "priceUsd": 372.69,
-        "amountUsd": 372.69,
-        "executedAtEst": "2026-06-16 10:49:27.192"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.BA",
-        "shares": 4,
-        "priceUsd": 227.46,
-        "amountUsd": 909.82,
-        "executedAtEst": "2026-06-16 10:54:58.371"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.QCOM",
-        "shares": 2,
-        "priceUsd": 218.44,
-        "amountUsd": 436.89,
-        "executedAtEst": "2026-06-16 11:27:04.641"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.ALAB",
-        "shares": 10,
-        "priceUsd": 367.62,
-        "amountUsd": 3676.2,
-        "executedAtEst": "2026-06-16 11:43:03.137"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.SATS",
-        "shares": 1,
-        "priceUsd": 119.25,
-        "amountUsd": 119.25,
-        "executedAtEst": "2026-06-16 12:07:12.971"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.SATS",
-        "shares": 1,
-        "priceUsd": 117.36,
-        "amountUsd": 117.36,
-        "executedAtEst": "2026-06-16 12:31:17.927"
+        "symbol": "US.KTOS",
+        "shares": 5,
+        "priceUsd": 47.2,
+        "amountUsd": 236,
+        "executedAtEst": "2026-06-29 10:03:38.719",
+        "remark": "BUY:【逆張り】 / RSI売られ過ぎ"
       }
     ],
     "positions": [
       {
-        "symbol": "US.ALAB",
-        "shares": 10,
-        "averagePriceUsd": 368.11,
-        "unrealizedPnlPct": -1.81,
-        "unrealizedPnlUsd": -66.75
+        "symbol": "US.HON",
+        "shares": 3,
+        "averagePriceUsd": 229.75,
+        "unrealizedPnlPct": 8.11,
+        "unrealizedPnlUsd": 55.9
       },
       {
-        "symbol": "US.TSLA",
-        "shares": 2,
-        "averagePriceUsd": 409.75,
-        "unrealizedPnlPct": -1.28,
-        "unrealizedPnlUsd": -10.5
-      },
-      {
-        "symbol": "US.META",
+        "symbol": "US.VSAT",
         "shares": 1,
-        "averagePriceUsd": 603.69,
-        "unrealizedPnlPct": -0.62,
-        "unrealizedPnlUsd": -3.72
+        "averagePriceUsd": 71.42,
+        "unrealizedPnlPct": 0.28,
+        "unrealizedPnlUsd": 0.2
       },
       {
-        "symbol": "US.BA",
-        "shares": 4,
-        "averagePriceUsd": 227.75,
-        "unrealizedPnlPct": -0.17,
-        "unrealizedPnlUsd": -1.53
+        "symbol": "US.KTOS",
+        "shares": 5,
+        "averagePriceUsd": 47.2,
+        "unrealizedPnlPct": -0.06,
+        "unrealizedPnlUsd": -0.14
       }
     ],
     "signals": {
-      "loops": 331,
-      "buySignals": 1057,
-      "sellSignals": 1,
-      "holds": 7007
+      "loops": 11,
+      "buySignals": 25,
+      "sellSignals": 4,
+      "holds": 118
     }
   },
   "history": [
@@ -484,6 +386,16 @@
       "totalTrades": 20
     },
     {
+      "date": "2026-06-09",
+      "label": "6/9",
+      "jpyStart": 1005894.03,
+      "jpyEnd": 1005328.44,
+      "jpyDelta": -565.59,
+      "totalPnlJpy": 5328.44,
+      "totalReturnPct": 0.53,
+      "totalTrades": 0
+    },
+    {
       "date": "2026-06-10",
       "label": "6/10",
       "jpyStart": 1005894.03,
@@ -532,6 +444,86 @@
       "totalPnlJpy": -22823.23,
       "totalReturnPct": -2.28,
       "totalTrades": 20
+    },
+    {
+      "date": "2026-06-17",
+      "label": "6/17",
+      "jpyStart": 983345.5,
+      "jpyEnd": 1000500.3,
+      "jpyDelta": 17154.8,
+      "totalPnlJpy": 500.3,
+      "totalReturnPct": 0.05,
+      "totalTrades": 20
+    },
+    {
+      "date": "2026-06-18",
+      "label": "6/18",
+      "jpyStart": 999061.2,
+      "jpyEnd": 987657.44,
+      "jpyDelta": -11403.77,
+      "totalPnlJpy": -12342.56,
+      "totalReturnPct": -1.23,
+      "totalTrades": 23
+    },
+    {
+      "date": "2026-06-19",
+      "label": "6/19",
+      "jpyStart": 986811.13,
+      "jpyEnd": 986811.13,
+      "jpyDelta": 0,
+      "totalPnlJpy": -13188.87,
+      "totalReturnPct": -1.32,
+      "totalTrades": 0
+    },
+    {
+      "date": "2026-06-22",
+      "label": "6/22",
+      "jpyStart": 989356.14,
+      "jpyEnd": 992448.89,
+      "jpyDelta": 3092.75,
+      "totalPnlJpy": -7551.11,
+      "totalReturnPct": -0.76,
+      "totalTrades": 13
+    },
+    {
+      "date": "2026-06-23",
+      "label": "6/23",
+      "jpyStart": 991526.45,
+      "jpyEnd": 990959.37,
+      "jpyDelta": -567.08,
+      "totalPnlJpy": -9040.63,
+      "totalReturnPct": -0.9,
+      "totalTrades": 31
+    },
+    {
+      "date": "2026-06-24",
+      "label": "6/24",
+      "jpyStart": 973798.27,
+      "jpyEnd": 959237.01,
+      "jpyDelta": -14561.26,
+      "totalPnlJpy": -40762.99,
+      "totalReturnPct": -4.08,
+      "totalTrades": 0
+    },
+    {
+      "date": "2026-06-25",
+      "label": "6/25",
+      "jpyStart": 959237.01,
+      "jpyEnd": 959237.01,
+      "jpyDelta": 0,
+      "totalPnlJpy": -40762.99,
+      "totalReturnPct": -4.08,
+      "totalTrades": 0
+    },
+    {
+      "date": "2026-06-29",
+      "label": "6/29",
+      "jpyStart": 884974.28,
+      "jpyEnd": 920147.14,
+      "jpyDelta": 35172.86,
+      "totalPnlJpy": -79852.86,
+      "totalReturnPct": -7.99,
+      "totalTrades": 5
     }
   ],
   "notes": [

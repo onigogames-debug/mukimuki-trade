@@ -16,6 +16,7 @@ const articlesPath = path.join(root, 'data', 'articles.json');
 const contentPath = path.join(root, 'data', 'content.json');
 const siteUrl = 'https://mukimuki-trade.com';
 const officialXUrl = 'https://x.com/OnigoGames';
+const officialNoteUrl = 'https://note.com/mukimuki_trade';
 const { articles } = JSON.parse(await readFile(articlesPath, 'utf8'));
 const content = JSON.parse(await readFile(contentPath, 'utf8'));
 
@@ -84,6 +85,7 @@ const nav = `    <nav class="nav-links" aria-label="主要メニュー">
       <a href="/moomoo/">moomoo</a>
       <a href="/archive/">アーカイブ</a>
       <a href="/profile/">運営者</a>
+      <a href="${officialNoteUrl}" target="_blank" rel="noopener">公式note</a>
       <a href="${officialXUrl}" target="_blank" rel="me noopener">公式X</a>
     </nav>`;
 
@@ -98,6 +100,7 @@ const mobileMenu = `    <details class="mobile-menu">
         <a href="/moomoo/">moomoo</a>
         <a href="/archive/">アーカイブ</a>
         <a href="/profile/">運営者</a>
+        <a href="${officialNoteUrl}" target="_blank" rel="noopener">公式note</a>
         <a href="${officialXUrl}" target="_blank" rel="me noopener">公式X</a>
       </nav>
     </details>`;
@@ -114,7 +117,7 @@ ${nav}
 const footer = `  <footer class="site-footer">
     <strong>MUKIMUKI trade</strong>
     <p>100万円からの米国株トレード実績、銘柄メモ、売買ロジックを記録しています。掲載内容には広告リンクを含む場合があります。</p>
-    <nav class="footer-links" aria-label="補助リンク"><a href="/profile/">運営者</a><a href="/archive/">アーカイブ</a><a href="/sitemap/">サイトマップ</a><a href="/feed.xml">RSS</a><a href="/about/">運営方針</a><a href="${officialXUrl}" target="_blank" rel="me noopener">公式X</a></nav>
+    <nav class="footer-links" aria-label="補助リンク"><a href="/profile/">運営者</a><a href="/archive/">アーカイブ</a><a href="/sitemap/">サイトマップ</a><a href="/feed.xml">RSS</a><a href="/about/">運営方針</a><a href="${officialNoteUrl}" target="_blank" rel="noopener">公式note</a><a href="${officialXUrl}" target="_blank" rel="me noopener">公式X</a></nav>
   </footer>`;
 
 const renderMukiStamp = (label, tone = 'yellow') => `<span class="muki-stamp muki-stamp--${escapeHtml(tone)}">
