@@ -632,16 +632,45 @@ const renderYearPage = (date, reports) => {
     ? latestReport.latest.jpy.end - firstReport.latest.jpy.end
     : 0;
 
-  const monthlyDataPoints = monthKeys.map((key) => {
-    const monthlyReports = yearReports.filter(({ report }) => report.latest.reportDate.startsWith(key));
-    const monthlyLatest = monthlyReports.at(-1)?.report;
+  const getWeekKey = (dateStr) => {
+    const [y, m, d] = dateStr.split('-').map(Number);
+    const date = new Date(y, m - 1, d);
+    const day = date.getDay();
+    const diff = date.getDate() - day + (day === 0 ? -6 : 1);
+    const monday = new Date(date.setDate(diff));
+    const yyyy = monday.getFullYear();
+    const mm = String(monday.getMonth() + 1).padStart(2, '0');
+    const dd = String(monday.getDate()).padStart(2, '0');
+    return `${yyyy}-${mm}-${dd}`;
+  };
+
+  const weeklyReportsMap = new Map();
+  for (const { report } of yearReports) {
+    const weekKey = getWeekKey(report.latest.reportDate);
+    weeklyReportsMap.set(weekKey, report);
+  }
+
+  const sortedWeekKeys = [...weeklyReportsMap.keys()].sort();
+  const weeklyDataPoints = sortedWeekKeys.map((weekKey) => {
+    const report = weeklyReportsMap.get(weekKey);
+    const [, month, day] = weekKey.split('-');
     return {
-      label: `${key.slice(5, 7)}月`,
-      value: monthlyLatest ? monthlyLatest.latest.jpy.end : null,
-      url: `/performance/${key.replace('-', '/')}/`,
-      dateLabel: `${key.replace('-', '年')}月`,
+      label: `${Number(month)}/${Number(day)}週`,
+      value: report.latest.jpy.end,
+      url: `/performance/${report.latest.reportDate.replaceAll('-', '/')}/`,
+      dateLabel: `${report.latest.reportDate.replaceAll('-', '.')} EST 時点`,
     };
-  }).filter((pt) => pt.value !== null);
+  });
+
+  const chartPoints = [
+    {
+      label: 'スタート',
+      value: 1000000,
+      url: '/performance/',
+      dateLabel: '元本100万円開始時点',
+    },
+    ...weeklyDataPoints,
+  ];
 
   return `<!doctype html>
 <html lang="ja">
@@ -686,10 +715,10 @@ ${renderStampRow([['年次アーカイブ', 'blue']])}
     <section class="article-body">
       <div class="chart-panel" style="margin-bottom: 28px;">
         <div>
-          <p class="eyebrow">MONTHLY ASSET LINE</p>
-          <h3>月次の資産推移を折れ線グラフで確認</h3>
+          <p class="eyebrow">WEEKLY ASSET LINE</p>
+          <h3>週次の資産推移を折れ線グラフで確認</h3>
         </div>
-        <canvas id="monthlyPerformanceChart" width="980" height="380" aria-label="月次ベースの資産曲線チャート"></canvas>
+        <canvas id="weeklyPerformanceChart" width="980" height="380" aria-label="週次ベースの資産曲線チャート"></canvas>
       </div>
 
       <section class="article-panel">
@@ -722,12 +751,12 @@ ${monthKeys.reverse().map((key) => {
 ${footer}
   <script>
     (function() {
-      const canvas = document.getElementById("monthlyPerformanceChart");
+      const canvas = document.getElementById("weeklyPerformanceChart");
       if (!canvas) return;
       const ctx = canvas.getContext("2d");
       const width = canvas.width;
       const height = canvas.height;
-      const points = ${JSON.stringify(monthlyDataPoints)};
+      const points = ${JSON.stringify(chartPoints)};
       if (!points || points.length === 0) return;
 
       const padding = { top: 76, right: 40, bottom: 60, left: 90 };
@@ -758,7 +787,7 @@ ${footer}
 
         ctx.fillStyle = "#111827";
         ctx.font = "700 16px system-ui, sans-serif";
-        ctx.fillText("月次資産推移 (" + ${year} + "年)", padding.left, 28);
+        ctx.fillText("週次資産推移 (" + ${year} + "年)", padding.left, 28);
 
         ctx.strokeStyle = "rgba(17, 24, 39, 0.18)";
         ctx.lineWidth = 2;
@@ -885,7 +914,7 @@ ${footer}
           ctx.font = "bold 11px system-ui, sans-serif";
           const textDate = target.label;
           const textVal = "評価額: ¥" + Math.round(target.value).toLocaleString();
-          const textLink = "クリックで月次まとめへ ↗";
+          const textLink = target.url === "/performance/" ? "クリックで最新実績へ ↗" : "クリックで実績詳細へ ↗";
           const metrics = [ctx.measureText(textDate), ctx.measureText(textVal), ctx.measureText(textLink)];
           const tooltipWidth = Math.max.apply(null, metrics.map(function(m) { return m.width; })) + 20;
           const tooltipHeight = 64;

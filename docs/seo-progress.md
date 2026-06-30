@@ -1,6 +1,6 @@
 # SEO Progress Report
 
-Generated: 2026-06-30T11:42:18.499Z
+Generated: 2026-06-30T11:55:57.186Z
 
 ## 実装状況
 
@@ -53,7 +53,7 @@ Generated: 2026-06-30T11:42:18.499Z
 | /logic/signal-score/ | 46 | 43 | 1244 | 22 | Article, BreadcrumbList, Person, WebSite |
 | /moomoo/ | 44 | 50 | 1334 | 23 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/ | 44 | 58 | 1144 | 33 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
-| /performance/2026/ | 30 | 52 | 1087 | 22 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
+| /performance/2026/ | 30 | 52 | 1086 | 22 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /performance/2026/05/ | 41 | 62 | 1949 | 35 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /performance/2026/05/26/ | 47 | 77 | 2717 | 34 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/05/27/ | 52 | 82 | 2861 | 36 | Article, BreadcrumbList, FAQPage, Person, WebSite |
