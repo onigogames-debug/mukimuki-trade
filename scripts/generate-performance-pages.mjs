@@ -632,6 +632,17 @@ const renderYearPage = (date, reports) => {
     ? latestReport.latest.jpy.end - firstReport.latest.jpy.end
     : 0;
 
+  const monthlyDataPoints = monthKeys.map((key) => {
+    const monthlyReports = yearReports.filter(({ report }) => report.latest.reportDate.startsWith(key));
+    const monthlyLatest = monthlyReports.at(-1)?.report;
+    return {
+      label: `${key.slice(5, 7)}月`,
+      value: monthlyLatest ? monthlyLatest.latest.jpy.end : null,
+      url: `/performance/${key.replace('-', '/')}/`,
+      dateLabel: `${key.replace('-', '年')}月`,
+    };
+  }).filter((pt) => pt.value !== null);
+
   return `<!doctype html>
 <html lang="ja">
 <head>
@@ -673,6 +684,14 @@ ${renderStampRow([['年次アーカイブ', 'blue']])}
       </div>
     </section>
     <section class="article-body">
+      <div class="chart-panel" style="margin-bottom: 28px;">
+        <div>
+          <p class="eyebrow">MONTHLY ASSET LINE</p>
+          <h3>月次の資産推移を折れ線グラフで確認</h3>
+        </div>
+        <canvas id="monthlyPerformanceChart" width="980" height="380" aria-label="月次ベースの資産曲線チャート"></canvas>
+      </div>
+
       <section class="article-panel">
         <h2>${year}年の概況</h2>
         <div class="stats-grid">
@@ -701,6 +720,238 @@ ${monthKeys.reverse().map((key) => {
     </section>
   </main>
 ${footer}
+  <script>
+    (function() {
+      const canvas = document.getElementById("monthlyPerformanceChart");
+      if (!canvas) return;
+      const ctx = canvas.getContext("2d");
+      const width = canvas.width;
+      const height = canvas.height;
+      const points = ${JSON.stringify(monthlyDataPoints)};
+      if (!points || points.length === 0) return;
+
+      const padding = { top: 76, right: 40, bottom: 60, left: 90 };
+      const chartWidth = width - padding.left - padding.right;
+      const chartHeight = height - padding.top - padding.bottom;
+
+      const values = points.map(function(p) { return p.value; });
+      const rawMin = Math.min.apply(null, values.concat([1000000]));
+      const rawMax = Math.max.apply(null, values.concat([1000000]));
+      const min = Math.floor((rawMin - 50000) / 50000) * 50000;
+      const max = Math.ceil((rawMax + 50000) / 50000) * 50000;
+
+      const xFor = function(index) {
+        if (points.length <= 1) return padding.left + chartWidth / 2;
+        return padding.left + (chartWidth / (points.length - 1)) * index;
+      };
+      const yFor = function(val) {
+        return padding.top + chartHeight - ((val - min) / (max - min)) * chartHeight;
+      };
+
+      let clickTargets = [];
+      let hoveredIndex = null;
+
+      function draw() {
+        ctx.clearRect(0, 0, width, height);
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(0, 0, width, height);
+
+        ctx.fillStyle = "#111827";
+        ctx.font = "700 16px system-ui, sans-serif";
+        ctx.fillText("月次資産推移 (" + ${year} + "年)", padding.left, 28);
+
+        ctx.strokeStyle = "rgba(17, 24, 39, 0.18)";
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(padding.left, padding.top);
+        ctx.lineTo(padding.left, padding.top + chartHeight);
+        ctx.lineTo(width - padding.right, padding.top + chartHeight);
+        ctx.stroke();
+
+        ctx.strokeStyle = "rgba(17, 24, 39, 0.1)";
+        ctx.fillStyle = "rgba(17, 24, 39, 0.68)";
+        ctx.font = "700 11px system-ui, sans-serif";
+        ctx.textAlign = "right";
+        ctx.textBaseline = "middle";
+        const yTickCount = 5;
+        for (let i = 0; i < yTickCount; i++) {
+          const val = min + ((max - min) / (yTickCount - 1)) * i;
+          const y = yFor(val);
+          ctx.beginPath();
+          ctx.moveTo(padding.left, y);
+          ctx.lineTo(width - padding.right, y);
+          ctx.stroke();
+          ctx.fillText("¥" + Math.round(val).toLocaleString(), padding.left - 10, y);
+        }
+
+        const baselineY = yFor(1000000);
+        ctx.save();
+        ctx.setLineDash([6, 5]);
+        ctx.strokeStyle = "rgba(31, 94, 255, 0.42)";
+        ctx.beginPath();
+        ctx.moveTo(padding.left, baselineY);
+        ctx.lineTo(width - padding.right, baselineY);
+        ctx.stroke();
+        ctx.restore();
+        ctx.fillStyle = "#1f5eff";
+        ctx.textAlign = "left";
+        ctx.fillText("基準元本 ¥1,000,000", padding.left + 8, baselineY - 10);
+
+        ctx.fillStyle = "rgba(17, 24, 39, 0.68)";
+        ctx.font = "700 11px system-ui, sans-serif";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "top";
+        points.forEach(function(point, index) {
+          const x = xFor(index);
+          ctx.beginPath();
+          ctx.moveTo(x, padding.top + chartHeight);
+          ctx.lineTo(x, padding.top + chartHeight + 4);
+          ctx.strokeStyle = "rgba(17, 24, 39, 0.2)";
+          ctx.stroke();
+          ctx.fillText(point.label, x, padding.top + chartHeight + 8);
+        });
+
+        const coords = points.map(function(point, index) {
+          return {
+            x: xFor(index),
+            y: yFor(point.value),
+          };
+        });
+
+        clickTargets = coords.map(function(point, index) {
+          return {
+            x: point.x,
+            y: point.y,
+            url: points[index].url,
+            label: points[index].dateLabel,
+            value: points[index].value,
+          };
+        });
+
+        if (points.length > 1) {
+          ctx.beginPath();
+          coords.forEach(function(point, index) {
+            if (index === 0) ctx.moveTo(point.x, point.y);
+            else ctx.lineTo(point.x, point.y);
+          });
+          ctx.lineTo(coords[coords.length - 1].x, padding.top + chartHeight);
+          ctx.lineTo(coords[0].x, padding.top + chartHeight);
+          ctx.closePath();
+          const gradient = ctx.createLinearGradient(0, padding.top, 0, padding.top + chartHeight);
+          gradient.addColorStop(0, "rgba(31, 94, 255, 0.2)");
+          gradient.addColorStop(1, "rgba(31, 94, 255, 0.01)");
+          ctx.fillStyle = gradient;
+          ctx.fill();
+
+          ctx.beginPath();
+          coords.forEach(function(point, index) {
+            if (index === 0) ctx.moveTo(point.x, point.y);
+            else ctx.lineTo(point.x, point.y);
+          });
+          ctx.strokeStyle = "#1f5eff";
+          ctx.lineWidth = 4;
+          ctx.lineJoin = "round";
+          ctx.lineCap = "round";
+          ctx.stroke();
+        }
+
+        coords.forEach(function(point, index) {
+          ctx.beginPath();
+          ctx.arc(point.x, point.y, 6, 0, Math.PI * 2);
+          ctx.fillStyle = index === coords.length - 1 ? "#df5142" : "#f5c84b";
+          ctx.fill();
+          ctx.strokeStyle = "#111827";
+          ctx.lineWidth = 2.5;
+          ctx.stroke();
+        });
+
+        if (hoveredIndex !== null && clickTargets[hoveredIndex]) {
+          const target = clickTargets[hoveredIndex];
+          ctx.save();
+
+          ctx.beginPath();
+          ctx.arc(target.x, target.y, 11, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(31, 94, 255, 0.2)";
+          ctx.fill();
+
+          ctx.beginPath();
+          ctx.arc(target.x, target.y, 7, 0, Math.PI * 2);
+          ctx.fillStyle = "#1f5eff";
+          ctx.fill();
+          ctx.strokeStyle = "#ffffff";
+          ctx.lineWidth = 2;
+          ctx.stroke();
+
+          ctx.font = "bold 11px system-ui, sans-serif";
+          const textDate = target.label;
+          const textVal = "評価額: ¥" + Math.round(target.value).toLocaleString();
+          const textLink = "クリックで月次まとめへ ↗";
+          const metrics = [ctx.measureText(textDate), ctx.measureText(textVal), ctx.measureText(textLink)];
+          const tooltipWidth = Math.max.apply(null, metrics.map(function(m) { return m.width; })) + 20;
+          const tooltipHeight = 64;
+
+          let tooltipX = target.x - tooltipWidth / 2;
+          if (tooltipX < padding.left) tooltipX = padding.left;
+          if (tooltipX + tooltipWidth > width - padding.right) tooltipX = width - padding.right - tooltipWidth;
+
+          let tooltipY = target.y - tooltipHeight - 12;
+          if (tooltipY < 10) tooltipY = target.y + 12;
+
+          ctx.fillStyle = "rgba(17, 24, 39, 0.94)";
+          ctx.beginPath();
+          ctx.roundRect(tooltipX, tooltipY, tooltipWidth, tooltipHeight, 6);
+          ctx.fill();
+
+          ctx.textAlign = "center";
+          ctx.textBaseline = "top";
+
+          ctx.fillStyle = "rgba(255, 255, 255, 0.76)";
+          ctx.fillText(textDate, tooltipX + tooltipWidth / 2, tooltipY + 8);
+
+          ctx.fillStyle = "#f5c84b";
+          ctx.fillText(textVal, tooltipX + tooltipWidth / 2, tooltipY + 24);
+
+          ctx.fillStyle = "#93c5fd";
+          ctx.font = "800 9px system-ui, sans-serif";
+          ctx.fillText(textLink, tooltipX + tooltipWidth / 2, tooltipY + 44);
+
+          ctx.restore();
+        }
+      }
+
+      draw();
+
+      canvas.addEventListener("mousemove", (event) => {
+        const rect = canvas.getBoundingClientRect();
+        const scaleX = canvas.width / rect.width;
+        const scaleY = canvas.height / rect.height;
+        const mouseX = (event.clientX - rect.left) * scaleX;
+        const mouseY = (event.clientY - rect.top) * scaleY;
+
+        let nextHovered = null;
+        for (let i = 0; i < clickTargets.length; i++) {
+          const target = clickTargets[i];
+          const dist = Math.hypot(mouseX - target.x, mouseY - target.y);
+          if (dist < 18) {
+            nextHovered = i;
+            break;
+          }
+        }
+
+        if (nextHovered !== hoveredIndex) {
+          hoveredIndex = nextHovered;
+          canvas.style.cursor = hoveredIndex !== null ? "pointer" : "default";
+          draw();
+        }
+      });
+
+      canvas.addEventListener("click", () => {
+        if (hoveredIndex !== null && clickTargets[hoveredIndex]) {
+          window.location.href = clickTargets[hoveredIndex].url;
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
 `;
