@@ -1,23 +1,23 @@
 # X Post Drafts
 
-Generated: 2026-06-30T11:55:56.980Z
+Generated: 2026-07-01T00:10:19.915Z
 
 MUKIMUKI tradeのX投稿下書きです。自動投稿はせず、毎朝の実績確認後に内容を読んでから投稿します。
 
 ## 1. 毎朝の日次実績
 
 ```text
-MUKIMUKI trade 6/29実績
+MUKIMUKI trade 6/30実績
 
 100万円スタート
-評価額 ¥920,147.14
-前日比 +¥35,172.86
-100万円比 -7.99%
-約定5件
+評価額 ¥916,784.96
+前日比 -¥3,362.18
+100万円比 -8.32%
+約定0件
 
-IONQやHONなど複数銘柄の売買を実施。引け後はHON・VSAT・KTOSを保有。前日比プラスとなった一日を記録しました。
+引け後はHON・VSAT・KTOSを保有。調整の一日を記録しました。
 
-https://mukimuki-trade.com/performance/2026/06/29/topics/space-defense-rebound-ktos-vsat-buy/
+https://mukimuki-trade.com/performance/2026/06/30/topics/no-trade-asset-defense-holdings/
 
 #米国株 #投資記録
 ※投資助言ではありません
@@ -26,11 +26,11 @@ https://mukimuki-trade.com/performance/2026/06/29/topics/space-defense-rebound-k
 ## 2. 保有銘柄の観察
 
 ```text
-2026-06-29 の持ち越し確認
+2026-06-30 の持ち越し確認
 保有: HON / VSAT / KTOS
 評価額と前日比だけでなく、なぜ持ち越したかを翌日以降に見返します。
 
-https://mukimuki-trade.com/performance/2026/06/29/topics/space-defense-rebound-ktos-vsat-buy/
+https://mukimuki-trade.com/performance/2026/06/30/topics/no-trade-asset-defense-holdings/
 
 #米国株 #投資記録 #MUKIMUKItrade
 ```

@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "siteName": "MUKIMUKI trade",
   "sourceName": "Autotrade daily report",
-  "sourceReport": "report_2026-06-29.txt + jp_account_mix_report.csv",
-  "generatedAt": "2026-06-30T20:20:54+09:00",
-  "generatedAtDisplay": "2026.06.30 20:20:54 JST",
+  "sourceReport": "report_2026-06-30.txt",
+  "generatedAt": "2026-07-01T09:00:00+09:00",
+  "generatedAtDisplay": "2026.07.01 09:00:00 JST",
   "timezone": {
     "reportDate": "EST",
     "generatedAt": "Asia/Tokyo"
@@ -14,104 +14,58 @@
   "challengeStartDate": "2026-04-24",
   "affiliateUrl": "https://j.jp.moomoo.com/0BdcjG",
   "latest": {
-    "reportDate": "2026-06-29",
-    "reportDateDisplay": "2026.06.29 EST",
-    "label": "6/29",
+    "reportDate": "2026-06-30",
+    "reportDateDisplay": "2026.06.30 EST",
+    "label": "6/30",
     "jpy": {
-      "start": 884974.28,
-      "end": 920147.14,
-      "delta": 35172.86
+      "start": 920147.14,
+      "end": 916784.96,
+      "delta": -3362.18
     },
     "usd": {
-      "start": 5472.6791,
-      "end": 5683.7601,
-      "delta": 211.081
+      "start": 5683.7601,
+      "end": 5644.88,
+      "delta": -38.8801
     },
     "summary": {
-      "totalTrades": 5,
-      "totalBuyUsd": 1412.05,
-      "totalSellUsd": 354.6,
-      "usdPnl": -60.77,
-      "cashFlowUsd": -1057.45,
-      "totalPnlJpy": -79852.86,
-      "totalReturnPct": -7.99,
-      "dailyReturnPct": 3.97
+      "totalTrades": 0,
+      "totalBuyUsd": 0,
+      "totalSellUsd": 0,
+      "usdPnl": 0,
+      "cashFlowUsd": null,
+      "totalPnlJpy": -83215.04,
+      "totalReturnPct": -8.32,
+      "dailyReturnPct": -0.37
     },
-    "trades": [
-      {
-        "side": "SELL",
-        "symbol": "US.IONQ",
-        "shares": 7,
-        "priceUsd": 50.6575,
-        "amountUsd": 354.6,
-        "executedAtEst": "2026-06-29 08:34:47.563",
-        "remark": "CLOSED_TRADE_SELL"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.IONQ",
-        "shares": 7,
-        "priceUsd": 59.339,
-        "amountUsd": 415.37,
-        "executedAtEst": "2026-06-29T21:34:46",
-        "remark": "CLOSED_TRADE_BUY"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.HON",
-        "shares": 3,
-        "priceUsd": 229.753,
-        "amountUsd": 689.26,
-        "executedAtEst": "2026-06-29T21:34:46",
-        "remark": "RECONCILED_BROKER"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.VSAT",
-        "shares": 1,
-        "priceUsd": 71.42,
-        "amountUsd": 71.42,
-        "executedAtEst": "2026-06-29 10:03:15.185",
-        "remark": "BUY:【順張り】 / MAゴールデンク"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.KTOS",
-        "shares": 5,
-        "priceUsd": 47.2,
-        "amountUsd": 236,
-        "executedAtEst": "2026-06-29 10:03:38.719",
-        "remark": "BUY:【逆張り】 / RSI売られ過ぎ"
-      }
-    ],
+    "trades": [],
     "positions": [
       {
         "symbol": "US.HON",
         "shares": 3,
         "averagePriceUsd": 229.75,
-        "unrealizedPnlPct": 8.11,
-        "unrealizedPnlUsd": 55.9
+        "unrealizedPnlPct": -1.71,
+        "unrealizedPnlUsd": -11.76
       },
       {
         "symbol": "US.VSAT",
         "shares": 1,
         "averagePriceUsd": 71.42,
-        "unrealizedPnlPct": 0.28,
-        "unrealizedPnlUsd": 0.2
+        "unrealizedPnlPct": 21.66,
+        "unrealizedPnlUsd": 15.47
       },
       {
         "symbol": "US.KTOS",
         "shares": 5,
         "averagePriceUsd": 47.2,
-        "unrealizedPnlPct": -0.06,
-        "unrealizedPnlUsd": -0.14
+        "unrealizedPnlPct": 5.66,
+        "unrealizedPnlUsd": 13.35
       }
     ],
     "signals": {
-      "loops": 11,
-      "buySignals": 25,
-      "sellSignals": 4,
-      "holds": 118
+      "loops": 0,
+      "buySignals": 0,
+      "sellSignals": 0,
+      "holds": 0
     }
   },
   "history": [
@@ -524,6 +478,16 @@
       "totalPnlJpy": -79852.86,
       "totalReturnPct": -7.99,
       "totalTrades": 5
+    },
+    {
+      "date": "2026-06-30",
+      "label": "6/30",
+      "jpyStart": 920147.14,
+      "jpyEnd": 916784.96,
+      "jpyDelta": -3362.18,
+      "totalPnlJpy": -83215.04,
+      "totalReturnPct": -8.32,
+      "totalTrades": 0
     }
   ],
   "notes": [
