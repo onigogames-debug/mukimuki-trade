@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "siteName": "MUKIMUKI trade",
   "sourceName": "Autotrade daily report",
-  "sourceReport": "report_2026-06-30.txt",
-  "generatedAt": "2026-07-01T09:00:00+09:00",
-  "generatedAtDisplay": "2026.07.01 09:00:00 JST",
+  "sourceReport": "report_2026-07-01.txt + jp_account_mix_report.csv",
+  "generatedAt": "2026-07-02T08:32:03+09:00",
+  "generatedAtDisplay": "2026.07.02 08:32:03 JST",
   "timezone": {
     "reportDate": "EST",
     "generatedAt": "Asia/Tokyo"
@@ -14,58 +14,109 @@
   "challengeStartDate": "2026-04-24",
   "affiliateUrl": "https://j.jp.moomoo.com/0BdcjG",
   "latest": {
-    "reportDate": "2026-06-30",
-    "reportDateDisplay": "2026.06.30 EST",
-    "label": "6/30",
+    "reportDate": "2026-07-01",
+    "reportDateDisplay": "2026.07.01 EST",
+    "label": "7/1",
     "jpy": {
-      "start": 920147.14,
-      "end": 916784.96,
-      "delta": -3362.18
+      "start": 852886.25,
+      "end": 871655.11,
+      "delta": 18768.86
     },
     "usd": {
-      "start": 5683.7601,
-      "end": 5644.88,
-      "delta": -38.8801
+      "start": 5253.0831,
+      "end": 5367.7142,
+      "delta": 114.6311
     },
     "summary": {
-      "totalTrades": 0,
+      "totalTrades": 4,
       "totalBuyUsd": 0,
-      "totalSellUsd": 0,
-      "usdPnl": 0,
-      "cashFlowUsd": null,
-      "totalPnlJpy": -83215.04,
-      "totalReturnPct": -8.32,
-      "dailyReturnPct": -0.37
+      "totalSellUsd": 7727.12,
+      "usdPnl": -277.01,
+      "cashFlowUsd": 7727.12,
+      "totalPnlJpy": -128344.89,
+      "totalReturnPct": -12.83,
+      "dailyReturnPct": 2.2
     },
-    "trades": [],
+    "trades": [
+      {
+        "side": "SELL",
+        "symbol": "US.QBTS",
+        "shares": 150,
+        "priceUsd": 24.32,
+        "amountUsd": 3648,
+        "executedAtEst": "2026-07-01 12:28:17.081",
+        "remark": null
+      },
+      {
+        "side": "SELL",
+        "symbol": "US.IONQ",
+        "shares": 4,
+        "priceUsd": 53.8901,
+        "amountUsd": 215.56,
+        "executedAtEst": "2026-07-01 12:28:57.781",
+        "remark": null
+      },
+      {
+        "side": "SELL",
+        "symbol": "US.QBTS",
+        "shares": 150,
+        "priceUsd": 24.32,
+        "amountUsd": 3648,
+        "executedAtEst": "2026-07-01 12:28:17.081",
+        "remark": null
+      },
+      {
+        "side": "SELL",
+        "symbol": "US.IONQ",
+        "shares": 4,
+        "priceUsd": 53.8901,
+        "amountUsd": 215.56,
+        "executedAtEst": "2026-07-01 12:28:57.781",
+        "remark": null
+      }
+    ],
     "positions": [
       {
-        "symbol": "US.HON",
-        "shares": 3,
-        "averagePriceUsd": 229.75,
-        "unrealizedPnlPct": -1.71,
-        "unrealizedPnlUsd": -11.76
+        "symbol": "US.LDOS",
+        "shares": 7,
+        "averagePriceUsd": 104.77,
+        "unrealizedPnlPct": 0,
+        "unrealizedPnlUsd": 0
       },
       {
-        "symbol": "US.VSAT",
+        "symbol": "US.BKSY",
+        "shares": 9,
+        "averagePriceUsd": 29.43,
+        "unrealizedPnlPct": 0,
+        "unrealizedPnlUsd": 0
+      },
+      {
+        "symbol": "US.IRDM",
+        "shares": 14,
+        "averagePriceUsd": 55.69,
+        "unrealizedPnlPct": 0,
+        "unrealizedPnlUsd": 0
+      },
+      {
+        "symbol": "US.AMD",
         "shares": 1,
-        "averagePriceUsd": 71.42,
-        "unrealizedPnlPct": 21.66,
-        "unrealizedPnlUsd": 15.47
+        "averagePriceUsd": 543.65,
+        "unrealizedPnlPct": 0,
+        "unrealizedPnlUsd": 0
       },
       {
-        "symbol": "US.KTOS",
-        "shares": 5,
-        "averagePriceUsd": 47.2,
-        "unrealizedPnlPct": 5.66,
-        "unrealizedPnlUsd": 13.35
+        "symbol": "US.GSAT",
+        "shares": 9,
+        "averagePriceUsd": 81.37,
+        "unrealizedPnlPct": 0,
+        "unrealizedPnlUsd": 0
       }
     ],
     "signals": {
-      "loops": 0,
-      "buySignals": 0,
-      "sellSignals": 0,
-      "holds": 0
+      "loops": 39,
+      "buySignals": 143,
+      "sellSignals": 2,
+      "holds": 556
     }
   },
   "history": [
