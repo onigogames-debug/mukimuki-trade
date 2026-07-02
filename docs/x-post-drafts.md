@@ -1,23 +1,23 @@
 # X Post Drafts
 
-Generated: 2026-07-01T23:33:01.582Z
+Generated: 2026-07-02T23:03:22.844Z
 
 MUKIMUKI tradeのX投稿下書きです。自動投稿はせず、毎朝の実績確認後に内容を読んでから投稿します。
 
 ## 1. 毎朝の日次実績
 
 ```text
-MUKIMUKI trade 7/1実績
+MUKIMUKI trade 7/2実績
 
 100万円スタート
-評価額 ¥871,655.11
-前日比 +¥18,768.86
-100万円比 -12.83%
+評価額 ¥907,574.38
+前日比 +¥26,411.89
+100万円比 -9.24%
 約定4件
 
-QBTSを150株+150株で分割売却。 IONQを4株+4株で分割売却。引け後はLDOS・BKSY・IRDMなどを保有。前日比プラスとなった一日を記録しました。
+HONAを1株+1株で分割売却。 QUBTを87株+87株で分割売却。引け後はノーポジション。前日比プラスとなった一日を記録しました。
 
-https://mukimuki-trade.com/performance/2026/07/01/topics/active-rotation-space-defense-semiconductor/
+https://mukimuki-trade.com/performance/2026/07/02/topics/high-frequency-scalp-cleared-cash-90man-rebound/
 
 #米国株 #投資記録
 ※投資助言ではありません
@@ -26,11 +26,11 @@ https://mukimuki-trade.com/performance/2026/07/01/topics/active-rotation-space-d
 ## 2. 保有銘柄の観察
 
 ```text
-2026-07-01 の持ち越し確認
-保有: LDOS / BKSY / IRDM / AMD / GSAT
+2026-07-02 の持ち越し確認
+保有: なし
 評価額と前日比だけでなく、なぜ持ち越したかを翌日以降に見返します。
 
-https://mukimuki-trade.com/performance/2026/07/01/topics/active-rotation-space-defense-semiconductor/
+https://mukimuki-trade.com/performance/2026/07/02/topics/high-frequency-scalp-cleared-cash-90man-rebound/
 
 #米国株 #投資記録 #MUKIMUKItrade
 ```
@@ -49,10 +49,10 @@ https://mukimuki-trade.com/performance/2026/07/
 ## 4. 銘柄検討ページへの誘導
 
 ```text
-半導体セクター分析: 生成AI需要の第2極と、自動売買におけるサイクル・ボラティリティ対策
+Kratos（KTOS）分析: 国策無人ジェットと防衛プラットフォームの実力
 実績に出てきた銘柄は、候補理由と撤退条件も別ページで整理しています。
 
-https://mukimuki-trade.com/research/semiconductor-sector-analysis/
+https://mukimuki-trade.com/research/ktos-defense-analysis/
 
 #米国株 #銘柄検討 #MUKIMUKItrade
 ```

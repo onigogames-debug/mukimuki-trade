@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "siteName": "MUKIMUKI trade",
   "sourceName": "Autotrade daily report",
-  "sourceReport": "report_2026-07-01.txt + jp_account_mix_report.csv",
-  "generatedAt": "2026-07-02T08:32:03+09:00",
-  "generatedAtDisplay": "2026.07.02 08:32:03 JST",
+  "sourceReport": "report_2026-07-02.txt + jp_account_mix_report.csv",
+  "generatedAt": "2026-07-03T05:00:17+09:00",
+  "generatedAtDisplay": "2026.07.03 05:00:17 JST",
   "timezone": {
     "reportDate": "EST",
     "generatedAt": "Asia/Tokyo"
@@ -14,109 +14,73 @@
   "challengeStartDate": "2026-04-24",
   "affiliateUrl": "https://j.jp.moomoo.com/0BdcjG",
   "latest": {
-    "reportDate": "2026-07-01",
-    "reportDateDisplay": "2026.07.01 EST",
-    "label": "7/1",
+    "reportDate": "2026-07-02",
+    "reportDateDisplay": "2026.07.02 EST",
+    "label": "7/2",
     "jpy": {
-      "start": 852886.25,
-      "end": 871655.11,
-      "delta": 18768.86
+      "start": 881162.49,
+      "end": 907574.38,
+      "delta": 26411.89
     },
     "usd": {
-      "start": 5253.0831,
-      "end": 5367.7142,
-      "delta": 114.6311
+      "start": 5432.1,
+      "end": 5632.26,
+      "delta": 200.1638
     },
     "summary": {
       "totalTrades": 4,
       "totalBuyUsd": 0,
-      "totalSellUsd": 7727.12,
-      "usdPnl": -277.01,
-      "cashFlowUsd": 7727.12,
-      "totalPnlJpy": -128344.89,
-      "totalReturnPct": -12.83,
-      "dailyReturnPct": 2.2
+      "totalSellUsd": 2115.5,
+      "usdPnl": 200.16,
+      "cashFlowUsd": 2115.5,
+      "totalPnlJpy": -92425.62,
+      "totalReturnPct": -9.24,
+      "dailyReturnPct": 3
     },
     "trades": [
       {
         "side": "SELL",
-        "symbol": "US.QBTS",
-        "shares": 150,
-        "priceUsd": 24.32,
-        "amountUsd": 3648,
-        "executedAtEst": "2026-07-01 12:28:17.081",
-        "remark": null
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.IONQ",
-        "shares": 4,
-        "priceUsd": 53.8901,
-        "amountUsd": 215.56,
-        "executedAtEst": "2026-07-01 12:28:57.781",
-        "remark": null
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.QBTS",
-        "shares": 150,
-        "priceUsd": 24.32,
-        "amountUsd": 3648,
-        "executedAtEst": "2026-07-01 12:28:17.081",
-        "remark": null
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.IONQ",
-        "shares": 4,
-        "priceUsd": 53.8901,
-        "amountUsd": 215.56,
-        "executedAtEst": "2026-07-01 12:28:57.781",
-        "remark": null
-      }
-    ],
-    "positions": [
-      {
-        "symbol": "US.LDOS",
-        "shares": 7,
-        "averagePriceUsd": 104.77,
-        "unrealizedPnlPct": 0,
-        "unrealizedPnlUsd": 0
-      },
-      {
-        "symbol": "US.BKSY",
-        "shares": 9,
-        "averagePriceUsd": 29.43,
-        "unrealizedPnlPct": 0,
-        "unrealizedPnlUsd": 0
-      },
-      {
-        "symbol": "US.IRDM",
-        "shares": 14,
-        "averagePriceUsd": 55.69,
-        "unrealizedPnlPct": 0,
-        "unrealizedPnlUsd": 0
-      },
-      {
-        "symbol": "US.AMD",
+        "symbol": "US.HONA",
         "shares": 1,
-        "averagePriceUsd": 543.65,
-        "unrealizedPnlPct": 0,
-        "unrealizedPnlUsd": 0
+        "priceUsd": 223.42,
+        "amountUsd": 223.42,
+        "executedAtEst": "2026-07-02 09:35:22.982",
+        "remark": null
       },
       {
-        "symbol": "US.GSAT",
-        "shares": 9,
-        "averagePriceUsd": 81.37,
-        "unrealizedPnlPct": 0,
-        "unrealizedPnlUsd": 0
+        "side": "SELL",
+        "symbol": "US.QUBT",
+        "shares": 87,
+        "priceUsd": 9.59,
+        "amountUsd": 834.33,
+        "executedAtEst": "2026-07-02 09:40:16.903",
+        "remark": null
+      },
+      {
+        "side": "SELL",
+        "symbol": "US.HONA",
+        "shares": 1,
+        "priceUsd": 223.42,
+        "amountUsd": 223.42,
+        "executedAtEst": "2026-07-02 09:35:22.982",
+        "remark": null
+      },
+      {
+        "side": "SELL",
+        "symbol": "US.QUBT",
+        "shares": 87,
+        "priceUsd": 9.59,
+        "amountUsd": 834.33,
+        "executedAtEst": "2026-07-02 09:40:16.903",
+        "remark": null
       }
     ],
+    "positions": [],
     "signals": {
-      "loops": 39,
-      "buySignals": 143,
-      "sellSignals": 2,
-      "holds": 556
+      "loops": 958,
+      "buySignals": 6570,
+      "sellSignals": 41,
+      "holds": 3435
     }
   },
   "history": [
@@ -539,6 +503,16 @@
       "totalPnlJpy": -83215.04,
       "totalReturnPct": -8.32,
       "totalTrades": 0
+    },
+    {
+      "date": "2026-07-02",
+      "label": "7/2",
+      "jpyStart": 881162.49,
+      "jpyEnd": 907574.38,
+      "jpyDelta": 26411.89,
+      "totalPnlJpy": -92425.62,
+      "totalReturnPct": -9.24,
+      "totalTrades": 4
     }
   ],
   "notes": [
