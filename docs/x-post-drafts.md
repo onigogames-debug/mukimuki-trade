@@ -1,23 +1,23 @@
 # X Post Drafts
 
-Generated: 2026-07-02T23:03:22.844Z
+Generated: 2026-07-06T23:19:23.813Z
 
 MUKIMUKI tradeのX投稿下書きです。自動投稿はせず、毎朝の実績確認後に内容を読んでから投稿します。
 
 ## 1. 毎朝の日次実績
 
 ```text
-MUKIMUKI trade 7/2実績
+MUKIMUKI trade 7/6実績
 
 100万円スタート
-評価額 ¥907,574.38
-前日比 +¥26,411.89
-100万円比 -9.24%
-約定4件
+評価額 ¥892,304.64
+前日比 -¥24,757.24
+100万円比 -10.77%
+約定46件
 
-HONAを1株+1株で分割売却。 QUBTを87株+87株で分割売却。引け後はノーポジション。前日比プラスとなった一日を記録しました。
+AVAVやIBMなど複数銘柄の売買を実施。引け後はノーポジション。調整の一日を記録しました。
 
-https://mukimuki-trade.com/performance/2026/07/02/topics/high-frequency-scalp-cleared-cash-90man-rebound/
+https://mukimuki-trade.com/performance/2026/07/06/topics/high-volatility-defense-stop-losses-cleared/
 
 #米国株 #投資記録
 ※投資助言ではありません
@@ -26,11 +26,11 @@ https://mukimuki-trade.com/performance/2026/07/02/topics/high-frequency-scalp-cl
 ## 2. 保有銘柄の観察
 
 ```text
-2026-07-02 の持ち越し確認
+2026-07-06 の持ち越し確認
 保有: なし
 評価額と前日比だけでなく、なぜ持ち越したかを翌日以降に見返します。
 
-https://mukimuki-trade.com/performance/2026/07/02/topics/high-frequency-scalp-cleared-cash-90man-rebound/
+https://mukimuki-trade.com/performance/2026/07/06/topics/high-volatility-defense-stop-losses-cleared/
 
 #米国株 #投資記録 #MUKIMUKItrade
 ```
