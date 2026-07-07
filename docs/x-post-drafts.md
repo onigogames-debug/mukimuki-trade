@@ -1,23 +1,23 @@
 # X Post Drafts
 
-Generated: 2026-07-06T23:52:51.511Z
+Generated: 2026-07-07T22:58:20.504Z
 
 MUKIMUKI tradeのX投稿下書きです。自動投稿はせず、毎朝の実績確認後に内容を読んでから投稿します。
 
 ## 1. 毎朝の日次実績
 
 ```text
-MUKIMUKI trade 7/6実績
+MUKIMUKI trade 7/7実績
 
 100万円スタート
-評価額 ¥892,304.64
-前日比 -¥24,757.24
-100万円比 -10.77%
-約定46件
+評価額 ¥867,255.79
+前日比 -¥21,701.05
+100万円比 -13.27%
+約定26件
 
-AVAVやIBMなど複数銘柄の売買を実施。引け後はノーポジション。調整の一日を記録しました。
+HONやGOOGLなど複数銘柄の売買を実施。引け後はNVDA・MSFT・AMZNを保有。調整の一日を記録しました。
 
-https://mukimuki-trade.com/performance/2026/07/06/topics/high-volatility-defense-stop-losses-cleared/
+https://mukimuki-trade.com/performance/2026/07/07/topics/loss-cuts-and-big-tech-carry-over/
 
 #米国株 #投資記録
 ※投資助言ではありません
@@ -26,11 +26,11 @@ https://mukimuki-trade.com/performance/2026/07/06/topics/high-volatility-defense
 ## 2. 保有銘柄の観察
 
 ```text
-2026-07-06 の持ち越し確認
-保有: なし
+2026-07-07 の持ち越し確認
+保有: NVDA / MSFT / AMZN
 評価額と前日比だけでなく、なぜ持ち越したかを翌日以降に見返します。
 
-https://mukimuki-trade.com/performance/2026/07/06/topics/high-volatility-defense-stop-losses-cleared/
+https://mukimuki-trade.com/performance/2026/07/07/topics/loss-cuts-and-big-tech-carry-over/
 
 #米国株 #投資記録 #MUKIMUKItrade
 ```
@@ -49,10 +49,10 @@ https://mukimuki-trade.com/performance/2026/07/
 ## 4. 銘柄検討ページへの誘導
 
 ```text
-Kratos（KTOS）分析: 国策無人ジェットと防衛プラットフォームの実力
+半導体セクター分析: 生成AI需要の第2極と、自動売買におけるサイクル・ボラティリティ対策
 実績に出てきた銘柄は、候補理由と撤退条件も別ページで整理しています。
 
-https://mukimuki-trade.com/research/ktos-defense-analysis/
+https://mukimuki-trade.com/research/semiconductor-sector-analysis/
 
 #米国株 #銘柄検討 #MUKIMUKItrade
 ```
