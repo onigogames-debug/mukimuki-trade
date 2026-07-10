@@ -1,23 +1,23 @@
 # X Post Drafts
 
-Generated: 2026-07-08T22:54:38.899Z
+Generated: 2026-07-10T01:14:36.945Z
 
 MUKIMUKI tradeのX投稿下書きです。自動投稿はせず、毎朝の実績確認後に内容を読んでから投稿します。
 
 ## 1. 毎朝の日次実績
 
 ```text
-MUKIMUKI trade 7/8実績
+MUKIMUKI trade 7/9実績
 
 100万円スタート
-評価額 ¥863,165.53
-前日比 -¥5,177.28
-100万円比 -13.68%
-約定6件
+評価額 ¥862,668.23
+前日比 -¥305.22
+100万円比 -13.73%
+約定0件
 
-NVDAやMSFTなど複数銘柄の売買を実施。引け後はノーポジション。調整の一日を記録しました。
+引け後はノーポジション。調整の一日を記録しました。
 
-https://mukimuki-trade.com/performance/2026/07/08/topics/tech-exit-and-no-position-defense/
+https://mukimuki-trade.com/performance/2026/07/09/
 
 #米国株 #投資記録
 ※投資助言ではありません
@@ -26,11 +26,11 @@ https://mukimuki-trade.com/performance/2026/07/08/topics/tech-exit-and-no-positi
 ## 2. 保有銘柄の観察
 
 ```text
-2026-07-08 の持ち越し確認
+2026-07-09 の持ち越し確認
 保有: なし
 評価額と前日比だけでなく、なぜ持ち越したかを翌日以降に見返します。
 
-https://mukimuki-trade.com/performance/2026/07/08/topics/tech-exit-and-no-position-defense/
+https://mukimuki-trade.com/performance/2026/07/09/
 
 #米国株 #投資記録 #MUKIMUKItrade
 ```

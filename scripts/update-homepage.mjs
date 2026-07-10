@@ -23,7 +23,7 @@ const newHeroCard = `<a class="hero-brief-card hero-brief-card--lead" href="${la
               <strong>まず読む: ${latestArticle.title}</strong>
               <small>最新の解説記事へ</small>
             </a>`;
-indexHtml = indexHtml.replace(heroCardRegex, newHeroCard);
+indexHtml = indexHtml.replace(heroCardRegex, () => newHeroCard);
 
 // 2. Update Reading Path START card
 const readingPathRegex = /<a class="story-card feature-story" href="\/performance\/[^"]+">([\s\S]*?)<\/a>/;
@@ -33,13 +33,13 @@ const newReadingPathCard = `<a class="story-card feature-story" href="${latestAr
         <p>${latestArticle.description}</p>
         <small>最新記事へ</small>
       </a>`;
-indexHtml = indexHtml.replace(readingPathRegex, newReadingPathCard);
+indexHtml = indexHtml.replace(readingPathRegex, () => newReadingPathCard);
 
 // 3. Update Hero Actions "最新実績を読む" Button
 const heroActionRegex = /<a class="button primary" href="\/performance\/[^"]+">最新実績を読む<\/a>/;
 indexHtml = indexHtml.replace(
   heroActionRegex,
-  `<a class="button primary" href="${latestDailyPath}">最新実績を読む</a>`
+  () => `<a class="button primary" href="${latestDailyPath}">最新実績を読む</a>`
 );
 
 // 4. Update Article List Section (Top 5 articles)
@@ -74,7 +74,7 @@ const latestArticlesListHtml = articles.slice(0, 5).map((article, index) => {
 }).join('\n');
 
 const articleListRegex = /<div class="article-list">([\s\S]*?)<\/div>\s*<div class="category-strip"/;
-indexHtml = indexHtml.replace(articleListRegex, `<div class="article-list">\n${latestArticlesListHtml}\n      </div>\n\n      <div class="category-strip"`);
+indexHtml = indexHtml.replace(articleListRegex, () => `<div class="article-list">\n${latestArticlesListHtml}\n      </div>\n\n      <div class="category-strip"`);
 
 // 5. Update Inline Performance Data Script
 if (latest && Array.isArray(latest.history)) {
@@ -94,7 +94,7 @@ if (latest && Array.isArray(latest.history)) {
 const perfDataRegex = /<script id="perf-data" type="application\/json">([\s\S]*?)<\/script>/;
 indexHtml = indexHtml.replace(
   perfDataRegex,
-  `<script id="perf-data" type="application/json">${JSON.stringify(latest)}</script>`
+  () => `<script id="perf-data" type="application/json">${JSON.stringify(latest)}</script>`
 );
 
 // 6. Update script.js Cache Buster Parameter
@@ -102,7 +102,7 @@ const scriptRegex = /<script src="script\.js\?v=[^"]+"/;
 const currentTimestamp = new Date().toISOString().replaceAll(/[-:.TZ]/g, '').slice(0, 12);
 indexHtml = indexHtml.replace(
   scriptRegex,
-  `<script src="script.js?v=${currentTimestamp}"`
+  () => `<script src="script.js?v=${currentTimestamp}"`
 );
 
 // Save index.html

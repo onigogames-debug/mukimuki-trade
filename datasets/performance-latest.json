@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "siteName": "MUKIMUKI trade",
   "sourceName": "Autotrade daily report",
-  "sourceReport": "report_2026-07-08.txt + jp_account_mix_report.csv",
-  "generatedAt": "2026-07-09T05:00:18+09:00",
-  "generatedAtDisplay": "2026.07.09 05:00:18 JST",
+  "sourceReport": "report_2026-07-09.txt",
+  "generatedAt": "2026-07-10T05:00:08+09:00",
+  "generatedAtDisplay": "2026.07.10 05:00:08 JST",
   "timezone": {
     "reportDate": "EST",
     "generatedAt": "Asia/Tokyo"
@@ -14,91 +14,36 @@
   "challengeStartDate": "2026-04-24",
   "affiliateUrl": "https://j.jp.moomoo.com/0BdcjG",
   "latest": {
-    "reportDate": "2026-07-08",
-    "reportDateDisplay": "2026.07.08 EST",
-    "label": "7/8",
+    "reportDate": "2026-07-09",
+    "reportDateDisplay": "2026.07.09 EST",
+    "label": "7/9",
     "jpy": {
-      "start": 868342.8,
-      "end": 863165.53,
-      "delta": -5177.28
+      "start": 862973.45,
+      "end": 862668.23,
+      "delta": -305.22
     },
     "usd": {
-      "start": 5347.1,
-      "end": 5312.37,
-      "delta": -34.7244
+      "start": 5312.39,
+      "end": 5312.4,
+      "delta": 0.0162
     },
     "summary": {
-      "totalTrades": 6,
-      "totalBuyUsd": 784.26,
-      "totalSellUsd": 3053.18,
-      "usdPnl": -34.72,
-      "cashFlowUsd": 2268.92,
-      "totalPnlJpy": -136834.47,
-      "totalReturnPct": -13.68,
-      "dailyReturnPct": -0.6
+      "totalTrades": 0,
+      "totalBuyUsd": 0,
+      "totalSellUsd": 0,
+      "usdPnl": 0.02,
+      "cashFlowUsd": 0,
+      "totalPnlJpy": -137331.77,
+      "totalReturnPct": -13.73,
+      "dailyReturnPct": -0.04
     },
-    "trades": [
-      {
-        "side": "SELL",
-        "symbol": "US.NVDA",
-        "shares": 2,
-        "priceUsd": 199.86,
-        "amountUsd": 399.72,
-        "executedAtEst": "2026-07-08 09:47:06.773",
-        "remark": "CLOSED_TRADE_SELL"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.NVDA",
-        "shares": 2,
-        "priceUsd": 197.56,
-        "amountUsd": 395.12,
-        "executedAtEst": "2026-07-08 09:52:22.281",
-        "remark": "CLOSED_TRADE_SELL"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.MSFT",
-        "shares": 2,
-        "priceUsd": 382.067,
-        "amountUsd": 764.13,
-        "executedAtEst": "2026-07-08 10:40:35.795",
-        "remark": "CLOSED_TRADE_SELL"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.AMZN",
-        "shares": 3,
-        "priceUsd": 241.6753,
-        "amountUsd": 725.03,
-        "executedAtEst": "2026-07-08 10:40:36.165",
-        "remark": "CLOSED_TRADE_SELL"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.CTSH",
-        "shares": 18,
-        "priceUsd": 42.732,
-        "amountUsd": 769.18,
-        "executedAtEst": "2026-07-08 15:03:21.632",
-        "remark": "CLOSED_TRADE_SELL"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.CTSH",
-        "shares": 18,
-        "priceUsd": 43.57,
-        "amountUsd": 784.26,
-        "executedAtEst": "2026-07-08 09:40:00.419",
-        "remark": "CLOSED_TRADE_BUY"
-      }
-    ],
+    "trades": [],
     "positions": [],
     "signals": {
-      "loops": 949,
-      "buySignals": 306,
+      "loops": 887,
+      "buySignals": 0,
       "sellSignals": 0,
-      "holds": 17337
+      "holds": 19322
     }
   },
   "history": [
