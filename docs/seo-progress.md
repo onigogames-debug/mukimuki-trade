@@ -1,6 +1,6 @@
 # SEO Progress Report
 
-Generated: 2026-07-10T01:14:37.178Z
+Generated: 2026-07-13T23:45:10.532Z
 
 ## 実装状況
 
@@ -21,12 +21,12 @@ Generated: 2026-07-10T01:14:37.178Z
 
 ## ページ監査サマリー
 
-- 対象ページ: 186
-- インデックス対象ページ: 185
-- 要確認ページ: 9
-- FAQ schemaページ: 45
-- パンくずschemaページ: 184
-- Critical CSS適用ページ: 186
+- 対象ページ: 190
+- インデックス対象ページ: 189
+- 要確認ページ: 11
+- FAQ schemaページ: 47
+- パンくずschemaページ: 188
+- Critical CSS適用ページ: 190
 
 ## 要確認ページ
 
@@ -40,13 +40,15 @@ Generated: 2026-07-10T01:14:37.178Z
 | /performance/2026/07/06/topics/high-volatility-defense-stop-losses-cleared/ | title要確認 / description要確認 |
 | /performance/2026/07/07/topics/loss-cuts-and-big-tech-carry-over/ | title要確認 / description要確認 |
 | /performance/2026/07/08/topics/tech-exit-and-no-position-defense/ | description要確認 |
+| /performance/2026/07/10/topics/market-crash-warning-no-trade-defense/ | title要確認 |
+| /performance/2026/07/13/topics/market-wait-no-position-defense/ | description要確認 |
 | /research/ktos-defense-analysis/ | description要確認 |
 
 ## ページ別詳細
 
 | URL | title | description | 本文文字数 | 内部リンク | schema |
 |---|---:|---:|---:|---:|---|
-| / | 41 | 68 | 3318 | 36 | Person, WebSite |
+| / | 41 | 68 | 3306 | 36 | Person, WebSite |
 | /about/ | 26 | 58 | 1821 | 19 | AboutPage, BreadcrumbList, FAQPage, Person, WebPage, WebSite |
 | /archive/ | 24 | 62 | 1055 | 24 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /archive/2026-05/ | 27 | 79 | 1330 | 32 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
@@ -59,7 +61,7 @@ Generated: 2026-07-10T01:14:37.178Z
 | /logic/exit-review/ | 44 | 38 | 1232 | 22 | Article, BreadcrumbList, Person, WebSite |
 | /logic/signal-score/ | 46 | 43 | 1244 | 22 | Article, BreadcrumbList, Person, WebSite |
 | /moomoo/ | 44 | 50 | 1334 | 23 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/ | 44 | 58 | 1150 | 34 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
+| /performance/ | 44 | 58 | 1156 | 34 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /performance/2026/ | 30 | 52 | 1178 | 23 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /performance/2026/05/ | 41 | 62 | 1949 | 35 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /performance/2026/05/26/ | 47 | 77 | 2756 | 34 | Article, BreadcrumbList, FAQPage, Person, WebSite |
@@ -113,7 +115,7 @@ Generated: 2026-07-10T01:14:37.178Z
 | /performance/2026/06/29/topics/space-defense-rebound-ktos-vsat-buy/ | 74 | 177 | 3562 | 32 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/06/30/ | 51 | 77 | 2537 | 35 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/06/30/topics/no-trade-asset-defense-holdings/ | 75 | 156 | 3077 | 30 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/07/ | 41 | 62 | 2202 | 41 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
+| /performance/2026/07/ | 41 | 62 | 2444 | 45 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /performance/2026/07/01/ | 53 | 80 | 3217 | 37 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/07/01/topics/active-rotation-space-defense-semiconductor/ | 74 | 171 | 3689 | 32 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/07/02/ | 43 | 72 | 1813 | 31 | Article, BreadcrumbList, FAQPage, Person, WebSite |
@@ -126,12 +128,16 @@ Generated: 2026-07-10T01:14:37.178Z
 | /performance/2026/07/07/topics/loss-cuts-and-big-tech-carry-over/ | 76 | 163 | 3331 | 32 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/07/08/ | 44 | 72 | 1884 | 31 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/07/08/topics/tech-exit-and-no-position-defense/ | 69 | 148 | 3211 | 32 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/07/09/ | 44 | 70 | 1641 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
+| /performance/2026/07/09/ | 44 | 70 | 1665 | 31 | Article, BreadcrumbList, FAQPage, Person, WebSite |
+| /performance/2026/07/10/ | 44 | 70 | 1666 | 31 | Article, BreadcrumbList, FAQPage, Person, WebSite |
+| /performance/2026/07/10/topics/market-crash-warning-no-trade-defense/ | 75 | 135 | 2082 | 28 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/07/13/ | 44 | 72 | 1648 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
+| /performance/2026/07/13/topics/market-wait-no-position-defense/ | 63 | 158 | 1715 | 26 | Article, BreadcrumbList, Person, WebSite |
 | /performance/latest/ (noindex) | 25 | 53 | 967 | 24 |  |
 | /profile/ | 26 | 75 | 1394 | 21 | BreadcrumbList, FAQPage, Person, ProfilePage, WebSite |
 | /research/ | 43 | 56 | 1086 | 25 | Article, BreadcrumbList, Person, WebSite |
 | /research/ai-infrastructure/ | 56 | 57 | 3049 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /research/alab-analysis/ | 63 | 116 | 4104 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
+| /research/alab-analysis/ | 63 | 116 | 4080 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /research/app-software-fintech/ | 44 | 50 | 2721 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /research/frontier-growth/ | 47 | 49 | 2894 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /research/ionq-analysis/ | 59 | 96 | 4273 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
@@ -206,7 +212,7 @@ Generated: 2026-07-10T01:14:37.178Z
 | /research/tag/qbts/ | 30 | 65 | 3981 | 43 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /research/tag/qkd/ | 29 | 64 | 1507 | 25 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /research/tag/qpu/ | 29 | 64 | 1522 | 25 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
-| /research/tag/qqq/ | 29 | 64 | 1532 | 25 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
+| /research/tag/qqq/ | 29 | 64 | 1798 | 26 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /research/tag/qubt/ | 30 | 65 | 3742 | 39 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /research/tag/rcat/ | 30 | 65 | 1600 | 25 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /research/tag/rddt/ | 30 | 65 | 2210 | 30 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
@@ -231,5 +237,5 @@ Generated: 2026-07-10T01:14:37.178Z
 | /research/tag/xg/ | 28 | 63 | 1495 | 25 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /research/tag/xndu/ | 30 | 65 | 1800 | 29 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
 | /research/tag/xq/ | 28 | 63 | 1573 | 25 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
-| /sitemap/ | 23 | 48 | 9666 | 196 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /sitemap/ | 23 | 48 | 10012 | 200 | BreadcrumbList, CollectionPage, Person, WebSite |
 
