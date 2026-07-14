@@ -38,7 +38,15 @@
       "dailyReturnPct": -13.91
     },
     "trades": [],
-    "positions": [],
+    "positions": [
+      {
+        "symbol": "US.ALAB",
+        "shares": 13,
+        "averagePriceUsd": 408,
+        "unrealizedPnlPct": -13.25,
+        "unrealizedPnlUsd": -702.65
+      }
+    ],
     "signals": {
       "loops": 0,
       "buySignals": 0,

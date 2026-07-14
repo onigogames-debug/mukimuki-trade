@@ -1,6 +1,6 @@
 # X Post Drafts
 
-Generated: 2026-07-14T00:03:33.827Z
+Generated: 2026-07-14T00:09:34.731Z
 
 MUKIMUKI tradeのX投稿下書きです。自動投稿はせず、毎朝の実績確認後に内容を読んでから投稿します。
 
@@ -15,7 +15,7 @@ MUKIMUKI trade 7/13実績
 100万円比 -24.73%
 約定0件
 
-引け後はノーポジション。調整の一日を記録しました。
+引け後はALABを保有。調整の一日を記録しました。
 
 https://mukimuki-trade.com/performance/2026/07/13/topics/market-wait-no-position-defense/
 
@@ -27,7 +27,7 @@ https://mukimuki-trade.com/performance/2026/07/13/topics/market-wait-no-position
 
 ```text
 2026-07-13 の持ち越し確認
-保有: なし
+保有: ALAB
 評価額と前日比だけでなく、なぜ持ち越したかを翌日以降に見返します。
 
 https://mukimuki-trade.com/performance/2026/07/13/topics/market-wait-no-position-defense/
@@ -49,10 +49,10 @@ https://mukimuki-trade.com/performance/2026/07/
 ## 4. 銘柄検討ページへの誘導
 
 ```text
-Kratos（KTOS）分析: 国策無人ジェットと防衛プラットフォームの実力
+アステララボ（ALAB）の事業分析: Nasdaq-100採用とAI接続インフラの独占的地位
 実績に出てきた銘柄は、候補理由と撤退条件も別ページで整理しています。
 
-https://mukimuki-trade.com/research/ktos-defense-analysis/
+https://mukimuki-trade.com/research/alab-analysis/
 
 #米国株 #銘柄検討 #MUKIMUKItrade
 ```
