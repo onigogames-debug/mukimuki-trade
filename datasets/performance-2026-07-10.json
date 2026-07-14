@@ -3,8 +3,8 @@
   "siteName": "MUKIMUKI trade",
   "sourceName": "Autotrade daily report",
   "sourceReport": "report_2026-07-10.txt",
-  "generatedAt": "2026-07-14T08:30:49+09:00",
-  "generatedAtDisplay": "2026.07.14 08:30:49 JST",
+  "generatedAt": "2026-07-11T08:30:49+09:00",
+  "generatedAtDisplay": "2026.07.11 08:30:49 JST",
   "timezone": {
     "reportDate": "EST",
     "generatedAt": "Asia/Tokyo"
@@ -19,25 +19,34 @@
     "label": "7/10",
     "jpy": {
       "start": 858831.92,
-      "end": 859552.88,
-      "delta": 720.96
+      "end": 874308.31,
+      "delta": 15476.39
     },
     "usd": {
       "start": 5312.6318,
-      "end": 5312.5912,
-      "delta": -0.0406
+      "end": 5382.6318,
+      "delta": 70
     },
     "summary": {
-      "totalTrades": 0,
-      "totalBuyUsd": 0,
+      "totalTrades": 1,
+      "totalBuyUsd": 5304,
       "totalSellUsd": 0,
       "usdPnl": 0,
       "cashFlowUsd": null,
-      "totalPnlJpy": -140447.12,
-      "totalReturnPct": -14.04,
-      "dailyReturnPct": 0.08
+      "totalPnlJpy": -125691.69,
+      "totalReturnPct": -12.57,
+      "dailyReturnPct": 1.8
     },
-    "trades": [],
+    "trades": [
+      {
+        "side": "BUY",
+        "symbol": "US.ALAB",
+        "shares": 13,
+        "priceUsd": 408,
+        "amountUsd": 5304,
+        "executedAtEst": "2026-07-10 11:00:00"
+      }
+    ],
     "positions": [],
     "signals": {
       "loops": 1273,

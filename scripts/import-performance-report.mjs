@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const defaultReportsDir = path.resolve(root, '..', '..', 'moomoo', 'reports');
 const startCapitalJpy = 1_000_000;
-const minimumChallengeAssetJpy = startCapitalJpy * 0.9;
+const minimumChallengeAssetJpy = startCapitalJpy * 0.7;
 const affiliateUrl = 'https://j.jp.moomoo.com/0BdcjG';
 
 const providedReportPath = process.argv[2] ? path.resolve(process.argv[2]) : null;
