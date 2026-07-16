@@ -1,0 +1,632 @@
+{
+  "schemaVersion": 1,
+  "siteName": "MUKIMUKI trade",
+  "sourceName": "Autotrade daily report",
+  "sourceReport": "report_2026-07-15.txt",
+  "generatedAt": "2026-07-16T05:00:14+09:00",
+  "generatedAtDisplay": "2026.07.16 05:00:14 JST",
+  "timezone": {
+    "reportDate": "EST",
+    "generatedAt": "Asia/Tokyo"
+  },
+  "startCapitalJpy": 1000000,
+  "minimumChallengeAssetJpy": 700000,
+  "challengeStartDate": "2026-04-24",
+  "affiliateUrl": "https://j.jp.moomoo.com/0BdcjG",
+  "latest": {
+    "reportDate": "2026-07-15",
+    "reportDateDisplay": "2026.07.15 EST",
+    "label": "7/15",
+    "jpy": {
+      "start": 772767.42,
+      "end": 767023.83,
+      "delta": -5743.59
+    },
+    "usd": {
+      "start": 4779.39,
+      "end": 4728.4,
+      "delta": -50.9976
+    },
+    "summary": {
+      "totalTrades": 2,
+      "totalBuyUsd": 10441.3,
+      "totalSellUsd": 0,
+      "usdPnl": -51,
+      "cashFlowUsd": -10441.3,
+      "totalPnlJpy": -232976.17,
+      "totalReturnPct": -23.3,
+      "dailyReturnPct": -0.74
+    },
+    "trades": [
+      {
+        "side": "BUY",
+        "symbol": "US.ALAB",
+        "shares": 13,
+        "priceUsd": 353.69,
+        "amountUsd": 4598,
+        "executedAtEst": "2026-07-15 09:53:02.926"
+      }
+    ],
+    "positions": [
+      {
+        "symbol": "US.ALAB",
+        "shares": 13,
+        "averagePriceUsd": 395.64,
+        "unrealizedPnlPct": -11.4,
+        "unrealizedPnlUsd": -586.3
+      }
+    ],
+    "signals": {
+      "loops": 1015,
+      "buySignals": 172,
+      "sellSignals": 926,
+      "holds": 15844
+    }
+  },
+  "history": [
+    {
+      "date": "2026-04-24",
+      "label": "4/24",
+      "jpyStart": 1012851.7,
+      "jpyEnd": 1012851.7,
+      "jpyDelta": 0,
+      "totalPnlJpy": 12851.7,
+      "totalReturnPct": 1.29,
+      "totalTrades": 0
+    },
+    {
+      "date": "2026-05-07",
+      "label": "5/7",
+      "jpyStart": 1029935.17,
+      "jpyEnd": 1029935.17,
+      "jpyDelta": 0,
+      "totalPnlJpy": 29935.17,
+      "totalReturnPct": 2.99,
+      "totalTrades": 8
+    },
+    {
+      "date": "2026-05-08",
+      "label": "5/8",
+      "jpyStart": 1029935.17,
+      "jpyEnd": 1035548.25,
+      "jpyDelta": 5613.08,
+      "totalPnlJpy": 35548.25,
+      "totalReturnPct": 3.55,
+      "totalTrades": 62
+    },
+    {
+      "date": "2026-05-11",
+      "label": "5/11",
+      "jpyStart": 1033749.31,
+      "jpyEnd": 1062147.8,
+      "jpyDelta": 28398.49,
+      "totalPnlJpy": 62147.8,
+      "totalReturnPct": 6.21,
+      "totalTrades": 6
+    },
+    {
+      "date": "2026-05-12",
+      "label": "5/12",
+      "jpyStart": 1066550.52,
+      "jpyEnd": 1063199.31,
+      "jpyDelta": -3351.21,
+      "totalPnlJpy": 63199.31,
+      "totalReturnPct": 6.32,
+      "totalTrades": 2
+    },
+    {
+      "date": "2026-05-13",
+      "label": "5/13",
+      "jpyStart": 1063334.37,
+      "jpyEnd": 1064697.8,
+      "jpyDelta": 1363.43,
+      "totalPnlJpy": 64697.8,
+      "totalReturnPct": 6.47,
+      "totalTrades": 0
+    },
+    {
+      "date": "2026-05-14",
+      "label": "5/14",
+      "jpyStart": 1064350.51,
+      "jpyEnd": 1073384.39,
+      "jpyDelta": 9033.88,
+      "totalPnlJpy": 73384.39,
+      "totalReturnPct": 7.34,
+      "totalTrades": 14
+    },
+    {
+      "date": "2026-05-15",
+      "label": "5/15",
+      "jpyStart": 1074933.52,
+      "jpyEnd": 1073384.39,
+      "jpyDelta": -1549.13,
+      "totalPnlJpy": 73384.39,
+      "totalReturnPct": 7.34,
+      "totalTrades": 9
+    },
+    {
+      "date": "2026-05-18",
+      "label": "5/18",
+      "jpyStart": 1042329.78,
+      "jpyEnd": 1027479.25,
+      "jpyDelta": -14850.53,
+      "totalPnlJpy": 27479.25,
+      "totalReturnPct": 2.75,
+      "totalTrades": 56
+    },
+    {
+      "date": "2026-05-19",
+      "label": "5/19",
+      "jpyStart": 1044600.51,
+      "jpyEnd": 1026949.5,
+      "jpyDelta": -17651.01,
+      "totalPnlJpy": 26949.5,
+      "totalReturnPct": 2.69,
+      "totalTrades": 35
+    },
+    {
+      "date": "2026-05-20",
+      "label": "5/20",
+      "jpyStart": 1024532.71,
+      "jpyEnd": 1026483.73,
+      "jpyDelta": 1951.02,
+      "totalPnlJpy": 26483.73,
+      "totalReturnPct": 2.65,
+      "totalTrades": 20
+    },
+    {
+      "date": "2026-05-21",
+      "label": "5/21",
+      "jpyStart": 1035990.99,
+      "jpyEnd": 1041901.98,
+      "jpyDelta": 5911,
+      "totalPnlJpy": 41901.98,
+      "totalReturnPct": 4.19,
+      "totalTrades": 14
+    },
+    {
+      "date": "2026-05-22",
+      "label": "5/22",
+      "jpyStart": 1049224.81,
+      "jpyEnd": 1059394.13,
+      "jpyDelta": 10169.32,
+      "totalPnlJpy": 59394.13,
+      "totalReturnPct": 5.94,
+      "totalTrades": 13
+    },
+    {
+      "date": "2026-05-23",
+      "label": "5/23",
+      "jpyStart": 1059670.2,
+      "jpyEnd": 1059670.2,
+      "jpyDelta": 0,
+      "totalPnlJpy": 59670.2,
+      "totalReturnPct": 5.97,
+      "totalTrades": 0
+    },
+    {
+      "date": "2026-05-24",
+      "label": "5/24",
+      "jpyStart": 1059670.2,
+      "jpyEnd": 1059670.2,
+      "jpyDelta": 0,
+      "totalPnlJpy": 59670.2,
+      "totalReturnPct": 5.97,
+      "totalTrades": 0
+    },
+    {
+      "date": "2026-05-25",
+      "label": "5/25",
+      "jpyStart": 1057943.97,
+      "jpyEnd": 1059166.12,
+      "jpyDelta": 1222.15,
+      "totalPnlJpy": 59166.12,
+      "totalReturnPct": 5.92,
+      "totalTrades": 0
+    },
+    {
+      "date": "2026-05-26",
+      "label": "5/26",
+      "jpyStart": 1060557.02,
+      "jpyEnd": 1030833.63,
+      "jpyDelta": -29723.39,
+      "totalPnlJpy": 30833.63,
+      "totalReturnPct": 3.08,
+      "totalTrades": 18
+    },
+    {
+      "date": "2026-05-27",
+      "label": "5/27",
+      "jpyStart": 1029399.27,
+      "jpyEnd": 1085692.74,
+      "jpyDelta": 56293.47,
+      "totalPnlJpy": 85692.74,
+      "totalReturnPct": 8.57,
+      "totalTrades": 37
+    },
+    {
+      "date": "2026-05-28",
+      "label": "5/28",
+      "jpyStart": 1086182.27,
+      "jpyEnd": 1100567.07,
+      "jpyDelta": 14384.81,
+      "totalPnlJpy": 100567.07,
+      "totalReturnPct": 10.06,
+      "totalTrades": 24
+    },
+    {
+      "date": "2026-05-29",
+      "label": "5/29",
+      "jpyStart": 1103506.27,
+      "jpyEnd": 1124014.05,
+      "jpyDelta": 20507.78,
+      "totalPnlJpy": 124014.05,
+      "totalReturnPct": 12.4,
+      "totalTrades": 152
+    },
+    {
+      "date": "2026-05-30",
+      "label": "5/30",
+      "jpyStart": 1124125.55,
+      "jpyEnd": 1124125.55,
+      "jpyDelta": 0,
+      "totalPnlJpy": 124125.55,
+      "totalReturnPct": 12.41,
+      "totalTrades": 14
+    },
+    {
+      "date": "2026-06-01",
+      "label": "6/1",
+      "jpyStart": 1124796.18,
+      "jpyEnd": 1078726.75,
+      "jpyDelta": -46069.44,
+      "totalPnlJpy": 78726.75,
+      "totalReturnPct": 7.87,
+      "totalTrades": 35
+    },
+    {
+      "date": "2026-06-02",
+      "label": "6/2",
+      "jpyStart": 1060545.95,
+      "jpyEnd": 1057567.6,
+      "jpyDelta": -2978.35,
+      "totalPnlJpy": 57567.6,
+      "totalReturnPct": 5.76,
+      "totalTrades": 54
+    },
+    {
+      "date": "2026-06-03",
+      "label": "6/3",
+      "jpyStart": 1051756.91,
+      "jpyEnd": 1022659.44,
+      "jpyDelta": -29097.46,
+      "totalPnlJpy": 22659.44,
+      "totalReturnPct": 2.27,
+      "totalTrades": 29
+    },
+    {
+      "date": "2026-06-04",
+      "label": "6/4",
+      "jpyStart": 1021757.9,
+      "jpyEnd": 1039663.94,
+      "jpyDelta": 17906.05,
+      "totalPnlJpy": 39663.94,
+      "totalReturnPct": 3.97,
+      "totalTrades": 56
+    },
+    {
+      "date": "2026-06-05",
+      "label": "6/5",
+      "jpyStart": 1032045.77,
+      "jpyEnd": 999698.93,
+      "jpyDelta": -32346.84,
+      "totalPnlJpy": -301.07,
+      "totalReturnPct": -0.03,
+      "totalTrades": 40
+    },
+    {
+      "date": "2026-06-08",
+      "label": "6/8",
+      "jpyStart": 1000633.83,
+      "jpyEnd": 1005775.81,
+      "jpyDelta": 5141.98,
+      "totalPnlJpy": 5775.81,
+      "totalReturnPct": 0.58,
+      "totalTrades": 20
+    },
+    {
+      "date": "2026-06-09",
+      "label": "6/9",
+      "jpyStart": 1005894.03,
+      "jpyEnd": 1005328.44,
+      "jpyDelta": -565.59,
+      "totalPnlJpy": 5328.44,
+      "totalReturnPct": 0.53,
+      "totalTrades": 0
+    },
+    {
+      "date": "2026-06-10",
+      "label": "6/10",
+      "jpyStart": 1005894.03,
+      "jpyEnd": 999042.42,
+      "jpyDelta": -6851.6,
+      "totalPnlJpy": -957.58,
+      "totalReturnPct": -0.1,
+      "totalTrades": 18
+    },
+    {
+      "date": "2026-06-11",
+      "label": "6/11",
+      "jpyStart": 997731.99,
+      "jpyEnd": 994652.55,
+      "jpyDelta": -3079.44,
+      "totalPnlJpy": -5347.45,
+      "totalReturnPct": -0.53,
+      "totalTrades": 0
+    },
+    {
+      "date": "2026-06-12",
+      "label": "6/12",
+      "jpyStart": 998404.5,
+      "jpyEnd": 995462.4,
+      "jpyDelta": -2942.1,
+      "totalPnlJpy": -4537.6,
+      "totalReturnPct": -0.45,
+      "totalTrades": 4
+    },
+    {
+      "date": "2026-06-15",
+      "label": "6/15",
+      "jpyStart": 995320.63,
+      "jpyEnd": 998908.19,
+      "jpyDelta": 3587.56,
+      "totalPnlJpy": -1091.81,
+      "totalReturnPct": -0.11,
+      "totalTrades": 4
+    },
+    {
+      "date": "2026-06-16",
+      "label": "6/16",
+      "jpyStart": 998046.29,
+      "jpyEnd": 977176.77,
+      "jpyDelta": -20869.52,
+      "totalPnlJpy": -22823.23,
+      "totalReturnPct": -2.28,
+      "totalTrades": 20
+    },
+    {
+      "date": "2026-06-17",
+      "label": "6/17",
+      "jpyStart": 983345.5,
+      "jpyEnd": 1000500.3,
+      "jpyDelta": 17154.8,
+      "totalPnlJpy": 500.3,
+      "totalReturnPct": 0.05,
+      "totalTrades": 20
+    },
+    {
+      "date": "2026-06-18",
+      "label": "6/18",
+      "jpyStart": 999061.2,
+      "jpyEnd": 987657.44,
+      "jpyDelta": -11403.77,
+      "totalPnlJpy": -12342.56,
+      "totalReturnPct": -1.23,
+      "totalTrades": 23
+    },
+    {
+      "date": "2026-06-19",
+      "label": "6/19",
+      "jpyStart": 986811.13,
+      "jpyEnd": 986811.13,
+      "jpyDelta": 0,
+      "totalPnlJpy": -13188.87,
+      "totalReturnPct": -1.32,
+      "totalTrades": 0
+    },
+    {
+      "date": "2026-06-22",
+      "label": "6/22",
+      "jpyStart": 989356.14,
+      "jpyEnd": 992448.89,
+      "jpyDelta": 3092.75,
+      "totalPnlJpy": -7551.11,
+      "totalReturnPct": -0.76,
+      "totalTrades": 13
+    },
+    {
+      "date": "2026-06-23",
+      "label": "6/23",
+      "jpyStart": 991526.45,
+      "jpyEnd": 990959.37,
+      "jpyDelta": -567.08,
+      "totalPnlJpy": -9040.63,
+      "totalReturnPct": -0.9,
+      "totalTrades": 31
+    },
+    {
+      "date": "2026-06-24",
+      "label": "6/24",
+      "jpyStart": 973798.27,
+      "jpyEnd": 959237.01,
+      "jpyDelta": -14561.26,
+      "totalPnlJpy": -40762.99,
+      "totalReturnPct": -4.08,
+      "totalTrades": 0
+    },
+    {
+      "date": "2026-06-25",
+      "label": "6/25",
+      "jpyStart": 959237.01,
+      "jpyEnd": 959237.01,
+      "jpyDelta": 0,
+      "totalPnlJpy": -40762.99,
+      "totalReturnPct": -4.08,
+      "totalTrades": 0
+    },
+    {
+      "date": "2026-06-26",
+      "label": "6/26",
+      "jpyStart": 884126.28,
+      "jpyEnd": 884126.28,
+      "jpyDelta": 0,
+      "totalPnlJpy": -115873.72,
+      "totalReturnPct": -11.59,
+      "totalTrades": 0
+    },
+    {
+      "date": "2026-06-27",
+      "label": "6/27",
+      "jpyStart": 884126.28,
+      "jpyEnd": 884126.28,
+      "jpyDelta": 0,
+      "totalPnlJpy": -115873.72,
+      "totalReturnPct": -11.59,
+      "totalTrades": 0
+    },
+    {
+      "date": "2026-06-29",
+      "label": "6/29",
+      "jpyStart": 884974.28,
+      "jpyEnd": 920147.14,
+      "jpyDelta": 35172.86,
+      "totalPnlJpy": -79852.86,
+      "totalReturnPct": -7.99,
+      "totalTrades": 5
+    },
+    {
+      "date": "2026-06-30",
+      "label": "6/30",
+      "jpyStart": 920147.14,
+      "jpyEnd": 916784.96,
+      "jpyDelta": -3362.18,
+      "totalPnlJpy": -83215.04,
+      "totalReturnPct": -8.32,
+      "totalTrades": 0
+    },
+    {
+      "date": "2026-07-01",
+      "label": "7/1",
+      "jpyStart": 852886.25,
+      "jpyEnd": 871655.11,
+      "jpyDelta": 18768.86,
+      "totalPnlJpy": -128344.89,
+      "totalReturnPct": -12.83,
+      "totalTrades": 4
+    },
+    {
+      "date": "2026-07-02",
+      "label": "7/2",
+      "jpyStart": 881162.49,
+      "jpyEnd": 907574.38,
+      "jpyDelta": 26411.89,
+      "totalPnlJpy": -92425.62,
+      "totalReturnPct": -9.24,
+      "totalTrades": 4
+    },
+    {
+      "date": "2026-07-03",
+      "label": "7/3",
+      "jpyStart": 907518.56,
+      "jpyEnd": 915050.98,
+      "jpyDelta": 7532.42,
+      "totalPnlJpy": -84949.02,
+      "totalReturnPct": -8.49,
+      "totalTrades": 2
+    },
+    {
+      "date": "2026-07-06",
+      "label": "7/6",
+      "jpyStart": 917061.89,
+      "jpyEnd": 892304.64,
+      "jpyDelta": -24757.24,
+      "totalPnlJpy": -107695.36,
+      "totalReturnPct": -10.77,
+      "totalTrades": 46
+    },
+    {
+      "date": "2026-07-07",
+      "label": "7/7",
+      "jpyStart": 888956.85,
+      "jpyEnd": 867255.79,
+      "jpyDelta": -21701.05,
+      "totalPnlJpy": -132744.21,
+      "totalReturnPct": -13.27,
+      "totalTrades": 26
+    },
+    {
+      "date": "2026-07-08",
+      "label": "7/8",
+      "jpyStart": 868342.8,
+      "jpyEnd": 863165.53,
+      "jpyDelta": -5177.28,
+      "totalPnlJpy": -136834.47,
+      "totalReturnPct": -13.68,
+      "totalTrades": 6
+    },
+    {
+      "date": "2026-07-09",
+      "label": "7/9",
+      "jpyStart": 862973.45,
+      "jpyEnd": 862668.23,
+      "jpyDelta": -305.22,
+      "totalPnlJpy": -137331.77,
+      "totalReturnPct": -13.73,
+      "totalTrades": 0
+    },
+    {
+      "date": "2026-07-10",
+      "label": "7/10",
+      "jpyStart": 858831.92,
+      "jpyEnd": 874308.31,
+      "jpyDelta": 15476.39,
+      "totalPnlJpy": -125691.69,
+      "totalReturnPct": -12.57,
+      "totalTrades": 1
+    },
+    {
+      "date": "2026-07-13",
+      "label": "7/13",
+      "jpyStart": 874308.31,
+      "jpyEnd": 752688.59,
+      "jpyDelta": -121619.72,
+      "totalPnlJpy": -247311.41,
+      "totalReturnPct": -24.73,
+      "totalTrades": 0
+    },
+    {
+      "date": "2026-07-14",
+      "label": "7/14",
+      "jpyStart": 772767.42,
+      "jpyEnd": 774269.39,
+      "jpyDelta": 1501.97,
+      "totalPnlJpy": -225730.61,
+      "totalReturnPct": -22.57,
+      "totalTrades": 1
+    },
+    {
+      "date": "2026-07-15",
+      "label": "7/15",
+      "jpyStart": 772767.42,
+      "jpyEnd": 767023.83,
+      "jpyDelta": -5743.59,
+      "totalPnlJpy": -232976.17,
+      "totalReturnPct": -23.3,
+      "totalTrades": 2
+    },
+    {
+      "date": "2026-07-16",
+      "label": "7/16",
+      "jpyStart": 762967.38,
+      "jpyEnd": 759195.85,
+      "jpyDelta": -3771.52,
+      "totalPnlJpy": -240804.15,
+      "totalReturnPct": -24.08,
+      "totalTrades": 5
+    }
+  ],
+  "notes": [
+    "公開実績は自己運用ログをもとにした記録です。",
+    "掲載内容は情報提供を目的としたもので、特定銘柄の売買を推奨するものではありません。"
+  ]
+}

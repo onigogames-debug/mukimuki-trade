@@ -1,23 +1,23 @@
 # X Post Drafts
 
-Generated: 2026-07-15T02:18:39.798Z
+Generated: 2026-07-16T23:31:06.412Z
 
 MUKIMUKI tradeのX投稿下書きです。自動投稿はせず、毎朝の実績確認後に内容を読んでから投稿します。
 
 ## 1. 毎朝の日次実績
 
 ```text
-MUKIMUKI trade 7/14実績
+MUKIMUKI trade 7/16実績
 
 100万円スタート
-評価額 ¥774,269.39
-前日比 +¥1,501.97
-100万円比 -22.57%
-約定1件
+評価額 ¥759,195.85
+前日比 -¥3,771.52
+100万円比 -24.08%
+約定5件
 
-ALABを13株売却。引け後はノーポジション。前日比プラスとなった一日を記録しました。
+ALABやGOOGLなど複数銘柄の売買を実施。引け後はJHXを保有。調整の一日を記録しました。
 
-https://mukimuki-trade.com/performance/2026/07/14/topics/alab-stoploss-cash-return/
+https://mukimuki-trade.com/performance/2026/07/16/topics/alab-cut-googl-scalp-jhx-hold/
 
 #米国株 #投資記録
 ※投資助言ではありません
@@ -26,11 +26,11 @@ https://mukimuki-trade.com/performance/2026/07/14/topics/alab-stoploss-cash-retu
 ## 2. 保有銘柄の観察
 
 ```text
-2026-07-14 の持ち越し確認
-保有: なし
+2026-07-16 の持ち越し確認
+保有: JHX
 評価額と前日比だけでなく、なぜ持ち越したかを翌日以降に見返します。
 
-https://mukimuki-trade.com/performance/2026/07/14/topics/alab-stoploss-cash-return/
+https://mukimuki-trade.com/performance/2026/07/16/topics/alab-cut-googl-scalp-jhx-hold/
 
 #米国株 #投資記録 #MUKIMUKItrade
 ```
