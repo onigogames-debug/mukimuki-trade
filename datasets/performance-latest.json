@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "siteName": "MUKIMUKI trade",
   "sourceName": "Autotrade daily report",
-  "sourceReport": "report_2026-07-16.txt",
-  "generatedAt": "2026-07-17T05:00:35+09:00",
-  "generatedAtDisplay": "2026.07.17 05:00:35 JST",
+  "sourceReport": "report_2026-07-21.txt + jp_account_mix_report.csv",
+  "generatedAt": "2026-07-22T09:45:32+09:00",
+  "generatedAtDisplay": "2026.07.22 09:45:32 JST",
   "timezone": {
     "reportDate": "EST",
     "generatedAt": "Asia/Tokyo"
@@ -14,77 +14,70 @@
   "challengeStartDate": "2026-04-24",
   "affiliateUrl": "https://j.jp.moomoo.com/0BdcjG",
   "latest": {
-    "reportDate": "2026-07-16",
-    "reportDateDisplay": "2026.07.16 EST",
-    "label": "7/16",
+    "reportDate": "2026-07-21",
+    "reportDateDisplay": "2026.07.21 EST",
+    "label": "7/21",
     "jpy": {
-      "start": 762967.38,
-      "end": 759195.85,
-      "delta": -3771.52
+      "start": 752442.86,
+      "end": 754138.23,
+      "delta": 1695.37
     },
     "usd": {
-      "start": 4695.77,
-      "end": 4675.11,
-      "delta": -20.6633
+      "start": 4630.3611,
+      "end": 4632.1155,
+      "delta": 1.7544
     },
     "summary": {
-      "totalTrades": 5,
-      "totalBuyUsd": 6000.63,
-      "totalSellUsd": 4889.5,
-      "usdPnl": -20.66,
-      "cashFlowUsd": -1111.13,
-      "totalPnlJpy": -240804.15,
-      "totalReturnPct": -24.08,
-      "dailyReturnPct": -0.49
+      "totalTrades": 2,
+      "totalBuyUsd": 1234.58,
+      "totalSellUsd": 0,
+      "usdPnl": 0,
+      "cashFlowUsd": -1234.58,
+      "totalPnlJpy": -245861.77,
+      "totalReturnPct": -24.59,
+      "dailyReturnPct": 0.23
     },
     "trades": [
       {
-        "side": "SELL",
-        "symbol": "US.ALAB",
-        "shares": 13,
-        "priceUsd": 348.03,
-        "amountUsd": 4524.4,
-        "executedAtEst": "2026-07-16 00:22:09.120"
+        "side": "BUY",
+        "symbol": "US.VSXY",
+        "shares": 7,
+        "priceUsd": 87.56,
+        "amountUsd": 612.92,
+        "executedAtEst": "2026-07-21 09:33:36.947",
+        "remark": "BUY:MA強気 / VWAP強気 / "
       },
       {
         "side": "BUY",
-        "symbol": "US.GOOGL",
-        "shares": 1,
-        "priceUsd": 374.12,
-        "amountUsd": 374.12,
-        "executedAtEst": "2026-07-16 09:32:22.394"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.JHX",
-        "shares": 25,
-        "priceUsd": 27.02,
-        "amountUsd": 675.46,
-        "executedAtEst": "2026-07-16 10:32:34.799"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.GOOGL",
-        "shares": 1,
-        "priceUsd": 365.1,
-        "amountUsd": 365.1,
-        "executedAtEst": "2026-07-16 14:08:06.516"
+        "symbol": "US.NVDA",
+        "shares": 3,
+        "priceUsd": 207.22,
+        "amountUsd": 621.66,
+        "executedAtEst": "2026-07-21 09:39:00.264",
+        "remark": "BUY:MA強気 / VWAP強気 / "
       }
     ],
     "positions": [
       {
-        "symbol": "US.JHX",
-        "shares": 25,
-        "averagePriceUsd": 27.05,
-        "unrealizedPnlPct": -0.35,
-        "unrealizedPnlUsd": -2.35
+        "symbol": "US.VSXY",
+        "shares": 7,
+        "averagePriceUsd": 87.56,
+        "unrealizedPnlPct": 0.29,
+        "unrealizedPnlUsd": 1.78
+      },
+      {
+        "symbol": "US.NVDA",
+        "shares": 3,
+        "averagePriceUsd": 207.22,
+        "unrealizedPnlPct": 0,
+        "unrealizedPnlUsd": 0
       }
     ],
     "signals": {
-      "loops": 819,
-      "buySignals": 149,
-      "sellSignals": 1,
-      "holds": 16329
+      "loops": 182,
+      "buySignals": 10,
+      "sellSignals": 0,
+      "holds": 2632
     }
   },
   "history": [
@@ -647,6 +640,36 @@
       "totalPnlJpy": -240804.15,
       "totalReturnPct": -24.08,
       "totalTrades": 5
+    },
+    {
+      "date": "2026-07-17",
+      "label": "7/17",
+      "jpyStart": 756914.41,
+      "jpyEnd": 751928.17,
+      "jpyDelta": -4986.24,
+      "totalPnlJpy": -248071.83,
+      "totalReturnPct": -24.81,
+      "totalTrades": 10
+    },
+    {
+      "date": "2026-07-20",
+      "label": "7/20",
+      "jpyStart": 752442.86,
+      "jpyEnd": 752442.86,
+      "jpyDelta": 0,
+      "totalPnlJpy": -247557.14,
+      "totalReturnPct": -24.76,
+      "totalTrades": 0
+    },
+    {
+      "date": "2026-07-21",
+      "label": "7/21",
+      "jpyStart": 752442.86,
+      "jpyEnd": 754138.23,
+      "jpyDelta": 1695.37,
+      "totalPnlJpy": -245861.77,
+      "totalReturnPct": -24.59,
+      "totalTrades": 2
     }
   ],
   "notes": [

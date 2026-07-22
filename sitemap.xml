@@ -217,8 +217,26 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://mukimuki-trade.com/performance/2026/07/17/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mukimuki-trade.com/performance/2026/07/20/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mukimuki-trade.com/performance/2026/07/21/</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://mukimuki-trade.com/performance/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
@@ -451,6 +469,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://mukimuki-trade.com/performance/2026/07/17/topics/global-outage-and-crowdstrike-cut/</loc>
+    <lastmod>2026-07-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mukimuki-trade.com/performance/2026/07/20/topics/no-trade-weekend-wait/</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mukimuki-trade.com/performance/2026/07/21/topics/nvda-and-vsxy-buy-entry/</loc>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://mukimuki-trade.com/performance/2026/05/</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -464,7 +500,7 @@
   </url>
   <url>
     <loc>https://mukimuki-trade.com/performance/2026/07/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -560,7 +596,7 @@
   </url>
   <url>
     <loc>https://mukimuki-trade.com/performance/2026/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -620,547 +656,583 @@
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/aapl/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/ai/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/alab/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/amat/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/amba/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/amd/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/ampx/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/amzn/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/api/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/app/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/aq/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/arm/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/asic/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/asml/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/ast/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/asts/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/avav/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/avgo/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/ba/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/bb/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/bksy/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/capex/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/cpu/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/crdo/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://mukimuki-trade.com/research/tag/crwd/</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/ctsh/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/cuda/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/cxl/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/darpa/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/dxyz/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://mukimuki-trade.com/research/tag/etf/</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/eu/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://mukimuki-trade.com/research/tag/fig/</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/form/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/googl/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/gpu/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/gsat/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/hls/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/hon/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/hood/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/ibm/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/ic/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/intc/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/ionq/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/ip/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/irdm/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/it/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/jhx/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/ktos/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/ldos/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/leo/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/lhx/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/lmt/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/lunr/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/meta/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/msft/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/mu/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/nvda/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/nvts/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/oasys/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/oklo/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/peng/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/per/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/pl/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/ppa/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/qbts/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/qkd/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/qpu/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/qqq/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/qubt/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/rcat/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/rddt/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/rdw/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/rgti/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/rivn/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/rklb/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/rtx/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/sats/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/sbc/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://mukimuki-trade.com/research/tag/sm/</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/sofi/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/soun/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/sox/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/spcx/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/spir/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/ter/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/tpu/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/tsla/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/tsm/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/tsmc/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://mukimuki-trade.com/research/tag/vix/</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/vsat/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://mukimuki-trade.com/research/tag/vsxy/</loc>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/xg/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/xndu/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/research/tag/xq/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://mukimuki-trade.com/sitemap/</loc>
-    <lastmod>2026-07-16</lastmod>
+    <lastmod>2026-07-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
