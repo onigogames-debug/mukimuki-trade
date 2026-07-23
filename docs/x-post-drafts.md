@@ -1,23 +1,23 @@
 # X Post Drafts
 
-Generated: 2026-07-22T01:03:31.760Z
+Generated: 2026-07-23T00:17:49.641Z
 
 MUKIMUKI tradeのX投稿下書きです。自動投稿はせず、毎朝の実績確認後に内容を読んでから投稿します。
 
 ## 1. 毎朝の日次実績
 
 ```text
-MUKIMUKI trade 7/21実績
+MUKIMUKI trade 7/22実績
 
 100万円スタート
-評価額 ¥754,138.23
-前日比 +¥1,695.37
-100万円比 -24.59%
+評価額 ¥757,434.07
+前日比 +¥3,374.38
+100万円比 -24.26%
 約定2件
 
-VSXYを7株買い。 NVDAを3株買い。引け後はVSXY・NVDAを保有。前日比プラスとなった一日を記録しました。
+VSXYを7株売却。 NVDAを1株売却。引け後はNVDAを保有。前日比プラスとなった一日を記録しました。
 
-https://mukimuki-trade.com/performance/2026/07/21/topics/nvda-and-vsxy-buy-entry/
+https://mukimuki-trade.com/performance/2026/07/22/topics/nvda-partial-profit-taking-and-vsxy-clear/
 
 #米国株 #投資記録
 ※投資助言ではありません
@@ -26,11 +26,11 @@ https://mukimuki-trade.com/performance/2026/07/21/topics/nvda-and-vsxy-buy-entry
 ## 2. 保有銘柄の観察
 
 ```text
-2026-07-21 の持ち越し確認
-保有: VSXY / NVDA
+2026-07-22 の持ち越し確認
+保有: NVDA
 評価額と前日比だけでなく、なぜ持ち越したかを翌日以降に見返します。
 
-https://mukimuki-trade.com/performance/2026/07/21/topics/nvda-and-vsxy-buy-entry/
+https://mukimuki-trade.com/performance/2026/07/22/topics/nvda-partial-profit-taking-and-vsxy-clear/
 
 #米国株 #投資記録 #MUKIMUKItrade
 ```
