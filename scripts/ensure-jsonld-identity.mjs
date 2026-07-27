@@ -42,15 +42,14 @@ const websiteSchema = {
 const personSchema = {
   '@type': 'Person',
   '@id': site.authorId,
-  name: 'MUKIMUKI trade 編集部',
+  name: site.name,
   alternateName: ['MUKIMUKI trade', 'OnigoGames'],
   url: `${site.url}/profile/`,
   image: site.logo,
-  sameAs: [site.officialX],
-  mainEntityOfPage: {
-    '@type': 'ProfilePage',
-    '@id': `${site.url}/profile/#webpage`,
-  },
+  sameAs: [
+    'https://x.com/OnigoGames',
+    'https://note.com/mukimuki_trade'
+  ],
   gender: 'Male',
   homeLocation: {
     '@type': 'Place',
@@ -61,9 +60,9 @@ const personSchema = {
       addressCountry: 'JP',
     },
   },
-  jobTitle: '兼業投資家・投資ブロガー',
-  knowsAbout: ['米国株投資', '自動売買', 'AIエージェント', '株式トレード', 'リスク管理', '事業開発', 'Autotrade'],
-  description: '投資歴20年弱の兼業投資家。40代男性、東京都港区在住。AIエージェント、自動売買、事業開発、株式投資を専門領域とし、Autotradeの日次レポートをもとに米国株トレード実績、銘柄検討、投資ロジックを検証しやすい形で整理します。投資助言業者ではありません。',
+  jobTitle: '兼業投資家',
+  knowsAbout: ['AIエージェント', '自動売買', '事業開発', '株式投資（米国株）', 'Autotrade'],
+  description: '投資歴20年弱の兼業投資家。40代男性、東京都港区在住。AIエージェント、自動売買、事業開発、株式投資を専門領域とします。',
 };
 
 const htmlFiles = async (dir = root) => {
@@ -94,18 +93,17 @@ const typeMatches = (schema, typeName) => {
 };
 
 const ensureGraphIdentity = (jsonLd) => {
-  const graph = Array.isArray(jsonLd['@graph']) ? jsonLd['@graph'] : [jsonLd];
-  const hasWebsite = graph.some((schema) => typeMatches(schema, 'WebSite'));
-  const hasPerson = graph.some((schema) => typeMatches(schema, 'Person'));
-
-  if (hasWebsite && hasPerson) return { jsonLd, changed: false };
+  let graph = Array.isArray(jsonLd['@graph']) ? jsonLd['@graph'] : [jsonLd];
+  
+  // Remove existing WebSite and Person schemas to prevent stale or duplicate copies
+  graph = graph.filter((schema) => !typeMatches(schema, 'WebSite') && !typeMatches(schema, 'Person'));
 
   return {
     jsonLd: {
       '@context': jsonLd['@context'] || 'https://schema.org',
       '@graph': [
-        ...(!hasWebsite ? [websiteSchema] : []),
-        ...(!hasPerson ? [personSchema] : []),
+        websiteSchema,
+        personSchema,
         ...graph,
       ],
     },
@@ -125,7 +123,12 @@ const updateHtml = (html) => {
   }
 
   const result = ensureGraphIdentity(jsonLd);
-  if (!result.changed) return { html, changed: false, reason: 'already-complete' };
+  
+  const originalStr = JSON.stringify(jsonLd);
+  const newStr = JSON.stringify(result.jsonLd);
+  if (originalStr === newStr) {
+    return { html, changed: false, reason: 'already-complete' };
+  }
 
   const script = `<script type="application/ld+json">\n${JSON.stringify(result.jsonLd, null, 2)}\n</script>`;
   return {

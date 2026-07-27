@@ -53,22 +53,16 @@ const absoluteUrl = (pagePath) => `${siteUrl}${pagePath}`;
 const imageUrl = (imagePath) => `${siteUrl}${imagePath}`;
 const displayDate = (value) => value.slice(0, 10).replaceAll('-', '.');
 
-const nav = `    <nav class="nav-links" aria-label="主要メニュー">
-      <a href="/performance/">実績</a>
-      <a href="/research/">銘柄検討</a>
-      <a href="/logic/">ロジック</a>
-      <a href="/moomoo/">moomoo</a>
-      <a href="/archive/">アーカイブ</a>
-      <a href="/profile/">運営者</a>
-      <a href="${officialNoteUrl}" target="_blank" rel="noopener">公式note</a>
-      <a href="${officialXUrl}" target="_blank" rel="me noopener">公式X</a>
-    </nav>`;
-
-const mobileMenu = `    <details class="mobile-menu">
+const header = `  <header class="site-header">
+    <a class="brand" href="/" aria-label="MUKIMUKI trade home">
+      <img src="/assets/mukimuki-main.png" alt="MUKIMUKIキャラクター - 100万円トレード記録ブログのロゴ">
+      <span><strong>MUKIMUKI trade</strong><small>数字で追う公開記録</small></span>
+    </a>
+    <details class="site-nav-container">
       <summary aria-label="メニュー">
         <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
       </summary>
-      <nav class="mobile-nav-links" aria-label="スマホメニュー">
+      <nav class="nav-links" aria-label="主要メニュー">
         <a href="/performance/">実績</a>
         <a href="/research/">銘柄検討</a>
         <a href="/logic/">ロジック</a>
@@ -78,20 +72,13 @@ const mobileMenu = `    <details class="mobile-menu">
         <a href="${officialNoteUrl}" target="_blank" rel="noopener">公式note</a>
         <a href="${officialXUrl}" target="_blank" rel="me noopener">公式X</a>
       </nav>
-    </details>`;
-
-const header = `  <header class="site-header">
-    <a class="brand" href="/" aria-label="MUKIMUKI trade home">
-      <img src="/assets/mukimuki-main.png" alt="MUKIMUKIキャラクター - 100万円トレード記録ブログのロゴ">
-      <span><strong>MUKIMUKI trade</strong><small>数字で追う公開記録</small></span>
-    </a>
-${mobileMenu}
-${nav}
+    </details>
   </header>`;
 
 const footer = `  <footer class="site-footer">
     <strong>MUKIMUKI trade</strong>
     <p>100万円からの米国株トレード実績、銘柄メモ、売買ロジックを記録しています。掲載内容には広告リンクを含む場合があります。</p>
+    <p class="footer-rss-promo">最新記事をチェック：<a href="/feed.xml" target="_blank" rel="noopener">RSSフィードで更新を購読する</a></p>
     <nav class="footer-links" aria-label="補助リンク"><a href="/profile/">運営者</a><a href="/archive/">アーカイブ</a><a href="/sitemap/">サイトマップ</a><a href="/feed.xml">RSS</a><a href="/about/">運営方針</a><a href="${officialNoteUrl}" target="_blank" rel="noopener">公式note</a><a href="${officialXUrl}" target="_blank" rel="me noopener">公式X</a></nav>
   </footer>`;
 
@@ -282,6 +269,22 @@ ${renderXShareSection({
     hashtags: ['MUKIMUKItrade', article.categoryKey === 'research' ? '米国株' : '投資記録', ...(article.tickers || []).slice(0, 2)],
     escapeHtml,
   })}
+
+${(article.categoryKey === 'research' || article.categoryKey === 'performance') ? `
+      <section class="article-panel logic-promo-panel" style="background: var(--surface-warm); border-left: 4px solid var(--sun); margin-top: 16px;">
+        <h3>投資ロジック・売買ルールについて</h3>
+        <p>MUKIMUKI tradeでは、感情を排除した機械的なトレードを実践するため、明確な売買ロジックを設定しています。</p>
+        <div class="pros-cons" style="margin-top: 14px;">
+          <div class="step-card" style="padding: 12px; background: white;">
+            <strong><a href="/logic/entry-risk/">買い・リスク管理ロジック</a></strong>
+            <p style="font-size: 0.88rem; margin: 6px 0 0; font-weight: 700; color: var(--muted);">指標と出来高による優位性エントリー、1トレードあたりの許容リスク制限ルール。</p>
+          </div>
+          <div class="step-card" style="padding: 12px; background: white;">
+            <strong><a href="/logic/exit-review/">利確・損切り（撤退）ロジック</a></strong>
+            <p style="font-size: 0.88rem; margin: 6px 0 0; font-weight: 700; color: var(--muted);">買値からの逆指値追従（トレーリングストップ）、想定シナリオ崩れ時の即時撤退ルール。</p>
+          </div>
+        </div>
+      </section>` : ''}
 
       <section class="article-panel">
         <h2>関連する記録</h2>

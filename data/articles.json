@@ -1,6 +1,53 @@
 {
   "articles": [
     {
+      "path": "/performance/2026/07/23/topics/nvda-profit-taken-and-googl-tsla-vg-buy/",
+      "categoryKey": "performance",
+      "category": "実績公開",
+      "categoryUrl": "/category/performance/",
+      "eyebrow": "TRADE TOPIC / PERFORMANCE",
+      "title": "7/23実績: NVDA全決済で利確（+5.7ドル）し、地合い好転でGOOGL・TSLA・VG新規打診買い（評価額75.9万円）",
+      "description": "2026年7月23日の米国株自動売買実績。評価額は75.99万円（前日比+2,729円）。持ち越しのNVIDIA (NVDA) 残り2株をすべて利確売却（+$5.78）し、その後GOOGL (2株)、TSLA (2株)、VG (45株) をそれぞれ新規に買い仕込んで持ち越しました。",
+      "summary": "7/23の自動売買は、評価額が ¥759,865.85 となり、前日比 +¥2,729.29（ドルベース -$3.12、実現利益 +$5.78）と小幅反発が継続しました。前日から持ち越していた NVIDIA (US.NVDA) 2株が上昇ターゲットに到達し、1株を @$211.35、もう1株を @$208.87 でそれぞれ手堅く利益確定（実現利益 +$5.78）しノーポジションへ移行。その後、地合いと株価レンジ妙味から Google (US.GOOGL) 2株、Tesla (US.TSLA) 2株、Vantage (US.VG) 45株をそれぞれ新規に打診買いし持ち越しました。利確を優先しながら新たな成長株へとローテーションする動きです。",
+      "image": "/assets/mukimuki-performance.png",
+      "published": "2026-07-24T08:30:00+09:00",
+      "modified": "2026-07-24T08:30:00+09:00",
+      "tags": [
+        "実績公開",
+        "売買トピック",
+        "利益確定",
+        "NVDA決済",
+        "新規買い"
+      ],
+      "sections": [
+        {
+          "heading": "NVDA利益確定と地合いを狙った打診買い",
+          "paragraphs": [
+            "2026年7月23日のセッションでは、前日戻り歩調をたどった半導体セクターのNVDAがさらに続伸し、利益確定シグナルに基づいて残りの2株をすべて売却（+$5.78の利益確定）しました。その後、指数の押し目買い動向および個別レンジ妙味を検出し、GOOGL (取得単価: $321.71, 2株)、TSLA (取得単価: $334.00, 2株)、およびVG (取得単価: $15.24, 45株) をそれぞれ新規で仕込みました。"
+          ],
+          "bullets": [
+            "評価額: ¥759,865.85（前営業日比 +0.36% / +2,729.29円）",
+            "元本100万円比: -24.01%",
+            "約定件数: 5件（売却2件 / 買付3件）",
+            "引け後ポジション: US.GOOGL 2株、US.TSLA 2株、US.VG 45株"
+          ]
+        },
+        {
+          "heading": "利確優先と複数銘柄へのローテーション",
+          "paragraphs": [
+            "ボラティリティ相場の中でNVDAの利益をしっかりと回収したのち、大型テックの押し目（GOOGL/TSLA）と小型株（VG）に分散して新規打診買いを行いました。一銘柄に資金を集中させず、打診サイズで市場との連動性を探る戦略です。"
+          ]
+        }
+      ],
+      "sources": [],
+      "tickers": [
+        "NVDA",
+        "GOOGL",
+        "TSLA",
+        "VG"
+      ]
+    },
+    {
       "path": "/performance/2026/07/22/topics/nvda-partial-profit-taking-and-vsxy-clear/",
       "categoryKey": "performance",
       "category": "実績公開",

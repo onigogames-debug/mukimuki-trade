@@ -149,7 +149,11 @@ export const generateDailyPerformanceSeo = ({
   tradeCount,
   prevDate,
   nextDate,
+  rateStr,
+  actionText,
 } = {}) => {
+  const prevText = prevDate ? `前日${prevDate}` : '前日';
+  const nextText = nextDate ? `翌日${nextDate}` : '次回';
   const tickers = normalizeHoldings(holdings).slice(0, 3);
   const hasHoldings = tickers.length > 0;
   const holdingsText = hasHoldings ? tickers.join('・') : 'ノーポジション';
@@ -161,14 +165,28 @@ export const generateDailyPerformanceSeo = ({
   const recommendationAnswer = hasHoldings
     ? 'いいえ。保有銘柄として公開している自己運用ログであり、特定銘柄の売買を推奨するものではありません。'
     : 'いいえ。売買記録として公開している自己運用ログであり、特定銘柄の売買を推奨するものではありません。';
-  const prevText = prevDate ? `前日${prevDate}` : '前日';
-  const nextText = nextDate ? `翌日${nextDate}` : '次回';
   const rateText = normalizePercent(rate || rateNum || '');
   const rateNumText = normalizePercent(rateNum || rate || '');
   const jpyTotalText = normalizeJpy(jpyTotal);
   const dailyPnlText = normalizeJpy(dailyPnl);
-  const title = truncate(`${date}実績 ${rateText}｜${titleSuffix}`, 60);
-  const metaDescription = truncate(`${date}の米国株実績公開。評価額${jpyTotalText}、前日比${dailyPnlText}、100万円比${rateNumText}。${holdingsDescription}を記録。`, 120);
+  
+  const jpyNum = Number(String(jpyTotal || '').replace(/[^\d]/g, ''));
+  const includeMillion = jpyNum >= 950000;
+  
+  const dateObj = new Date(date + 'T12:00:00Z');
+  const shortDate = `${dateObj.getUTCMonth() + 1}/${dateObj.getUTCDate()}`;
+  const displayRateStr = rateStr ? (rateStr.startsWith('+') || rateStr.startsWith('-') || rateStr.startsWith('±') ? rateStr : `+${rateStr}`) : '';
+  const rateLabel = displayRateStr ? ` 前日比${displayRateStr}` : '';
+  const actionSuffix = actionText ? `｜${actionText}` : (tickers.length ? `｜${tickers.slice(0, 2).join('・')}保有` : '｜ノーポジション');
+  
+  const title = truncate(`${shortDate}実績${rateLabel}${actionSuffix}`, 43);
+  
+  const metaDescription = truncate(
+    includeMillion
+      ? `100万円からの米国株自動売買実績。${date}時点の評価額${jpyTotalText}（100万円比${rateNumText}）。${holdingsDescription}を保有中。損益・保有・ルールを毎日記録。`
+      : `米国株自動売買の実績を日次公開。現在評価額${jpyTotalText}（100万円比${rateNumText}）。${holdingsDescription}を保有中。損益・保有銘柄・売買ロジックを毎日記録。`,
+    120
+  );
   const h1 = `${date}の米国株実績公開: 100万円比 ${rateNumText}、評価額 ${jpyTotalText}`;
   const h2s = [
     `米国株トレード実績: 評価額${jpyTotalText}と100万円比${rateNumText}`,
@@ -177,7 +195,12 @@ export const generateDailyPerformanceSeo = ({
     '自動売買と裁量判断で見るポイント',
     '明日以降に見る米国株の確認点',
   ];
-  const intro = truncate(`${date}の米国株トレード実績公開です。100万円から始めた投資ブログとして、評価額${jpyTotalText}、前日比${dailyPnlText}、100万円比${rateNumText}を記録します。${introHoldings}、売買件数は${tradeCount}件でした。自動売買と裁量判断の結果を日次で検証します。`, 200);
+  const intro = truncate(
+    includeMillion
+      ? `${date}の米国株トレード実績公開です。100万円から始めた投資ブログとして、評価額${jpyTotalText}、前日比${dailyPnlText}、100万円比${rateNumText}を記録します。${introHoldings}、売買件数は${tradeCount}件でした。自動売買と裁量判断の結果を日次で検証します。`
+      : `${date}の米国株トレード実績公開です。米国株自動売買ブログとして、評価額${jpyTotalText}、前日比${dailyPnlText}、100万円比${rateNumText}を記録します。${introHoldings}、売買件数は${tradeCount}件でした。自動売買と裁量判断の結果を日次で検証します。`,
+    200
+  );
 
   return {
     title,

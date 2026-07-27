@@ -6,7 +6,6 @@ const site = {
   logo: '/assets/mukimuki-main.png',
   authorId: 'https://mukimuki-trade.com/profile/#author',
   websiteId: 'https://mukimuki-trade.com/#website',
-  blogId: 'https://mukimuki-trade.com/#blog',
   officialX: 'https://x.com/OnigoGames',
 };
 
@@ -20,6 +19,10 @@ export const JSON_LD_PAGE_TYPES = [
   'top',
   'profile',
   'about',
+  'archive',
+  'category',
+  'research-index',
+  'collection'
 ];
 
 const truthy = new Set(['true', 'yes', 'on']);
@@ -27,9 +30,15 @@ const falsy = new Set(['false', 'no', 'off']);
 
 const trimSlash = (value) => String(value || '').replace(/\/$/, '');
 const ensureTrailingSlash = (value) => String(value || '/').endsWith('/') ? String(value || '/') : `${value}/`;
-const normalizeSameAs = (value = site.officialX) => {
+
+export const normalizeSameAs = (value) => {
+  const defaults = [
+    'https://x.com/OnigoGames',
+    'https://note.com/mukimuki_trade'
+  ];
   if (Array.isArray(value)) return value.filter(Boolean);
-  return value ? [value] : [];
+  if (value && typeof value === 'string') return [value];
+  return defaults;
 };
 
 export const absoluteUrl = (value = '/') => {
@@ -61,19 +70,6 @@ const compactObject = (value) => {
       }),
   );
 };
-
-const breadcrumbPageTypes = new Set([
-  'performance',
-  'performanceDaily',
-  'performanceMonthly',
-  'performanceYearly',
-  'tradeTopic',
-  'research',
-  'logic',
-  'article',
-  'archive',
-  'collection',
-]);
 
 const parseScalar = (value) => {
   const trimmed = value.trim();
@@ -139,96 +135,70 @@ export const parseFrontMatter = (source) => {
   return { frontMatter, content: String(source).slice(match[0].length) };
 };
 
-export const normalizePageMeta = (frontMatter = {}) => {
-  const path = frontMatter.path || new URL(frontMatter.url || '/', site.url).pathname;
-  const pageType = normalizePageType(frontMatter.pageType || frontMatter.type || inferPageType(path, frontMatter.section), path);
-  return {
-    pageType,
-    title: frontMatter.title,
-    description: frontMatter.description,
-    published: frontMatter.publishedTime || frontMatter.published_time || frontMatter.published || frontMatter.datePublished || frontMatter.pubDate,
-    modified: frontMatter.modifiedTime || frontMatter.modified_time || frontMatter.modified || frontMatter.dateModified || frontMatter.publishedTime || frontMatter.published_time,
-    author: frontMatter.author || site.name,
-    url: frontMatter.url || absoluteUrl(path),
-    path,
-    section: frontMatter.section || frontMatter.category,
-    image: frontMatter.image || site.logo,
-    keywords: frontMatter.keywords || frontMatter.tags || [],
-    headline: frontMatter.headline,
-    parentUrl: frontMatter.parentUrl || frontMatter.parent_url,
-    breadcrumbs: frontMatter.breadcrumbs || buildBreadcrumbListFromPath(path, { title: frontMatter.title }),
-    faq: frontMatter.faq || frontMatter.faqs || frontMatter.faqItems || [],
-    items: frontMatter.items || [],
-    sameAs: normalizeSameAs(frontMatter.sameAs || frontMatter.same_as || site.officialX),
-  };
-};
-
 const inferPageType = (path, section) => {
-  if (path === '/') return 'home';
+  if (path === '/') return 'top';
   if (path === '/profile/') return 'profile';
-  if (path === '/about/') return 'legal';
+  if (path === '/about/') return 'about';
   if (path === '/performance/latest/') return 'skip';
   if (path.startsWith('/archive/')) return 'archive';
-  if (path.startsWith('/category/')) return 'collection';
-  if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/$/.test(path)) return 'performanceDaily';
-  if (/^\/performance\/\d{4}\/\d{2}\/$/.test(path)) return 'performanceMonthly';
-  if (/^\/performance\/\d{4}\/$/.test(path)) return 'performanceYearly';
-  if (path === '/performance/' || path.startsWith('/performance/')) return 'performance';
-  if (path === '/research/' || path.startsWith('/research/')) return 'research';
-  if (path === '/logic/' || path.startsWith('/logic/')) return path === '/logic/' ? 'collection' : 'logic';
-  if (section) return 'article';
-  return 'page';
+  if (path.startsWith('/category/')) return 'category';
+  if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/$/.test(path)) return 'daily-performance';
+  if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/topics\/[^/]+\/$/.test(path)) return 'trade-topic';
+  if (/^\/performance\/\d{4}\/\d{2}\/$/.test(path)) return 'monthly-archive';
+  if (/^\/performance\/\d{4}\/$/.test(path)) return 'yearly-archive';
+  if (path === '/performance/' || path.startsWith('/performance/')) return 'daily-performance';
+  if (path === '/research/' || path.startsWith('/research/')) return path === '/research/' ? 'research-index' : 'research';
+  if (path === '/logic/' || path.startsWith('/logic/')) return 'logic';
+  return 'top';
 };
 
 const normalizePageType = (value, path = '/') => {
   const type = String(value || inferPageType(path)).trim();
   const aliases = new Map([
-    ['top', 'home'],
-    ['website', 'home'],
-    ['daily-performance', 'performanceDaily'],
-    ['dailyPerformance', 'performanceDaily'],
-    ['performance-daily', 'performanceDaily'],
-    ['performance_daily', 'performanceDaily'],
-    ['monthly-archive', 'performanceMonthly'],
-    ['monthlyPerformance', 'performanceMonthly'],
-    ['monthly-performance', 'performanceMonthly'],
-    ['performance-monthly', 'performanceMonthly'],
-    ['performance_monthly', 'performanceMonthly'],
-    ['yearly-archive', 'performanceYearly'],
-    ['yearlyArchive', 'performanceYearly'],
-    ['annual-archive', 'performanceYearly'],
-    ['annualArchive', 'performanceYearly'],
-    ['performanceYearly', 'performanceYearly'],
-    ['performance-yearly', 'performanceYearly'],
-    ['trade-topic', 'tradeTopic'],
-    ['tradeTopic', 'tradeTopic'],
-    ['trade_topic', 'tradeTopic'],
+    ['home', 'top'],
+    ['website', 'top'],
+    ['dailyPerformance', 'daily-performance'],
+    ['performanceDaily', 'daily-performance'],
+    ['performance-daily', 'daily-performance'],
+    ['monthlyPerformance', 'monthly-archive'],
+    ['monthly-performance', 'monthly-archive'],
+    ['performanceMonthly', 'monthly-archive'],
+    ['performance-monthly', 'monthly-archive'],
+    ['yearlyArchive', 'yearly-archive'],
+    ['yearly-performance', 'yearly-archive'],
+    ['performanceYearly', 'yearly-archive'],
+    ['performance-yearly', 'yearly-archive'],
+    ['tradeTopic', 'trade-topic'],
+    ['trade-topic', 'trade-topic'],
     ['stockResearch', 'research'],
     ['stock-research', 'research'],
     ['investmentLogic', 'logic'],
     ['investment-logic', 'logic'],
     ['profilePage', 'profile'],
     ['profile-page', 'profile'],
-    ['disclaimer', 'legal'],
-    ['about', 'legal'],
-    ['legalDocument', 'legal'],
-    ['legal-document', 'legal'],
-    ['archive', 'collection'],
-    ['monthly', 'performanceMonthly'],
+    ['legal', 'about'],
+    ['disclaimer', 'about'],
+    ['legalDocument', 'about'],
+    ['legal-document', 'about'],
     ['latest-performance', 'skip'],
     ['latestPerformance', 'skip'],
     ['noindex', 'skip'],
+    ['archive', 'collection'],
   ]);
   return aliases.get(type) || type;
 };
 
-export const breadcrumbLabelMap = {
-  performance: { label: '実績', url: '/performance/' },
-  research: { label: '銘柄検討', url: '/research/' },
-  logic: { label: '投資ロジック', url: '/logic/' },
-  topics: { label: '売買トピック' },
-  profile: { label: '運営者プロフィール' },
-  about: { label: '免責事項' },
+export const breadcrumbMapping = {
+  "performance": { label: "実績", url: "/performance/latest/" },
+  "research":    { label: "銘柄検討", url: "/research/" },
+  "logic":       { label: "投資ロジック", url: "/logic/" },
+  "moomoo":      { label: "moomoo証券", url: "/moomoo/" },
+  "topics":      { label: "売買トピック" },
+  "category":    { label: "カテゴリ" },
+  "profile":     { label: "運営者プロフィール" },
+  "about":       { label: "免責事項" },
+  "archive":     { label: "アーカイブ" },
+  "sitemap":     { label: "サイトマップ" }
 };
 
 const titleizeSegment = (segment) => segment
@@ -237,119 +207,98 @@ const titleizeSegment = (segment) => segment
   .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
   .join(' ');
 
-export const breadcrumbLabelForSegment = (segment, { previous, next } = {}) => {
-  if (segment === '') return 'ホーム';
-  if (breadcrumbLabelMap[segment]) return breadcrumbLabelMap[segment].label;
-  if (segment === 'archive') return 'アーカイブ';
-  if (segment === 'category') return 'カテゴリ';
-  if (segment === 'moomoo') return 'moomoo証券';
-  if (segment === 'latest') return '最新実績';
-  if (/^\d{4}$/.test(segment)) return `${segment}年`;
-  if (/^\d{2}$/.test(segment) && /^\d{4}$/.test(previous || '')) return `${Number(segment)}月`;
-  if (/^\d{2}$/.test(segment) && /^\d{2}$/.test(previous || '')) return `${Number(previous)}月${Number(segment)}日`;
-  return next ? titleizeSegment(segment) : titleizeSegment(segment);
+const formatDateSegment = (segment, index, segments) => {
+  if (/^\d{4}$/.test(segment)) {
+    return `${segment}年`;
+  }
+  if (/^\d{2}$/.test(segment)) {
+    const prev = segments[index - 1];
+    const prevPrev = segments[index - 2];
+    if (prev && /^\d{4}$/.test(prev)) {
+      return `${parseInt(segment, 10)}月`;
+    }
+    if (prev && prevPrev && /^\d{2}$/.test(prev) && /^\d{4}$/.test(prevPrev)) {
+      return `${parseInt(prev, 10)}月${parseInt(segment, 10)}日`;
+    }
+  }
+  return null;
 };
 
 export const buildBreadcrumbListFromPath = (pathValue = '/', options = {}) => {
   const siteUrl = options.siteUrl || site.url;
   const title = options.title;
-  const path = new URL(pathValue, ensureTrailingSlash(siteUrl)).pathname;
-  const segments = path.split('/').filter(Boolean);
-  const breadcrumbs = [{ name: 'ホーム', item: absoluteUrlForSite('/', siteUrl), url: absoluteUrlForSite('/', siteUrl) }];
-
-  const performanceMatch = path.match(/^\/performance\/(\d{4})(?:\/(\d{2})(?:\/(\d{2}))?)?\/$/);
-  if (performanceMatch) {
-    const [, year, month, day] = performanceMatch;
-    breadcrumbs.push({ name: '実績', item: absoluteUrlForSite('/performance/', siteUrl), url: absoluteUrlForSite('/performance/', siteUrl) });
-    if (year) {
-      breadcrumbs.push({
-        name: `${year}年`,
-        item: absoluteUrlForSite(`/performance/${year}/`, siteUrl),
-        url: absoluteUrlForSite(`/performance/${year}/`, siteUrl),
-      });
+  
+  // Normalize path
+  const urlObj = new URL(pathValue, ensureTrailingSlash(siteUrl));
+  const pathname = urlObj.pathname;
+  const segments = pathname.split('/').filter(Boolean);
+  
+  const breadcrumbs = [
+    {
+      name: 'ホーム',
+      item: absoluteUrlForSite('/', siteUrl),
+      url: absoluteUrlForSite('/', siteUrl)
     }
-    if (month) {
-      breadcrumbs.push({
-        name: `${Number(month)}月`,
-        item: absoluteUrlForSite(`/performance/${year}/${month}/`, siteUrl),
-        url: absoluteUrlForSite(`/performance/${year}/${month}/`, siteUrl),
-      });
-    }
-    if (day) {
-      breadcrumbs.push({
-        name: `${Number(month)}月${Number(day)}日`,
-        item: absoluteUrlForSite(`/performance/${year}/${month}/${day}/`, siteUrl),
-        url: absoluteUrlForSite(`/performance/${year}/${month}/${day}/`, siteUrl),
-      });
-    }
-    return breadcrumbs;
-  }
-
-  const topicMatch = path.match(/^\/performance\/(\d{4})\/(\d{2})\/(\d{2})\/topics\/[^/]+\/$/);
-  if (topicMatch) {
-    const [, year, month, day] = topicMatch;
-    breadcrumbs.push(
-      { name: '実績', item: absoluteUrlForSite('/performance/', siteUrl), url: absoluteUrlForSite('/performance/', siteUrl) },
-      { name: `${year}年`, item: absoluteUrlForSite(`/performance/${year}/`, siteUrl), url: absoluteUrlForSite(`/performance/${year}/`, siteUrl) },
-      { name: `${Number(month)}月`, item: absoluteUrlForSite(`/performance/${year}/${month}/`, siteUrl), url: absoluteUrlForSite(`/performance/${year}/${month}/`, siteUrl) },
-      { name: `${Number(month)}月${Number(day)}日`, item: absoluteUrlForSite(`/performance/${year}/${month}/${day}/`, siteUrl), url: absoluteUrlForSite(`/performance/${year}/${month}/${day}/`, siteUrl) },
-      { name: '売買トピック' },
-    );
-    return breadcrumbs;
-  }
-
-  if (path === '/performance/latest/' || path === '/performance/') {
-    breadcrumbs.push({ name: '実績', item: absoluteUrlForSite('/performance/', siteUrl), url: absoluteUrlForSite('/performance/', siteUrl) });
-    return breadcrumbs;
-  }
-
-  let current = '';
-
+  ];
+  
+  let currentPath = '';
+  
   segments.forEach((segment, index) => {
-    current += `/${segment}`;
     const isLast = index === segments.length - 1;
-    const previous = segments[index - 1];
-    const next = segments[index + 1];
-    const mappedUrl = breadcrumbLabelMap[segment]?.url;
-    const itemUrl = absoluteUrlForSite(mappedUrl || `${current}/`, siteUrl);
-    breadcrumbs.push({
-      name: isLast && title ? title : breadcrumbLabelForSegment(segment, { previous, next }),
-      item: itemUrl,
-      url: itemUrl,
-    });
+    currentPath += `/${segment}`;
+    
+    if (isLast) {
+      let name = title;
+      if (!name) {
+        const dateName = formatDateSegment(segment, index, segments);
+        name = dateName || titleizeSegment(segment);
+      }
+      const itemUrl = absoluteUrlForSite(currentPath + '/', siteUrl);
+      breadcrumbs.push({
+        name,
+        item: itemUrl,
+        url: itemUrl
+      });
+    } else {
+      let name = '';
+      let url = undefined;
+      
+      if (breadcrumbMapping[segment]) {
+        name = breadcrumbMapping[segment].label;
+        if (breadcrumbMapping[segment].url) {
+          url = absoluteUrlForSite(breadcrumbMapping[segment].url, siteUrl);
+        }
+      } else {
+        const dateName = formatDateSegment(segment, index, segments);
+        if (dateName) {
+          name = dateName;
+          url = absoluteUrlForSite(currentPath + '/', siteUrl);
+        }
+      }
+      
+      if (url) {
+        breadcrumbs.push({
+          name,
+          item: url,
+          url
+        });
+      }
+    }
   });
-
+  
   return breadcrumbs;
 };
 
-const buildDefaultBreadcrumbs = (path, title, section) => {
-  const crumbs = [{ name: 'ホーム', item: `${site.url}/` }];
-  if (path.startsWith('/performance/') && path !== '/performance/') {
-    crumbs.push({ name: '実績公開', item: absoluteUrl('/category/performance/') });
-  }
-  if (path.startsWith('/research/') && path !== '/research/') {
-    crumbs.push({ name: '銘柄検討', item: absoluteUrl('/category/research/') });
-  }
-  if (path.startsWith('/logic/') && path !== '/logic/') {
-    crumbs.push({ name: '投資ロジック', item: absoluteUrl('/logic/') });
-  }
-  crumbs.push({ name: section || title || site.name, item: absoluteUrl(path) });
-  return crumbs;
-};
-
-export const personSchema = (options = {}) => ({
+export const personSchema = () => ({
   '@type': 'Person',
   '@id': site.authorId,
-  name: options.name || 'MUKIMUKI trade 編集部',
-  alternateName: options.alternateName || ['MUKIMUKI trade', 'OnigoGames'],
-  url: options.url || absoluteUrl('/profile/'),
-  image: imageUrl(options.image || site.logo),
-  sameAs: normalizeSameAs(options.sameAs || site.officialX),
-  mainEntityOfPage: {
-    '@type': 'ProfilePage',
-    '@id': absoluteUrl('/profile/#webpage'),
-  },
-  gender: 'Male',
+  name: site.name,
+  url: absoluteUrl('/profile/'),
+  image: imageUrl(site.logo),
+  sameAs: normalizeSameAs(),
+  jobTitle: '兼業投資家',
+  knowsAbout: ['AIエージェント', '自動売買', '事業開発', '株式投資（米国株）', 'Autotrade'],
+  description: '投資歴20年弱の兼業投資家。40代男性、東京都港区在住。AIエージェント、自動売買、事業開発、株式投資を専門領域とします。',
   homeLocation: {
     '@type': 'Place',
     address: {
@@ -359,9 +308,6 @@ export const personSchema = (options = {}) => ({
       addressCountry: 'JP',
     },
   },
-  jobTitle: options.jobTitle || '兼業投資家・投資ブロガー',
-  knowsAbout: options.knowsAbout || ['米国株投資', '自動売買', 'AIエージェント', '株式トレード', 'リスク管理', '事業開発', 'Autotrade'],
-  description: options.description || '投資歴20年弱の兼業投資家。40代男性、東京都港区在住。AIエージェント、自動売買、事業開発、株式投資を専門領域とし、Autotradeの日次レポートをもとに米国株トレード実績、銘柄検討、投資ロジックを検証しやすい形で整理します。投資助言業者ではありません。',
 });
 
 export const websiteSchema = (meta) => ({
@@ -372,7 +318,6 @@ export const websiteSchema = (meta) => ({
   description: meta.description || site.description,
   inLanguage: site.language,
   publisher: { '@id': site.authorId },
-  author: { '@id': site.authorId },
   potentialAction: {
     '@type': 'SearchAction',
     target: {
@@ -383,72 +328,45 @@ export const websiteSchema = (meta) => ({
   },
 });
 
-const siteIdentitySchemas = (meta) => [
-  websiteSchema(meta),
-  personSchema({ sameAs: meta.sameAs }),
-];
-
-export const organizationSchema = () => ({
-  '@type': 'Organization',
-  '@id': `${site.url}/#organization`,
-  name: site.name,
-  url: `${site.url}/`,
-  logo: {
-    '@type': 'ImageObject',
-    url: imageUrl(site.logo),
-  },
-  sameAs: [site.officialX],
-  founder: { '@id': site.authorId },
-});
-
-const stripSiteName = (value = '') => String(value).replace(/\s*\|\s*MUKIMUKI trade\s*$/i, '').trim();
-
-const deriveDailyPerformanceHeadline = (meta) => {
-  if (meta.headline) return meta.headline;
-  if (meta.pageType !== 'performanceDaily') return stripSiteName(meta.title);
-  const sourceTitle = stripSiteName(meta.title);
-  const date = sourceTitle.match(/\d{4}-\d{2}-\d{2}/)?.[0];
-  const rate = sourceTitle.match(/[+-]\d+(?:\.\d+)?%/)?.[0];
-  const value = String(meta.description || '').match(/評価額\s*(¥[\d,]+)/)?.[1];
-  if (date && rate && value) return `${date}実績: 100万円比 ${rate}、評価額 ${value}`;
-  return sourceTitle;
-};
-
-export const articleSchema = (meta) => ({
-  '@type': 'Article',
-  '@id': `${meta.url}#article`,
-  headline: deriveDailyPerformanceHeadline(meta),
-  description: meta.description,
-  image: [imageUrl(meta.image)],
-  datePublished: meta.published,
-  dateModified: meta.modified || meta.published,
-  inLanguage: site.language,
-  articleSection: meta.section,
-  keywords: Array.isArray(meta.keywords) ? meta.keywords : String(meta.keywords || '').split(',').map((item) => item.trim()).filter(Boolean),
-  author: {
-    '@type': 'Person',
-    '@id': site.authorId,
-    name: meta.author || site.name,
-    url: absoluteUrl('/profile/'),
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: site.name,
-    logo: {
-      '@type': 'ImageObject',
-      url: imageUrl(site.logo),
-    },
-  },
-  mainEntityOfPage: {
-    '@type': 'WebPage',
-    '@id': meta.url,
-  },
-  isPartOf: meta.parentUrl ? {
+export const articleSchema = (meta) => {
+  const schema = {
     '@type': 'Article',
-    '@id': `${absoluteUrl(meta.parentUrl)}#article`,
-    url: absoluteUrl(meta.parentUrl),
-  } : undefined,
-});
+    '@id': `${meta.url}#article`,
+    headline: meta.title,
+    description: meta.description,
+    image: [imageUrl(meta.image)],
+    datePublished: meta.published,
+    dateModified: meta.modified || meta.published,
+    inLanguage: site.language,
+    author: {
+      '@type': 'Person',
+      '@id': site.authorId,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: site.name,
+      logo: {
+        '@type': 'ImageObject',
+        url: imageUrl(site.logo),
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': meta.url,
+    },
+  };
+  if (meta.section) {
+    schema.articleSection = meta.section;
+  }
+  if (meta.parentUrl) {
+    schema.isPartOf = {
+      '@type': 'Article',
+      '@id': `${absoluteUrl(meta.parentUrl)}#article`,
+      url: absoluteUrl(meta.parentUrl),
+    };
+  }
+  return schema;
+};
 
 export const collectionPageSchema = (meta) => ({
   '@type': 'CollectionPage',
@@ -458,68 +376,36 @@ export const collectionPageSchema = (meta) => ({
   description: meta.description,
   inLanguage: site.language,
   isPartOf: { '@id': site.websiteId },
-  mainEntity: meta.items.length ? { '@id': `${meta.url}#list` } : undefined,
 });
 
 export const profilePageSchema = (meta) => ({
   '@type': 'ProfilePage',
-  '@id': `${absoluteUrl('/profile/')}#webpage`,
-  url: absoluteUrl('/profile/'),
+  '@id': `${meta.url}#webpage`,
+  url: meta.url,
   name: meta.title || '運営者プロフィール',
   description: meta.description || 'MUKIMUKI tradeの運営者プロフィール。',
-  datePublished: meta.published,
-  dateModified: meta.modified || meta.published,
   inLanguage: site.language,
   isPartOf: { '@id': site.websiteId },
-  publishedOn: { '@id': site.websiteId },
   mainEntity: { '@id': site.authorId },
 });
 
-export const legalWebPageSchema = (meta) => ({
-  '@type': ['WebPage', 'AboutPage'],
+export const aboutWebPageSchema = (meta) => ({
+  '@type': 'WebPage',
   '@id': `${meta.url}#webpage`,
   url: meta.url,
   name: meta.title || '運営方針・免責事項',
   description: meta.description || 'MUKIMUKI tradeの運営方針と免責事項。',
-  datePublished: meta.published,
-  dateModified: meta.modified || meta.published,
-  additionalType: 'https://schema.org/LegalDocument',
+  additionalType: 'https://schema.org/WebPage',
   inLanguage: site.language,
   isPartOf: { '@id': site.websiteId },
   author: { '@id': site.authorId },
-  speakable: {
-    '@type': 'SpeakableSpecification',
-    cssSelector: ['#disclaimer-summary', '#affiliate-disclosure', '#data-source-policy'],
-  },
-  hasPart: {
-    '@type': ['DigitalDocument', 'WebPageElement'],
-    '@id': `${meta.url}#legal-document`,
-    name: '投資情報に関する免責事項',
-    additionalType: 'https://schema.org/LegalDocument',
-    text: '掲載内容は情報提供と運用記録を目的としたもので、金融商品取引法上の投資助言・代理業、投資運用業、または投資勧誘を目的としたものではありません。',
-  },
 });
 
-export const itemListSchema = (meta) => {
-  if (!meta.items.length) return undefined;
-  return {
-    '@type': 'ItemList',
-    '@id': `${meta.url}#list`,
-    itemListElement: meta.items.map((item, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      name: item.name || item.title,
-      url: absoluteUrl(item.url || item.path),
-    })),
-  };
-};
-
-export const faqPageSchema = (meta) => {
-  if (!Array.isArray(meta.faq) || !meta.faq.length) return undefined;
+export const faqPageSchema = (faqs = []) => {
+  if (!Array.isArray(faqs) || !faqs.length) return undefined;
   return {
     '@type': 'FAQPage',
-    '@id': `${meta.url}#faq`,
-    mainEntity: meta.faq.slice(0, 3).map((item) => ({
+    mainEntity: faqs.slice(0, 3).map((item) => ({
       '@type': 'Question',
       name: item.question || item.name,
       acceptedAnswer: {
@@ -530,18 +416,6 @@ export const faqPageSchema = (meta) => {
   };
 };
 
-export const faqPageSchemaFromQa = (qaItems = [], options = {}) => {
-  const url = options.url || site.url;
-  const faq = qaItems
-    .map((item) => ({
-      question: item.question || item.name || item.heading || item.h2,
-      answer: item.answer || item.text || item.body,
-    }))
-    .filter((item) => item.question && item.answer);
-
-  return faqPageSchema({ url, faq });
-};
-
 export const breadcrumbSchema = (meta) => ({
   '@type': 'BreadcrumbList',
   '@id': `${meta.url}#breadcrumb`,
@@ -549,45 +423,72 @@ export const breadcrumbSchema = (meta) => ({
     '@type': 'ListItem',
     position: index + 1,
     name: crumb.name,
-    item: absoluteUrl(crumb.item || crumb.url || crumb.path),
+    item: crumb.item || crumb.url,
   })),
 });
 
-export const buildStructuredData = (frontMatter = {}) => {
-  const meta = normalizePageMeta(frontMatter);
+export const buildStructuredData = ({
+  pageType,
+  title,
+  description,
+  url,
+  publishedTime,
+  modifiedTime,
+  section,
+  parentUrl,
+  faqs = []
+}) => {
+  const absolutePageUrl = absoluteUrl(url);
+  const normalizedParentUrl = parentUrl ? absoluteUrl(parentUrl) : undefined;
+  
+  const meta = {
+    url: absolutePageUrl,
+    title,
+    description: description || title,
+    published: publishedTime,
+    modified: modifiedTime || publishedTime,
+    section,
+    parentUrl: normalizedParentUrl,
+    breadcrumbs: buildBreadcrumbListFromPath(absolutePageUrl, { title }),
+    image: pageType === 'daily-performance' || pageType === 'trade-topic'
+      ? `/assets/mukimuki-performance.png`
+      : (pageType === 'research' ? `/assets/mukimuki-research.png` : site.logo)
+  };
+
   const graph = [];
 
-  if (meta.pageType === 'skip') {
-    return compactObject({
-      '@context': 'https://schema.org',
-      '@graph': graph,
-    });
-  }
-
-  graph.push(...siteIdentitySchemas(meta));
-
-  if (['performance', 'performanceDaily', 'tradeTopic', 'research', 'logic', 'article'].includes(meta.pageType)) {
+  if (pageType === 'top') {
+    graph.push(websiteSchema(meta));
+    graph.push(personSchema());
+  } else if (pageType === 'daily-performance') {
     graph.push(articleSchema(meta));
-  }
-
-  if (['performanceMonthly', 'performanceYearly', 'archive', 'collection'].includes(meta.pageType)) {
+    graph.push(breadcrumbSchema(meta));
+    const faq = faqPageSchema(faqs);
+    if (faq) graph.push(faq);
+  } else if (pageType === 'trade-topic') {
+    graph.push(articleSchema(meta));
+    graph.push(breadcrumbSchema(meta));
+  } else if (pageType === 'research') {
+    graph.push(articleSchema(meta));
+    graph.push(breadcrumbSchema(meta));
+    const faq = faqPageSchema(faqs);
+    if (faq) graph.push(faq);
+  } else if (pageType === 'monthly-archive' || pageType === 'yearly-archive' || pageType === 'category' || pageType === 'research-index' || pageType === 'archive' || pageType === 'collection') {
     graph.push(collectionPageSchema(meta));
-    const itemList = itemListSchema(meta);
-    if (itemList) graph.push(itemList);
-  }
-
-  if (meta.pageType === 'profile') {
+    graph.push(breadcrumbSchema(meta));
+  } else if (pageType === 'logic') {
+    if (absolutePageUrl.replace(/\/$/, '').endsWith('/logic')) {
+      graph.push(collectionPageSchema(meta));
+    } else {
+      graph.push(articleSchema(meta));
+    }
+    graph.push(breadcrumbSchema(meta));
+  } else if (pageType === 'profile') {
+    graph.push(personSchema());
     graph.push(profilePageSchema(meta));
+  } else if (pageType === 'about') {
+    graph.push(aboutWebPageSchema(meta));
   }
-
-  if (meta.pageType === 'legal') {
-    graph.push(legalWebPageSchema(meta));
-  }
-
-  const faq = faqPageSchema(meta);
-  if (faq && ['performance', 'performanceDaily', 'research', 'article', 'legal'].includes(meta.pageType)) graph.push(faq);
-
-  if (breadcrumbPageTypes.has(meta.pageType) && meta.breadcrumbs.length) graph.push(breadcrumbSchema(meta));
 
   return compactObject({
     '@context': 'https://schema.org',
@@ -596,47 +497,49 @@ export const buildStructuredData = (frontMatter = {}) => {
 };
 
 export const renderJsonLdScript = (frontMatter = {}) => {
-  const jsonLd = buildStructuredData(frontMatter);
-  if (!jsonLd['@graph']?.length) return '';
+  const options = {
+    pageType: normalizePageType(frontMatter.pageType || frontMatter.type, frontMatter.path || frontMatter.url),
+    title: frontMatter.title,
+    description: frontMatter.description,
+    url: frontMatter.url || frontMatter.path,
+    publishedTime: frontMatter.publishedTime || frontMatter.published_time || frontMatter.published || frontMatter.datePublished || frontMatter.pubDate,
+    modifiedTime: frontMatter.modifiedTime || frontMatter.modified_time || frontMatter.modified || frontMatter.dateModified,
+    section: frontMatter.section || frontMatter.category,
+    parentUrl: frontMatter.parentUrl || frontMatter.parent_url,
+    faqs: frontMatter.faqs || frontMatter.faq
+  };
+  const jsonLd = buildStructuredData(options);
+  if (!jsonLd['@graph'] || !jsonLd['@graph'].length) return '';
   return `<script type="application/ld+json">\n${JSON.stringify(jsonLd, null, 2)}\n</script>`;
 };
 
-export const generateJsonLdScript = ({
-  pageType = 'top',
-  title,
-  description,
-  url,
-  publishedTime,
-  modifiedTime,
-  section,
-  author,
-  faqs = [],
-  items = [],
-  image = site.logo,
-  siteUrl = site.url,
-  sameAs = site.officialX,
-  parentUrl,
-} = {}) => buildJsonLdScriptFromFrontMatter({
-  pageType,
-  title,
-  description,
-  url,
-  publishedTime,
-  modifiedTime,
-  section,
-  author,
-  faqs,
-  items,
-  image,
-  siteUrl,
-  sameAs,
-  parentUrl,
-});
+export const generateJsonLdScript = (options = {}) => {
+  const opts = {
+    pageType: normalizePageType(options.pageType || options.type, options.url),
+    title: options.title,
+    description: options.description,
+    url: options.url,
+    publishedTime: options.publishedTime || options.published_time || options.published || options.datePublished || options.pubDate,
+    modifiedTime: options.modifiedTime || options.modified_time || options.modified || options.dateModified,
+    section: options.section || options.category,
+    parentUrl: options.parentUrl || options.parent_url,
+    faqs: options.faqs || options.faq
+  };
+  const jsonLd = buildStructuredData(opts);
+  if (!jsonLd['@graph'] || !jsonLd['@graph'].length) return '';
+  return `<script type="application/ld+json">\n${JSON.stringify(jsonLd, null, 2)}\n</script>`;
+};
 
-export const buildFAQPageSchema = (faqs = [], options = {}) => compactObject({
-  '@context': 'https://schema.org',
-  ...faqPageSchemaFromQa(faqs, options),
-});
+export const buildFAQPageSchema = (faqs = [], options = {}) => {
+  const schema = faqPageSchema(faqs.map(f => ({
+    question: f.question || f.name,
+    answer: f.answer || f.text
+  })));
+  return compactObject({
+    '@context': 'https://schema.org',
+    ...schema
+  });
+};
 
 export const buildBreadcrumbListJsonLd = (pathValue = '/', options = {}) => {
   const siteUrl = options.siteUrl || site.url;
@@ -650,81 +553,6 @@ export const buildBreadcrumbListJsonLd = (pathValue = '/', options = {}) => {
   });
 };
 
-export const buildJsonLdScriptFromFrontMatter = ({
-  type,
-  title,
-  description,
-  url,
-  publishedTime,
-  modifiedTime,
-  section,
-  author,
-  siteUrl = site.url,
-  faq = [],
-  faqs = [],
-  items = [],
-  image = site.logo,
-  pageType,
-  sameAs = site.officialX,
-  parentUrl,
-  parent_url,
-  headline,
-} = {}) => {
-  const pageUrl = url || siteUrl;
-  const path = new URL(pageUrl, ensureTrailingSlash(siteUrl)).pathname;
-  const normalizedPageType = normalizePageType(type || pageType || inferPageType(path, section), path);
-  const breadcrumbs = buildBreadcrumbListFromPath(path, { siteUrl, title });
-  const faqItems = faqs.length ? faqs : faq;
-  const meta = {
-    pageType: normalizedPageType,
-    title,
-    description: description || title,
-    published: publishedTime,
-    modified: modifiedTime || publishedTime,
-    author: author || site.name,
-    url: absoluteUrlForSite(path, siteUrl),
-    path,
-    section,
-    image,
-    keywords: [],
-    headline,
-    parentUrl: parentUrl || parent_url,
-    breadcrumbs,
-    faq: faqItems,
-    items,
-    sameAs: normalizeSameAs(sameAs),
-  };
-  const graph = [];
-
-  if (normalizedPageType === 'skip') return '';
-
-  graph.push(...siteIdentitySchemas(meta));
-
-  if (['performance', 'performanceDaily', 'tradeTopic', 'research', 'logic', 'article'].includes(normalizedPageType)) {
-    graph.push(articleSchema(meta));
-  }
-
-  if (['performanceMonthly', 'performanceYearly', 'archive', 'collection'].includes(normalizedPageType)) {
-    graph.push(collectionPageSchema(meta));
-  }
-
-  if (normalizedPageType === 'profile') {
-    graph.push(profilePageSchema(meta));
-  }
-
-  if (normalizedPageType === 'legal') {
-    graph.push(legalWebPageSchema(meta));
-  }
-
-  const faqSchema = faqPageSchemaFromQa(faqItems, { url: meta.url });
-  if (faqSchema && ['performance', 'performanceDaily', 'research', 'article', 'legal'].includes(normalizedPageType)) graph.push(faqSchema);
-
-  if (breadcrumbPageTypes.has(normalizedPageType) && breadcrumbs.length) graph.push(breadcrumbSchema(meta));
-
-  const jsonLd = compactObject({
-    '@context': 'https://schema.org',
-    '@graph': graph,
-  });
-
-  return `<script type="application/ld+json">\n${JSON.stringify(jsonLd, null, 2)}\n</script>`;
+export const buildJsonLdScriptFromFrontMatter = (frontMatter = {}) => {
+  return renderJsonLdScript(frontMatter);
 };

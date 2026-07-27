@@ -77,26 +77,34 @@ const sitemapChangefreqForPath = (pagePath) => {
   if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/topics\/[^/]+\/$/.test(pagePath)) return 'weekly';
   if (/^\/performance\/\d{4}\/\d{2}\/$/.test(pagePath)) return 'monthly';
   if (/^\/performance\/\d{4}\/$/.test(pagePath)) return 'yearly';
-  if (pagePath === '/research/' || /^\/research\/[^/]+\/$/.test(pagePath)) return 'weekly';
+  if (/^\/research\/[^/]+\/$/.test(pagePath)) return 'weekly';
+  if (pagePath === '/research/') return 'weekly';
   if (pagePath === '/logic/' || /^\/logic\/[^/]+\/$/.test(pagePath)) return 'monthly';
-  if (pagePath === '/moomoo/' || pagePath === '/archive/' || pagePath === '/profile/' || pagePath === '/about/') return 'monthly';
-  if (pagePath.startsWith('/archive/')) return 'monthly';
-  if (pagePath.startsWith('/category/') || pagePath === '/sitemap/') return 'weekly';
+  if (pagePath === '/moomoo/') return 'monthly';
+  if (pagePath.startsWith('/category/')) return 'monthly';
+  if (pagePath === '/archive/' || pagePath.startsWith('/archive/')) return 'monthly';
+  if (pagePath === '/sitemap/') return 'monthly';
+  if (pagePath === '/profile/') return 'monthly';
+  if (pagePath === '/about/') return 'monthly';
   return 'monthly';
 };
 
 const sitemapPriorityForPath = (pagePath) => {
   if (pagePath === '/') return '1.0';
-  if (pagePath === '/performance/') return '0.8';
+  if (pagePath === '/performance/') return '0.8'; // Default index priority
   if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/$/.test(pagePath)) return '0.9';
   if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/topics\/[^/]+\/$/.test(pagePath)) return '0.8';
   if (/^\/performance\/\d{4}\/\d{2}\/$/.test(pagePath)) return '0.7';
   if (/^\/performance\/\d{4}\/$/.test(pagePath)) return '0.6';
   if (/^\/research\/[^/]+\/$/.test(pagePath)) return '0.7';
   if (pagePath === '/research/') return '0.6';
-  if (/^\/logic\/[^/]+\/$/.test(pagePath)) return '0.6';
-  if (pagePath === '/logic/' || pagePath === '/moomoo/' || pagePath === '/archive/' || pagePath.startsWith('/archive/') || pagePath.startsWith('/category/') || pagePath === '/sitemap/') return '0.5';
-  if (pagePath === '/profile/' || pagePath === '/about/') return '0.4';
+  if (pagePath === '/logic/' || /^\/logic\/[^/]+\/$/.test(pagePath)) return '0.6';
+  if (pagePath === '/moomoo/') return '0.5';
+  if (pagePath.startsWith('/category/')) return '0.5';
+  if (pagePath === '/archive/' || pagePath.startsWith('/archive/')) return '0.5';
+  if (pagePath === '/sitemap/') return '0.3';
+  if (pagePath === '/profile/') return '0.4';
+  if (pagePath === '/about/') return '0.4';
   return '0.5';
 };
 

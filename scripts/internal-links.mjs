@@ -264,7 +264,7 @@ export const renderRelatedResearchSection = (current, index, { escapeHtml, max =
   if (!related.length) return '';
 
   return `      <section class="article-panel related-research" aria-labelledby="related-research-title">
-        <h2 id="related-research-title">関連する銘柄検討</h2>
+        <h2 id="related-research-title">この銘柄の検討メモ</h2>
         <div class="link-grid">
 ${related.map((article) => `          <a class="link-card" href="${escape(article.path)}"><span>${escape(article.matchedTickers.join(' / '))}</span><strong>${escape(article.title)}</strong><p>${escape(article.description || article.summary || '')}</p></a>`).join('\n')}
         </div>

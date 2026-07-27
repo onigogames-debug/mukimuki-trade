@@ -78,22 +78,16 @@ const allSymbols = (positions = [], limit = 4) => positions
   .map((position) => shortSymbol(position.symbol))
   .filter(Boolean);
 
-const nav = `    <nav class="nav-links" aria-label="主要メニュー">
-      <a href="/performance/">実績</a>
-      <a href="/research/">銘柄検討</a>
-      <a href="/logic/">ロジック</a>
-      <a href="/moomoo/">moomoo</a>
-      <a href="/archive/">アーカイブ</a>
-      <a href="/profile/">運営者</a>
-      <a href="${officialNoteUrl}" target="_blank" rel="noopener">公式note</a>
-      <a href="${officialXUrl}" target="_blank" rel="me noopener">公式X</a>
-    </nav>`;
-
-const mobileMenu = `    <details class="mobile-menu">
+const header = `  <header class="site-header">
+    <a class="brand" href="/" aria-label="MUKIMUKI trade home">
+      <img src="/assets/mukimuki-main.png" alt="MUKIMUKIキャラクター - 100万円トレード記録ブログのロゴ">
+      <span><strong>MUKIMUKI trade</strong><small>数字で追う公開記録</small></span>
+    </a>
+    <details class="site-nav-container">
       <summary aria-label="メニュー">
         <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
       </summary>
-      <nav class="mobile-nav-links" aria-label="スマホメニュー">
+      <nav class="nav-links" aria-label="主要メニュー">
         <a href="/performance/">実績</a>
         <a href="/research/">銘柄検討</a>
         <a href="/logic/">ロジック</a>
@@ -103,20 +97,13 @@ const mobileMenu = `    <details class="mobile-menu">
         <a href="${officialNoteUrl}" target="_blank" rel="noopener">公式note</a>
         <a href="${officialXUrl}" target="_blank" rel="me noopener">公式X</a>
       </nav>
-    </details>`;
-
-const header = `  <header class="site-header">
-    <a class="brand" href="/" aria-label="MUKIMUKI trade home">
-      <img src="/assets/mukimuki-main.png" alt="MUKIMUKIキャラクター - 100万円トレード記録ブログのロゴ">
-      <span><strong>MUKIMUKI trade</strong><small>数字で追う公開記録</small></span>
-    </a>
-${mobileMenu}
-${nav}
+    </details>
   </header>`;
 
 const footer = `  <footer class="site-footer">
     <strong>MUKIMUKI trade</strong>
     <p>100万円からの米国株トレード実績、銘柄メモ、売買ロジックを記録しています。掲載内容には広告リンクを含む場合があります。</p>
+    <p class="footer-rss-promo">最新記事をチェック：<a href="/feed.xml" target="_blank" rel="noopener">RSSフィードで更新を購読する</a></p>
     <nav class="footer-links" aria-label="補助リンク"><a href="/profile/">運営者</a><a href="/archive/">アーカイブ</a><a href="/sitemap/">サイトマップ</a><a href="/feed.xml">RSS</a><a href="/about/">運営方針</a><a href="${officialNoteUrl}" target="_blank" rel="noopener">公式note</a><a href="${officialXUrl}" target="_blank" rel="me noopener">公式X</a></nav>
   </footer>`;
 
@@ -232,10 +219,82 @@ const renderDailyPage = (report, articleIndex, reports) => {
   const pagePath = datePath(latest.reportDate);
   const monthlyPath = monthPath(latest.reportDate);
   const holdings = primaryHoldings(latest.positions);
-  const holdingsInsight = holdings.length
-    ? `${holdings.join('、')}は値動きが大きくなりやすい米国株です。単日の損益だけでなく、翌日に持ち越した理由、含み益・含み損の変化、出来高の継続を確認します。`
-    : 'この日は引け後保有なしで終えているため、翌日に持ち越した銘柄の含み損益はありません。売買履歴と前日比から、ポジションを外した判断と損益への影響を確認します。';
+  
+  // Rich holdings insight
+  let holdingsInsight = '';
+  if (latest.positions && latest.positions.length > 0) {
+    const totalHoldingUsd = latest.positions.reduce((sum, p) => sum + (p.shares * p.averagePriceUsd), 0);
+    const posDetails = latest.positions.map(p => {
+      const pnlText = p.unrealizedPnlPct >= 0 ? `+${(p.unrealizedPnlPct * 100).toFixed(1)}%` : `${(p.unrealizedPnlPct * 100).toFixed(1)}%`;
+      return `${p.symbol.replace(/^US\./, '')} (${p.shares}株, 平均単価: $${p.averagePriceUsd.toFixed(2)}, 含み損益: ${pnlText})`;
+    }).join('、');
+    holdingsInsight = `引け後に保有している銘柄は ${latest.positions.length} 件で、保有銘柄の内訳は ${posDetails} です。ポジションの総評価額は約 $${Math.round(totalHoldingUsd).toLocaleString('en-US')} となっています。保有銘柄ごとに上昇要因・下落要因を確認し、次の日足サポートラインや決算などの株価材料に沿ってリスク調整を行います。`;
+  } else {
+    holdingsInsight = 'この日は引け後に保有株はなく、完全なノーポジション（現金比率100%）でクローズしました。相場全体のセンチメント過熱や金利上昇などの地合いリスクから一時退避し、次の明確な売買シグナル点灯を待つニュートラルな判断を行っています。';
+  }
+
+  // Rich trades insight
+  let tradesInsight = '';
+  if (latest.trades && latest.trades.length > 0) {
+    const buyTrades = latest.trades.filter(t => t.side === 'BUY' || t.side === 'BUY_TO_OPEN');
+    const sellTrades = latest.trades.filter(t => t.side === 'SELL' || t.side === 'SELL_TO_CLOSE' || t.side === 'CLOSED_TRADE_SELL');
+    const buyTotal = buyTrades.reduce((sum, t) => sum + (t.amountUsd || (t.shares * t.priceUsd)), 0);
+    const sellTotal = sellTrades.reduce((sum, t) => sum + (t.amountUsd || (t.shares * t.priceUsd)), 0);
+    
+    tradesInsight = `この日は合計 ${latest.summary.totalTrades} 件の約定（買付 ${buyTrades.length} 件、売却 ${sellTrades.length} 件）を記録しました。一日の取引総額は買付 $${Math.round(buyTotal).toLocaleString('en-US')} / 売却 $${Math.round(sellTotal).toLocaleString('en-US')} でした。エントリー価格が適切か、損切りルールに基づいた規律ある撤退ができているかを個別に振り返り、自動売買プログラムの調整に役立てます。`;
+  } else {
+    tradesInsight = 'この日は新規の買い付けや売却などの取引は約定しませんでした。事前に設定した分割エントリー注文や損切りの逆指値注文の価格帯に市場価格が達しなかったため、ルール通り静観を貫きました。不要な裁量売買（ポジポジ病）を回避できています。';
+  }
+
   const rateText = `${latest.summary.totalReturnPct >= 0 ? '+' : ''}${latest.summary.totalReturnPct.toFixed(1)}%`;
+  const dailyReturnText = `${latest.summary.dailyReturnPct >= 0 ? '+' : ''}${latest.summary.dailyReturnPct.toFixed(1)}%`;
+  
+  // Extract actions context from matched topics in articleIndex
+  const dateFormatted = latest.reportDate.replaceAll('-', '/');
+  const dateTopicPrefix = `/performance/${dateFormatted}/topics/`;
+  const matchedTopics = articleIndex.filter(art => art.path && art.path.startsWith(dateTopicPrefix));
+  
+  const getActionText = () => {
+    const actions = [];
+    if (matchedTopics.length > 0) {
+      for (const topic of matchedTopics) {
+        const titleText = topic.title || '';
+        const topicTickers = topic.tickers || [];
+        if (topicTickers.length > 0) {
+          const ticker = topicTickers[0];
+          if (titleText.includes('利確') || titleText.includes('利益確定')) {
+            actions.push(`${ticker}利確`);
+          } else if (titleText.includes('損切') || titleText.includes('ロスカット')) {
+            actions.push(`${ticker}損切`);
+          } else if (titleText.includes('決済') || titleText.includes('売却')) {
+            actions.push(`${ticker}決済`);
+          } else if (titleText.includes('買') || titleText.includes('仕込') || titleText.includes('エントリー')) {
+            actions.push(`${ticker}買い`);
+          }
+        }
+      }
+    }
+    
+    // Check other tickers if they also had sells/buys
+    if (actions.length === 0 && latest.trades && latest.trades.length > 0) {
+      const buys = [...new Set(latest.trades.filter(t => t.side === 'BUY' || t.side === 'BUY_TO_OPEN').map(t => t.symbol.replace(/^US\./, '')))];
+      const sells = [...new Set(latest.trades.filter(t => t.side === 'SELL' || t.side === 'SELL_TO_CLOSE' || t.side === 'CLOSED_TRADE_SELL').map(t => t.symbol.replace(/^US\./, '')))];
+      if (sells.length) {
+        actions.push(`${sells.slice(0, 2).join('・')}決済`);
+      }
+      if (buys.length) {
+        actions.push(`${buys.slice(0, 2).join('・')}買い`);
+      }
+    }
+    
+    if (actions.length === 0) {
+      return '取引なし';
+    }
+    return actions.slice(0, 2).join('・');
+  };
+  
+  const actionText = getActionText();
+  
   const dates = reports.map((entry) => entry.report.latest.reportDate).sort();
   const currentIndex = dates.indexOf(latest.reportDate);
   const prevDate = currentIndex > 0 ? dates[currentIndex - 1] : '';
@@ -250,6 +309,8 @@ const renderDailyPage = (report, articleIndex, reports) => {
     tradeCount: latest.summary.totalTrades,
     prevDate,
     nextDate,
+    rateStr: dailyReturnText,
+    actionText,
   });
   const { title, h1, metaDescription: description, intro, faqs } = seo;
   const breadcrumbs = buildBreadcrumbListFromPath(pagePath);
@@ -340,7 +401,7 @@ ${renderTrustSignals(report)}
       </section>
       <section class="article-panel">
         <h2>${escapeHtml(seo.h2s[2])}</h2>
-        <p>売買件数が多い日は、利益額だけでなく回転の多さにも注意します。買付と売却の偏り、利確した銘柄、翌日に残した銘柄を分けて見ることで、実績の再現性を確認できます。</p>
+        <p>${escapeHtml(tradesInsight)}</p>
         ${renderTrades(latest.trades)}
       </section>
       <section class="article-panel">

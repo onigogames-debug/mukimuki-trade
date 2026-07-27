@@ -1,0 +1,19 @@
+{# Nunjucks Macro for Performance Data Fallback #}
+{% macro renderMetric(value, label, attr, fallback="データ更新中") %}
+  {% if value %}
+    <strong data-performance="{{ attr }}">{{ value }}</strong>
+  {% else %}
+    <strong data-performance="{{ attr }}">{{ fallback }}</strong>
+  {% endif %}
+{% endmacro %}
+
+{% macro confirmedData(performanceLatest, daysThreshold=5) %}
+  {# In a template engine, the build script or globals provide performanceLatest #}
+  {% if performanceLatest and performanceLatest.latest %}
+    <strong data-performance="latest-jpy">¥{{ performanceLatest.latest.jpy.end.toLocaleString("ja-JP") }}</strong>
+    <small data-performance="total-return-label">100万円比 {{ "+" if performanceLatest.latest.summary.totalReturnPct >= 0 }}{{ performanceLatest.latest.summary.totalReturnPct }}%</small>
+  {% else %}
+    <strong data-performance="latest-jpy">データ更新中</strong>
+    <small data-performance="total-return-label">データ更新中</small>
+  {% endif %}
+{% endmacro %}

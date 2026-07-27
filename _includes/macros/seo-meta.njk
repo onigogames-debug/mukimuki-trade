@@ -1,0 +1,13 @@
+{# Nunjucks Macro for Dynamic Meta Description #}
+{% macro dynamicMetaDescription(totalJpy, rate, latestDate, holdings=[]) %}
+  {% set holdingsText = holdings | join('・') if holdings.length else 'ノーポジション' %}
+  {% set jpyNum = totalJpy | replace('¥', '') | replace(',', '') | replace('+', '') | replace('-', '') | float %}
+  
+  {% if jpyNum >= 950000 %}
+    {# Display with 100万円 when assets are 95万円 or more #}
+    100万円からの米国株自動売買実績。{{ latestDate }}時点の評価額¥{{ totalJpy }}（100万円比{{ rate }}%）。{{ holdingsText }}を保有中。損益・保有・ルールを毎日記録。
+  {% else %}
+    {# Display without '100万円から' to align with actual assets under 95万円 #}
+    米国株自動売買の実績を日次公開。現在評価額¥{{ totalJpy }}（100万円比{{ rate }}%）。{{ holdingsText }}を保有中。損益・保有銘柄・売買ロジックを同じ形式で毎日記録。
+  {% endif %}
+{% endmacro %}

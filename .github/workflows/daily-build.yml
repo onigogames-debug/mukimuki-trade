@@ -1,0 +1,83 @@
+name: Daily Performance Sync & Deploy
+
+on:
+  schedule:
+    # 20:30 UTC = 05:30 JST (Tuesday to Saturday mornings EST trading reports follow JST mornings)
+    - cron: '30 20 * * *'
+  workflow_dispatch: # Enable manual run from GitHub Web UI
+
+jobs:
+  diagnose-build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Diagnose Performance Sync State
+        id: diagnose
+        run: |
+          echo "Verifying performance sync state..."
+          node scripts/diagnose-performance.mjs
+
+      - name: Build Site Assets
+        run: npm run build
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: mukimuki-trade
+          directory: . # Deploying root directory as configured in package.json
+          gitBranch: main
+
+      # --- NOTIFICATION ON FAILURE ---
+      # If any of the above steps fail, run notification logic.
+      - name: Handle Failure & Notify
+        if: failure()
+        run: |
+          echo "=== BUILD OR DEPLOYMENT FAILED ==="
+          echo "Sending notification..."
+        # 
+        # Notification implementation suggestions (Uncomment and configure secrets to enable):
+        #
+        # A. Notification to X (Twitter - @OnigoGames):
+        #    You can use the official X API v2 to post a tweet. 
+        #    Step:
+        #      - name: Tweet Failure
+        #        uses: ethomson/send-tweet-action@v1
+        #        with:
+        #          status: "⚠️ [MUKIMUKI trade] 自動ビルドまたはデプロイでエラーが発生しました。ログを確認してください。 @OnigoGames"
+        #          consumer-key: ${{ secrets.TWITTER_CONSUMER_KEY }}
+        #          consumer-secret: ${{ secrets.TWITTER_CONSUMER_SECRET }}
+        #          access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+        #          access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+        #
+        # B. Notification via Email:
+        #    You can use dawidd6/action-send-mail to send alert emails via SMTP (Gmail, SendGrid, etc.)
+        #    Step:
+        #      - name: Send Mail
+        #        uses: dawidd6/action-send-mail@v3
+        #        with:
+        #          server_address: smtp.gmail.com
+        #          server_port: 465
+        #          username: ${{ secrets.MAIL_USERNAME }}
+        #          password: ${{ secrets.MAIL_PASSWORD }}
+        #          subject: "[ALERT] MUKIMUKI trade Build Failed"
+        #          to: your-email@example.com
+        #          from: GitHub Actions Workflow <noreply@github.com>
+        #          body: |
+        #            MUKIMUKI trade daily-build workflow failed.
+        #            Check the action run log at: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}

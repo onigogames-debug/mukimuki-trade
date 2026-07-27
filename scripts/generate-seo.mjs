@@ -69,36 +69,40 @@ const walkHtmlPages = async (dir = root) => {
 };
 
 const inferChangefreq = (pagePath) => {
-  if (pagePath === '/' || pagePath === '/performance/') return 'daily';
-  if (pagePath === '/sitemap/') return 'weekly';
+  if (pagePath === '/') return 'daily';
+  if (pagePath === '/performance/') return 'daily';
   if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/$/.test(pagePath)) return 'weekly';
   if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/topics\/[^/]+\/$/.test(pagePath)) return 'weekly';
   if (/^\/performance\/\d{4}\/\d{2}\/$/.test(pagePath)) return 'monthly';
   if (/^\/performance\/\d{4}\/$/.test(pagePath)) return 'yearly';
-  if (pagePath.startsWith('/research/')) return 'weekly';
-  if (pagePath.startsWith('/logic/')) return 'monthly';
-  if (pagePath.startsWith('/archive/')) return 'monthly';
-  if (pagePath === '/profile/' || pagePath === '/about/' || pagePath === '/moomoo/') return 'monthly';
-  if (pagePath.startsWith('/performance/')) return 'monthly';
-  if (pagePath.startsWith('/category/')) return 'weekly';
+  if (/^\/research\/[^/]+\/$/.test(pagePath)) return 'weekly';
+  if (pagePath === '/research/') return 'weekly';
+  if (pagePath === '/logic/' || /^\/logic\/[^/]+\/$/.test(pagePath)) return 'monthly';
+  if (pagePath === '/moomoo/') return 'monthly';
+  if (pagePath.startsWith('/category/')) return 'monthly';
+  if (pagePath === '/archive/' || pagePath.startsWith('/archive/')) return 'monthly';
+  if (pagePath === '/sitemap/') return 'monthly';
+  if (pagePath === '/profile/') return 'monthly';
+  if (pagePath === '/about/') return 'monthly';
   return 'monthly';
 };
 
 const inferPriority = (pagePath) => {
   if (pagePath === '/') return '1.0';
   if (pagePath === '/performance/') return '0.8';
-  if (pagePath === '/performance/latest/') return '0.1';
-  if (pagePath === '/sitemap/') return '0.6';
   if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/$/.test(pagePath)) return '0.9';
   if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/topics\/[^/]+\/$/.test(pagePath)) return '0.8';
   if (/^\/performance\/\d{4}\/\d{2}\/$/.test(pagePath)) return '0.7';
   if (/^\/performance\/\d{4}\/$/.test(pagePath)) return '0.6';
-  if (pagePath.startsWith('/research/')) return '0.7';
-  if (pagePath.startsWith('/logic/')) return '0.6';
+  if (/^\/research\/[^/]+\/$/.test(pagePath)) return '0.7';
+  if (pagePath === '/research/') return '0.6';
+  if (pagePath === '/logic/' || /^\/logic\/[^/]+\/$/.test(pagePath)) return '0.6';
   if (pagePath === '/moomoo/') return '0.5';
-  if (pagePath === '/archive/' || pagePath.startsWith('/archive/')) return '0.5';
-  if (pagePath === '/profile/' || pagePath === '/about/') return '0.4';
   if (pagePath.startsWith('/category/')) return '0.5';
+  if (pagePath === '/archive/' || pagePath.startsWith('/archive/')) return '0.5';
+  if (pagePath === '/sitemap/') return '0.3';
+  if (pagePath === '/profile/') return '0.4';
+  if (pagePath === '/about/') return '0.4';
   return '0.5';
 };
 

@@ -16,21 +16,20 @@ const parseSitemap = (xml) => [...xml.matchAll(/<url>\s*<loc>(.*?)<\/loc>\s*<las
 
 const expectedForPath = (pagePath) => {
   if (pagePath === '/') return { priority: '1.0', changefreq: 'daily' };
-  if (pagePath === '/performance/') return { priority: '0.8', changefreq: 'daily' };
+  if (pagePath === '/performance/') return { priority: '0.8', changefreq: 'daily' }; // Default index priority
   if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/$/.test(pagePath)) return { priority: '0.9', changefreq: 'weekly' };
   if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\/topics\/[^/]+\/$/.test(pagePath)) return { priority: '0.8', changefreq: 'weekly' };
   if (/^\/performance\/\d{4}\/\d{2}\/$/.test(pagePath)) return { priority: '0.7', changefreq: 'monthly' };
   if (/^\/performance\/\d{4}\/$/.test(pagePath)) return { priority: '0.6', changefreq: 'yearly' };
   if (/^\/research\/[^/]+\/$/.test(pagePath)) return { priority: '0.7', changefreq: 'weekly' };
   if (pagePath === '/research/') return { priority: '0.6', changefreq: 'weekly' };
-  if (/^\/logic\/[^/]+\/$/.test(pagePath)) return { priority: '0.6', changefreq: 'monthly' };
-  if (pagePath === '/logic/') return { priority: '0.5', changefreq: 'monthly' };
-  if (pagePath === '/moomoo/' || pagePath === '/archive/') return { priority: '0.5', changefreq: 'monthly' };
-  if (pagePath.startsWith('/archive/')) return { priority: '0.5', changefreq: 'monthly' };
-  if (pagePath.startsWith('/category/')) return { priority: '0.5', changefreq: 'weekly' };
-  if (pagePath.startsWith('/research/tag/')) return { priority: '0.5', changefreq: 'monthly' };
-  if (pagePath === '/sitemap/') return { priority: '0.5', changefreq: 'weekly' };
-  if (pagePath === '/profile/' || pagePath === '/about/') return { priority: '0.4', changefreq: 'monthly' };
+  if (pagePath === '/logic/' || /^\/logic\/[^/]+\/$/.test(pagePath)) return { priority: '0.6', changefreq: 'monthly' };
+  if (pagePath === '/moomoo/') return { priority: '0.5', changefreq: 'monthly' };
+  if (pagePath.startsWith('/category/')) return { priority: '0.5', changefreq: 'monthly' };
+  if (pagePath === '/archive/' || pagePath.startsWith('/archive/')) return { priority: '0.5', changefreq: 'monthly' };
+  if (pagePath === '/sitemap/') return { priority: '0.3', changefreq: 'monthly' };
+  if (pagePath === '/profile/') return { priority: '0.4', changefreq: 'monthly' };
+  if (pagePath === '/about/') return { priority: '0.4', changefreq: 'monthly' };
   return { priority: '0.5', changefreq: 'monthly' };
 };
 
