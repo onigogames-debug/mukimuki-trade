@@ -1,23 +1,23 @@
 # X Post Drafts
 
-Generated: 2026-07-27T01:49:43.029Z
+Generated: 2026-07-28T02:01:23.630Z
 
 MUKIMUKI tradeのX投稿下書きです。自動投稿はせず、毎朝の実績確認後に内容を読んでから投稿します。
 
 ## 1. 毎朝の日次実績
 
 ```text
-MUKIMUKI trade 7/23実績
+MUKIMUKI trade 7/27実績
 
 100万円スタート
-評価額 ¥759,865.85
-前日比 +¥2,729.29
-100万円比 -24.01%
-約定5件
+評価額 ¥748,259.75
+前日比 -¥5,057.11
+100万円比 -25.17%
+約定11件
 
-NVDAやGOOGLなど複数銘柄の売買を実施。引け後はGOOGL・TSLA・VGを保有。前日比プラスとなった一日を記録しました。
+TSLAやAAPLなど複数銘柄の売買を実施。引け後はEGOを保有。調整の一日を記録しました。
 
-https://mukimuki-trade.com/performance/2026/07/23/topics/nvda-profit-taken-and-googl-tsla-vg-buy/
+https://mukimuki-trade.com/performance/2026/07/27/topics/googl-tsla-aapl-meta-clear-and-ego-buy/
 
 #米国株 #投資記録
 ※投資助言ではありません
@@ -26,11 +26,11 @@ https://mukimuki-trade.com/performance/2026/07/23/topics/nvda-profit-taken-and-g
 ## 2. 保有銘柄の観察
 
 ```text
-2026-07-23 の持ち越し確認
-保有: GOOGL / TSLA / VG
+2026-07-27 の持ち越し確認
+保有: EGO
 評価額と前日比だけでなく、なぜ持ち越したかを翌日以降に見返します。
 
-https://mukimuki-trade.com/performance/2026/07/23/topics/nvda-profit-taken-and-googl-tsla-vg-buy/
+https://mukimuki-trade.com/performance/2026/07/27/topics/googl-tsla-aapl-meta-clear-and-ego-buy/
 
 #米国株 #投資記録 #MUKIMUKItrade
 ```
@@ -49,10 +49,10 @@ https://mukimuki-trade.com/performance/2026/07/
 ## 4. 銘柄検討ページへの誘導
 
 ```text
-エヌビディア（NVDA）の事業分析: Blackwell出荷とAIプラットフォームの圧倒的堀（Moat）
+Kratos（KTOS）分析: 国策無人ジェットと防衛プラットフォームの実力
 実績に出てきた銘柄は、候補理由と撤退条件も別ページで整理しています。
 
-https://mukimuki-trade.com/research/nvda-analysis/
+https://mukimuki-trade.com/research/ktos-defense-analysis/
 
 #米国株 #銘柄検討 #MUKIMUKItrade
 ```

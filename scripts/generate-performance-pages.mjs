@@ -1162,97 +1162,21 @@ ${footer}
 
 const renderLatestPage = (latestReport) => {
   const latestPath = datePath(latestReport.latest.reportDate);
-  const title = '最新実績レポート';
-  const description = 'MUKIMUKI tradeの最新実績ページ。評価額、100万円比、保有銘柄、売買件数を日次で整理します。';
-  const breadcrumbs = [
-    { name: 'ホーム', item: `${siteUrl}/` },
-    { name: '実績', item: absoluteUrl('/performance/') },
-    { name: '最新実績', item: absoluteUrl('/performance/latest/') },
-  ];
 
   return `<!doctype html>
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>${title} | MUKIMUKI trade</title>
-  <meta name="description" content="${description}">
+  <title>最新実績レポート | MUKIMUKI trade</title>
   <meta name="robots" content="noindex,follow">
   <link rel="canonical" href="${escapeHtml(absoluteUrl(latestPath))}">
-  <meta property="og:locale" content="ja_JP">
-  <meta property="og:type" content="article">
-  <meta property="og:site_name" content="MUKIMUKI trade">
-  <meta property="og:title" content="${title} | MUKIMUKI trade">
-  <meta property="og:description" content="${description}">
-  <meta property="og:url" content="${escapeHtml(absoluteUrl('/performance/latest/'))}">
-  <meta property="og:image" content="${siteUrl}/assets/mukimuki-performance.png">
-${renderTwitterCardTags({
-    title: `${title} | MUKIMUKI trade`,
-    description,
-    url: absoluteUrl('/performance/latest/'),
-    image: `${siteUrl}/assets/mukimuki-performance.png`,
-    escapeHtml,
-  })}
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link rel="alternate" type="application/rss+xml" title="MUKIMUKI trade RSS" href="/feed.xml">
-  <link rel="stylesheet" href="/styles.css">
+  <meta http-equiv="refresh" content="0; url=${escapeHtml(latestPath)}">
   <script>
-    // Google Search Consoleで「重複URL」警告が出た場合:
-    // 1. /performance/latest/ が noindex,follow になっていることをURL検査で確認する。
-    // 2. canonical が最新の日付固定URLを指していることを確認する。
-    // 3. 正規の日付固定URLをURL検査からインデックス登録リクエストする。
-    // 4. 古い /performance/latest/ の検索結果が残る場合は、再クロール後の反映を待つ。
-    (async () => {
-      try {
-        const response = await fetch('/datasets/performance-latest.json', { cache: 'no-store' });
-        const data = await response.json();
-        const [year, month, day] = data.latest.reportDate.split('-');
-        document.querySelector('[data-latest-link]').href = \`/performance/\${year}/\${month}/\${day}/\`;
-        document.querySelector('[data-report-date]').textContent = data.latest.reportDateDisplay;
-        document.querySelector('[data-asset]').textContent = new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY', maximumFractionDigits: 0 }).format(data.latest.jpy.end);
-        document.querySelector('[data-return]').textContent = \`\${data.latest.summary.totalReturnPct >= 0 ? '+' : ''}\${data.latest.summary.totalReturnPct.toFixed(2)}%\`;
-      } catch (error) {
-        console.error('Failed to load latest performance data', error);
-      }
-    })();
+    window.location.replace("${escapeHtml(latestPath)}");
   </script>
 </head>
 <body>
-${header}
-  <main>
-    <section class="article-hero">
-      <div class="article-hero-inner">
-        ${renderBreadcrumbHtml(breadcrumbs, escapeHtml)}
-        <p class="eyebrow">PERFORMANCE / LATEST</p>
-        <h1>最新実績レポート</h1>
-        <p>評価額、100万円比、主要な保有銘柄を日次で整理します。詳しい記録は日付別ページに残しています。</p>
-${renderStampRow([['最新版', 'yellow'], ['固定URLで保存', 'blue']])}
-      </div>
-    </section>
-    <article class="article-body">
-      <section class="article-panel">
-        <h2><span data-report-date>${escapeHtml(latestReport.latest.reportDateDisplay)}</span></h2>
-        <div class="stats-grid">
-          <div class="stat-card"><span>評価額</span><strong data-asset>${formatJpy(latestReport.latest.jpy.end)}</strong></div>
-          <div class="stat-card"><span>100万円比</span><strong data-return>${latestReport.latest.summary.totalReturnPct >= 0 ? '+' : ''}${latestReport.latest.summary.totalReturnPct.toFixed(2)}%</strong></div>
-        </div>
-        <p><a class="btn btn-primary" data-latest-link href="${escapeHtml(latestPath)}">日付固定URLで読む</a></p>
-      </section>
-      <section class="article-panel">
-        <h2>最新実績で見るポイント</h2>
-        <p>最新実績では、評価額の増減だけでなく、どの銘柄を保有し、どの程度の売買件数でその結果になったかを合わせて確認できます。MUKIMUKI tradeは100万円から米国株トレードを始めた前提で、日々の数字を固定URLに残し、後から比較しやすい形で公開しています。</p>
-        <p>短期のプラスやマイナスだけを見ると判断が偏りやすいため、日次ページでは前日比、100万円比、保有銘柄、売買トピックを同じ順番で掲載します。</p>
-        <p>評価額が増えた日でも、買い越しでリスクを増やしたのか、利確で現金化したのかによって意味は変わります。逆に前日比がマイナスでも、持ち越し銘柄の整理や損切りで翌日のリスクを下げている場合があります。最新実績では、損益、取引件数、保有銘柄を分けて記録します。</p>
-      </section>
-      <section class="article-panel">
-        <h2>関連するページ</h2>
-        <p>月ごとの流れは<a href="${escapeHtml(monthPath(latestReport.latest.reportDate))}">月次まとめ</a>、売買判断の背景は<a href="/logic/">投資ロジック</a>、候補銘柄の見方は<a href="/research/">銘柄検討</a>にまとめています。</p>
-        <p>日付別ページには、その日の評価額、前日比、取引件数、主要保有銘柄、よくある質問をまとめています。最新ページは現在地をすばやく確認するためのページとして使い、詳しい振り返りは日付別ページと月次まとめに残します。</p>
-        <p>保有銘柄が変わった日は、翌日の評価額にも影響しやすいため、月次まとめで前後の日付を並べて確認します。</p>
-      </section>
-    </article>
-  </main>
-${footer}
+  <p>最新の実績ページへ移動しています。自動的に移動しない場合は、こちらのリンクをクリックしてください：<a href="${escapeHtml(latestPath)}">${escapeHtml(latestPath)}</a></p>
 </body>
 </html>
 `;
@@ -1268,7 +1192,8 @@ const updateRedirects = async (latestPath) => {
       && !line.startsWith('/performance/latest ')
       && !line.startsWith('/performance/old/ '));
 
-  lines.push('/performance/latest /performance/latest/ 301');
+  lines.push(`/performance/latest/ ${latestPath} 302`);
+  lines.push(`/performance/latest ${latestPath} 302`);
   lines.push('/performance/old/ /performance/ 301');
   await writeFile(redirectsPath, `${lines.join('\n')}\n`);
 };
