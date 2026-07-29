@@ -1,23 +1,23 @@
 # X Post Drafts
 
-Generated: 2026-07-28T02:01:23.630Z
+Generated: 2026-07-29T05:55:54.561Z
 
 MUKIMUKI tradeのX投稿下書きです。自動投稿はせず、毎朝の実績確認後に内容を読んでから投稿します。
 
 ## 1. 毎朝の日次実績
 
 ```text
-MUKIMUKI trade 7/27実績
+MUKIMUKI trade 7/28実績
 
 100万円スタート
-評価額 ¥748,259.75
-前日比 -¥5,057.11
-100万円比 -25.17%
-約定11件
+評価額 ¥741,035.44
+前日比 -¥7,408.81
+100万円比 -25.90%
+約定7件
 
-TSLAやAAPLなど複数銘柄の売買を実施。引け後はEGOを保有。調整の一日を記録しました。
+EGOやLBRTなど複数銘柄の売買を実施。引け後はノーポジション。調整の一日を記録しました。
 
-https://mukimuki-trade.com/performance/2026/07/27/topics/googl-tsla-aapl-meta-clear-and-ego-buy/
+https://mukimuki-trade.com/performance/2026/07/28/topics/ego-lbrt-mxl-amkr-stop-losses-cleared-no-position/
 
 #米国株 #投資記録
 ※投資助言ではありません
@@ -26,11 +26,11 @@ https://mukimuki-trade.com/performance/2026/07/27/topics/googl-tsla-aapl-meta-cl
 ## 2. 保有銘柄の観察
 
 ```text
-2026-07-27 の持ち越し確認
-保有: EGO
+2026-07-28 の持ち越し確認
+保有: なし
 評価額と前日比だけでなく、なぜ持ち越したかを翌日以降に見返します。
 
-https://mukimuki-trade.com/performance/2026/07/27/topics/googl-tsla-aapl-meta-clear-and-ego-buy/
+https://mukimuki-trade.com/performance/2026/07/28/topics/ego-lbrt-mxl-amkr-stop-losses-cleared-no-position/
 
 #米国株 #投資記録 #MUKIMUKItrade
 ```
