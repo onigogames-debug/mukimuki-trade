@@ -1,23 +1,23 @@
 # X Post Drafts
 
-Generated: 2026-07-29T05:55:54.561Z
+Generated: 2026-07-30T01:17:49.750Z
 
 MUKIMUKI tradeのX投稿下書きです。自動投稿はせず、毎朝の実績確認後に内容を読んでから投稿します。
 
 ## 1. 毎朝の日次実績
 
 ```text
-MUKIMUKI trade 7/28実績
+MUKIMUKI trade 7/29実績
 
 100万円スタート
-評価額 ¥741,035.44
-前日比 -¥7,408.81
-100万円比 -25.90%
-約定7件
+評価額 ¥736,395.93
+前日比 -¥2,138.67
+100万円比 -26.36%
+約定17件
 
-EGOやLBRTなど複数銘柄の売買を実施。引け後はノーポジション。調整の一日を記録しました。
+MXLやAMKRなど複数銘柄の売買を実施。引け後はNVDAを保有。調整の一日を記録しました。
 
-https://mukimuki-trade.com/performance/2026/07/28/topics/ego-lbrt-mxl-amkr-stop-losses-cleared-no-position/
+https://mukimuki-trade.com/performance/2026/07/29/topics/active-tech-rotation-nvcr-profit-and-nvda-buy/
 
 #米国株 #投資記録
 ※投資助言ではありません
@@ -26,11 +26,11 @@ https://mukimuki-trade.com/performance/2026/07/28/topics/ego-lbrt-mxl-amkr-stop-
 ## 2. 保有銘柄の観察
 
 ```text
-2026-07-28 の持ち越し確認
-保有: なし
+2026-07-29 の持ち越し確認
+保有: NVDA
 評価額と前日比だけでなく、なぜ持ち越したかを翌日以降に見返します。
 
-https://mukimuki-trade.com/performance/2026/07/28/topics/ego-lbrt-mxl-amkr-stop-losses-cleared-no-position/
+https://mukimuki-trade.com/performance/2026/07/29/topics/active-tech-rotation-nvcr-profit-and-nvda-buy/
 
 #米国株 #投資記録 #MUKIMUKItrade
 ```
@@ -49,10 +49,10 @@ https://mukimuki-trade.com/performance/2026/07/
 ## 4. 銘柄検討ページへの誘導
 
 ```text
-Kratos（KTOS）分析: 国策無人ジェットと防衛プラットフォームの実力
+半導体セクター分析: 生成AI需要の第2極と、自動売買におけるサイクル・ボラティリティ対策
 実績に出てきた銘柄は、候補理由と撤退条件も別ページで整理しています。
 
-https://mukimuki-trade.com/research/ktos-defense-analysis/
+https://mukimuki-trade.com/research/semiconductor-sector-analysis/
 
 #米国株 #銘柄検討 #MUKIMUKItrade
 ```

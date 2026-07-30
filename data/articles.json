@@ -1,6 +1,55 @@
 {
   "articles": [
     {
+      "path": "/performance/2026/07/29/topics/active-tech-rotation-nvcr-profit-and-nvda-buy/",
+      "categoryKey": "performance",
+      "category": "実績公開",
+      "categoryUrl": "/category/performance/",
+      "eyebrow": "TRADE TOPIC / PERFORMANCE",
+      "title": "7/29実績: 相次ぐ約定17件、半導体・バイオ銘柄の利益確定とNVIDIA (NVDA) 新規買い（評価額73.6万円）",
+      "description": "2026年7月29日の米国株自動売買実績。評価額は73.64万円（前日比-2,139円）。日中ボラティリティ急増によりAMKR、MXL、AMD、NVCRを利確し＋10.20ドルの利益確定。さらに半導体大手のNVIDIA (NVDA) 3株を新規打診買いし、1株を利確して2株を持ち越しました。",
+      "summary": "7/29の自動売買は、評価額が ¥736,395.93 となり、前日比 -¥2,138.67（ドルベース -$2.93、実現損益 +$10.20）と微減になりました。当セッションは値動きが非常に活発で計17件の約定が発生。Amkor (US.AMKR)、MaxLinear (US.MXL)、AMD、Novocure (US.NVCR) の短期回転で細かく利益を確保し（実現利益 +$10.20）、LBRTの損切りを吸収しました。さらに下落から急反発した NVIDIA (US.NVDA) 3株を @$192.14 で新規仕込み、うち1株を @$194.17 で部分利確。残るNVDA 2株（含み損益 -0.81%）を持ち越しとし、回復トレンドへの追随を狙います。",
+      "image": "/assets/mukimuki-performance.png",
+      "published": "2026-07-30T08:30:00+09:00",
+      "modified": "2026-07-30T08:30:00+09:00",
+      "tags": [
+        "実績公開",
+        "売買トピック",
+        "短期回転",
+        "利益確定",
+        "NVIDIA買い"
+      ],
+      "sections": [
+        {
+          "heading": "激しいボラティリティ相場での短期約定回転",
+          "paragraphs": [
+            "2026年7月29日のセッションでは、地合いの底打ち感が一部で見られ値動きが激化。売買シグナルが頻繁に作動し、AMKR、MXL、AMD、NVCRなどの半導体・バイオ株で短期利益確定（+$10.20）を細かく重ね、LBRTのロスカット分を補填しました。"
+          ],
+          "bullets": [
+            "評価額: ¥736,395.93（前営業日比 -0.29% / -2,138.67円）",
+            "元本100万円比: -26.36%",
+            "約定件数: 17件（売却9件 / 買付8件 ※API調整込み）",
+            "引け後ポジション: US.NVDA 2株（取得単価 $191.62）"
+          ]
+        },
+        {
+          "heading": "NVIDIA (NVDA) への再参入とリスク管理",
+          "paragraphs": [
+            "半導体セクターの押し目を確認し、主力のNVDA 3株を好位置でエントリー。引けにかけて一部（1株）を利益確定することでキャッシュ比率を調整し、保有ポジションを最小限に抑えながらトレンドの持続性を観察します。"
+          ]
+        }
+      ],
+      "sources": [],
+      "tickers": [
+        "AMKR",
+        "MXL",
+        "AMD",
+        "LBRT",
+        "NVCR",
+        "NVDA"
+      ]
+    },
+    {
       "path": "/performance/2026/07/28/topics/ego-lbrt-mxl-amkr-stop-losses-cleared-no-position/",
       "categoryKey": "performance",
       "category": "実績公開",
