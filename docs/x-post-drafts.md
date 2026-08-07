@@ -1,23 +1,23 @@
 # X Post Drafts
 
-Generated: 2026-07-30T01:17:49.750Z
+Generated: 2026-08-07T00:10:04.653Z
 
 MUKIMUKI tradeのX投稿下書きです。自動投稿はせず、毎朝の実績確認後に内容を読んでから投稿します。
 
 ## 1. 毎朝の日次実績
 
 ```text
-MUKIMUKI trade 7/29実績
+MUKIMUKI trade 8/6実績
 
 100万円スタート
-評価額 ¥736,395.93
-前日比 -¥2,138.67
-100万円比 -26.36%
-約定17件
+評価額 ¥715,497.62
+前日比 +¥1,088.99
+100万円比 -28.45%
+約定0件
 
-MXLやAMKRなど複数銘柄の売買を実施。引け後はNVDAを保有。調整の一日を記録しました。
+引け後はノーポジション。前日比プラスとなった一日を記録しました。
 
-https://mukimuki-trade.com/performance/2026/07/29/topics/active-tech-rotation-nvcr-profit-and-nvda-buy/
+https://mukimuki-trade.com/performance/2026/08/06/topics/no-trade-asset-stabilization/
 
 #米国株 #投資記録
 ※投資助言ではありません
@@ -26,11 +26,11 @@ https://mukimuki-trade.com/performance/2026/07/29/topics/active-tech-rotation-nv
 ## 2. 保有銘柄の観察
 
 ```text
-2026-07-29 の持ち越し確認
-保有: NVDA
+2026-08-06 の持ち越し確認
+保有: なし
 評価額と前日比だけでなく、なぜ持ち越したかを翌日以降に見返します。
 
-https://mukimuki-trade.com/performance/2026/07/29/topics/active-tech-rotation-nvcr-profit-and-nvda-buy/
+https://mukimuki-trade.com/performance/2026/08/06/topics/no-trade-asset-stabilization/
 
 #米国株 #投資記録 #MUKIMUKItrade
 ```
@@ -39,9 +39,9 @@ https://mukimuki-trade.com/performance/2026/07/29/topics/active-tech-rotation-nv
 
 ```text
 日次の勝ち負けだけでなく、月次で見ると資産推移の癖が見えます。
-2026-07 の実績まとめはこちら。
+2026-08 の実績まとめはこちら。
 
-https://mukimuki-trade.com/performance/2026/07/
+https://mukimuki-trade.com/performance/2026/08/
 
 #米国株 #100万円チャレンジ #MUKIMUKItrade
 ```
@@ -49,10 +49,10 @@ https://mukimuki-trade.com/performance/2026/07/
 ## 4. 銘柄検討ページへの誘導
 
 ```text
-半導体セクター分析: 生成AI需要の第2極と、自動売買におけるサイクル・ボラティリティ対策
+Kratos（KTOS）分析: 国策無人ジェットと防衛プラットフォームの実力
 実績に出てきた銘柄は、候補理由と撤退条件も別ページで整理しています。
 
-https://mukimuki-trade.com/research/semiconductor-sector-analysis/
+https://mukimuki-trade.com/research/ktos-defense-analysis/
 
 #米国株 #銘柄検討 #MUKIMUKItrade
 ```
