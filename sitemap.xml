@@ -565,6 +565,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://mukimuki-trade.com/performance/2026/07/31/topics/no-trade-market-decline/</loc>
+    <lastmod>2026-08-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://mukimuki-trade.com/performance/2026/08/03/topics/no-trade-weekend-wait/</loc>
     <lastmod>2026-08-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -1400,7 +1406,7 @@
   </url>
   <url>
     <loc>https://mukimuki-trade.com/sitemap/</loc>
-    <lastmod>2026-08-06</lastmod>
+    <lastmod>2026-08-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>

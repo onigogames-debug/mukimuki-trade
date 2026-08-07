@@ -708,6 +708,16 @@
       "totalTrades": 8
     },
     {
+      "date": "2026-07-31",
+      "label": "7/31",
+      "jpyStart": 724375.07,
+      "jpyEnd": 707393.27,
+      "jpyDelta": -16981.8,
+      "totalPnlJpy": -292606.73,
+      "totalReturnPct": -29.26,
+      "totalTrades": 0
+    },
+    {
       "date": "2026-08-03",
       "label": "8/3",
       "jpyStart": 707393.27,

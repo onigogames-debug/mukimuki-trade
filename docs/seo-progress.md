@@ -1,6 +1,6 @@
 # SEO Progress Report
 
-Generated: 2026-08-07T00:10:04.888Z
+Generated: 2026-08-07T00:21:13.434Z
 
 ## 実装状況
 
@@ -21,12 +21,12 @@ Generated: 2026-08-07T00:10:04.888Z
 
 ## ページ監査サマリー
 
-- 対象ページ: 235
-- インデックス対象ページ: 232
+- 対象ページ: 236
+- インデックス対象ページ: 233
 - 要確認ページ: 23
 - FAQ schemaページ: 59
-- パンくずschemaページ: 233
-- Critical CSS適用ページ: 234
+- パンくずschemaページ: 234
+- Critical CSS適用ページ: 235
 
 ## 要確認ページ
 
@@ -60,7 +60,7 @@ Generated: 2026-08-07T00:10:04.888Z
 
 | URL | title | description | 本文文字数 | 内部リンク | schema |
 |---|---:|---:|---:|---:|---|
-| / | 41 | 68 | 3023 | 31 | Person, WebSite |
+| / | 41 | 68 | 2971 | 31 | Person, WebSite |
 | /about/ | 26 | 58 | 1821 | 19 | AboutPage, BreadcrumbList, FAQPage, Person, WebPage, WebSite |
 | /archive/ | 24 | 62 | 1041 | 19 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /archive/2026-05/ (noindex) | 27 | 79 | 1323 | 27 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
@@ -169,6 +169,7 @@ Generated: 2026-08-07T00:10:04.888Z
 | /performance/2026/07/29/ | 39 | 80 | 3389 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/07/29/topics/active-tech-rotation-nvcr-profit-and-nvda-buy/ | 78 | 146 | 3176 | 29 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/07/30/topics/nvda-meta-amkr-profit-taken-and-cleared/ | 79 | 134 | 2991 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/07/31/topics/no-trade-market-decline/ | 68 | 93 | 1411 | 23 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/08/ | 41 | 62 | 1362 | 24 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /performance/2026/08/03/topics/no-trade-weekend-wait/ | 61 | 93 | 1324 | 23 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/08/04/topics/no-trade-market-watch/ | 62 | 93 | 1296 | 23 | Article, BreadcrumbList, Person, WebSite |
@@ -294,5 +295,5 @@ Generated: 2026-08-07T00:10:04.888Z
 | /research/tag/xg/ | 28 | 63 | 1481 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/xndu/ | 30 | 65 | 1786 | 24 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/xq/ | 28 | 63 | 1559 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
-| /sitemap/ | 23 | 48 | 12963 | 245 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /sitemap/ | 23 | 48 | 13071 | 246 | BreadcrumbList, CollectionPage, Person, WebSite |
 
