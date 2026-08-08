@@ -1,6 +1,56 @@
 {
   "articles": [
     {
+      "path": "/performance/2026/08/07/topics/msft-profit-vrt-loss-cut-and-multiple-buys/",
+      "categoryKey": "performance",
+      "category": "実績公開",
+      "categoryUrl": "/category/performance/",
+      "eyebrow": "TRADE TOPIC / PERFORMANCE",
+      "title": "8/7実績: Microsoftの利確（+6.4ドル）とVRT損切り、地合い回復を見越して複数打診買い（評価額70.6万円）",
+      "description": "2026年8月7日の米国株自動売買実績。評価額は70.62万円（前日比-3,128円）。利益確定したMicrosoft (MSFT) を売却（+$6.44）、逆指値に達したVertiv (VRT) を損切り（-$21.88）。さらに引けにかけてTSLA、DOCS、AMZN、NVDAの4銘柄を新規に買い付けて持ち越しました。",
+      "summary": "8/7の自動売買は、評価額が ¥706,183.55 となり、前営業日比 -¥3,128.06（ドルベース -$3.27、実現損益 -$15.44）と微減になりました。当セッションは主要テック株の反発が見られる中、Microsoft (US.MSFT) 1株を利益確定（実現利益 +$6.44）する一方、逆指値に触れたVertiv (US.VRT) 2株を損切り（実現損失 -$21.88）。実現損益合計は -$15.44 となりました。しかし、中長期的な押し目買いチャンスと判断し、Tesla (US.TSLA) 2株、Doximity (US.DOCS) 4株、Amazon (US.AMZN) 1株、NVIDIA (US.NVDA) 1株をそれぞれ新規に打診買いし、合計4銘柄を持ち越しました。",
+      "image": "/assets/mukimuki-performance.png",
+      "published": "2026-08-08T08:30:00+09:00",
+      "modified": "2026-08-08T08:30:00+09:00",
+      "tags": [
+        "実績公開",
+        "売買トピック",
+        "利益確定",
+        "損切り",
+        "打診買い",
+        "複数保有"
+      ],
+      "sections": [
+        {
+          "heading": "MSFTの利確とVRTロスカットの明暗",
+          "paragraphs": [
+            "2026年8月7日の取引では、ハイテク株全般が底堅く推移し、MSFTがターゲット価格に到達して利益を回収しました。一方で、Vertiv (VRT) は一時的な急落で逆指値にヒットし、$-21.88の損切り決済を執行。機械的な資金管理ルールに従いリスクを最小限に留めました。"
+          ],
+          "bullets": [
+            "評価額: ¥706,183.55（前営業日比 -0.44% / -3,128.06円）",
+            "元本100万円比: -29.38%",
+            "約定件数: 8件（買付6件 / 売却2件 ※API事後調整含む）",
+            "引け後ポジション: US.TSLA 2株、US.DOCS 4株、US.AMZN 1株、US.NVDA 1株"
+          ]
+        },
+        {
+          "heading": "週末を控えた新たな打診買いローテーション",
+          "paragraphs": [
+            "下落が十分に進行した主要メガテック（AMZN, NVDA, TSLA）および好決算のDOCSに注目し、リスクを分散しながら複数の新規打診ポジションを構築しました。週末の地合いを跨ぎ、来週以降の本格反発シナリオに備える配置です。"
+          ]
+        }
+      ],
+      "sources": [],
+      "tickers": [
+        "MSFT",
+        "VRT",
+        "TSLA",
+        "DOCS",
+        "AMZN",
+        "NVDA"
+      ]
+    },
+    {
       "path": "/performance/2026/08/06/topics/no-trade-asset-stabilization/",
       "categoryKey": "performance",
       "category": "実績公開",
