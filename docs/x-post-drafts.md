@@ -1,23 +1,23 @@
 # X Post Drafts
 
-Generated: 2026-08-08T00:51:15.433Z
+Generated: 2026-08-12T11:47:28.148Z
 
 MUKIMUKI tradeのX投稿下書きです。自動投稿はせず、毎朝の実績確認後に内容を読んでから投稿します。
 
 ## 1. 毎朝の日次実績
 
 ```text
-MUKIMUKI trade 8/7実績
+MUKIMUKI trade 8/12実績
 
 100万円スタート
-評価額 ¥706,183.55
-前日比 -¥3,128.06
-100万円比 -29.38%
-約定7件
+評価額 ¥710,150.59
+前日比 +¥0.00
+100万円比 -28.98%
+約定0件
 
-MSFTやVRTなど複数銘柄の売買を実施。引け後はTSLA・DOCS・AMZNなどを保有。調整の一日を記録しました。
+引け後はノーポジション。調整の一日を記録しました。
 
-https://mukimuki-trade.com/performance/2026/08/07/topics/msft-profit-vrt-loss-cut-and-multiple-buys/
+https://mukimuki-trade.com/performance/2026/08/12/
 
 #米国株 #投資記録
 ※投資助言ではありません
@@ -26,11 +26,11 @@ https://mukimuki-trade.com/performance/2026/08/07/topics/msft-profit-vrt-loss-cu
 ## 2. 保有銘柄の観察
 
 ```text
-2026-08-07 の持ち越し確認
-保有: TSLA / DOCS / AMZN / NVDA
+2026-08-12 の持ち越し確認
+保有: なし
 評価額と前日比だけでなく、なぜ持ち越したかを翌日以降に見返します。
 
-https://mukimuki-trade.com/performance/2026/08/07/topics/msft-profit-vrt-loss-cut-and-multiple-buys/
+https://mukimuki-trade.com/performance/2026/08/12/
 
 #米国株 #投資記録 #MUKIMUKItrade
 ```
@@ -49,10 +49,10 @@ https://mukimuki-trade.com/performance/2026/08/
 ## 4. 銘柄検討ページへの誘導
 
 ```text
-半導体セクター分析: 生成AI需要の第2極と、自動売買におけるサイクル・ボラティリティ対策
+Kratos（KTOS）分析: 国策無人ジェットと防衛プラットフォームの実力
 実績に出てきた銘柄は、候補理由と撤退条件も別ページで整理しています。
 
-https://mukimuki-trade.com/research/semiconductor-sector-analysis/
+https://mukimuki-trade.com/research/ktos-defense-analysis/
 
 #米国株 #銘柄検討 #MUKIMUKItrade
 ```

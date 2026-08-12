@@ -1,6 +1,93 @@
 {
   "articles": [
     {
+      "path": "/performance/2026/08/11/topics/no-trade-asset-rebound/",
+      "categoryKey": "performance",
+      "category": "実績公開",
+      "categoryUrl": "/category/performance/",
+      "eyebrow": "TRADE TOPIC / PERFORMANCE",
+      "title": "8/11実績: 取引シグナルなし、為替影響により評価額は71.0万円へ小幅反発（評価額71.0万円）",
+      "description": "2026年8月11日の米国株自動売買実績。評価額は71.02万円（前日比+4,069円）。自動売買プログラムが一時停止していたこともあり新規約定はゼロ、保有3銘柄のホールドを継続しました。",
+      "summary": "8/11の自動売買は、評価額が ¥710,150.59 となり、前日比 +¥4,068.80（ドルベース -$0.78）と為替（米ドル高・円安）および金利影響から小幅反発になりました。このセッションはシステムの保守停止期間と重なり新規取引は行わず、Tesla (US.TSLA) 2株、Amazon (US.AMZN) 1株、NVIDIA (US.NVDA) 1株の3ポジションをそのまま持ち越しました。",
+      "image": "/assets/mukimuki-performance.png",
+      "published": "2026-08-12T08:30:00+09:00",
+      "modified": "2026-08-12T08:30:00+09:00",
+      "tags": [
+        "実績公開",
+        "売買トピック",
+        "取引なし",
+        "為替影響",
+        "ホールド継続"
+      ],
+      "sections": [
+        {
+          "heading": "取引なし・持ち越しポジションの維持",
+          "paragraphs": [
+            "2026年8月11日は、売買シグナル判断・約定は発生しませんでした。ドル高方向への為替推移のおかげで円建て評価額は回復傾向となり、評価額71万円台へ復帰しています。持ち越し銘柄の回復を見守る姿勢です。"
+          ],
+          "bullets": [
+            "評価額: ¥710,150.59（前営業日比 +0.58% / +4,068.80円）",
+            "元本100万円比: -28.98%",
+            "約定件数: 0件",
+            "引け後ポジション: US.TSLA 2株、US.AMZN 1株、US.NVDA 1株"
+          ]
+        }
+      ],
+      "sources": [],
+      "tickers": [
+        "TSLA",
+        "AMZN",
+        "NVDA"
+      ]
+    },
+    {
+      "path": "/performance/2026/08/10/topics/docs-loss-cut-and-holding-techs/",
+      "categoryKey": "performance",
+      "category": "実績公開",
+      "categoryUrl": "/category/performance/",
+      "eyebrow": "TRADE TOPIC / PERFORMANCE",
+      "title": "8/10実績: Doximity (DOCS) を逆指値でロスカット、約定1件（評価額70.6万円）",
+      "description": "2026年8月10日の米国株自動売買実績。評価額は70.61万円（前営業日比-102円）。時間外取引にて逆指値に達したDoximity (DOCS) を損切り売却（-$18.80）。引け後はTSLA、AMZN、NVDAの3銘柄をホールド継続しました。",
+      "summary": "8/10の自動売買は、評価額が ¥706,081.79 となり、前営業日比 -¥101.76（ドルベース -$12.22、実現損益 -$18.80）と微減になりました。当セッションは時間外取引において、急落した Doximity (US.DOCS) 4株が逆指値ターゲットに達したため機械的に損切り決済（実現損失 -$18.80）。その後は新規シグナルを検出せず、Tesla (US.TSLA) 2株、Amazon (US.AMZN) 1株、NVIDIA (US.NVDA) 1株の3ポジションを維持して引けました。",
+      "image": "/assets/mukimuki-performance.png",
+      "published": "2026-08-11T08:30:00+09:00",
+      "modified": "2026-08-11T08:30:00+09:00",
+      "tags": [
+        "実績公開",
+        "売買トピック",
+        "損切り",
+        "時間外取引",
+        "保有継続"
+      ],
+      "sections": [
+        {
+          "heading": "DOCS急落に伴うルール通りのロスカット",
+          "paragraphs": [
+            "2026年8月10日の取引では、プレマーケットでDOCSの下落圧力が強まり、設定していたストップロス基準へ到達。逆指値により機械的な損切り決済（-$18.80）を執行し、不要な追加損失リスクをカットしました。"
+          ],
+          "bullets": [
+            "評価額: ¥706,081.79（前営業日比 -0.01% / -101.76円）",
+            "元本100万円比: -29.39%",
+            "約定件数: 1件（売却1件）",
+            "引け後ポジション: US.TSLA 2株、US.AMZN 1株、US.NVDA 1株"
+          ]
+        },
+        {
+          "heading": "主要3ハイテク株のホールド継続",
+          "paragraphs": [
+            "DOCSの売却後、残る主要3銘柄（TSLA, AMZN, NVDA）については新規売りシグナル・逆指値には達せずホールドを継続しています。相場の自律反発を待つ体制です。"
+          ]
+        }
+      ],
+      "sources": [],
+      "tickers": [
+        "DOCS",
+        "TSLA",
+        "AMZN",
+        "NVDA"
+      ]
+    },
+    {
       "path": "/performance/2026/08/07/topics/msft-profit-vrt-loss-cut-and-multiple-buys/",
       "categoryKey": "performance",
       "category": "実績公開",
