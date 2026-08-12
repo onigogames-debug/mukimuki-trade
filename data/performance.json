@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "siteName": "MUKIMUKI trade",
   "sourceName": "Autotrade daily report",
-  "sourceReport": "report_2026-08-12.txt",
-  "generatedAt": "2026-08-12T20:39:32+09:00",
-  "generatedAtDisplay": "2026.08.12 20:39:32 JST",
+  "sourceReport": "report_2026-08-12.txt + jp_account_mix_report.csv",
+  "generatedAt": "2026-08-13T08:54:13+09:00",
+  "generatedAtDisplay": "2026.08.13 08:54:13 JST",
   "timezone": {
     "reportDate": "EST",
     "generatedAt": "Asia/Tokyo"
@@ -19,31 +19,101 @@
     "label": "8/12",
     "jpy": {
       "start": 710150.59,
-      "end": 710150.59,
-      "delta": 0
+      "end": 709743.38,
+      "delta": -407.21
     },
     "usd": {
       "start": 4463.5034,
-      "end": 4463.5034,
-      "delta": 0
+      "end": 4462.0413,
+      "delta": -1.4621
     },
     "summary": {
-      "totalTrades": 0,
-      "totalBuyUsd": 0,
-      "totalSellUsd": 0,
-      "usdPnl": 0,
-      "cashFlowUsd": null,
-      "totalPnlJpy": -289849.41,
-      "totalReturnPct": -28.98,
-      "dailyReturnPct": 0
+      "totalTrades": 6,
+      "totalBuyUsd": 1149.95,
+      "totalSellUsd": 667.11,
+      "usdPnl": 17.15,
+      "cashFlowUsd": -482.84,
+      "totalPnlJpy": -290256.62,
+      "totalReturnPct": -29.03,
+      "dailyReturnPct": -0.06
     },
-    "trades": [],
-    "positions": [],
+    "trades": [
+      {
+        "side": "SELL",
+        "symbol": "US.TSLA",
+        "shares": 1,
+        "priceUsd": 333.9012,
+        "amountUsd": 333.9,
+        "executedAtEst": "2026-08-12 07:34:20.023",
+        "remark": "CLOSED_TRADE_SELL"
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.TSLA",
+        "shares": 1,
+        "priceUsd": 322.15,
+        "amountUsd": 322.15,
+        "executedAtEst": "2026-08-12 07:34:20.023",
+        "remark": "CLOSED_TRADE_BUY"
+      },
+      {
+        "side": "SELL",
+        "symbol": "US.TSLA",
+        "shares": 1,
+        "priceUsd": 333.21,
+        "amountUsd": 333.21,
+        "executedAtEst": "2026-08-12 08:21:01.387",
+        "remark": "CLOSED_TRADE_SELL"
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.TSLA",
+        "shares": 1,
+        "priceUsd": 327.81,
+        "amountUsd": 327.81,
+        "executedAtEst": "2026-08-12 08:21:01.387",
+        "remark": "CLOSED_TRADE_BUY"
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.NVDA",
+        "shares": 1,
+        "priceUsd": 223.27,
+        "amountUsd": 223.27,
+        "executedAtEst": "2026-08-12T21:21:00",
+        "remark": "RECONCILED_BROKER"
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.AMZN",
+        "shares": 1,
+        "priceUsd": 276.72,
+        "amountUsd": 276.72,
+        "executedAtEst": "2026-08-12T21:21:00",
+        "remark": "RECONCILED_BROKER"
+      }
+    ],
+    "positions": [
+      {
+        "symbol": "US.NVDA",
+        "shares": 1,
+        "averagePriceUsd": 223.27,
+        "unrealizedPnlPct": -1.66,
+        "unrealizedPnlUsd": -3.71
+      },
+      {
+        "symbol": "US.AMZN",
+        "shares": 1,
+        "averagePriceUsd": 276.72,
+        "unrealizedPnlPct": -1.11,
+        "unrealizedPnlUsd": -3.07
+      }
+    ],
     "signals": {
-      "loops": 10,
+      "loops": 200,
       "buySignals": 0,
       "sellSignals": 0,
-      "holds": 170
+      "holds": 3376
     }
   },
   "history": [
@@ -791,11 +861,11 @@
       "date": "2026-08-12",
       "label": "8/12",
       "jpyStart": 710150.59,
-      "jpyEnd": 710150.59,
-      "jpyDelta": 0,
-      "totalPnlJpy": -289849.41,
-      "totalReturnPct": -28.98,
-      "totalTrades": 0
+      "jpyEnd": 709743.38,
+      "jpyDelta": -407.21,
+      "totalPnlJpy": -290256.62,
+      "totalReturnPct": -29.03,
+      "totalTrades": 6
     }
   ],
   "notes": [

@@ -1,6 +1,46 @@
 {
   "articles": [
     {
+      "path": "/performance/2026/08/12/topics/tsla-profit-taken-all-cleared/",
+      "categoryKey": "performance",
+      "category": "実績公開",
+      "categoryUrl": "/category/performance/",
+      "eyebrow": "TRADE TOPIC / PERFORMANCE",
+      "title": "8/12実績: Tesla (TSLA) の利益確定で+$17.15、保有株はハイテク2銘柄へ（評価額71.0万円）",
+      "description": "2026年8月12日の米国株自動売買実績。評価額は70.97万円（前日比-407円）。利益確定目標に達したTesla (TSLA) 2株を時間外および通常取引で売却（計+$17.15）。引け後はNVDAとAMZNの2銘柄をホールド継続しました。",
+      "summary": "8/12の自動売買は、評価額が ¥709,743.38 となり、前営業日比 -¥407.21（ドルベース -$1.46）と微減になりました。取引面では、上昇トレンドに乗った Tesla (US.TSLA) が利確ターゲットに達し、時間外取引で1株を $333.90 で、通常取引で1株を $333.21 で売却し、合計 +$17.15 の利益を確定しました。引け後の保有ポジションは NVIDIA (US.NVDA) 1株、Amazon (US.AMZN) 1株の2銘柄となりました。",
+      "image": "/assets/mukimuki-performance.png",
+      "published": "2026-08-13T08:30:00+09:00",
+      "modified": "2026-08-13T08:30:00+09:00",
+      "tags": [
+        "実績公開",
+        "売買トピック",
+        "利益確定",
+        "ポジション整理"
+      ],
+      "sections": [
+        {
+          "heading": "Tesla (TSLA) の利確ルール発動による利益確定",
+          "paragraphs": [
+            "2026年8月12日のセッションでは、Tesla (TSLA) が順調に上昇し利確閾値へ到達。時間外取引で1株（+$11.75）、通常取引でさらに1株（+$5.40）を分割売却し、手堅く利益を確定させました。"
+          ],
+          "bullets": [
+            "評価額: ¥709,743.38（前日比 -0.06% / -407.21円）",
+            "元本100万円比: -29.03%",
+            "約定件数: 2件（売却2件 / 内部履歴の補正含む）",
+            "実現損益: +$17.15",
+            "引け後ポジション: US.NVDA 1株、US.AMZN 1株"
+          ]
+        }
+      ],
+      "sources": [],
+      "tickers": [
+        "TSLA",
+        "NVDA",
+        "AMZN"
+      ]
+    },
+    {
       "path": "/performance/2026/08/11/topics/no-trade-asset-rebound/",
       "categoryKey": "performance",
       "category": "実績公開",
