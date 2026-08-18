@@ -1190,6 +1190,7 @@ const updateRedirects = async (latestPath) => {
     .filter((line) => line.trim()
       && !line.startsWith('/performance/ ')
       && !line.startsWith('/performance/latest ')
+      && !line.startsWith('/performance/latest/ ')
       && !line.startsWith('/performance/old/ '));
 
   lines.push(`/performance/latest/ ${latestPath} 302`);

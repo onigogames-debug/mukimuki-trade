@@ -189,7 +189,7 @@ const normalizePageType = (value, path = '/') => {
 };
 
 export const breadcrumbMapping = {
-  "performance": { label: "実績", url: "/performance/latest/" },
+  "performance": { label: "実績", url: "/performance/" },
   "research":    { label: "銘柄検討", url: "/research/" },
   "logic":       { label: "投資ロジック", url: "/logic/" },
   "moomoo":      { label: "moomoo証券", url: "/moomoo/" },
