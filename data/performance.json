@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "siteName": "MUKIMUKI trade",
   "sourceName": "Autotrade daily report",
-  "sourceReport": "report_2026-08-14.txt + jp_account_mix_report.csv",
-  "generatedAt": "2026-08-15T05:00:16+09:00",
-  "generatedAtDisplay": "2026.08.15 05:00:16 JST",
+  "sourceReport": "report_2026-08-18.txt + jp_account_mix_report.csv",
+  "generatedAt": "2026-08-19T05:00:13+09:00",
+  "generatedAtDisplay": "2026.08.19 05:00:13 JST",
   "timezone": {
     "reportDate": "EST",
     "generatedAt": "Asia/Tokyo"
@@ -14,127 +14,108 @@
   "challengeStartDate": "2026-04-24",
   "affiliateUrl": "https://j.jp.moomoo.com/0BdcjG",
   "latest": {
-    "reportDate": "2026-08-14",
-    "reportDateDisplay": "2026.08.14 EST",
-    "label": "8/14",
+    "reportDate": "2026-08-18",
+    "reportDateDisplay": "2026.08.18 EST",
+    "label": "8/18",
     "jpy": {
-      "start": 709938.07,
-      "end": 708111.91,
-      "delta": -1826.16
+      "start": 709817.42,
+      "end": 709569.61,
+      "delta": -247.81
     },
     "usd": {
-      "start": 4460.0413,
-      "end": 4444.548,
-      "delta": -15.4933
+      "start": 4444.51,
+      "end": 4444.84,
+      "delta": 0.3254
     },
     "summary": {
-      "totalTrades": 10,
-      "totalBuyUsd": 1940.45,
-      "totalSellUsd": 1920.49,
-      "usdPnl": 0,
-      "cashFlowUsd": -19.96,
-      "totalPnlJpy": -291888.09,
-      "totalReturnPct": -29.19,
-      "dailyReturnPct": -0.26
+      "totalTrades": 7,
+      "totalBuyUsd": 1919.38,
+      "totalSellUsd": 1303.44,
+      "usdPnl": 0.33,
+      "cashFlowUsd": -615.94,
+      "totalPnlJpy": -290430.39,
+      "totalReturnPct": -29.04,
+      "dailyReturnPct": -0.03
     },
     "trades": [
       {
         "side": "SELL",
-        "symbol": "US.NVDA",
-        "shares": 1,
-        "priceUsd": 226.0885,
-        "amountUsd": 226.09,
-        "executedAtEst": "2026-08-14 07:07:05.382",
+        "symbol": "US.SKHY",
+        "shares": 4,
+        "priceUsd": 160.96,
+        "amountUsd": 643.84,
+        "executedAtEst": "2026-08-18 09:48:58.251",
         "remark": "CLOSED_TRADE_SELL"
       },
       {
         "side": "BUY",
-        "symbol": "US.NVDA",
-        "shares": 1,
-        "priceUsd": 223.27,
-        "amountUsd": 223.27,
-        "executedAtEst": "2026-08-14 07:07:05.382",
+        "symbol": "US.SKHY",
+        "shares": 4,
+        "priceUsd": 162.13,
+        "amountUsd": 648.52,
+        "executedAtEst": "2026-08-18 09:25:31.378",
         "remark": "CLOSED_TRADE_BUY"
       },
       {
         "side": "SELL",
-        "symbol": "US.AMZN",
-        "shares": 1,
-        "priceUsd": 264.78,
-        "amountUsd": 264.78,
-        "executedAtEst": "2026-08-14 07:07:05.395",
+        "symbol": "US.CLBT",
+        "shares": 37,
+        "priceUsd": 10.61645,
+        "amountUsd": 392.81,
+        "executedAtEst": "2026-08-18 10:14:40.102",
         "remark": "CLOSED_TRADE_SELL"
       },
       {
         "side": "BUY",
-        "symbol": "US.AMZN",
-        "shares": 1,
-        "priceUsd": 276.72,
-        "amountUsd": 276.72,
-        "executedAtEst": "2026-08-14 07:07:05.395",
+        "symbol": "US.CLBT",
+        "shares": 37,
+        "priceUsd": 10.4817,
+        "amountUsd": 387.82,
+        "executedAtEst": "2026-08-18 09:25:31.335",
         "remark": "CLOSED_TRADE_BUY"
       },
       {
         "side": "SELL",
-        "symbol": "US.AMD",
-        "shares": 1,
-        "priceUsd": 501.365,
-        "amountUsd": 501.37,
-        "executedAtEst": "2026-08-14 09:51:48.203",
+        "symbol": "US.CLBT",
+        "shares": 25,
+        "priceUsd": 10.6715,
+        "amountUsd": 266.79,
+        "executedAtEst": "2026-08-18 10:19:54.353",
         "remark": "CLOSED_TRADE_SELL"
       },
       {
         "side": "BUY",
-        "symbol": "US.AMD",
-        "shares": 1,
-        "priceUsd": 495.2,
-        "amountUsd": 495.2,
-        "executedAtEst": "2026-08-14 09:46:10.883",
+        "symbol": "US.CLBT",
+        "shares": 25,
+        "priceUsd": 10.4817,
+        "amountUsd": 262.04,
+        "executedAtEst": "2026-08-18 09:25:31.335",
         "remark": "CLOSED_TRADE_BUY"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.TSLA",
-        "shares": 1,
-        "priceUsd": 337.0001,
-        "amountUsd": 337,
-        "executedAtEst": "2026-08-14 11:21:43.079",
-        "remark": "CLOSED_TRADE_SELL"
       },
       {
         "side": "BUY",
-        "symbol": "US.TSLA",
-        "shares": 1,
-        "priceUsd": 348.85,
-        "amountUsd": 348.85,
-        "executedAtEst": "2026-08-14 09:49:24.197",
-        "remark": "CLOSED_TRADE_BUY"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.META",
-        "shares": 1,
-        "priceUsd": 591.25,
-        "amountUsd": 591.25,
-        "executedAtEst": "2026-08-14 15:30:14.914",
-        "remark": "CLOSED_TRADE_SELL"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.META",
-        "shares": 1,
-        "priceUsd": 596.41,
-        "amountUsd": 596.41,
-        "executedAtEst": "2026-08-14 09:04:11.464",
-        "remark": "CLOSED_TRADE_BUY"
+        "symbol": "US.AAPL",
+        "shares": 2,
+        "priceUsd": 310.502,
+        "amountUsd": 621,
+        "executedAtEst": "2026-08-18 10:32:55.166",
+        "remark": "BUY:RSI回復バウンス(イベント) "
       }
     ],
-    "positions": [],
+    "positions": [
+      {
+        "symbol": "US.AAPL",
+        "shares": 2,
+        "averagePriceUsd": 310.91,
+        "unrealizedPnlPct": -0.21,
+        "unrealizedPnlUsd": -1.33
+      }
+    ],
     "signals": {
-      "loops": 1185,
-      "buySignals": 629,
-      "sellSignals": 0,
-      "holds": 21089
+      "loops": 708,
+      "buySignals": 977,
+      "sellSignals": 1,
+      "holds": 12865
     }
   },
   "history": [
@@ -907,6 +888,26 @@
       "totalPnlJpy": -291888.09,
       "totalReturnPct": -29.19,
       "totalTrades": 0
+    },
+    {
+      "date": "2026-08-17",
+      "label": "8/17",
+      "jpyStart": 706898.11,
+      "jpyEnd": 706889.25,
+      "jpyDelta": -8.86,
+      "totalPnlJpy": -293110.75,
+      "totalReturnPct": -29.31,
+      "totalTrades": 0
+    },
+    {
+      "date": "2026-08-18",
+      "label": "8/18",
+      "jpyStart": 709817.42,
+      "jpyEnd": 709569.61,
+      "jpyDelta": -247.81,
+      "totalPnlJpy": -290430.39,
+      "totalReturnPct": -29.04,
+      "totalTrades": 7
     }
   ],
   "notes": [

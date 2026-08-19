@@ -1,6 +1,89 @@
 {
   "articles": [
     {
+      "path": "/performance/2026/08/18/topics/clbt-profit-skhy-cut-aapl-held/",
+      "categoryKey": "performance",
+      "category": "実績公開",
+      "categoryUrl": "/category/performance/",
+      "eyebrow": "TRADE TOPIC / PERFORMANCE",
+      "title": "8/18実績: Cellebrite (CLBT) の利確（+$9.93）とSKHYロスカット、引けにAAPLを新規購入（評価額71.0万円）",
+      "description": "2026年8月18日の米国株自動売買実績。評価額は70.96万円（前日比-248円）。上昇したCellebrite (CLBT) を利確（+$9.93）、逆指値に達したSKHYをロスカット（-$4.68）。さらに引けでApple (AAPL) 2株を新規に買い付けて持ち越しました。",
+      "summary": "8/18の自動売買は吞、評価額が ¥709,569.61 となり、前営業日比 -¥247.81（ドルベース +$0.33、実現損益 +$5.05）とほぼ横ばいで引けました。取引面では、短期購入した Cellebrite (US.CLBT) がターゲット価格に達し、計62株を分割売却して +$9.93 の利益を確定。一方で逆指値に達した SKHY 4株をロスカット（-$4.68）しました。引けにかけては Apple (US.AAPL) 2株を新規に打診買いし、1銘柄をホールドして持ち越しました。",
+      "image": "/assets/mukimuki-performance.png",
+      "published": "2026-08-19T08:30:00+09:00",
+      "modified": "2026-08-19T08:30:00+09:00",
+      "tags": [
+        "実績公開",
+        "売買トピック",
+        "利益確定",
+        "損切り",
+        "打診買い"
+      ],
+      "sections": [
+        {
+          "heading": "CLBTの目標到達とSKHYの損切り",
+          "paragraphs": [
+            "2026年8月18日のセッションでは、モメンタムの強かったCellebrite (CLBT) が利確ターゲットに到達し、利益を確保しました。対して、軟調だったSKHYは逆指値によって早期撤退。トータルの実現損益は +$5.05 とプラスを確保しました。"
+          ]
+        },
+        {
+          "heading": "Apple (AAPL) への打診買いエントリー",
+          "paragraphs": [
+            "セッション終盤、上昇シグナルを検出したApple (AAPL) 2株を新規に購入。引け後の保有ポジションはAAPLの1銘柄のみとなっています。"
+          ],
+          "bullets": [
+            "評価額: ¥709,569.61（前営業日比 -0.03% / -247.81円）",
+            "元本100万円比: -29.04%",
+            "約定件数: 7件（買付3件 / 売却4件）",
+            "実現損益: +$5.05",
+            "引け後ポジション: US.AAPL 2株"
+          ]
+        }
+      ],
+      "sources": [],
+      "tickers": [
+        "CLBT",
+        "SKHY",
+        "AAPL"
+      ]
+    },
+    {
+      "path": "/performance/2026/08/17/topics/no-trade-asset-stabilization/",
+      "categoryKey": "performance",
+      "category": "実績公開",
+      "categoryUrl": "/category/performance/",
+      "eyebrow": "TRADE TOPIC / PERFORMANCE",
+      "title": "8/17実績: 取引シグナルなし、ノーポジション継続で週明けのマーケットを静観（評価額70.6万円）",
+      "description": "2026年8月17日の米国株自動売買実績。評価額は70.69万円（前営業日比-9円）。週明けのセッションは新規シグナルを検出せず、ノーポジションのまま様子見を継続しました。",
+      "summary": "8/17の自動売買は、評価額が ¥706,889.25 となり、前営業日比 -¥8.86（ドルベース +$0.00）とほぼ横ばいでした。週明けの米国市場において新規の売買シグナルは発生せず、ノーポジションの状態を維持。週末リスク明けの市場動向を安全に静観する結果となりました。",
+      "image": "/assets/mukimuki-performance.png",
+      "published": "2026-08-18T08:30:00+09:00",
+      "modified": "2026-08-18T08:30:00+09:00",
+      "tags": [
+        "実績公開",
+        "売買トピック",
+        "取引なし",
+        "ノーポジション",
+        "静観"
+      ],
+      "sections": [
+        {
+          "heading": "新規シグナルなし・静観の維持",
+          "paragraphs": [
+            "2026年8月17日は、自動売買プログラムが稼獲したものの新規の売買条件を満たす銘柄はなく、取引実行はゼロとなりました。保有ポジションを持たないノーポジション状態を継続し、余力を維持しています。"
+          ],
+          "bullets": [
+            "評価額: ¥706,889.25（前営業日比 -0.00% / -8.86円）",
+            "元本100万円比: -29.31%",
+            "約定件数: 0件",
+            "引け後ポジション: なし（ノーポジション）"
+          ]
+        }
+      ],
+      "sources": [],
+      "tickers": []
+    },
+    {
       "path": "/performance/2026/08/14/topics/no-trade-market-watch-no-position/",
       "categoryKey": "performance",
       "category": "実績公開",

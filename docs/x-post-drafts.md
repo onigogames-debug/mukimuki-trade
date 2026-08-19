@@ -1,23 +1,23 @@
 # X Post Drafts
 
-Generated: 2026-08-18T12:36:06.971Z
+Generated: 2026-08-19T01:16:49.288Z
 
 MUKIMUKI tradeのX投稿下書きです。自動投稿はせず、毎朝の実績確認後に内容を読んでから投稿します。
 
 ## 1. 毎朝の日次実績
 
 ```text
-MUKIMUKI trade 8/14実績
+MUKIMUKI trade 8/18実績
 
 100万円スタート
-評価額 ¥708,111.91
-前日比 -¥1,826.16
-100万円比 -29.19%
-約定10件
+評価額 ¥709,569.61
+前日比 -¥247.81
+100万円比 -29.04%
+約定7件
 
-NVDAやAMZNなど複数銘柄の売買を実施。引け後はノーポジション。調整の一日を記録しました。
+SKHYやCLBTなど複数銘柄の売買を実施。引け後はAAPLを保有。調整の一日を記録しました。
 
-https://mukimuki-trade.com/performance/2026/08/14/topics/no-trade-market-watch-no-position/
+https://mukimuki-trade.com/performance/2026/08/18/topics/clbt-profit-skhy-cut-aapl-held/
 
 #米国株 #投資記録
 ※投資助言ではありません
@@ -26,11 +26,11 @@ https://mukimuki-trade.com/performance/2026/08/14/topics/no-trade-market-watch-n
 ## 2. 保有銘柄の観察
 
 ```text
-2026-08-14 の持ち越し確認
-保有: なし
+2026-08-18 の持ち越し確認
+保有: AAPL
 評価額と前日比だけでなく、なぜ持ち越したかを翌日以降に見返します。
 
-https://mukimuki-trade.com/performance/2026/08/14/topics/no-trade-market-watch-no-position/
+https://mukimuki-trade.com/performance/2026/08/18/topics/clbt-profit-skhy-cut-aapl-held/
 
 #米国株 #投資記録 #MUKIMUKItrade
 ```
