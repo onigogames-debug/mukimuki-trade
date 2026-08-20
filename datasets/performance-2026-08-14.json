@@ -28,7 +28,7 @@
       "delta": -15.4933
     },
     "summary": {
-      "totalTrades": 10,
+      "totalTrades": 0,
       "totalBuyUsd": 1940.45,
       "totalSellUsd": 1920.49,
       "usdPnl": 0,
@@ -906,7 +906,7 @@
       "jpyDelta": -1826.16,
       "totalPnlJpy": -291888.09,
       "totalReturnPct": -29.19,
-      "totalTrades": 10
+      "totalTrades": 0
     }
   ],
   "notes": [
