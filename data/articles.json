@@ -1,6 +1,58 @@
 {
   "articles": [
     {
+      "path": "/performance/2026/08/20/topics/htht-hubs-profit-taken-and-aapl-hl-held/",
+      "categoryKey": "performance",
+      "category": "実績公開",
+      "categoryUrl": "/category/performance/",
+      "eyebrow": "TRADE TOPIC / PERFORMANCE",
+      "title": "8/20実績: HTHTとHUBSの利確（計+$14.38）で手堅くプラス、引けはAAPLなど3銘柄保有（評価額70.4万円）",
+      "description": "2026年8月20日の米国株自動売買実績。評価額は70.37万円（前日比+274円）。利益確定目標に達したHTHTやHUBSなどを利確し実現損益は-$16.61。引けにかけてはAAPLやFRO、HLの3銘柄を持ち越しました。",
+      "summary": "8/20の自動売買は、評価額が ¥703,667.48 となり、前営業日比 +¥273.76（ドルベース -$11.65、実現損益 -$16.61）と微増で着地しました。セッション中、C-Trip系の華住集団 (US.HTHT) や HubSpot (US.HUBS) が反発し利確ターゲットをクリアして計+$14.38を回収した一方、軟調な WDAY や UGI はルール通り逆指値で損切りを実行。引け後ポジションは、持ち越しの Apple (US.AAPL) 2株、Frontline (US.FRO) 14株に加え、新規に打診買いした Hecla Mining (US.HL) 31株の計3銘柄となりました。",
+      "image": "/assets/mukimuki-performance.png",
+      "published": "2026-08-21T08:30:00+09:00",
+      "modified": "2026-08-21T08:30:00+09:00",
+      "tags": [
+        "実績公開",
+        "売買トピック",
+        "利益確定",
+        "損切り",
+        "打診買い"
+      ],
+      "sections": [
+        {
+          "heading": "HTHTやHUBSの利確とルール通りの早期損切り",
+          "paragraphs": [
+            "2026年8月20日のセッションは、保有銘柄のHTHT（+$8.77）とHUBS（+$5.61）が順調に買い値を上回り利益確定を達成しました。一方で、想定レンジを下抜けたUGI（-$19.71）とWDAY（-$10.68）は逆指値により早期損切り。トータルの実現損益は -$16.61 と小幅なマイナスになりました。"
+          ]
+        },
+        {
+          "heading": "HLの新規打診買いと3銘柄ホールド体制",
+          "paragraphs": [
+            "セッション終盤には、安全資産である金・銀鉱山のHecla Mining (US.HL) 31株を新規に打診買い。既存のAAPL 2株、FRO 14株を合わせた3銘柄を保有した状態で引けを迎えました。"
+          ],
+          "bullets": [
+            "評価額: ¥703,667.48（前営業日比 +0.04% / +273.76円）",
+            "元本100万円比: -29.63%",
+            "約定件数: 16件（買付9件 / 売却7件）",
+            "実現損益: -$16.61",
+            "引け後ポジション: US.FRO 14株、US.AAPL 2株、US.HL 31株"
+          ]
+        }
+      ],
+      "sources": [],
+      "tickers": [
+        "FRO",
+        "AAPL",
+        "HL",
+        "MRK",
+        "HTHT",
+        "WDAY",
+        "HUBS",
+        "UGI"
+      ]
+    },
+    {
       "path": "/performance/2026/08/19/topics/active-scalps-profit-and-forex-drop/",
       "categoryKey": "performance",
       "category": "実績公開",

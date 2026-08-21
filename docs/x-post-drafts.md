@@ -1,23 +1,23 @@
 # X Post Drafts
 
-Generated: 2026-08-20T00:12:49.197Z
+Generated: 2026-08-21T00:49:59.027Z
 
 MUKIMUKI tradeのX投稿下書きです。自動投稿はせず、毎朝の実績確認後に内容を読んでから投稿します。
 
 ## 1. 毎朝の日次実績
 
 ```text
-MUKIMUKI trade 8/19実績
+MUKIMUKI trade 8/20実績
 
 100万円スタート
-評価額 ¥702,807.11
-前日比 -¥6,354.52
-100万円比 -29.72%
-約定28件
+評価額 ¥703,667.48
+前日比 +¥273.76
+100万円比 -29.63%
+約定14件
 
-AAPLやHUBSなど複数銘柄の売買を実施。引け後はUGI・FROを保有。調整の一日を記録しました。
+MRKやHTHTなど複数銘柄の売買を実施。引け後はFRO・AAPL・HLを保有。前日比プラスとなった一日を記録しました。
 
-https://mukimuki-trade.com/performance/2026/08/19/topics/active-scalps-profit-and-forex-drop/
+https://mukimuki-trade.com/performance/2026/08/20/topics/htht-hubs-profit-taken-and-aapl-hl-held/
 
 #米国株 #投資記録
 ※投資助言ではありません
@@ -26,11 +26,11 @@ https://mukimuki-trade.com/performance/2026/08/19/topics/active-scalps-profit-an
 ## 2. 保有銘柄の観察
 
 ```text
-2026-08-19 の持ち越し確認
-保有: UGI / FRO
+2026-08-20 の持ち越し確認
+保有: FRO / AAPL / HL
 評価額と前日比だけでなく、なぜ持ち越したかを翌日以降に見返します。
 
-https://mukimuki-trade.com/performance/2026/08/19/topics/active-scalps-profit-and-forex-drop/
+https://mukimuki-trade.com/performance/2026/08/20/topics/htht-hubs-profit-taken-and-aapl-hl-held/
 
 #米国株 #投資記録 #MUKIMUKItrade
 ```

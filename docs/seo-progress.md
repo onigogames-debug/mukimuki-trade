@@ -1,6 +1,6 @@
 # SEO Progress Report
 
-Generated: 2026-08-20T00:12:49.551Z
+Generated: 2026-08-21T00:49:59.257Z
 
 ## 実装状況
 
@@ -21,12 +21,12 @@ Generated: 2026-08-20T00:12:49.551Z
 
 ## ページ監査サマリー
 
-- 対象ページ: 261
-- インデックス対象ページ: 258
-- 要確認ページ: 28
-- FAQ schemaページ: 64
-- パンくずschemaページ: 259
-- Critical CSS適用ページ: 260
+- 対象ページ: 265
+- インデックス対象ページ: 262
+- 要確認ページ: 29
+- FAQ schemaページ: 65
+- パンくずschemaページ: 263
+- Critical CSS適用ページ: 264
 
 ## 要確認ページ
 
@@ -59,13 +59,14 @@ Generated: 2026-08-20T00:12:49.551Z
 | /performance/2026/08/13/topics/multiple-buys-sells-all-cleared/ | title要確認 |
 | /performance/2026/08/18/topics/clbt-profit-skhy-cut-aapl-held/ | title要確認 / description要確認 |
 | /performance/2026/08/19/topics/active-scalps-profit-and-forex-drop/ | title要確認 |
+| /performance/2026/08/20/topics/htht-hubs-profit-taken-and-aapl-hl-held/ | title要確認 |
 | /research/ktos-defense-analysis/ | description要確認 |
 
 ## ページ別詳細
 
 | URL | title | description | 本文文字数 | 内部リンク | schema |
 |---|---:|---:|---:|---:|---|
-| / | 41 | 68 | 3112 | 31 | Person, WebSite |
+| / | 41 | 68 | 3138 | 31 | Person, WebSite |
 | /about/ | 26 | 58 | 1821 | 19 | AboutPage, BreadcrumbList, FAQPage, Person, WebPage, WebSite |
 | /archive/ | 24 | 62 | 1041 | 19 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /archive/2026-05/ (noindex) | 27 | 79 | 1323 | 27 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
@@ -78,7 +79,7 @@ Generated: 2026-08-20T00:12:49.551Z
 | /logic/exit-review/ | 44 | 38 | 1218 | 17 | Article, BreadcrumbList, Person, WebSite |
 | /logic/signal-score/ | 46 | 43 | 1230 | 17 | Article, BreadcrumbList, Person, WebSite |
 | /moomoo/ | 44 | 50 | 1930 | 15 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/ | 44 | 58 | 1186 | 30 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /performance/ | 44 | 58 | 1200 | 30 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /performance/2026/ | 30 | 52 | 1257 | 19 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /performance/2026/05/ | 41 | 62 | 1935 | 30 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /performance/2026/05/26/ | 56 | 94 | 2969 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
@@ -167,7 +168,7 @@ Generated: 2026-08-20T00:12:49.551Z
 | /performance/2026/07/23/ | 39 | 88 | 3313 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/07/23/topics/nvda-profit-taken-and-googl-tsla-vg-buy/ | 81 | 141 | 3068 | 29 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/07/24/topics/vg-riot-amd-wdc-stop-losses-cleared/ | 59 | 144 | 2934 | 29 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/07/27/ | 39 | 79 | 2679 | 29 | Article, BreadcrumbList, FAQPage, Person, WebSite |
+| /performance/2026/07/27/ | 39 | 79 | 2656 | 29 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/07/27/topics/googl-tsla-aapl-meta-clear-and-ego-buy/ | 79 | 183 | 3077 | 29 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/07/28/ | 38 | 82 | 2507 | 29 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/07/28/topics/ego-lbrt-mxl-amkr-stop-losses-cleared-no-position/ | 73 | 129 | 2542 | 26 | Article, BreadcrumbList, Person, WebSite |
@@ -175,7 +176,7 @@ Generated: 2026-08-20T00:12:49.551Z
 | /performance/2026/07/29/topics/active-tech-rotation-nvcr-profit-and-nvda-buy/ | 78 | 146 | 3129 | 29 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/07/30/topics/nvda-meta-amkr-profit-taken-and-cleared/ | 79 | 134 | 2980 | 29 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/07/31/topics/no-trade-market-decline/ | 68 | 93 | 1411 | 23 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/08/ | 41 | 62 | 2075 | 34 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /performance/2026/08/ | 41 | 62 | 2216 | 36 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /performance/2026/08/03/topics/no-trade-weekend-wait/ | 61 | 93 | 1324 | 23 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/08/04/topics/no-trade-market-watch/ | 62 | 93 | 1296 | 23 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/08/05/topics/form-and-nvda-profit-taken-scalp/ | 65 | 133 | 2658 | 29 | Article, BreadcrumbList, Person, WebSite |
@@ -191,10 +192,12 @@ Generated: 2026-08-20T00:12:49.551Z
 | /performance/2026/08/14/ | 56 | 82 | 3097 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/08/14/topics/no-trade-market-watch-no-position/ | 65 | 89 | 1412 | 23 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/08/17/topics/no-trade-asset-stabilization/ | 67 | 86 | 1310 | 23 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/08/18/ | 39 | 79 | 2697 | 29 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/08/18/topics/clbt-profit-skhy-cut-aapl-held/ | 88 | 141 | 2288 | 26 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/08/19/ | 56 | 83 | 2809 | 28 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/08/19/topics/active-scalps-profit-and-forex-drop/ | 81 | 134 | 2253 | 27 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/08/18/ | 39 | 79 | 2478 | 29 | Article, BreadcrumbList, FAQPage, Person, WebSite |
+| /performance/2026/08/18/topics/clbt-profit-skhy-cut-aapl-held/ | 88 | 141 | 2218 | 26 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/08/19/ | 56 | 83 | 2796 | 29 | Article, BreadcrumbList, FAQPage, Person, WebSite |
+| /performance/2026/08/19/topics/active-scalps-profit-and-forex-drop/ | 81 | 134 | 2183 | 27 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/08/20/ | 38 | 87 | 2822 | 28 | Article, BreadcrumbList, FAQPage, Person, WebSite |
+| /performance/2026/08/20/topics/htht-hubs-profit-taken-and-aapl-hl-held/ | 80 | 112 | 2271 | 26 | Article, BreadcrumbList, Person, WebSite |
 | /performance/latest/ (noindex) | 25 | 0 | 100 | 1 |  |
 | /profile/ | 26 | 75 | 1390 | 16 | BreadcrumbList, FAQPage, Person, ProfilePage, WebSite |
 | /research/ | 43 | 56 | 1086 | 25 | Article, BreadcrumbList, Person, WebSite |
@@ -210,7 +213,7 @@ Generated: 2026-08-20T00:12:49.551Z
 | /research/quantum-computing-sector/ | 57 | 122 | 4591 | 27 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /research/semiconductor-sector-analysis/ | 62 | 113 | 4172 | 27 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /research/spacex-valuation-trends/ | 61 | 119 | 4138 | 27 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /research/tag/aapl/ | 30 | 65 | 3096 | 30 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /research/tag/aapl/ | 30 | 65 | 3474 | 33 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/ai/ | 28 | 63 | 1449 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/alab/ | 30 | 65 | 4187 | 37 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/amat/ | 30 | 65 | 1761 | 21 | BreadcrumbList, CollectionPage, Person, WebSite |
@@ -250,15 +253,16 @@ Generated: 2026-08-20T00:12:49.551Z
 | /research/tag/eu/ | 28 | 63 | 1522 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/fig/ | 29 | 64 | 1850 | 21 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/form/ | 30 | 65 | 1775 | 21 | BreadcrumbList, CollectionPage, Person, WebSite |
-| /research/tag/fro/ | 29 | 64 | 1708 | 22 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /research/tag/fro/ | 29 | 64 | 2082 | 25 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/googl/ | 31 | 66 | 3539 | 30 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/gpu/ | 29 | 64 | 2148 | 23 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/gsat/ | 30 | 65 | 4303 | 43 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /research/tag/hl/ | 28 | 63 | 1662 | 22 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/hls/ | 29 | 64 | 1505 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/hon/ | 29 | 64 | 3786 | 32 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/hood/ | 30 | 65 | 2789 | 31 | BreadcrumbList, CollectionPage, Person, WebSite |
-| /research/tag/htht/ | 30 | 65 | 1577 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
-| /research/tag/hubs/ | 30 | 65 | 1577 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /research/tag/htht/ | 30 | 65 | 1800 | 21 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /research/tag/hubs/ | 30 | 65 | 1800 | 21 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/ibm/ | 29 | 64 | 1917 | 22 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/ic/ | 28 | 63 | 1808 | 21 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/intc/ | 30 | 65 | 1553 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
@@ -275,6 +279,7 @@ Generated: 2026-08-20T00:12:49.551Z
 | /research/tag/lmt/ | 29 | 64 | 1758 | 21 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/lunr/ | 30 | 65 | 2061 | 25 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/meta/ | 30 | 65 | 4045 | 36 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /research/tag/mrk/ | 29 | 64 | 1534 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/msft/ | 30 | 65 | 3244 | 30 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/mu/ | 28 | 63 | 1358 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/mxl/ | 29 | 64 | 1807 | 21 | BreadcrumbList, CollectionPage, Person, WebSite |
@@ -314,16 +319,16 @@ Generated: 2026-08-20T00:12:49.551Z
 | /research/tag/tsla/ | 30 | 65 | 4847 | 40 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/tsm/ | 29 | 64 | 1502 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/tsmc/ | 30 | 65 | 1735 | 21 | BreadcrumbList, CollectionPage, Person, WebSite |
-| /research/tag/ugi/ | 29 | 64 | 1708 | 22 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /research/tag/ugi/ | 29 | 64 | 1925 | 23 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/vg/ | 28 | 63 | 1905 | 23 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/vix/ | 29 | 64 | 1819 | 21 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/vrt/ | 29 | 64 | 1589 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/vsat/ | 30 | 65 | 3229 | 29 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/vsxy/ | 30 | 65 | 1964 | 23 | BreadcrumbList, CollectionPage, Person, WebSite |
-| /research/tag/wday/ | 30 | 65 | 1577 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /research/tag/wday/ | 30 | 65 | 1800 | 21 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/wdc/ | 29 | 64 | 1525 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/xg/ | 28 | 63 | 1481 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/xndu/ | 30 | 65 | 1786 | 24 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/xq/ | 28 | 63 | 1559 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
-| /sitemap/ | 23 | 48 | 14807 | 271 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /sitemap/ | 23 | 48 | 15052 | 275 | BreadcrumbList, CollectionPage, Person, WebSite |
 
