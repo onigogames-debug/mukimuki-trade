@@ -1,6 +1,56 @@
 {
   "articles": [
     {
+      "path": "/performance/2026/08/21/topics/all-cleared-no-position-for-weekend/",
+      "categoryKey": "performance",
+      "category": "実績公開",
+      "categoryUrl": "/category/performance/",
+      "eyebrow": "TRADE TOPIC / PERFORMANCE",
+      "title": "8/21実績: HLやTSLAの利確で手堅くプラス、全ポジション決済を完了しノーポジションで週末へ（評価額69.9万円）",
+      "description": "2026年8月21日の米国株自動売買実績。評価額は69.93万円（前日比+80円）。Hecla Mining (HL) や Tesla (TSLA)、WYFIなどの短期取引で利確。週末リスクに備え、保有銘柄（FRO、AAPLなど）も損切りを含めて全決済し、現金100%で週末を迎えました。",
+      "summary": "8/21の自動売買は、評価額が ¥699,268.09 となり、前営業日比 +¥80.22（ドルベース +$5.14、実現損益 -$16.74）となりました。当セッションは週末を前にリスク管理を徹底し、利益確定と損切りを織り交ぜながら全保有ポジションを清算。Hecla Mining (US.HL) や Tesla (US.TSLA)、WYFIなどで利益確定を確保した一方、基準を下抜けた Frontline (US.FRO) と Apple (US.AAPL) は逆指値に沿って早期損切りを執行しました。引け後は保有ポジションのない『ノーポジション（現金比率100%）』となり、週末の急変動リスクを回避しました。",
+      "image": "/assets/mukimuki-performance.png",
+      "published": "2026-08-22T08:30:00+09:00",
+      "modified": "2026-08-22T08:30:00+09:00",
+      "tags": [
+        "実績公開",
+        "売買トピック",
+        "利益確定",
+        "損切り",
+        "ノーポジション",
+        "リスク管理"
+      ],
+      "sections": [
+        {
+          "heading": "HLやTSLA等の利益確定と規律ある撤退",
+          "paragraphs": [
+            "2026年8月21日のセッションでは、前日新規買いした金・銀鉱山のHecla Mining (HL) の一部をターゲット到達で利確（+$11.51、+$6.28）、TSLA（+$4.25）やWYFI（+$4.88）も手堅く利益を確定させました。対して、レンジを下抜けたFRO（-$21.54）およびAAPL（-$22.12）は規律通り損切りを実行し、トータルの実現損益は -$16.74 となりました。"
+          ]
+        },
+        {
+          "heading": "全ポジションを清算しノーポジションで週末へ",
+          "paragraphs": [
+            "プログラムの週末リスク管理ルールに従い、持ち越しは一切行わず、大引けまでにすべてのポジションを決済完了。週明けの急な相場急変に左右されないよう、完全な現金ポジション（安全待機）に移行しました。"
+          ],
+          "bullets": [
+            "評価額: ¥699,268.09（前営業日比 +0.01% / +80.22円）",
+            "元本100万円比: -30.07%",
+            "約定件数: 11件（買付5件 / 売却6件）",
+            "実現損益: -$16.74",
+            "引け後ポジション: なし（ノーポジション）"
+          ]
+        }
+      ],
+      "sources": [],
+      "tickers": [
+        "HL",
+        "FRO",
+        "AAPL",
+        "TSLA",
+        "WYFI"
+      ]
+    },
+    {
       "path": "/performance/2026/08/20/topics/htht-hubs-profit-taken-and-aapl-hl-held/",
       "categoryKey": "performance",
       "category": "実績公開",
