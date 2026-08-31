@@ -1,23 +1,23 @@
 # X Post Drafts
 
-Generated: 2026-08-31T00:00:06.991Z
+Generated: 2026-08-31T23:24:04.313Z
 
 MUKIMUKI tradeのX投稿下書きです。自動投稿はせず、毎朝の実績確認後に内容を読んでから投稿します。
 
 ## 1. 毎朝の日次実績
 
 ```text
-MUKIMUKI trade 8/28実績
+MUKIMUKI trade 8/31実績
 
 100万円スタート
-評価額 ¥704,568.31
-前日比 +¥515.80
-100万円比 -29.54%
-約定13件
+評価額 ¥700,713.29
+前日比 -¥108.18
+100万円比 -29.93%
+約定16件
 
-GOOGLやAAPLなど複数銘柄の売買を実施。引け後はMETAを保有。前日比プラスとなった一日を記録しました。
+BBWやTSLAなど複数銘柄の売買を実施。引け後はMETAを保有。調整の一日を記録しました。
 
-https://mukimuki-trade.com/performance/2026/08/28/topics/active-buys-sells-aapl-nvda-profit-taken/
+https://mukimuki-trade.com/performance/2026/08/31/topics/high-win-rate-scalps-and-meta-held/
 
 #米国株 #投資記録
 ※投資助言ではありません
@@ -26,11 +26,11 @@ https://mukimuki-trade.com/performance/2026/08/28/topics/active-buys-sells-aapl-
 ## 2. 保有銘柄の観察
 
 ```text
-2026-08-28 の持ち越し確認
+2026-08-31 の持ち越し確認
 保有: META
 評価額と前日比だけでなく、なぜ持ち越したかを翌日以降に見返します。
 
-https://mukimuki-trade.com/performance/2026/08/28/topics/active-buys-sells-aapl-nvda-profit-taken/
+https://mukimuki-trade.com/performance/2026/08/31/topics/high-win-rate-scalps-and-meta-held/
 
 #米国株 #投資記録 #MUKIMUKItrade
 ```

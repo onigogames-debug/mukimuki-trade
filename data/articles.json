@@ -1,6 +1,57 @@
 {
   "articles": [
     {
+      "path": "/performance/2026/08/31/topics/high-win-rate-scalps-and-meta-held/",
+      "categoryKey": "performance",
+      "category": "実績公開",
+      "categoryUrl": "/category/performance/",
+      "eyebrow": "TRADE TOPIC / PERFORMANCE",
+      "title": "8/31実績: 8勝1敗の高勝率スキャルピングで+$29.17、METAを継続ホールド（評価額70.1万円）",
+      "description": "2026年8月31日の米国株自動売買実績。評価額は70.07万円（前営業日比-108円）。SAILやBBW、TSLA、CRWD、PLABなどのスキャルピングで8勝1敗・実現損益+$29.17を記録。先週末購入のMETA 1株はホールド継続。",
+      "summary": "8/31の自動売買は、評価額が ¥700,713.29 となり、前営業日比 -¥108.18（ドルベース -$3.43、実現損益 +$29.17）となりました。当セッションは短期シグナルが好調に機能し、SAIL（+$10.66）、BBW（+$9.41）、TSLA（+$4.53）、CRWD（+$3.06）、PLAB（+$1.91）などで手堅く利益確定を重ね、8勝1敗（勝率88.9%）で実現損益 +$29.17 を達成。先週末に購入した Meta (US.META) 1株はホールドを継続しています。",
+      "image": "/assets/mukimuki-performance.png",
+      "published": "2026-09-01T08:30:00+09:00",
+      "modified": "2026-09-01T08:30:00+09:00",
+      "tags": [
+        "実績公開",
+        "売買トピック",
+        "スキャルピング",
+        "高勝率",
+        "保有継続"
+      ],
+      "sections": [
+        {
+          "heading": "8勝1敗・勝率88.9%の短期スキャルピング",
+          "paragraphs": [
+            "2026年8月31日は、SAILやBBW、TSLA、CRWD、PLABなどの短期モメンタム銘柄を的確に捉え、利確を量産。唯一の損切りとなったNVDA（-$0.40）も極めて軽微に抑え、トータルの実現損益は +$29.17 と大幅プラスを計上しました。"
+          ]
+        },
+        {
+          "heading": "METAのホールド継続と資産状況",
+          "paragraphs": [
+            "先週末に新規買いしたMeta (META) 1株は売却シグナルが出ず保有を継続。僅かな為替変動の影響等により円建て評価額は前営業日比で微減の ¥700,713.29 となりましたが、70万円台をしっかり維持しています。"
+          ],
+          "bullets": [
+            "評価額: ¥700,713.29（前営業日比 -0.02% / -108.18円）",
+            "元本100万円比: -29.93%",
+            "約定件数: 18件（買付9件 / 売却9件）",
+            "実現損益: +$29.17（8勝1敗 / 勝率88.9%）",
+            "引け後ポジション: US.META 1株"
+          ]
+        }
+      ],
+      "sources": [],
+      "tickers": [
+        "SAIL",
+        "BBW",
+        "TSLA",
+        "CRWD",
+        "PLAB",
+        "NVDA",
+        "META"
+      ]
+    },
+    {
       "path": "/performance/2026/08/28/topics/active-buys-sells-aapl-nvda-profit-taken/",
       "categoryKey": "performance",
       "category": "実績公開",
