@@ -1,23 +1,23 @@
 # X Post Drafts
 
-Generated: 2026-08-25T00:35:00.350Z
+Generated: 2026-08-31T00:00:06.991Z
 
 MUKIMUKI tradeのX投稿下書きです。自動投稿はせず、毎朝の実績確認後に内容を読んでから投稿します。
 
 ## 1. 毎朝の日次実績
 
 ```text
-MUKIMUKI trade 8/24実績
+MUKIMUKI trade 8/28実績
 
 100万円スタート
-評価額 ¥701,767.00
-前日比 -¥213.15
-100万円比 -29.82%
-約定4件
+評価額 ¥704,568.31
+前日比 +¥515.80
+100万円比 -29.54%
+約定13件
 
-GOOGLやNVDAなど複数銘柄の売買を実施。引け後はGOOGL・NVDA・AAPLなどを保有。調整の一日を記録しました。
+GOOGLやAAPLなど複数銘柄の売買を実施。引け後はMETAを保有。前日比プラスとなった一日を記録しました。
 
-https://mukimuki-trade.com/performance/2026/08/24/topics/four-major-tech-buys-and-hold/
+https://mukimuki-trade.com/performance/2026/08/28/topics/active-buys-sells-aapl-nvda-profit-taken/
 
 #米国株 #投資記録
 ※投資助言ではありません
@@ -26,11 +26,11 @@ https://mukimuki-trade.com/performance/2026/08/24/topics/four-major-tech-buys-an
 ## 2. 保有銘柄の観察
 
 ```text
-2026-08-24 の持ち越し確認
-保有: GOOGL / NVDA / AAPL / TSLA
+2026-08-28 の持ち越し確認
+保有: META
 評価額と前日比だけでなく、なぜ持ち越したかを翌日以降に見返します。
 
-https://mukimuki-trade.com/performance/2026/08/24/topics/four-major-tech-buys-and-hold/
+https://mukimuki-trade.com/performance/2026/08/28/topics/active-buys-sells-aapl-nvda-profit-taken/
 
 #米国株 #投資記録 #MUKIMUKItrade
 ```
@@ -49,10 +49,10 @@ https://mukimuki-trade.com/performance/2026/08/
 ## 4. 銘柄検討ページへの誘導
 
 ```text
-半導体セクター分析: 生成AI需要の第2極と、自動売買におけるサイクル・ボラティリティ対策
+アプリ・広告・金融テック銘柄: 利益化の進み方で分ける
 実績に出てきた銘柄は、候補理由と撤退条件も別ページで整理しています。
 
-https://mukimuki-trade.com/research/semiconductor-sector-analysis/
+https://mukimuki-trade.com/research/app-software-fintech/
 
 #米国株 #銘柄検討 #MUKIMUKItrade
 ```

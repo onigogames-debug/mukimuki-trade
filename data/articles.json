@@ -1,6 +1,170 @@
 {
   "articles": [
     {
+      "path": "/performance/2026/08/28/topics/active-buys-sells-aapl-nvda-profit-taken/",
+      "categoryKey": "performance",
+      "category": "実績公開",
+      "categoryUrl": "/category/performance/",
+      "eyebrow": "TRADE TOPIC / PERFORMANCE",
+      "title": "8/28実績: Apple (AAPL) や NVIDIA (NVDA) の利確を交え実現損益-$15.51、週末はMETAのみホールド（評価額70.5万円）",
+      "description": "2026年8月28日の米国株自動売買実績。評価額は70.46万円（前日比+516円）。AAPLやNVDAなどを利確（計+$11.24）、GOOGLやTSLAなどを損切り（計-$18.23）し、実現損益は-$15.51。引けにMETA 1株を打診買いして週末を越えました。",
+      "summary": "8/28の自動売買は、評価額が ¥704,568.31 となり、前営業日比 +¥515.80（ドルベース +$2.65、実現損益 -$15.51）となりました。セッション中、Apple (US.AAPL) 2株（+$8.39）や NVIDIA (US.NVDA) 1株（+$2.85）が目標到達で利益確定となりました。一方、反落した Alphabet (US.GOOGL) 1株（-$9.32）や Tesla (US.TSLA) 1株（-$8.91）、SMTC（-$8.52）は損切り。トータルの実現損益は -$15.51 となりました。引け間際に Meta (US.META) 1株を新規に打診買いし、1銘柄をホールドして持ち越しました。",
+      "image": "/assets/mukimuki-performance.png",
+      "published": "2026-08-29T08:30:00+09:00",
+      "modified": "2026-08-29T08:30:00+09:00",
+      "tags": [
+        "実績公開",
+        "売買トピック",
+        "利益確定",
+        "損切り",
+        "打診買い"
+      ],
+      "sections": [
+        {
+          "heading": "ハイテク株の利益確定と逆指値による損切り",
+          "paragraphs": [
+            "2026年8月28日はボラティリティが上昇し、利確と損切りが混在するアクティブなセッションとなりました。AAPLの分割利確やNVDAの再エントリー後の利確によりプラスを積み上げた一方、GOOGLやTSLA、SMTCは逆指値にかかり早期撤退。トータル損益は -$15.51 でした。"
+          ]
+        },
+        {
+          "heading": "Meta (META) の新規買いと週末持ち越し",
+          "paragraphs": [
+            "大引け間際に購入条件を満たしたMeta (META) 1株を新規買い。円安進行（ドル高）に助けられ円建て評価額は前日比でプラスを維持し、70.4万円にて週末を迎えています。"
+          ],
+          "bullets": [
+            "評価額: ¥704,568.31（前営業日比 +0.07% / +515.80円）",
+            "元本100万円比: -29.54%",
+            "約定件数: 13件（買付7件 / 売却6件）",
+            "実現損益: -$15.51",
+            "引け後ポジション: US.META 1株"
+          ]
+        }
+      ],
+      "sources": [],
+      "tickers": [
+        "AAPL",
+        "NVDA",
+        "GOOGL",
+        "TSLA",
+        "SMTC",
+        "META"
+      ]
+    },
+    {
+      "path": "/performance/2026/08/27/topics/no-position-temporary-clean/",
+      "categoryKey": "performance",
+      "category": "実績公開",
+      "categoryUrl": "/category/performance/",
+      "eyebrow": "TRADE TOPIC / PERFORMANCE",
+      "title": "8/27実績: 新規シグナルなし、口座評価額は反発し70.2万円へ回復（評価額70.2万円）",
+      "description": "2026年8月27日の米国株自動売買実績。評価額は70.19万円（前日比+2,739円）。新規の取引シグナルはなく約定は0件。保有ポジション情報がクリアされ一時的にノーポジション表示となりました。",
+      "summary": "8/27の自動売買は、評価額が ¥701,946.63 となり、前営業日比 +¥2,738.58（ドルベース +$16.65）と反発し70万円台を回復しました。本日は新規の売買は発生せず約定件数は0件でした。口座データ同期の関係上、一時的に保有ポジションなしの状態となって引けています。",
+      "image": "/assets/mukimuki-performance.png",
+      "published": "2026-08-28T08:30:00+09:00",
+      "modified": "2026-08-28T08:30:00+09:00",
+      "tags": [
+        "実績公開",
+        "売買トピック",
+        "取引なし",
+        "ノーポジション"
+      ],
+      "sections": [
+        {
+          "heading": "取引なし・評価額の回復と70万円台への復帰",
+          "paragraphs": [
+            "2026年8月27日は自動売買の約定は発生しませんでしたが、ドル建て資産が回復したほか、為替の推移もあり円建て評価額は ¥701,946.63 まで回復しました。口座情報の遅延調整により、本日の引けポジションは0件として記録されています。"
+          ],
+          "bullets": [
+            "評価額: ¥701,946.63（前日比 +0.39% / +2,738.58円）",
+            "元本100万円比: -29.81%",
+            "約定件数: 0件",
+            "引け後ポジション: なし（一時的）"
+          ]
+        }
+      ],
+      "sources": [],
+      "tickers": []
+    },
+    {
+      "path": "/performance/2026/08/26/topics/nvda-profit-taken/",
+      "categoryKey": "performance",
+      "category": "実績公開",
+      "categoryUrl": "/category/performance/",
+      "eyebrow": "TRADE TOPIC / PERFORMANCE",
+      "title": "8/26実績: NVIDIA (NVDA) の利益確定で+$3.37、残り3銘柄はホールド継続（評価額69.9万円）",
+      "description": "2026年8月26日の米国株自動売買実績。評価額は69.90万円（前日比-0円）。上昇したNVIDIA (NVDA) 1株を利益確定（+$3.37）。残るGOOGL、AAPL、TSLAの3銘柄は保有を継続しました。",
+      "summary": "8/26の自動売買は、評価額が ¥698,999.58 となり、ほぼ横ばいで引けました。セッション中、前々日に購入していた NVIDIA (US.NVDA) 1株が利益確定ターゲットに到達したため売却し、+$3.37の利益を確定しました。他のGOOGL、AAPL、TSLAの3銘柄は売却基準に達しなかったため、ホールドを継続しています。",
+      "image": "/assets/mukimuki-performance.png",
+      "published": "2026-08-27T08:30:00+09:00",
+      "modified": "2026-08-27T08:30:00+09:00",
+      "tags": [
+        "実績公開",
+        "売買トピック",
+        "利益確定",
+        "保有継続"
+      ],
+      "sections": [
+        {
+          "heading": "NVIDIAのターゲット到達による利確と3銘柄維持",
+          "paragraphs": [
+            "2026年8月26日は、モメンタムを維持していたNVIDIAが目標株価に達し、手堅くプラス売却を達成しました。残りのハイテク3銘柄は小幅な含み損を抱えているものの、ルールに則りホールドを継続しています。"
+          ],
+          "bullets": [
+            "評価額: ¥698,999.58（元本100万円比: -30.10%）",
+            "約定件数: 1件（売却1件）",
+            "実現損益: +$3.37",
+            "引け後ポジション: US.GOOGL 1株、US.AAPL 2株、US.TSLA 1株"
+          ]
+        }
+      ],
+      "sources": [],
+      "tickers": [
+        "NVDA",
+        "GOOGL",
+        "AAPL",
+        "TSLA"
+      ]
+    },
+    {
+      "path": "/performance/2026/08/25/topics/no-trade-tech-hold/",
+      "categoryKey": "performance",
+      "category": "実績公開",
+      "categoryUrl": "/category/performance/",
+      "eyebrow": "TRADE TOPIC / PERFORMANCE",
+      "title": "8/25実績: 取引シグナルなし、前日購入のハイテク大手4銘柄をそのままホールド（評価額未取得）",
+      "description": "2026年8月25日の米国株自動売買実績。取引シグナルは発生せず、GOOGL、NVDA、AAPL、TSLAの4銘柄を継続ホールドしました（口座ログ不具合により日末評価額は未取得）。",
+      "summary": "8/25の自動売買は、前日にエントリーしたAlphabet (GOOGL)、NVIDIA (NVDA)、Apple (AAPL)、Tesla (TSLA)のハイテク大手4銘柄を継続してホールドしました。本日は新規の売買シグナルが検出されず、取引実行件数は0件となっています。日末の口座資産ログが一時的に取得できなかったため、本日時点での正確な円建て評価額推移は未取得となっています。",
+      "image": "/assets/mukimuki-performance.png",
+      "published": "2026-08-26T08:30:00+09:00",
+      "modified": "2026-08-26T08:30:00+09:00",
+      "tags": [
+        "実績公開",
+        "売買トピック",
+        "取引なし",
+        "保有継続"
+      ],
+      "sections": [
+        {
+          "heading": "主要4銘柄のホールド維持",
+          "paragraphs": [
+            "2026年8::25日は新規のシグナルが発生せず、昨日打診買いした4銘柄のポジションをそのまま維持しました。口座APIのログ未取得により本日の正確な評価額は非表示となりますが、ポートフォリオの中身に変更はありません。"
+          ],
+          "bullets": [
+            "評価額: 未取得",
+            "約定件数: 0件",
+            "引け後ポジション: US.GOOGL 1株、US.NVDA 1株、US.AAPL 2株、US.TSLA 1株"
+          ]
+        }
+      ],
+      "sources": [],
+      "tickers": [
+        "GOOGL",
+        "NVDA",
+        "AAPL",
+        "TSLA"
+      ]
+    },
+    {
       "path": "/performance/2026/08/24/topics/four-major-tech-buys-and-hold/",
       "categoryKey": "performance",
       "category": "実績公開",
