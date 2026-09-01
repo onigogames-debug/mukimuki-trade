@@ -1,6 +1,59 @@
 {
   "articles": [
     {
+      "path": "/performance/2026/09/01/topics/scalp-profits-lpth-reax-and-plab-held/",
+      "categoryKey": "performance",
+      "category": "実績公開",
+      "categoryUrl": "/category/performance/",
+      "eyebrow": "TRADE TOPIC / PERFORMANCE",
+      "title": "9/1実績: LPTHやREAXで利確重ねるもFTNT損切り等で-$14.55、引けにPLABを新規買い（評価額70.4万円）",
+      "description": "2026年9月1日の米国株自動売買実績。評価額は70.44万円（前日比-633円）。LPTHやREAX、GOOGL、AAPL、NVDAなどを利確（計+$17.90）した一方、FTNTやMETAを損切り（計-$32.32）し実現損益は-$14.55。引けにPLAB 23株を新規買い。",
+      "summary": "9/1の自動売買は、評価額が ¥704,379.84 となり、前営業日比 -¥633.23（ドルベース -$9.10、実現損益 -$14.55）となりました。セッション中、LPTH（+$7.24）やREAX（+$6.71）、GOOGL（+$1.51）、AAPL（+$1.51）、NVDA（+$0.80）と細かく利確を積み上げましたが、逆指値にかかったFTNT（-$18.54）およびMETA（-$13.78）の損切りが重なりトータルの実現損益は -$14.55 となりました。引け間際にはPhotronics (US.PLAB) 23株を新規に買い付け、ホールドして持ち越しました。",
+      "image": "/assets/mukimuki-performance.png",
+      "published": "2026-09-02T08:30:00+09:00",
+      "modified": "2026-09-02T08:30:00+09:00",
+      "tags": [
+        "実績公開",
+        "売買トピック",
+        "スキャルピング",
+        "利益確定",
+        "損切り",
+        "打診買い"
+      ],
+      "sections": [
+        {
+          "heading": "LPTHやREAXなどの利確とFTNT・METAの損切り",
+          "paragraphs": [
+            "2026年9月1日はモメンタムシグナルが活発に点灯し、計20件の取引を執行。LPTHやREAX、ハイテク主力株などで着実に利確を拾ったものの、トレンドが反転したFTNTと持ち越し分のMETAをルール通り早期ロスカット。実現損益は -$14.55 となりました。"
+          ]
+        },
+        {
+          "heading": "Photronics (PLAB) への新規エントリーと資産状況",
+          "paragraphs": [
+            "セッション終盤には好決算・半導体関連のPhotronics (PLAB) 23株を新規打診買い。為替の僅かな円高影響等もあり円建て評価額は小幅減の ¥704,379.84 となりましたが、70万円台をキープして引けを迎えています。"
+          ],
+          "bullets": [
+            "評価額: ¥704,379.84（前営業日比 -0.09% / -633.23円）",
+            "元本100万円比: -29.56%",
+            "約定件数: 20件（買付11件 / 売却9件）",
+            "実現損益: -$14.55（6勝3敗 / 勝率66.7%）",
+            "引け後ポジション: US.PLAB 23株"
+          ]
+        }
+      ],
+      "sources": [],
+      "tickers": [
+        "LPTH",
+        "REAX",
+        "FTNT",
+        "META",
+        "GOOGL",
+        "AAPL",
+        "NVDA",
+        "PLAB"
+      ]
+    },
+    {
       "path": "/performance/2026/08/31/topics/high-win-rate-scalps-and-meta-held/",
       "categoryKey": "performance",
       "category": "実績公開",

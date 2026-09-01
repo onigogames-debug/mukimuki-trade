@@ -1,23 +1,23 @@
 # X Post Drafts
 
-Generated: 2026-08-31T23:24:04.313Z
+Generated: 2026-09-01T23:58:36.623Z
 
 MUKIMUKI tradeのX投稿下書きです。自動投稿はせず、毎朝の実績確認後に内容を読んでから投稿します。
 
 ## 1. 毎朝の日次実績
 
 ```text
-MUKIMUKI trade 8/31実績
+MUKIMUKI trade 9/1実績
 
 100万円スタート
-評価額 ¥700,713.29
-前日比 -¥108.18
-100万円比 -29.93%
-約定16件
+評価額 ¥704,379.84
+前日比 -¥633.23
+100万円比 -29.56%
+約定19件
 
-BBWやTSLAなど複数銘柄の売買を実施。引け後はMETAを保有。調整の一日を記録しました。
+PLABやMETAなど複数銘柄の売買を実施。引け後はPLABを保有。調整の一日を記録しました。
 
-https://mukimuki-trade.com/performance/2026/08/31/topics/high-win-rate-scalps-and-meta-held/
+https://mukimuki-trade.com/performance/2026/09/01/topics/scalp-profits-lpth-reax-and-plab-held/
 
 #米国株 #投資記録
 ※投資助言ではありません
@@ -26,11 +26,11 @@ https://mukimuki-trade.com/performance/2026/08/31/topics/high-win-rate-scalps-an
 ## 2. 保有銘柄の観察
 
 ```text
-2026-08-31 の持ち越し確認
-保有: META
+2026-09-01 の持ち越し確認
+保有: PLAB
 評価額と前日比だけでなく、なぜ持ち越したかを翌日以降に見返します。
 
-https://mukimuki-trade.com/performance/2026/08/31/topics/high-win-rate-scalps-and-meta-held/
+https://mukimuki-trade.com/performance/2026/09/01/topics/scalp-profits-lpth-reax-and-plab-held/
 
 #米国株 #投資記録 #MUKIMUKItrade
 ```
@@ -39,9 +39,9 @@ https://mukimuki-trade.com/performance/2026/08/31/topics/high-win-rate-scalps-an
 
 ```text
 日次の勝ち負けだけでなく、月次で見ると資産推移の癖が見えます。
-2026-08 の実績まとめはこちら。
+2026-09 の実績まとめはこちら。
 
-https://mukimuki-trade.com/performance/2026/08/
+https://mukimuki-trade.com/performance/2026/09/
 
 #米国株 #100万円チャレンジ #MUKIMUKItrade
 ```
@@ -49,10 +49,10 @@ https://mukimuki-trade.com/performance/2026/08/
 ## 4. 銘柄検討ページへの誘導
 
 ```text
-アプリ・広告・金融テック銘柄: 利益化の進み方で分ける
+Kratos（KTOS）分析: 国策無人ジェットと防衛プラットフォームの実力
 実績に出てきた銘柄は、候補理由と撤退条件も別ページで整理しています。
 
-https://mukimuki-trade.com/research/app-software-fintech/
+https://mukimuki-trade.com/research/ktos-defense-analysis/
 
 #米国株 #銘柄検討 #MUKIMUKItrade
 ```
