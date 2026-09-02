@@ -1,6 +1,56 @@
 {
   "articles": [
     {
+      "path": "/performance/2026/09/02/topics/pbf-profit-taken-and-meta-reax-held/",
+      "categoryKey": "performance",
+      "category": "実績公開",
+      "categoryUrl": "/category/performance/",
+      "eyebrow": "TRADE TOPIC / PERFORMANCE",
+      "title": "9/2実績: PBFエナジーとNVDAで利確し+$8.10、引けにMETAとREAXを保有（評価額69.8万円）",
+      "description": "2026年9月2日の米国株自動売買実績。評価額は69.84万円（前日比-592円）。PBF（計+$17.90）やNVDA（+$3.02）で手堅く利確し、PLAB（-$12.82）は損切り。実現損益は+$8.10（3勝1敗）。引けにMETAとREAXを保有して持ち越しました。",
+      "summary": "9/2の自動売買は、評価額が ¥698,416.48 となり、前営業日比 -¥591.77（ドルベース -$1.21、実現損益 +$8.10）となりました。セッション中、PBF Energy (US.PBF) 8株が分割利確ターゲットに達し計+$17.90の利益を確保、さらにNVIDIA (US.NVDA) 1株も+$3.02で利確。前日持ち越しのPhotronics (US.PLAB) は逆指値によりロスカット（-$12.82）し、トータルの実現損益は +$8.10（勝率75.0%）とプラスで着地しました。引けにかけては Meta (US.META) 1株および Real Brokerage (US.REAX) 35株を新規買い付け、2銘柄をホールドして持ち越しました。",
+      "image": "/assets/mukimuki-performance.png",
+      "published": "2026-09-03T08:30:00+09:00",
+      "modified": "2026-09-03T08:30:00+09:00",
+      "tags": [
+        "実績公開",
+        "売買トピック",
+        "利益確定",
+        "損切り",
+        "打診買い",
+        "保有継続"
+      ],
+      "sections": [
+        {
+          "heading": "PBFの連続利確とPLABの早期損切り",
+          "paragraphs": [
+            "2026年9月2日のセッションでは、エネルギー株のPBFが順調に上昇し、2回に分けて計8株を利益確定（+$6.04、+$11.86）。NVDAも着実に利確しました。一方、想定と逆行したPLABはルール通りに損切りを行い、トータルの実現損益は +$8.10 と勝ち越しを決めました。"
+          ]
+        },
+        {
+          "heading": "METAおよびREAXの保有と資産推移",
+          "paragraphs": [
+            "大引け前にシグナル点灯したMeta (META) 1株とReal Brokerage (REAX) 35株を新規エントリー。為替の円高推移等により円建て評価額は僅かに減少し ¥698,416.48 となりましたが、規律あるトレードで着実に収支を重ねています。"
+          ],
+          "bullets": [
+            "評価額: ¥698,416.48（前営業日比 -0.08% / -591.77円）",
+            "元本100万円比: -30.16%",
+            "約定件数: 10件（買付6件 / 売却4件）",
+            "実現損益: +$8.10（3勝1敗 / 勝率75.0%）",
+            "引け後ポジション: US.META 1株、US.REAX 35株"
+          ]
+        }
+      ],
+      "sources": [],
+      "tickers": [
+        "PBF",
+        "NVDA",
+        "PLAB",
+        "META",
+        "REAX"
+      ]
+    },
+    {
       "path": "/performance/2026/09/01/topics/scalp-profits-lpth-reax-and-plab-held/",
       "categoryKey": "performance",
       "category": "実績公開",

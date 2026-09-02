@@ -1,23 +1,23 @@
 # X Post Drafts
 
-Generated: 2026-09-01T23:58:36.623Z
+Generated: 2026-09-02T23:14:40.457Z
 
 MUKIMUKI tradeのX投稿下書きです。自動投稿はせず、毎朝の実績確認後に内容を読んでから投稿します。
 
 ## 1. 毎朝の日次実績
 
 ```text
-MUKIMUKI trade 9/1実績
+MUKIMUKI trade 9/2実績
 
 100万円スタート
-評価額 ¥704,379.84
-前日比 -¥633.23
-100万円比 -29.56%
-約定19件
+評価額 ¥698,416.48
+前日比 -¥591.77
+100万円比 -30.16%
+約定10件
 
-PLABやMETAなど複数銘柄の売買を実施。引け後はPLABを保有。調整の一日を記録しました。
+LPTHやPLABなど複数銘柄の売買を実施。引け後はMETA・REAXを保有。調整の一日を記録しました。
 
-https://mukimuki-trade.com/performance/2026/09/01/topics/scalp-profits-lpth-reax-and-plab-held/
+https://mukimuki-trade.com/performance/2026/09/02/topics/pbf-profit-taken-and-meta-reax-held/
 
 #米国株 #投資記録
 ※投資助言ではありません
@@ -26,11 +26,11 @@ https://mukimuki-trade.com/performance/2026/09/01/topics/scalp-profits-lpth-reax
 ## 2. 保有銘柄の観察
 
 ```text
-2026-09-01 の持ち越し確認
-保有: PLAB
+2026-09-02 の持ち越し確認
+保有: META / REAX
 評価額と前日比だけでなく、なぜ持ち越したかを翌日以降に見返します。
 
-https://mukimuki-trade.com/performance/2026/09/01/topics/scalp-profits-lpth-reax-and-plab-held/
+https://mukimuki-trade.com/performance/2026/09/02/topics/pbf-profit-taken-and-meta-reax-held/
 
 #米国株 #投資記録 #MUKIMUKItrade
 ```
@@ -49,10 +49,10 @@ https://mukimuki-trade.com/performance/2026/09/
 ## 4. 銘柄検討ページへの誘導
 
 ```text
-Kratos（KTOS）分析: 国策無人ジェットと防衛プラットフォームの実力
+アプリ・広告・金融テック銘柄: 利益化の進み方で分ける
 実績に出てきた銘柄は、候補理由と撤退条件も別ページで整理しています。
 
-https://mukimuki-trade.com/research/ktos-defense-analysis/
+https://mukimuki-trade.com/research/app-software-fintech/
 
 #米国株 #銘柄検討 #MUKIMUKItrade
 ```
