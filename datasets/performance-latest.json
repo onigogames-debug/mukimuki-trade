@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "siteName": "MUKIMUKI trade",
   "sourceName": "Autotrade daily report",
-  "sourceReport": "report_2026-09-02.txt + jp_account_mix_report.csv",
-  "generatedAt": "2026-09-03T08:10:16+09:00",
-  "generatedAtDisplay": "2026.09.03 08:10:16 JST",
+  "sourceReport": "report_2026-09-03.txt + jp_account_mix_report.csv",
+  "generatedAt": "2026-09-04T05:00:10+09:00",
+  "generatedAtDisplay": "2026.09.04 05:00:10 JST",
   "timezone": {
     "reportDate": "EST",
     "generatedAt": "Asia/Tokyo"
@@ -14,101 +14,38 @@
   "challengeStartDate": "2026-04-24",
   "affiliateUrl": "https://j.jp.moomoo.com/0BdcjG",
   "latest": {
-    "reportDate": "2026-09-02",
-    "reportDateDisplay": "2026.09.02 EST",
-    "label": "9/2",
+    "reportDate": "2026-09-03",
+    "reportDateDisplay": "2026.09.03 EST",
+    "label": "9/3",
     "jpy": {
-      "start": 699008.25,
-      "end": 698416.48,
-      "delta": -591.77
+      "start": 685418.34,
+      "end": 678879.4,
+      "delta": -6538.94
     },
     "usd": {
-      "start": 4378.5553,
-      "end": 4377.3446,
-      "delta": -1.2107
+      "start": 4388.25,
+      "end": 4360.02,
+      "delta": -28.226
     },
     "summary": {
-      "totalTrades": 10,
-      "totalBuyUsd": 2268.75,
-      "totalSellUsd": 1464.37,
-      "usdPnl": 8.1,
-      "cashFlowUsd": -804.38,
-      "totalPnlJpy": -301583.52,
-      "totalReturnPct": -30.16,
-      "dailyReturnPct": -0.08
+      "totalTrades": 13,
+      "totalBuyUsd": 6987.46,
+      "totalSellUsd": 4086.64,
+      "usdPnl": -28.23,
+      "cashFlowUsd": -2900.82,
+      "totalPnlJpy": -321120.6,
+      "totalReturnPct": -32.11,
+      "dailyReturnPct": -0.95
     },
     "trades": [
       {
-        "side": "BUY",
-        "symbol": "US.LPTH",
-        "shares": 22,
-        "priceUsd": 9.491,
-        "amountUsd": 208.8,
-        "executedAtEst": "2026-09-02T00:45:23",
-        "remark": "CLOSED_TRADE_BUY"
-      },
-      {
         "side": "SELL",
-        "symbol": "US.PLAB",
-        "shares": 23,
-        "priceUsd": 27.2827,
-        "amountUsd": 627.5,
-        "executedAtEst": "2026-09-02 02:25:40.384",
-        "remark": "CLOSED_TRADE_SELL"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.PBF",
-        "shares": 4,
-        "priceUsd": 76.01,
-        "amountUsd": 304.04,
-        "executedAtEst": "2026-09-02 09:31:33.806",
-        "remark": "CLOSED_TRADE_SELL"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.PBF",
-        "shares": 4,
-        "priceUsd": 74.5,
-        "amountUsd": 298,
-        "executedAtEst": "2026-09-02 09:12:01.680",
-        "remark": "CLOSED_TRADE_BUY"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.PBF",
-        "shares": 4,
-        "priceUsd": 77.465,
-        "amountUsd": 309.86,
-        "executedAtEst": "2026-09-02 09:36:51.837",
-        "remark": "CLOSED_TRADE_SELL"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.PBF",
-        "shares": 4,
-        "priceUsd": 74.5,
-        "amountUsd": 298,
-        "executedAtEst": "2026-09-02 09:12:01.680",
-        "remark": "CLOSED_TRADE_BUY"
-      },
-      {
-        "side": "SELL",
-        "symbol": "US.NVDA",
+        "symbol": "US.META",
         "shares": 1,
-        "priceUsd": 222.97,
-        "amountUsd": 222.97,
-        "executedAtEst": "2026-09-02 10:08:34.109",
+        "priceUsd": 603.93,
+        "amountUsd": 603.93,
+        "executedAtEst": "2026-09-03 09:15:18.927",
         "remark": "CLOSED_TRADE_SELL"
-      },
-      {
-        "side": "BUY",
-        "symbol": "US.NVDA",
-        "shares": 1,
-        "priceUsd": 219.95,
-        "amountUsd": 219.95,
-        "executedAtEst": "2026-09-02 09:53:32.897",
-        "remark": "CLOSED_TRADE_BUY"
       },
       {
         "side": "BUY",
@@ -116,40 +53,151 @@
         "shares": 1,
         "priceUsd": 598.25,
         "amountUsd": 598.25,
-        "executedAtEst": "2026-09-02T23:24:26",
-        "remark": "RECONCILED_BROKER"
+        "executedAtEst": "2026-09-03T20:45:57",
+        "remark": "CLOSED_TRADE_BUY"
+      },
+      {
+        "side": "SELL",
+        "symbol": "US.REAX",
+        "shares": 35,
+        "priceUsd": 18.09,
+        "amountUsd": 633.15,
+        "executedAtEst": "2026-09-03 09:17:37.796",
+        "remark": "CLOSED_TRADE_SELL"
       },
       {
         "side": "BUY",
         "symbol": "US.REAX",
         "shares": 35,
-        "priceUsd": 18.45,
-        "amountUsd": 645.75,
-        "executedAtEst": "2026-09-02 11:11:49.071",
-        "remark": "BUY:RSI売られ過ぎ(35.1) /"
+        "priceUsd": 18.474,
+        "amountUsd": 646.59,
+        "executedAtEst": "2026-09-03T20:45:57",
+        "remark": "CLOSED_TRADE_BUY"
+      },
+      {
+        "side": "SELL",
+        "symbol": "US.NVDA",
+        "shares": 1,
+        "priceUsd": 227.5047,
+        "amountUsd": 227.5,
+        "executedAtEst": "2026-09-03 09:39:38.190",
+        "remark": "CLOSED_TRADE_SELL"
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.NVDA",
+        "shares": 1,
+        "priceUsd": 225.7889,
+        "amountUsd": 225.79,
+        "executedAtEst": "2026-09-03 09:02:38.428",
+        "remark": "CLOSED_TRADE_BUY"
+      },
+      {
+        "side": "SELL",
+        "symbol": "US.RKLB",
+        "shares": 42,
+        "priceUsd": 62.43,
+        "amountUsd": 2622.06,
+        "executedAtEst": "2026-09-03 10:37:21.645",
+        "remark": "CLOSED_TRADE_SELL"
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.RKLB",
+        "shares": 42,
+        "priceUsd": 62.52,
+        "amountUsd": 2625.84,
+        "executedAtEst": "2026-09-03 10:37:02.417",
+        "remark": "CLOSED_TRADE_BUY"
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.MSFT",
+        "shares": 1,
+        "priceUsd": 511.35,
+        "amountUsd": 511.35,
+        "executedAtEst": "2026-09-03 09:46:09.003",
+        "remark": "BUY:MA強気 / VWAP強気 / "
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.GTLB",
+        "shares": 12,
+        "priceUsd": 50.38,
+        "amountUsd": 604.56,
+        "executedAtEst": "2026-09-03 10:10:12.129",
+        "remark": "BUY:MA強気 / VWAP強気 / "
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.RKLB",
+        "shares": 10,
+        "priceUsd": 62.52,
+        "amountUsd": 625.2,
+        "executedAtEst": "2026-09-03 10:37:02.417",
+        "remark": "OPEN_POSITION_BUY"
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.CRDO",
+        "shares": 3,
+        "priceUsd": 168.72,
+        "amountUsd": 506.16,
+        "executedAtEst": "2026-09-03 12:17:28.141",
+        "remark": "BUY:RSI売られ過ぎ(28.3) /"
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.FCEL",
+        "shares": 44,
+        "priceUsd": 14.63,
+        "amountUsd": 643.72,
+        "executedAtEst": "2026-09-03 15:53:41.559",
+        "remark": "BUY:RSI売られ過ぎ(28.2) /"
       }
     ],
     "positions": [
       {
-        "symbol": "US.META",
-        "shares": 1,
-        "averagePriceUsd": 598.25,
-        "unrealizedPnlPct": 0,
-        "unrealizedPnlUsd": 0
+        "symbol": "US.RKLB",
+        "shares": 10,
+        "averagePriceUsd": 63.67,
+        "unrealizedPnlPct": 0.22,
+        "unrealizedPnlUsd": 1.37
       },
       {
-        "symbol": "US.REAX",
-        "shares": 35,
-        "averagePriceUsd": 18.45,
-        "unrealizedPnlPct": 0,
-        "unrealizedPnlUsd": 0
+        "symbol": "US.MSFT",
+        "shares": 1,
+        "averagePriceUsd": 512.02,
+        "unrealizedPnlPct": -0.44,
+        "unrealizedPnlUsd": -2.26
+      },
+      {
+        "symbol": "US.GTLB",
+        "shares": 12,
+        "averagePriceUsd": 50.45,
+        "unrealizedPnlPct": -2.25,
+        "unrealizedPnlUsd": -13.64
+      },
+      {
+        "symbol": "US.FCEL",
+        "shares": 44,
+        "averagePriceUsd": 14.65,
+        "unrealizedPnlPct": 0.14,
+        "unrealizedPnlUsd": 0.92
+      },
+      {
+        "symbol": "US.CRDO",
+        "shares": 3,
+        "averagePriceUsd": 168.94,
+        "unrealizedPnlPct": -2.8,
+        "unrealizedPnlUsd": -14.17
       }
     ],
     "signals": {
-      "loops": 253,
-      "buySignals": 62,
-      "sellSignals": 2,
-      "holds": 3159
+      "loops": 1146,
+      "buySignals": 628,
+      "sellSignals": 0,
+      "holds": 18991
     }
   },
   "history": [
@@ -1042,6 +1090,16 @@
       "totalPnlJpy": -301583.52,
       "totalReturnPct": -30.16,
       "totalTrades": 10
+    },
+    {
+      "date": "2026-09-03",
+      "label": "9/3",
+      "jpyStart": 685418.34,
+      "jpyEnd": 678879.4,
+      "jpyDelta": -6538.94,
+      "totalPnlJpy": -321120.6,
+      "totalReturnPct": -32.11,
+      "totalTrades": 13
     }
   ],
   "notes": [
