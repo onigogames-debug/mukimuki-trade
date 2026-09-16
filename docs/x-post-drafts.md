@@ -1,23 +1,23 @@
 # X Post Drafts
 
-Generated: 2026-09-03T23:27:12.811Z
+Generated: 2026-09-16T01:52:21.922Z
 
 MUKIMUKI tradeのX投稿下書きです。自動投稿はせず、毎朝の実績確認後に内容を読んでから投稿します。
 
 ## 1. 毎朝の日次実績
 
 ```text
-MUKIMUKI trade 9/3実績
+MUKIMUKI trade 9/9実績
 
 100万円スタート
-評価額 ¥678,879.40
-前日比 -¥6,538.94
-100万円比 -32.11%
-約定13件
+評価額 ¥666,984.84
+前日比 +¥0.00
+100万円比 -33.30%
+約定2件
 
-METAやREAXなど複数銘柄の売買を実施。引け後はRKLB・MSFT・GTLBなどを保有。調整の一日を記録しました。
+MSFTを6株買い。 GTLBを12株買い。引け後はMSFT・GTLBを保有。調整の一日を記録しました。
 
-https://mukimuki-trade.com/performance/2026/09/03/topics/active-rotations-meta-nvda-profit-and-five-positions/
+https://mukimuki-trade.com/performance/2026/09/09/topics/latest-holdings-msft-gtlb-and-asset-status/
 
 #米国株 #投資記録
 ※投資助言ではありません
@@ -26,11 +26,11 @@ https://mukimuki-trade.com/performance/2026/09/03/topics/active-rotations-meta-n
 ## 2. 保有銘柄の観察
 
 ```text
-2026-09-03 の持ち越し確認
-保有: RKLB / MSFT / GTLB / FCEL / CRDO
+2026-09-09 の持ち越し確認
+保有: MSFT / GTLB
 評価額と前日比だけでなく、なぜ持ち越したかを翌日以降に見返します。
 
-https://mukimuki-trade.com/performance/2026/09/03/topics/active-rotations-meta-nvda-profit-and-five-positions/
+https://mukimuki-trade.com/performance/2026/09/09/topics/latest-holdings-msft-gtlb-and-asset-status/
 
 #米国株 #投資記録 #MUKIMUKItrade
 ```
@@ -49,10 +49,10 @@ https://mukimuki-trade.com/performance/2026/09/
 ## 4. 銘柄検討ページへの誘導
 
 ```text
-Kratos（KTOS）分析: 国策無人ジェットと防衛プラットフォームの実力
+量子セクター分析: 方式別特徴と関連4銘柄（IONQ・QBTS等）の自動売買適性
 実績に出てきた銘柄は、候補理由と撤退条件も別ページで整理しています。
 
-https://mukimuki-trade.com/research/ktos-defense-analysis/
+https://mukimuki-trade.com/research/quantum-computing-sector/
 
 #米国株 #銘柄検討 #MUKIMUKItrade
 ```
