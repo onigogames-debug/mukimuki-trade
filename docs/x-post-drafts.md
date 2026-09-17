@@ -1,23 +1,23 @@
 # X Post Drafts
 
-Generated: 2026-09-16T01:52:21.922Z
+Generated: 2026-09-17T23:44:48.988Z
 
 MUKIMUKI tradeのX投稿下書きです。自動投稿はせず、毎朝の実績確認後に内容を読んでから投稿します。
 
 ## 1. 毎朝の日次実績
 
 ```text
-MUKIMUKI trade 9/9実績
+MUKIMUKI trade 9/17実績
 
 100万円スタート
-評価額 ¥666,984.84
+評価額 ¥698,693.79
 前日比 +¥0.00
-100万円比 -33.30%
-約定2件
+100万円比 -30.13%
+約定10件
 
-MSFTを6株買い。 GTLBを12株買い。引け後はMSFT・GTLBを保有。調整の一日を記録しました。
+RANIやMSFTなど複数銘柄の売買を実施。引け後はTSLA・RBRK・ZSを保有。調整の一日を記録しました。
 
-https://mukimuki-trade.com/performance/2026/09/09/topics/latest-holdings-msft-gtlb-and-asset-status/
+https://mukimuki-trade.com/performance/2026/09/17/topics/rani-odd-profits-and-tsla-rbrk-zs-held/
 
 #米国株 #投資記録
 ※投資助言ではありません
@@ -26,11 +26,11 @@ https://mukimuki-trade.com/performance/2026/09/09/topics/latest-holdings-msft-gt
 ## 2. 保有銘柄の観察
 
 ```text
-2026-09-09 の持ち越し確認
-保有: MSFT / GTLB
+2026-09-17 の持ち越し確認
+保有: TSLA / RBRK / ZS
 評価額と前日比だけでなく、なぜ持ち越したかを翌日以降に見返します。
 
-https://mukimuki-trade.com/performance/2026/09/09/topics/latest-holdings-msft-gtlb-and-asset-status/
+https://mukimuki-trade.com/performance/2026/09/17/topics/rani-odd-profits-and-tsla-rbrk-zs-held/
 
 #米国株 #投資記録 #MUKIMUKItrade
 ```
@@ -49,10 +49,10 @@ https://mukimuki-trade.com/performance/2026/09/
 ## 4. 銘柄検討ページへの誘導
 
 ```text
-量子セクター分析: 方式別特徴と関連4銘柄（IONQ・QBTS等）の自動売買適性
+フロンティア成長株: EV・宇宙・小型テーマは小さく速く扱う
 実績に出てきた銘柄は、候補理由と撤退条件も別ページで整理しています。
 
-https://mukimuki-trade.com/research/quantum-computing-sector/
+https://mukimuki-trade.com/research/frontier-growth/
 
 #米国株 #銘柄検討 #MUKIMUKItrade
 ```

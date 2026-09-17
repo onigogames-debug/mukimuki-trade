@@ -1,6 +1,57 @@
 {
   "articles": [
     {
+      "path": "/performance/2026/09/17/topics/rani-odd-profits-and-tsla-rbrk-zs-held/",
+      "categoryKey": "performance",
+      "category": "実績公開",
+      "categoryUrl": "/category/performance/",
+      "eyebrow": "TRADE TOPIC / PERFORMANCE",
+      "title": "9/17実績: RANIやODDの利確で+$28.23、引けにTSLA・RBRK・ZSを保有（評価額69.9万円）",
+      "description": "2026年9月17日の米国株自動売買実績。評価額は69.87万円（元本比-30.13%）。RANI（+$17.09）やODD（+$17.85）で利確し実現損益+$28.23を計上。引けにTSLA、RBRK、ZSの3銘柄を新規買い付けホールド。",
+      "summary": "9/17の自動売買は、評価額が ¥698,693.79（$4,487.97、元本100万円比 -30.13%）となりました。セッション中、バイオテクノロジーの Rani Therapeutics (US.RANI) 518株（+$17.09）や Oddity Tech (US.ODD) 35株（+$17.85）が目標株価に到達し大きく利益確定。持ち越しの Microsoft (US.MSFT) 6株（-$4.54）や Generac (US.GNRC) 1株（-$2.17）の微損切りを上回り、トータルの実現損益は +$28.23 と大幅プラスで着地しました。引けにかけては Tesla (US.TSLA) 1株、Rubrik (US.RBRK) 6株、Zscaler (US.ZS) 3株を新規に買い付け、成長株3銘柄をホールドして持ち越しました。",
+      "image": "/assets/mukimuki-performance.png",
+      "published": "2026-09-18T08:30:00+09:00",
+      "modified": "2026-09-18T08:30:00+09:00",
+      "tags": [
+        "実績公開",
+        "売買トピック",
+        "利益確定",
+        "損切り",
+        "打診買い",
+        "保有継続"
+      ],
+      "sections": [
+        {
+          "heading": "RANI・ODDの好調利確とMSFTの微損切り",
+          "paragraphs": [
+            "2026年9月17日はモメンタムシグナルが活発に機能し、RANIとODDで計+$34.94の利益を確定。MSFTとGNRCは反転を受けて素早く微損で撤退し、トータルの実現損益は +$28.23 の勝ち越しとなりました。"
+          ]
+        },
+        {
+          "heading": "TSLA・RBRK・ZSの新規エントリーと引け後ポジション",
+          "paragraphs": [
+            "セッション後半には、EV大手のTesla (TSLA)、サイバーセキュリティ・データ保護のRubrik (RBRK)、クラウドセキュリティのZscaler (ZS) の3銘柄に打診買いエントリー。総資産評価額は ¥698,693.79 まで回復し、70万円台回復目前となっています。"
+          ],
+          "bullets": [
+            "評価額: ¥698,693.79（元本100万円比: -30.13% / $4,487.97）",
+            "約定件数: 10件（買付6件 / 売却4件）",
+            "実現損益: +$28.23（2勝2敗）",
+            "引け後ポジション: US.TSLA 1株、US.RBRK 6株、US.ZS 3株"
+          ]
+        }
+      ],
+      "sources": [],
+      "tickers": [
+        "RANI",
+        "ODD",
+        "MSFT",
+        "GNRC",
+        "TSLA",
+        "RBRK",
+        "ZS"
+      ]
+    },
+    {
       "path": "/performance/2026/09/09/topics/latest-holdings-msft-gtlb-and-asset-status/",
       "categoryKey": "performance",
       "category": "実績公開",

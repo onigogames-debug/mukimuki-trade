@@ -1,6 +1,6 @@
 # SEO Progress Report
 
-Generated: 2026-09-16T01:52:22.259Z
+Generated: 2026-09-17T23:44:49.382Z
 
 ## 実装状況
 
@@ -21,12 +21,12 @@ Generated: 2026-09-16T01:52:22.259Z
 
 ## ページ監査サマリー
 
-- 対象ページ: 299
-- インデックス対象ページ: 296
-- 要確認ページ: 37
-- FAQ schemaページ: 73
-- パンくずschemaページ: 297
-- Critical CSS適用ページ: 298
+- 対象ページ: 306
+- インデックス対象ページ: 303
+- 要確認ページ: 38
+- FAQ schemaページ: 74
+- パンくずschemaページ: 304
+- Critical CSS適用ページ: 305
 
 ## 要確認ページ
 
@@ -68,13 +68,14 @@ Generated: 2026-09-16T01:52:22.259Z
 | /performance/2026/09/02/topics/pbf-profit-taken-and-meta-reax-held/ | title要確認 |
 | /performance/2026/09/04/topics/rklb-partial-profit-taken-and-four-held/ | title要確認 |
 | /performance/2026/09/07/topics/labor-day-hold-and-portfolio-status/ | title要確認 |
+| /performance/2026/09/17/topics/rani-odd-profits-and-tsla-rbrk-zs-held/ | title要確認 |
 | /research/ktos-defense-analysis/ | description要確認 |
 
 ## ページ別詳細
 
 | URL | title | description | 本文文字数 | 内部リンク | schema |
 |---|---:|---:|---:|---:|---|
-| / | 41 | 68 | 2885 | 31 | Person, WebSite |
+| / | 41 | 68 | 3067 | 31 | Person, WebSite |
 | /about/ | 26 | 58 | 1821 | 19 | AboutPage, BreadcrumbList, FAQPage, Person, WebPage, WebSite |
 | /archive/ | 24 | 62 | 1041 | 19 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /archive/2026-05/ (noindex) | 27 | 79 | 1323 | 27 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
@@ -87,10 +88,10 @@ Generated: 2026-09-16T01:52:22.259Z
 | /logic/exit-review/ | 44 | 38 | 1218 | 17 | Article, BreadcrumbList, Person, WebSite |
 | /logic/signal-score/ | 46 | 43 | 1230 | 17 | Article, BreadcrumbList, Person, WebSite |
 | /moomoo/ | 44 | 50 | 1930 | 15 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/ | 44 | 58 | 1205 | 31 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /performance/ | 44 | 58 | 1215 | 31 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /performance/2026/ | 30 | 52 | 1350 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /performance/2026/05/ | 41 | 62 | 1935 | 30 | BreadcrumbList, CollectionPage, Person, WebSite |
-| /performance/2026/05/26/ | 56 | 94 | 2921 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
+| /performance/2026/05/26/ | 56 | 94 | 2826 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/05/27/ | 39 | 99 | 3053 | 31 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/05/27/topics/xndu-rebuild/ | 53 | 83 | 2742 | 29 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/05/28/ | 39 | 100 | 3561 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
@@ -126,7 +127,7 @@ Generated: 2026-09-16T01:52:22.259Z
 | /performance/2026/06/16/ | 54 | 97 | 3508 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/06/17/ | 39 | 98 | 3339 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/06/17/topics/alab-position-sync/ | 66 | 134 | 3370 | 30 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/06/18/ | 39 | 90 | 2859 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
+| /performance/2026/06/18/ | 39 | 90 | 2705 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/06/18/topics/tsla-cleanup-noposition/ | 65 | 132 | 3077 | 27 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/06/22/topics/amat-amd-profit/ | 68 | 138 | 3476 | 29 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/06/23/ | 38 | 90 | 2555 | 31 | Article, BreadcrumbList, FAQPage, Person, WebSite |
@@ -217,7 +218,7 @@ Generated: 2026-09-16T01:52:22.259Z
 | /performance/2026/08/28/topics/active-buys-sells-aapl-nvda-profit-taken/ | 96 | 135 | 2974 | 29 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/08/31/ | 54 | 80 | 2973 | 31 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/08/31/topics/high-win-rate-scalps-and-meta-held/ | 71 | 120 | 2960 | 29 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/09/ | 41 | 62 | 1820 | 30 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /performance/2026/09/ | 41 | 62 | 1955 | 32 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /performance/2026/09/01/ | 38 | 80 | 2832 | 29 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/09/01/topics/scalp-profits-lpth-reax-and-plab-held/ | 80 | 141 | 2996 | 29 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/09/02/ | 37 | 85 | 2865 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
@@ -227,21 +228,23 @@ Generated: 2026-09-16T01:52:22.259Z
 | /performance/2026/09/04/topics/rklb-partial-profit-taken-and-four-held/ | 76 | 104 | 2604 | 29 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/09/07/topics/labor-day-hold-and-portfolio-status/ | 71 | 103 | 2200 | 29 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/09/08/topics/portfolio-rebalance-and-asset-transition/ | 66 | 92 | 2215 | 29 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/09/09/ | 43 | 84 | 2944 | 31 | Article, BreadcrumbList, FAQPage, Person, WebSite |
+| /performance/2026/09/09/ | 43 | 84 | 2968 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/09/09/topics/latest-holdings-msft-gtlb-and-asset-status/ | 62 | 112 | 2642 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/09/17/ | 39 | 88 | 2927 | 29 | Article, BreadcrumbList, FAQPage, Person, WebSite |
+| /performance/2026/09/17/topics/rani-odd-profits-and-tsla-rbrk-zs-held/ | 74 | 121 | 3139 | 29 | Article, BreadcrumbList, Person, WebSite |
 | /performance/latest/ (noindex) | 25 | 0 | 100 | 1 |  |
 | /profile/ | 26 | 75 | 1390 | 16 | BreadcrumbList, FAQPage, Person, ProfilePage, WebSite |
 | /research/ | 43 | 56 | 1086 | 25 | Article, BreadcrumbList, Person, WebSite |
 | /research/ai-infrastructure/ | 56 | 57 | 3039 | 27 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /research/alab-analysis/ | 63 | 116 | 4350 | 27 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /research/app-software-fintech/ | 44 | 50 | 2982 | 27 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /research/frontier-growth/ | 47 | 49 | 2902 | 27 | Article, BreadcrumbList, FAQPage, Person, WebSite |
+| /research/frontier-growth/ | 47 | 49 | 2739 | 27 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /research/ionq-analysis/ | 59 | 96 | 4444 | 27 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /research/ktos-defense-analysis/ | 55 | 185 | 4372 | 27 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /research/msft-analysis/ | 69 | 126 | 4445 | 27 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /research/nvda-analysis/ | 69 | 129 | 4425 | 27 | Article, BreadcrumbList, FAQPage, Person, WebSite |
+| /research/msft-analysis/ | 69 | 126 | 4460 | 27 | Article, BreadcrumbList, FAQPage, Person, WebSite |
+| /research/nvda-analysis/ | 69 | 129 | 4440 | 27 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /research/qbts-quantum-analysis/ | 60 | 119 | 4322 | 27 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /research/quantum-computing-sector/ | 57 | 122 | 4315 | 27 | Article, BreadcrumbList, FAQPage, Person, WebSite |
+| /research/quantum-computing-sector/ | 57 | 122 | 4330 | 27 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /research/semiconductor-sector-analysis/ | 62 | 113 | 4401 | 27 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /research/spacex-valuation-trends/ | 61 | 119 | 4028 | 27 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /research/tag/aapl/ | 30 | 65 | 4975 | 41 | BreadcrumbList, CollectionPage, Person, WebSite |
@@ -288,6 +291,7 @@ Generated: 2026-09-16T01:52:22.259Z
 | /research/tag/form/ | 30 | 65 | 1775 | 21 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/fro/ | 29 | 64 | 2319 | 26 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/ftnt/ | 30 | 65 | 1588 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /research/tag/gnrc/ | 30 | 65 | 1550 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/googl/ | 31 | 66 | 4793 | 37 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/gpu/ | 29 | 64 | 2148 | 23 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/gsat/ | 30 | 65 | 4303 | 43 | BreadcrumbList, CollectionPage, Person, WebSite |
@@ -316,13 +320,14 @@ Generated: 2026-09-16T01:52:22.259Z
 | /research/tag/lunr/ | 30 | 65 | 2061 | 25 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/meta/ | 30 | 65 | 5684 | 47 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/mrk/ | 29 | 64 | 1534 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
-| /research/tag/msft/ | 30 | 65 | 4543 | 39 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /research/tag/msft/ | 30 | 65 | 4777 | 40 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/mu/ | 28 | 63 | 1358 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/mxl/ | 29 | 64 | 1807 | 21 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/nvcr/ | 30 | 65 | 1581 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/nvda/ | 30 | 65 | 8819 | 62 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/nvts/ | 30 | 65 | 1609 | 21 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/oasys/ | 31 | 66 | 1470 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /research/tag/odd/ | 29 | 64 | 1538 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/oklo/ | 30 | 65 | 2347 | 28 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/pbf/ | 29 | 64 | 1552 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/peng/ | 30 | 65 | 1906 | 23 | BreadcrumbList, CollectionPage, Person, WebSite |
@@ -335,6 +340,8 @@ Generated: 2026-09-16T01:52:22.259Z
 | /research/tag/qpu/ | 29 | 64 | 1508 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/qqq/ | 29 | 64 | 1518 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/qubt/ | 30 | 65 | 3728 | 34 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /research/tag/rani/ | 30 | 65 | 1550 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /research/tag/rbrk/ | 30 | 65 | 1681 | 22 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/rcat/ | 30 | 65 | 1586 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/rddt/ | 30 | 65 | 2196 | 25 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/rdw/ | 29 | 64 | 1992 | 25 | BreadcrumbList, CollectionPage, Person, WebSite |
@@ -357,7 +364,7 @@ Generated: 2026-09-16T01:52:22.259Z
 | /research/tag/spir/ | 30 | 65 | 2092 | 26 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/ter/ | 29 | 64 | 1973 | 22 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/tpu/ | 29 | 64 | 1540 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
-| /research/tag/tsla/ | 30 | 65 | 6306 | 48 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /research/tag/tsla/ | 30 | 65 | 6685 | 51 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/tsm/ | 29 | 64 | 1502 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/tsmc/ | 30 | 65 | 1735 | 21 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/ugi/ | 29 | 64 | 1925 | 23 | BreadcrumbList, CollectionPage, Person, WebSite |
@@ -372,5 +379,6 @@ Generated: 2026-09-16T01:52:22.259Z
 | /research/tag/xg/ | 28 | 63 | 1481 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/xndu/ | 30 | 65 | 1786 | 24 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/xq/ | 28 | 63 | 1559 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
-| /sitemap/ | 23 | 48 | 17590 | 309 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /research/tag/zs/ | 28 | 63 | 1657 | 22 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /sitemap/ | 23 | 48 | 17931 | 316 | BreadcrumbList, CollectionPage, Person, WebSite |
 
