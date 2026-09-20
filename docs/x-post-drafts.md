@@ -1,23 +1,23 @@
 # X Post Drafts
 
-Generated: 2026-09-17T23:44:48.988Z
+Generated: 2026-09-20T11:06:24.397Z
 
 MUKIMUKI tradeのX投稿下書きです。自動投稿はせず、毎朝の実績確認後に内容を読んでから投稿します。
 
 ## 1. 毎朝の日次実績
 
 ```text
-MUKIMUKI trade 9/17実績
+MUKIMUKI trade 9/18実績
 
 100万円スタート
-評価額 ¥698,693.79
-前日比 +¥0.00
-100万円比 -30.13%
-約定10件
+評価額 ¥698,081.67
+前日比 -¥11,879.55
+100万円比 -30.19%
+約定5件
 
-RANIやMSFTなど複数銘柄の売買を実施。引け後はTSLA・RBRK・ZSを保有。調整の一日を記録しました。
+TSLAやRBRKなど複数銘柄の売買を実施。引け後はノーポジション。調整の一日を記録しました。
 
-https://mukimuki-trade.com/performance/2026/09/17/topics/rani-odd-profits-and-tsla-rbrk-zs-held/
+https://mukimuki-trade.com/performance/2026/09/18/topics/all-positions-cleared-for-weekend-cash-100-percent/
 
 #米国株 #投資記録
 ※投資助言ではありません
@@ -26,11 +26,11 @@ https://mukimuki-trade.com/performance/2026/09/17/topics/rani-odd-profits-and-ts
 ## 2. 保有銘柄の観察
 
 ```text
-2026-09-17 の持ち越し確認
-保有: TSLA / RBRK / ZS
+2026-09-18 の持ち越し確認
+保有: なし
 評価額と前日比だけでなく、なぜ持ち越したかを翌日以降に見返します。
 
-https://mukimuki-trade.com/performance/2026/09/17/topics/rani-odd-profits-and-tsla-rbrk-zs-held/
+https://mukimuki-trade.com/performance/2026/09/18/topics/all-positions-cleared-for-weekend-cash-100-percent/
 
 #米国株 #投資記録 #MUKIMUKItrade
 ```
@@ -49,10 +49,10 @@ https://mukimuki-trade.com/performance/2026/09/
 ## 4. 銘柄検討ページへの誘導
 
 ```text
-フロンティア成長株: EV・宇宙・小型テーマは小さく速く扱う
+Kratos（KTOS）分析: 国策無人ジェットと防衛プラットフォームの実力
 実績に出てきた銘柄は、候補理由と撤退条件も別ページで整理しています。
 
-https://mukimuki-trade.com/research/frontier-growth/
+https://mukimuki-trade.com/research/ktos-defense-analysis/
 
 #米国株 #銘柄検討 #MUKIMUKItrade
 ```

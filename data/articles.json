@@ -1,6 +1,54 @@
 {
   "articles": [
     {
+      "path": "/performance/2026/09/18/topics/all-positions-cleared-for-weekend-cash-100-percent/",
+      "categoryKey": "performance",
+      "category": "実績公開",
+      "categoryUrl": "/category/performance/",
+      "eyebrow": "TRADE TOPIC / PERFORMANCE",
+      "title": "9/18実績: ZS利確・持ち越しポジションを全決済し現金100%ノーポジで週末入り（評価額69.8万円）",
+      "description": "2026年9月18日の米国株自動売買実績。評価額は69.81万円（元本比-30.19%）。ZS（+$3.42）を利確し、TSLA・RBRK・BRKRを損切り撤退。全ポジションを決済して現金100%のノーポジション状態で週末を迎えました。",
+      "summary": "9/18の自動売買は、評価額が ¥698,081.67（$4,453.97、元本100万円比 -30.19%）となりました。前日持ち越しの Zscaler (US.ZS) 3株を利益確定（+$3.42）した一方、下落した Tesla (US.TSLA) 1株（-$6.49）、Rubrik (US.RBRK) 6株（-$21.78）、および日中エントリーした Bruker (US.BRKR) 10株（-$16.70）は逆指値・引けルールに従って損切り。週末のリスク回避のためすべてのポジションをクローズし、現金100%（ノーポジション）で週を締めくくりました。",
+      "image": "/assets/mukimuki-performance.png",
+      "published": "2026-09-19T08:30:00+09:00",
+      "modified": "2026-09-20T20:00:00+09:00",
+      "tags": [
+        "実績公開",
+        "売買トピック",
+        "利益確定",
+        "損切り",
+        "全決済",
+        "ノーポジション"
+      ],
+      "sections": [
+        {
+          "heading": "ZSの利確と成長株の規律ある損切り",
+          "paragraphs": [
+            "2026年9月18日の金曜セッションでは、Zscaler (ZS) が目標値へ到達し手堅く利確。一方で相場の軟調な推移を受けてTSLA、RBRK、BRKRはルール通り早期撤退を実行しました。"
+          ]
+        },
+        {
+          "heading": "週末の全決済（現金100%）と先週の運用総括",
+          "paragraphs": [
+            "週末のギャップリスクを完全に遮断するため、引け時点で全保有銘柄をノーポジションへ移行。先週はRANIやODDの大幅利確など好トレードもありつつ、最終評価額は ¥698,081.67（元本比 -30.19%）で着地しました。次週もリスク管理最優先で臨みます。"
+          ],
+          "bullets": [
+            "評価額: ¥698,081.67（前日比 -1.67% / -11,879.55円）",
+            "元本100万円比: -30.19%（$4,453.97）",
+            "約定件数: 5件（買付1件 / 売却4件）",
+            "引け後ポジション: なし（現金100%）"
+          ]
+        }
+      ],
+      "sources": [],
+      "tickers": [
+        "ZS",
+        "TSLA",
+        "RBRK",
+        "BRKR"
+      ]
+    },
+    {
       "path": "/performance/2026/09/17/topics/rani-odd-profits-and-tsla-rbrk-zs-held/",
       "categoryKey": "performance",
       "category": "実績公開",
