@@ -1,6 +1,6 @@
 # SEO Progress Report
 
-Generated: 2026-09-20T11:06:24.805Z
+Generated: 2026-09-24T02:02:03.965Z
 
 ## 実装状況
 
@@ -21,12 +21,12 @@ Generated: 2026-09-20T11:06:24.805Z
 
 ## ページ監査サマリー
 
-- 対象ページ: 309
-- インデックス対象ページ: 306
+- 対象ページ: 311
+- インデックス対象ページ: 308
 - 要確認ページ: 38
-- FAQ schemaページ: 75
-- パンくずschemaページ: 307
-- Critical CSS適用ページ: 308
+- FAQ schemaページ: 76
+- パンくずschemaページ: 309
+- Critical CSS適用ページ: 310
 
 ## 要確認ページ
 
@@ -75,7 +75,7 @@ Generated: 2026-09-20T11:06:24.805Z
 
 | URL | title | description | 本文文字数 | 内部リンク | schema |
 |---|---:|---:|---:|---:|---|
-| / | 41 | 68 | 3031 | 31 | Person, WebSite |
+| / | 41 | 68 | 3014 | 31 | Person, WebSite |
 | /about/ | 26 | 58 | 1821 | 19 | AboutPage, BreadcrumbList, FAQPage, Person, WebPage, WebSite |
 | /archive/ | 24 | 62 | 1041 | 19 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /archive/2026-05/ (noindex) | 27 | 79 | 1323 | 27 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
@@ -88,7 +88,7 @@ Generated: 2026-09-20T11:06:24.805Z
 | /logic/exit-review/ | 44 | 38 | 1218 | 17 | Article, BreadcrumbList, Person, WebSite |
 | /logic/signal-score/ | 46 | 43 | 1230 | 17 | Article, BreadcrumbList, Person, WebSite |
 | /moomoo/ | 44 | 50 | 1930 | 15 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/ | 44 | 58 | 1212 | 31 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /performance/ | 44 | 58 | 1200 | 31 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /performance/2026/ | 30 | 52 | 1350 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /performance/2026/05/ | 41 | 62 | 1935 | 30 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /performance/2026/05/26/ | 56 | 94 | 2819 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
@@ -218,7 +218,7 @@ Generated: 2026-09-20T11:06:24.805Z
 | /performance/2026/08/28/topics/active-buys-sells-aapl-nvda-profit-taken/ | 96 | 135 | 2974 | 29 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/08/31/ | 54 | 80 | 2973 | 31 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/08/31/topics/high-win-rate-scalps-and-meta-held/ | 71 | 120 | 2960 | 29 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/09/ | 41 | 62 | 2066 | 34 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /performance/2026/09/ | 41 | 62 | 2181 | 36 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /performance/2026/09/01/ | 38 | 80 | 2832 | 29 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/09/01/topics/scalp-profits-lpth-reax-and-plab-held/ | 80 | 141 | 2996 | 29 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/09/02/ | 37 | 85 | 2865 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
@@ -232,8 +232,10 @@ Generated: 2026-09-20T11:06:24.805Z
 | /performance/2026/09/09/topics/latest-holdings-msft-gtlb-and-asset-status/ | 62 | 112 | 2642 | 29 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/09/17/ | 39 | 88 | 2908 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/09/17/topics/rani-odd-profits-and-tsla-rbrk-zs-held/ | 74 | 121 | 3088 | 29 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/09/18/ | 37 | 82 | 2332 | 28 | Article, BreadcrumbList, FAQPage, Person, WebSite |
+| /performance/2026/09/18/ | 37 | 82 | 2356 | 29 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/09/18/topics/all-positions-cleared-for-weekend-cash-100-percent/ | 70 | 118 | 2308 | 27 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/09/21/ | 37 | 82 | 1679 | 25 | Article, BreadcrumbList, FAQPage, Person, WebSite |
+| /performance/2026/09/23/topics/japan-holidays-cash-100-percent-and-portfolio-status/ | 67 | 105 | 1555 | 23 | Article, BreadcrumbList, Person, WebSite |
 | /performance/latest/ (noindex) | 25 | 0 | 100 | 1 |  |
 | /profile/ | 26 | 75 | 1390 | 16 | BreadcrumbList, FAQPage, Person, ProfilePage, WebSite |
 | /research/ | 43 | 56 | 1086 | 25 | Article, BreadcrumbList, Person, WebSite |
@@ -383,5 +385,5 @@ Generated: 2026-09-20T11:06:24.805Z
 | /research/tag/xndu/ | 30 | 65 | 1786 | 24 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/xq/ | 28 | 63 | 1559 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/zs/ | 28 | 63 | 1861 | 23 | BreadcrumbList, CollectionPage, Person, WebSite |
-| /sitemap/ | 23 | 48 | 18148 | 319 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /sitemap/ | 23 | 48 | 18330 | 321 | BreadcrumbList, CollectionPage, Person, WebSite |
 

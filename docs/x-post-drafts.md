@@ -1,23 +1,23 @@
 # X Post Drafts
 
-Generated: 2026-09-20T11:06:24.397Z
+Generated: 2026-09-24T02:02:03.696Z
 
 MUKIMUKI tradeのX投稿下書きです。自動投稿はせず、毎朝の実績確認後に内容を読んでから投稿します。
 
 ## 1. 毎朝の日次実績
 
 ```text
-MUKIMUKI trade 9/18実績
+MUKIMUKI trade 9/21実績
 
 100万円スタート
-評価額 ¥698,081.67
-前日比 -¥11,879.55
-100万円比 -30.19%
-約定5件
+評価額 ¥700,722.93
+前日比 +¥0.00
+100万円比 -29.93%
+約定0件
 
-TSLAやRBRKなど複数銘柄の売買を実施。引け後はノーポジション。調整の一日を記録しました。
+引け後はノーポジション。調整の一日を記録しました。
 
-https://mukimuki-trade.com/performance/2026/09/18/topics/all-positions-cleared-for-weekend-cash-100-percent/
+https://mukimuki-trade.com/performance/2026/09/21/
 
 #米国株 #投資記録
 ※投資助言ではありません
@@ -26,11 +26,11 @@ https://mukimuki-trade.com/performance/2026/09/18/topics/all-positions-cleared-f
 ## 2. 保有銘柄の観察
 
 ```text
-2026-09-18 の持ち越し確認
+2026-09-21 の持ち越し確認
 保有: なし
 評価額と前日比だけでなく、なぜ持ち越したかを翌日以降に見返します。
 
-https://mukimuki-trade.com/performance/2026/09/18/topics/all-positions-cleared-for-weekend-cash-100-percent/
+https://mukimuki-trade.com/performance/2026/09/21/
 
 #米国株 #投資記録 #MUKIMUKItrade
 ```
