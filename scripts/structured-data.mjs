@@ -1,3 +1,7 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
 const site = {
   url: 'https://mukimuki-trade.com',
   name: 'MUKIMUKI trade',
@@ -227,65 +231,120 @@ const formatDateSegment = (segment, index, segments) => {
 export const buildBreadcrumbListFromPath = (pathValue = '/', options = {}) => {
   const siteUrl = options.siteUrl || site.url;
   const title = options.title;
-  
-  // Normalize path
+
   const urlObj = new URL(pathValue, ensureTrailingSlash(siteUrl));
   const pathname = urlObj.pathname;
-  const segments = pathname.split('/').filter(Boolean);
-  
   const breadcrumbs = [
     {
       name: 'ホーム',
       item: absoluteUrlForSite('/', siteUrl),
-      url: absoluteUrlForSite('/', siteUrl)
-    }
+      url: absoluteUrlForSite('/', siteUrl),
+    },
   ];
-  
-  let currentPath = '';
-  
-  segments.forEach((segment, index) => {
-    const isLast = index === segments.length - 1;
-    currentPath += `/${segment}`;
-    
-    if (isLast) {
-      let name = title;
-      if (!name) {
-        const dateName = formatDateSegment(segment, index, segments);
-        name = dateName || titleizeSegment(segment);
-      }
-      const itemUrl = absoluteUrlForSite(currentPath + '/', siteUrl);
-      breadcrumbs.push({
-        name,
-        item: itemUrl,
-        url: itemUrl
-      });
-    } else {
-      let name = '';
-      let url = undefined;
-      
-      if (breadcrumbMapping[segment]) {
-        name = breadcrumbMapping[segment].label;
-        if (breadcrumbMapping[segment].url) {
-          url = absoluteUrlForSite(breadcrumbMapping[segment].url, siteUrl);
-        }
-      } else {
-        const dateName = formatDateSegment(segment, index, segments);
-        if (dateName) {
-          name = dateName;
-          url = absoluteUrlForSite(currentPath + '/', siteUrl);
-        }
-      }
-      
-      if (url) {
-        breadcrumbs.push({
-          name,
-          item: url,
-          url
-        });
-      }
+
+  if (pathname === '/' || pathname === '') {
+    return breadcrumbs;
+  }
+
+  // 1. Topic Article: /performance/YYYY/MM/DD/topics/slug/
+  const topicMatch = pathname.match(/^\/performance\/(\d{4})\/(\d{2})\/(\d{2})\/topics\/([^/]+)\/?$/);
+  if (topicMatch) {
+    const [, year, month, day, slug] = topicMatch;
+    const perfUrl = absoluteUrlForSite('/performance/', siteUrl);
+    const yearUrl = absoluteUrlForSite(`/performance/${year}/`, siteUrl);
+    const monthUrl = absoluteUrlForSite(`/performance/${year}/${month}/`, siteUrl);
+    breadcrumbs.push({ name: '実績', item: perfUrl, url: perfUrl });
+    breadcrumbs.push({ name: `${year}年`, item: yearUrl, url: yearUrl });
+    breadcrumbs.push({ name: `${Number(month)}月`, item: monthUrl, url: monthUrl });
+
+    const datasetsDir = path.join(path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..'), 'datasets');
+    if (fs.existsSync(path.join(datasetsDir, `performance-${year}-${month}-${day}.json`))) {
+      const dayUrl = absoluteUrlForSite(`/performance/${year}/${month}/${day}/`, siteUrl);
+      breadcrumbs.push({ name: `${Number(month)}月${Number(day)}日`, item: dayUrl, url: dayUrl });
     }
+
+    const itemUrl = absoluteUrlForSite(pathname, siteUrl);
+    breadcrumbs.push({ name: title || slug, item: itemUrl, url: itemUrl });
+    return breadcrumbs;
+  }
+
+  // 2. Performance Daily / Month / Year / Index: /performance/...
+  const performanceMatch = pathname.match(/^\/performance\/(?:(\d{4})(?:\/(\d{2})(?:\/(\d{2}))?)?\/)?$/);
+  if (performanceMatch) {
+    const [, year, month, day] = performanceMatch;
+    const perfUrl = absoluteUrlForSite('/performance/', siteUrl);
+    breadcrumbs.push({ name: '実績', item: perfUrl, url: perfUrl });
+    if (year) {
+      const yearUrl = absoluteUrlForSite(`/performance/${year}/`, siteUrl);
+      breadcrumbs.push({ name: `${year}年`, item: yearUrl, url: yearUrl });
+    }
+    if (month) {
+      const monthUrl = absoluteUrlForSite(`/performance/${year}/${month}/`, siteUrl);
+      breadcrumbs.push({ name: `${Number(month)}月`, item: monthUrl, url: monthUrl });
+    }
+    if (day) {
+      const dayUrl = absoluteUrlForSite(`/performance/${year}/${month}/${day}/`, siteUrl);
+      breadcrumbs.push({ name: title || `${Number(month)}月${Number(day)}日`, item: dayUrl, url: dayUrl });
+    }
+    return breadcrumbs;
+  }
+
+  // 3. Research Tag page: /research/tag/ticker/
+  const tagMatch = pathname.match(/^\/research\/tag\/([^/]+)\/?$/);
+  if (tagMatch) {
+    const [, ticker] = tagMatch;
+    const researchUrl = absoluteUrlForSite('/research/', siteUrl);
+    breadcrumbs.push({ name: '銘柄検討', item: researchUrl, url: researchUrl });
+    const itemUrl = absoluteUrlForSite(pathname, siteUrl);
+    breadcrumbs.push({ name: title || ticker.toUpperCase(), item: itemUrl, url: itemUrl });
+    return breadcrumbs;
+  }
+
+  // 4. Research Detail page: /research/slug/
+  const researchMatch = pathname.match(/^\/research\/([^/]+)\/?$/);
+  if (researchMatch) {
+    const [, slug] = researchMatch;
+    const researchUrl = absoluteUrlForSite('/research/', siteUrl);
+    breadcrumbs.push({ name: '銘柄検討', item: researchUrl, url: researchUrl });
+    const itemUrl = absoluteUrlForSite(pathname, siteUrl);
+    breadcrumbs.push({ name: title || slug, item: itemUrl, url: itemUrl });
+    return breadcrumbs;
+  }
+
+  // 5. Category page: /category/cat/
+  const categoryMatch = pathname.match(/^\/category\/([^/]+)\/?$/);
+  if (categoryMatch) {
+    const [, cat] = categoryMatch;
+    const catLabel = breadcrumbMapping[cat]?.label || cat;
+    const itemUrl = absoluteUrlForSite(pathname, siteUrl);
+    breadcrumbs.push({ name: title || catLabel, item: itemUrl, url: itemUrl });
+    return breadcrumbs;
+  }
+
+  // 6. Generic single-segment page: /slug/
+  const singleMatch = pathname.match(/^\/([^/]+)\/?$/);
+  if (singleMatch) {
+    const [, seg] = singleMatch;
+    const label = title || breadcrumbMapping[seg]?.label || seg;
+    const itemUrl = absoluteUrlForSite(pathname, siteUrl);
+    breadcrumbs.push({ name: label, item: itemUrl, url: itemUrl });
+    return breadcrumbs;
+  }
+
+  // 7. Fallback: segments without topics/tag/category
+  const segments = pathname.split('/').filter(Boolean);
+  let currentPath = '';
+  segments.forEach((segment, index) => {
+    currentPath += `/${segment}`;
+    if (segment === 'topics' || segment === 'category' || segment === 'tag') {
+      return;
+    }
+    const isLast = index === segments.length - 1;
+    const name = isLast && title ? title : (breadcrumbMapping[segment]?.label || segment);
+    const itemUrl = absoluteUrlForSite(`${currentPath}/`, siteUrl);
+    breadcrumbs.push({ name, item: itemUrl, url: itemUrl });
   });
-  
+
   return breadcrumbs;
 };
 

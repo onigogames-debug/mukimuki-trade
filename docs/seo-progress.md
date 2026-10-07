@@ -1,6 +1,6 @@
 # SEO Progress Report
 
-Generated: 2026-09-24T02:02:03.965Z
+Generated: 2026-10-07T13:05:07.776Z
 
 ## 実装状況
 
@@ -75,7 +75,7 @@ Generated: 2026-09-24T02:02:03.965Z
 
 | URL | title | description | 本文文字数 | 内部リンク | schema |
 |---|---:|---:|---:|---:|---|
-| / | 41 | 68 | 3014 | 31 | Person, WebSite |
+| / | 41 | 68 | 2901 | 31 | Person, WebSite |
 | /about/ | 26 | 58 | 1821 | 19 | AboutPage, BreadcrumbList, FAQPage, Person, WebPage, WebSite |
 | /archive/ | 24 | 62 | 1041 | 19 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /archive/2026-05/ (noindex) | 27 | 79 | 1323 | 27 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
@@ -88,154 +88,154 @@ Generated: 2026-09-24T02:02:03.965Z
 | /logic/exit-review/ | 44 | 38 | 1218 | 17 | Article, BreadcrumbList, Person, WebSite |
 | /logic/signal-score/ | 46 | 43 | 1230 | 17 | Article, BreadcrumbList, Person, WebSite |
 | /moomoo/ | 44 | 50 | 1930 | 15 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/ | 44 | 58 | 1200 | 31 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /performance/ | 44 | 58 | 1198 | 31 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /performance/2026/ | 30 | 52 | 1350 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /performance/2026/05/ | 41 | 62 | 1935 | 30 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /performance/2026/05/26/ | 56 | 94 | 2819 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/05/27/ | 39 | 99 | 3053 | 31 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/05/27/topics/xndu-rebuild/ | 53 | 83 | 2742 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/05/27/topics/xndu-rebuild/ | 53 | 83 | 2733 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/05/28/ | 39 | 100 | 3561 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/05/28/topics/asts-rotation/ | 52 | 84 | 3411 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/05/28/topics/asts-rotation/ | 52 | 84 | 3402 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/05/29/ | 39 | 101 | 3407 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/05/29/topics/bksy-range/ | 49 | 77 | 3480 | 29 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/05/30/topics/weekend-amzn-hold/ | 43 | 64 | 3713 | 29 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/05/31/topics/weekend-amzn-risk-check/ | 45 | 63 | 3702 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/05/29/topics/bksy-range/ | 49 | 77 | 3471 | 28 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/05/30/topics/weekend-amzn-hold/ | 43 | 64 | 3696 | 27 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/05/31/topics/weekend-amzn-risk-check/ | 45 | 63 | 3685 | 27 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/06/ | 41 | 62 | 3842 | 61 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /performance/2026/06/01/ | 38 | 94 | 3095 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/06/01/topics/qbts-range/ | 44 | 69 | 3749 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/06/01/topics/qbts-range/ | 44 | 69 | 3740 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/06/02/ | 38 | 98 | 3292 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/06/02/topics/qbts-range/ | 52 | 73 | 3736 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/06/02/topics/qbts-range/ | 52 | 73 | 3727 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/06/03/ | 38 | 89 | 2784 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/06/03/topics/soun-range/ | 49 | 78 | 3782 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/06/03/topics/soun-range/ | 49 | 78 | 3773 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/06/04/ | 38 | 99 | 3227 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/06/04/topics/rddt-range/ | 48 | 69 | 4227 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/06/04/topics/rddt-range/ | 48 | 69 | 4218 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/06/05/ | 38 | 90 | 2550 | 29 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/06/05/topics/peng-range/ | 48 | 74 | 3816 | 29 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/06/06/topics/weekend-no-position-check/ | 45 | 78 | 3491 | 26 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/06/07/topics/weekend-reset-check/ | 49 | 84 | 3562 | 26 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/06/05/topics/peng-range/ | 48 | 74 | 3807 | 28 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/06/06/topics/weekend-no-position-check/ | 45 | 78 | 3475 | 24 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/06/07/topics/weekend-reset-check/ | 49 | 84 | 3546 | 24 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/06/08/ | 38 | 93 | 3072 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/06/08/topics/ionq-range/ | 50 | 81 | 4444 | 29 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/06/09/topics/rddt-overnight-check/ | 49 | 95 | 4463 | 27 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/06/08/topics/ionq-range/ | 50 | 81 | 4435 | 28 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/06/09/topics/rddt-overnight-check/ | 49 | 95 | 4447 | 25 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/06/10/ | 39 | 97 | 3154 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/06/10/topics/crdo-range/ | 47 | 87 | 4594 | 31 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/06/10/topics/crdo-range/ | 47 | 87 | 4585 | 30 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/06/11/ | 37 | 86 | 2314 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/06/11/topics/gsat-hold-check/ | 44 | 74 | 3961 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/06/11/topics/gsat-hold-check/ | 44 | 74 | 3952 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/06/12/ | 39 | 89 | 2351 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/06/12/topics/crdo-loss-cut/ | 49 | 86 | 4066 | 30 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/06/12/topics/crdo-loss-cut/ | 49 | 86 | 4057 | 29 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/06/15/ | 39 | 89 | 2292 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/06/15/topics/rddt-profit-turn/ | 49 | 78 | 4026 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/06/15/topics/rddt-profit-turn/ | 49 | 78 | 4017 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/06/16/ | 54 | 97 | 3508 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/06/17/ | 39 | 98 | 3339 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/06/17/topics/alab-position-sync/ | 66 | 134 | 3370 | 30 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/06/17/topics/alab-position-sync/ | 66 | 134 | 3361 | 29 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/06/18/ | 39 | 90 | 2702 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/06/18/topics/tsla-cleanup-noposition/ | 65 | 132 | 3077 | 27 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/06/22/topics/amat-amd-profit/ | 68 | 138 | 3476 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/06/18/topics/tsla-cleanup-noposition/ | 65 | 132 | 3068 | 26 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/06/22/topics/amat-amd-profit/ | 68 | 138 | 3459 | 27 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/06/23/ | 38 | 90 | 2555 | 31 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/06/23/topics/ibm-amd-profit-ionq-loss/ | 67 | 122 | 3550 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/06/23/topics/ibm-amd-profit-ionq-loss/ | 67 | 122 | 3541 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/06/24/ | 39 | 89 | 2818 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/06/24/topics/no-trade-evaluation-drop/ | 67 | 127 | 3355 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/06/24/topics/no-trade-evaluation-drop/ | 67 | 127 | 3346 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/06/25/ | 39 | 89 | 2803 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/06/25/topics/no-trade-system-maintenance/ | 67 | 117 | 3214 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/06/25/topics/no-trade-system-maintenance/ | 67 | 117 | 3205 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/06/26/ | 37 | 82 | 1703 | 26 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/06/26/topics/api-resumption-asset-correction/ | 60 | 120 | 3213 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/06/26/topics/api-resumption-asset-correction/ | 60 | 120 | 3204 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/06/29/ | 39 | 87 | 2882 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/06/29/topics/space-defense-rebound-ktos-vsat-buy/ | 74 | 177 | 3734 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/06/29/topics/space-defense-rebound-ktos-vsat-buy/ | 74 | 177 | 3725 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/06/30/ | 37 | 87 | 2693 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/06/30/topics/no-trade-asset-defense-holdings/ | 75 | 156 | 3249 | 27 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/06/30/topics/no-trade-asset-defense-holdings/ | 75 | 156 | 3240 | 26 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/07/ | 41 | 62 | 3857 | 63 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /performance/2026/07/01/ | 38 | 89 | 3521 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/07/01/topics/active-rotation-space-defense-semiconductor/ | 74 | 171 | 3861 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/07/01/topics/active-rotation-space-defense-semiconductor/ | 74 | 171 | 3852 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/07/02/ | 37 | 81 | 3012 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/07/02/topics/high-frequency-scalp-cleared-cash-90man-rebound/ | 69 | 158 | 3608 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/07/02/topics/high-frequency-scalp-cleared-cash-90man-rebound/ | 69 | 158 | 3599 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/07/03/ | 36 | 81 | 1708 | 26 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/07/03/topics/pre-holiday-selective-buy-positions-held/ | 60 | 156 | 2254 | 23 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/07/03/topics/pre-holiday-selective-buy-positions-held/ | 60 | 156 | 2245 | 22 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/07/06/ | 38 | 83 | 2443 | 27 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/07/06/topics/high-volatility-defense-stop-losses-cleared/ | 71 | 164 | 3622 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/07/06/topics/high-volatility-defense-stop-losses-cleared/ | 71 | 164 | 3613 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/07/07/ | 38 | 90 | 3673 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/07/07/topics/loss-cuts-and-big-tech-carry-over/ | 76 | 163 | 3569 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/07/07/topics/loss-cuts-and-big-tech-carry-over/ | 76 | 163 | 3560 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/07/08/ | 38 | 82 | 3106 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/07/08/topics/tech-exit-and-no-position-defense/ | 69 | 148 | 3429 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/07/08/topics/tech-exit-and-no-position-defense/ | 69 | 148 | 3420 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/07/09/ | 36 | 82 | 1707 | 26 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/07/10/ | 39 | 82 | 2455 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/07/10/topics/market-crash-warning-no-trade-defense/ | 92 | 139 | 2671 | 28 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/07/10/topics/market-crash-warning-no-trade-defense/ | 92 | 139 | 2662 | 27 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/07/13/ | 38 | 79 | 2452 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/07/13/topics/market-wait-no-position-defense/ | 61 | 150 | 2641 | 28 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/07/13/topics/market-wait-no-position-defense/ | 61 | 150 | 2632 | 27 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/07/14/ | 39 | 82 | 2483 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/07/14/topics/alab-stoploss-cash-return/ | 80 | 173 | 2684 | 27 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/07/14/topics/alab-stoploss-cash-return/ | 80 | 173 | 2675 | 26 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/07/15/ | 39 | 79 | 2666 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/07/15/topics/alab-reentry-and-hold/ | 74 | 146 | 2531 | 27 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/07/15/topics/alab-reentry-and-hold/ | 74 | 146 | 2522 | 26 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/07/16/ | 39 | 78 | 2595 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/07/16/topics/alab-cut-googl-scalp-jhx-hold/ | 81 | 158 | 3198 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/07/16/topics/alab-cut-googl-scalp-jhx-hold/ | 81 | 158 | 3189 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/07/17/ | 38 | 83 | 2561 | 29 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/07/17/topics/global-outage-and-crowdstrike-cut/ | 78 | 162 | 2645 | 28 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/07/17/topics/global-outage-and-crowdstrike-cut/ | 78 | 162 | 2636 | 27 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/07/20/ | 37 | 82 | 1703 | 26 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/07/20/topics/no-trade-weekend-wait/ | 64 | 114 | 2452 | 27 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/07/20/topics/no-trade-weekend-wait/ | 64 | 114 | 2443 | 26 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/07/21/ | 39 | 84 | 3087 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/07/21/topics/nvda-and-vsxy-buy-entry/ | 79 | 131 | 2873 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/07/21/topics/nvda-and-vsxy-buy-entry/ | 79 | 131 | 2864 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/07/22/ | 39 | 79 | 2988 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/07/22/topics/nvda-partial-profit-taking-and-vsxy-clear/ | 77 | 154 | 2788 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/07/22/topics/nvda-partial-profit-taking-and-vsxy-clear/ | 77 | 154 | 2779 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/07/23/ | 39 | 88 | 3300 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/07/23/topics/nvda-profit-taken-and-googl-tsla-vg-buy/ | 81 | 141 | 3143 | 29 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/07/24/topics/vg-riot-amd-wdc-stop-losses-cleared/ | 59 | 144 | 3017 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/07/23/topics/nvda-profit-taken-and-googl-tsla-vg-buy/ | 81 | 141 | 3134 | 28 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/07/24/topics/vg-riot-amd-wdc-stop-losses-cleared/ | 59 | 144 | 3000 | 27 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/07/27/ | 39 | 79 | 2850 | 29 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/07/27/topics/googl-tsla-aapl-meta-clear-and-ego-buy/ | 79 | 183 | 3128 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/07/27/topics/googl-tsla-aapl-meta-clear-and-ego-buy/ | 79 | 183 | 3119 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/07/28/ | 38 | 82 | 2507 | 29 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/07/28/topics/ego-lbrt-mxl-amkr-stop-losses-cleared-no-position/ | 73 | 129 | 2542 | 26 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/07/28/topics/ego-lbrt-mxl-amkr-stop-losses-cleared-no-position/ | 73 | 129 | 2533 | 25 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/07/29/ | 39 | 80 | 3376 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/07/29/topics/active-tech-rotation-nvcr-profit-and-nvda-buy/ | 78 | 146 | 3043 | 29 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/07/30/topics/nvda-meta-amkr-profit-taken-and-cleared/ | 79 | 134 | 2946 | 29 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/07/31/topics/no-trade-market-decline/ | 68 | 93 | 1411 | 23 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/07/29/topics/active-tech-rotation-nvcr-profit-and-nvda-buy/ | 78 | 146 | 3034 | 28 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/07/30/topics/nvda-meta-amkr-profit-taken-and-cleared/ | 79 | 134 | 2929 | 27 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/07/31/topics/no-trade-market-decline/ | 68 | 93 | 1394 | 21 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/08/ | 41 | 62 | 2727 | 45 | BreadcrumbList, CollectionPage, Person, WebSite |
-| /performance/2026/08/03/topics/no-trade-weekend-wait/ | 61 | 93 | 1324 | 23 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/08/04/topics/no-trade-market-watch/ | 62 | 93 | 1296 | 23 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/08/05/topics/form-and-nvda-profit-taken-scalp/ | 65 | 133 | 2824 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/08/03/topics/no-trade-weekend-wait/ | 61 | 93 | 1308 | 21 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/08/04/topics/no-trade-market-watch/ | 62 | 93 | 1280 | 21 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/08/05/topics/form-and-nvda-profit-taken-scalp/ | 65 | 133 | 2808 | 27 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/08/06/ | 36 | 82 | 1713 | 26 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/08/06/topics/no-trade-asset-stabilization/ | 64 | 100 | 1373 | 23 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/08/06/topics/no-trade-asset-stabilization/ | 64 | 100 | 1364 | 22 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/08/07/ | 38 | 89 | 3486 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/08/07/topics/msft-profit-vrt-loss-cut-and-multiple-buys/ | 79 | 162 | 3080 | 29 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/08/10/topics/docs-loss-cut-and-holding-techs/ | 67 | 125 | 2738 | 29 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/08/11/topics/no-trade-asset-rebound/ | 67 | 94 | 2596 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/08/07/topics/msft-profit-vrt-loss-cut-and-multiple-buys/ | 79 | 162 | 3071 | 28 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/08/10/topics/docs-loss-cut-and-holding-techs/ | 67 | 125 | 2721 | 27 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/08/11/topics/no-trade-asset-rebound/ | 67 | 94 | 2579 | 27 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/08/12/ | 39 | 84 | 3148 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/08/12/topics/tsla-profit-taken-all-cleared/ | 75 | 122 | 2692 | 29 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/08/13/topics/multiple-buys-sells-all-cleared/ | 72 | 115 | 2834 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/08/12/topics/tsla-profit-taken-all-cleared/ | 75 | 122 | 2683 | 28 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/08/13/topics/multiple-buys-sells-all-cleared/ | 72 | 115 | 2817 | 27 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/08/14/ | 56 | 82 | 3097 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/08/14/topics/no-trade-market-watch-no-position/ | 65 | 89 | 1412 | 23 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/08/17/topics/no-trade-asset-stabilization/ | 67 | 86 | 1310 | 23 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/08/14/topics/no-trade-market-watch-no-position/ | 65 | 89 | 1403 | 22 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/08/17/topics/no-trade-asset-stabilization/ | 67 | 86 | 1293 | 21 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/08/18/ | 39 | 79 | 2672 | 29 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/08/18/topics/clbt-profit-skhy-cut-aapl-held/ | 88 | 141 | 2379 | 26 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/08/18/topics/clbt-profit-skhy-cut-aapl-held/ | 88 | 141 | 2370 | 25 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/08/19/ | 56 | 83 | 2951 | 29 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/08/19/topics/active-scalps-profit-and-forex-drop/ | 81 | 134 | 2500 | 27 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/08/19/topics/active-scalps-profit-and-forex-drop/ | 81 | 134 | 2491 | 26 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/08/20/ | 38 | 87 | 2998 | 29 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/08/20/topics/htht-hubs-profit-taken-and-aapl-hl-held/ | 80 | 112 | 2423 | 26 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/08/20/topics/htht-hubs-profit-taken-and-aapl-hl-held/ | 80 | 112 | 2414 | 25 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/08/21/ | 37 | 83 | 2576 | 29 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/08/21/topics/all-cleared-no-position-for-weekend/ | 77 | 144 | 2485 | 27 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/08/21/topics/all-cleared-no-position-for-weekend/ | 77 | 144 | 2476 | 26 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/08/24/ | 40 | 90 | 3277 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/08/24/topics/four-major-tech-buys-and-hold/ | 66 | 109 | 2786 | 29 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/08/25/topics/no-trade-tech-hold/ | 65 | 90 | 2441 | 29 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/08/26/topics/nvda-profit-taken/ | 75 | 107 | 2433 | 29 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/08/27/topics/no-position-temporary-clean/ | 63 | 98 | 1332 | 23 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/08/24/topics/four-major-tech-buys-and-hold/ | 66 | 109 | 2777 | 28 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/08/25/topics/no-trade-tech-hold/ | 65 | 90 | 2424 | 27 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/08/26/topics/nvda-profit-taken/ | 75 | 107 | 2416 | 27 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/08/27/topics/no-position-temporary-clean/ | 63 | 98 | 1315 | 21 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/08/28/ | 39 | 80 | 3005 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/08/28/topics/active-buys-sells-aapl-nvda-profit-taken/ | 96 | 135 | 2974 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/08/28/topics/active-buys-sells-aapl-nvda-profit-taken/ | 96 | 135 | 2965 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/08/31/ | 54 | 80 | 2973 | 31 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/08/31/topics/high-win-rate-scalps-and-meta-held/ | 71 | 120 | 2960 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/08/31/topics/high-win-rate-scalps-and-meta-held/ | 71 | 120 | 2951 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/09/ | 41 | 62 | 2181 | 36 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /performance/2026/09/01/ | 38 | 80 | 2832 | 29 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/09/01/topics/scalp-profits-lpth-reax-and-plab-held/ | 80 | 141 | 2996 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/09/01/topics/scalp-profits-lpth-reax-and-plab-held/ | 80 | 141 | 2987 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/09/02/ | 37 | 85 | 2865 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/09/02/topics/pbf-profit-taken-and-meta-reax-held/ | 73 | 137 | 3128 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/09/02/topics/pbf-profit-taken-and-meta-reax-held/ | 73 | 137 | 3119 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/09/03/ | 38 | 90 | 3691 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/09/03/topics/active-rotations-meta-nvda-profit-and-five-positions/ | 64 | 121 | 2928 | 29 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/09/04/topics/rklb-partial-profit-taken-and-four-held/ | 76 | 104 | 2604 | 29 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/09/07/topics/labor-day-hold-and-portfolio-status/ | 71 | 103 | 2200 | 29 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/09/08/topics/portfolio-rebalance-and-asset-transition/ | 66 | 92 | 2215 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/09/03/topics/active-rotations-meta-nvda-profit-and-five-positions/ | 64 | 121 | 2919 | 28 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/09/04/topics/rklb-partial-profit-taken-and-four-held/ | 76 | 104 | 2588 | 27 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/09/07/topics/labor-day-hold-and-portfolio-status/ | 71 | 103 | 2184 | 27 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/09/08/topics/portfolio-rebalance-and-asset-transition/ | 66 | 92 | 2199 | 27 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/09/09/ | 43 | 84 | 2968 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/09/09/topics/latest-holdings-msft-gtlb-and-asset-status/ | 62 | 112 | 2642 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/09/09/topics/latest-holdings-msft-gtlb-and-asset-status/ | 62 | 112 | 2633 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/09/17/ | 39 | 88 | 2908 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/09/17/topics/rani-odd-profits-and-tsla-rbrk-zs-held/ | 74 | 121 | 3088 | 29 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/09/17/topics/rani-odd-profits-and-tsla-rbrk-zs-held/ | 74 | 121 | 3079 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/09/18/ | 37 | 82 | 2356 | 29 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/09/18/topics/all-positions-cleared-for-weekend-cash-100-percent/ | 70 | 118 | 2308 | 27 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/09/18/topics/all-positions-cleared-for-weekend-cash-100-percent/ | 70 | 118 | 2299 | 26 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/09/21/ | 37 | 82 | 1679 | 25 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/2026/09/23/topics/japan-holidays-cash-100-percent-and-portfolio-status/ | 67 | 105 | 1555 | 23 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/09/23/topics/japan-holidays-cash-100-percent-and-portfolio-status/ | 67 | 105 | 1538 | 21 | Article, BreadcrumbList, Person, WebSite |
 | /performance/latest/ (noindex) | 25 | 0 | 100 | 1 |  |
 | /profile/ | 26 | 75 | 1390 | 16 | BreadcrumbList, FAQPage, Person, ProfilePage, WebSite |
 | /research/ | 43 | 56 | 1086 | 25 | Article, BreadcrumbList, Person, WebSite |

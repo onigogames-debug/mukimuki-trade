@@ -1182,20 +1182,65 @@ const renderLatestPage = (latestReport) => {
 `;
 };
 
-const updateRedirects = async (latestPath) => {
+const updateRedirects = async (latestPath, reports = []) => {
   const redirectsPath = path.join(root, '_redirects');
   const current = await readFile(redirectsPath, 'utf8');
-  const lines = current
-    .split('\n')
-    .filter((line) => line.trim()
-      && !line.startsWith('/performance/ ')
-      && !line.startsWith('/performance/latest ')
-      && !line.startsWith('/performance/latest/ ')
-      && !line.startsWith('/performance/old/ '));
 
+  const baseLines = [
+    'https://www.mukimuki-trade.com/* https://mukimuki-trade.com/:splat 301!',
+  ];
+
+  const legacyRules = [];
+  for (const line of current.split('\n')) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith('#')) continue;
+    if (trimmed.startsWith('https://www.mukimuki-trade.com')) continue;
+    if (trimmed.startsWith('/performance/latest') || trimmed.startsWith('/performance/old/')) continue;
+    if (trimmed.startsWith('/category') || trimmed.startsWith('/research/tag')) continue;
+    if (/^\/performance\/\d{4}\/\d{2}\/\d{2}\//.test(trimmed)) continue;
+    if (!legacyRules.includes(trimmed)) {
+      legacyRules.push(trimmed);
+    }
+  }
+
+  const lines = [...baseLines, ...legacyRules];
+
+  const validDailyDates = new Set(reports.map(({ report }) => report.latest.reportDate));
+  const topicDateMap = new Map();
+  for (const a of articles) {
+    const m = a.path.match(/^\/performance\/(\d{4}\/\d{2}\/\d{2})\/topics\//);
+    if (m) {
+      const d = m[1];
+      if (!topicDateMap.has(d)) topicDateMap.set(d, a.path);
+    }
+  }
+
+  // 1. topics/ directory redirects for all dates
+  for (const [dateStr, topicPath] of topicDateMap.entries()) {
+    lines.push(`/performance/${dateStr}/topics/ ${topicPath} 301`);
+    lines.push(`/performance/${dateStr}/topics ${topicPath} 301`);
+  }
+
+  // 2. daily URL redirects for dates without a daily performance page
+  for (const [dateStr, topicPath] of topicDateMap.entries()) {
+    const dateKey = dateStr.replaceAll('/', '-');
+    if (!validDailyDates.has(dateKey)) {
+      lines.push(`/performance/${dateStr}/ ${topicPath} 301`);
+      lines.push(`/performance/${dateStr} ${topicPath} 301`);
+    }
+  }
+
+  // 3. Category and tag fallbacks
+  lines.push('/category/ /archive/ 301');
+  lines.push('/category /archive/ 301');
+  lines.push('/research/tag/ /research/ 301');
+  lines.push('/research/tag /research/ 301');
+
+  // 4. Latest and legacy fallbacks
   lines.push(`/performance/latest/ ${latestPath} 302`);
   lines.push(`/performance/latest ${latestPath} 302`);
   lines.push('/performance/old/ /performance/ 301');
+
   await writeFile(redirectsPath, `${lines.join('\n')}\n`);
 };
 
@@ -1228,6 +1273,6 @@ for (const key of yearKeys) {
 
 await writePerformancePage('/performance/latest/', renderLatestPage(latest));
 await writePerformancePage('/performance/', renderPerformanceIndexPage(latest, reports));
-await updateRedirects(datePath(latest.latest.reportDate));
+await updateRedirects(datePath(latest.latest.reportDate), reports);
 
 console.log(`Generated performance index, ${reports.length} daily performance pages, ${monthKeys.length} month archive page(s), ${yearKeys.length} year archive page(s), and latest page into ${process.env.PERFORMANCE_OUTPUT_DIR || '.'}.`);

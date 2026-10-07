@@ -34,6 +34,7 @@ const loadPerformanceReports = async () => {
 };
 
 const performanceReports = await loadPerformanceReports();
+const availableReportDates = new Set(performanceReports.map((r) => r.latest.reportDate));
 const articleIndex = buildArticleIndex({ articles, posts: content.posts, performanceReports });
 const latestPerformanceReport = [...performanceReports]
   .sort((a, b) => a.latest.reportDate.localeCompare(b.latest.reportDate))
@@ -156,8 +157,14 @@ const schemaPageTypeForArticle = (article) => {
 };
 
 const parentDailyUrlForTopic = (article) => {
-  const match = String(article.path || '').match(/^(\/performance\/\d{4}\/\d{2}\/\d{2}\/)topics\/[^/]+\/$/);
-  return match ? absoluteUrl(match[1]) : undefined;
+  const match = String(article.path || '').match(/^(\/performance\/(\d{4})\/(\d{2})\/(\d{2})\/)topics\/[^/]+\/$/);
+  if (!match) return undefined;
+  const [, dailyPath, year, month, day] = match;
+  const dateKey = `${year}-${month}-${day}`;
+  if (availableReportDates.has(dateKey)) {
+    return absoluteUrl(dailyPath);
+  }
+  return absoluteUrl(`/performance/${year}/${month}/`);
 };
 
 const renderFaqSection = (faqs = []) => {

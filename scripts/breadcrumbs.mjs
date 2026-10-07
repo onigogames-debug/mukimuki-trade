@@ -1,4 +1,10 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { absoluteUrl, breadcrumbSchema } from './structured-data.mjs';
+
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const datasetsDir = path.join(root, 'datasets');
 
 const staticLabels = new Map([
   ['performance', '実績'],
@@ -13,54 +19,92 @@ const staticLabels = new Map([
   ['topics', '売買トピック'],
 ]);
 
-const monthLabel = (value) => `${Number(value)}月`;
-const dayLabel = (value) => `${Number(value)}日`;
-
 export const buildBreadcrumbsFromPath = (pagePath, title) => {
-  const path = String(pagePath || '/');
-  const performanceMatch = path.match(/^\/performance\/(\d{4})(?:\/(\d{2})(?:\/(\d{2}))?)?\/$/);
+  const pathStr = String(pagePath || '/');
   const breadcrumbs = [{ name: 'ホーム', item: absoluteUrl('/') }];
 
-  if (performanceMatch) {
-    const [, year, month, day] = performanceMatch;
-    breadcrumbs.push({ name: '実績', item: absoluteUrl('/performance/') });
-    breadcrumbs.push({ name: `${year}年`, item: absoluteUrl(`/performance/${year}/`) });
-    if (month) breadcrumbs.push({ name: `${Number(month)}月`, item: absoluteUrl(`/performance/${year}/${month}/`) });
-    if (day) breadcrumbs.push({ name: `${Number(month)}月${Number(day)}日`, item: absoluteUrl(`/performance/${year}/${month}/${day}/`) });
+  if (pathStr === '/' || pathStr === '') {
     return breadcrumbs;
   }
 
-  const segments = path.split('/').filter(Boolean);
-  let current = '';
+  // 1. Topic Article: /performance/YYYY/MM/DD/topics/slug/
+  const topicMatch = pathStr.match(/^\/performance\/(\d{4})\/(\d{2})\/(\d{2})\/topics\/([^/]+)\/?$/);
+  if (topicMatch) {
+    const [, year, month, day, slug] = topicMatch;
+    breadcrumbs.push({ name: '実績', item: absoluteUrl('/performance/') });
+    breadcrumbs.push({ name: `${year}年`, item: absoluteUrl(`/performance/${year}/`) });
+    breadcrumbs.push({ name: `${Number(month)}月`, item: absoluteUrl(`/performance/${year}/${month}/`) });
 
+    const dailyDatasetExists = fs.existsSync(path.join(datasetsDir, `performance-${year}-${month}-${day}.json`));
+    if (dailyDatasetExists) {
+      breadcrumbs.push({ name: `${Number(month)}月${Number(day)}日`, item: absoluteUrl(`/performance/${year}/${month}/${day}/`) });
+    }
+
+    breadcrumbs.push({ name: title || slug, item: absoluteUrl(pathStr) });
+    return breadcrumbs;
+  }
+
+  // 2. Performance Daily / Month / Year / Index: /performance/...
+  const performanceMatch = pathStr.match(/^\/performance\/(?:(\d{4})(?:\/(\d{2})(?:\/(\d{2}))?)?\/)?$/);
+  if (performanceMatch) {
+    const [, year, month, day] = performanceMatch;
+    breadcrumbs.push({ name: '実績', item: absoluteUrl('/performance/') });
+    if (year) breadcrumbs.push({ name: `${year}年`, item: absoluteUrl(`/performance/${year}/`) });
+    if (month) breadcrumbs.push({ name: `${Number(month)}月`, item: absoluteUrl(`/performance/${year}/${month}/`) });
+    if (day) breadcrumbs.push({ name: title || `${Number(month)}月${Number(day)}日`, item: absoluteUrl(`/performance/${year}/${month}/${day}/`) });
+    return breadcrumbs;
+  }
+
+  // 3. Research Tag page: /research/tag/ticker/
+  const tagMatch = pathStr.match(/^\/research\/tag\/([^/]+)\/?$/);
+  if (tagMatch) {
+    const [, ticker] = tagMatch;
+    breadcrumbs.push({ name: '銘柄検討', item: absoluteUrl('/research/') });
+    breadcrumbs.push({ name: title || ticker.toUpperCase(), item: absoluteUrl(pathStr) });
+    return breadcrumbs;
+  }
+
+  // 4. Research Detail page: /research/slug/
+  const researchMatch = pathStr.match(/^\/research\/([^/]+)\/?$/);
+  if (researchMatch) {
+    const [, slug] = researchMatch;
+    breadcrumbs.push({ name: '銘柄検討', item: absoluteUrl('/research/') });
+    breadcrumbs.push({ name: title || slug, item: absoluteUrl(pathStr) });
+    return breadcrumbs;
+  }
+
+  // 5. Category page: /category/cat/
+  const categoryMatch = pathStr.match(/^\/category\/([^/]+)\/?$/);
+  if (categoryMatch) {
+    const [, cat] = categoryMatch;
+    const catLabel = staticLabels.get(cat) || cat;
+    breadcrumbs.push({ name: title || catLabel, item: absoluteUrl(pathStr) });
+    return breadcrumbs;
+  }
+
+  // 6. Generic single-segment page: /slug/
+  const singleMatch = pathStr.match(/^\/([^/]+)\/?$/);
+  if (singleMatch) {
+    const [, seg] = singleMatch;
+    const label = title || staticLabels.get(seg) || seg;
+    breadcrumbs.push({ name: label, item: absoluteUrl(pathStr) });
+    return breadcrumbs;
+  }
+
+  // 7. Fallback for any other path: split segments, skipping 'topics' / 'category' / 'tag'
+  const segments = pathStr.split('/').filter(Boolean);
+  let current = '';
   segments.forEach((segment, index) => {
     current += `/${segment}`;
-    const previous = segments[index - 1];
-    const next = segments[index + 1];
+    if (segment === 'topics' || segment === 'category' || segment === 'tag') {
+      return;
+    }
     const isLast = index === segments.length - 1;
-    const name = isLast && title
-      ? title
-      : labelForSegment(segment, { previous, next });
-
-    breadcrumbs.push({
-      name,
-      item: absoluteUrl(segment === 'performance' ? '/performance/' : `${current}/`),
-    });
+    const name = isLast && title ? title : (staticLabels.get(segment) || segment);
+    breadcrumbs.push({ name, item: absoluteUrl(`${current}/`) });
   });
 
   return breadcrumbs;
-};
-
-const labelForSegment = (segment, { previous, next } = {}) => {
-  if (/^\d{4}$/.test(segment)) return `${segment}年`;
-  if (/^\d{2}$/.test(segment) && /^\d{4}$/.test(previous || '')) return monthLabel(segment);
-  if (/^\d{2}$/.test(segment) && /^\d{2}$/.test(previous || '')) return `${Number(previous)}月${Number(segment)}日`;
-  if (staticLabels.has(segment)) return staticLabels.get(segment);
-  return segment
-    .split('-')
-    .filter(Boolean)
-    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-    .join(' ');
 };
 
 export const renderBreadcrumbHtml = (breadcrumbs, escapeHtml = (value) => String(value ?? '')) => {
@@ -79,8 +123,8 @@ export const renderBreadcrumbJsonLd = (breadcrumbs, pageUrl) => breadcrumbSchema
   breadcrumbs,
 });
 
-export const renderBreadcrumbComponent = ({ path, title, escapeHtml } = {}) => {
-  const breadcrumbs = buildBreadcrumbsFromPath(path, title);
+export const renderBreadcrumbComponent = ({ path: pagePath, title, escapeHtml } = {}) => {
+  const breadcrumbs = buildBreadcrumbsFromPath(pagePath, title);
   return {
     breadcrumbs,
     html: renderBreadcrumbHtml(breadcrumbs, escapeHtml),
