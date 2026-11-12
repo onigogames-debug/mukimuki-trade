@@ -2,48 +2,84 @@
   "schemaVersion": 1,
   "siteName": "MUKIMUKI trade",
   "sourceName": "Autotrade daily report",
-  "sourceReport": "report_2026-09-21.txt",
-  "generatedAt": "2026-09-24T10:56:23+09:00",
-  "generatedAtDisplay": "2026.09.24 10:56:23 JST",
+  "sourceReport": "report_2026-11-12.txt + jp_account_mix_report.csv",
+  "generatedAt": "2026-11-13T00:05:54+09:00",
+  "generatedAtDisplay": "2026.11.13 00:05:54 JST",
   "timezone": {
     "reportDate": "EST",
     "generatedAt": "Asia/Tokyo"
   },
   "startCapitalJpy": 1000000,
-  "minimumChallengeAssetJpy": 600000,
+  "minimumChallengeAssetJpy": 200000,
   "challengeStartDate": "2026-04-24",
   "affiliateUrl": "https://j.jp.moomoo.com/0BdcjG",
   "latest": {
-    "reportDate": "2026-09-21",
-    "reportDateDisplay": "2026.09.21 EST",
-    "label": "9/21",
+    "reportDate": "2026-11-12",
+    "reportDateDisplay": "2026.11.12 EST",
+    "label": "11/12",
     "jpy": {
-      "start": 700722.93,
-      "end": 700722.93,
-      "delta": 0
+      "start": 333275.82,
+      "end": 332941.85,
+      "delta": -333.97
     },
     "usd": {
-      "start": 4453.9122,
-      "end": 4453.9122,
-      "delta": 0
+      "start": 2085.3207,
+      "end": 2082.5331,
+      "delta": -2.7876
     },
     "summary": {
-      "totalTrades": 0,
-      "totalBuyUsd": 0,
-      "totalSellUsd": 0,
-      "usdPnl": 0,
-      "cashFlowUsd": null,
-      "totalPnlJpy": -299277.07,
-      "totalReturnPct": -29.93,
-      "dailyReturnPct": 0
+      "totalTrades": 3,
+      "totalBuyUsd": 4730.84,
+      "totalSellUsd": 2082.62,
+      "usdPnl": -2372.02,
+      "cashFlowUsd": -2648.22,
+      "totalPnlJpy": -667058.15,
+      "totalReturnPct": -66.71,
+      "dailyReturnPct": -0.1
     },
-    "trades": [],
-    "positions": [],
+    "trades": [
+      {
+        "side": "SELL",
+        "symbol": "US.XNDU",
+        "shares": 807,
+        "priceUsd": 2.5807,
+        "amountUsd": 2082.62,
+        "executedAtEst": "2026-11-12 09:45:51.894",
+        "remark": "CLOSED_TRADE_SELL"
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.XNDU",
+        "shares": 807,
+        "priceUsd": 5.52,
+        "amountUsd": 4454.64,
+        "executedAtEst": "2026-11-12 09:45:51.894",
+        "remark": "CLOSED_TRADE_BUY"
+      },
+      {
+        "side": "BUY",
+        "symbol": "US.CECO",
+        "shares": 5,
+        "priceUsd": 55.24,
+        "amountUsd": 276.2,
+        "executedAtEst": "2026-11-12 09:56:48.124",
+        "remark": "BUY:MAゴールデンクロス(イベント)"
+      }
+    ],
+    "positions": [
+      {
+        "symbol": "US.CECO",
+        "shares": 5,
+        "averagePriceUsd": 55.24,
+        "unrealizedPnlPct": 0.71,
+        "unrealizedPnlUsd": 1.96
+      }
+    ],
     "signals": {
-      "loops": 3,
-      "buySignals": 2,
+      "loops": 36,
+      "buySignals": 28,
       "sellSignals": 0,
-      "holds": 21
+      "holds": 634
     }
   },
   "history": [
@@ -1016,6 +1052,16 @@
       "totalPnlJpy": -299277.07,
       "totalReturnPct": -29.93,
       "totalTrades": 0
+    },
+    {
+      "date": "2026-11-12",
+      "label": "11/12",
+      "jpyStart": 333275.82,
+      "jpyEnd": 332941.85,
+      "jpyDelta": -333.97,
+      "totalPnlJpy": -667058.15,
+      "totalReturnPct": -66.71,
+      "totalTrades": 3
     }
   ],
   "notes": [

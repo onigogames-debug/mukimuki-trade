@@ -1,23 +1,23 @@
 # X Post Drafts
 
-Generated: 2026-10-07T13:05:07.371Z
+Generated: 2026-11-12T15:08:15.361Z
 
 MUKIMUKI tradeのX投稿下書きです。自動投稿はせず、毎朝の実績確認後に内容を読んでから投稿します。
 
 ## 1. 毎朝の日次実績
 
 ```text
-MUKIMUKI trade 9/21実績
+MUKIMUKI trade 11/12実績
 
 100万円スタート
-評価額 ¥700,722.93
-前日比 +¥0.00
-100万円比 -29.93%
-約定0件
+評価額 ¥332,941.85
+前日比 -¥333.97
+100万円比 -66.71%
+約定3件
 
-引け後はノーポジション。調整の一日を記録しました。
+XNDUを807株買い、807株で損切り。 CECOを5株買い。引け後はCECOを保有。調整の一日を記録しました。
 
-https://mukimuki-trade.com/performance/2026/09/21/
+https://mukimuki-trade.com/performance/2026/11/12/topics/xndu-cut-and-ceco-new-entry/
 
 #米国株 #投資記録
 ※投資助言ではありません
@@ -26,11 +26,11 @@ https://mukimuki-trade.com/performance/2026/09/21/
 ## 2. 保有銘柄の観察
 
 ```text
-2026-09-21 の持ち越し確認
-保有: なし
+2026-11-12 の持ち越し確認
+保有: CECO
 評価額と前日比だけでなく、なぜ持ち越したかを翌日以降に見返します。
 
-https://mukimuki-trade.com/performance/2026/09/21/
+https://mukimuki-trade.com/performance/2026/11/12/topics/xndu-cut-and-ceco-new-entry/
 
 #米国株 #投資記録 #MUKIMUKItrade
 ```
@@ -39,9 +39,9 @@ https://mukimuki-trade.com/performance/2026/09/21/
 
 ```text
 日次の勝ち負けだけでなく、月次で見ると資産推移の癖が見えます。
-2026-09 の実績まとめはこちら。
+2026-11 の実績まとめはこちら。
 
-https://mukimuki-trade.com/performance/2026/09/
+https://mukimuki-trade.com/performance/2026/11/
 
 #米国株 #100万円チャレンジ #MUKIMUKItrade
 ```

@@ -1,6 +1,6 @@
 # SEO Progress Report
 
-Generated: 2026-10-07T13:05:07.776Z
+Generated: 2026-11-12T15:08:16.102Z
 
 ## 実装状況
 
@@ -21,12 +21,12 @@ Generated: 2026-10-07T13:05:07.776Z
 
 ## ページ監査サマリー
 
-- 対象ページ: 311
-- インデックス対象ページ: 308
+- 対象ページ: 315
+- インデックス対象ページ: 312
 - 要確認ページ: 38
-- FAQ schemaページ: 76
-- パンくずschemaページ: 309
-- Critical CSS適用ページ: 310
+- FAQ schemaページ: 77
+- パンくずschemaページ: 313
+- Critical CSS適用ページ: 314
 
 ## 要確認ページ
 
@@ -75,7 +75,7 @@ Generated: 2026-10-07T13:05:07.776Z
 
 | URL | title | description | 本文文字数 | 内部リンク | schema |
 |---|---:|---:|---:|---:|---|
-| / | 41 | 68 | 2901 | 31 | Person, WebSite |
+| / | 41 | 68 | 3051 | 31 | Person, WebSite |
 | /about/ | 26 | 58 | 1821 | 19 | AboutPage, BreadcrumbList, FAQPage, Person, WebPage, WebSite |
 | /archive/ | 24 | 62 | 1041 | 19 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /archive/2026-05/ (noindex) | 27 | 79 | 1323 | 27 | BreadcrumbList, CollectionPage, ItemList, Person, WebSite |
@@ -88,10 +88,10 @@ Generated: 2026-10-07T13:05:07.776Z
 | /logic/exit-review/ | 44 | 38 | 1218 | 17 | Article, BreadcrumbList, Person, WebSite |
 | /logic/signal-score/ | 46 | 43 | 1230 | 17 | Article, BreadcrumbList, Person, WebSite |
 | /moomoo/ | 44 | 50 | 1930 | 15 | Article, BreadcrumbList, FAQPage, Person, WebSite |
-| /performance/ | 44 | 58 | 1198 | 31 | BreadcrumbList, CollectionPage, Person, WebSite |
-| /performance/2026/ | 30 | 52 | 1350 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /performance/ | 44 | 58 | 1212 | 32 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /performance/2026/ | 30 | 52 | 1442 | 21 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /performance/2026/05/ | 41 | 62 | 1935 | 30 | BreadcrumbList, CollectionPage, Person, WebSite |
-| /performance/2026/05/26/ | 56 | 94 | 2819 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
+| /performance/2026/05/26/ | 56 | 94 | 2941 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/05/27/ | 39 | 99 | 3053 | 31 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/05/27/topics/xndu-rebuild/ | 53 | 83 | 2733 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/05/28/ | 39 | 100 | 3561 | 32 | Article, BreadcrumbList, FAQPage, Person, WebSite |
@@ -218,7 +218,7 @@ Generated: 2026-10-07T13:05:07.776Z
 | /performance/2026/08/28/topics/active-buys-sells-aapl-nvda-profit-taken/ | 96 | 135 | 2965 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/08/31/ | 54 | 80 | 2973 | 31 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/08/31/topics/high-win-rate-scalps-and-meta-held/ | 71 | 120 | 2951 | 28 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/09/ | 41 | 62 | 2181 | 36 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /performance/2026/09/ | 41 | 62 | 2193 | 37 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /performance/2026/09/01/ | 38 | 80 | 2832 | 29 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/09/01/topics/scalp-profits-lpth-reax-and-plab-held/ | 80 | 141 | 2987 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/09/02/ | 37 | 85 | 2865 | 30 | Article, BreadcrumbList, FAQPage, Person, WebSite |
@@ -234,8 +234,11 @@ Generated: 2026-10-07T13:05:07.776Z
 | /performance/2026/09/17/topics/rani-odd-profits-and-tsla-rbrk-zs-held/ | 74 | 121 | 3079 | 28 | Article, BreadcrumbList, Person, WebSite |
 | /performance/2026/09/18/ | 37 | 82 | 2356 | 29 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/09/18/topics/all-positions-cleared-for-weekend-cash-100-percent/ | 70 | 118 | 2299 | 26 | Article, BreadcrumbList, Person, WebSite |
-| /performance/2026/09/21/ | 37 | 82 | 1679 | 25 | Article, BreadcrumbList, FAQPage, Person, WebSite |
+| /performance/2026/09/21/ | 37 | 82 | 1703 | 26 | Article, BreadcrumbList, FAQPage, Person, WebSite |
 | /performance/2026/09/23/topics/japan-holidays-cash-100-percent-and-portfolio-status/ | 67 | 105 | 1538 | 21 | Article, BreadcrumbList, Person, WebSite |
+| /performance/2026/11/ | 42 | 63 | 1357 | 24 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /performance/2026/11/12/ | 40 | 79 | 2234 | 28 | Article, BreadcrumbList, FAQPage, Person, WebSite |
+| /performance/2026/11/12/topics/xndu-cut-and-ceco-new-entry/ | 68 | 118 | 2077 | 25 | Article, BreadcrumbList, Person, WebSite |
 | /performance/latest/ (noindex) | 25 | 0 | 100 | 1 |  |
 | /profile/ | 26 | 75 | 1390 | 16 | BreadcrumbList, FAQPage, Person, ProfilePage, WebSite |
 | /research/ | 43 | 56 | 1086 | 25 | Article, BreadcrumbList, Person, WebSite |
@@ -277,6 +280,7 @@ Generated: 2026-10-07T13:05:07.776Z
 | /research/tag/bksy/ | 30 | 65 | 2304 | 25 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/brkr/ | 30 | 65 | 1541 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/capex/ | 31 | 66 | 2058 | 22 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /research/tag/ceco/ | 30 | 65 | 1671 | 22 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/clbt/ | 30 | 65 | 1591 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/cprt/ | 30 | 65 | 1577 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/cpu/ | 29 | 64 | 1502 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
@@ -382,8 +386,8 @@ Generated: 2026-10-07T13:05:07.776Z
 | /research/tag/wdc/ | 29 | 64 | 1525 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/wyfi/ | 30 | 65 | 1583 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/xg/ | 28 | 63 | 1481 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
-| /research/tag/xndu/ | 30 | 65 | 1786 | 24 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /research/tag/xndu/ | 30 | 65 | 2010 | 25 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/xq/ | 28 | 63 | 1559 | 20 | BreadcrumbList, CollectionPage, Person, WebSite |
 | /research/tag/zs/ | 28 | 63 | 1861 | 23 | BreadcrumbList, CollectionPage, Person, WebSite |
-| /sitemap/ | 23 | 48 | 18330 | 321 | BreadcrumbList, CollectionPage, Person, WebSite |
+| /sitemap/ | 23 | 48 | 18573 | 325 | BreadcrumbList, CollectionPage, Person, WebSite |
 
